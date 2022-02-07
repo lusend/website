@@ -1,0 +1,34 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "LU Send Website",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "ELEVENTY_ENV=development npx @11ty/eleventy --serve",
+    "build": "ELEVENTY_ENV=production npx @11ty/eleventy",
+    "clean": "rm -Rf dist",
+    "predev": "npm run clean",
+    "prebuild": "npm run clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lusend/website.git"
+  },
+  "author": "P Christopher Bowers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lusend/website/issues"
+  },
+  "homepage": "https://github.com/lusend/website#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.0",
+    "@tailwindcss/typography": "^0.5.1",
+    "@types/jquery": "^3.5.13",
+    "autoprefixer": "^10.4.2",
+    "daisyui": "^1.25.4",
+    "postcss": "^8.4.6",
+    "postcss-import": "^14.0.2",
+    "tailwindcss": "^3.0.18"
+  }
+}

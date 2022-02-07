@@ -1,0 +1,15 @@
+#pagebodycontentpageactions > div.hidden-sm.hidden-xs,
+#pagebodycontentheader,
+#pagebodycontent,
+#pagebody > div:nth-child(2) > div.panel-heading,
+#pagebody > div:nth-child(4),
+#pagebody > form {
+  display: none;
+}
+
+.panel-body,
+.panel.panel-primary {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}

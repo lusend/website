@@ -1,0 +1,34 @@
+<html>
+  <body>
+
+    <ul>
+      {% for item in collections.pages %}
+        <li>
+          <a href="{{ item.data.permalink | url }}">{{ item.data.permalink | url }}</a>
+
+          <script>
+            fetch('{{ item.data.permalink }}')
+              .then(function (response) {
+                switch (response.status) {
+                    // status "OK"
+                  case 200:
+                    return response.text();
+                    // status "Not Found"
+                  case 404:
+                    throw response;
+                }
+              })
+              .then(function (template) {
+                console.log(template);
+              })
+              .catch(function (response) {
+                // "Not Found"
+                console.log(response.statusText);
+              });
+          </script>
+        </li>
+      {% endfor %}
+    </ul>
+
+  </body>
+</html>

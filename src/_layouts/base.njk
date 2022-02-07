@@ -1,0 +1,30 @@
+{% if env == 'development' %}
+  {% if type == 'brochure' %}
+    {% extends './brochure.njk' %}
+  {% else %}
+    {% extends './page.njk' %}
+  {% endif %}
+{% else %}
+  {% extends './prod.njk' %}
+{% endif %}
+
+{% block content %}
+
+  {% set css %}
+  {% include "main.css" %}
+  {% if type == 'brochure' %}
+    {% include "brochure.css" %}
+  {% endif %}
+  {% endset %}
+
+  <style>
+    {{css | postcss | safe}}
+  </style>
+
+  <div id="app">
+    <div class="prose">
+      {{ content | safe }}
+    </div>
+  </div>
+
+{% endblock %}
