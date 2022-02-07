@@ -1,0 +1,34 @@
+<html>
+  <body>
+
+    <ul>
+      
+        <li>
+          <a href="/testwebsite/pages/index.html">/testwebsite/pages/index.html</a>
+
+          <script>
+            fetch('/pages/index.html')
+              .then(function (response) {
+                switch (response.status) {
+                    // status "OK"
+                  case 200:
+                    return response.text();
+                    // status "Not Found"
+                  case 404:
+                    throw response;
+                }
+              })
+              .then(function (template) {
+                console.log(template);
+              })
+              .catch(function (response) {
+                // "Not Found"
+                console.log(response.statusText);
+              });
+          </script>
+        </li>
+      
+    </ul>
+
+  </body>
+</html>
