@@ -7,24 +7,17 @@
           <a href="{{ item.data.permalink | url }}">{{ item.data.permalink | url }}</a>
 
           <script>
-            fetch('{{ item.data.permalink }}')
-              .then(function (response) {
-                switch (response.status) {
-                    // status "OK"
+            fetch('{{ item.data.permalink | url }}')
+              .then((res) => {
+                switch (res.status) {
                   case 200:
-                    return response.text();
-                    // status "Not Found"
+                    return res.text();
                   case 404:
-                    throw response;
+                    throw res;
                 }
               })
-              .then(function (template) {
-                console.log(template);
-              })
-              .catch(function (response) {
-                // "Not Found"
-                console.log(response.statusText);
-              });
+              .then((data) => console.log(data))
+              .catch((res) => console.log(res.statusText));
           </script>
         </li>
       {% endfor %}
