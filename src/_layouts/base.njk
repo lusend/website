@@ -23,6 +23,10 @@
 
   <div id="app">
     <div class="prose">
+      {% if env == 'stage' %}
+        <h1>Stage Test</h1>
+      {% endif %}
+
       {{ content | safe }}
     </div>
   </div>
