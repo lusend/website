@@ -832,6 +832,14 @@ html{
   pointer-events: none !important;
 }
 
+.btn.loading,.btn.loading:hover{
+  pointer-events: none;
+}
+
+.\!btn.\!loading,.\!btn.\!loading:hover{
+  pointer-events: none !important;
+}
+
 .\!btn.\!loading:before{
   border-radius: 9999px !important;
   border-width: 2px !important;
@@ -844,11 +852,28 @@ html{
   border-color: transparent currentColor currentColor transparent !important;
 }
 
+.btn.loading:before{
+  border-radius: 9999px;
+  border-width: 2px;
+  height: 1rem;
+  margin-right: .5rem;
+  width: 1rem;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  content: "";
+  border-color: transparent currentColor currentColor transparent;
+}
+
 @media (prefers-reduced-motion:reduce){
 
   .\!btn.\!loading:before{
     -webkit-animation: spin 10s linear infinite !important;
     animation: spin 10s linear infinite !important;
+  }
+
+  .btn.loading:before{
+    -webkit-animation: spin 10s linear infinite;
+    animation: spin 10s linear infinite;
   }
 }
 
@@ -1228,9 +1253,37 @@ html{
   margin-right: 0 !important;
 }
 
+.btn.loading.btn-circle:before,.btn.loading.btn-square:before{
+  margin-right: 0;
+}
+
+.\!btn.\!loading.\!btn-circle:before,.\!btn.\!loading.\!btn-square:before{
+  margin-right: 0 !important;
+}
+
 .\!btn.\!loading.\!btn-lg:before,.\!btn.\!loading.\!btn-xl:before{
   height: 1.25rem !important;
   width: 1.25rem !important;
+}
+
+.btn.loading.btn-lg:before,.btn.loading.btn-xl:before{
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.\!btn.\!loading.\!btn-lg:before,.\!btn.\!loading.\!btn-xl:before{
+  height: 1.25rem !important;
+  width: 1.25rem !important;
+}
+
+.\!btn.\!loading.\!btn-sm:before,.\!btn.\!loading.\!btn-xs:before{
+  height: .75rem !important;
+  width: .75rem !important;
+}
+
+.btn.loading.btn-sm:before,.btn.loading.btn-xs:before{
+  height: .75rem;
+  width: .75rem;
 }
 
 .\!btn.\!loading.\!btn-sm:before,.\!btn.\!loading.\!btn-xs:before{
@@ -1704,6 +1757,10 @@ html{
   margin-bottom: 1.25rem;
 }
 
+#app .mb-2{
+  margin-bottom: 0.5rem;
+}
+
 #app .block{
   display: block;
 }
@@ -1756,6 +1813,19 @@ html{
   text-transform: uppercase;
 }
 
+#app .italic{
+  font-style: italic;
+}
+
+#app .not-italic{
+  font-style: normal;
+}
+
+#app .no-underline{
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
 #pagefooter,
 #pageheader,
 #pagenav-wrapper,
@@ -1779,6 +1849,11 @@ html{
 .row {
   margin-left: 0;
   margin-right: 0;
+}
+
+#app .hover\:underline:hover{
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
   

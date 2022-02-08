@@ -838,6 +838,14 @@ html{
   pointer-events: none !important;
 }
 
+.btn.loading,.btn.loading:hover{
+  pointer-events: none;
+}
+
+.\!btn.\!loading,.\!btn.\!loading:hover{
+  pointer-events: none !important;
+}
+
 .\!btn.\!loading:before{
   border-radius: 9999px !important;
   border-width: 2px !important;
@@ -850,11 +858,28 @@ html{
   border-color: transparent currentColor currentColor transparent !important;
 }
 
+.btn.loading:before{
+  border-radius: 9999px;
+  border-width: 2px;
+  height: 1rem;
+  margin-right: .5rem;
+  width: 1rem;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  content: "";
+  border-color: transparent currentColor currentColor transparent;
+}
+
 @media (prefers-reduced-motion:reduce){
 
   .\!btn.\!loading:before{
     -webkit-animation: spin 10s linear infinite !important;
     animation: spin 10s linear infinite !important;
+  }
+
+  .btn.loading:before{
+    -webkit-animation: spin 10s linear infinite;
+    animation: spin 10s linear infinite;
   }
 }
 
@@ -1234,9 +1259,37 @@ html{
   margin-right: 0 !important;
 }
 
+.btn.loading.btn-circle:before,.btn.loading.btn-square:before{
+  margin-right: 0;
+}
+
+.\!btn.\!loading.\!btn-circle:before,.\!btn.\!loading.\!btn-square:before{
+  margin-right: 0 !important;
+}
+
 .\!btn.\!loading.\!btn-lg:before,.\!btn.\!loading.\!btn-xl:before{
   height: 1.25rem !important;
   width: 1.25rem !important;
+}
+
+.btn.loading.btn-lg:before,.btn.loading.btn-xl:before{
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.\!btn.\!loading.\!btn-lg:before,.\!btn.\!loading.\!btn-xl:before{
+  height: 1.25rem !important;
+  width: 1.25rem !important;
+}
+
+.\!btn.\!loading.\!btn-sm:before,.\!btn.\!loading.\!btn-xs:before{
+  height: .75rem !important;
+  width: .75rem !important;
+}
+
+.btn.loading.btn-sm:before,.btn.loading.btn-xs:before{
+  height: .75rem;
+  width: .75rem;
 }
 
 .\!btn.\!loading.\!btn-sm:before,.\!btn.\!loading.\!btn-xs:before{
@@ -1710,6 +1763,10 @@ html{
   margin-bottom: 1.25rem;
 }
 
+#app .mb-2{
+  margin-bottom: 0.5rem;
+}
+
 #app .block{
   display: block;
 }
@@ -1762,6 +1819,19 @@ html{
   text-transform: uppercase;
 }
 
+#app .italic{
+  font-style: italic;
+}
+
+#app .not-italic{
+  font-style: normal;
+}
+
+#app .no-underline{
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
 #pagefooter,
 #pageheader,
 #pagenav-wrapper,
@@ -1785,6 +1855,11 @@ html{
 .row {
   margin-left: 0;
   margin-right: 0;
+}
+
+#app .hover\:underline:hover{
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
 
@@ -1814,14 +1889,18 @@ function get(link, callback, error) {
       <div class="prose m-auto">
         <p><a href="https://github.com/lusend/testwebsite/actions/workflows/build.yml"><img src="https://github.com/lusend/testwebsite/actions/workflows/build.yml/badge.svg" alt="Build and Deploy Website" /></a> <a href="https://github.com/lusend/testwebsite/actions/workflows/pages/pages-build-deployment"><img src="https://github.com/lusend/testwebsite/actions/workflows/pages/pages-build-deployment/badge.svg" alt="pages-build-deployment" /></a></p>
 <h1 id="lu-send-website" tabindex="-1"><a class="header-anchor" href="#lu-send-website">LU Send Website</a></h1>
-<p>All pages are listed below. Copy each page for the stage and/or production environments, or preview the page as desired. Make sure the <code>Current Deployment</code> matches your most recent changes. Reload if this is not the case. This could take up to a minute.</p>
+<p>All pages are listed below. Copy each page for the stage and/or production environments, or preview the page as desired. Make sure the <code>Current Deployment</code> matches your most recent changes. Reload if this is not the case. This could take up to 3 minutes.</p>
 <h2 id="current-deployment" tabindex="-1"><a class="header-anchor" href="#current-deployment">Current Deployment</a></h2>
+<div id="commit-info">
 <blockquote>
-<p>
-  <a id="commit" target="_blank">&nbsp;</a>
+<p class="not-italic">
+  <a id="commit" class="no-underline hover:underline" target="_blank">&nbsp;</a>
 </p> 
-<span class='text-xs'><a id="committerName"  target="_blank">&nbsp;</a> on <span id="committerDate">&nbsp;</span>
+<span class='text-xs'>
+  <a id="committerName"  target="_blank">&nbsp;</a> on <span id="committerDate">&nbsp;</span>
+</span>
 </blockquote>
+</div>
 
 
         <div class="mt-5 not-prose">
@@ -1858,7 +1937,7 @@ function get(link, callback, error) {
           </script>
 
           
-            <div>
+            <div class="mb-2">
               <span class="uppercase font-bold">Test Page 2</span>
               <div class="relative">
                 <input id="bro" type="text" placeholder="HTML Here" class="truncate w-full !pr-52 !input !input-primary !input-bordered" disabled="disabled" \>
@@ -1951,7 +2030,7 @@ function get(link, callback, error) {
               </script>
             </div>
           
-            <div>
+            <div class="mb-2">
               <span class="uppercase font-bold">Test Page</span>
               <div class="relative">
                 <input id="pages" type="text" placeholder="HTML Here" class="truncate w-full !pr-52 !input !input-primary !input-bordered" disabled="disabled" \>
@@ -2054,15 +2133,17 @@ function get(link, callback, error) {
       const baseApiLink = 'https://api.github.com/repos/';
 
       function getCommit(link) {
-        link = baseApiLink + link;
         const href = baseLink + link.replace('git/commits', 'commit');
-        console.log({link, href});
+        link = baseApiLink + link;
+
         get(link, (data) => {
           data = JSON.parse(data);
-          console.log(data.committer)
+
           document
             .getElementById('commit')
-            .innerHTML = data.message;
+            .innerHTML = data
+            .message
+            .replace(/\n/g, '<br />');
           document
             .getElementById('commit')
             .href = href;
@@ -2075,6 +2156,10 @@ function get(link, callback, error) {
           document
             .getElementById('committerDate')
             .innerHTML = data.committer.date;
+        }, (error) => {
+          document
+            .getElementById('commit-info')
+            .innerHTML = '<p class=\'italic\'>Trouble loading Current Deployment information.</p>';
         })
       }
 
