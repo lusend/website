@@ -59,7 +59,7 @@
           </script>
 
           {% for item in collections.pages %}
-            <div>
+            <div class="mb-2">
               <span class="uppercase font-bold">{{ item.data.title }}</span>
               <div class="relative">
                 <input id="{{ item.data.slug }}" type="text" placeholder="HTML Here" class="truncate w-full !pr-52 !input !input-primary !input-bordered" disabled="disabled" \>
@@ -162,15 +162,17 @@
       const baseApiLink = 'https://api.github.com/repos/';
 
       function getCommit(link) {
-        link = baseApiLink + link;
         const href = baseLink + link.replace('git/commits', 'commit');
-        console.log({link, href});
+        link = baseApiLink + link;
+
         get(link, (data) => {
           data = JSON.parse(data);
-          console.log(data.committer)
+
           document
             .getElementById('commit')
-            .innerHTML = data.message;
+            .innerHTML = data
+            .message
+            .replace(/\n/g, '<br />');
           document
             .getElementById('commit')
             .href = href;
@@ -183,6 +185,10 @@
           document
             .getElementById('committerDate')
             .innerHTML = data.committer.date;
+        }, (error) => {
+          document
+            .getElementById('commit-info')
+            .innerHTML = '<p class=\'italic\'>Trouble loading Current Deployment information.</p>';
         })
       }
 

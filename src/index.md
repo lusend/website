@@ -6,11 +6,17 @@ layout: home
 
 # LU Send Website
 
-All pages are listed below. Copy each page for the stage and/or production environments, or preview the page as desired. Make sure the `Current Deployment` matches your most recent changes. Reload if this is not the case. This could take up to a minute.
+All pages are listed below. Copy each page for the stage and/or production environments, or preview the page as desired. Make sure the `Current Deployment` matches your most recent changes. Reload if this is not the case. This could take up to 3 minutes.
 
 ## Current Deployment
 
-> <p>
->   <a id="commit" target="_blank">&nbsp;</a>
+<div id="commit-info">
+
+> <p class="not-italic">
+>   <a id="commit" class="no-underline hover:underline" target="_blank">&nbsp;</a>
 > </p> 
-> <span class='text-xs'><a id="committerName"  target="_blank">&nbsp;</a> on <span id="committerDate">&nbsp;</span>
+> <span class='text-xs'>
+>   <a id="committerName"  target="_blank">&nbsp;</a> on <span id="committerDate">&nbsp;</span>
+> </span>
+
+</div>
