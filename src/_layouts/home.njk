@@ -78,7 +78,7 @@
               <script>
                 function {{ item.data.slug }}() {
                   const prod = '{{ item.data.permalink | url }}';
-                  const stage = '{{ item.data.path + "_stage.html" | url }}';
+                  const stage = '{{ (item.data.path + "_stage.html") | url }}';
                   const slug = '{{ item.data.slug }}';
 
                   document
