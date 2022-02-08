@@ -7,8 +7,10 @@ module.exports = async function (configData) {
     tags: ['pages'],
     suffix: env === 'stage' ? '_stage' : '',
     eleventyComputed: {
-      permalink: `{{ page.filePathStem }}{{ suffix }}.html`,
-      slug: '{{ page.fileSlug }}'
+      path: `{{ page.filePathStem }}{{ suffix }}`,
+      permalink: `{{ path }}.html`,
+      slug: '{{ page.fileSlug }}{{ suffix }}',
+      title: (data) => (data.title ? data.title : data.slug)
     }
   };
 };

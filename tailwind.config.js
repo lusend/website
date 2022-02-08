@@ -4,6 +4,7 @@ module.exports = {
     './src/pages/**/*.{html,js,md,njk}',
     './src/_includes/**/*.{html,js,md,njk}',
     './src/_layouts/**/*.{html,js,md,njk}',
+    './src/index.md',
     '!./src/_layouts/page.njk',
     '!./src/_layouts/brochure.njk'
   ],

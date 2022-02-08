@@ -30,4 +30,11 @@
       }
     }
   }
+
+  /* Badges */
+  img[src*="https://github.com/"]
+  {
+    display: inline;
+    margin: 0;
+  }
 }

@@ -1,0 +1,195 @@
+{% set css %}
+{% include "main.css" %}
+{% endset %}
+
+{% set js %}
+{% include "helpers.js" %}
+{% endset %}
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LU Send Website</title>
+    <style>
+      {{css | postcss | safe}}
+    </style>
+    <script>
+      {{js | safe}}
+    </script>
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="prose m-auto">
+        {{ content | safe }}
+
+        <div class="mt-5 not-prose">
+          <label class="cursor-pointer label mb-5">
+            <strong id="envToggleLabel" class="label-text">Production Content</strong>
+            <input id="envToggle" checked="checked" type="checkbox" onchange='toggleEnv()' class="!toggle !toggle-lg !toggle-secondary">
+          </label>
+
+          <script>
+            let env = 'production';
+
+            function toggleEnv() {
+              const toggle = document
+                .getElementById('envToggle')
+                .checked;
+
+              env = toggle
+                ? 'prod'
+                : 'stage';
+
+              document
+                .getElementById('envToggleLabel')
+                .innerHTML = toggle
+                  ? 'Production Content'
+                  : 'Stage Content';
+            }
+
+            window.addEventListener('load', function () {
+              toggleEnv();
+              setTimeout(function () {
+                toggleEnv();
+              }, 500);
+            });
+          </script>
+
+          {% for item in collections.pages %}
+            <div>
+              <span class="uppercase font-bold">{{ item.data.title }}</span>
+              <div class="relative">
+                <input id="{{ item.data.slug }}" type="text" placeholder="HTML Here" class="truncate w-full !pr-52 !input !input-primary !input-bordered" disabled="disabled" \>
+                <div class="!btn-group absolute top-0 right-0">
+                  <button id="{{ item.data.slug + "_link" }}" class="!btn !btn-secondary !rounded-l-none flex items-center gap-1">
+                    <ion-icon name="open-outline">&nbsp;</ion-icon>
+                    <span>Preview</span>
+                  </button>
+                  <button id="{{ item.data.slug + "_copy" }}" class="!btn !btn-primary flex items-center gap-1">
+                    <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+                    <span id="{{ item.data.slug + "_copytext" }}">Copy</span>
+                  </button>
+                </div>
+              </div>
+
+              <script>
+                function {{ item.data.slug }}() {
+                  const prod = '{{ item.data.permalink | url }}';
+                  const stage = '{{ item.data.path + "_stage.html" | url }}';
+                  const slug = '{{ item.data.slug }}';
+
+                  document
+                    .getElementById(slug + '_link')
+                    .onclick = function () {
+                      const link = env === 'stage'
+                        ? stage
+                        : prod;
+                      window.location.href = link;
+                    }
+
+                  document
+                    .getElementById(slug + '_copy')
+                    .onclick = function () {
+                      const link = env === 'stage'
+                        ? stage
+                        : prod;
+
+                      get(link, (data) => {
+                        document
+                          .getElementById(slug)
+                          .value = data;
+
+                        navigator
+                          .clipboard
+                          .writeText(data);
+
+                        document
+                          .getElementById(slug + '_copytext')
+                          .innerHTML = 'Copied';
+
+                        setTimeout(function () {
+                          document
+                            .getElementById(slug + '_copytext')
+                            .innerHTML = 'Copy';
+                        }, 500)
+                      }, (error) => {
+                        document
+                          .getElementById(slug)
+                          .value = error.statusText;
+                      });
+                    }
+
+                  function setupPageCopy() {
+                    setTimeout(function () {
+                      const link = env === 'stage'
+                        ? stage
+                        : prod;
+
+                      get(link, (data) => {
+                        document
+                          .getElementById(slug)
+                          .value = data;
+                      }, (error) => {
+                        document
+                          .getElementById(slug)
+                          .value = error.statusText;
+                      });
+                    }, 100)
+
+                  }
+
+                  document
+                    .getElementById('envToggle')
+                    .addEventListener('change', setupPageCopy);
+
+                  setupPageCopy();
+                }
+
+                {{ item.data.slug }}();
+              </script>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+
+    <script>
+      const baseLink = 'https://github.com/'
+      const baseApiLink = 'https://api.github.com/repos/';
+
+      function getCommit(link) {
+        link = baseApiLink + link;
+        const href = baseLink + link.replace('git/commits', 'commit');
+        console.log({link, href});
+        get(link, (data) => {
+          data = JSON.parse(data);
+          console.log(data.committer)
+          document
+            .getElementById('commit')
+            .innerHTML = data.message;
+          document
+            .getElementById('commit')
+            .href = href;
+          document
+            .getElementById('committerName')
+            .innerHTML = data.committer.name;
+          document
+            .getElementById('committerName')
+            .href = 'mailto:' + data.committer.email;
+          document
+            .getElementById('committerDate')
+            .innerHTML = data.committer.date;
+        })
+      }
+
+      get(baseApiLink + 'lusend/testwebsite/commits/gh-pages', (data) => getCommit(JSON.parse(data).commit.message.match(/(?<=@\s+?)[^\s]+/).toString().replace('@', '/git/commits/')));
+    </script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>
