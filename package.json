@@ -7,9 +7,11 @@
     "start": "npm run dev",
     "dev": "ELEVENTY_ENV=development npx @11ty/eleventy --serve",
     "build": "ELEVENTY_ENV=production npx @11ty/eleventy",
+    "stage": "ELEVENTY_ENV=stage npx @11ty/eleventy",
     "clean": "rm -Rf dist",
     "predev": "npm run clean",
-    "prebuild": "npm run clean"
+    "prebuild": "npm run stage",
+    "prestage": "npm run clean"
   },
   "repository": {
     "type": "git",
@@ -27,6 +29,12 @@
     "@types/jquery": "^3.5.13",
     "autoprefixer": "^10.4.2",
     "daisyui": "^1.25.4",
+    "markdown-it-anchor": "^8.4.1",
+    "markdown-it-attrs": "^4.1.3",
+    "markdown-it-emoji": "^2.0.0",
+    "markdown-it-sub": "^1.0.0",
+    "markdown-it-sup": "^1.0.0",
+    "markdown-it-toc-done-right": "^4.2.0",
     "postcss": "^8.4.6",
     "postcss-import": "^14.0.2",
     "tailwindcss": "^3.0.18"

@@ -7,7 +7,8 @@ html {
 }
 
 #app {
-  font-family: Montserrat, -apple-system, sans-serif;
+  margin: 2rem;
+  font-family: 'Poppins', sans-serif;
 
   *,
   ::before,

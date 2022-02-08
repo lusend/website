@@ -21,6 +21,34 @@ async function renderPostCSS(css, callback) {
  *  @returns {ReturnType<import("@11ty/eleventy/src/defaultConfig")>}
  */
 module.exports = function (eleventyConfig) {
+  const markdownIt = require('markdown-it');
+  const anchor = require('markdown-it-anchor');
+  const options = {
+    html: true,
+    xhtmlOut: true,
+    breaks: true,
+    linkify: true,
+    typographer: true
+  };
+
+  eleventyConfig.setLibrary(
+    'md',
+    markdownIt(options)
+      .use(require('markdown-it-sub'))
+      .use(require('markdown-it-sup'))
+      .use(require('markdown-it-emoji'))
+      .use(require('markdown-it-attrs'))
+      .use(anchor, {
+        leveL: 6,
+        class: 'header-anchor',
+        permalink: anchor.permalink.headerLink()
+      })
+      .use(require('markdown-it-toc-done-right'), {
+        containerClass: 'table-of-contents not-prose',
+        level: [1, 2, 3]
+      })
+  );
+
   eleventyConfig.addNunjucksAsyncFilter('postcss', renderPostCSS);
   eleventyConfig.addNunjucksAsyncFilter('link', (slug, callback) =>
     callback(null, `https://liberty-sa.terradotta.com?go=${slug}`)
