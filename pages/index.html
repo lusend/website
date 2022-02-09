@@ -834,8 +834,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   flex: 1 1 auto;
 }
 
+#app .basis-full{
+  flex-basis: 100%;
+}
+
 #app .cursor-pointer{
   cursor: pointer;
+}
+
+#app .flex-wrap{
+  flex-wrap: wrap;
 }
 
 #app .items-center{
@@ -862,8 +870,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
   border-radius: 0.5rem;
 }
 
-#app .rounded-none{
-  border-radius: 0px;
+#app .rounded-b-none{
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+#app .rounded-t-none{
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 }
 
 #app .rounded-r-none{
@@ -891,14 +905,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
   background-color: rgb(153 0 0 / var(--tw-bg-opacity));
 }
 
-#app .py-2{
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
 #app .px-5{
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+}
+
+#app .py-2{
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 #app .text-xs{
@@ -996,6 +1010,41 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app #app .prose-a\:font-\[initial\] :is(:where(a):not(:where([class~="not-prose"] *))){
   font-family: initial;
+}
+
+@media (min-width: 1024px){
+
+  #app .lg\:flex-auto{
+    flex: 1 1 auto;
+  }
+
+  #app .lg\:flex-initial{
+    flex: 0 1 auto;
+  }
+
+  #app .lg\:basis-0{
+    flex-basis: 0px;
+  }
+
+  #app .lg\:rounded-b-lg{
+    border-bottom-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+  }
+
+  #app .lg\:rounded-r-none{
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+
+  #app .lg\:rounded-l-none{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
+  #app .lg\:rounded-t-lg{
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
 }
 
   

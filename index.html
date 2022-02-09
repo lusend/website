@@ -840,8 +840,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   flex: 1 1 auto;
 }
 
+#app .basis-full{
+  flex-basis: 100%;
+}
+
 #app .cursor-pointer{
   cursor: pointer;
+}
+
+#app .flex-wrap{
+  flex-wrap: wrap;
 }
 
 #app .items-center{
@@ -868,8 +876,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
   border-radius: 0.5rem;
 }
 
-#app .rounded-none{
-  border-radius: 0px;
+#app .rounded-b-none{
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+#app .rounded-t-none{
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 }
 
 #app .rounded-r-none{
@@ -897,14 +911,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
   background-color: rgb(153 0 0 / var(--tw-bg-opacity));
 }
 
-#app .py-2{
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
 #app .px-5{
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+}
+
+#app .py-2{
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 #app .text-xs{
@@ -1004,6 +1018,41 @@ Reset links to optimize for opt-in styling instead of opt-out.
   font-family: initial;
 }
 
+@media (min-width: 1024px){
+
+  #app .lg\:flex-auto{
+    flex: 1 1 auto;
+  }
+
+  #app .lg\:flex-initial{
+    flex: 0 1 auto;
+  }
+
+  #app .lg\:basis-0{
+    flex-basis: 0px;
+  }
+
+  #app .lg\:rounded-b-lg{
+    border-bottom-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+  }
+
+  #app .lg\:rounded-r-none{
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+
+  #app .lg\:rounded-l-none{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
+  #app .lg\:rounded-t-lg{
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }
+}
+
 
     </style>
   </head>
@@ -1018,36 +1067,36 @@ Reset links to optimize for opt-in styling instead of opt-out.
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <p>If the below commit does not match the most recent commit, the site is still deploying. Check the status above or visit the repo for more information.</p>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/testwebsite/commit/c24825c4a51affdaf1a91cdaa87ff8a6a9aacc07" class="no-underline hover:underline" target="_blank">fix: 🐛 Deployment Status Issues<br />
+  <a href="https://github.com/lusend/testwebsite/commit/77cf5f0e06add8666cd3ef54e6e1d9d848441251" class="no-underline hover:underline" target="_blank">feat: 💄 Updated Page Styles<br />
 <br />
-Deployment status was stale. Made it update in real time.</a>
+Added page styles for mobile. Also updated stage/production toggle wording to make its function clearer.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-09T23:09:38Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-09T23:23:21Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
 
 
-        <label for="envToggle" class="my-5 not-prose cursor-pointer flex w-full items-center">
+        <label for="envToggle" class="flex items-center w-full my-5 cursor-pointer not-prose">
           <strong id="envToggleLabel" class="flex-auto">
-            Production Content
+            Preview & Copy Production Content
           </strong>
           <div class="relative">
             <input type="checkbox" checked="checked" autocomplete="off" onchange="toggleEnv()"  id="envToggle" class="sr-only peer"/>
-            <div class="absolute left-1 top-1 bg-white w-6 h-6 rounded-full peer-checked:translate-x-full bg-primary transition z-10"></div>
-            <div class="bg-base-300 w-14 h-8 rounded-full z-0"></div>
+            <div class="absolute z-10 w-6 h-6 transition bg-white rounded-full left-1 top-1 peer-checked:translate-x-full bg-primary"></div>
+            <div class="z-0 h-8 rounded-full bg-base-300 w-14"></div>
           </div>
         </label>
 
         
           <div class="mb-2">
-            <div class="flex items-stretch">
-              <div class="flex-auto uppercase font-bold rounded-lg py-2 px-5 bg-base-300 rounded-r-none">Test Page</div>
-              <button id="pages_preview" class="text-primary-content bg-primary hover:bg-primary-focus font-semibold rounded-none flex justify-center gap-2 items-center py-2 px-5">
+            <div class="flex flex-wrap items-stretch">
+              <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Test Page</div>
+              <button id="pages_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
                 <ion-icon name="open-outline">&nbsp;</ion-icon>
                 <span>Preview</span>
               </button>
-              <button id="pages_copy" class="text-secondary-content bg-secondary hover:bg-secondary-focus font-semibold rounded-lg rounded-l-none flex justify-center gap-2 items-center py-2 px-5">
+              <button id="pages_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-t-lg lg:rounded-l-none lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
                 <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
                 <span id="pages_copytext">Copy</span>
               </button>
@@ -1079,8 +1128,8 @@ function toggleEnv() {
   env = toggle ? 'production' : 'stage';
 
   document.getElementById('envToggleLabel').innerHTML = toggle
-    ? 'Production Content'
-    : 'Stage Content';
+    ? 'Preview & Copy Production Content'
+    : 'Preview & Copy Stage Content';
 }
 
 toggleEnv();
@@ -1159,7 +1208,7 @@ function preview(slug, production, stage) {
 }
 
 
-  checkIfDeployed('c24825c4a51affdaf1a91cdaa87ff8a6a9aacc07');
+  checkIfDeployed();
 </script>
 </body>
 </html>
