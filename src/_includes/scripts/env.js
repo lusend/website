@@ -7,8 +7,8 @@ function toggleEnv() {
   env = toggle ? 'production' : 'stage';
 
   document.getElementById('envToggleLabel').innerHTML = toggle
-    ? 'Production Content'
-    : 'Stage Content';
+    ? 'Preview & Copy Production Content'
+    : 'Preview & Copy Stage Content';
 }
 
 toggleEnv();
