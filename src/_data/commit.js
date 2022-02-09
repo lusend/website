@@ -43,6 +43,7 @@ module.exports = async function () {
       id
     };
   } catch (error) {
+    console.log(error);
     return {
       message: undefined,
       name: undefined,
