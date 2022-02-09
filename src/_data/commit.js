@@ -44,6 +44,7 @@ module.exports = async function () {
     };
   } catch (error) {
     console.log(error);
+
     return {
       message: undefined,
       name: undefined,

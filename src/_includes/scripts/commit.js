@@ -35,6 +35,8 @@ async function checkIfDeployed(commitID) {
       document.getElementById('status').innerHTML =
         'Deployment Status: 🚧 Deploying... (Reload to check again)';
   } catch (error) {
+    console.log(error);
+
     document.getElementById('status').innerHTML =
       'Deployment Status: ⛔ Unknown (Reached API Rate Limit)';
   }

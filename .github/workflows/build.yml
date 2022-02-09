@@ -20,6 +20,7 @@ jobs:
           node-version: 'lts/*'
 
       - name: Create Env ⚙️
+        shell: bash
         run: |
           touch .env
           echo "GH_PAT=$GH_PAT" >> .env
