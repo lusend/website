@@ -22,7 +22,9 @@ jobs:
       - name: Create Env ⚙️
         run: |
           touch .env
-          echo GH_PAC=${{ secrets.GH_PAC }} >> .env
+          echo "GH_PAT=$GH_PAT" >> .env
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
 
       - name: Install 🔧
         run: npm ci

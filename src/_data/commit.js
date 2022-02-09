@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 const markdown = require('../../config/markdown');
 
-const GH_PAC = process.env.GH_PAC || '';
+const GH_PAT = process.env.GH_PAT || '';
 
 async function get(link, { asText = false, headers = {} } = {}) {
   const res = await fetch(link, { headers });
@@ -16,7 +16,7 @@ module.exports = async function () {
       'https://api.github.com/repos/lusend/testwebsite/branches',
       {
         headers: {
-          authorization: `token ${GH_PAC}`
+          authorization: `token ${GH_PAT}`
         }
       }
     );
@@ -27,7 +27,7 @@ module.exports = async function () {
 
     const main = await get(url, {
       headers: {
-        authorization: `token ${GH_PAC}`
+        authorization: `token ${GH_PAT}`
       }
     });
     const {

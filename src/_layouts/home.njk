@@ -37,7 +37,7 @@
 
         {% for item in collections.pages %}
           <div class="mb-2">
-            <div class="flex items-center">
+            <div class="flex items-stretch">
               <div class="flex-auto uppercase font-bold rounded-lg py-2 px-5 bg-base-300 rounded-r-none">{{ item.data.title }}</div>
               <button id="{{ item.data.slug + "_preview" }}" class="text-primary-content bg-primary hover:bg-primary-focus font-semibold rounded-none flex justify-center gap-2 items-center py-2 px-5">
                 <ion-icon name="open-outline">&nbsp;</ion-icon>
