@@ -5,7 +5,7 @@ async function get(link, { asText = false, headers = {} } = {}) {
   return await res.json();
 }
 
-async function checkIfDeployed(commitID) {
+async function checkIfDeployed() {
   try {
     const deployments = await get(
       'https://api.github.com/repos/lusend/testwebsite/deployments'
@@ -14,6 +14,8 @@ async function checkIfDeployed(commitID) {
     const branches = await get(
       'https://api.github.com/repos/lusend/testwebsite/branches'
     );
+
+    const { sha: commitID } = branches.find((el) => el.name === 'main').commit;
 
     const { sha: deploymentCommitID, url } = branches.find(
       (el) => el.name === 'gh-pages'
