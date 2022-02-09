@@ -29,7 +29,7 @@ async function checkIfDeployed(commitID) {
 
     if (deployed)
       document.getElementById('status').innerHTML =
-        'Deployment Status: ✅ Deploying... (Reload to check again)';
+        'Deployment Status: ✅ Deployed!';
 
     if (!deployed)
       document.getElementById('status').innerHTML =
