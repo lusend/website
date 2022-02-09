@@ -1018,11 +1018,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <p>If the below commit does not match the most recent commit, the site is still deploying. Check the status above or visit the repo for more information.</p>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/testwebsite/commit/922eb3bfc9af2f8f8ada8534875944409076caee" class="no-underline hover:underline" target="_blank">style: 💄 Updated Deployment Styles and Content<br />
+  <a href="https://github.com/lusend/testwebsite/commit/c24825c4a51affdaf1a91cdaa87ff8a6a9aacc07" class="no-underline hover:underline" target="_blank">fix: 🐛 Deployment Status Issues<br />
 <br />
-Changed deployment wording and added clarification to certain deployment statuses. Also added a page header to more clearly distinguish between commits and pages.</a>
+Deployment status was stale. Made it update in real time.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-09T23:07:15Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-09T23:09:38Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
@@ -1092,7 +1092,7 @@ async function get(link, { asText = false, headers = {} } = {}) {
   return await res.json();
 }
 
-async function checkIfDeployed(commitID) {
+async function checkIfDeployed() {
   try {
     const deployments = await get(
       'https://api.github.com/repos/lusend/testwebsite/deployments'
@@ -1101,6 +1101,8 @@ async function checkIfDeployed(commitID) {
     const branches = await get(
       'https://api.github.com/repos/lusend/testwebsite/branches'
     );
+
+    const { sha: commitID } = branches.find((el) => el.name === 'main').commit;
 
     const { sha: deploymentCommitID, url } = branches.find(
       (el) => el.name === 'gh-pages'
@@ -1157,7 +1159,7 @@ function preview(slug, production, stage) {
 }
 
 
-  checkIfDeployed('922eb3bfc9af2f8f8ada8534875944409076caee');
+  checkIfDeployed('c24825c4a51affdaf1a91cdaa87ff8a6a9aacc07');
 </script>
 </body>
 </html>
