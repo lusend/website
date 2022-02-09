@@ -1015,15 +1015,17 @@ Reset links to optimize for opt-in styling instead of opt-out.
 <p><span id="status" class="text-xs font-semibold"> </span></p>
 <h1 id="lu-send-website" tabindex="-1"><a class="header-anchor" href="#lu-send-website">LU Send Website</a></h1>
 <p>All pages are listed below. Copy each page for the stage and/or production environments, or preview the page as desired. Make sure the <code>Current Deployment</code> matches your most recent changes. Reload if this is not the case. This could take up to 3 minutes.</p>
-<h2 id="latest-commit" tabindex="-1"><a class="header-anchor" href="#latest-commit">Latest Commit</a></h2>
+<h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
+<p>If the below commit does not match the most recent commit, the site is still deploying. Check the status above or visit the repo for more information.</p>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/testwebsite/commit/4354198a919c5b658ffbc1909d9162ae2f77334c" class="no-underline hover:underline" target="_blank">fix: 🐛 Fixed Deployment Status Message<br />
+  <a href="https://github.com/lusend/testwebsite/commit/922eb3bfc9af2f8f8ada8534875944409076caee" class="no-underline hover:underline" target="_blank">style: 💄 Updated Deployment Styles and Content<br />
 <br />
-Fixed bug where deployment status was always unknown.</a>
+Changed deployment wording and added clarification to certain deployment statuses. Also added a page header to more clearly distinguish between commits and pages.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-09T23:02:12Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-09T23:07:15Z</span>
   </div>
 </blockquote>
+<h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
 
 
         <label for="envToggle" class="my-5 not-prose cursor-pointer flex w-full items-center">
@@ -1114,7 +1116,7 @@ async function checkIfDeployed(commitID) {
 
     if (deployed)
       document.getElementById('status').innerHTML =
-        'Deployment Status: ✅ Deploying... (Reload to check again)';
+        'Deployment Status: ✅ Deployed!';
 
     if (!deployed)
       document.getElementById('status').innerHTML =
@@ -1155,7 +1157,7 @@ function preview(slug, production, stage) {
 }
 
 
-  checkIfDeployed('4354198a919c5b658ffbc1909d9162ae2f77334c');
+  checkIfDeployed('922eb3bfc9af2f8f8ada8534875944409076caee');
 </script>
 </body>
 </html>
