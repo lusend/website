@@ -8,11 +8,11 @@ layout: home
 
 # LU Send Website
 
-All pages are listed below. Copy each page for the stage and/or production environments, or preview the page as desired. Make sure the `Current Deployment` matches your most recent changes. Reload if this is not the case. This could take up to 3 minutes.
+All pages are listed below. Copy each page for the stage and/or production environments, or preview the page as desired. If the `Current Deployment Commit` does not match the most recent change made to the website, the website is still deploying. Please reload to check again.
+
+_The deployment status should be visible at the top of the page. Check the status by clicking on either of the status badges or visiting the [repository](https://github.com/lusend/testwebsite)._
 
 ## Current Deployment Commit
-
-If the below commit does not match the most recent commit, the site is still deploying. Check the status above or visit the repo for more information.
 
 <blockquote class="not-italic">
   <a href="https://github.com/lusend/testwebsite/commit/{{ commit.id }}" class="no-underline hover:underline" target="_blank">{{ commit.message | safe }}</a>

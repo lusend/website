@@ -30,7 +30,7 @@
           </strong>
           <div class="relative">
             <input type="checkbox" checked="checked" autocomplete="off" onchange="toggleEnv()"  id="envToggle" class="sr-only peer"/>
-            <div class="absolute z-10 w-6 h-6 transition bg-white rounded-full left-1 top-1 peer-checked:translate-x-full bg-primary"></div>
+            <div class="absolute z-10 w-6 h-6 transition bg-white rounded-full left-1 top-1 peer-checked:translate-x-full bg-primary peer-checked:bg-secondary"></div>
             <div class="z-0 h-8 rounded-full bg-base-300 w-14"></div>
           </div>
         </label>
@@ -43,7 +43,7 @@
                 <ion-icon name="open-outline">&nbsp;</ion-icon>
                 <span>Preview</span>
               </button>
-              <button id="{{ item.data.slug + "_copy" }}" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-t-lg lg:rounded-l-none lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+              <button id="{{ item.data.slug + "_copy" }}" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
                 <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
                 <span id="{{ item.data.slug + "_copytext" }}">Copy</span>
               </button>
