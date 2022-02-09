@@ -24,7 +24,7 @@ async function checkIfDeployed(commitID) {
     const { message: deploymentCommitMessage } = deploymentCommit.commit;
 
     const deployed =
-      deploymentCommitMessage.contains(commitID) &&
+      deploymentCommitMessage.includes(commitID) &&
       deploymentID === deploymentCommitID;
 
     if (deployed)
