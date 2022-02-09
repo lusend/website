@@ -1017,9 +1017,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 <p>All pages are listed below. Copy each page for the stage and/or production environments, or preview the page as desired. Make sure the <code>Current Deployment</code> matches your most recent changes. Reload if this is not the case. This could take up to 3 minutes.</p>
 <h2 id="latest-commit" tabindex="-1"><a class="header-anchor" href="#latest-commit">Latest Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/testwebsite/commit/" class="no-underline hover:underline" target="_blank"></a>
+  <a href="https://github.com/lusend/testwebsite/commit/b0e684262e28797d5b836d458a9a1c2f9dabe9fc" class="no-underline hover:underline" target="_blank">fix: 💚 Add Shell to Deployment &amp; Add Console Statements<br />
+<br />
+Added the bash shell to explicitly mark the correct shell for creating the environment. Also ensured console statements were used when trying to access the GH rest API.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:" target="_blank"></a> on <span id="committerDate"></span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-09T22:59:54Z</span>
   </div>
 </blockquote>
 
@@ -1118,6 +1120,8 @@ async function checkIfDeployed(commitID) {
       document.getElementById('status').innerHTML =
         'Deployment Status: 🚧 Deploying... (Reload to check again)';
   } catch (error) {
+    console.log(error);
+
     document.getElementById('status').innerHTML =
       'Deployment Status: ⛔ Unknown (Reached API Rate Limit)';
   }
@@ -1151,7 +1155,7 @@ function preview(slug, production, stage) {
 }
 
 
-  checkIfDeployed('');
+  checkIfDeployed('b0e684262e28797d5b836d458a9a1c2f9dabe9fc');
 </script>
 </body>
 </html>
