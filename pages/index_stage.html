@@ -761,6 +761,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   border-width: 0;
 }
 
+#app .visible{
+  visibility: visible;
+}
+
 #app .absolute{
   position: absolute;
 }
@@ -1008,6 +1012,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+#app .peer:checked ~ .peer-checked\:bg-secondary{
+  --tw-bg-opacity: 1;
+  background-color: rgb(153 0 0 / var(--tw-bg-opacity));
+}
+
 #app #app .prose-a\:font-\[initial\] :is(:where(a):not(:where([class~="not-prose"] *))){
   font-family: initial;
 }
@@ -1041,8 +1050,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
     border-bottom-left-radius: 0px;
   }
 
-  #app .lg\:rounded-t-lg{
-    border-top-left-radius: 0.5rem;
+  #app .lg\:rounded-tr-lg{
     border-top-right-radius: 0.5rem;
   }
 }

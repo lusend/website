@@ -767,6 +767,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   border-width: 0;
 }
 
+#app .visible{
+  visibility: visible;
+}
+
 #app .absolute{
   position: absolute;
 }
@@ -1014,6 +1018,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+#app .peer:checked ~ .peer-checked\:bg-secondary{
+  --tw-bg-opacity: 1;
+  background-color: rgb(153 0 0 / var(--tw-bg-opacity));
+}
+
 #app #app .prose-a\:font-\[initial\] :is(:where(a):not(:where([class~="not-prose"] *))){
   font-family: initial;
 }
@@ -1047,8 +1056,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
     border-bottom-left-radius: 0px;
   }
 
-  #app .lg\:rounded-t-lg{
-    border-top-left-radius: 0.5rem;
+  #app .lg\:rounded-tr-lg{
     border-top-right-radius: 0.5rem;
   }
 }
@@ -1063,15 +1071,15 @@ Reset links to optimize for opt-in styling instead of opt-out.
         <p><a href="https://github.com/lusend/testwebsite/actions/workflows/build.yml"><img src="https://github.com/lusend/testwebsite/actions/workflows/build.yml/badge.svg" alt="Build and Deploy Website" /></a> <a href="https://github.com/lusend/testwebsite/actions/workflows/pages/pages-build-deployment"><img src="https://github.com/lusend/testwebsite/actions/workflows/pages/pages-build-deployment/badge.svg" alt="pages-build-deployment" /></a></p>
 <p><span id="status" class="text-xs font-semibold"> </span></p>
 <h1 id="lu-send-website" tabindex="-1"><a class="header-anchor" href="#lu-send-website">LU Send Website</a></h1>
-<p>All pages are listed below. Copy each page for the stage and/or production environments, or preview the page as desired. Make sure the <code>Current Deployment</code> matches your most recent changes. Reload if this is not the case. This could take up to 3 minutes.</p>
+<p>All pages are listed below. Copy each page for the stage and/or production environments, or preview the page as desired. If the <code>Current Deployment Commit</code> does not match the most recent change made to the website, the website is still deploying. Please reload to check again.</p>
+<p><em>The deployment status should be visible at the top of the page. Check the status by clicking on either of the status badges or visiting the <a href="https://github.com/lusend/testwebsite">repository</a>.</em></p>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
-<p>If the below commit does not match the most recent commit, the site is still deploying. Check the status above or visit the repo for more information.</p>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/testwebsite/commit/77cf5f0e06add8666cd3ef54e6e1d9d848441251" class="no-underline hover:underline" target="_blank">feat: 💄 Updated Page Styles<br />
+  <a href="https://github.com/lusend/testwebsite/commit/1b366a7a4dda23f210dab82056a5805558b77bd6" class="no-underline hover:underline" target="_blank">feat: ✨ Clarified Deployment Content<br />
 <br />
-Added page styles for mobile. Also updated stage/production toggle wording to make its function clearer.</a>
+Cleared up explanations, cleaned up styles, and ensured cohesion on the landing page.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-09T23:23:21Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-09T23:33:24Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
@@ -1083,7 +1091,7 @@ Added page styles for mobile. Also updated stage/production toggle wording to ma
           </strong>
           <div class="relative">
             <input type="checkbox" checked="checked" autocomplete="off" onchange="toggleEnv()"  id="envToggle" class="sr-only peer"/>
-            <div class="absolute z-10 w-6 h-6 transition bg-white rounded-full left-1 top-1 peer-checked:translate-x-full bg-primary"></div>
+            <div class="absolute z-10 w-6 h-6 transition bg-white rounded-full left-1 top-1 peer-checked:translate-x-full bg-primary peer-checked:bg-secondary"></div>
             <div class="z-0 h-8 rounded-full bg-base-300 w-14"></div>
           </div>
         </label>
@@ -1096,7 +1104,7 @@ Added page styles for mobile. Also updated stage/production toggle wording to ma
                 <ion-icon name="open-outline">&nbsp;</ion-icon>
                 <span>Preview</span>
               </button>
-              <button id="pages_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-t-lg lg:rounded-l-none lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+              <button id="pages_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
                 <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
                 <span id="pages_copytext">Copy</span>
               </button>
