@@ -1,9 +1,11 @@
 {% set css %}
-{% include "main.css" %}
+{% include "styles/main.css" %}
 {% endset %}
 
 {% set js %}
-{% include "helpers.js" %}
+{% include "scripts/env.js" %}
+{% include "scripts/commit.js" %}
+{% include "scripts/preview.js" %}
 {% endset %}
 
 <html>
@@ -15,187 +17,56 @@
     <style>
       {{css | postcss | safe}}
     </style>
-    <script>
-      {{js | safe}}
-    </script>
   </head>
 
   <body>
     <div id="app">
-      <div class="prose m-auto">
+      <div class="prose prose-a:font-[initial] m-auto">
         {{ content | safe }}
 
-        <div class="mt-5 not-prose">
-          <label class="cursor-pointer label mb-5">
-            <strong id="envToggleLabel" class="label-text">Production Content</strong>
-            <input id="envToggle" checked="checked" type="checkbox" onchange='toggleEnv()' class="!toggle !toggle-lg !toggle-secondary">
-          </label>
+        <label for="envToggle" class="my-5 not-prose cursor-pointer flex w-full items-center">
+          <strong id="envToggleLabel" class="flex-auto">
+            Production Content
+          </strong>
+          <div class="relative">
+            <input type="checkbox" checked="checked" autocomplete="off" onchange="toggleEnv()"  id="envToggle" class="sr-only peer"/>
+            <div class="absolute left-1 top-1 bg-white w-6 h-6 rounded-full peer-checked:translate-x-full bg-primary transition z-10"></div>
+            <div class="bg-base-300 w-14 h-8 rounded-full z-0"></div>
+          </div>
+        </label>
+
+        {% for item in collections.pages %}
+          <div class="mb-2">
+            <div class="flex items-center">
+              <div class="flex-auto uppercase font-bold rounded-lg py-2 px-5 bg-base-300 rounded-r-none">{{ item.data.title }}</div>
+              <button id="{{ item.data.slug + "_preview" }}" class="text-primary-content bg-primary hover:bg-primary-focus font-semibold rounded-none flex justify-center gap-2 items-center py-2 px-5">
+                <ion-icon name="open-outline">&nbsp;</ion-icon>
+                <span>Preview</span>
+              </button>
+              <button id="{{ item.data.slug + "_copy" }}" class="text-secondary-content bg-secondary hover:bg-secondary-focus font-semibold rounded-lg rounded-l-none flex justify-center gap-2 items-center py-2 px-5">
+                <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+                <span id="{{ item.data.slug + "_copytext" }}">Copy</span>
+              </button>
+            </div>
+          </div>
 
           <script>
-            let env = 'production';
-
-            function toggleEnv() {
-              const toggle = document
-                .getElementById('envToggle')
-                .checked;
-
-              env = toggle
-                ? 'prod'
-                : 'stage';
-
-              document
-                .getElementById('envToggleLabel')
-                .innerHTML = toggle
-                  ? 'Production Content'
-                  : 'Stage Content';
+            window.onload = function () {
+              preview('{{ item.data.slug }}', '{{ item.data.permalink | url }}', '{{ (item.data.path + "_stage.html") | url }}');
             }
-
-            window.addEventListener('load', function () {
-              toggleEnv();
-              setTimeout(function () {
-                toggleEnv();
-              }, 500);
-            });
           </script>
-
-          {% for item in collections.pages %}
-            <div class="mb-2">
-              <span class="uppercase font-bold">{{ item.data.title }}</span>
-              <div class="relative">
-                <input id="{{ item.data.slug }}" type="text" placeholder="HTML Here" class="truncate w-full !pr-52 !input !input-primary !input-bordered" disabled="disabled" \>
-                <div class="!btn-group absolute top-0 right-0">
-                  <button id="{{ item.data.slug + "_link" }}" class="!btn !btn-secondary !rounded-l-none flex items-center gap-1">
-                    <ion-icon name="open-outline">&nbsp;</ion-icon>
-                    <span>Preview</span>
-                  </button>
-                  <button id="{{ item.data.slug + "_copy" }}" class="!btn !btn-primary flex items-center gap-1">
-                    <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
-                    <span id="{{ item.data.slug + "_copytext" }}">Copy</span>
-                  </button>
-                </div>
-              </div>
-
-              <script>
-                function {{ item.data.slug }}() {
-                  const prod = '{{ item.data.permalink | url }}';
-                  const stage = '{{ (item.data.path + "_stage.html") | url }}';
-                  const slug = '{{ item.data.slug }}';
-
-                  document
-                    .getElementById(slug + '_link')
-                    .onclick = function () {
-                      const link = env === 'stage'
-                        ? stage
-                        : prod;
-                      window.location.href = link;
-                    }
-
-                  document
-                    .getElementById(slug + '_copy')
-                    .onclick = function () {
-                      const link = env === 'stage'
-                        ? stage
-                        : prod;
-
-                      get(link, (data) => {
-                        document
-                          .getElementById(slug)
-                          .value = data;
-
-                        navigator
-                          .clipboard
-                          .writeText(data);
-
-                        document
-                          .getElementById(slug + '_copytext')
-                          .innerHTML = 'Copied';
-
-                        setTimeout(function () {
-                          document
-                            .getElementById(slug + '_copytext')
-                            .innerHTML = 'Copy';
-                        }, 500)
-                      }, (error) => {
-                        document
-                          .getElementById(slug)
-                          .value = error.statusText;
-                      });
-                    }
-
-                  function setupPageCopy() {
-                    setTimeout(function () {
-                      const link = env === 'stage'
-                        ? stage
-                        : prod;
-
-                      get(link, (data) => {
-                        document
-                          .getElementById(slug)
-                          .value = data;
-                      }, (error) => {
-                        document
-                          .getElementById(slug)
-                          .value = error.statusText;
-                      });
-                    }, 100)
-
-                  }
-
-                  document
-                    .getElementById('envToggle')
-                    .addEventListener('change', setupPageCopy);
-
-                  setupPageCopy();
-                }
-
-                {{ item.data.slug }}();
-              </script>
-            </div>
-          {% endfor %}
         </div>
-      </div>
-
+      {% endfor %}
     </div>
+  </div>
 
-    <script>
-      const baseLink = 'https://github.com/'
-      const baseApiLink = 'https://api.github.com/repos/';
+</div>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-      function getCommit(link) {
-        const href = baseLink + link.replace('git/commits', 'commit');
-        link = baseApiLink + link;
-
-        get(link, (data) => {
-          data = JSON.parse(data);
-
-          document
-            .getElementById('commit')
-            .innerHTML = data
-            .message
-            .replace(/\n/g, '<br />');
-          document
-            .getElementById('commit')
-            .href = href;
-          document
-            .getElementById('committerName')
-            .innerHTML = data.committer.name;
-          document
-            .getElementById('committerName')
-            .href = 'mailto:' + data.committer.email;
-          document
-            .getElementById('committerDate')
-            .innerHTML = data.committer.date;
-        }, (error) => {
-          document
-            .getElementById('commit-info')
-            .innerHTML = '<p class=\'italic\'>Trouble loading Current Deployment information.</p>';
-        })
-      }
-
-      get(baseApiLink + 'lusend/testwebsite/commits/gh-pages', (data) => getCommit(JSON.parse(data).commit.message.match(/(?<=@\s+?)[^\s]+/).toString().replace('@', '/git/commits/')));
-    </script>
-
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  </body>
+<script>
+  {{js | safe}}
+  checkIfDeployed('{{ commit.id }}');
+</script>
+</body>
 </html>
