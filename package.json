@@ -28,7 +28,6 @@
     "@tailwindcss/typography": "^0.5.1",
     "@types/jquery": "^3.5.13",
     "autoprefixer": "^10.4.2",
-    "daisyui": "^1.25.4",
     "dotenv": "^16.0.0",
     "markdown-it-anchor": "^8.4.1",
     "markdown-it-attrs": "^4.1.3",
