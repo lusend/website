@@ -1122,6 +1122,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 
     </style>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
@@ -1134,11 +1139,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 <p><em>The deployment status should be visible at the top of the page. Check the status by clicking on either of the status badges or visiting the <a href="https://github.com/lusend/testwebsite">repository</a>.</em></p>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/testwebsite/commit/78f4aa58961c6ed40f7415932a30896822f759e5" class="no-underline hover:underline" target="_blank">feat: 🎉 Added Rudimentary Navigation Bar<br />
+  <a href="https://github.com/lusend/testwebsite/commit/6993d2b67c5daf15f58b9a2cc2fb5691c59026f2" class="no-underline hover:underline" target="_blank">fix: 💄 Fixed Preview Styles<br />
 <br />
-Added navigation between pages. Rudimentary in that there is little to no styling, though it does provide differing navigation in production and development environments.</a>
+Added a bug fix where styles were causing odd layout issues with pages on the preview/copy main page. Also updated this page with the jQuery CDN to allow for more reliable preview loading.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-10T15:51:46Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-10T16:01:50Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
@@ -1168,15 +1173,14 @@ Added navigation between pages. Rudimentary in that there is little to no stylin
                 <span id="bro_copytext">Copy</span>
               </button>
             </div>
-          </div>
 
-          <script>
-            window.onload = function () {
-              preview('bro', '/testwebsite/pages/bro.html', '/testwebsite/pages/bro_stage.html');
-            }
-          </script>
-        </div>
-      
+            <script>
+              $(document).ready(function () {
+                preview('bro', '/testwebsite/pages/bro.html', '/testwebsite/pages/bro_stage.html');
+              })
+            </script>
+          </div>
+        
           <div class="mb-2">
             <div class="flex flex-wrap items-stretch">
               <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Test Page</div>
@@ -1189,24 +1193,22 @@ Added navigation between pages. Rudimentary in that there is little to no stylin
                 <span id="pages_copytext">Copy</span>
               </button>
             </div>
+
+            <script>
+              $(document).ready(function () {
+                preview('pages', '/testwebsite/pages/index.html', '/testwebsite/pages/index_stage.html');
+              })
+            </script>
           </div>
-
-          <script>
-            window.onload = function () {
-              preview('pages', '/testwebsite/pages/index.html', '/testwebsite/pages/index_stage.html');
-            }
-          </script>
-        </div>
-      
+        
+      </div>
     </div>
-  </div>
 
-</div>
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-<script>
-  
+    <script>
+      
 let env = 'production';
 
 function toggleEnv() {
@@ -1276,6 +1278,7 @@ async function get(link, { asText = false, headers = {} } = {}) {
 }
 
 function preview(slug, production, stage) {
+  console.log({ slug, production, stage });
   document.getElementById(slug + '_preview').onclick = function () {
     const link = env === 'stage' ? stage : production;
     window.location.href = link + '?cache-bust=' + Date.now();
@@ -1298,7 +1301,7 @@ function preview(slug, production, stage) {
 }
 
 
-  checkIfDeployed();
-</script>
-</body>
+      checkIfDeployed();
+    </script>
+  </body>
 </html>
