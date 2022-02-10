@@ -32,7 +32,7 @@
   </style>
 
   <div  x-data="{ scroll: '' }" id="app">
-    <div class="absolute top-[102vh] overflow-none h-[calc(100%-102vh)] w-full" x-intersect:enter="scroll = 'bg-opacity-95'" x-intersect:leave="scroll = ''">&nbsp;</div>
+    <div class="absolute top-[102vh] overflow-none h-[calc(100%-102vh)] w-full pointer-events-none -z-50" x-intersect:enter="scroll = 'bg-opacity-90'" x-intersect:leave="scroll = ''">&nbsp;</div>
 
     {% include "./nav.njk" %}
     <div class="prose min-h-screen mx-auto px-8 my-5">
