@@ -857,8 +857,8 @@ Reset links to optimize for opt-in styling instead of opt-out.
   margin-top: 0.25rem;
 }
 
-#app .mt-5{
-  margin-top: 1.25rem;
+#app .mt-4{
+  margin-top: 1rem;
 }
 
 #app .block{
@@ -895,6 +895,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .h-16{
   height: 4rem;
+}
+
+#app .max-h-\[calc\(90vh-72px\)\]{
+  max-height: calc(90vh - 72px);
 }
 
 #app .min-h-screen{
@@ -1422,8 +1426,8 @@ Reset links to optimize for opt-in styling instead of opt-out.
               <ion-icon x-show="!open" name="chevron-down-outline">&nbsp;</ion-icon>
               <ion-icon x-show="open" name="chevron-up-outline" x-cloak>&nbsp;</ion-icon>
             </div>
-            <div x-show="open" :class="scroll" class="absolute mt-5 bg-primary rounded-md min-w-[15rem] shadow-md z-50" x-cloak>
-              <div class="px-2 pt-2 pb-3 space-y-1 max-h-[calc(100vh - 72px)] overflow-auto">
+            <div x-show="open" :class="scroll" class="absolute mt-4 bg-primary rounded-md min-w-[15rem] shadow-md z-50" x-cloak>
+              <div class="px-2 pt-2 pb-3 space-y-1 max-h-[calc(90vh-72px)] overflow-auto">
                 <ul>
                   <li class="block text-base font-medium relative my-1">
                     <a href="/" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10">
@@ -1435,6 +1439,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
     <a href="/?go=bro" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">Bro</a>
     
       <ul>
+        
           
   <li class="block text-base font-medium relative my-1">
     <a href="/?go=bro2" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 bg-primary-focus">&emsp;Bro 2</a>
@@ -1448,7 +1453,8 @@ Reset links to optimize for opt-in styling instead of opt-out.
     
 </li>
 
-        </ul>
+        
+    </ul>
   
 </li>
 
@@ -1457,6 +1463,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
     <a href="/?go=sis" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">Sis</a>
     
       <ul>
+        
           
   <li class="block text-base font-medium relative my-1">
     <a href="/?go=sis2" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">&emsp;Sis 2</a>
@@ -1470,7 +1477,8 @@ Reset links to optimize for opt-in styling instead of opt-out.
     
 </li>
 
-        </ul>
+        
+    </ul>
   
 </li>
 
@@ -1499,7 +1507,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
 </div>
 
 <div :class="scroll" class="absolute sm:hidden bg-primary w-full" x-on:click.outside="menu = false" x-show="menu" x-cloak>
-  <div class="px-2 pt-2 pb-3 space-y-1 max-h-[calc(100vh - 72px)] overflow-auto">
+  <div class="px-2 pt-2 pb-3 space-y-1 max-h-[calc(90vh-72px)] overflow-auto">
     <a href="/" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 block px-3 py-2 rounded-md text-base font-medium" aria-current="page">
       <strong>Home</strong>
     </a>
@@ -1515,6 +1523,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
     <a href="/?go=bro" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">Bro</a>
     
       <ul>
+        
           
   <li class="block text-base font-medium relative my-1">
     <a href="/?go=bro2" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 bg-primary-focus">&emsp;Bro 2</a>
@@ -1528,7 +1537,8 @@ Reset links to optimize for opt-in styling instead of opt-out.
     
 </li>
 
-        </ul>
+        
+    </ul>
   
 </li>
 
@@ -1537,6 +1547,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
     <a href="/?go=sis" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">Sis</a>
     
       <ul>
+        
           
   <li class="block text-base font-medium relative my-1">
     <a href="/?go=sis2" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">&emsp;Sis 2</a>
@@ -1550,7 +1561,8 @@ Reset links to optimize for opt-in styling instead of opt-out.
     
 </li>
 
-        </ul>
+        
+    </ul>
   
 </li>
 
