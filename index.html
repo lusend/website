@@ -766,6 +766,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   border-width: 0;
 }
 
+#app .pointer-events-none{
+  pointer-events: none;
+}
+
 #app .visible{
   visibility: visible;
 }
@@ -810,6 +814,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .right-0{
   right: 0px;
+}
+
+#app .-z-50{
+  z-index: -50;
 }
 
 #app .z-10{
@@ -1049,8 +1057,8 @@ Reset links to optimize for opt-in styling instead of opt-out.
   background-color: rgb(9 33 69 / var(--tw-bg-opacity));
 }
 
-#app .bg-opacity-95{
-  --tw-bg-opacity: 0.95;
+#app .bg-opacity-90{
+  --tw-bg-opacity: 0.9;
 }
 
 #app .p-2{
@@ -1392,11 +1400,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 <p><em>The deployment status should be visible at the top of the page. Check the status by clicking on either of the status badges or visiting the <a href="https://github.com/lusend/testwebsite">repository</a>.</em></p>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/testwebsite/commit/be651109b1953b1b31f3c82cecc18e1bdf5ab093" class="no-underline hover:underline" target="_blank">style: 💄 Updated Nav Styles<br />
+  <a href="https://github.com/lusend/testwebsite/commit/02e5ce020babdfd3973865619e91e6dd09f90c4b" class="no-underline hover:underline" target="_blank">fix: 🐛 Fixed Scroll Pointer Bug<br />
 <br />
-This commit includes much more than just navigation styles, though that is the brunt of it. Under the hood, alpineJS has been included to deal with odd navigation states, new pages have been aded for demonstration purposes, and the various navigation logic has been updated to work in production.</a>
+Fixed scroll bug where the scroll element which triggered the nav bar change wouldn’t allow clicks underneath it.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-10T21:15:22Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-10T21:22:26Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>

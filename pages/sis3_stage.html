@@ -760,6 +760,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   border-width: 0;
 }
 
+#app .pointer-events-none{
+  pointer-events: none;
+}
+
 #app .visible{
   visibility: visible;
 }
@@ -804,6 +808,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .right-0{
   right: 0px;
+}
+
+#app .-z-50{
+  z-index: -50;
 }
 
 #app .z-10{
@@ -1043,8 +1051,8 @@ Reset links to optimize for opt-in styling instead of opt-out.
   background-color: rgb(9 33 69 / var(--tw-bg-opacity));
 }
 
-#app .bg-opacity-95{
-  --tw-bg-opacity: 0.95;
+#app .bg-opacity-90{
+  --tw-bg-opacity: 0.9;
 }
 
 #app .p-2{
@@ -1372,7 +1380,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
   </style>
 
   <div  x-data="{ scroll: '' }" id="app">
-    <div class="absolute top-[102vh] overflow-none h-[calc(100%-102vh)] w-full" x-intersect:enter="scroll = 'bg-opacity-95'" x-intersect:leave="scroll = ''">&nbsp;</div>
+    <div class="absolute top-[102vh] overflow-none h-[calc(100%-102vh)] w-full pointer-events-none -z-50" x-intersect:enter="scroll = 'bg-opacity-90'" x-intersect:leave="scroll = ''">&nbsp;</div>
 
     
 
