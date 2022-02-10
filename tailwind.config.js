@@ -2,7 +2,7 @@ module.exports = {
   important: '#app',
   content: [
     './src/pages/**/*.{html,js,md,njk}',
-    './src/_includes/**/*.{html,js,md,njk}',
+    './src/_includes/**/*.{html,js,md,njk,svg}',
     './src/_layouts/**/*.{html,js,md,njk}',
     './src/index.md',
     '!./src/_layouts/page.njk',
@@ -31,7 +31,9 @@ module.exports = {
       info: '#2094f3',
       success: '#009485',
       warning: '#ff9900',
-      error: '#ff5724'
+      error: '#ff5724',
+      black: '#000000',
+      white: '#ffffff'
     }
   },
   corePlugins: {

@@ -26,6 +26,7 @@ async function renderPostCSS(css, callback) {
 module.exports = function (eleventyConfig) {
   eleventyConfig.setLibrary('md', markdown);
 
+  eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
   eleventyConfig.addNunjucksAsyncFilter('postcss', renderPostCSS);
   eleventyConfig.addNunjucksAsyncFilter('link', (slug, callback) =>
     callback(null, `https://liberty-sa.terradotta.com?go=${slug}`)

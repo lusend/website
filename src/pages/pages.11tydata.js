@@ -10,6 +10,11 @@ module.exports = async function (configData) {
       path: `{{ page.filePathStem }}{{ suffix }}`,
       permalink: `{{ path }}.html`,
       slug: '{{ page.fileSlug }}{{ suffix }}',
+      edit: (data) =>
+        'https://github.com/lusend/testwebsite/edit/main/src' +
+        data.page.filePathStem +
+        '.' +
+        data.page.inputPath.split('.').pop(),
       title: (data) => (data.title ? data.title : data.slug)
     }
   };

@@ -37,9 +37,4 @@
     display: inline;
     margin: 0;
   }
-
-  /* Toggle */
-  /* input[type='checkbox']:checked + * + * {
-    @apply translate-x-full;
-  } */
 }
