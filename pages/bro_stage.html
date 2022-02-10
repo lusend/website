@@ -1479,17 +1479,20 @@ Reset links to optimize for opt-in styling instead of opt-out.
               </div>
             </div>
           </div>
-          <a href="#" x-show="admin" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 px-3 py-2 rounded-md text-sm font-medium" x-cloak>Admin Console</a>
-          <a href="#" x-show="applicant" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 px-3 py-2 rounded-md text-sm font-medium" x-cloak>My Applications</a>
+          <a href="/index.cfm?FuseAction=Portal.Home" x-show="admin" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 px-3 py-2 rounded-md text-sm font-medium" x-cloak>Admin Console</a>
+          <a href="/index.cfm?FuseAction=Students.AngularHome" x-show="applicant" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 px-3 py-2 rounded-md text-sm font-medium" x-cloak>My Applications</a>
         </div>
       </div>
     </div>
 
     <div class="absolute inset-y-0 right-0 flex items-center">
-      <a class="inline-flex items-center justify-center space-x-1 p-2 rounded-md hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-sm font-medium" >
-        <span class="hidden" :class="applicant || admin ? 'md:!block' : 'sm:!block'" x-text="applicant || admin ? 'Logout' : 'Login'">&nbsp;</span>
-        <ion-icon x-show="applicant || admin" name="log-out-outline" class='text-xl' x-cloak>&nbsp;</ion-icon>
-        <ion-icon x-show="!applicant && !admin" name="log-in-outline" class='text-xl'>&nbsp;</ion-icon>
+      <a x-show="!applicant && !admin" href="/index.cfm?FuseAction=Security.AngLogin" class="inline-flex items-center justify-center space-x-1 p-2 rounded-md hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-sm font-medium">
+        <span class="hidden sm:!block">Login</span>
+        <ion-icon  name="log-in-outline" class='text-xl'>&nbsp;</ion-icon>
+      </a>
+      <a x-show="applicant || admin" href="/index.cfm?FuseAction=Security.Logout" class="inline-flex items-center justify-center space-x-1 p-2 rounded-md hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-sm font-medium" x-cloak>
+        <span class="hidden md:!block">Logout</span>
+        <ion-icon  name="log-out-outline" class='text-xl'>&nbsp;</ion-icon>
       </a>
     </div>
   </div>
@@ -1500,10 +1503,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
     <a href="/" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 block px-3 py-2 rounded-md text-base font-medium" aria-current="page">
       <strong>Home</strong>
     </a>
-    <a href="#" x-show="admin" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 block px-3 py-2 rounded-md text-base font-medium" x-cloak>
+    <a href="/index.cfm?FuseAction=Portal.Home" x-show="admin" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 block px-3 py-2 rounded-md text-base font-medium" x-cloak>
       <strong>Admin Console</strong>
     </a>
-    <a href="#" x-show="applicant" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 block px-3 py-2 rounded-md text-base font-medium" x-cloak>
+    <a href="/index.cfm?FuseAction=Students.AngularHome" x-show="applicant" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 block px-3 py-2 rounded-md text-base font-medium" x-cloak>
       <strong>My Applications</strong>
     </a>
     <ul>
