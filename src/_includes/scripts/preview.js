@@ -8,13 +8,15 @@ async function get(link, { asText = false, headers = {} } = {}) {
 function preview(slug, production, stage) {
   document.getElementById(slug + '_preview').onclick = function () {
     const link = env === 'stage' ? stage : production;
-    window.location.href = link;
+    window.location.href = link + '?cache-bust=' + Date.now();
   };
 
   document.getElementById(slug + '_copy').onclick = async function () {
     const link = env === 'stage' ? stage : production;
 
-    const page = await get(link, { asText: true });
+    const page = await get(link + '?cache-bust=' + Date.now(), {
+      asText: true
+    });
     navigator.clipboard.writeText(page);
 
     document.getElementById(slug + '_copytext').innerHTML = 'Copied';

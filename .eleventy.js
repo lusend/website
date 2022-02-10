@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const postcss = require('postcss');
 const markdown = require('./config/markdown');
+const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 
 const env = process.env.ELEVENTY_ENV || 'development';
 
@@ -25,6 +26,8 @@ async function renderPostCSS(css, callback) {
  */
 module.exports = function (eleventyConfig) {
   eleventyConfig.setLibrary('md', markdown);
+
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
   eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
   eleventyConfig.addNunjucksAsyncFilter('postcss', renderPostCSS);

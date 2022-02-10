@@ -1,5 +1,7 @@
 ---
 title: Test Page
+nav:
+  title: Test
 ---
 
 # Heading 1
@@ -13,5 +15,7 @@ title: Test Page
 ##### Heading 5
 
 ###### Heading 6
+
+{{ collections.pages | eleventyNavigation | eleventyNavigationToMarkdown | safe }}
 
 ${toc}
