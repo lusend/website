@@ -1134,11 +1134,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 <p><em>The deployment status should be visible at the top of the page. Check the status by clicking on either of the status badges or visiting the <a href="https://github.com/lusend/testwebsite">repository</a>.</em></p>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/testwebsite/commit/4f07253cdb3da3092ced7319086f1ba516983c98" class="no-underline hover:underline" target="_blank">feat: ✨ Added Footer<br />
+  <a href="https://github.com/lusend/testwebsite/commit/78f4aa58961c6ed40f7415932a30896822f759e5" class="no-underline hover:underline" target="_blank">feat: 🎉 Added Rudimentary Navigation Bar<br />
 <br />
-Added a footer with an edit button and a logo to each page.</a>
+Added navigation between pages. Rudimentary in that there is little to no styling, though it does provide differing navigation in production and development environments.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-10T14:33:05Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-10T15:51:46Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
@@ -1156,6 +1156,27 @@ Added a footer with an edit button and a logo to each page.</a>
         </label>
 
         
+          <div class="mb-2">
+            <div class="flex flex-wrap items-stretch">
+              <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Bro Page</div>
+              <button id="bro_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+                <ion-icon name="open-outline">&nbsp;</ion-icon>
+                <span>Preview</span>
+              </button>
+              <button id="bro_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+                <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+                <span id="bro_copytext">Copy</span>
+              </button>
+            </div>
+          </div>
+
+          <script>
+            window.onload = function () {
+              preview('bro', '/testwebsite/pages/bro.html', '/testwebsite/pages/bro_stage.html');
+            }
+          </script>
+        </div>
+      
           <div class="mb-2">
             <div class="flex flex-wrap items-stretch">
               <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Test Page</div>
@@ -1257,13 +1278,15 @@ async function get(link, { asText = false, headers = {} } = {}) {
 function preview(slug, production, stage) {
   document.getElementById(slug + '_preview').onclick = function () {
     const link = env === 'stage' ? stage : production;
-    window.location.href = link;
+    window.location.href = link + '?cache-bust=' + Date.now();
   };
 
   document.getElementById(slug + '_copy').onclick = async function () {
     const link = env === 'stage' ? stage : production;
 
-    const page = await get(link, { asText: true });
+    const page = await get(link + '?cache-bust=' + Date.now(), {
+      asText: true
+    });
     navigator.clipboard.writeText(page);
 
     document.getElementById(slug + '_copytext').innerHTML = 'Copied';
