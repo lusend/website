@@ -15,6 +15,7 @@ html {
   scroll-behavior: smooth;
   font-size: 18px;
   overflow-x: hidden;
+  /* -ms-overflow-style: scrollbar; */
 }
 
 #app{
@@ -292,6 +293,12 @@ Reset links to optimize for opt-in styling instead of opt-out.
   {
     display: inline;
     margin: 0;
+  }
+
+/* Alpine JS Cloack Until Loaded */
+
+#app [x-cloak] {
+    display: none !important;
   }
 
 *, ::before, ::after{
@@ -771,12 +778,38 @@ Reset links to optimize for opt-in styling instead of opt-out.
   position: relative;
 }
 
+#app .sticky{
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+#app .inset-y-0{
+  top: 0px;
+  bottom: 0px;
+}
+
+#app .top-\[102vh\]{
+  top: 102vh;
+}
+
 #app .left-1{
   left: 0.25rem;
 }
 
 #app .top-1{
   top: 0.25rem;
+}
+
+#app .top-0{
+  top: 0px;
+}
+
+#app .left-0{
+  left: 0px;
+}
+
+#app .right-0{
+  right: 0px;
 }
 
 #app .z-10{
@@ -787,13 +820,27 @@ Reset links to optimize for opt-in styling instead of opt-out.
   z-index: 0;
 }
 
+#app .z-50{
+  z-index: 50;
+}
+
 #app .m-auto{
   margin: auto;
+}
+
+#app .mx-auto{
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #app .my-5{
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
+}
+
+#app .my-1{
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
 #app .mt-2{
@@ -808,6 +855,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   margin-top: 0.25rem;
 }
 
+#app .mt-5{
+  margin-top: 1.25rem;
+}
+
 #app .block{
   display: block;
 }
@@ -816,8 +867,20 @@ Reset links to optimize for opt-in styling instead of opt-out.
   display: flex;
 }
 
+#app .inline-flex{
+  display: inline-flex;
+}
+
+#app .hidden{
+  display: none;
+}
+
 #app .h-full{
   height: 100%;
+}
+
+#app .h-\[calc\(100\%-102vh\)\]{
+  height: calc(100% - 102vh);
 }
 
 #app .h-8{
@@ -826,6 +889,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .h-6{
   height: 1.5rem;
+}
+
+#app .h-16{
+  height: 4rem;
 }
 
 #app .min-h-screen{
@@ -844,8 +911,24 @@ Reset links to optimize for opt-in styling instead of opt-out.
   width: 3.5rem;
 }
 
+#app .min-w-full{
+  min-width: 100%;
+}
+
+#app .min-w-\[15rem\]{
+  min-width: 15rem;
+}
+
 #app .flex-auto{
   flex: 1 1 auto;
+}
+
+#app .flex-1{
+  flex: 1 1 0%;
+}
+
+#app .flex-shrink-0{
+  flex-shrink: 0;
 }
 
 #app .basis-full{
@@ -876,6 +959,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   justify-content: center;
 }
 
+#app .justify-between{
+  justify-content: space-between;
+}
+
 #app .gap-1{
   gap: 0.25rem;
 }
@@ -884,12 +971,32 @@ Reset links to optimize for opt-in styling instead of opt-out.
   gap: 0.5rem;
 }
 
+#app .space-x-1 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+#app .space-y-1 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
+}
+
+#app .overflow-auto{
+  overflow: auto;
+}
+
 #app .rounded-full{
   border-radius: 9999px;
 }
 
 #app .rounded-lg{
   border-radius: 0.5rem;
+}
+
+#app .rounded-md{
+  border-radius: 0.375rem;
 }
 
 #app .rounded-b-none{
@@ -937,6 +1044,24 @@ Reset links to optimize for opt-in styling instead of opt-out.
   background-color: rgb(153 0 0 / var(--tw-bg-opacity));
 }
 
+#app .bg-primary-focus{
+  --tw-bg-opacity: 1;
+  background-color: rgb(9 33 69 / var(--tw-bg-opacity));
+}
+
+#app .bg-opacity-95{
+  --tw-bg-opacity: 0.95;
+}
+
+#app .p-2{
+  padding: 0.5rem;
+}
+
+#app .px-8{
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 #app .py-5{
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -952,6 +1077,29 @@ Reset links to optimize for opt-in styling instead of opt-out.
   padding-bottom: 0.5rem;
 }
 
+#app .px-3{
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+#app .px-2{
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+#app .py-1{
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+#app .pt-2{
+  padding-top: 0.5rem;
+}
+
+#app .pb-3{
+  padding-bottom: 0.75rem;
+}
+
 #app .text-center{
   text-align: center;
 }
@@ -961,8 +1109,27 @@ Reset links to optimize for opt-in styling instead of opt-out.
   line-height: 1rem;
 }
 
+#app .text-base{
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+#app .text-xl{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+#app .text-sm{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 #app .font-semibold{
   font-weight: 600;
+}
+
+#app .font-medium{
+  font-weight: 500;
 }
 
 #app .font-bold{
@@ -1006,10 +1173,24 @@ Reset links to optimize for opt-in styling instead of opt-out.
           text-decoration-line: none;
 }
 
+#app .shadow-md{
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 #app .transition{
   transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+#app .transition-colors{
+  transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1053,6 +1234,15 @@ Reset links to optimize for opt-in styling instead of opt-out.
   background-color: rgb(138 0 0 / var(--tw-bg-opacity));
 }
 
+#app .hover\:bg-primary-content:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+#app .hover\:bg-opacity-20:hover{
+  --tw-bg-opacity: 0.2;
+}
+
 #app .hover\:text-accent-focus:hover{
   --tw-text-opacity: 1;
   color: rgb(121 180 232 / var(--tw-text-opacity));
@@ -1072,6 +1262,25 @@ Reset links to optimize for opt-in styling instead of opt-out.
   outline-offset: 2px;
 }
 
+#app .focus\:ring-2:focus{
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+#app .focus\:ring-inset:focus{
+  --tw-ring-inset: inset;
+}
+
+#app .focus\:ring-white:focus{
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity));
+}
+
+#app .active\:bg-opacity-10:active{
+  --tw-bg-opacity: 0.1;
+}
+
 #app .peer:checked ~ .peer-checked\:translate-x-full{
   --tw-translate-x: 100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1084,6 +1293,45 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app #app .prose-a\:font-\[initial\] :is(:where(a):not(:where([class~="not-prose"] *))){
   font-family: initial;
+}
+
+@media (min-width: 640px){
+
+  #app .sm\:ml-6{
+    margin-left: 1.5rem;
+  }
+
+  #app .sm\:\!block{
+    display: block !important;
+  }
+
+  #app .sm\:hidden{
+    display: none;
+  }
+
+  #app .sm\:flex-auto{
+    flex: 1 1 auto;
+  }
+
+  #app .sm\:items-stretch{
+    align-items: stretch;
+  }
+
+  #app .sm\:justify-start{
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 768px){
+
+  #app .md\:\!block{
+    display: block !important;
+  }
+
+  #app .md\:px-6{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 }
 
 @media (min-width: 1024px){
@@ -1118,6 +1366,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   #app .lg\:rounded-tr-lg{
     border-top-right-radius: 0.5rem;
   }
+
+  #app .lg\:px-8{
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 
@@ -1139,11 +1392,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 <p><em>The deployment status should be visible at the top of the page. Check the status by clicking on either of the status badges or visiting the <a href="https://github.com/lusend/testwebsite">repository</a>.</em></p>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/testwebsite/commit/6993d2b67c5daf15f58b9a2cc2fb5691c59026f2" class="no-underline hover:underline" target="_blank">fix: 💄 Fixed Preview Styles<br />
+  <a href="https://github.com/lusend/testwebsite/commit/be651109b1953b1b31f3c82cecc18e1bdf5ab093" class="no-underline hover:underline" target="_blank">style: 💄 Updated Nav Styles<br />
 <br />
-Added a bug fix where styles were causing odd layout issues with pages on the preview/copy main page. Also updated this page with the jQuery CDN to allow for more reliable preview loading.</a>
+This commit includes much more than just navigation styles, though that is the brunt of it. Under the hood, alpineJS has been included to deal with odd navigation states, new pages have been aded for demonstration purposes, and the various navigation logic has been updated to work in production.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-10T16:01:50Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-10T21:15:22Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
@@ -1183,6 +1436,46 @@ Added a bug fix where styles were causing odd layout issues with pages on the pr
         
           <div class="mb-2">
             <div class="flex flex-wrap items-stretch">
+              <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Bro 2 Page</div>
+              <button id="bro2_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+                <ion-icon name="open-outline">&nbsp;</ion-icon>
+                <span>Preview</span>
+              </button>
+              <button id="bro2_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+                <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+                <span id="bro2_copytext">Copy</span>
+              </button>
+            </div>
+
+            <script>
+              $(document).ready(function () {
+                preview('bro2', '/testwebsite/pages/bro2.html', '/testwebsite/pages/bro2_stage.html');
+              })
+            </script>
+          </div>
+        
+          <div class="mb-2">
+            <div class="flex flex-wrap items-stretch">
+              <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Bro 3 Page</div>
+              <button id="bro3_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+                <ion-icon name="open-outline">&nbsp;</ion-icon>
+                <span>Preview</span>
+              </button>
+              <button id="bro3_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+                <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+                <span id="bro3_copytext">Copy</span>
+              </button>
+            </div>
+
+            <script>
+              $(document).ready(function () {
+                preview('bro3', '/testwebsite/pages/bro3.html', '/testwebsite/pages/bro3_stage.html');
+              })
+            </script>
+          </div>
+        
+          <div class="mb-2">
+            <div class="flex flex-wrap items-stretch">
               <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Test Page</div>
               <button id="pages_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
                 <ion-icon name="open-outline">&nbsp;</ion-icon>
@@ -1201,11 +1494,73 @@ Added a bug fix where styles were causing odd layout issues with pages on the pr
             </script>
           </div>
         
+          <div class="mb-2">
+            <div class="flex flex-wrap items-stretch">
+              <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Sis Page</div>
+              <button id="sis_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+                <ion-icon name="open-outline">&nbsp;</ion-icon>
+                <span>Preview</span>
+              </button>
+              <button id="sis_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+                <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+                <span id="sis_copytext">Copy</span>
+              </button>
+            </div>
+
+            <script>
+              $(document).ready(function () {
+                preview('sis', '/testwebsite/pages/sis.html', '/testwebsite/pages/sis_stage.html');
+              })
+            </script>
+          </div>
+        
+          <div class="mb-2">
+            <div class="flex flex-wrap items-stretch">
+              <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Sis 2 Page</div>
+              <button id="sis2_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+                <ion-icon name="open-outline">&nbsp;</ion-icon>
+                <span>Preview</span>
+              </button>
+              <button id="sis2_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+                <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+                <span id="sis2_copytext">Copy</span>
+              </button>
+            </div>
+
+            <script>
+              $(document).ready(function () {
+                preview('sis2', '/testwebsite/pages/sis2.html', '/testwebsite/pages/sis2_stage.html');
+              })
+            </script>
+          </div>
+        
+          <div class="mb-2">
+            <div class="flex flex-wrap items-stretch">
+              <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Sis 3 Page</div>
+              <button id="sis3_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+                <ion-icon name="open-outline">&nbsp;</ion-icon>
+                <span>Preview</span>
+              </button>
+              <button id="sis3_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+                <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+                <span id="sis3_copytext">Copy</span>
+              </button>
+            </div>
+
+            <script>
+              $(document).ready(function () {
+                preview('sis3', '/testwebsite/pages/sis3.html', '/testwebsite/pages/sis3_stage.html');
+              })
+            </script>
+          </div>
+        
       </div>
     </div>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <script>
       
