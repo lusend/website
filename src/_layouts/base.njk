@@ -31,8 +31,11 @@
     {{css | postcss | safe}}
   </style>
 
-  <div id="app">
-    <div class="prose min-h-screen">
+  <div  x-data="{ scroll: '' }" id="app">
+    <div class="absolute top-[102vh] overflow-none h-[calc(100%-102vh)] w-full" x-intersect:enter="scroll = 'bg-opacity-95'" x-intersect:leave="scroll = ''">&nbsp;</div>
+
+    {% include "./nav.njk" %}
+    <div class="prose min-h-screen mx-auto px-8 my-5">
       {% if env == 'stage' %}
         <h1>Stage Test</h1>
       {% endif %}
@@ -41,7 +44,7 @@
     </div>
 
     <footer class="bg-opacity-85 bg-black relative">
-      <div class="py-5 flex flex-col justify-center items-center text-gray-400 text-xslg:text-sm text-center text-primary-content text-opacity-70 focus:outline-none ">
+      <div class="py-5 flex flex-col justify-center items-center text-gray-400 text-xslg:text-sm text-center text-primary-content text-opacity-70 focus:outline-none font-medium">
         <a href="/" class="h-8 mb-2">{{ logo | safe }}</a>
 
         <span>&copy; {% year %} Liberty University. All Rights Reserved.</span>
@@ -57,9 +60,12 @@
         </a>
       </div>
     </footer>
+
   </div>
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 {% endblock %}

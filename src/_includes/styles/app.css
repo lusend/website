@@ -37,4 +37,10 @@
     display: inline;
     margin: 0;
   }
+
+  /* Alpine JS Cloack Until Loaded */
+
+  [x-cloak] {
+    display: none !important;
+  }
 }

@@ -4,6 +4,7 @@ html {
   scroll-behavior: smooth;
   font-size: 18px;
   overflow-x: hidden;
+  /* -ms-overflow-style: scrollbar; */
 }
 
 #app {
