@@ -917,12 +917,12 @@ Reset links to optimize for opt-in styling instead of opt-out.
   width: 3.5rem;
 }
 
-#app .min-w-full{
-  min-width: 100%;
-}
-
 #app .min-w-\[15rem\]{
   min-width: 15rem;
+}
+
+#app .min-w-full{
+  min-width: 100%;
 }
 
 #app .flex-auto{
@@ -931,10 +931,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .flex-1{
   flex: 1 1 0%;
-}
-
-#app .flex-shrink-0{
-  flex-shrink: 0;
 }
 
 #app .basis-full{
@@ -1115,6 +1111,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   line-height: 1rem;
 }
 
+#app .text-sm{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 #app .text-base{
   font-size: 1rem;
   line-height: 1.5rem;
@@ -1125,21 +1126,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   line-height: 1.75rem;
 }
 
-#app .text-sm{
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
 #app .font-semibold{
   font-weight: 600;
 }
 
-#app .font-medium{
-  font-weight: 500;
-}
-
 #app .font-bold{
   font-weight: 700;
+}
+
+#app .font-medium{
+  font-weight: 500;
 }
 
 #app .uppercase{
@@ -1148,6 +1144,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .not-italic{
   font-style: normal;
+}
+
+#app .text-secondary{
+  --tw-text-opacity: 1;
+  color: rgb(153 0 0 / var(--tw-text-opacity));
 }
 
 #app .text-primary-content{
@@ -1301,42 +1302,45 @@ Reset links to optimize for opt-in styling instead of opt-out.
   font-family: initial;
 }
 
-@media (min-width: 640px){
+@media (min-width: 340px){
 
-  #app .sm\:ml-6{
-    margin-left: 1.5rem;
-  }
-
-  #app .sm\:\!block{
+  #app .xs\:\!block{
     display: block !important;
-  }
-
-  #app .sm\:hidden{
-    display: none;
-  }
-
-  #app .sm\:flex-auto{
-    flex: 1 1 auto;
-  }
-
-  #app .sm\:items-stretch{
-    align-items: stretch;
-  }
-
-  #app .sm\:justify-start{
-    justify-content: flex-start;
   }
 }
 
 @media (min-width: 768px){
 
-  #app .md\:\!block{
-    display: block !important;
-  }
-
   #app .md\:px-6{
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 840px){
+
+  #app .navSmall\:ml-6{
+    margin-left: 1.5rem;
+  }
+
+  #app .navSmall\:\!block{
+    display: block !important;
+  }
+
+  #app .navSmall\:hidden{
+    display: none;
+  }
+
+  #app .navSmall\:flex-auto{
+    flex: 1 1 auto;
+  }
+
+  #app .navSmall\:items-stretch{
+    align-items: stretch;
+  }
+
+  #app .navSmall\:justify-start{
+    justify-content: flex-start;
   }
 }
 
@@ -1394,22 +1398,17 @@ Reset links to optimize for opt-in styling instead of opt-out.
 <div class="mx-auto px-2 md:px-6 lg:px-8">
   <div class="relative flex items-center justify-between h-16">
 
-    <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-      <button type="button" x-on:click="menu = !menu" class="inline-flex items-center justify-center p-2 rounded-md hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-
+    <div class="absolute inset-y-0 left-0 flex items-center navSmall:hidden">
+      <button type="button" x-on:click="menu = !menu" class="inline-flex items-center justify-center p-2 rounded-md gap-1 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-sm font-medium" aria-controls="mobile-menu" aria-expanded="false">
         <ion-icon x-show="!menu" name="menu-outline" class="text-xl">&nbsp;</ion-icon>
         <ion-icon x-show="menu" name="close-outline" class="text-xl" x-cloak>&nbsp;</ion-icon>
-
-        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-        </svg>
+        <span class="hidden xs:!block">Menu</span>
       </button>
     </div>
 
-    <div class="flex-1 sm:flex-auto flex items-center justify-center sm:items-stretch sm:justify-start">
-      <div class="flex-shrink-0 flex items-center">
-        <a href="/" class="h-8 px-3 py-1 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 rounded-md text-primary-content">
+    <div class="flex-1 navSmall:flex-auto flex items-center justify-center navSmall:items-stretch navSmall:justify-start">
+      <div class=" flex items-center">
+        <a href="/" :class="scroll" class="h-8 px-3 py-1 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 rounded-md text-primary-content">
   <svg class="h-full" viewBox="0 0 1647 385" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" clip-rule="evenodd" d="M6.653 1.25C6.011 3.059 2.24 20.434 2.467 20.534C2.573 20.581 5.584 21.106 9.159 21.702C24.237 24.215 35.52 31.663 40.258 42.23C44.748 52.244 44.549 53.517 21.787 160C10.442 213.075 0.899 257.738 0.58 259.25L0 262H111.585H223.17L222.915 273.534L222.659 285.067L215.159 285.441C194.96 286.448 180.769 294.928 178.147 307.559C175.236 321.578 186.032 345.109 201.391 358.225C216.794 371.379 232.126 377.584 261.678 382.625C274.741 384.853 303.668 384.881 317.659 382.679C345.288 378.329 365.279 368.794 381.272 352.335C396.725 336.432 407.873 315.165 415.062 287.875C417.911 277.057 453.159 115.332 453.159 113.075C453.159 112.32 434.338 112 389.829 112H326.5L324.756 120.25C323.797 124.788 322.772 129.512 322.477 130.75C322.023 132.662 322.35 133 324.656 133C328.858 133 338.997 135.884 344.374 138.609C351.378 142.158 356.706 147.374 359.812 153.723C364.307 162.91 363.771 167.69 352.221 221.5C346.673 247.35 340.808 272.775 339.189 278C334.119 294.357 326.505 304.722 315.613 310.093C307.415 314.135 298.547 315.51 288.952 314.228C264.941 311.02 253.113 294.667 256.079 268.781C256.768 262.769 283.315 136.878 288.665 114.25L289.197 112H223.768H158.338L156.249 121.076C155.099 126.067 154.159 130.704 154.159 131.381C154.159 132.132 157.074 133.1 161.653 133.869C170.736 135.395 181.804 140.693 186.076 145.559C194.237 154.853 195.767 164.139 192.162 182.484L189.899 194H142.529C116.476 194 95.159 193.808 95.159 193.573C95.159 193.035 135.051 5.301 135.813 2.25L136.376 0H71.736C20.927 0 7.001 0.267 6.653 1.25ZM594.867 19.626C594.477 20.015 594.159 97.883 594.159 192.667V365H601.662H609.165L608.912 192.25L608.659 19.5L602.117 19.209C598.518 19.049 595.256 19.237 594.867 19.626ZM811.159 54.649C794.827 57.68 783.991 62.936 774.582 72.389C762.695 84.334 758.62 95.758 759.391 114.974C760.424 140.687 769.952 155.153 805.662 185.224C829.187 205.035 835.744 211.295 841.851 219.775C847.431 227.522 850.062 234.27 851.094 243.475C854.313 272.177 835.098 293.048 805.515 292.983C784.355 292.936 768.332 284.426 761.628 269.675C759.507 265.009 757.649 256.642 756.925 248.5C756.765 246.692 756.092 245.5 755.231 245.5C752.905 245.5 752.209 250.392 751.511 271.64L750.849 291.781L753.317 294.248C756.164 297.096 764.605 300.48 774.659 302.806C785.688 305.356 813.233 305.002 823.537 302.176C837.371 298.383 845.678 293.7 854.706 284.606C868.086 271.128 874.159 256.265 874.159 237C874.159 208.822 862.118 190.639 822.659 159.228C801.788 142.614 787.685 128.653 783.95 120.91C778.795 110.221 778.475 95.177 783.195 85.426C791.187 68.917 810.485 61.745 833.901 66.582C845.277 68.932 854.127 73.976 858.07 80.357C859.754 83.083 861.44 88.82 863.622 99.25C864.315 102.563 866.94 102.894 867.576 99.75C867.827 98.513 868.273 88.915 868.567 78.423L869.102 59.345L855.881 56.97C843.271 54.704 817.944 53.39 811.159 54.649ZM1133.53 55.75C1133.06 56.712 1132.42 107.675 1132.1 169C1131.71 244.087 1131.17 281.732 1130.44 284.273C1128.63 290.587 1126.58 292.798 1120.98 294.46C1118.13 295.307 1114.06 296 1111.95 296C1108.36 296 1105.87 298.044 1107.49 299.66C1108.27 300.442 1181 300.489 1181.78 299.708C1182.13 299.366 1182.17 298.461 1181.87 297.698C1181.52 296.768 1178.83 296.097 1173.75 295.667C1156.52 294.211 1153.69 290.086 1152.03 264C1151.06 248.591 1147.02 104.811 1147.55 104.28C1147.7 104.127 1158.86 116.264 1172.34 131.251C1240.27 206.742 1332.8 303 1337.44 303C1338.32 303 1339.41 302.438 1339.85 301.75C1340.3 301.063 1340.91 250.1 1341.22 188.5C1341.62 106.86 1342.09 75.576 1342.94 73.09C1344.8 67.664 1347.81 65.206 1354.04 64.004C1363.78 62.128 1364.16 61.994 1364.16 60.481C1364.16 59.666 1363.82 58.956 1363.41 58.903C1360.76 58.56 1294.42 58.459 1293.41 58.796C1291.64 59.386 1291.86 61.669 1293.74 62.393C1294.61 62.727 1297.06 63 1299.19 63C1305.9 63 1313.22 65.081 1316.35 67.877C1321.99 72.918 1322.06 73.79 1324.18 166C1325.24 212.475 1326.11 252.075 1326.1 254L1326.08 257.5L1320.95 252C1318.12 248.975 1304.3 233.914 1290.23 218.531C1276.17 203.148 1251.88 176.823 1236.26 160.031C1220.63 143.239 1192.13 112.513 1172.9 91.75C1151.97 69.134 1137.24 54 1136.17 54C1135.18 54 1133.99 54.788 1133.53 55.75ZM1051.16 57.313C1049.32 58.188 1032.32 58.507 986.433 58.526C941.482 58.544 923.894 58.865 923.076 59.683C921.405 61.354 924.505 62.633 931.731 63.255C939.817 63.951 945.376 66.879 947.771 71.7C949.574 75.329 949.672 79.686 949.957 168.5C950.142 226.239 949.867 265.81 949.234 272.866C947.733 289.575 944.452 294.678 934.523 295.741C928.44 296.392 926.238 297.854 928.666 299.629C929.934 300.556 935.245 300.723 950.007 300.3C960.815 299.991 986.534 300.233 1007.16 300.839C1049.5 302.083 1055.52 301.749 1058.32 297.999C1061.55 293.658 1065.78 259.122 1063.27 257.57C1061.81 256.663 1060.54 259.133 1058.76 266.389C1054.88 282.17 1049.58 286.069 1029.16 288.16C1016.89 289.417 997.486 288.583 990.457 286.496C984.898 284.845 982.063 282.265 979.457 276.486C977.824 272.865 977.63 268.173 977.347 225.242C977.071 183.365 977.211 177.917 978.58 177.392C979.429 177.066 991.244 177.289 1004.84 177.887C1027.27 178.875 1029.96 179.184 1034.05 181.238C1039.84 184.146 1042.27 187.575 1042.83 193.636C1043.52 201.143 1044.08 203 1045.63 203C1047.36 203 1047.86 200.168 1048.68 185.5C1049.02 179.45 1049.89 170.9 1050.61 166.5C1052.32 156.097 1051.31 154.467 1046.25 159.412C1041.2 164.341 1037.07 164.926 1005.16 165.234L977.659 165.5V118.5V71.5L995.659 71.206C1025.96 70.71 1039.41 73.156 1044.42 80.077C1045.45 81.495 1046.85 85.994 1047.54 90.076C1048.45 95.476 1049.24 97.584 1050.42 97.812C1052.39 98.19 1052.74 96.357 1054.15 78.566C1054.72 71.452 1055.65 63.904 1056.22 61.793C1057.76 56.074 1056.36 54.843 1051.16 57.313ZM1403.42 59.553C1400.94 61.362 1404 62.701 1411.83 63.234C1420.57 63.829 1424.93 66.112 1427.66 71.528C1429.62 75.421 1429.66 77.491 1429.66 175C1429.66 277.438 1429.53 281.205 1425.69 289.304C1423.64 293.611 1421.27 294.915 1414.12 295.662C1408.01 296.3 1406.13 297.368 1407.93 299.167C1408.52 299.761 1420.11 300.284 1436.79 300.469C1452.12 300.639 1470.51 301.261 1477.66 301.852C1499.7 303.673 1530.18 303.304 1543.33 301.056C1577.15 295.274 1602.2 280.751 1620.57 256.279C1637.7 233.462 1646.33 206.791 1646.39 176.5C1646.46 144.193 1636.47 117.145 1616.74 96.231C1597.58 75.922 1573.26 64.874 1536.66 59.848C1524.91 58.234 1405.58 57.97 1403.42 59.553ZM1518.56 71.508C1547.16 75.755 1569.47 86.866 1587.27 105.73C1609.97 129.799 1620.74 163.545 1617.17 199.468C1613.09 240.549 1597.66 265.232 1566.16 281.026C1549.84 289.21 1534.88 292.387 1513.16 292.281C1480.59 292.122 1463.24 286.86 1460.16 276.206C1459.57 274.168 1458.66 264.625 1458.15 255C1457.11 235.473 1456.8 81.046 1457.79 76.089C1458.14 74.351 1459.31 72.453 1460.4 71.871C1466.17 68.785 1498.84 68.581 1518.56 71.508Z" fill="currentColor"></path>
 </svg>
@@ -1417,153 +1416,306 @@ Reset links to optimize for opt-in styling instead of opt-out.
   </a>
       </div>
 
-      <div class="hidden sm:!block sm:ml-6">
+      <div class="hidden navSmall:!block navSmall:ml-6">
         <div class="flex space-x-1 text-primary-content">
-          <div class="relative" x-data="{ open: false }" x-on:click="open = !open" x-on:click.outside="open = false">
-            <div :class="open && scroll + ' bg-primary'" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 cursor-pointer px-3 py-2 rounded-md text-sm font-medium flex space-x-1 items-center" aria-current="page">
-              <span>Pages</span>
-              <ion-icon x-show="!open" name="chevron-down-outline">&nbsp;</ion-icon>
-              <ion-icon x-show="open" name="chevron-up-outline" x-cloak>&nbsp;</ion-icon>
-            </div>
-            <div x-show="open" :class="scroll" class="absolute mt-4 bg-primary rounded-md min-w-[15rem] shadow-md z-50" x-cloak>
-              <div class="px-2 pt-2 pb-3 space-y-1 max-h-[calc(90vh-72px)] overflow-auto">
-                <ul>
-                  <li class="block text-base font-medium relative my-1">
-                    <a href="/" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10">
-                      <strong>Home</strong>
-                    </a>
-                  </li>
-                  
-  <li class="block text-base font-medium relative my-1">
-    <a href="/?go=bro" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">Bro</a>
-    
-      <ul>
-        
           
-  <li class="block text-base font-medium relative my-1">
-    <a href="/?go=bro2" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">&emsp;Bro 2</a>
-    
-</li>
-
-        
-          
-  <li class="block text-base font-medium relative my-1">
-    <a href="/?go=bro3" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">&emsp;Bro 3</a>
-    
-</li>
-
-        
-    </ul>
+            
   
-</li>
-
-                  
-  <li class="block text-base font-medium relative my-1">
-    <a href="/?go=sis" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">Sis</a>
     
-      <ul>
-        
-          
-  <li class="block text-base font-medium relative my-1">
-    <a href="/?go=sis2" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">&emsp;Sis 2</a>
+      <a href="/?go=faculty" :class="scroll" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 px-3 py-2 rounded-md text-sm font-medium ">Faculty Gateway</a>
     
-</li>
-
-        
-          
-  <li class="block text-base font-medium relative my-1">
-    <a href="/?go=sis3" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 bg-primary-focus">&emsp;Sis 3</a>
-    
-</li>
-
-        
-    </ul>
   
-</li>
 
-                  
-                </ul>
-              </div>
-            </div>
+
+          
+            
+  
+    
+      <div class="relative" x-data="{ open_group: false }" x-on:click="open_group = !open_group" x-on:click.outside="open_group = false">
+        <div :class="open_group && scroll + ' bg-primary'" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 cursor-pointer px-3 py-2 rounded-md text-sm font-medium flex space-x-1 items-center" aria-current="page">
+          <span>Group Travel</span>
+          <ion-icon x-show="!open_group" name="chevron-down-outline">&nbsp;</ion-icon>
+          <ion-icon x-show="open_group" name="chevron-up-outline" x-cloak>&nbsp;</ion-icon>
+        </div>
+        <div x-show="open_group" :class="scroll" class="absolute mt-4 bg-primary rounded-md min-w-[15rem] shadow-md z-50" x-cloak>
+          <div class="px-2 pt-2 pb-3 space-y-1 max-h-[calc(90vh-72px)] overflow-auto">
+            <ul>
+              <li class="block text-base font-medium relative my-1">
+                <a href="/?go=group" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">
+                  <strong>Group Travel</strong>
+                </a>
+              </li>
+              
+                
+  
+    <li class="block text-base font-medium relative my-1">
+      <a href="/?go=group1" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 bg-primary-focus">
+        Group Travel 1
+      </a>
+      
+  </li>
+
+
+
+              
+                
+  
+    <li class="block text-base font-medium relative my-1">
+      <a href="/?go=group2" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">
+        Group Travel 2
+      </a>
+      
+  </li>
+
+
+
+              
+            </ul>
           </div>
-          <a href="/index.cfm?FuseAction=Portal.Home" x-show="admin" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 px-3 py-2 rounded-md text-sm font-medium" x-cloak>Admin Console</a>
-          <a href="/index.cfm?FuseAction=Students.AngularHome" x-show="applicant" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 px-3 py-2 rounded-md text-sm font-medium" x-cloak>My Applications</a>
+        </div>
+      </div>
+    
+  
+
+
+          
+            
+  
+    
+      <div class="relative" x-data="{ open_individual: false }" x-on:click="open_individual = !open_individual" x-on:click.outside="open_individual = false">
+        <div :class="open_individual && scroll + ' bg-primary'" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 cursor-pointer px-3 py-2 rounded-md text-sm font-medium flex space-x-1 items-center" aria-current="page">
+          <span>Individual Travel</span>
+          <ion-icon x-show="!open_individual" name="chevron-down-outline">&nbsp;</ion-icon>
+          <ion-icon x-show="open_individual" name="chevron-up-outline" x-cloak>&nbsp;</ion-icon>
+        </div>
+        <div x-show="open_individual" :class="scroll" class="absolute mt-4 bg-primary rounded-md min-w-[15rem] shadow-md z-50" x-cloak>
+          <div class="px-2 pt-2 pb-3 space-y-1 max-h-[calc(90vh-72px)] overflow-auto">
+            <ul>
+              <li class="block text-base font-medium relative my-1">
+                <a href="/?go=individual" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">
+                  <strong>Individual Travel</strong>
+                </a>
+              </li>
+              
+                
+  
+    <li class="block text-base font-medium relative my-1">
+      <a href="/?go=individual1" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">
+        Individual Travel 1
+      </a>
+      
+        <ul>
+          
+            
+  
+    <li class="block text-base font-medium relative my-1">
+      <a href="/?go=individual11" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">
+        &emsp;Individual Travel 1_1
+      </a>
+      
+  </li>
+
+
+
+          
+            
+  
+    <li class="block text-base font-medium relative my-1">
+      <a href="/?go=individual12" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">
+        &emsp;Individual Travel 1_2
+      </a>
+      
+  </li>
+
+
+
+          
+      </ul>
+    
+  </li>
+
+
+
+              
+                
+  
+    <li class="block text-base font-medium relative my-1">
+      <a href="/?go=individual2" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">
+        Individual Travel 2
+      </a>
+      
+  </li>
+
+
+
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+  
+
+
+          
         </div>
       </div>
     </div>
 
     <div class="absolute inset-y-0 right-0 flex items-center">
       <a x-show="!applicant && !admin" href="/index.cfm?FuseAction=Security.AngLogin" class="inline-flex items-center justify-center space-x-1 p-2 rounded-md hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-sm font-medium">
-        <span class="hidden sm:!block">Login</span>
+        <span class="block">Login</span>
         <ion-icon  name="log-in-outline" class='text-xl'>&nbsp;</ion-icon>
       </a>
-      <a x-show="applicant || admin" href="/index.cfm?FuseAction=Security.Logout" class="inline-flex items-center justify-center space-x-1 p-2 rounded-md hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-sm font-medium" x-cloak>
-        <span class="hidden md:!block">Logout</span>
-        <ion-icon  name="log-out-outline" class='text-xl'>&nbsp;</ion-icon>
-      </a>
+      <div x-show="applicant || admin" class="relative" x-data="{ open: false }" x-on:click="open = !open" x-on:click.outside="open = false">
+        <button class="inline-flex items-center justify-center gap-1 p-2 rounded-md hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-sm font-medium" x-cloak>
+          <span class="hidden xs:!block">Profile</span>
+          <ion-icon name="person-circle-outline" class='text-xl'>&nbsp;</ion-icon>
+        </button>
+        <div x-show="open" :class="scroll" class="absolute mt-4 right-0 bg-primary rounded-md min-w-[15rem] shadow-md z-50" x-cloak>
+          <div class="px-2 pt-2 pb-3 space-y-1 max-h-[calc(90vh-72px)] overflow-auto">
+            <ul>
+              <li class="block text-base font-medium relative my-1">
+                <a href="/index.cfm?FuseAction=Security.Logout" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10">
+                  Logout
+                </a>
+                <a x-show="!admin" href="/index.cfm?FuseAction=Portal.Home" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10" x-cloak>
+                  Admin Console
+                </a>
+                <a x-show="!applicant" href="/index.cfm?FuseAction=Students.AngularHome" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10" x-cloak>
+                  My Applications
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<div :class="scroll" class="absolute sm:hidden bg-primary w-full" x-on:click.outside="menu = false" x-show="menu" x-cloak>
+<div :class="scroll" class="absolute navSmall:hidden bg-primary w-full" x-on:click.outside="menu = false" x-show="menu" x-cloak>
   <div class="px-2 pt-2 pb-3 space-y-1 max-h-[calc(90vh-72px)] overflow-auto">
-    <a href="/" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 block px-3 py-2 rounded-md text-base font-medium" aria-current="page">
-      <strong>Home</strong>
-    </a>
-    <a href="/index.cfm?FuseAction=Portal.Home" x-show="admin" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 block px-3 py-2 rounded-md text-base font-medium" x-cloak>
-      <strong>Admin Console</strong>
-    </a>
-    <a href="/index.cfm?FuseAction=Students.AngularHome" x-show="applicant" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 block px-3 py-2 rounded-md text-base font-medium" x-cloak>
-      <strong>My Applications</strong>
-    </a>
     <ul>
       
-  <li class="block text-base font-medium relative my-1">
-    <a href="/?go=bro" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">Bro</a>
-    
-      <ul>
         
-          
-  <li class="block text-base font-medium relative my-1">
-    <a href="/?go=bro2" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">&emsp;Bro 2</a>
-    
-</li>
-
-        
-          
-  <li class="block text-base font-medium relative my-1">
-    <a href="/?go=bro3" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">&emsp;Bro 3</a>
-    
-</li>
-
-        
-    </ul>
   
-</li>
+    <li class="block text-base font-medium relative my-1">
+      <a href="/?go=faculty" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">
+        Faculty Gateway
+      </a>
+      
+  </li>
+
+
 
       
-  <li class="block text-base font-medium relative my-1">
-    <a href="/?go=sis" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">Sis</a>
-    
-      <ul>
         
-          
-  <li class="block text-base font-medium relative my-1">
-    <a href="/?go=sis2" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">&emsp;Sis 2</a>
-    
-</li>
-
-        
-          
-  <li class="block text-base font-medium relative my-1">
-    <a href="/?go=sis3" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 bg-primary-focus">&emsp;Sis 3</a>
-    
-</li>
-
-        
-    </ul>
   
-</li>
+    <li class="block text-base font-medium relative my-1">
+      <a href="/?go=group" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">
+        Group Travel
+      </a>
+      
+        <ul>
+          
+            
+  
+    <li class="block text-base font-medium relative my-1">
+      <a href="/?go=group1" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 bg-primary-focus">
+        &emsp;Group Travel 1
+      </a>
+      
+  </li>
+
+
+
+          
+            
+  
+    <li class="block text-base font-medium relative my-1">
+      <a href="/?go=group2" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">
+        &emsp;Group Travel 2
+      </a>
+      
+  </li>
+
+
+
+          
+      </ul>
+    
+  </li>
+
+
+
+      
+        
+  
+    <li class="block text-base font-medium relative my-1">
+      <a href="/?go=individual" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">
+        Individual Travel
+      </a>
+      
+        <ul>
+          
+            
+  
+    <li class="block text-base font-medium relative my-1">
+      <a href="/?go=individual1" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">
+        &emsp;Individual Travel 1
+      </a>
+      
+        <ul>
+          
+            
+  
+    <li class="block text-base font-medium relative my-1">
+      <a href="/?go=individual11" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">
+        &emsp;&emsp;Individual Travel 1_1
+      </a>
+      
+  </li>
+
+
+
+          
+            
+  
+    <li class="block text-base font-medium relative my-1">
+      <a href="/?go=individual12" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">
+        &emsp;&emsp;Individual Travel 1_2
+      </a>
+      
+  </li>
+
+
+
+          
+      </ul>
+    
+  </li>
+
+
+
+          
+            
+  
+    <li class="block text-base font-medium relative my-1">
+      <a href="/?go=individual2" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 ">
+        &emsp;Individual Travel 2
+      </a>
+      
+  </li>
+
+
+
+          
+      </ul>
+    
+  </li>
+
+
 
       
     </ul>
@@ -1574,30 +1726,17 @@ Reset links to optimize for opt-in styling instead of opt-out.
     <div class="prose min-h-screen mx-auto px-8 my-5">
       
 
-      <ul>
-<li><a href="/testwebsite/?go=pages">Test</a>
-<ul>
-<li><a href="/testwebsite/?go=bro">Bro</a>
-<ul>
-<li><a href="/testwebsite/?go=bro2">Bro 2</a></li>
-<li><a href="/testwebsite/?go=bro3">Bro 3</a></li>
-</ul>
-</li>
-<li><a href="/testwebsite/?go=sis">Sis</a>
-<ul>
-<li><a href="/testwebsite/?go=sis2">Sis 2</a></li>
-<li><a href="/testwebsite/?go=sis3">Sis 3</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="heading-1" tabindex="-1"><a class="header-anchor" href="#heading-1">Heading 1</a></h1>
+      <h1 id="heading-1" tabindex="-1"><a class="header-anchor" href="#heading-1">Heading 1</a></h1>
 <h2 id="heading-2" tabindex="-1"><a class="header-anchor" href="#heading-2">Heading 2</a></h2>
 <h3 id="heading-3" tabindex="-1"><a class="header-anchor" href="#heading-3">Heading 3</a></h3>
 <h4 id="heading-4" tabindex="-1"><a class="header-anchor" href="#heading-4">Heading 4</a></h4>
 <h5 id="heading-5" tabindex="-1"><a class="header-anchor" href="#heading-5">Heading 5</a></h5>
 <h6 id="heading-6" tabindex="-1"><a class="header-anchor" href="#heading-6">Heading 6</a></h6>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc sed id semper risus in hendrerit gravida. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit. Dapibus ultrices in iaculis nunc sed augue lacus. Purus ut faucibus pulvinar elementum. In fermentum posuere urna nec tincidunt praesent semper feugiat nibh. Etiam tempor orci eu lobortis elementum nibh tellus molestie. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien. Platea dictumst quisque sagittis purus sit amet volutpat consequat mauris. Amet venenatis urna cursus eget nunc scelerisque viverra. Sed viverra tellus in hac habitasse platea dictumst vestibulum. Diam maecenas ultricies mi eget mauris pharetra et ultrices. Arcu vitae elementum curabitur vitae nunc sed velit dignissim sodales. Sagittis vitae et leo duis ut diam quam nulla porttitor. Eget dolor morbi non arcu risus quis varius quam. Massa enim nec dui nunc mattis enim ut.</p>
+<p>Odio euismod lacinia at quis risus sed vulputate. Lectus nulla at volutpat diam ut venenatis tellus in metus. Aliquet nec ullamcorper sit amet risus nullam eget felis eget. Turpis massa tincidunt dui ut ornare lectus. Sit amet tellus cras adipiscing enim eu. Parturient montes nascetur ridiculus mus. Vitae elementum curabitur vitae nunc sed velit dignissim sodales. Massa ultricies mi quis hendrerit dolor. Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Massa eget egestas purus viverra accumsan in nisl nisi. Nunc sed velit dignissim sodales ut. Fusce ut placerat orci nulla pellentesque. Ante metus dictum at tempor commodo ullamcorper a. Nullam non nisi est sit. In hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit. Pellentesque massa placerat duis ultricies lacus sed. Metus dictum at tempor commodo ullamcorper a lacus. Lorem sed risus ultricies tristique nulla aliquet. Aenean sed adipiscing diam donec.</p>
+<p>Urna id volutpat lacus laoreet non curabitur gravida arcu ac. Ac turpis egestas maecenas pharetra convallis posuere morbi leo. Ac feugiat sed lectus vestibulum mattis ullamcorper velit sed. Lectus arcu bibendum at varius vel pharetra. Fermentum odio eu feugiat pretium. Nisl suscipit adipiscing bibendum est ultricies integer. Ut consequat semper viverra nam libero justo. Velit egestas dui id ornare arcu. Vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Blandit libero volutpat sed cras ornare.</p>
+<p>Nunc consequat interdum varius sit. Odio facilisis mauris sit amet massa. Egestas erat imperdiet sed euismod nisi porta lorem mollis. Tincidunt lobortis feugiat vivamus at augue. Feugiat in ante metus dictum at tempor commodo. Eget aliquet nibh praesent tristique magna sit. Et netus et malesuada fames ac turpis egestas maecenas pharetra. Faucibus a pellentesque sit amet porttitor eget dolor morbi non. Ultrices sagittis orci a scelerisque purus. Vitae purus faucibus ornare suspendisse sed. Malesuada fames ac turpis egestas sed tempus urna. Tortor consequat id porta nibh venenatis cras sed felis. A iaculis at erat pellentesque adipiscing commodo elit at. Dolor sit amet consectetur adipiscing. Dolor sit amet consectetur adipiscing.</p>
+<p>Ipsum a arcu cursus vitae congue mauris rhoncus aenean vel. Orci eu lobortis elementum nibh tellus molestie nunc non. Arcu dui vivamus arcu felis bibendum ut tristique et. At augue eget arcu dictum varius duis at consectetur. Aliquam faucibus purus in massa tempor nec feugiat. Est velit egestas dui id ornare arcu odio ut sem. Euismod in pellentesque massa placerat duis. Pellentesque nec nam aliquam sem et tortor consequat id porta. Dolor magna eget est lorem ipsum dolor sit amet. Vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum. Sed odio morbi quis commodo. Gravida cum sociis natoque penatibus et magnis dis parturient. At in tellus integer feugiat.</p>
 <nav class="table-of-contents not-prose"><ol><li><a href="#heading-1">Heading 1</a><ol><li><a href="#heading-2">Heading 2</a><ol><li><a href="#heading-3">Heading 3</a><ol></ol></li></ol></li></ol></li></ol></nav>
     </div>
 
@@ -1617,7 +1756,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
           <span>Contact Us</span>
         </a>
 
-        <a class="text-primary-content text-opacity-70 hover:text-opacity-50 underline flex items-center justify-center gap-1" href="https://github.com/lusend/testwebsite/edit/main/src/pages/sis3.md">
+        <a class="text-primary-content text-opacity-70 hover:text-opacity-50 underline flex items-center justify-center gap-1" href="https://github.com/lusend/testwebsite/edit/main/src/pages/group1.md">
           <ion-icon name="create-outline">&nbsp;</ion-icon>
           <span>Edit Page</span>
         </a>
