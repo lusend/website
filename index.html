@@ -346,6 +346,59 @@ Reset links to optimize for opt-in styling instead of opt-out.
   --tw-backdrop-sepia:  ;
 }
 
+.container{
+  width: 100%;
+}
+
+@media (min-width: 340px){
+
+  .container{
+    max-width: 340px;
+  }
+}
+
+@media (min-width: 640px){
+
+  .container{
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px){
+
+  .container{
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 870px){
+
+  .container{
+    max-width: 870px;
+  }
+}
+
+@media (min-width: 1024px){
+
+  .container{
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px){
+
+  .container{
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px){
+
+  .container{
+    max-width: 1536px;
+  }
+}
+
 #app .prose{
   color: var(--tw-prose-body);
   max-width: 65ch;
@@ -774,6 +827,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   visibility: visible;
 }
 
+#app .fixed{
+  position: fixed;
+}
+
 #app .absolute{
   position: absolute;
 }
@@ -796,20 +853,20 @@ Reset links to optimize for opt-in styling instead of opt-out.
   top: 102vh;
 }
 
-#app .left-1{
-  left: 0.25rem;
-}
-
-#app .top-1{
-  top: 0.25rem;
-}
-
 #app .top-0{
   top: 0px;
 }
 
 #app .left-0{
   left: 0px;
+}
+
+#app .left-1{
+  left: 0.25rem;
+}
+
+#app .top-1{
+  top: 0.25rem;
 }
 
 #app .right-0{
@@ -865,6 +922,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .mt-4{
   margin-top: 1rem;
+}
+
+#app .mr-8{
+  margin-right: 2rem;
+}
+
+#app .ml-1{
+  margin-left: 0.25rem;
 }
 
 #app .block{
@@ -945,6 +1010,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .cursor-pointer{
   cursor: pointer;
+}
+
+#app .resize{
+  resize: both;
 }
 
 #app .flex-col{
@@ -1323,7 +1392,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   }
 }
 
-@media (min-width: 840px){
+@media (min-width: 870px){
+
+  #app .navSmall\:mr-0{
+    margin-right: 0px;
+  }
 
   #app .navSmall\:ml-6{
     margin-left: 1.5rem;
@@ -1408,11 +1481,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 <p><em>The deployment status should be visible at the top of the page. Check the status by clicking on either of the status badges or visiting the <a href="https://github.com/lusend/testwebsite">repository</a>.</em></p>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/testwebsite/commit/7f76d96d409a87b61a9af3fefb76fe5eb2c0d32f" class="no-underline hover:underline" target="_blank">fix: 🚑 Fixed Hidden Buttons<br />
+  <a href="https://github.com/lusend/testwebsite/commit/07e5b5b0853770a890dab942c5c471573b2aaf5a" class="no-underline hover:underline" target="_blank">feat: ✨ Added Plane Background<br />
 <br />
-During development, admin console and my application buttons were reversed for testing purposes. This broke them in production. This change reverses that bug.</a>
+Added the moving plane background along with the easter egg to the page.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-11T15:27:34Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-11T16:27:23Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>

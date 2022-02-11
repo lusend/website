@@ -340,6 +340,59 @@ Reset links to optimize for opt-in styling instead of opt-out.
   --tw-backdrop-sepia:  ;
 }
 
+.container{
+  width: 100%;
+}
+
+@media (min-width: 340px){
+
+  .container{
+    max-width: 340px;
+  }
+}
+
+@media (min-width: 640px){
+
+  .container{
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px){
+
+  .container{
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 870px){
+
+  .container{
+    max-width: 870px;
+  }
+}
+
+@media (min-width: 1024px){
+
+  .container{
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px){
+
+  .container{
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px){
+
+  .container{
+    max-width: 1536px;
+  }
+}
+
 #app .prose{
   color: var(--tw-prose-body);
   max-width: 65ch;
@@ -768,6 +821,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   visibility: visible;
 }
 
+#app .fixed{
+  position: fixed;
+}
+
 #app .absolute{
   position: absolute;
 }
@@ -790,20 +847,20 @@ Reset links to optimize for opt-in styling instead of opt-out.
   top: 102vh;
 }
 
-#app .left-1{
-  left: 0.25rem;
-}
-
-#app .top-1{
-  top: 0.25rem;
-}
-
 #app .top-0{
   top: 0px;
 }
 
 #app .left-0{
   left: 0px;
+}
+
+#app .left-1{
+  left: 0.25rem;
+}
+
+#app .top-1{
+  top: 0.25rem;
 }
 
 #app .right-0{
@@ -859,6 +916,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .mt-4{
   margin-top: 1rem;
+}
+
+#app .mr-8{
+  margin-right: 2rem;
+}
+
+#app .ml-1{
+  margin-left: 0.25rem;
 }
 
 #app .block{
@@ -939,6 +1004,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .cursor-pointer{
   cursor: pointer;
+}
+
+#app .resize{
+  resize: both;
 }
 
 #app .flex-col{
@@ -1317,7 +1386,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   }
 }
 
-@media (min-width: 840px){
+@media (min-width: 870px){
+
+  #app .navSmall\:mr-0{
+    margin-right: 0px;
+  }
 
   #app .navSmall\:ml-6{
     margin-left: 1.5rem;
@@ -1406,7 +1479,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
       </button>
     </div>
 
-    <div class="flex-1 navSmall:flex-auto flex items-center justify-center navSmall:items-stretch navSmall:justify-start">
+    <div class="flex-1 mr-8 navSmall:mr-0 navSmall:flex-auto flex items-center justify-center navSmall:items-stretch navSmall:justify-start">
       <div class=" flex items-center">
         <a href="/" :class="scroll" class="h-8 px-3 py-1 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 rounded-md text-primary-content">
   <svg class="h-full" viewBox="0 0 1647 385" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1568,6 +1641,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
         <span class="block">Login</span>
         <ion-icon  name="log-in-outline" class='text-xl'>&nbsp;</ion-icon>
       </a>
+      <button x-data="{ planes: false }" x-effect="togglePlanes(planes)" x-on:click="planes = !planes" class="ml-1 inline-flex items-center justify-center gap-1 p-2 rounded-md hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-sm font-medium">
+        <ion-icon x-show="!planes" name="airplane-outline"class='text-xl' x-cloak>&nbsp;</ion-icon>
+        <ion-icon x-show="planes" name="airplane"class='text-xl' x-cloak>&nbsp;</ion-icon>
+      </button>
       <div x-show="applicant || admin" class="relative" x-data="{ open: false }" x-on:click="open = !open" x-on:click.outside="open = false">
         <button class="inline-flex items-center justify-center gap-1 p-2 rounded-md hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-sm font-medium" x-cloak>
           <span class="hidden xs:!block">Profile</span>
@@ -1724,7 +1801,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
 </div>
 </nav>
 
-    <div class="prose min-h-screen mx-auto px-8 my-5">
+    <div class="prose min-h-screen mx-auto px-8 my-5 z-10 relative">
       
         <h1>Stage Test</h1>
       
@@ -1767,12 +1844,143 @@ Reset links to optimize for opt-in styling instead of opt-out.
       </div>
     </footer>
 
+    <div id="planes" class="fixed top-0 left-0 w-full h-full z-0 pointer-events-none">&nbsp;</div>
   </div>
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.37.5/tsparticles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-particles@1.37.5/dist/jquery.particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.5/mousetrap.min.js"></script>
+
+  <script>
+    
+let config = {
+  autoPlay: true,
+  fullScreen: {
+    enable: true
+  },
+  detectRetina: true,
+  duration: 0,
+  fpsLimit: 60,
+  interactivity: {
+    detectsOn: 'window',
+    events: {
+      onClick: {
+        enable: true,
+        mode: 'push'
+      },
+      onHover: {
+        enable: true,
+        mode: 'repulse'
+      },
+      resize: true
+    },
+    modes: {
+      repulse: {
+        distance: 150
+      },
+      push: {
+        quantity: 1
+      },
+      trail: {
+        delay: 0.05,
+        quantity: 1,
+        pauseOnStop: true
+      }
+    }
+  },
+
+  particles: {
+    color: {
+      value: '#fff',
+      animation: {
+        h: {
+          count: 0
+        }
+      }
+    },
+    move: {
+      enable: true,
+      direction: 'right',
+      straight: false
+    },
+    opacity: {
+      value: {
+        min: 0.1,
+        max: 0.5
+      },
+      animation: {
+        enable: true,
+        speed: 0.5,
+        startValue: 'random',
+        minimumValue: 0.2
+      }
+    },
+    number: {
+      density: {
+        enable: true,
+        area: 800,
+        factor: 1000
+      },
+      limit: 0,
+      value: 10
+    },
+    rotate: {
+      path: true
+    },
+    shape: {
+      type: 'image',
+      image: {
+        width: 100,
+        height: 100,
+        src: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBhcmlhLWhpZGRlbj0idHJ1ZSIgcm9sZT0iaW1nIiBjbGFzcz0iaWNvbmlmeSBpY29uaWZ5LS1mYS1zb2xpZCIgd2lkdGg9IjEuMTNlbSIgaGVpZ2h0PSIxZW0iIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIG1lZXQiIHZpZXdCb3g9IjAgMCA1NzYgNTEyIj48cGF0aCBkPSJNNDgwIDE5MkgzNjUuNzFMMjYwLjYxIDguMDZBMTYuMDE0IDE2LjAxNCAwIDAgMCAyNDYuNzEgMGgtNjUuNWMtMTAuNjMgMC0xOC4zIDEwLjE3LTE1LjM4IDIwLjM5TDIxNC44NiAxOTJIMTEybC00My4yLTU3LjZjLTMuMDItNC4wMy03Ljc3LTYuNC0xMi44LTYuNEgxNi4wMUM1LjYgMTI4LTIuMDQgMTM3Ljc4LjQ5IDE0Ny44OEwzMiAyNTZMLjQ5IDM2NC4xMkMtMi4wNCAzNzQuMjIgNS42IDM4NCAxNi4wMSAzODRINTZjNS4wNCAwIDkuNzgtMi4zNyAxMi44LTYuNEwxMTIgMzIwaDEwMi44NmwtNDkuMDMgMTcxLjZjLTIuOTIgMTAuMjIgNC43NSAyMC40IDE1LjM4IDIwLjRoNjUuNWM1Ljc0IDAgMTEuMDQtMy4wOCAxMy44OS04LjA2TDM2NS43MSAzMjBINDgwYzM1LjM1IDAgOTYtMjguNjUgOTYtNjRzLTYwLjY1LTY0LTk2LTY0eiIgZmlsbD0iY3VycmVudENvbG9yIj48L3BhdGg+PC9zdmc+'
+      }
+    },
+    size: {
+      value: 64,
+      random: {
+        enable: true,
+        minimumValue: 8
+      }
+    }
+  }
+};
+
+const particles = $('#planes')
+  .particles()
+  .init(config, (container) => {
+    window.togglePlanes = function (planes) {
+      if (planes) {
+        $('#planes').css('opacity', 1);
+        container.start();
+      } else {
+        $('#planes').css('opacity', 0);
+        container.stop();
+      }
+    };
+
+    Mousetrap.bind(
+      'up up down down left right left right b a enter',
+      function () {
+        container.options.particles.size.value = 300;
+        container.options.particles.opacity.value.min = 0.8;
+        container.options.particles.opacity.value.max = 1;
+        container.options.particles.shape.image.width = 102;
+        container.options.particles.shape.image.height = 73;
+        container.options.interactivity.events.onHover.mode = 'trail';
+        container.options.particles.number.density.area = 50;
+        container.options.particles.shape.image.src =
+          'https://liberty-sa.terradotta.com/_customtags/ct_FileRetrieve.cfm?File_ID=34475';
+        container.refresh();
+      }
+    );
+  });
+
+
+  </script>
 
 
 
