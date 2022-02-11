@@ -1511,11 +1511,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   
     
       <div class="relative" x-data="{ open_group: false }" x-on:click="open_group = !open_group" x-on:click.outside="open_group = false">
-        <div :class="open_group && scroll + ' bg-primary'" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 cursor-pointer px-3 py-2 rounded-md text-sm font-medium flex space-x-1 items-center" aria-current="page">
+        <button :class="open_group && scroll + ' bg-primary'" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 cursor-pointer px-3 py-2 rounded-md text-sm font-medium flex space-x-1 items-center" aria-current="page">
           <span>Group Travel</span>
           <ion-icon x-show="!open_group" name="chevron-down-outline">&nbsp;</ion-icon>
           <ion-icon x-show="open_group" name="chevron-up-outline" x-cloak>&nbsp;</ion-icon>
-        </div>
+        </button>
         <div x-show="open_group" :class="scroll" class="absolute mt-4 bg-primary rounded-md min-w-[15rem] shadow-md z-50" x-cloak>
           <div class="px-2 pt-2 pb-3 space-y-1 max-h-[calc(90vh-72px)] overflow-auto">
             <ul>
@@ -1562,11 +1562,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   
     
       <div class="relative" x-data="{ open_individual: false }" x-on:click="open_individual = !open_individual" x-on:click.outside="open_individual = false">
-        <div :class="open_individual && scroll + ' bg-primary'" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 cursor-pointer px-3 py-2 rounded-md text-sm font-medium flex space-x-1 items-center" aria-current="page">
+        <button :class="open_individual && scroll + ' bg-primary'" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 cursor-pointer px-3 py-2 rounded-md text-sm font-medium flex space-x-1 items-center" aria-current="page">
           <span>Individual Travel</span>
           <ion-icon x-show="!open_individual" name="chevron-down-outline">&nbsp;</ion-icon>
           <ion-icon x-show="open_individual" name="chevron-up-outline" x-cloak>&nbsp;</ion-icon>
-        </div>
+        </button>
         <div x-show="open_individual" :class="scroll" class="absolute mt-4 bg-primary rounded-md min-w-[15rem] shadow-md z-50" x-cloak>
           <div class="px-2 pt-2 pb-3 space-y-1 max-h-[calc(90vh-72px)] overflow-auto">
             <ul>
