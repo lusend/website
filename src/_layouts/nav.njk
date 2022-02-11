@@ -1,94 +1,112 @@
 {% set navPages = collections.all | eleventyNavigation('pages') %}
 
-{% macro renderNavListItem(entry, spaces = "") %}
-  <li class="block text-base font-medium relative my-1">
-    <a href="{{ entry.url }}" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 {% if entry.url == eleventyNavigation.url %}bg-primary-focus{% endif %}">{{spaces | safe }}{{ entry.title }}</a>
-    {% if entry.children.length %}
-      <ul>
-        {% for child in entry.children %}
-          {{ renderNavListItem(child, spaces + "&emsp;") }}
-        {% endfor %}
-    </ul>
-  {% endif %}
-</li>
+{% macro renderNavListItem(entry, separateDropdown = false, spaces = "") %}
+  {% if separateDropdown %}
+    {%if entry.children.length %}
+      <div class="relative" x-data="{ open_{{ entry.key }}: false }" x-on:click="open_{{ entry.key }} = !open_{{ entry.key }}" x-on:click.outside="open_{{ entry.key }} = false">
+        <div :class="open_{{ entry.key }} && scroll + ' bg-primary'" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 cursor-pointer px-3 py-2 rounded-md text-sm font-medium flex space-x-1 items-center" aria-current="page">
+          <span>{{ entry.title }}</span>
+          <ion-icon x-show="!open_{{ entry.key }}" name="chevron-down-outline">&nbsp;</ion-icon>
+          <ion-icon x-show="open_{{ entry.key }}" name="chevron-up-outline" x-cloak>&nbsp;</ion-icon>
+        </div>
+        <div x-show="open_{{ entry.key }}" :class="scroll" class="absolute mt-4 bg-primary rounded-md min-w-[15rem] shadow-md z-50" x-cloak>
+          <div class="px-2 pt-2 pb-3 space-y-1 max-h-[calc(90vh-72px)] overflow-auto">
+            <ul>
+              <li class="block text-base font-medium relative my-1">
+                <a href="{{ entry.url }}" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 {% if entry.url == eleventyNavigation.url %}bg-primary-focus{% endif %}">
+                  <strong>{{ entry.title }}</strong>
+                </a>
+              </li>
+              {% for child in entry.children %}
+                {{ renderNavListItem(child, false, spaces) }}
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    {% else %}
+      <a href="{{ entry.url }}" :class="scroll" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 px-3 py-2 rounded-md text-sm font-medium {% if entry.url == eleventyNavigation.url %}bg-primary-focus{% endif %}">{{ entry.title }}</a>
+    {% endif %}
+  {% else %}
+    <li class="block text-base font-medium relative my-1">
+      <a href="{{ entry.url }}" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 {% if entry.url == eleventyNavigation.url %}bg-primary-focus{% endif %}">
+        {{spaces | safe }}{{ entry.title }}
+      </a>
+      {% if entry.children.length %}
+        <ul>
+          {% for child in entry.children %}
+            {{ renderNavListItem(child, false, spaces + "&emsp;") }}
+          {% endfor %}
+      </ul>
+    {% endif %}
+  </li>
+{% endif %}
+
 {% endmacro %}
 
 <nav x-data="{ menu: false, admin: document.querySelector('#pagenav') && document.querySelector('#pagenav').textContent.includes('Admin Console'), applicant: document.querySelector('#pagenav') && document.querySelector('#pagenav').textContent.includes('Applicant') }" class="bg-primary min-w-full not-prose sticky top-0 z-50 transition-colors" :class="scroll">
 <div class="mx-auto px-2 md:px-6 lg:px-8">
   <div class="relative flex items-center justify-between h-16">
 
-    <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-      <button type="button" x-on:click="menu = !menu" class="inline-flex items-center justify-center p-2 rounded-md hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-
+    <div class="absolute inset-y-0 left-0 flex items-center navSmall:hidden">
+      <button type="button" x-on:click="menu = !menu" class="inline-flex items-center justify-center p-2 rounded-md gap-1 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-sm font-medium" aria-controls="mobile-menu" aria-expanded="false">
         <ion-icon x-show="!menu" name="menu-outline" class="text-xl">&nbsp;</ion-icon>
         <ion-icon x-show="menu" name="close-outline" class="text-xl" x-cloak>&nbsp;</ion-icon>
-
-        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-        </svg>
+        <span class="hidden xs:!block">Menu</span>
       </button>
     </div>
 
-    <div class="flex-1 sm:flex-auto flex items-center justify-center sm:items-stretch sm:justify-start">
-      <div class="flex-shrink-0 flex items-center">
-        <a href="/" class="h-8 px-3 py-1 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 rounded-md text-primary-content">{{ logo | safe }}</a>
+    <div class="flex-1 navSmall:flex-auto flex items-center justify-center navSmall:items-stretch navSmall:justify-start">
+      <div class=" flex items-center">
+        <a href="/" :class="scroll" class="h-8 px-3 py-1 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 rounded-md text-primary-content">{{ logo | safe }}</a>
       </div>
 
-      <div class="hidden sm:!block sm:ml-6">
+      <div class="hidden navSmall:!block navSmall:ml-6">
         <div class="flex space-x-1 text-primary-content">
-          <div class="relative" x-data="{ open: false }" x-on:click="open = !open" x-on:click.outside="open = false">
-            <div :class="open && scroll + ' bg-primary'" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 cursor-pointer px-3 py-2 rounded-md text-sm font-medium flex space-x-1 items-center" aria-current="page">
-              <span>Pages</span>
-              <ion-icon x-show="!open" name="chevron-down-outline">&nbsp;</ion-icon>
-              <ion-icon x-show="open" name="chevron-up-outline" x-cloak>&nbsp;</ion-icon>
-            </div>
-            <div x-show="open" :class="scroll" class="absolute mt-4 bg-primary rounded-md min-w-[15rem] shadow-md z-50" x-cloak>
-              <div class="px-2 pt-2 pb-3 space-y-1 max-h-[calc(90vh-72px)] overflow-auto">
-                <ul>
-                  <li class="block text-base font-medium relative my-1">
-                    <a href="/" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10">
-                      <strong>Home</strong>
-                    </a>
-                  </li>
-                  {% for entry in navPages %}{{ renderNavListItem(entry) }}
-                  {% endfor %}
-                </ul>
-              </div>
-            </div>
-          </div>
-          <a href="/index.cfm?FuseAction=Portal.Home" x-show="admin" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 px-3 py-2 rounded-md text-sm font-medium" x-cloak>Admin Console</a>
-          <a href="/index.cfm?FuseAction=Students.AngularHome" x-show="applicant" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 px-3 py-2 rounded-md text-sm font-medium" x-cloak>My Applications</a>
+          {% for entry in navPages %}
+            {{ renderNavListItem(entry, true) }}
+          {% endfor %}
         </div>
       </div>
     </div>
 
     <div class="absolute inset-y-0 right-0 flex items-center">
       <a x-show="!applicant && !admin" href="/index.cfm?FuseAction=Security.AngLogin" class="inline-flex items-center justify-center space-x-1 p-2 rounded-md hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-sm font-medium">
-        <span class="hidden sm:!block">Login</span>
+        <span class="block">Login</span>
         <ion-icon  name="log-in-outline" class='text-xl'>&nbsp;</ion-icon>
       </a>
-      <a x-show="applicant || admin" href="/index.cfm?FuseAction=Security.Logout" class="inline-flex items-center justify-center space-x-1 p-2 rounded-md hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-sm font-medium" x-cloak>
-        <span class="hidden md:!block">Logout</span>
-        <ion-icon  name="log-out-outline" class='text-xl'>&nbsp;</ion-icon>
-      </a>
+      <div x-show="applicant || admin" class="relative" x-data="{ open: false }" x-on:click="open = !open" x-on:click.outside="open = false">
+        <button class="inline-flex items-center justify-center gap-1 p-2 rounded-md hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-sm font-medium" x-cloak>
+          <span class="hidden xs:!block">Profile</span>
+          <ion-icon name="person-circle-outline" class='text-xl'>&nbsp;</ion-icon>
+        </button>
+        <div x-show="open" :class="scroll" class="absolute mt-4 right-0 bg-primary rounded-md min-w-[15rem] shadow-md z-50" x-cloak>
+          <div class="px-2 pt-2 pb-3 space-y-1 max-h-[calc(90vh-72px)] overflow-auto">
+            <ul>
+              <li class="block text-base font-medium relative my-1">
+                <a href="/index.cfm?FuseAction=Security.Logout" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10">
+                  Logout
+                </a>
+                <a x-show="!admin" href="/index.cfm?FuseAction=Portal.Home" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10" x-cloak>
+                  Admin Console
+                </a>
+                <a x-show="!applicant" href="/index.cfm?FuseAction=Students.AngularHome" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10" x-cloak>
+                  My Applications
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<div :class="scroll" class="absolute sm:hidden bg-primary w-full" x-on:click.outside="menu = false" x-show="menu" x-cloak>
+<div :class="scroll" class="absolute navSmall:hidden bg-primary w-full" x-on:click.outside="menu = false" x-show="menu" x-cloak>
   <div class="px-2 pt-2 pb-3 space-y-1 max-h-[calc(90vh-72px)] overflow-auto">
-    <a href="/" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 block px-3 py-2 rounded-md text-base font-medium" aria-current="page">
-      <strong>Home</strong>
-    </a>
-    <a href="/index.cfm?FuseAction=Portal.Home" x-show="admin" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 block px-3 py-2 rounded-md text-base font-medium" x-cloak>
-      <strong>Admin Console</strong>
-    </a>
-    <a href="/index.cfm?FuseAction=Students.AngularHome" x-show="applicant" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 block px-3 py-2 rounded-md text-base font-medium" x-cloak>
-      <strong>My Applications</strong>
-    </a>
     <ul>
-      {% for entry in navPages %}{{ renderNavListItem(entry) }}
+      {% for entry in navPages %}
+        {{ renderNavListItem(entry) }}
       {% endfor %}
     </ul>
   </div>

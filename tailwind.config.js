@@ -34,6 +34,15 @@ module.exports = {
       error: '#ff5724',
       black: '#000000',
       white: '#ffffff'
+    },
+    screens: {
+      xs: '340px',
+      sm: '640px',
+      md: '768px',
+      navSmall: '840px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px'
     }
   },
   corePlugins: {

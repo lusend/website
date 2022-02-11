@@ -11,7 +11,9 @@ const options = {
 module.exports = markdownIt(options)
   .use(require('markdown-it-sub'))
   .use(require('markdown-it-sup'))
+  .use(require('markdown-it-mark'))
   .use(require('markdown-it-emoji'))
+  .use(require('markdown-it-bracketed-spans'))
   .use(require('markdown-it-attrs'))
   .use(anchor, {
     leveL: 6,
