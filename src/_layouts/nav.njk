@@ -4,11 +4,11 @@
   {% if separateDropdown %}
     {%if entry.children.length %}
       <div class="relative" x-data="{ open_{{ entry.key }}: false }" x-on:click="open_{{ entry.key }} = !open_{{ entry.key }}" x-on:click.outside="open_{{ entry.key }} = false">
-        <div :class="open_{{ entry.key }} && scroll + ' bg-primary'" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 cursor-pointer px-3 py-2 rounded-md text-sm font-medium flex space-x-1 items-center" aria-current="page">
+        <button :class="open_{{ entry.key }} && scroll + ' bg-primary'" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 cursor-pointer px-3 py-2 rounded-md text-sm font-medium flex space-x-1 items-center" aria-current="page">
           <span>{{ entry.title }}</span>
           <ion-icon x-show="!open_{{ entry.key }}" name="chevron-down-outline">&nbsp;</ion-icon>
           <ion-icon x-show="open_{{ entry.key }}" name="chevron-up-outline" x-cloak>&nbsp;</ion-icon>
-        </div>
+        </button>
         <div x-show="open_{{ entry.key }}" :class="scroll" class="absolute mt-4 bg-primary rounded-md min-w-[15rem] shadow-md z-50" x-cloak>
           <div class="px-2 pt-2 pb-3 space-y-1 max-h-[calc(90vh-72px)] overflow-auto">
             <ul>
