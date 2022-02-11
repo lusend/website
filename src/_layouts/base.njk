@@ -18,6 +18,10 @@
   {% endset %}
 {% endif %}
 
+{% set js %}
+{% include "scripts/planes.js" %}
+{% endset %}
+
 {% block content %}
 
   {% set css %}
@@ -35,7 +39,7 @@
     <div class="absolute top-[102vh] overflow-none h-[calc(100%-102vh)] w-full pointer-events-none -z-50" x-intersect:enter="scroll = 'bg-opacity-90'" x-intersect:leave="scroll = ''">&nbsp;</div>
 
     {% include "./nav.njk" %}
-    <div class="prose min-h-screen mx-auto px-8 my-5">
+    <div class="prose min-h-screen mx-auto px-8 my-5 z-10 relative">
       {% if env == 'stage' %}
         <h1>Stage Test</h1>
       {% endif %}
@@ -61,11 +65,19 @@
       </div>
     </footer>
 
+    <div id="planes" class="fixed top-0 left-0 w-full h-full z-0 pointer-events-none">&nbsp;</div>
   </div>
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.37.5/tsparticles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-particles@1.37.5/dist/jquery.particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.5/mousetrap.min.js"></script>
+
+  <script>
+    {{ js | safe }}
+  </script>
 
 {% endblock %}

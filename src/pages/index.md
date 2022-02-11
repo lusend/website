@@ -1,5 +1,6 @@
 ---
 title: Home Page
+planes: true
 nav:
   title: Home
 ---

@@ -56,7 +56,7 @@
       </button>
     </div>
 
-    <div class="flex-1 navSmall:flex-auto flex items-center justify-center navSmall:items-stretch navSmall:justify-start">
+    <div class="flex-1 mr-8 navSmall:mr-0 navSmall:flex-auto flex items-center justify-center navSmall:items-stretch navSmall:justify-start">
       <div class=" flex items-center">
         <a href="/" :class="scroll" class="h-8 px-3 py-1 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 rounded-md text-primary-content">{{ logo | safe }}</a>
       </div>
@@ -75,6 +75,10 @@
         <span class="block">Login</span>
         <ion-icon  name="log-in-outline" class='text-xl'>&nbsp;</ion-icon>
       </a>
+      <button x-data="{ planes: {{ planes }} }" x-effect="togglePlanes(planes)" x-on:click="planes = !planes" class="ml-1 inline-flex items-center justify-center gap-1 p-2 rounded-md hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-sm font-medium">
+        <ion-icon x-show="!planes" name="airplane-outline"class='text-xl' x-cloak>&nbsp;</ion-icon>
+        <ion-icon x-show="planes" name="airplane"class='text-xl' x-cloak>&nbsp;</ion-icon>
+      </button>
       <div x-show="applicant || admin" class="relative" x-data="{ open: false }" x-on:click="open = !open" x-on:click.outside="open = false">
         <button class="inline-flex items-center justify-center gap-1 p-2 rounded-md hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-sm font-medium" x-cloak>
           <span class="hidden xs:!block">Profile</span>
