@@ -344,10 +344,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   width: 100%;
 }
 
-@media (min-width: 340px){
+@media (min-width: 410px){
 
   .container{
-    max-width: 340px;
+    max-width: 410px;
   }
 }
 
@@ -922,8 +922,8 @@ Reset links to optimize for opt-in styling instead of opt-out.
   margin-right: 2rem;
 }
 
-#app .ml-1{
-  margin-left: 0.25rem;
+#app .mr-1{
+  margin-right: 0.25rem;
 }
 
 #app .block{
@@ -1371,7 +1371,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
   font-family: initial;
 }
 
-@media (min-width: 340px){
+@media (min-width: 410px){
 
   #app .xs\:\!block{
     display: block !important;
@@ -1637,14 +1637,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
     </div>
 
     <div class="absolute inset-y-0 right-0 flex items-center">
-      <a x-show="!applicant && !admin" href="/index.cfm?FuseAction=Security.AngLogin" class="inline-flex items-center justify-center space-x-1 p-2 rounded-md hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-sm font-medium">
-        <span class="block">Login</span>
-        <ion-icon  name="log-in-outline" class='text-xl'>&nbsp;</ion-icon>
-      </a>
-      <button x-data="{ planes: true }" x-effect="togglePlanes(planes)" x-on:click="planes = !planes" class="ml-1 inline-flex items-center justify-center gap-1 p-2 rounded-md hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-sm font-medium">
+      <button x-data="{ planes: true }" x-effect="togglePlanes(planes)" x-on:click="planes = !planes" class="mr-1 inline-flex items-center justify-center gap-1 p-2 rounded-md hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-sm font-medium">
         <ion-icon x-show="!planes" name="airplane-outline"class='text-xl' x-cloak>&nbsp;</ion-icon>
         <ion-icon x-show="planes" name="airplane"class='text-xl' x-cloak>&nbsp;</ion-icon>
       </button>
+      <a x-show="!applicant && !admin" href="/index.cfm?FuseAction=Security.AngLogin" class="inline-flex items-center justify-center space-x-1 p-2 rounded-md hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-sm font-medium">
+        <span class="hidden xs:!block">Login</span>
+        <ion-icon  name="log-in-outline" class='text-xl'>&nbsp;</ion-icon>
+      </a>
       <div x-show="applicant || admin" class="relative" x-data="{ open: false }" x-on:click="open = !open" x-on:click.outside="open = false">
         <button class="inline-flex items-center justify-center gap-1 p-2 rounded-md hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-sm font-medium" x-cloak>
           <span class="hidden xs:!block">Profile</span>
