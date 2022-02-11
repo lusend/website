@@ -1195,6 +1195,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   line-height: 1.75rem;
 }
 
+#app .text-lg{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 #app .font-semibold{
   font-weight: 600;
 }
@@ -1653,14 +1658,17 @@ Reset links to optimize for opt-in styling instead of opt-out.
           <div class="px-2 pt-2 pb-3 space-y-1 max-h-[calc(90vh-72px)] overflow-auto">
             <ul>
               <li class="block text-base font-medium relative my-1">
-                <a href="/index.cfm?FuseAction=Security.Logout" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10">
-                  Logout
+                <a href="/index.cfm?FuseAction=Security.Logout" class="inline-flex gap-2 items-center w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10">
+                  <ion-icon name="log-out-outline" class='text-lg'>&nbsp;</ion-icon>
+                  <span>Logout</span>
                 </a>
-                <a x-show="admin" href="/index.cfm?FuseAction=Portal.Home" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10" x-cloak>
-                  Admin Console
+                <a x-show="admin" href="/index.cfm?FuseAction=Portal.Home" class="inline-flex gap-2 items-center w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10" x-cloak>
+                  <ion-icon name="settings-outline" class='text-lg'>&nbsp;</ion-icon>
+                  <span>Admin Console</span>
                 </a>
-                <a x-show="applicant" href="/index.cfm?FuseAction=Students.AngularHome" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10" x-cloak>
-                  My Applications
+                <a x-show="applicant" href="/index.cfm?FuseAction=Students.AngularHome" class="inline-flex gap-2 items-center w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10" x-cloak>
+                  <ion-icon name="person-outline" class='text-lg'>&nbsp;</ion-icon>
+                  <span>My Applications</span>
                 </a>
               </li>
             </ul>
