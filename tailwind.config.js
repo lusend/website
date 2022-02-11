@@ -36,7 +36,7 @@ module.exports = {
       white: '#ffffff'
     },
     screens: {
-      xs: '340px',
+      xs: '410px',
       sm: '640px',
       md: '768px',
       navSmall: '870px',
