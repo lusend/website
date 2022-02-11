@@ -1579,10 +1579,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
                 <a href="/index.cfm?FuseAction=Security.Logout" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10">
                   Logout
                 </a>
-                <a x-show="!admin" href="/index.cfm?FuseAction=Portal.Home" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10" x-cloak>
+                <a x-show="admin" href="/index.cfm?FuseAction=Portal.Home" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10" x-cloak>
                   Admin Console
                 </a>
-                <a x-show="!applicant" href="/index.cfm?FuseAction=Students.AngularHome" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10" x-cloak>
+                <a x-show="applicant" href="/index.cfm?FuseAction=Students.AngularHome" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10" x-cloak>
                   My Applications
                 </a>
               </li>
