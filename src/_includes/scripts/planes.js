@@ -90,6 +90,8 @@ let config = {
   }
 };
 
+window.togglePlanes = function (planes) {};
+
 const particles = $('#planes')
   .particles()
   .init(config, (container) => {

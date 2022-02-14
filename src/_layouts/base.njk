@@ -48,10 +48,10 @@
 
         {{ content | safe }}
       </div>
-      <div class="grow order-first lg:order-last max-w-[15rem] prose">
+      <div x-data="{ toc: !!document.querySelector('.table-of-contents')}" x-show="toc" class="grow order-first lg:order-last max-w-[15rem] prose" x-cloak>
         <div class="lg:sticky lg:top-20 text-base">
           <h3 class="my-0 mb-5">Table of Contents</h3>
-          <div class="table-of-contents-container lg:h-full lg:max-h-[calc(80vh-72px)] lg:overflow-y-auto">&nbsp;</div>
+          <div class="table-of-contents-container lg:h-full lg:max-h-[calc(80vh-72px)] lg:overflow-y-auto overflow-x-hidden">&nbsp;</div>
         </div>
       </div>
     </div>
@@ -79,8 +79,6 @@
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.37.5/tsparticles.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery-particles@1.37.5/dist/jquery.particles.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.5/mousetrap.min.js"></script>
@@ -88,5 +86,8 @@
   <script>
     {{ js | safe }}
   </script>
+
+  <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 {% endblock %}

@@ -12,21 +12,31 @@ const tocPath = tocSVG.appendChild(
   document.createElementNS('http://www.w3.org/2000/svg', 'path')
 );
 
-tocContainer.innerHTML = '';
-tocContainer.appendChild(toc);
+const tocElements = [];
 
-toc.appendChild(tocSVG);
+let tocExists = true;
 
-const tocListItems = [...toc.querySelectorAll('li')];
+let tocItems;
 
-const tocItems = tocListItems
-  .map((listItem) => {
-    const anchor = listItem.querySelector('a'),
-      targetID = anchor && anchor.getAttribute('href').slice(1),
-      target = document.getElementById(targetID);
-    return { listItem, anchor, target };
-  })
-  .filter((item) => item.target);
+try {
+  tocContainer.innerHTML = '';
+  tocContainer.appendChild(toc);
+
+  toc.appendChild(tocSVG);
+
+  const tocListItems = [...toc.querySelectorAll('li')];
+
+  tocItems = tocListItems
+    .map((listItem) => {
+      const anchor = listItem.querySelector('a'),
+        targetID = anchor && anchor.getAttribute('href').slice(1),
+        target = document.getElementById(targetID);
+      return { listItem, anchor, target };
+    })
+    .filter((item) => item.target);
+} catch (error) {
+  tocExists = false;
+}
 
 function drawPath() {
   let path = [],
@@ -103,8 +113,6 @@ function syncPath() {
   lastPathEnd = pathEnd;
 }
 
-const tocElements = [];
-
 function decideVisibility() {
   let prevItem;
   tocElements.forEach((item, index) => {
@@ -162,12 +170,17 @@ function markVisibleSection(observedEls) {
   syncPath();
 }
 
-window.onresize = function () {
-  drawPath();
-  syncPath();
-};
+if (tocExists) {
+  window.onresize = function () {
+    drawPath();
+    syncPath();
+  };
 
-drawPath();
+  $(document).ready(() => {
+    drawPath();
+    syncPath();
+  });
 
-const observer = new IntersectionObserver(markVisibleSection);
-elementsToObserve.forEach((thisEl) => observer.observe(thisEl));
+  const observer = new IntersectionObserver(markVisibleSection);
+  elementsToObserve.forEach((thisEl) => observer.observe(thisEl));
+}
