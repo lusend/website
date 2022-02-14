@@ -257,15 +257,91 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 /* Table of Contents */
 
+#app .table-of-contents{
+  position: relative;
+}
+
+@media (min-width: 1024px){
+
+  #app .table-of-contents{
+    position: absolute;
+  }
+}
+
+#app .table-of-contents a{
+  display: inline-block;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+#app .table-of-contents > ol{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10px;
+}
+
+#app .table-of-contents ol{
+  list-style-type: none;
+}
+
 #app .table-of-contents ol > li > ol {
       padding-left: 1.5em;
-      font-size: 0.9em;
     }
 
-#app .table-of-contents > ol > li {
+/* & > ol > li {
       padding-top: 0.15em;
       padding-bottom: 0.15em;
-    }
+    } */
+
+@media (min-width: 1024px){
+
+  #app .table-of-contents li.visible > a{
+    --tw-translate-x: 0.75rem;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
+  #app .table-of-contents li.visible > a{
+    font-weight: 600;
+  }
+}
+
+#app .table-of-contents li > a:hover{
+  font-weight: 700;
+}
+
+#app .table-of-contents li > a{
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+#app .table-of-contents svg{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  display: none;
+  height: 100%;
+}
+
+@media (min-width: 1024px){
+
+  #app .table-of-contents svg{
+    display: block !important;
+  }
+}
+
+#app .table-of-contents svg path{
+  fill: transparent;
+  stroke: #0A254E;
+  stroke-width: 3px;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 0 0 0 1000;
+}
 
 /* Header Anchor Links */
 
@@ -286,6 +362,15 @@ Reset links to optimize for opt-in styling instead of opt-out.
         position: absolute;
         width: 0.8em;
       }
+
+/* Offset Anchor Links */
+
+#app :target:before {
+    content: '';
+    display: block;
+    height: 5rem;
+    margin-top: -5rem;
+  }
 
 /* Badges */
 
@@ -889,13 +974,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   z-index: 50;
 }
 
-#app .m-auto{
-  margin: auto;
+#app .order-last{
+  order: 9999;
 }
 
-#app .mx-auto{
-  margin-left: auto;
-  margin-right: auto;
+#app .order-first{
+  order: -9999;
+}
+
+#app .m-auto{
+  margin: auto;
 }
 
 #app .my-5{
@@ -903,13 +991,27 @@ Reset links to optimize for opt-in styling instead of opt-out.
   margin-bottom: 1.25rem;
 }
 
+#app .my-0{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
 #app .my-1{
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
 }
 
+#app .mx-auto{
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #app .mt-2{
   margin-top: 0.5rem;
+}
+
+#app .mb-5{
+  margin-bottom: 1.25rem;
 }
 
 #app .mb-2{
@@ -972,10 +1074,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
   max-height: calc(90vh - 72px);
 }
 
-#app .min-h-screen{
-  min-height: 100vh;
-}
-
 #app .w-full{
   width: 100%;
 }
@@ -996,12 +1094,24 @@ Reset links to optimize for opt-in styling instead of opt-out.
   min-width: 100%;
 }
 
+#app .max-w-\[15rem\]{
+  max-width: 15rem;
+}
+
+#app .flex-initial{
+  flex: 0 1 auto;
+}
+
 #app .flex-auto{
   flex: 1 1 auto;
 }
 
 #app .flex-1{
   flex: 1 1 0%;
+}
+
+#app .grow{
+  flex-grow: 1;
 }
 
 #app .basis-full{
@@ -1038,6 +1148,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .justify-between{
   justify-content: space-between;
+}
+
+#app .gap-5{
+  gap: 1.25rem;
 }
 
 #app .gap-1{
@@ -1186,14 +1300,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
   line-height: 1rem;
 }
 
-#app .text-sm{
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
 #app .text-base{
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+#app .text-sm{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 #app .text-xl{
@@ -1264,6 +1378,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+#app .filter{
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 #app .transition{
@@ -1430,6 +1548,23 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 @media (min-width: 1024px){
 
+  #app .lg\:sticky{
+    position: -webkit-sticky;
+    position: sticky;
+  }
+
+  #app .lg\:top-20{
+    top: 5rem;
+  }
+
+  #app .lg\:order-first{
+    order: -9999;
+  }
+
+  #app .lg\:order-last{
+    order: 9999;
+  }
+
   #app .lg\:flex-auto{
     flex: 1 1 auto;
   }
@@ -1440,6 +1575,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
   #app .lg\:basis-0{
     flex-basis: 0px;
+  }
+
+  #app .lg\:flex-row{
+    flex-direction: row;
   }
 
   #app .lg\:rounded-b-lg{
@@ -1486,11 +1625,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 <p><em>The deployment status should be visible at the top of the page. Check the status by clicking on either of the status badges or visiting the <a href="https://github.com/lusend/testwebsite">repository</a>.</em></p>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/testwebsite/commit/8de48d2b0eed397d6dfa26f683845b0f02b3ce11" class="no-underline hover:underline" target="_blank">style: 💄 Changed Div to Button<br />
+  <a href="https://github.com/lusend/testwebsite/commit/09e41b819cf70718dcd85d0f8f362fbffd2f910c" class="no-underline hover:underline" target="_blank">feat: ✨ Added Procressing Table of Contents<br />
 <br />
-For accessibility, changed div to button to allow tabs and screen readers to work better.</a>
+Updated the TOC styles to include a progressive navigation that indicates where you are in the table of contents while you are scrolling. Also added styles to handle the TOC when on mobile.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-11T19:22:29Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-14T17:58:50Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
