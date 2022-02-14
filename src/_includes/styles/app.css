@@ -1,14 +1,50 @@
 #app {
   /* Table of Contents */
   .table-of-contents {
-    ol > li > ol {
-      padding-left: 1.5em;
-      font-size: 0.9em;
+    @apply lg:absolute relative;
+
+    a {
+      @apply inline-block transition-all;
     }
 
-    & > ol > li {
+    & > ol {
+      @apply sticky top-[10px];
+    }
+
+    ol {
+      @apply list-none;
+    }
+
+    ol > li > ol {
+      padding-left: 1.5em;
+    }
+
+    /* & > ol > li {
       padding-top: 0.15em;
       padding-bottom: 0.15em;
+    } */
+
+    li.visible > a {
+      @apply lg:font-semibold lg:translate-x-3;
+    }
+
+    li > a:hover {
+      @apply font-bold;
+    }
+
+    li > a {
+      @apply py-1;
+    }
+
+    svg {
+      @apply absolute top-0 left-0 h-full -z-[1] hidden lg:!block;
+
+      path {
+        @apply transition-all fill-transparent stroke-[3px] stroke-primary;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 0 0 0 1000;
+      }
     }
   }
 
@@ -29,6 +65,14 @@
         width: 0.8em;
       }
     }
+  }
+
+  /* Offset Anchor Links */
+  :target:before {
+    content: '';
+    display: block;
+    height: 5rem;
+    margin-top: -5rem;
   }
 
   /* Badges */

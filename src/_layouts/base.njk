@@ -18,10 +18,6 @@
   {% endset %}
 {% endif %}
 
-{% set js %}
-{% include "scripts/planes.js" %}
-{% endset %}
-
 {% block content %}
 
   {% set css %}
@@ -29,6 +25,11 @@
   {% if type == 'brochure' %}
     {% include "styles/brochure.css" %}
   {% endif %}
+  {% endset %}
+
+  {% set js %}
+  {% include "scripts/planes.js" %}
+  {% include "scripts/toc.js" %}
   {% endset %}
 
   <style>
@@ -39,12 +40,19 @@
     <div class="absolute top-[102vh] overflow-none h-[calc(100%-102vh)] w-full pointer-events-none -z-50" x-intersect:enter="scroll = 'bg-opacity-90'" x-intersect:leave="scroll = ''">&nbsp;</div>
 
     {% include "./nav.njk" %}
-    <div class="prose min-h-screen mx-auto px-8 my-5 z-10 relative">
-      {% if env == 'stage' %}
-        <h1>Stage Test</h1>
-      {% endif %}
+    <div class="content min-h-screeen flex flex-col lg:flex-row justify-center px-8 my-5 z-10 relative gap-5">
+      <div class="prose flex-initial order-last lg:order-first">
+        {% if env == 'stage' %}
+          <h1>Stage Test</h1>
+        {% endif %}
 
-      {{ content | safe }}
+        {{ content | safe }}
+      </div>
+      <div class="grow order-first lg:order-last table-of-contents-container max-w-[15rem] prose">
+        <div class="table-of-contents-sticky lg:sticky lg:top-20 text-base">
+          <h3 class="my-0 mb-5">Table of Contents</h3>
+        </div>
+      </div>
     </div>
 
     <footer class="bg-opacity-85 bg-black relative">
