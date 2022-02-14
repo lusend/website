@@ -261,13 +261,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
   position: relative;
 }
 
-@media (min-width: 1024px){
-
-  #app .table-of-contents{
-    position: absolute;
-  }
-}
-
 #app .table-of-contents a{
   display: inline-block;
   transition-property: all;
@@ -1565,6 +1558,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
     order: 9999;
   }
 
+  #app .lg\:h-full{
+    height: 100%;
+  }
+
+  #app .lg\:max-h-\[calc\(80vh-72px\)\]{
+    max-height: calc(80vh - 72px);
+  }
+
   #app .lg\:flex-auto{
     flex: 1 1 auto;
   }
@@ -1579,6 +1580,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
   #app .lg\:flex-row{
     flex-direction: row;
+  }
+
+  #app .lg\:overflow-y-auto{
+    overflow-y: auto;
   }
 
   #app .lg\:rounded-b-lg{
@@ -1625,11 +1630,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 <p><em>The deployment status should be visible at the top of the page. Check the status by clicking on either of the status badges or visiting the <a href="https://github.com/lusend/testwebsite">repository</a>.</em></p>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/testwebsite/commit/09e41b819cf70718dcd85d0f8f362fbffd2f910c" class="no-underline hover:underline" target="_blank">feat: ✨ Added Procressing Table of Contents<br />
+  <a href="https://github.com/lusend/testwebsite/commit/5dc72c1eb0ffa3b9bd5bd741b65754759d969b2e" class="no-underline hover:underline" target="_blank">feat: 💄 Addex Max Height to TOC<br />
 <br />
-Updated the TOC styles to include a progressive navigation that indicates where you are in the table of contents while you are scrolling. Also added styles to handle the TOC when on mobile.</a>
+Ensured the TOC would always be visible no matter how many elements are contained within it.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-14T17:58:50Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-14T18:09:01Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>

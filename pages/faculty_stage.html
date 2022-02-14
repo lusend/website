@@ -257,13 +257,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
   position: relative;
 }
 
-@media (min-width: 1024px){
-
-  #app .table-of-contents{
-    position: absolute;
-  }
-}
-
 #app .table-of-contents a{
   display: inline-block;
   transition-property: all;
@@ -1561,6 +1554,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
     order: 9999;
   }
 
+  #app .lg\:h-full{
+    height: 100%;
+  }
+
+  #app .lg\:max-h-\[calc\(80vh-72px\)\]{
+    max-height: calc(80vh - 72px);
+  }
+
   #app .lg\:flex-auto{
     flex: 1 1 auto;
   }
@@ -1575,6 +1576,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
   #app .lg\:flex-row{
     flex-direction: row;
+  }
+
+  #app .lg\:overflow-y-auto{
+    overflow-y: auto;
   }
 
   #app .lg\:rounded-b-lg{
@@ -1969,9 +1974,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 <p>Neque convallis a cras semper auctor neque vitae. Tincidunt ornare massa eget egestas purus. Consequat ac felis donec et odio pellentesque diam. Amet aliquam id diam maecenas ultricies mi eget mauris. Nisi porta lorem mollis aliquam ut porttitor leo a diam. Aliquet eget sit amet tellus cras adipiscing enim eu. Mattis nunc sed blandit libero volutpat sed cras ornare. Gravida arcu ac tortor dignissim convallis aenean et tortor. Orci phasellus egestas tellus rutrum tellus pellentesque. Sit amet risus nullam eget felis eget nunc lobortis mattis. Vel eros donec ac odio. Vehicula ipsum a arcu cursus vitae. Tincidunt arcu non sodales neque sodales ut etiam sit amet. Dapibus ultrices in iaculis nunc sed. Et egestas quis ipsum suspendisse ultrices gravida dictum.</p>
 <nav class="table-of-contents not-prose"><ol><li><a href="#heading-1">Heading 1</a><ol><li><a href="#heading-2">Heading 2</a><ol><li><a href="#heading-3">Heading 3</a><ol></ol></li></ol></li></ol></li></ol></nav>
       </div>
-      <div class="grow order-first lg:order-last table-of-contents-container max-w-[15rem] prose">
-        <div class="table-of-contents-sticky lg:sticky lg:top-20 text-base">
+      <div class="grow order-first lg:order-last max-w-[15rem] prose">
+        <div class="lg:sticky lg:top-20 text-base">
           <h3 class="my-0 mb-5">Table of Contents</h3>
+          <div class="table-of-contents-container lg:h-full lg:max-h-[calc(80vh-72px)] lg:overflow-y-auto">&nbsp;</div>
         </div>
       </div>
     </div>
@@ -2139,7 +2145,7 @@ const particles = $('#planes')
 
 const visibleClass = 'visible';
 
-const tocContainer = document.querySelector('.table-of-contents-sticky');
+const tocContainer = document.querySelector('.table-of-contents-container');
 
 const toc = document.querySelector('.table-of-contents');
 
@@ -2149,7 +2155,7 @@ const tocPath = tocSVG.appendChild(
   document.createElementNS('http://www.w3.org/2000/svg', 'path')
 );
 
-// tocContainer.innerHTML = '';
+tocContainer.innerHTML = '';
 tocContainer.appendChild(toc);
 
 toc.appendChild(tocSVG);
