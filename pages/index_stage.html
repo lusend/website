@@ -1167,6 +1167,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   overflow: auto;
 }
 
+#app .overflow-x-hidden{
+  overflow-x: hidden;
+}
+
 #app .rounded-full{
   border-radius: 9999px;
 }
@@ -2028,10 +2032,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 </table>
 <nav class="table-of-contents not-prose"><ol><li><a href="#heading-1">Heading 1</a><ol><li><a href="#heading-2">Heading 2</a><ol><li><a href="#heading-3">Heading 3</a><ol></ol></li></ol></li></ol></li><li><a href="#plugin-demonstration">Plugin Demonstration</a></li></ol></nav>
       </div>
-      <div class="grow order-first lg:order-last max-w-[15rem] prose">
+      <div x-data="{ toc: !!document.querySelector('.table-of-contents')}" x-show="toc" class="grow order-first lg:order-last max-w-[15rem] prose" x-cloak>
         <div class="lg:sticky lg:top-20 text-base">
           <h3 class="my-0 mb-5">Table of Contents</h3>
-          <div class="table-of-contents-container lg:h-full lg:max-h-[calc(80vh-72px)] lg:overflow-y-auto">&nbsp;</div>
+          <div class="table-of-contents-container lg:h-full lg:max-h-[calc(80vh-72px)] lg:overflow-y-auto overflow-x-hidden">&nbsp;</div>
         </div>
       </div>
     </div>
@@ -2065,8 +2069,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.37.5/tsparticles.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery-particles@1.37.5/dist/jquery.particles.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.5/mousetrap.min.js"></script>
@@ -2165,6 +2167,8 @@ Reset links to optimize for opt-in styling instead of opt-out.
   }
 };
 
+window.togglePlanes = function (planes) {};
+
 const particles = $('#planes')
   .particles()
   .init(config, (container) => {
@@ -2209,21 +2213,31 @@ const tocPath = tocSVG.appendChild(
   document.createElementNS('http://www.w3.org/2000/svg', 'path')
 );
 
-tocContainer.innerHTML = '';
-tocContainer.appendChild(toc);
+const tocElements = [];
 
-toc.appendChild(tocSVG);
+let tocExists = true;
 
-const tocListItems = [...toc.querySelectorAll('li')];
+let tocItems;
 
-const tocItems = tocListItems
-  .map((listItem) => {
-    const anchor = listItem.querySelector('a'),
-      targetID = anchor && anchor.getAttribute('href').slice(1),
-      target = document.getElementById(targetID);
-    return { listItem, anchor, target };
-  })
-  .filter((item) => item.target);
+try {
+  tocContainer.innerHTML = '';
+  tocContainer.appendChild(toc);
+
+  toc.appendChild(tocSVG);
+
+  const tocListItems = [...toc.querySelectorAll('li')];
+
+  tocItems = tocListItems
+    .map((listItem) => {
+      const anchor = listItem.querySelector('a'),
+        targetID = anchor && anchor.getAttribute('href').slice(1),
+        target = document.getElementById(targetID);
+      return { listItem, anchor, target };
+    })
+    .filter((item) => item.target);
+} catch (error) {
+  tocExists = false;
+}
 
 function drawPath() {
   let path = [],
@@ -2300,8 +2314,6 @@ function syncPath() {
   lastPathEnd = pathEnd;
 }
 
-const tocElements = [];
-
 function decideVisibility() {
   let prevItem;
   tocElements.forEach((item, index) => {
@@ -2359,18 +2371,26 @@ function markVisibleSection(observedEls) {
   syncPath();
 }
 
-window.onresize = function () {
-  drawPath();
-  syncPath();
-};
+if (tocExists) {
+  window.onresize = function () {
+    drawPath();
+    syncPath();
+  };
 
-drawPath();
+  $(document).ready(() => {
+    drawPath();
+    syncPath();
+  });
 
-const observer = new IntersectionObserver(markVisibleSection);
-elementsToObserve.forEach((thisEl) => observer.observe(thisEl));
+  const observer = new IntersectionObserver(markVisibleSection);
+  elementsToObserve.forEach((thisEl) => observer.observe(thisEl));
+}
 
   
   </script>
+
+  <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 
 
