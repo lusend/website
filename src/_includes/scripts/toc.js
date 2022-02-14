@@ -2,7 +2,7 @@ const elementsToObserve = document.querySelectorAll('h1[id], h2[id], h3[id]');
 
 const visibleClass = 'visible';
 
-const tocContainer = document.querySelector('.table-of-contents-sticky');
+const tocContainer = document.querySelector('.table-of-contents-container');
 
 const toc = document.querySelector('.table-of-contents');
 
@@ -12,7 +12,7 @@ const tocPath = tocSVG.appendChild(
   document.createElementNS('http://www.w3.org/2000/svg', 'path')
 );
 
-// tocContainer.innerHTML = '';
+tocContainer.innerHTML = '';
 tocContainer.appendChild(toc);
 
 toc.appendChild(tocSVG);

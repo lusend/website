@@ -1,7 +1,7 @@
 #app {
   /* Table of Contents */
   .table-of-contents {
-    @apply lg:absolute relative;
+    @apply relative;
 
     a {
       @apply inline-block transition-all;
