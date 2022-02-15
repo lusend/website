@@ -15,7 +15,6 @@ html {
   scroll-behavior: smooth;
   font-size: 18px;
   overflow-x: hidden;
-  /* -ms-overflow-style: scrollbar; */
 }
 
 #app{
@@ -927,6 +926,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
   bottom: 0px;
 }
 
+#app .top-\[calc\(102vh\+272px\)\]{
+  top: calc(102vh + 272px);
+}
+
+#app .top-\[calc\(102vh\+222px\)\]{
+  top: calc(102vh + 222px);
+}
+
 #app .top-\[102vh\]{
   top: 102vh;
 }
@@ -975,6 +982,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   order: 9999;
 }
 
+#app .-m-1{
+  margin: -0.25rem;
+}
+
 #app .m-0{
   margin: 0px;
 }
@@ -983,14 +994,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
   margin: auto;
 }
 
-#app .my-5{
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-}
-
 #app .mx-auto{
   margin-left: auto;
   margin-right: auto;
+}
+
+#app .my-5{
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 #app .my-0{
@@ -1053,6 +1064,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .h-full{
   height: 100%;
+}
+
+#app .h-\[calc\(100\%-102vh-272px\)\]{
+  height: calc(100% - 102vh - 272px);
+}
+
+#app .h-\[calc\(100\%-102vh-222px\)\]{
+  height: calc(100% - 102vh - 222px);
 }
 
 #app .h-\[calc\(100\%-102vh\)\]{
@@ -1163,16 +1182,12 @@ Reset links to optimize for opt-in styling instead of opt-out.
   justify-content: space-between;
 }
 
-#app .gap-3{
-  gap: 0.75rem;
+#app .gap-1{
+  gap: 0.25rem;
 }
 
 #app .gap-5{
   gap: 1.25rem;
-}
-
-#app .gap-1{
-  gap: 0.25rem;
 }
 
 #app .gap-2{
@@ -1235,6 +1250,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   border-bottom-left-radius: 0px;
 }
 
+#app .bg-primary{
+  --tw-bg-opacity: 1;
+  background-color: rgb(10 37 78 / var(--tw-bg-opacity));
+}
+
 #app .bg-black{
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
@@ -1243,11 +1263,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-#app .bg-primary{
-  --tw-bg-opacity: 1;
-  background-color: rgb(10 37 78 / var(--tw-bg-opacity));
 }
 
 #app .bg-base-300{
@@ -1308,6 +1323,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
   padding-bottom: 0.25rem;
 }
 
+#app .pt-12{
+  padding-top: 3rem;
+}
+
+#app .pb-5{
+  padding-bottom: 1.25rem;
+}
+
 #app .pl-0{
   padding-left: 0px;
 }
@@ -1337,6 +1360,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .text-sm{
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+#app .text-2xl{
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 #app .text-xl{
@@ -1383,14 +1411,19 @@ Reset links to optimize for opt-in styling instead of opt-out.
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+#app .text-base-300{
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity));
+}
+
 #app .text-accent{
   --tw-text-opacity: 1;
   color: rgb(155 199 238 / var(--tw-text-opacity));
 }
 
-#app .text-base-content{
+#app .text-primary-content-fade{
   --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity));
+  color: rgb(197 197 197 / var(--tw-text-opacity));
 }
 
 #app .text-secondary-content{
@@ -1493,11 +1526,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .hover\:text-accent-focus:hover{
   --tw-text-opacity: 1;
   color: rgb(121 180 232 / var(--tw-text-opacity));
-}
-
-#app .hover\:text-black:hover{
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 #app .hover\:text-opacity-50:hover{
@@ -1702,11 +1730,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 <p><em>The deployment status should be visible at the top of the page. Check the status by clicking on either of the status badges or visiting the <a href="https://github.com/lusend/testwebsite">repository</a>.</em></p>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/testwebsite/commit/2d3a953833373c64cf2c172d4a4a3dabc6f502ff" class="no-underline hover:underline" target="_blank">feat: ✨ Added Smooth Scroll and Breadcrumbs<br />
+  <a href="https://github.com/lusend/testwebsite/commit/2f98cefde9a18bfef1c51d9a5ebe2080b0188e8e" class="no-underline hover:underline" target="_blank">feat: ✨ Added Header with Author Information<br />
 <br />
-Added a smooth scroll polyfill for safari and other browsers. Also added a heading with breadcrumbs and title to each page. Added a simple link function as front matter to each page to make linking easier as well.</a>
+Completed header styles so that an author and post date can be included on any page. With these changes, a front matter option called ‘header’ was included to make it optional, and the nav background has been edited to become transparent dynamically based on if the header is included or not.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-15T19:01:04Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-15T20:55:51Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>

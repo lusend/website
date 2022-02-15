@@ -11,7 +11,6 @@ html {
   scroll-behavior: smooth;
   font-size: 18px;
   overflow-x: hidden;
-  /* -ms-overflow-style: scrollbar; */
 }
 
 #app{
@@ -923,6 +922,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
   bottom: 0px;
 }
 
+#app .top-\[calc\(102vh\+272px\)\]{
+  top: calc(102vh + 272px);
+}
+
+#app .top-\[calc\(102vh\+222px\)\]{
+  top: calc(102vh + 222px);
+}
+
 #app .top-\[102vh\]{
   top: 102vh;
 }
@@ -971,6 +978,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   order: 9999;
 }
 
+#app .-m-1{
+  margin: -0.25rem;
+}
+
 #app .m-0{
   margin: 0px;
 }
@@ -979,14 +990,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
   margin: auto;
 }
 
-#app .my-5{
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-}
-
 #app .mx-auto{
   margin-left: auto;
   margin-right: auto;
+}
+
+#app .my-5{
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 #app .my-0{
@@ -1049,6 +1060,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .h-full{
   height: 100%;
+}
+
+#app .h-\[calc\(100\%-102vh-272px\)\]{
+  height: calc(100% - 102vh - 272px);
+}
+
+#app .h-\[calc\(100\%-102vh-222px\)\]{
+  height: calc(100% - 102vh - 222px);
 }
 
 #app .h-\[calc\(100\%-102vh\)\]{
@@ -1159,16 +1178,12 @@ Reset links to optimize for opt-in styling instead of opt-out.
   justify-content: space-between;
 }
 
-#app .gap-3{
-  gap: 0.75rem;
+#app .gap-1{
+  gap: 0.25rem;
 }
 
 #app .gap-5{
   gap: 1.25rem;
-}
-
-#app .gap-1{
-  gap: 0.25rem;
 }
 
 #app .gap-2{
@@ -1231,6 +1246,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   border-bottom-left-radius: 0px;
 }
 
+#app .bg-primary{
+  --tw-bg-opacity: 1;
+  background-color: rgb(10 37 78 / var(--tw-bg-opacity));
+}
+
 #app .bg-black{
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
@@ -1239,11 +1259,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-#app .bg-primary{
-  --tw-bg-opacity: 1;
-  background-color: rgb(10 37 78 / var(--tw-bg-opacity));
 }
 
 #app .bg-base-300{
@@ -1304,6 +1319,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
   padding-bottom: 0.25rem;
 }
 
+#app .pt-12{
+  padding-top: 3rem;
+}
+
+#app .pb-5{
+  padding-bottom: 1.25rem;
+}
+
 #app .pl-0{
   padding-left: 0px;
 }
@@ -1333,6 +1356,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .text-sm{
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+#app .text-2xl{
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 #app .text-xl{
@@ -1379,14 +1407,19 @@ Reset links to optimize for opt-in styling instead of opt-out.
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+#app .text-base-300{
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity));
+}
+
 #app .text-accent{
   --tw-text-opacity: 1;
   color: rgb(155 199 238 / var(--tw-text-opacity));
 }
 
-#app .text-base-content{
+#app .text-primary-content-fade{
   --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity));
+  color: rgb(197 197 197 / var(--tw-text-opacity));
 }
 
 #app .text-secondary-content{
@@ -1489,11 +1522,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .hover\:text-accent-focus:hover{
   --tw-text-opacity: 1;
   color: rgb(121 180 232 / var(--tw-text-opacity));
-}
-
-#app .hover\:text-black:hover{
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 #app .hover\:text-opacity-50:hover{
@@ -1684,7 +1712,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
   </style>
 
   <div  x-data="{ scroll: '' }" id="app">
-    <div class="absolute top-[102vh] overflow-none h-[calc(100%-102vh)] w-full pointer-events-none -z-50" x-intersect:enter="scroll = 'bg-opacity-90'" x-intersect:leave="scroll = ''">&nbsp;</div>
+    <div class="absolute  top-[calc(102vh+222px)]  overflow-none  h-[calc(100%-102vh-222px)]  w-full pointer-events-none -z-50" x-intersect:enter="scroll = 'bg-opacity-90'" x-intersect:leave="scroll = ''">&nbsp;</div>
 
     
 
@@ -1719,7 +1747,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
             
   
     
-      <a href="/?go=faculty" :class="scroll" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 px-3 py-2 rounded-md text-sm font-medium bg-primary-focus">Faculty Gateway</a>
+      <a href="/?go=faculty" :class="scroll" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 px-3 py-2 rounded-md text-sm font-medium  bg-primary-focus ">Faculty Gateway</a>
     
   
 
@@ -1905,7 +1933,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
         
   
     <li class="block text-base font-medium relative my-1">
-      <a href="/?go=faculty" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 bg-primary-focus">
+      <a href="/?go=faculty" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10  bg-primary-focus ">
         Faculty Gateway
       </a>
       
@@ -2027,22 +2055,20 @@ Reset links to optimize for opt-in styling instead of opt-out.
 </div>
 </nav>
 
-    <div class="text-base flex flex-row justify-center px-8 my-5 z-10 mx-auto w-full">
-      <div class="max-w-[calc(65ch+16.25rem)] flex-1 flex flex-col gap-3 items-center navSmall:items-start">
-        <div class="prose">
-          <h1 class="text-center navSmall:text-left">Faculty &amp; Staff Gateway</h1>
-        </div>
-        
+    
+      <div class="text-base flex flex-row justify-center px-8 pt-12 pb-5 z-10 relative mx-auto w-full bg-primary text-primary-content">
+        <div class="max-w-[calc(65ch+16.25rem)] flex-1 flex flex-col gap-1 items-center navSmall:items-start">
+          
 
 
 
 <nav class="breadcrumbs flex" aria-label="Breadcrumb">
-  <ul class="pl-0 m-0 inline-flex flex-wrap items-center space-x-1 lg:space-x-2 list-none">
+  <ul class="pl-0 m-0 inline-flex flex-wrap justify-center navSmall:justify-start items-center space-x-1 lg:space-x-2 list-none">
     
       
   
-    <li class="inline-flex items-center pl-0 m-0">
-      <a href="/" class="hover:!font-bold no-underline inline-flex items-center gap-1 items-center text-sm !font-medium text-base-content hover:text-black">
+    <li class="inline-flex items-center pl-0 m-0 text-primary-content-fade">
+      <a href="/" class="hover:!font-bold no-underline inline-flex items-center gap-1 items-center text-sm !font-medium">
         <ion-icon class="text-xs" name="home">&nbsp;</ion-icon>
         <span class="whitespace-nowrap">Home</span>
       </a>
@@ -2052,10 +2078,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
     
       
   
-    <li aria-current="page" class="pl-0 m-0">
+    <li aria-current="page" class="pl-0 m-0 text-primary-content-fade">
       <div class="flex items-center">
         <ion-icon name="chevron-forward">&nbsp;</ion-icon>
-        <a href="#" class="hover:!font-bold whitespace-nowrap ml-1 lg:ml-2 no-underline text-sm !font-medium text-base-content hover:text-black">Faculty Gateway</a>
+        <a href="#" class="hover:!font-bold whitespace-nowrap ml-1 lg:ml-2 no-underline text-sm !font-medium">Faculty Gateway</a>
       </div>
     </li>
   
@@ -2064,12 +2090,21 @@ Reset links to optimize for opt-in styling instead of opt-out.
   </ul>
 </nav>
 
+          <div class="prose">
+            <h1 class="text-center navSmall:text-left text-primary-content">Faculty &amp; Staff Gateway</h1>
+          </div>
+          
+        </div>
       </div>
-    </div>
+      <svg id="header-wave" class="-m-1 z-10 relative" viewBox="0 0 1200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 1200,0 H 0 V 37 C 67,26 133,15 200,10 C 266,4 333,5 400,23 C 466,41 533,76 600,79 C 677,78 738,53 800,48 C 866,44 933,63 1000,62 C 1065,62 1131,41 1200,19 V 0 Z" fill="#0A254E"/>
+      </svg>
+    
+
     <div class="content min-h-screeen flex flex-col lg:flex-row justify-center px-8 my-5 z-10 relative gap-5">
       <div x-data="{ toc: !!document.querySelector('.table-of-contents')}" x-show="toc" class="grow order-first lg:order-last max-w-[15rem] prose" x-cloak>
         <div class="lg:sticky lg:top-20 text-base">
-          <h3 class="my-0 mb-5">Table of Contents</h3>
+          <h1 class="my-0 mb-5 text-2xl font-semibold">Table of Contents</h1>
           <div class="table-of-contents-container lg:h-full lg:max-h-[calc(80vh-72px)] lg:overflow-y-auto overflow-x-hidden">&nbsp;</div>
         </div>
       </div>
@@ -2559,6 +2594,65 @@ function smoothscroll() {
 }
 
 smoothscroll();
+
+  function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+const lineProperties = (pointA, pointB) => {
+  const lengthX = pointB[0] - pointA[0];
+  const lengthY = pointB[1] - pointA[1];
+  return {
+    length: Math.sqrt(Math.pow(lengthX, 2) + Math.pow(lengthY, 2)),
+    angle: Math.atan2(lengthY, lengthX)
+  };
+};
+
+const controlPointCalc = (current, previous, next, reverse) => {
+  const c = current;
+  const p = previous ? previous : c;
+  const n = next ? next : c;
+  const smoothing = 0.2;
+  const o = lineProperties(p, n);
+  const rev = reverse ? Math.PI : 0;
+
+  const x = c[0] + Math.cos(o.angle + rev) * o.length * smoothing;
+  const y = c[1] + Math.sin(o.angle + rev) * o.length * smoothing;
+
+  return [x, y];
+};
+
+const svgPathRender = (points) => {
+  const d = points.reduce((acc, e, i, a) => {
+    if (i === 0) return `L ${e[0]},${e[1]}`;
+
+    const cs = controlPointCalc(a[i - 1], a[i - 2], e);
+    const ce = controlPointCalc(e, a[i - 1], a[i + 1], true);
+    return `${acc} C ${cs[0]},${cs[1]} ${ce[0]},${ce[1]} ${e[0]},${e[1]}`;
+  }, '');
+
+  return `<path d='M 1200,0 H 0 ${d} V 0 Z' fill='#0A254E' />`;
+};
+
+const svg = document.querySelector('#header-wave');
+
+if (svg) {
+  const points = [
+    [0, 37],
+    [200, 10],
+    [400, 23],
+    [600, 79],
+    [800, 48],
+    [1000, 62],
+    [1200, 19]
+  ].map((item, idx) => {
+    if (idx % 2 === 0) item[1] = getRandomInt(10, 45);
+    else item[1] = getRandomInt(45, 80);
+    return item;
+  });
+
+  svg.innerHTML = svgPathRender(points);
+}
 
   const elementsToObserve = document.querySelectorAll('h1[id], h2[id], h3[id]');
 
