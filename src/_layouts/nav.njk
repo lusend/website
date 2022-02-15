@@ -13,7 +13,7 @@
           <div class="px-2 pt-2 pb-3 space-y-1 max-h-[calc(90vh-72px)] overflow-auto">
             <ul>
               <li class="block text-base font-medium relative my-1">
-                <a href="{{ entry.url }}" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 {% if entry.url == eleventyNavigation.url %}bg-primary-focus{% endif %}">
+                <a href="{{ entry.url }}" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 {% if entry.url == eleventyNavigation.url %} bg-primary-focus {% endif %}">
                   <strong>{{ entry.title }}</strong>
                 </a>
               </li>
@@ -25,11 +25,11 @@
         </div>
       </div>
     {% else %}
-      <a href="{{ entry.url }}" :class="scroll" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 px-3 py-2 rounded-md text-sm font-medium {% if entry.url == eleventyNavigation.url %}bg-primary-focus{% endif %}">{{ entry.title }}</a>
+      <a href="{{ entry.url }}" :class="scroll" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 px-3 py-2 rounded-md text-sm font-medium {% if entry.url == eleventyNavigation.url %} bg-primary-focus {% endif %}">{{ entry.title }}</a>
     {% endif %}
   {% else %}
     <li class="block text-base font-medium relative my-1">
-      <a href="{{ entry.url }}" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 {% if entry.url == eleventyNavigation.url %}bg-primary-focus{% endif %}">
+      <a href="{{ entry.url }}" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 {% if entry.url == eleventyNavigation.url %} bg-primary-focus {% endif %}">
         {{spaces | safe }}{{ entry.title }}
       </a>
       {% if entry.children.length %}

@@ -1,6 +1,7 @@
 ---
 title: Home Page
 planes: true
+header: false
 nav:
   title: Home
 ---

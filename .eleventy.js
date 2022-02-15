@@ -3,6 +3,7 @@ require('dotenv').config();
 const postcss = require('postcss');
 const markdown = require('./config/markdown');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
+const { DateTime } = require('luxon');
 
 const env = process.env.ELEVENTY_ENV || 'development';
 
@@ -33,6 +34,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addNunjucksAsyncFilter('postcss', renderPostCSS);
   eleventyConfig.addNunjucksAsyncFilter('link', (slug, callback) =>
     callback(null, `https://liberty-sa.terradotta.com?go=${slug}`)
+  );
+  eleventyConfig.addNunjucksAsyncFilter('postDate', (dateObj, callback) =>
+    callback(
+      null,
+      DateTime.fromJSDate(dateObj).toUTC().toLocaleString(DateTime.DATE_MED)
+    )
   );
 
   return {

@@ -7,6 +7,7 @@ module.exports = async function (configData) {
     tags: ['pages'],
     suffix: env === 'stage' ? '_stage' : '',
     planes: false,
+    header: true,
     eleventyComputed: {
       path: `{{ page.filePathStem }}{{ suffix }}`,
       permalink: `{{ path }}.html`,

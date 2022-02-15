@@ -29,6 +29,7 @@
 
   {% set js %}
   {% include "scripts/smoothscroll.js" %}
+  {% include "scripts/wave.js" %}
   {% include "scripts/toc.js" %}
   {% include "scripts/planes.js" %}
   {% endset %}
@@ -38,21 +39,39 @@
   </style>
 
   <div  x-data="{ scroll: '' }" id="app">
-    <div class="absolute top-[102vh] overflow-none h-[calc(100%-102vh)] w-full pointer-events-none -z-50" x-intersect:enter="scroll = 'bg-opacity-90'" x-intersect:leave="scroll = ''">&nbsp;</div>
+    <div class="absolute {% if header and author %} top-[calc(102vh+272px)] {% elif header %} top-[calc(102vh+222px)] {% else %} top-[102vh] {% endif %} overflow-none {% if header and author %} h-[calc(100%-102vh-272px)] {% elif header %} h-[calc(100%-102vh-222px)] {%else%} h-[calc(100%-102vh)] {% endif %} w-full pointer-events-none -z-50" x-intersect:enter="scroll = 'bg-opacity-90'" x-intersect:leave="scroll = ''">&nbsp;</div>
 
     {% include "./nav.njk" %}
-    <div class="text-base flex flex-row justify-center px-8 my-5 z-10 mx-auto w-full">
-      <div class="max-w-[calc(65ch+16.25rem)] flex-1 flex flex-col gap-3 items-center navSmall:items-start">
-        <div class="prose">
-          <h1 class="text-center navSmall:text-left">{{ title }}</h1>
+    {% if header %}
+      <div class="text-base flex flex-row justify-center px-8 pt-12 pb-5 z-10 relative mx-auto w-full bg-primary text-primary-content">
+        <div class="max-w-[calc(65ch+16.25rem)] flex-1 flex flex-col gap-1 items-center navSmall:items-start">
+          {% include "./breadcrumbs.njk" %}
+          <div class="prose">
+            <h1 class="text-center navSmall:text-left text-primary-content">{{ title }}</h1>
+          </div>
+          {% if author %}
+            <div class="text-sm text-base-300">
+              <div>
+                <span>Written By </span>
+                <strong>{{ author }}</strong>
+              </div>
+              <div>
+                <span>On</span>
+                <strong>{{ page.date | postDate }}</strong>
+              </div>
+            </div>
+          {% endif %}
         </div>
-        {% include "./breadcrumbs.njk" %}
       </div>
-    </div>
+      <svg id="header-wave" class="-m-1 z-10 relative" viewBox="0 0 1200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 1200,0 H 0 V 37 C 67,26 133,15 200,10 C 266,4 333,5 400,23 C 466,41 533,76 600,79 C 677,78 738,53 800,48 C 866,44 933,63 1000,62 C 1065,62 1131,41 1200,19 V 0 Z" fill="#0A254E"/>
+      </svg>
+    {% endif %}
+
     <div class="content min-h-screeen flex flex-col lg:flex-row justify-center px-8 my-5 z-10 relative gap-5">
       <div x-data="{ toc: !!document.querySelector('.table-of-contents')}" x-show="toc" class="grow order-first lg:order-last max-w-[15rem] prose" x-cloak>
         <div class="lg:sticky lg:top-20 text-base">
-          <h3 class="my-0 mb-5">Table of Contents</h3>
+          <h1 class="my-0 mb-5 text-2xl font-semibold">Table of Contents</h1>
           <div class="table-of-contents-container lg:h-full lg:max-h-[calc(80vh-72px)] lg:overflow-y-auto overflow-x-hidden">&nbsp;</div>
         </div>
       </div>

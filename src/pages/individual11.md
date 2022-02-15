@@ -1,5 +1,6 @@
 ---
 title: Individual Travel Sub Sub Page 1
+author: P Chris Bowers
 nav:
   title: Individual Travel 1_1
   parent: individual1
