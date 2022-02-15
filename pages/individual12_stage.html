@@ -349,6 +349,8 @@ Reset links to optimize for opt-in styling instead of opt-out.
         left: calc(2rem - 0.85em);
         position: absolute;
         width: 0.8em;
+        top: 50%;
+        transform: translateY(-50%);
       }
 
 /* Offset Anchor Links */
@@ -373,6 +375,21 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app [x-cloak] {
     display: none !important;
   }
+
+/* Task Lists */
+
+#app ul.contains-task-list{
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+#app ul.contains-task-list li{
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 0px;
+}
 
 *, ::before, ::after{
   --tw-translate-x: 0;

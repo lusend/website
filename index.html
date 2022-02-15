@@ -2,6 +2,8 @@
 
 
 
+
+
 <html>
   <head>
     <meta charset="UTF-8">
@@ -353,6 +355,8 @@ Reset links to optimize for opt-in styling instead of opt-out.
         left: calc(2rem - 0.85em);
         position: absolute;
         width: 0.8em;
+        top: 50%;
+        transform: translateY(-50%);
       }
 
 /* Offset Anchor Links */
@@ -377,6 +381,21 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app [x-cloak] {
     display: none !important;
   }
+
+/* Task Lists */
+
+#app ul.contains-task-list{
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+#app ul.contains-task-list li{
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-left: 0px;
+}
 
 *, ::before, ::after{
   --tw-translate-x: 0;
@@ -1730,14 +1749,32 @@ Reset links to optimize for opt-in styling instead of opt-out.
 <p><em>The deployment status should be visible at the top of the page. Check the status by clicking on either of the status badges or visiting the <a href="https://github.com/lusend/testwebsite">repository</a>.</em></p>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/testwebsite/commit/2f98cefde9a18bfef1c51d9a5ebe2080b0188e8e" class="no-underline hover:underline" target="_blank">feat: ✨ Added Header with Author Information<br />
+  <a href="https://github.com/lusend/testwebsite/commit/f683f730c350c4e53bb115d610f72180d47c0e6a" class="no-underline hover:underline" target="_blank">feat: ✨ Added Future Projects Section<br />
 <br />
-Completed header styles so that an author and post date can be included on any page. With these changes, a front matter option called ‘header’ was included to make it optional, and the nav background has been edited to become transparent dynamically based on if the header is included or not.</a>
+Added a future projects section to the preview page. This included adding a markdown plugin for task lists. May want to implement an order to the preview pages in the future</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-15T20:55:51Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-15T21:48:49Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
+<details>
+<summary>View Future Projects</summary>
+<h3 id="landing%2Fspecial-pages" tabindex="-1"><a class="header-anchor" href="#landing%2Fspecial-pages">Landing/Special Pages</a></h3>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Support Map and JS that belongs with it</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Support Testimonials</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Support Landing Hero</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Support Large Navigation Section</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Support Changing Backgrounds</li>
+</ul>
+<h3 id="blog%2Finformation-pages" tabindex="-1"><a class="header-anchor" href="#blog%2Finformation-pages">Blog/Information Pages</a></h3>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Support Embedded Images</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Support Header Images</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Allow Date Sorting for Deadlines</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Support Buttons</li>
+</ul>
+</details>
 
 
         <label for="envToggle" class="flex items-center w-full my-5 cursor-pointer not-prose">
@@ -2031,7 +2068,6 @@ async function get(link, { asText = false, headers = {} } = {}) {
 }
 
 function preview(slug, production, stage) {
-  console.log({ slug, production, stage });
   document.getElementById(slug + '_preview').onclick = function () {
     const link = env === 'stage' ? stage : production;
     window.location.href = link + '?cache-bust=' + Date.now();
