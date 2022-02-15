@@ -963,12 +963,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   z-index: 50;
 }
 
+#app .order-first{
+  order: -9999;
+}
+
 #app .order-last{
   order: 9999;
 }
 
-#app .order-first{
-  order: -9999;
+#app .m-0{
+  margin: 0px;
 }
 
 #app .m-auto{
@@ -980,6 +984,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   margin-bottom: 1.25rem;
 }
 
+#app .mx-auto{
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #app .my-0{
   margin-top: 0px;
   margin-bottom: 0px;
@@ -988,11 +997,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .my-1{
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
-}
-
-#app .mx-auto{
-  margin-left: auto;
-  margin-right: auto;
 }
 
 #app .mt-2{
@@ -1009,6 +1013,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .mt-1{
   margin-top: 0.25rem;
+}
+
+#app .ml-1{
+  margin-left: 0.25rem;
 }
 
 #app .mt-4{
@@ -1083,8 +1091,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   min-width: 100%;
 }
 
+#app .max-w-\[calc\(65ch\+16\.25rem\)\]{
+  max-width: calc(65ch + 16.25rem);
+}
+
 #app .max-w-\[15rem\]{
   max-width: 15rem;
+}
+
+#app .flex-1{
+  flex: 1 1 0%;
 }
 
 #app .flex-initial{
@@ -1093,10 +1109,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .flex-auto{
   flex: 1 1 auto;
-}
-
-#app .flex-1{
-  flex: 1 1 0%;
 }
 
 #app .grow{
@@ -1113,6 +1125,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .resize{
   resize: both;
+}
+
+#app .list-none{
+  list-style-type: none;
+}
+
+#app .flex-row{
+  flex-direction: row;
 }
 
 #app .flex-col{
@@ -1137,6 +1157,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .justify-between{
   justify-content: space-between;
+}
+
+#app .gap-3{
+  gap: 0.75rem;
 }
 
 #app .gap-5{
@@ -1169,6 +1193,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .overflow-x-hidden{
   overflow-x: hidden;
+}
+
+#app .whitespace-nowrap{
+  white-space: nowrap;
 }
 
 #app .rounded-full{
@@ -1276,6 +1304,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   padding-bottom: 0.25rem;
 }
 
+#app .pl-0{
+  padding-left: 0px;
+}
+
 #app .pt-2{
   padding-top: 0.5rem;
 }
@@ -1325,6 +1357,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   font-weight: 500;
 }
 
+#app .\!font-medium{
+  font-weight: 500 !important;
+}
+
 #app .uppercase{
   text-transform: uppercase;
 }
@@ -1346,6 +1382,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .text-accent{
   --tw-text-opacity: 1;
   color: rgb(155 199 238 / var(--tw-text-opacity));
+}
+
+#app .text-base-content{
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
 #app .text-secondary-content{
@@ -1441,9 +1482,18 @@ Reset links to optimize for opt-in styling instead of opt-out.
   --tw-bg-opacity: 0.2;
 }
 
+#app .hover\:\!font-bold:hover{
+  font-weight: 700 !important;
+}
+
 #app .hover\:text-accent-focus:hover{
   --tw-text-opacity: 1;
   color: rgb(121 180 232 / var(--tw-text-opacity));
+}
+
+#app .hover\:text-black:hover{
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 #app .hover\:text-opacity-50:hover{
@@ -1530,12 +1580,20 @@ Reset links to optimize for opt-in styling instead of opt-out.
     flex: 1 1 auto;
   }
 
+  #app .navSmall\:items-start{
+    align-items: flex-start;
+  }
+
   #app .navSmall\:items-stretch{
     align-items: stretch;
   }
 
   #app .navSmall\:justify-start{
     justify-content: flex-start;
+  }
+
+  #app .navSmall\:text-left{
+    text-align: left;
   }
 }
 
@@ -1550,12 +1608,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
     top: 5rem;
   }
 
+  #app .lg\:order-last{
+    order: 9999;
+  }
+
   #app .lg\:order-first{
     order: -9999;
   }
 
-  #app .lg\:order-last{
-    order: 9999;
+  #app .lg\:ml-2{
+    margin-left: 0.5rem;
   }
 
   #app .lg\:h-full{
@@ -1580,6 +1642,12 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
   #app .lg\:flex-row{
     flex-direction: row;
+  }
+
+  #app .lg\:space-x-2 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-x-reverse: 0;
+    margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+    margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   #app .lg\:overflow-y-auto{
@@ -1958,7 +2026,63 @@ Reset links to optimize for opt-in styling instead of opt-out.
 </div>
 </nav>
 
+    <div class="text-base flex flex-row justify-center px-8 my-5 z-10 mx-auto w-full">
+      <div class="max-w-[calc(65ch+16.25rem)] flex-1 flex flex-col gap-3 items-center navSmall:items-start">
+        <div class="prose">
+          <h1 class="text-center navSmall:text-left">Individual Travel Sub Page 1</h1>
+        </div>
+        
+
+
+
+<nav class="breadcrumbs flex" aria-label="Breadcrumb">
+  <ul class="pl-0 m-0 inline-flex flex-wrap items-center space-x-1 lg:space-x-2 list-none">
+    
+      
+  
+    <li class="inline-flex items-center pl-0 m-0">
+      <a href="/" class="hover:!font-bold no-underline inline-flex items-center gap-1 items-center text-sm !font-medium text-base-content hover:text-black">
+        <ion-icon class="text-xs" name="home">&nbsp;</ion-icon>
+        <span class="whitespace-nowrap">Home</span>
+      </a>
+    </li>
+  
+
+    
+      
+  
+    <li  class="pl-0 m-0">
+      <div class="flex items-center">
+        <ion-icon name="chevron-forward">&nbsp;</ion-icon>
+        <a href="/?go=individual" class="hover:!font-bold whitespace-nowrap ml-1 lg:ml-2 no-underline text-sm !font-medium text-base-content hover:text-black">Individual Travel</a>
+      </div>
+    </li>
+  
+
+    
+      
+  
+    <li aria-current="page" class="pl-0 m-0">
+      <div class="flex items-center">
+        <ion-icon name="chevron-forward">&nbsp;</ion-icon>
+        <a href="#" class="hover:!font-bold whitespace-nowrap ml-1 lg:ml-2 no-underline text-sm !font-medium text-base-content hover:text-black">Individual Travel 1</a>
+      </div>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+
+      </div>
+    </div>
     <div class="content min-h-screeen flex flex-col lg:flex-row justify-center px-8 my-5 z-10 relative gap-5">
+      <div x-data="{ toc: !!document.querySelector('.table-of-contents')}" x-show="toc" class="grow order-first lg:order-last max-w-[15rem] prose" x-cloak>
+        <div class="lg:sticky lg:top-20 text-base">
+          <h3 class="my-0 mb-5">Table of Contents</h3>
+          <div class="table-of-contents-container lg:h-full lg:max-h-[calc(80vh-72px)] lg:overflow-y-auto overflow-x-hidden">&nbsp;</div>
+        </div>
+      </div>
       <div class="prose flex-initial order-last lg:order-first">
         
 
@@ -1974,12 +2098,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 <p>Egestas diam in arcu cursus euismod quis viverra. Et netus et malesuada fames. Turpis massa sed elementum tempus egestas sed sed. Neque aliquam vestibulum morbi blandit cursus risus at ultrices mi. Turpis massa sed elementum tempus egestas sed. Fusce id velit ut tortor pretium viverra suspendisse. Elementum nisi quis eleifend quam adipiscing vitae proin. Sed egestas egestas fringilla phasellus faucibus scelerisque. Ac orci phasellus egestas tellus. Volutpat odio facilisis mauris sit amet massa vitae tortor. Amet nisl purus in mollis nunc. Nulla facilisi etiam dignissim diam quis enim. Id aliquet risus feugiat in ante metus dictum at tempor. Amet consectetur adipiscing elit pellentesque habitant morbi tristique. Duis convallis convallis tellus id interdum velit laoreet id.</p>
 <p>Vel quam elementum pulvinar etiam non quam lacus suspendisse faucibus. Interdum posuere lorem ipsum dolor sit amet consectetur. Pharetra convallis posuere morbi leo urna molestie. Adipiscing elit pellentesque habitant morbi. Vitae congue eu consequat ac felis donec et odio pellentesque. Aliquet sagittis id consectetur purus ut faucibus pulvinar. Tortor aliquam nulla facilisi cras fermentum odio. Donec enim diam vulputate ut pharetra sit amet aliquam id. Sed sed risus pretium quam vulputate dignissim suspendisse. Tortor at auctor urna nunc id cursus. Aliquam ut porttitor leo a diam sollicitudin tempor id eu.</p>
 <nav class="table-of-contents not-prose"><ol><li><a href="#heading-1">Heading 1</a><ol><li><a href="#heading-2">Heading 2</a><ol><li><a href="#heading-3">Heading 3</a><ol></ol></li></ol></li></ol></li></ol></nav>
-      </div>
-      <div x-data="{ toc: !!document.querySelector('.table-of-contents')}" x-show="toc" class="grow order-first lg:order-last max-w-[15rem] prose" x-cloak>
-        <div class="lg:sticky lg:top-20 text-base">
-          <h3 class="my-0 mb-5">Table of Contents</h3>
-          <div class="table-of-contents-container lg:h-full lg:max-h-[calc(80vh-72px)] lg:overflow-y-auto overflow-x-hidden">&nbsp;</div>
-        </div>
       </div>
     </div>
 
@@ -2017,129 +2135,437 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
   <script>
     
-  let config = {
-  autoPlay: true,
-  fullScreen: {
-    enable: true
-  },
-  detectRetina: true,
-  duration: 0,
-  fpsLimit: 60,
-  interactivity: {
-    detectsOn: 'window',
-    events: {
-      onClick: {
-        enable: true,
-        mode: 'push'
-      },
-      onHover: {
-        enable: true,
-        mode: 'repulse'
-      },
-      resize: true
-    },
-    modes: {
-      repulse: {
-        distance: 150
-      },
-      push: {
-        quantity: 1
-      },
-      trail: {
-        delay: 0.05,
-        quantity: 1,
-        pauseOnStop: true
-      }
-    }
-  },
+  'use strict';
 
-  particles: {
-    color: {
-      value: '#fff',
-      animation: {
-        h: {
-          count: 0
-        }
-      }
-    },
-    move: {
-      enable: true,
-      direction: 'right',
-      straight: false
-    },
-    opacity: {
-      value: {
-        min: 0.1,
-        max: 0.5
-      },
-      animation: {
-        enable: true,
-        speed: 0.5,
-        startValue: 'random',
-        minimumValue: 0.2
-      }
-    },
-    number: {
-      density: {
-        enable: true,
-        area: 800,
-        factor: 1000
-      },
-      limit: 0,
-      value: 10
-    },
-    rotate: {
-      path: true
-    },
-    shape: {
-      type: 'image',
-      image: {
-        width: 100,
-        height: 100,
-        src: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBhcmlhLWhpZGRlbj0idHJ1ZSIgcm9sZT0iaW1nIiBjbGFzcz0iaWNvbmlmeSBpY29uaWZ5LS1mYS1zb2xpZCIgd2lkdGg9IjEuMTNlbSIgaGVpZ2h0PSIxZW0iIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIG1lZXQiIHZpZXdCb3g9IjAgMCA1NzYgNTEyIj48cGF0aCBkPSJNNDgwIDE5MkgzNjUuNzFMMjYwLjYxIDguMDZBMTYuMDE0IDE2LjAxNCAwIDAgMCAyNDYuNzEgMGgtNjUuNWMtMTAuNjMgMC0xOC4zIDEwLjE3LTE1LjM4IDIwLjM5TDIxNC44NiAxOTJIMTEybC00My4yLTU3LjZjLTMuMDItNC4wMy03Ljc3LTYuNC0xMi44LTYuNEgxNi4wMUM1LjYgMTI4LTIuMDQgMTM3Ljc4LjQ5IDE0Ny44OEwzMiAyNTZMLjQ5IDM2NC4xMkMtMi4wNCAzNzQuMjIgNS42IDM4NCAxNi4wMSAzODRINTZjNS4wNCAwIDkuNzgtMi4zNyAxMi44LTYuNEwxMTIgMzIwaDEwMi44NmwtNDkuMDMgMTcxLjZjLTIuOTIgMTAuMjIgNC43NSAyMC40IDE1LjM4IDIwLjRoNjUuNWM1Ljc0IDAgMTEuMDQtMy4wOCAxMy44OS04LjA2TDM2NS43MSAzMjBINDgwYzM1LjM1IDAgOTYtMjguNjUgOTYtNjRzLTYwLjY1LTY0LTk2LTY0eiIgZmlsbD0iY3VycmVudENvbG9yIj48L3BhdGg+PC9zdmc+'
-      }
-    },
-    size: {
-      value: 64,
-      random: {
-        enable: true,
-        minimumValue: 8
-      }
+// polyfill
+function smoothscroll() {
+  // aliases
+  var w = window;
+  var d = document;
+
+  // return if scroll behavior is supported and polyfill is not forced
+  if (
+    'scrollBehavior' in d.documentElement.style &&
+    w.__forceSmoothScrollPolyfill__ !== true
+  ) {
+    return;
+  }
+
+  // globals
+  var Element = w.HTMLElement || w.Element;
+  var SCROLL_TIME = 468;
+
+  // object gathering original scroll methods
+  var original = {
+    scroll: w.scroll || w.scrollTo,
+    scrollBy: w.scrollBy,
+    elementScroll: Element.prototype.scroll || scrollElement,
+    scrollIntoView: Element.prototype.scrollIntoView
+  };
+
+  // define timing method
+  var now =
+    w.performance && w.performance.now
+      ? w.performance.now.bind(w.performance)
+      : Date.now;
+
+  /**
+   * indicates if a the current browser is made by Microsoft
+   * @method isMicrosoftBrowser
+   * @param {String} userAgent
+   * @returns {Boolean}
+   */
+  function isMicrosoftBrowser(userAgent) {
+    var userAgentPatterns = ['MSIE ', 'Trident/', 'Edge/'];
+
+    return new RegExp(userAgentPatterns.join('|')).test(userAgent);
+  }
+
+  /*
+   * IE has rounding bug rounding down clientHeight and clientWidth and
+   * rounding up scrollHeight and scrollWidth causing false positives
+   * on hasScrollableSpace
+   */
+  var ROUNDING_TOLERANCE = isMicrosoftBrowser(w.navigator.userAgent) ? 1 : 0;
+
+  /**
+   * changes scroll position inside an element
+   * @method scrollElement
+   * @param {Number} x
+   * @param {Number} y
+   * @returns {undefined}
+   */
+  function scrollElement(x, y) {
+    this.scrollLeft = x;
+    this.scrollTop = y;
+  }
+
+  /**
+   * returns result of applying ease math function to a number
+   * @method ease
+   * @param {Number} k
+   * @returns {Number}
+   */
+  function ease(k) {
+    return 0.5 * (1 - Math.cos(Math.PI * k));
+  }
+
+  /**
+   * indicates if a smooth behavior should be applied
+   * @method shouldBailOut
+   * @param {Number|Object} firstArg
+   * @returns {Boolean}
+   */
+  function shouldBailOut(firstArg) {
+    if (
+      firstArg === null ||
+      typeof firstArg !== 'object' ||
+      firstArg.behavior === undefined ||
+      firstArg.behavior === 'auto' ||
+      firstArg.behavior === 'instant'
+    ) {
+      // first argument is not an object/null
+      // or behavior is auto, instant or undefined
+      return true;
+    }
+
+    if (typeof firstArg === 'object' && firstArg.behavior === 'smooth') {
+      // first argument is an object and behavior is smooth
+      return false;
+    }
+
+    // throw error when behavior is not supported
+    throw new TypeError(
+      'behavior member of ScrollOptions ' +
+        firstArg.behavior +
+        ' is not a valid value for enumeration ScrollBehavior.'
+    );
+  }
+
+  /**
+   * indicates if an element has scrollable space in the provided axis
+   * @method hasScrollableSpace
+   * @param {Node} el
+   * @param {String} axis
+   * @returns {Boolean}
+   */
+  function hasScrollableSpace(el, axis) {
+    if (axis === 'Y') {
+      return el.clientHeight + ROUNDING_TOLERANCE < el.scrollHeight;
+    }
+
+    if (axis === 'X') {
+      return el.clientWidth + ROUNDING_TOLERANCE < el.scrollWidth;
     }
   }
-};
 
-window.togglePlanes = function (planes) {};
+  /**
+   * indicates if an element has a scrollable overflow property in the axis
+   * @method canOverflow
+   * @param {Node} el
+   * @param {String} axis
+   * @returns {Boolean}
+   */
+  function canOverflow(el, axis) {
+    var overflowValue = w.getComputedStyle(el, null)['overflow' + axis];
 
-const particles = $('#planes')
-  .particles()
-  .init(config, (container) => {
-    window.togglePlanes = function (planes) {
-      if (planes) {
-        $('#planes').css('opacity', 1);
-        container.start();
-      } else {
-        $('#planes').css('opacity', 0);
-        container.stop();
-      }
-    };
+    return overflowValue === 'auto' || overflowValue === 'scroll';
+  }
 
-    Mousetrap.bind(
-      'up up down down left right left right b a enter',
-      function () {
-        container.options.particles.size.value = 300;
-        container.options.particles.opacity.value.min = 0.8;
-        container.options.particles.opacity.value.max = 1;
-        container.options.particles.shape.image.width = 102;
-        container.options.particles.shape.image.height = 73;
-        container.options.interactivity.events.onHover.mode = 'trail';
-        container.options.particles.number.density.area = 50;
-        container.options.particles.shape.image.src =
-          'https://liberty-sa.terradotta.com/_customtags/ct_FileRetrieve.cfm?File_ID=34475';
-        container.refresh();
-      }
+  /**
+   * indicates if an element can be scrolled in either axis
+   * @method isScrollable
+   * @param {Node} el
+   * @param {String} axis
+   * @returns {Boolean}
+   */
+  function isScrollable(el) {
+    var isScrollableY = hasScrollableSpace(el, 'Y') && canOverflow(el, 'Y');
+    var isScrollableX = hasScrollableSpace(el, 'X') && canOverflow(el, 'X');
+
+    return isScrollableY || isScrollableX;
+  }
+
+  /**
+   * finds scrollable parent of an element
+   * @method findScrollableParent
+   * @param {Node} el
+   * @returns {Node} el
+   */
+  function findScrollableParent(el) {
+    while (el !== d.body && isScrollable(el) === false) {
+      el = el.parentNode || el.host;
+    }
+
+    return el;
+  }
+
+  /**
+   * self invoked function that, given a context, steps through scrolling
+   * @method step
+   * @param {Object} context
+   * @returns {undefined}
+   */
+  function step(context) {
+    var time = now();
+    var value;
+    var currentX;
+    var currentY;
+    var elapsed = (time - context.startTime) / SCROLL_TIME;
+
+    // avoid elapsed times higher than one
+    elapsed = elapsed > 1 ? 1 : elapsed;
+
+    // apply easing to elapsed time
+    value = ease(elapsed);
+
+    currentX = context.startX + (context.x - context.startX) * value;
+    currentY = context.startY + (context.y - context.startY) * value;
+
+    context.method.call(context.scrollable, currentX, currentY);
+
+    // scroll more if we have not reached our destination
+    if (currentX !== context.x || currentY !== context.y) {
+      w.requestAnimationFrame(step.bind(w, context));
+    }
+  }
+
+  /**
+   * scrolls window or element with a smooth behavior
+   * @method smoothScroll
+   * @param {Object|Node} el
+   * @param {Number} x
+   * @param {Number} y
+   * @returns {undefined}
+   */
+  function smoothScroll(el, x, y) {
+    var scrollable;
+    var startX;
+    var startY;
+    var method;
+    var startTime = now();
+
+    // define scroll context
+    if (el === d.body) {
+      scrollable = w;
+      startX = w.scrollX || w.pageXOffset;
+      startY = w.scrollY || w.pageYOffset;
+      method = original.scroll;
+    } else {
+      scrollable = el;
+      startX = el.scrollLeft;
+      startY = el.scrollTop;
+      method = scrollElement;
+    }
+
+    // scroll looping over a frame
+    step({
+      scrollable: scrollable,
+      method: method,
+      startTime: startTime,
+      startX: startX,
+      startY: startY,
+      x: x,
+      y: y
+    });
+  }
+
+  // ORIGINAL METHODS OVERRIDES
+  // w.scroll and w.scrollTo
+  w.scroll = w.scrollTo = function () {
+    // avoid action when no arguments are passed
+    if (arguments[0] === undefined) {
+      return;
+    }
+
+    // avoid smooth behavior if not required
+    if (shouldBailOut(arguments[0]) === true) {
+      original.scroll.call(
+        w,
+        arguments[0].left !== undefined
+          ? arguments[0].left
+          : typeof arguments[0] !== 'object'
+          ? arguments[0]
+          : w.scrollX || w.pageXOffset,
+        // use top prop, second argument if present or fallback to scrollY
+        arguments[0].top !== undefined
+          ? arguments[0].top
+          : arguments[1] !== undefined
+          ? arguments[1]
+          : w.scrollY || w.pageYOffset
+      );
+
+      return;
+    }
+
+    // LET THE SMOOTHNESS BEGIN!
+    smoothScroll.call(
+      w,
+      d.body,
+      arguments[0].left !== undefined
+        ? ~~arguments[0].left
+        : w.scrollX || w.pageXOffset,
+      arguments[0].top !== undefined
+        ? ~~arguments[0].top
+        : w.scrollY || w.pageYOffset
     );
-  });
+  };
+
+  // w.scrollBy
+  w.scrollBy = function () {
+    // avoid action when no arguments are passed
+    if (arguments[0] === undefined) {
+      return;
+    }
+
+    // avoid smooth behavior if not required
+    if (shouldBailOut(arguments[0])) {
+      original.scrollBy.call(
+        w,
+        arguments[0].left !== undefined
+          ? arguments[0].left
+          : typeof arguments[0] !== 'object'
+          ? arguments[0]
+          : 0,
+        arguments[0].top !== undefined
+          ? arguments[0].top
+          : arguments[1] !== undefined
+          ? arguments[1]
+          : 0
+      );
+
+      return;
+    }
+
+    // LET THE SMOOTHNESS BEGIN!
+    smoothScroll.call(
+      w,
+      d.body,
+      ~~arguments[0].left + (w.scrollX || w.pageXOffset),
+      ~~arguments[0].top + (w.scrollY || w.pageYOffset)
+    );
+  };
+
+  // Element.prototype.scroll and Element.prototype.scrollTo
+  Element.prototype.scroll = Element.prototype.scrollTo = function () {
+    // avoid action when no arguments are passed
+    if (arguments[0] === undefined) {
+      return;
+    }
+
+    // avoid smooth behavior if not required
+    if (shouldBailOut(arguments[0]) === true) {
+      // if one number is passed, throw error to match Firefox implementation
+      if (typeof arguments[0] === 'number' && arguments[1] === undefined) {
+        throw new SyntaxError('Value could not be converted');
+      }
+
+      original.elementScroll.call(
+        this,
+        // use left prop, first number argument or fallback to scrollLeft
+        arguments[0].left !== undefined
+          ? ~~arguments[0].left
+          : typeof arguments[0] !== 'object'
+          ? ~~arguments[0]
+          : this.scrollLeft,
+        // use top prop, second argument or fallback to scrollTop
+        arguments[0].top !== undefined
+          ? ~~arguments[0].top
+          : arguments[1] !== undefined
+          ? ~~arguments[1]
+          : this.scrollTop
+      );
+
+      return;
+    }
+
+    var left = arguments[0].left;
+    var top = arguments[0].top;
+
+    // LET THE SMOOTHNESS BEGIN!
+    smoothScroll.call(
+      this,
+      this,
+      typeof left === 'undefined' ? this.scrollLeft : ~~left,
+      typeof top === 'undefined' ? this.scrollTop : ~~top
+    );
+  };
+
+  // Element.prototype.scrollBy
+  Element.prototype.scrollBy = function () {
+    // avoid action when no arguments are passed
+    if (arguments[0] === undefined) {
+      return;
+    }
+
+    // avoid smooth behavior if not required
+    if (shouldBailOut(arguments[0]) === true) {
+      original.elementScroll.call(
+        this,
+        arguments[0].left !== undefined
+          ? ~~arguments[0].left + this.scrollLeft
+          : ~~arguments[0] + this.scrollLeft,
+        arguments[0].top !== undefined
+          ? ~~arguments[0].top + this.scrollTop
+          : ~~arguments[1] + this.scrollTop
+      );
+
+      return;
+    }
+
+    this.scroll({
+      left: ~~arguments[0].left + this.scrollLeft,
+      top: ~~arguments[0].top + this.scrollTop,
+      behavior: arguments[0].behavior
+    });
+  };
+
+  // Element.prototype.scrollIntoView
+  Element.prototype.scrollIntoView = function () {
+    // avoid smooth behavior if not required
+    if (shouldBailOut(arguments[0]) === true) {
+      original.scrollIntoView.call(
+        this,
+        arguments[0] === undefined ? true : arguments[0]
+      );
+
+      return;
+    }
+
+    // LET THE SMOOTHNESS BEGIN!
+    var scrollableParent = findScrollableParent(this);
+    var parentRects = scrollableParent.getBoundingClientRect();
+    var clientRects = this.getBoundingClientRect();
+
+    if (scrollableParent !== d.body) {
+      // reveal element inside parent
+      smoothScroll.call(
+        this,
+        scrollableParent,
+        scrollableParent.scrollLeft + clientRects.left - parentRects.left,
+        scrollableParent.scrollTop + clientRects.top - parentRects.top
+      );
+
+      // reveal parent in viewport unless is fixed
+      if (w.getComputedStyle(scrollableParent).position !== 'fixed') {
+        w.scrollBy({
+          left: parentRects.left,
+          top: parentRects.top,
+          behavior: 'smooth'
+        });
+      }
+    } else {
+      // reveal element in viewport
+      w.scrollBy({
+        left: clientRects.left,
+        top: clientRects.top,
+        behavior: 'smooth'
+      });
+    }
+  };
+}
+
+smoothscroll();
 
   const elementsToObserve = document.querySelectorAll('h1[id], h2[id], h3[id]');
 
@@ -2327,6 +2753,130 @@ if (tocExists) {
   const observer = new IntersectionObserver(markVisibleSection);
   elementsToObserve.forEach((thisEl) => observer.observe(thisEl));
 }
+
+  let config = {
+  autoPlay: true,
+  fullScreen: {
+    enable: true
+  },
+  detectRetina: true,
+  duration: 0,
+  fpsLimit: 60,
+  interactivity: {
+    detectsOn: 'window',
+    events: {
+      onClick: {
+        enable: true,
+        mode: 'push'
+      },
+      onHover: {
+        enable: true,
+        mode: 'repulse'
+      },
+      resize: true
+    },
+    modes: {
+      repulse: {
+        distance: 150
+      },
+      push: {
+        quantity: 1
+      },
+      trail: {
+        delay: 0.05,
+        quantity: 1,
+        pauseOnStop: true
+      }
+    }
+  },
+
+  particles: {
+    color: {
+      value: '#fff',
+      animation: {
+        h: {
+          count: 0
+        }
+      }
+    },
+    move: {
+      enable: true,
+      direction: 'right',
+      straight: false
+    },
+    opacity: {
+      value: {
+        min: 0.1,
+        max: 0.5
+      },
+      animation: {
+        enable: true,
+        speed: 0.5,
+        startValue: 'random',
+        minimumValue: 0.2
+      }
+    },
+    number: {
+      density: {
+        enable: true,
+        area: 800,
+        factor: 1000
+      },
+      limit: 0,
+      value: 10
+    },
+    rotate: {
+      path: true
+    },
+    shape: {
+      type: 'image',
+      image: {
+        width: 100,
+        height: 100,
+        src: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBhcmlhLWhpZGRlbj0idHJ1ZSIgcm9sZT0iaW1nIiBjbGFzcz0iaWNvbmlmeSBpY29uaWZ5LS1mYS1zb2xpZCIgd2lkdGg9IjEuMTNlbSIgaGVpZ2h0PSIxZW0iIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIG1lZXQiIHZpZXdCb3g9IjAgMCA1NzYgNTEyIj48cGF0aCBkPSJNNDgwIDE5MkgzNjUuNzFMMjYwLjYxIDguMDZBMTYuMDE0IDE2LjAxNCAwIDAgMCAyNDYuNzEgMGgtNjUuNWMtMTAuNjMgMC0xOC4zIDEwLjE3LTE1LjM4IDIwLjM5TDIxNC44NiAxOTJIMTEybC00My4yLTU3LjZjLTMuMDItNC4wMy03Ljc3LTYuNC0xMi44LTYuNEgxNi4wMUM1LjYgMTI4LTIuMDQgMTM3Ljc4LjQ5IDE0Ny44OEwzMiAyNTZMLjQ5IDM2NC4xMkMtMi4wNCAzNzQuMjIgNS42IDM4NCAxNi4wMSAzODRINTZjNS4wNCAwIDkuNzgtMi4zNyAxMi44LTYuNEwxMTIgMzIwaDEwMi44NmwtNDkuMDMgMTcxLjZjLTIuOTIgMTAuMjIgNC43NSAyMC40IDE1LjM4IDIwLjRoNjUuNWM1Ljc0IDAgMTEuMDQtMy4wOCAxMy44OS04LjA2TDM2NS43MSAzMjBINDgwYzM1LjM1IDAgOTYtMjguNjUgOTYtNjRzLTYwLjY1LTY0LTk2LTY0eiIgZmlsbD0iY3VycmVudENvbG9yIj48L3BhdGg+PC9zdmc+'
+      }
+    },
+    size: {
+      value: 64,
+      random: {
+        enable: true,
+        minimumValue: 8
+      }
+    }
+  }
+};
+
+window.togglePlanes = function (planes) {};
+
+const particles = $('#planes')
+  .particles()
+  .init(config, (container) => {
+    window.togglePlanes = function (planes) {
+      if (planes) {
+        $('#planes').css('opacity', 1);
+        container.start();
+      } else {
+        $('#planes').css('opacity', 0);
+        container.stop();
+      }
+    };
+
+    Mousetrap.bind(
+      'up up down down left right left right b a enter',
+      function () {
+        container.options.particles.size.value = 300;
+        container.options.particles.opacity.value.min = 0.8;
+        container.options.particles.opacity.value.max = 1;
+        container.options.particles.shape.image.width = 102;
+        container.options.particles.shape.image.height = 73;
+        container.options.interactivity.events.onHover.mode = 'trail';
+        container.options.particles.number.density.area = 50;
+        container.options.particles.shape.image.src =
+          'https://liberty-sa.terradotta.com/_customtags/ct_FileRetrieve.cfm?File_ID=34475';
+        container.refresh();
+      }
+    );
+  });
 
   
   </script>
