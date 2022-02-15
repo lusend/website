@@ -1,0 +1,27 @@
+{% set breadcrumbs = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, {includeSelf: true}) %}
+
+{% macro renderBreadcrumbItem(entry, first = false, last = false) %}
+  {% if first %}
+    <li class="inline-flex items-center pl-0 m-0">
+      <{% if last %}div{% else %}a{% endif %} href="{{ entry.url }}" class="hover:!font-bold no-underline inline-flex items-center gap-1 items-center text-sm !font-medium text-base-content hover:text-black">
+        <ion-icon class="text-xs" name="home">&nbsp;</ion-icon>
+        <span class="whitespace-nowrap">{{ entry.title }}</span>
+      </{% if last %}div{% else %}a{% endif %}>
+    </li>
+  {% else %}
+    <li {% if last %}aria-current="page"{% endif %} class="pl-0 m-0">
+      <div class="flex items-center">
+        <ion-icon name="chevron-forward">&nbsp;</ion-icon>
+        <a href="{{ '#' if last else entry.url }}" class="hover:!font-bold whitespace-nowrap ml-1 lg:ml-2 no-underline text-sm !font-medium text-base-content hover:text-black">{{ entry.title }}</a>
+      </div>
+    </li>
+  {% endif %}
+{% endmacro %}
+
+<nav class="breadcrumbs flex" aria-label="Breadcrumb">
+  <ul class="pl-0 m-0 inline-flex flex-wrap items-center space-x-1 lg:space-x-2 list-none">
+    {% for entry in breadcrumbs %}
+      {{ renderBreadcrumbItem(entry, loop.first, loop.last)}}
+    {% endfor %}
+  </ul>
+</nav>

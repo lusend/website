@@ -17,13 +17,20 @@ module.exports = async function (configData) {
         '.' +
         data.page.inputPath.split('.').pop(),
       title: (data) => (data.title ? data.title : data.slug),
+      link: (data) => (slug) =>
+        data.collections.pages.find((page) => page.data.slug === slug)?.data
+          ?.eleventyNavigation.url || '#',
       eleventyNavigation: {
         key: (data) => data.page.fileSlug,
         title: (data) => data.nav?.title,
         parent: (data) => data.nav?.parent,
         order: (data) => data.nav?.order,
         url: (data) =>
-          env === 'development' ? data.permalink : `/?go=${data.page.fileSlug}`
+          env === 'development'
+            ? data.permalink
+            : data.slug === 'pages'
+            ? '/'
+            : `/?go=${data.page.fileSlug}`
       }
     }
   };

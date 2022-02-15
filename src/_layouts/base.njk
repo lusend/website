@@ -28,8 +28,9 @@
   {% endset %}
 
   {% set js %}
-  {% include "scripts/planes.js" %}
+  {% include "scripts/smoothscroll.js" %}
   {% include "scripts/toc.js" %}
+  {% include "scripts/planes.js" %}
   {% endset %}
 
   <style>
@@ -40,7 +41,21 @@
     <div class="absolute top-[102vh] overflow-none h-[calc(100%-102vh)] w-full pointer-events-none -z-50" x-intersect:enter="scroll = 'bg-opacity-90'" x-intersect:leave="scroll = ''">&nbsp;</div>
 
     {% include "./nav.njk" %}
+    <div class="text-base flex flex-row justify-center px-8 my-5 z-10 mx-auto w-full">
+      <div class="max-w-[calc(65ch+16.25rem)] flex-1 flex flex-col gap-3 items-center navSmall:items-start">
+        <div class="prose">
+          <h1 class="text-center navSmall:text-left">{{ title }}</h1>
+        </div>
+        {% include "./breadcrumbs.njk" %}
+      </div>
+    </div>
     <div class="content min-h-screeen flex flex-col lg:flex-row justify-center px-8 my-5 z-10 relative gap-5">
+      <div x-data="{ toc: !!document.querySelector('.table-of-contents')}" x-show="toc" class="grow order-first lg:order-last max-w-[15rem] prose" x-cloak>
+        <div class="lg:sticky lg:top-20 text-base">
+          <h3 class="my-0 mb-5">Table of Contents</h3>
+          <div class="table-of-contents-container lg:h-full lg:max-h-[calc(80vh-72px)] lg:overflow-y-auto overflow-x-hidden">&nbsp;</div>
+        </div>
+      </div>
       <div class="prose flex-initial order-last lg:order-first">
         {% if env == 'stage' %}
           <h1>Stage Test</h1>
@@ -48,17 +63,11 @@
 
         {{ content | safe }}
       </div>
-      <div x-data="{ toc: !!document.querySelector('.table-of-contents')}" x-show="toc" class="grow order-first lg:order-last max-w-[15rem] prose" x-cloak>
-        <div class="lg:sticky lg:top-20 text-base">
-          <h3 class="my-0 mb-5">Table of Contents</h3>
-          <div class="table-of-contents-container lg:h-full lg:max-h-[calc(80vh-72px)] lg:overflow-y-auto overflow-x-hidden">&nbsp;</div>
-        </div>
-      </div>
     </div>
 
     <footer class="bg-opacity-85 bg-black relative">
       <div class="py-5 flex flex-col justify-center items-center text-gray-400 text-xslg:text-sm text-center text-primary-content text-opacity-70 focus:outline-none font-medium">
-        <a href="/" class="h-8 mb-2">{{ logo | safe }}</a>
+        <a href="{{ link('pages') }}" class="h-8 mb-2">{{ logo | safe }}</a>
 
         <span>&copy; {% year %} Liberty University. All Rights Reserved.</span>
 
