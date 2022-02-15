@@ -3,6 +3,7 @@ title: Individual Travel
 nav:
   title: Individual Travel
   parent: pages
+  order: 3
 ---
 
 # Heading 1

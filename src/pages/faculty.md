@@ -3,6 +3,7 @@ title: Faculty & Staff Gateway
 nav:
   title: Faculty Gateway
   parent: pages
+  order: 1
 ---
 
 # Heading 1

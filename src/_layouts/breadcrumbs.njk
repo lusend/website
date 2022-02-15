@@ -1,4 +1,4 @@
-{% set breadcrumbs = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, {includeSelf: true}) %}
+{% set breadcrumbs = collections.pages | eleventyNavigationBreadcrumb(eleventyNavigation.key, {includeSelf: true}) %}
 
 {% macro renderBreadcrumbItem(entry, first = false, last = false) %}
   {% if first %}

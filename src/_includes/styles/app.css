@@ -63,6 +63,8 @@
         left: calc(2rem - 0.85em);
         position: absolute;
         width: 0.8em;
+        top: 50%;
+        transform: translateY(-50%);
       }
     }
   }
@@ -83,8 +85,16 @@
   }
 
   /* Alpine JS Cloack Until Loaded */
-
   [x-cloak] {
     display: none !important;
+  }
+
+  /* Task Lists */
+  ul.contains-task-list {
+    @apply list-none pl-0;
+
+    li {
+      @apply pl-0 flex gap-2 items-center m-0;
+    }
   }
 }

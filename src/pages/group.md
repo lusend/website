@@ -3,6 +3,7 @@ title: Group Travel
 nav:
   title: Group Travel
   parent: pages
+  order: 2
 ---
 
 # Heading 1

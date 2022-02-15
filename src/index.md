@@ -22,3 +22,24 @@ _The deployment status should be visible at the top of the page. Check the statu
 </blockquote>
 
 ## Pages
+
+<details>
+
+<summary>View Future Projects</summary>
+
+### Landing/Special Pages
+
+- [ ] Support Map and JS that belongs with it
+- [ ] Support Testimonials
+- [ ] Support Landing Hero
+- [ ] Support Large Navigation Section
+- [ ] Support Changing Backgrounds
+
+### Blog/Information Pages
+
+- [ ] Support Embedded Images
+- [ ] Support Header Images
+- [ ] Allow Date Sorting for Deadlines
+- [ ] Support Buttons
+
+</details>

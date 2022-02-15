@@ -8,6 +8,8 @@
 {% include "scripts/preview.js" %}
 {% endset %}
 
+{% set myPages = collections.pages %}
+
 <html>
   <head>
     <meta charset="UTF-8">
@@ -40,7 +42,7 @@
           </div>
         </label>
 
-        {% for item in collections.pages %}
+        {% for item in myPages %}
           <div class="mb-2">
             <div class="flex flex-wrap items-stretch">
               <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">{{ item.data.title }}</div>

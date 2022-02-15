@@ -6,7 +6,6 @@ async function get(link, { asText = false, headers = {} } = {}) {
 }
 
 function preview(slug, production, stage) {
-  console.log({ slug, production, stage });
   document.getElementById(slug + '_preview').onclick = function () {
     const link = env === 'stage' ? stage : production;
     window.location.href = link + '?cache-bust=' + Date.now();
