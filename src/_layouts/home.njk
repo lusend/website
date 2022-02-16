@@ -8,7 +8,36 @@
 {% include "scripts/preview.js" %}
 {% endset %}
 
-{% set myPages = collections.pages %}
+{% set myPages = collections.pages | eleventyNavigation %}
+
+{% macro renderPage(entry) %}
+
+  <div class="mb-2">
+    <div class="flex flex-wrap items-stretch">
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">{{ entry.title }}</div>
+      <button id="{{ entry.key + "_preview" }}" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+        <ion-icon name="open-outline">&nbsp;</ion-icon>
+        <span>Preview</span>
+      </button>
+      <button id="{{ entry.key + "_copy" }}" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+        <span id="{{ entry.key + "_copytext" }}">Copy</span>
+      </button>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        preview('{{ entry.key }}', '{{ entry.permalink | url }}', '{{ (entry.path + "_stage.html") | url }}');
+      })
+    </script>
+  </div>
+
+  {% if entry.children %}
+    {% for item in entry.children %}
+      {{ renderPage(item) }}
+    {% endfor %}
+  {% endif %}
+{% endmacro %}
 
 <html>
   <head>
@@ -31,37 +60,17 @@
       <div class="prose prose-a:font-[initial] m-auto">
         {{ content | safe }}
 
-        <label for="envToggle" class="flex items-center w-full my-5 cursor-pointer not-prose">
-          <strong id="envToggleLabel" class="flex-auto">
-            Preview & Copy Production Content
-          </strong>
+        <label x-data for="envToggle" class="flex items-center w-full my-5 cursor-pointer not-prose">
+          <strong class="flex-auto" x-text="$store.env.label">&nbsp;</strong>
           <div class="relative">
-            <input type="checkbox" checked="checked" autocomplete="off" onchange="toggleEnv()"  id="envToggle" class="sr-only peer"/>
+            <input x-on:input="$store.env.toggle()" type="checkbox" checked="checked" autocomplete="off" id="envToggle" class="sr-only peer"/>
             <div class="absolute z-10 w-6 h-6 transition bg-white rounded-full left-1 top-1 peer-checked:translate-x-full bg-primary peer-checked:bg-secondary"></div>
             <div class="z-0 h-8 rounded-full bg-base-300 w-14"></div>
           </div>
         </label>
 
         {% for item in myPages %}
-          <div class="mb-2">
-            <div class="flex flex-wrap items-stretch">
-              <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">{{ item.data.title }}</div>
-              <button id="{{ item.data.slug + "_preview" }}" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
-                <ion-icon name="open-outline">&nbsp;</ion-icon>
-                <span>Preview</span>
-              </button>
-              <button id="{{ item.data.slug + "_copy" }}" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
-                <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
-                <span id="{{ item.data.slug + "_copytext" }}">Copy</span>
-              </button>
-            </div>
-
-            <script>
-              $(document).ready(function () {
-                preview('{{ item.data.slug }}', '{{ item.data.permalink | url }}', '{{ (item.data.path + "_stage.html") | url }}');
-              })
-            </script>
-          </div>
+          {{ renderPage(item) }}
         {% endfor %}
       </div>
     </div>

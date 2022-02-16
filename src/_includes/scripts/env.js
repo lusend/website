@@ -1,14 +1,20 @@
-let env = 'production';
+document.addEventListener('alpine:init', () => {
+  Alpine.store('env', {
+    value: 'production',
+    label: 'Preview & Copy Production Content',
 
-function toggleEnv() {
-  const toggle = document.getElementById('envToggle').checked;
-  document.getElementById('envToggle').checked = toggle;
+    toggle() {
+      this.value = this.value === 'production' ? 'stage' : 'production';
 
-  env = toggle ? 'production' : 'stage';
+      switch (this.value) {
+        case 'stage':
+          this.label = 'Preview & Copy Stage Content';
+          break;
+        default:
+          this.label = 'Preview & Copy Production Content';
+      }
 
-  document.getElementById('envToggleLabel').innerHTML = toggle
-    ? 'Preview & Copy Production Content'
-    : 'Preview & Copy Stage Content';
-}
-
-toggleEnv();
+      console.log(this.value);
+    }
+  });
+});
