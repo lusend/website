@@ -4,6 +4,8 @@
 
 
 
+
+
 <html>
   <head>
     <meta charset="UTF-8">
@@ -1237,12 +1239,12 @@ Reset links to optimize for opt-in styling instead of opt-out.
   white-space: nowrap;
 }
 
-#app .rounded-full{
-  border-radius: 9999px;
-}
-
 #app .rounded-lg{
   border-radius: 0.5rem;
+}
+
+#app .rounded-full{
+  border-radius: 9999px;
 }
 
 #app .rounded-md{
@@ -1279,11 +1281,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-#app .bg-white{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
 #app .bg-base-300{
   --tw-bg-opacity: 1;
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
@@ -1292,6 +1289,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .bg-secondary{
   --tw-bg-opacity: 1;
   background-color: rgb(153 0 0 / var(--tw-bg-opacity));
+}
+
+#app .bg-white{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 #app .bg-primary-focus{
@@ -1749,11 +1751,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 <p><em>The deployment status should be visible at the top of the page. Check the status by clicking on either of the status badges or visiting the <a href="https://github.com/lusend/testwebsite">repository</a>.</em></p>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/testwebsite/commit/f683f730c350c4e53bb115d610f72180d47c0e6a" class="no-underline hover:underline" target="_blank">feat: ✨ Added Future Projects Section<br />
+  <a href="https://github.com/lusend/testwebsite/commit/daa1f5ab64aaafbf83e2b624f2e4a00951a6cfaf" class="no-underline hover:underline" target="_blank">feat: 🎨 Format and Code Maintenance<br />
 <br />
-Added a future projects section to the preview page. This included adding a markdown plugin for task lists. May want to implement an order to the preview pages in the future</a>
+Ensured easter egg disappeared on toggle. Simplified logos. Improved env access on github pages main page. Ensured proper order on github pages main page.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-15T21:48:49Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-16T20:00:29Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
@@ -1777,217 +1779,285 @@ Added a future projects section to the preview page. This included adding a mark
 </details>
 
 
-        <label for="envToggle" class="flex items-center w-full my-5 cursor-pointer not-prose">
-          <strong id="envToggleLabel" class="flex-auto">
-            Preview & Copy Production Content
-          </strong>
+        <label x-data for="envToggle" class="flex items-center w-full my-5 cursor-pointer not-prose">
+          <strong class="flex-auto" x-text="$store.env.label">&nbsp;</strong>
           <div class="relative">
-            <input type="checkbox" checked="checked" autocomplete="off" onchange="toggleEnv()"  id="envToggle" class="sr-only peer"/>
+            <input x-on:input="$store.env.toggle()" type="checkbox" checked="checked" autocomplete="off" id="envToggle" class="sr-only peer"/>
             <div class="absolute z-10 w-6 h-6 transition bg-white rounded-full left-1 top-1 peer-checked:translate-x-full bg-primary peer-checked:bg-secondary"></div>
             <div class="z-0 h-8 rounded-full bg-base-300 w-14"></div>
           </div>
         </label>
 
         
-          <div class="mb-2">
-            <div class="flex flex-wrap items-stretch">
-              <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Faculty &amp; Staff Gateway</div>
-              <button id="faculty_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
-                <ion-icon name="open-outline">&nbsp;</ion-icon>
-                <span>Preview</span>
-              </button>
-              <button id="faculty_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
-                <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
-                <span id="faculty_copytext">Copy</span>
-              </button>
-            </div>
+          
 
-            <script>
-              $(document).ready(function () {
-                preview('faculty', '/testwebsite/pages/faculty.html', '/testwebsite/pages/faculty_stage.html');
-              })
-            </script>
-          </div>
-        
-          <div class="mb-2">
-            <div class="flex flex-wrap items-stretch">
-              <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Group Travel</div>
-              <button id="group_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
-                <ion-icon name="open-outline">&nbsp;</ion-icon>
-                <span>Preview</span>
-              </button>
-              <button id="group_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
-                <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
-                <span id="group_copytext">Copy</span>
-              </button>
-            </div>
+  <div class="mb-2">
+    <div class="flex flex-wrap items-stretch">
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Home</div>
+      <button id="pages_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+        <ion-icon name="open-outline">&nbsp;</ion-icon>
+        <span>Preview</span>
+      </button>
+      <button id="pages_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+        <span id="pages_copytext">Copy</span>
+      </button>
+    </div>
 
-            <script>
-              $(document).ready(function () {
-                preview('group', '/testwebsite/pages/group.html', '/testwebsite/pages/group_stage.html');
-              })
-            </script>
-          </div>
-        
-          <div class="mb-2">
-            <div class="flex flex-wrap items-stretch">
-              <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Group Travel Sub Page 1</div>
-              <button id="group1_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
-                <ion-icon name="open-outline">&nbsp;</ion-icon>
-                <span>Preview</span>
-              </button>
-              <button id="group1_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
-                <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
-                <span id="group1_copytext">Copy</span>
-              </button>
-            </div>
+    <script>
+      $(document).ready(function () {
+        preview('pages', '/testwebsite/pages/index.html', '/testwebsite/pages/index_stage.html');
+      })
+    </script>
+  </div>
 
-            <script>
-              $(document).ready(function () {
-                preview('group1', '/testwebsite/pages/group1.html', '/testwebsite/pages/group1_stage.html');
-              })
-            </script>
-          </div>
-        
-          <div class="mb-2">
-            <div class="flex flex-wrap items-stretch">
-              <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Group Travel Sub Page 2</div>
-              <button id="group2_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
-                <ion-icon name="open-outline">&nbsp;</ion-icon>
-                <span>Preview</span>
-              </button>
-              <button id="group2_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
-                <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
-                <span id="group2_copytext">Copy</span>
-              </button>
-            </div>
+  
+    
+      
 
-            <script>
-              $(document).ready(function () {
-                preview('group2', '/testwebsite/pages/group2.html', '/testwebsite/pages/group2_stage.html');
-              })
-            </script>
-          </div>
-        
-          <div class="mb-2">
-            <div class="flex flex-wrap items-stretch">
-              <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Home Page</div>
-              <button id="pages_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
-                <ion-icon name="open-outline">&nbsp;</ion-icon>
-                <span>Preview</span>
-              </button>
-              <button id="pages_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
-                <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
-                <span id="pages_copytext">Copy</span>
-              </button>
-            </div>
+  <div class="mb-2">
+    <div class="flex flex-wrap items-stretch">
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Faculty Gateway</div>
+      <button id="faculty_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+        <ion-icon name="open-outline">&nbsp;</ion-icon>
+        <span>Preview</span>
+      </button>
+      <button id="faculty_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+        <span id="faculty_copytext">Copy</span>
+      </button>
+    </div>
 
-            <script>
-              $(document).ready(function () {
-                preview('pages', '/testwebsite/pages/index.html', '/testwebsite/pages/index_stage.html');
-              })
-            </script>
-          </div>
-        
-          <div class="mb-2">
-            <div class="flex flex-wrap items-stretch">
-              <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Individual Travel</div>
-              <button id="individual_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
-                <ion-icon name="open-outline">&nbsp;</ion-icon>
-                <span>Preview</span>
-              </button>
-              <button id="individual_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
-                <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
-                <span id="individual_copytext">Copy</span>
-              </button>
-            </div>
+    <script>
+      $(document).ready(function () {
+        preview('faculty', '/testwebsite/pages/faculty.html', '/testwebsite/pages/faculty_stage.html');
+      })
+    </script>
+  </div>
 
-            <script>
-              $(document).ready(function () {
-                preview('individual', '/testwebsite/pages/individual.html', '/testwebsite/pages/individual_stage.html');
-              })
-            </script>
-          </div>
-        
-          <div class="mb-2">
-            <div class="flex flex-wrap items-stretch">
-              <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Individual Travel Sub Page 1</div>
-              <button id="individual1_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
-                <ion-icon name="open-outline">&nbsp;</ion-icon>
-                <span>Preview</span>
-              </button>
-              <button id="individual1_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
-                <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
-                <span id="individual1_copytext">Copy</span>
-              </button>
-            </div>
+  
+    
+  
 
-            <script>
-              $(document).ready(function () {
-                preview('individual1', '/testwebsite/pages/individual1.html', '/testwebsite/pages/individual1_stage.html');
-              })
-            </script>
-          </div>
-        
-          <div class="mb-2">
-            <div class="flex flex-wrap items-stretch">
-              <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Individual Travel Sub Sub Page 1</div>
-              <button id="individual11_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
-                <ion-icon name="open-outline">&nbsp;</ion-icon>
-                <span>Preview</span>
-              </button>
-              <button id="individual11_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
-                <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
-                <span id="individual11_copytext">Copy</span>
-              </button>
-            </div>
+    
+      
 
-            <script>
-              $(document).ready(function () {
-                preview('individual11', '/testwebsite/pages/individual11.html', '/testwebsite/pages/individual11_stage.html');
-              })
-            </script>
-          </div>
-        
-          <div class="mb-2">
-            <div class="flex flex-wrap items-stretch">
-              <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Individual Travel Sub Sub Page 2</div>
-              <button id="individual12_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
-                <ion-icon name="open-outline">&nbsp;</ion-icon>
-                <span>Preview</span>
-              </button>
-              <button id="individual12_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
-                <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
-                <span id="individual12_copytext">Copy</span>
-              </button>
-            </div>
+  <div class="mb-2">
+    <div class="flex flex-wrap items-stretch">
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Group Travel</div>
+      <button id="group_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+        <ion-icon name="open-outline">&nbsp;</ion-icon>
+        <span>Preview</span>
+      </button>
+      <button id="group_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+        <span id="group_copytext">Copy</span>
+      </button>
+    </div>
 
-            <script>
-              $(document).ready(function () {
-                preview('individual12', '/testwebsite/pages/individual12.html', '/testwebsite/pages/individual12_stage.html');
-              })
-            </script>
-          </div>
-        
-          <div class="mb-2">
-            <div class="flex flex-wrap items-stretch">
-              <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Individual Travel Sub Page 2</div>
-              <button id="individual2_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
-                <ion-icon name="open-outline">&nbsp;</ion-icon>
-                <span>Preview</span>
-              </button>
-              <button id="individual2_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
-                <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
-                <span id="individual2_copytext">Copy</span>
-              </button>
-            </div>
+    <script>
+      $(document).ready(function () {
+        preview('group', '/testwebsite/pages/group.html', '/testwebsite/pages/group_stage.html');
+      })
+    </script>
+  </div>
 
-            <script>
-              $(document).ready(function () {
-                preview('individual2', '/testwebsite/pages/individual2.html', '/testwebsite/pages/individual2_stage.html');
-              })
-            </script>
-          </div>
+  
+    
+      
+
+  <div class="mb-2">
+    <div class="flex flex-wrap items-stretch">
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Group Travel 1</div>
+      <button id="group1_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+        <ion-icon name="open-outline">&nbsp;</ion-icon>
+        <span>Preview</span>
+      </button>
+      <button id="group1_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+        <span id="group1_copytext">Copy</span>
+      </button>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        preview('group1', '/testwebsite/pages/group1.html', '/testwebsite/pages/group1_stage.html');
+      })
+    </script>
+  </div>
+
+  
+    
+  
+
+    
+      
+
+  <div class="mb-2">
+    <div class="flex flex-wrap items-stretch">
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Group Travel 2</div>
+      <button id="group2_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+        <ion-icon name="open-outline">&nbsp;</ion-icon>
+        <span>Preview</span>
+      </button>
+      <button id="group2_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+        <span id="group2_copytext">Copy</span>
+      </button>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        preview('group2', '/testwebsite/pages/group2.html', '/testwebsite/pages/group2_stage.html');
+      })
+    </script>
+  </div>
+
+  
+    
+  
+
+    
+  
+
+    
+      
+
+  <div class="mb-2">
+    <div class="flex flex-wrap items-stretch">
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Individual Travel</div>
+      <button id="individual_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+        <ion-icon name="open-outline">&nbsp;</ion-icon>
+        <span>Preview</span>
+      </button>
+      <button id="individual_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+        <span id="individual_copytext">Copy</span>
+      </button>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        preview('individual', '/testwebsite/pages/individual.html', '/testwebsite/pages/individual_stage.html');
+      })
+    </script>
+  </div>
+
+  
+    
+      
+
+  <div class="mb-2">
+    <div class="flex flex-wrap items-stretch">
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Individual Travel 1</div>
+      <button id="individual1_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+        <ion-icon name="open-outline">&nbsp;</ion-icon>
+        <span>Preview</span>
+      </button>
+      <button id="individual1_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+        <span id="individual1_copytext">Copy</span>
+      </button>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        preview('individual1', '/testwebsite/pages/individual1.html', '/testwebsite/pages/individual1_stage.html');
+      })
+    </script>
+  </div>
+
+  
+    
+      
+
+  <div class="mb-2">
+    <div class="flex flex-wrap items-stretch">
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Individual Travel 1_1</div>
+      <button id="individual11_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+        <ion-icon name="open-outline">&nbsp;</ion-icon>
+        <span>Preview</span>
+      </button>
+      <button id="individual11_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+        <span id="individual11_copytext">Copy</span>
+      </button>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        preview('individual11', '/testwebsite/pages/individual11.html', '/testwebsite/pages/individual11_stage.html');
+      })
+    </script>
+  </div>
+
+  
+    
+  
+
+    
+      
+
+  <div class="mb-2">
+    <div class="flex flex-wrap items-stretch">
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Individual Travel 1_2</div>
+      <button id="individual12_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+        <ion-icon name="open-outline">&nbsp;</ion-icon>
+        <span>Preview</span>
+      </button>
+      <button id="individual12_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+        <span id="individual12_copytext">Copy</span>
+      </button>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        preview('individual12', '/testwebsite/pages/individual12.html', '/testwebsite/pages/individual12_stage.html');
+      })
+    </script>
+  </div>
+
+  
+    
+  
+
+    
+  
+
+    
+      
+
+  <div class="mb-2">
+    <div class="flex flex-wrap items-stretch">
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Individual Travel 2</div>
+      <button id="individual2_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+        <ion-icon name="open-outline">&nbsp;</ion-icon>
+        <span>Preview</span>
+      </button>
+      <button id="individual2_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+        <span id="individual2_copytext">Copy</span>
+      </button>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        preview('individual2', '/testwebsite/pages/individual2.html', '/testwebsite/pages/individual2_stage.html');
+      })
+    </script>
+  </div>
+
+  
+    
+  
+
+    
+  
+
+    
+  
+
         
       </div>
     </div>
@@ -1999,20 +2069,26 @@ Added a future projects section to the preview page. This included adding a mark
 
     <script>
       
-let env = 'production';
+document.addEventListener('alpine:init', () => {
+  Alpine.store('env', {
+    value: 'production',
+    label: 'Preview & Copy Production Content',
 
-function toggleEnv() {
-  const toggle = document.getElementById('envToggle').checked;
-  document.getElementById('envToggle').checked = toggle;
+    toggle() {
+      this.value = this.value === 'production' ? 'stage' : 'production';
 
-  env = toggle ? 'production' : 'stage';
+      switch (this.value) {
+        case 'stage':
+          this.label = 'Preview & Copy Stage Content';
+          break;
+        default:
+          this.label = 'Preview & Copy Production Content';
+      }
 
-  document.getElementById('envToggleLabel').innerHTML = toggle
-    ? 'Preview & Copy Production Content'
-    : 'Preview & Copy Stage Content';
-}
-
-toggleEnv();
+      console.log(this.value);
+    }
+  });
+});
 
 async function get(link, { asText = false, headers = {} } = {}) {
   const res = await fetch(link, { headers });
@@ -2069,11 +2145,13 @@ async function get(link, { asText = false, headers = {} } = {}) {
 
 function preview(slug, production, stage) {
   document.getElementById(slug + '_preview').onclick = function () {
+    const env = Alpine.store('env').value;
     const link = env === 'stage' ? stage : production;
     window.location.href = link + '?cache-bust=' + Date.now();
   };
 
   document.getElementById(slug + '_copy').onclick = async function () {
+    const env = Alpine.store('env').value;
     const link = env === 'stage' ? stage : production;
 
     const page = await get(link + '?cache-bust=' + Date.now(), {
