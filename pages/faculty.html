@@ -250,6 +250,122 @@ Reset links to optimize for opt-in styling instead of opt-out.
     display: none;
   }
 
+/* Header Images */
+
+#app .header{
+  height: 11rem;
+  width: 100%;
+  border-radius: 0.375rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+#app img{
+  border-radius: 0.375rem;
+}
+
+/* Buttons */
+
+#app .btn{
+  margin: 0px;
+}
+
+@-webkit-keyframes click{
+
+  0%{
+    transform: scale(0.95);
+  }
+
+  40%{
+    transform: scale(1.02);
+  }
+
+  100%{
+    transform: scale(1);
+  }
+}
+
+@keyframes click{
+
+  0%{
+    transform: scale(0.95);
+  }
+
+  40%{
+    transform: scale(1.02);
+  }
+
+  100%{
+    transform: scale(1);
+  }
+}
+
+#app .btn{
+  -webkit-animation: click 0.25s ease-out;
+          animation: click 0.25s ease-out;
+  border-radius: 0.375rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500 !important;
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+  -webkit-text-decoration-line: none !important;
+          text-decoration-line: none !important;
+}
+
+#app .btn:focus{
+  --tw-scale-x: .95;
+  --tw-scale-y: .95;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  -webkit-animation: none;
+          animation: none;
+}
+
+#app .btn:active{
+  --tw-scale-x: .95;
+  --tw-scale-y: .95;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  -webkit-animation: none;
+          animation: none;
+}
+
+#app .btn{
+  --tw-bg-opacity: 1;
+  background-color: rgb(10 37 78 / var(--tw-bg-opacity));
+}
+
+#app .btn:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(9 33 69 / var(--tw-bg-opacity));
+}
+
+#app .btn-primary{
+  --tw-bg-opacity: 1;
+  background-color: rgb(10 37 78 / var(--tw-bg-opacity));
+}
+
+#app .btn-primary:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(9 33 69 / var(--tw-bg-opacity));
+}
+
+#app .btn-secondary{
+  --tw-bg-opacity: 1;
+  background-color: rgb(153 0 0 / var(--tw-bg-opacity));
+}
+
+#app .btn-secondary:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(138 0 0 / var(--tw-bg-opacity));
+}
+
 /* Table of Contents */
 
 #app .table-of-contents{
@@ -939,20 +1055,24 @@ Reset links to optimize for opt-in styling instead of opt-out.
   bottom: 0px;
 }
 
-#app .top-\[calc\(102vh\+272px\)\]{
-  top: calc(102vh + 272px);
+#app .top-\[calc\(100vh\+272px\)\]{
+  top: calc(100vh + 272px);
 }
 
-#app .top-\[calc\(102vh\+222px\)\]{
-  top: calc(102vh + 222px);
+#app .top-\[calc\(100vh\+222px\)\]{
+  top: calc(100vh + 222px);
 }
 
-#app .top-\[102vh\]{
-  top: 102vh;
+#app .top-\[calc\(100vh\+72px\)\]{
+  top: calc(100vh + 72px);
 }
 
 #app .top-0{
   top: 0px;
+}
+
+#app .right-0{
+  right: 0px;
 }
 
 #app .left-0{
@@ -965,10 +1085,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .top-1{
   top: 0.25rem;
-}
-
-#app .right-0{
-  right: 0px;
 }
 
 #app .-z-50{
@@ -1012,11 +1128,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
   margin-right: auto;
 }
 
-#app .my-5{
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-}
-
 #app .my-0{
   margin-top: 0px;
   margin-bottom: 0px;
@@ -1025,6 +1136,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .my-1{
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
+}
+
+#app .my-5{
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 #app .mt-2{
@@ -1071,6 +1187,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   display: inline-flex;
 }
 
+#app .table{
+  display: table;
+}
+
 #app .hidden{
   display: none;
 }
@@ -1079,36 +1199,52 @@ Reset links to optimize for opt-in styling instead of opt-out.
   height: 100%;
 }
 
-#app .h-\[calc\(100\%-102vh-272px\)\]{
-  height: calc(100% - 102vh - 272px);
+#app .h-\[calc\(100\%-100vh-272px\)\]{
+  height: calc(100% - 100vh - 272px);
 }
 
-#app .h-\[calc\(100\%-102vh-222px\)\]{
-  height: calc(100% - 102vh - 222px);
+#app .h-\[calc\(100\%-100vh-222px\)\]{
+  height: calc(100% - 100vh - 222px);
 }
 
-#app .h-\[calc\(100\%-102vh\)\]{
-  height: calc(100% - 102vh);
+#app .h-\[calc\(100\%-100vh-72px\)\]{
+  height: calc(100% - 100vh - 72px);
+}
+
+#app .h-screen{
+  height: 100vh;
 }
 
 #app .h-8{
   height: 2rem;
 }
 
-#app .h-6{
-  height: 1.5rem;
+#app .h-14{
+  height: 3.5rem;
 }
 
 #app .h-16{
   height: 4rem;
 }
 
+#app .h-6{
+  height: 1.5rem;
+}
+
 #app .max-h-\[calc\(90vh-72px\)\]{
   max-height: calc(90vh - 72px);
 }
 
+#app .min-h-\[90vh\]{
+  min-height: 90vh;
+}
+
 #app .w-full{
   width: 100%;
+}
+
+#app .w-3\/4{
+  width: 75%;
 }
 
 #app .w-6{
@@ -1135,6 +1271,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   max-width: 15rem;
 }
 
+#app .max-w-xs{
+  max-width: 20rem;
+}
+
 #app .flex-1{
   flex: 1 1 0%;
 }
@@ -1153,6 +1293,41 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .basis-full{
   flex-basis: 100%;
+}
+
+@-webkit-keyframes bounce{
+
+  0%, 100%{
+    transform: translateY(-25%);
+    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
+            animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50%{
+    transform: none;
+    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
+            animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+@keyframes bounce{
+
+  0%, 100%{
+    transform: translateY(-25%);
+    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
+            animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50%{
+    transform: none;
+    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
+            animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+#app .animate-bounce{
+  -webkit-animation: bounce 1s infinite;
+          animation: bounce 1s infinite;
 }
 
 #app .cursor-pointer{
@@ -1231,16 +1406,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   white-space: nowrap;
 }
 
+#app .rounded-md{
+  border-radius: 0.375rem;
+}
+
 #app .rounded-lg{
   border-radius: 0.5rem;
 }
 
 #app .rounded-full{
   border-radius: 9999px;
-}
-
-#app .rounded-md{
-  border-radius: 0.375rem;
 }
 
 #app .rounded-b-none{
@@ -1263,6 +1438,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   border-bottom-left-radius: 0px;
 }
 
+#app .bg-white{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 #app .bg-primary{
   --tw-bg-opacity: 1;
   background-color: rgb(10 37 78 / var(--tw-bg-opacity));
@@ -1271,6 +1451,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .bg-black{
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+#app .bg-primary-focus{
+  --tw-bg-opacity: 1;
+  background-color: rgb(9 33 69 / var(--tw-bg-opacity));
 }
 
 #app .bg-base-300{
@@ -1283,18 +1468,32 @@ Reset links to optimize for opt-in styling instead of opt-out.
   background-color: rgb(153 0 0 / var(--tw-bg-opacity));
 }
 
-#app .bg-white{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-#app .bg-primary-focus{
-  --tw-bg-opacity: 1;
-  background-color: rgb(9 33 69 / var(--tw-bg-opacity));
-}
-
 #app .bg-opacity-90{
   --tw-bg-opacity: 0.9;
+}
+
+#app .bg-opacity-80{
+  --tw-bg-opacity: 0.8;
+}
+
+#app .bg-opacity-40{
+  --tw-bg-opacity: 0.4;
+}
+
+#app .bg-cover{
+  background-size: cover;
+}
+
+#app .bg-scroll{
+  background-attachment: scroll;
+}
+
+#app .bg-center{
+  background-position: center;
+}
+
+#app .bg-no-repeat{
+  background-repeat: no-repeat;
 }
 
 #app .p-2{
@@ -1306,24 +1505,24 @@ Reset links to optimize for opt-in styling instead of opt-out.
   padding-right: 2rem;
 }
 
+#app .py-10{
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 #app .py-5{
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
 }
 
-#app .px-5{
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+#app .px-3{
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 #app .py-2{
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-
-#app .px-3{
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
 }
 
 #app .px-2{
@@ -1334,6 +1533,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .py-1{
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+}
+
+#app .px-5{
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 #app .pt-12{
@@ -1365,6 +1569,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   line-height: 1rem;
 }
 
+#app .text-lg{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 #app .text-base{
   font-size: 1rem;
   line-height: 1.5rem;
@@ -1380,13 +1589,17 @@ Reset links to optimize for opt-in styling instead of opt-out.
   line-height: 2rem;
 }
 
-#app .text-xl{
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+#app .text-5xl{
+  font-size: 3rem;
+  line-height: 1;
 }
 
-#app .text-lg{
-  font-size: 1.125rem;
+#app .text-\[5em\]{
+  font-size: 5em;
+}
+
+#app .text-xl{
+  font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
@@ -1468,18 +1681,18 @@ Reset links to optimize for opt-in styling instead of opt-out.
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-#app .transition{
-  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 #app .transition-colors{
   transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+#app .transition{
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1513,6 +1726,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   font-weight: inherit;
 }
 
+#app .hover\:bg-primary-content:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 #app .hover\:bg-primary-focus:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(9 33 69 / var(--tw-bg-opacity));
@@ -1521,11 +1739,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .hover\:bg-secondary-focus:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(138 0 0 / var(--tw-bg-opacity));
-}
-
-#app .hover\:bg-primary-content:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 #app .hover\:bg-opacity-20:hover{
@@ -1596,6 +1809,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 }
 
 @media (min-width: 768px){
+
+  #app .md\:max-w-none{
+    max-width: none;
+  }
 
   #app .md\:px-6{
     padding-left: 1.5rem;
@@ -1729,8 +1946,8 @@ Reset links to optimize for opt-in styling instead of opt-out.
   </style>
 
   <div  x-data="{ scroll: '' }" id="app">
-    <div class="absolute  top-[calc(102vh+222px)]  overflow-none  h-[calc(100%-102vh-222px)]  w-full pointer-events-none -z-50" x-intersect:enter="scroll = 'bg-opacity-90'" x-intersect:leave="scroll = ''">&nbsp;</div>
-
+    <div class="absolute  top-[calc(100vh+222px)]  overflow-none  h-[calc(100%-100vh-222px)]  w-full pointer-events-none -z-50" x-intersect:enter="scroll = 'bg-opacity-90'" x-intersect:leave="scroll = ''">&nbsp;</div>
+    <div class="fixed top-0 right-0 bg-cover bg-no-repeat bg-center bg-scroll h-screen w-full bg-white" >&nbsp;</div>
     
 
 
@@ -2127,7 +2344,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
       </svg>
     
 
-    <div class="content min-h-screeen flex flex-col lg:flex-row justify-center px-8 my-5 z-10 relative gap-5">
+    
+
+
+    <div id="mycontent" class="content min-h-screeen flex flex-col lg:flex-row justify-center px-8 py-10 z-10 relative gap-5 ">
       <div x-data="{ toc: !!document.querySelector('.table-of-contents')}" x-show="toc" class="grow order-first lg:order-last max-w-[15rem] prose" x-cloak>
         <div class="lg:sticky lg:top-20 text-base">
           <h1 class="my-0 mb-5 text-2xl font-semibold">Table of Contents</h1>
@@ -2190,9 +2410,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.37.5/tsparticles.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery-particles@1.37.5/dist/jquery.particles.min.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.5/mousetrap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/dayjs.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/plugin/utc.min.js"></script>
 
   <script>
     
@@ -2874,6 +3099,56 @@ if (tocExists) {
   elementsToObserve.forEach((thisEl) => observer.observe(thisEl));
 }
 
+  dayjs.extend(window.dayjs_plugin_utc);
+
+$('[data-turnredafter]').each(function () {
+  const table = $(this);
+  const redDays = table.data('turnredafter');
+  $('tbody > tr', table)
+    .map(function () {
+      const labelText = $('td:nth-child(1)', this).text().split('(');
+      const dateText = $('td:nth-child(2)', this).text().trim();
+
+      const currentYear = parseInt(labelText[1].trim().slice(0, -1));
+      const currentDeadline = dayjs(
+        dateText + ' 00:00:00',
+        'MMMM DD, YYYY HH:mm:ss'
+      )
+        .utc()
+        .utcOffset(-5, true)
+        .startOf('day');
+
+      const today = dayjs().utc().utcOffset(-5).startOf('day');
+      const diff = currentDeadline.diff(today, 'day');
+
+      const label = labelText[0].trim();
+      const year = diff < 0 ? currentYear + 1 : currentYear;
+      const red = diff < redDays && diff >= 0 ? true : false;
+      const deadline =
+        diff < 0 ? currentDeadline.add(1, 'year') : currentDeadline;
+
+      return {
+        label,
+        year,
+        red,
+        deadline
+      };
+    })
+    .get()
+    .sort((a, b) => a.deadline.diff(b.deadline))
+    .map((deadline, index) => {
+      $(`tbody > tr:nth-child(${index + 1})`, table)
+        .find('td:nth-child(1)')
+        .addClass(() => (deadline.red ? 'text-secondary' : ''))
+        .text(`${deadline.label} (${deadline.year})`);
+
+      $(`tbody > tr:nth-child(${index + 1})`, table)
+        .find('td:nth-child(2)')
+        .addClass(() => (deadline.red ? 'text-secondary' : ''))
+        .text(deadline.deadline.format('dddd, MMMM D, YYYY'));
+    });
+});
+
   const planeBase64 =
   'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBhcmlhLWhpZGRlbj0idHJ1ZSIgcm9sZT0iaW1nIiBjbGFzcz0iaWNvbmlmeSBpY29uaWZ5LS1mYS1zb2xpZCIgd2lkdGg9IjEuMTNlbSIgaGVpZ2h0PSIxZW0iIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIG1lZXQiIHZpZXdCb3g9IjAgMCA1NzYgNTEyIj48cGF0aCBkPSJNNDgwIDE5MkgzNjUuNzFMMjYwLjYxIDguMDZBMTYuMDE0IDE2LjAxNCAwIDAgMCAyNDYuNzEgMGgtNjUuNWMtMTAuNjMgMC0xOC4zIDEwLjE3LTE1LjM4IDIwLjM5TDIxNC44NiAxOTJIMTEybC00My4yLTU3LjZjLTMuMDItNC4wMy03Ljc3LTYuNC0xMi44LTYuNEgxNi4wMUM1LjYgMTI4LTIuMDQgMTM3Ljc4LjQ5IDE0Ny44OEwzMiAyNTZMLjQ5IDM2NC4xMkMtMi4wNCAzNzQuMjIgNS42IDM4NCAxNi4wMSAzODRINTZjNS4wNCAwIDkuNzgtMi4zNyAxMi44LTYuNEwxMTIgMzIwaDEwMi44NmwtNDkuMDMgMTcxLjZjLTIuOTIgMTAuMjIgNC43NSAyMC40IDE1LjM4IDIwLjRoNjUuNWM1Ljc0IDAgMTEuMDQtMy4wOCAxMy44OS04LjA2TDM2NS43MSAzMjBINDgwYzM1LjM1IDAgOTYtMjguNjUgOTYtNjRzLTYwLjY1LTY0LTk2LTY0eiIgZmlsbD0iY3VycmVudENvbG9yIj48L3BhdGg+PC9zdmc+';
 
@@ -3003,7 +3278,7 @@ const particles = $('#planes')
         container.options.interactivity.events.onHover.mode = 'trail';
         container.options.particles.number.density.area = 50;
         container.options.particles.shape.image.src =
-          'https://liberty-sa.terradotta.com/_customtags/ct_FileRetrieve.cfm?File_ID=34475';
+          'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35457';
         container.refresh();
       }
     );

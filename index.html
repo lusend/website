@@ -258,6 +258,122 @@ Reset links to optimize for opt-in styling instead of opt-out.
     display: none;
   }
 
+/* Header Images */
+
+#app .header{
+  height: 11rem;
+  width: 100%;
+  border-radius: 0.375rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+#app img{
+  border-radius: 0.375rem;
+}
+
+/* Buttons */
+
+#app .btn{
+  margin: 0px;
+}
+
+@-webkit-keyframes click{
+
+  0%{
+    transform: scale(0.95);
+  }
+
+  40%{
+    transform: scale(1.02);
+  }
+
+  100%{
+    transform: scale(1);
+  }
+}
+
+@keyframes click{
+
+  0%{
+    transform: scale(0.95);
+  }
+
+  40%{
+    transform: scale(1.02);
+  }
+
+  100%{
+    transform: scale(1);
+  }
+}
+
+#app .btn{
+  -webkit-animation: click 0.25s ease-out;
+          animation: click 0.25s ease-out;
+  border-radius: 0.375rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500 !important;
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+  -webkit-text-decoration-line: none !important;
+          text-decoration-line: none !important;
+}
+
+#app .btn:focus{
+  --tw-scale-x: .95;
+  --tw-scale-y: .95;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  -webkit-animation: none;
+          animation: none;
+}
+
+#app .btn:active{
+  --tw-scale-x: .95;
+  --tw-scale-y: .95;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  -webkit-animation: none;
+          animation: none;
+}
+
+#app .btn{
+  --tw-bg-opacity: 1;
+  background-color: rgb(10 37 78 / var(--tw-bg-opacity));
+}
+
+#app .btn:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(9 33 69 / var(--tw-bg-opacity));
+}
+
+#app .btn-primary{
+  --tw-bg-opacity: 1;
+  background-color: rgb(10 37 78 / var(--tw-bg-opacity));
+}
+
+#app .btn-primary:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(9 33 69 / var(--tw-bg-opacity));
+}
+
+#app .btn-secondary{
+  --tw-bg-opacity: 1;
+  background-color: rgb(153 0 0 / var(--tw-bg-opacity));
+}
+
+#app .btn-secondary:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(138 0 0 / var(--tw-bg-opacity));
+}
+
 /* Table of Contents */
 
 #app .table-of-contents{
@@ -947,20 +1063,24 @@ Reset links to optimize for opt-in styling instead of opt-out.
   bottom: 0px;
 }
 
-#app .top-\[calc\(102vh\+272px\)\]{
-  top: calc(102vh + 272px);
+#app .top-\[calc\(100vh\+272px\)\]{
+  top: calc(100vh + 272px);
 }
 
-#app .top-\[calc\(102vh\+222px\)\]{
-  top: calc(102vh + 222px);
+#app .top-\[calc\(100vh\+222px\)\]{
+  top: calc(100vh + 222px);
 }
 
-#app .top-\[102vh\]{
-  top: 102vh;
+#app .top-\[calc\(100vh\+72px\)\]{
+  top: calc(100vh + 72px);
 }
 
 #app .top-0{
   top: 0px;
+}
+
+#app .right-0{
+  right: 0px;
 }
 
 #app .left-0{
@@ -973,10 +1093,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .top-1{
   top: 0.25rem;
-}
-
-#app .right-0{
-  right: 0px;
 }
 
 #app .-z-50{
@@ -1020,11 +1136,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
   margin-right: auto;
 }
 
-#app .my-5{
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-}
-
 #app .my-0{
   margin-top: 0px;
   margin-bottom: 0px;
@@ -1033,6 +1144,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .my-1{
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
+}
+
+#app .my-5{
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 #app .mt-2{
@@ -1079,6 +1195,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   display: inline-flex;
 }
 
+#app .table{
+  display: table;
+}
+
 #app .hidden{
   display: none;
 }
@@ -1087,36 +1207,52 @@ Reset links to optimize for opt-in styling instead of opt-out.
   height: 100%;
 }
 
-#app .h-\[calc\(100\%-102vh-272px\)\]{
-  height: calc(100% - 102vh - 272px);
+#app .h-\[calc\(100\%-100vh-272px\)\]{
+  height: calc(100% - 100vh - 272px);
 }
 
-#app .h-\[calc\(100\%-102vh-222px\)\]{
-  height: calc(100% - 102vh - 222px);
+#app .h-\[calc\(100\%-100vh-222px\)\]{
+  height: calc(100% - 100vh - 222px);
 }
 
-#app .h-\[calc\(100\%-102vh\)\]{
-  height: calc(100% - 102vh);
+#app .h-\[calc\(100\%-100vh-72px\)\]{
+  height: calc(100% - 100vh - 72px);
+}
+
+#app .h-screen{
+  height: 100vh;
 }
 
 #app .h-8{
   height: 2rem;
 }
 
-#app .h-6{
-  height: 1.5rem;
+#app .h-14{
+  height: 3.5rem;
 }
 
 #app .h-16{
   height: 4rem;
 }
 
+#app .h-6{
+  height: 1.5rem;
+}
+
 #app .max-h-\[calc\(90vh-72px\)\]{
   max-height: calc(90vh - 72px);
 }
 
+#app .min-h-\[90vh\]{
+  min-height: 90vh;
+}
+
 #app .w-full{
   width: 100%;
+}
+
+#app .w-3\/4{
+  width: 75%;
 }
 
 #app .w-6{
@@ -1143,6 +1279,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   max-width: 15rem;
 }
 
+#app .max-w-xs{
+  max-width: 20rem;
+}
+
 #app .flex-1{
   flex: 1 1 0%;
 }
@@ -1161,6 +1301,41 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .basis-full{
   flex-basis: 100%;
+}
+
+@-webkit-keyframes bounce{
+
+  0%, 100%{
+    transform: translateY(-25%);
+    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
+            animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50%{
+    transform: none;
+    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
+            animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+@keyframes bounce{
+
+  0%, 100%{
+    transform: translateY(-25%);
+    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
+            animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50%{
+    transform: none;
+    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
+            animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+#app .animate-bounce{
+  -webkit-animation: bounce 1s infinite;
+          animation: bounce 1s infinite;
 }
 
 #app .cursor-pointer{
@@ -1239,16 +1414,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   white-space: nowrap;
 }
 
+#app .rounded-md{
+  border-radius: 0.375rem;
+}
+
 #app .rounded-lg{
   border-radius: 0.5rem;
 }
 
 #app .rounded-full{
   border-radius: 9999px;
-}
-
-#app .rounded-md{
-  border-radius: 0.375rem;
 }
 
 #app .rounded-b-none{
@@ -1271,6 +1446,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   border-bottom-left-radius: 0px;
 }
 
+#app .bg-white{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 #app .bg-primary{
   --tw-bg-opacity: 1;
   background-color: rgb(10 37 78 / var(--tw-bg-opacity));
@@ -1279,6 +1459,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .bg-black{
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+#app .bg-primary-focus{
+  --tw-bg-opacity: 1;
+  background-color: rgb(9 33 69 / var(--tw-bg-opacity));
 }
 
 #app .bg-base-300{
@@ -1291,18 +1476,32 @@ Reset links to optimize for opt-in styling instead of opt-out.
   background-color: rgb(153 0 0 / var(--tw-bg-opacity));
 }
 
-#app .bg-white{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-#app .bg-primary-focus{
-  --tw-bg-opacity: 1;
-  background-color: rgb(9 33 69 / var(--tw-bg-opacity));
-}
-
 #app .bg-opacity-90{
   --tw-bg-opacity: 0.9;
+}
+
+#app .bg-opacity-80{
+  --tw-bg-opacity: 0.8;
+}
+
+#app .bg-opacity-40{
+  --tw-bg-opacity: 0.4;
+}
+
+#app .bg-cover{
+  background-size: cover;
+}
+
+#app .bg-scroll{
+  background-attachment: scroll;
+}
+
+#app .bg-center{
+  background-position: center;
+}
+
+#app .bg-no-repeat{
+  background-repeat: no-repeat;
 }
 
 #app .p-2{
@@ -1314,24 +1513,24 @@ Reset links to optimize for opt-in styling instead of opt-out.
   padding-right: 2rem;
 }
 
+#app .py-10{
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 #app .py-5{
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
 }
 
-#app .px-5{
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+#app .px-3{
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 #app .py-2{
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-
-#app .px-3{
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
 }
 
 #app .px-2{
@@ -1342,6 +1541,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .py-1{
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+}
+
+#app .px-5{
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 #app .pt-12{
@@ -1373,6 +1577,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   line-height: 1rem;
 }
 
+#app .text-lg{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 #app .text-base{
   font-size: 1rem;
   line-height: 1.5rem;
@@ -1388,13 +1597,17 @@ Reset links to optimize for opt-in styling instead of opt-out.
   line-height: 2rem;
 }
 
-#app .text-xl{
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+#app .text-5xl{
+  font-size: 3rem;
+  line-height: 1;
 }
 
-#app .text-lg{
-  font-size: 1.125rem;
+#app .text-\[5em\]{
+  font-size: 5em;
+}
+
+#app .text-xl{
+  font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
@@ -1476,18 +1689,18 @@ Reset links to optimize for opt-in styling instead of opt-out.
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-#app .transition{
-  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 #app .transition-colors{
   transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+#app .transition{
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1521,6 +1734,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   font-weight: inherit;
 }
 
+#app .hover\:bg-primary-content:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 #app .hover\:bg-primary-focus:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(9 33 69 / var(--tw-bg-opacity));
@@ -1529,11 +1747,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .hover\:bg-secondary-focus:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(138 0 0 / var(--tw-bg-opacity));
-}
-
-#app .hover\:bg-primary-content:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 #app .hover\:bg-opacity-20:hover{
@@ -1604,6 +1817,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 }
 
 @media (min-width: 768px){
+
+  #app .md\:max-w-none{
+    max-width: none;
+  }
 
   #app .md\:px-6{
     padding-left: 1.5rem;
@@ -1751,11 +1968,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 <p><em>The deployment status should be visible at the top of the page. Check the status by clicking on either of the status badges or visiting the <a href="https://github.com/lusend/testwebsite">repository</a>.</em></p>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/testwebsite/commit/daa1f5ab64aaafbf83e2b624f2e4a00951a6cfaf" class="no-underline hover:underline" target="_blank">feat: 🎨 Format and Code Maintenance<br />
+  <a href="https://github.com/lusend/testwebsite/commit/84552651ef493d1fe914f26d7ed0eb808e454a63" class="no-underline hover:underline" target="_blank">feat: ✨ Large Miscellaneous Update<br />
 <br />
-Ensured easter egg disappeared on toggle. Simplified logos. Improved env access on github pages main page. Ensured proper order on github pages main page.</a>
+This commit contains a number of things. A paired shortcode config was added for future use. The home layout was renamed to preview for clarification purposes. The ability to modify deadlines using the data-turnredafter attribute was added. The plane easter egg image was updated to load faster. CSS was added to support buttons and header images in the informational pages. Support for backgrounds and heros were added. The home page was renamed to <a href="http://home.md">home.md</a> from <a href="http://index.md">index.md</a> to make more sense regarding its function. Defaults for hero and background front matter was added.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-16T20:00:29Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-17T20:56:47Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
@@ -1765,16 +1982,16 @@ Ensured easter egg disappeared on toggle. Simplified logos. Improved env access 
 <ul class="contains-task-list">
 <li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Support Map and JS that belongs with it</li>
 <li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Support Testimonials</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Support Landing Hero</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Support Landing Hero</li>
 <li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Support Large Navigation Section</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Support Changing Backgrounds</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Support Changing Backgrounds</li>
 </ul>
 <h3 id="blog%2Finformation-pages" tabindex="-1"><a class="header-anchor" href="#blog%2Finformation-pages">Blog/Information Pages</a></h3>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Support Embedded Images</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Support Header Images</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Allow Date Sorting for Deadlines</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Support Buttons</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Support Embedded Images</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Support Header Images</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Allow Date Sorting for Deadlines</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Support Buttons</li>
 </ul>
 </details>
 
@@ -1794,19 +2011,19 @@ Ensured easter egg disappeared on toggle. Simplified logos. Improved env access 
   <div class="mb-2">
     <div class="flex flex-wrap items-stretch">
       <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Home</div>
-      <button id="pages_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+      <button id="home_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button id="pages_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+      <button id="home_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
-        <span id="pages_copytext">Copy</span>
+        <span id="home_copytext">Copy</span>
       </button>
     </div>
 
     <script>
       $(document).ready(function () {
-        preview('pages', '/testwebsite/pages/index.html', '/testwebsite/pages/index_stage.html');
+        preview('home', '/testwebsite/pages/home.html', '/testwebsite/pages/home_stage.html');
       })
     </script>
   </div>
