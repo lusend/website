@@ -176,7 +176,7 @@ if (tocExists) {
     syncPath();
   };
 
-  $(document).ready(() => {
+  window.addEventListener('load', function () {
     drawPath();
     syncPath();
   });
