@@ -15,6 +15,11 @@
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+html,
+body {
+  margin: 0;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 18px;
@@ -1951,11 +1956,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 
     </style>
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
   </head>
 
   <body>
@@ -1968,11 +1968,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 <p><em>The deployment status should be visible at the top of the page. Check the status by clicking on either of the status badges or visiting the <a href="https://github.com/lusend/testwebsite">repository</a>.</em></p>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/testwebsite/commit/84552651ef493d1fe914f26d7ed0eb808e454a63" class="no-underline hover:underline" target="_blank">feat: ✨ Large Miscellaneous Update<br />
+  <a href="https://github.com/lusend/testwebsite/commit/f74dbea002f639ad33b79b59c66930f51a88684c" class="no-underline hover:underline" target="_blank">perf: ⚡ Improved Performance While Previewing<br />
 <br />
-This commit contains a number of things. A paired shortcode config was added for future use. The home layout was renamed to preview for clarification purposes. The ability to modify deadlines using the data-turnredafter attribute was added. The plane easter egg image was updated to load faster. CSS was added to support buttons and header images in the informational pages. Support for backgrounds and heros were added. The home page was renamed to <a href="http://home.md">home.md</a> from <a href="http://index.md">index.md</a> to make more sense regarding its function. Defaults for hero and background front matter was added.</a>
+Improved CSS issues while previewing. Removed cerrtain JQuery references when unecessary to improve performance when library is not included.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-17T20:56:47Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-17T21:44:54Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
@@ -2022,7 +2022,7 @@ This commit contains a number of things. A paired shortcode config was added for
     </div>
 
     <script>
-      $(document).ready(function () {
+      window.addEventListener('load', function () {
         preview('home', '/testwebsite/pages/home.html', '/testwebsite/pages/home_stage.html');
       })
     </script>
@@ -2046,7 +2046,7 @@ This commit contains a number of things. A paired shortcode config was added for
     </div>
 
     <script>
-      $(document).ready(function () {
+      window.addEventListener('load', function () {
         preview('faculty', '/testwebsite/pages/faculty.html', '/testwebsite/pages/faculty_stage.html');
       })
     </script>
@@ -2073,7 +2073,7 @@ This commit contains a number of things. A paired shortcode config was added for
     </div>
 
     <script>
-      $(document).ready(function () {
+      window.addEventListener('load', function () {
         preview('group', '/testwebsite/pages/group.html', '/testwebsite/pages/group_stage.html');
       })
     </script>
@@ -2097,7 +2097,7 @@ This commit contains a number of things. A paired shortcode config was added for
     </div>
 
     <script>
-      $(document).ready(function () {
+      window.addEventListener('load', function () {
         preview('group1', '/testwebsite/pages/group1.html', '/testwebsite/pages/group1_stage.html');
       })
     </script>
@@ -2124,7 +2124,7 @@ This commit contains a number of things. A paired shortcode config was added for
     </div>
 
     <script>
-      $(document).ready(function () {
+      window.addEventListener('load', function () {
         preview('group2', '/testwebsite/pages/group2.html', '/testwebsite/pages/group2_stage.html');
       })
     </script>
@@ -2154,7 +2154,7 @@ This commit contains a number of things. A paired shortcode config was added for
     </div>
 
     <script>
-      $(document).ready(function () {
+      window.addEventListener('load', function () {
         preview('individual', '/testwebsite/pages/individual.html', '/testwebsite/pages/individual_stage.html');
       })
     </script>
@@ -2178,7 +2178,7 @@ This commit contains a number of things. A paired shortcode config was added for
     </div>
 
     <script>
-      $(document).ready(function () {
+      window.addEventListener('load', function () {
         preview('individual1', '/testwebsite/pages/individual1.html', '/testwebsite/pages/individual1_stage.html');
       })
     </script>
@@ -2202,7 +2202,7 @@ This commit contains a number of things. A paired shortcode config was added for
     </div>
 
     <script>
-      $(document).ready(function () {
+      window.addEventListener('load', function () {
         preview('individual11', '/testwebsite/pages/individual11.html', '/testwebsite/pages/individual11_stage.html');
       })
     </script>
@@ -2229,7 +2229,7 @@ This commit contains a number of things. A paired shortcode config was added for
     </div>
 
     <script>
-      $(document).ready(function () {
+      window.addEventListener('load', function () {
         preview('individual12', '/testwebsite/pages/individual12.html', '/testwebsite/pages/individual12_stage.html');
       })
     </script>
@@ -2259,7 +2259,7 @@ This commit contains a number of things. A paired shortcode config was added for
     </div>
 
     <script>
-      $(document).ready(function () {
+      window.addEventListener('load', function () {
         preview('individual2', '/testwebsite/pages/individual2.html', '/testwebsite/pages/individual2_stage.html');
       })
     </script>

@@ -7,6 +7,11 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+html,
+body {
+  margin: 0;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 18px;
@@ -2136,7 +2141,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
       </div>
     </div>
 
-    <div class="absolute inset-y-0 right-0 flex items-center">
+    <div class="absolute inset-y-0 right-0 flex items-center text-primary-content">
       <button x-data="{ planes: false }" x-effect="togglePlanes(planes)" x-on:click="planes = !planes" class="mr-1 inline-flex items-center justify-center gap-1 p-2 rounded-md hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-sm font-medium">
         <ion-icon x-show="!planes" name="airplane-outline"class='text-xl' x-cloak>&nbsp;</ion-icon>
         <ion-icon x-show="planes" name="airplane"class='text-xl' x-cloak>&nbsp;</ion-icon>
@@ -3104,7 +3109,7 @@ if (tocExists) {
     syncPath();
   };
 
-  $(document).ready(() => {
+  window.addEventListener('load', function () {
     drawPath();
     syncPath();
   });
