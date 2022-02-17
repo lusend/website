@@ -8,6 +8,8 @@ module.exports = async function (configData) {
     suffix: env === 'stage' ? '_stage' : '',
     planes: false,
     header: true,
+    hero: false,
+    background: false,
     eleventyComputed: {
       path: `{{ page.filePathStem }}{{ suffix }}`,
       permalink: `{{ path }}.html`,
@@ -31,7 +33,7 @@ module.exports = async function (configData) {
         url: (data) =>
           env === 'development'
             ? data.permalink
-            : data.slug === 'pages'
+            : data.slug === 'home'
             ? '/'
             : `/?go=${data.page.fileSlug}`
       }

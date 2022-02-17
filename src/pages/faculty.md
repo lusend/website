@@ -2,7 +2,7 @@
 title: Faculty & Staff Gateway
 nav:
   title: Faculty Gateway
-  parent: pages
+  parent: home
   order: 1
 ---
 

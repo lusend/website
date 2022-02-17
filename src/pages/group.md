@@ -2,7 +2,7 @@
 title: Group Travel
 nav:
   title: Group Travel
-  parent: pages
+  parent: home
   order: 2
 ---
 

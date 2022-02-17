@@ -2,6 +2,8 @@
 title: Home Page
 planes: true
 header: false
+hero: LU Send exists to train Champions for Christ to become global citizens through experiential learning and cultural engagement
+background: https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35490
 nav:
   title: Home
 ---
@@ -36,17 +38,46 @@ Sit amet nisl suscipit adipiscing bibendum est. Euismod nisi porta lorem mollis.
 
 # Plugin Demonstration
 
-| Option         | Example                                            |
-| -------------- | -------------------------------------------------- |
-| Bold           | **Test**                                           |
-| Italic         | _Test_                                             |
-| Superscript    | ^Test^                                             |
-| Subscript      | ~Test~                                             |
-| Strikethrough  | ~~Test~~                                           |
-| Highlight      | ==Test==                                           |
-| Typographer    | (c) (C) (r) (R) (tm) (TM) (p) (P) +- "Test" 'Test' |
-| Inline Code    | `Test`                                             |
-| Emoji          | :)                                                 |
-| Adding Classes | [Text]{.text-secondary .font-bold}                 |
+![Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21502){.header}
+
+| Option         | Example                                                           |
+| -------------- | ----------------------------------------------------------------- |
+| Bold           | **Test**                                                          |
+| Italic         | _Test_                                                            |
+| Superscript    | ^Test^                                                            |
+| Subscript      | ~Test~                                                            |
+| Strikethrough  | ~~Test~~                                                          |
+| Highlight      | ==Test==                                                          |
+| Typographer    | (c) (C) (r) (R) (tm) (TM) (p) (P) +- "Test" 'Test'                |
+| Inline Code    | `Test`                                                            |
+| Emoji          | :)                                                                |
+| Adding Classes | [Text]{.text-secondary .font-bold}                                |
+| Adding Buttons | [Group Travel]({{ link('group') }}){.btn .btn-secondary .text-lg} |
+
+<!-- Will automatically update and sort -->
+<!-- Make sure {date-turnredafter="number"} is included -->
+
+| Trip Dates                  | Proposal Deadlines |
+| --------------------------- | ------------------ |
+| January/Early Spring (2023) | April 1, 2022      |
+| Spring Break (2023)         | June 15, 2022      |
+| Summer May/June (2023)      | August 15, 2022    |
+| Summer July/August (2023)   | October 1, 2022    |
+| Fall (2023)                 | February 15, 2023  |
+
+{data-turnredafter="30"}
+
+<!-- Will automatically update and sort -->
+<!-- Make sure {date-turnredafter="number"} is included -->
+
+| Trip Dates                  | Proposal Deadlines |
+| --------------------------- | ------------------ |
+| January/Early Spring (2024) | December 1, 2022   |
+| Spring Break (2024)         | February 15, 2023  |
+| Summer May/June (2023)      | April 30, 2022     |
+| Summer July/August (2023)   | May 30, 2022       |
+| Fall (2023)                 | October 1, 2022    |
+
+{data-turnredafter="30"}
 
 ${toc}

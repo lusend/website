@@ -2,7 +2,7 @@
 title: Individual Travel
 nav:
   title: Individual Travel
-  parent: pages
+  parent: home
   order: 3
 ---
 

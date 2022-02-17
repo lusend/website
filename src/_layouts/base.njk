@@ -31,6 +31,7 @@
   {% include "scripts/smoothscroll.js" %}
   {% include "scripts/wave.js" %}
   {% include "scripts/toc.js" %}
+  {% include "scripts/deadlines.js" %}
   {% include "scripts/planes.js" %}
   {% endset %}
 
@@ -39,8 +40,8 @@
   </style>
 
   <div  x-data="{ scroll: '' }" id="app">
-    <div class="absolute {% if header and author %} top-[calc(102vh+272px)] {% elif header %} top-[calc(102vh+222px)] {% else %} top-[102vh] {% endif %} overflow-none {% if header and author %} h-[calc(100%-102vh-272px)] {% elif header %} h-[calc(100%-102vh-222px)] {%else%} h-[calc(100%-102vh)] {% endif %} w-full pointer-events-none -z-50" x-intersect:enter="scroll = 'bg-opacity-90'" x-intersect:leave="scroll = ''">&nbsp;</div>
-
+    <div class="absolute {% if header and author %} top-[calc(100vh+272px)] {% elif header %} top-[calc(100vh+222px)] {% else %} top-[calc(100vh+72px)] {% endif %} overflow-none {% if header and author %} h-[calc(100%-100vh-272px)] {% elif header %} h-[calc(100%-100vh-222px)] {%else%} h-[calc(100%-100vh-72px)] {% endif %} w-full pointer-events-none -z-50" x-intersect:enter="scroll = 'bg-opacity-90'" x-intersect:leave="scroll = ''">&nbsp;</div>
+    <div class="fixed top-0 right-0 bg-cover bg-no-repeat bg-center bg-scroll h-screen w-full bg-white" {% if background %} style="background-image: url('{{ background }}')" {% endif %}>&nbsp;</div>
     {% include "./nav.njk" %}
     {% if header %}
       <div class="text-base flex flex-row justify-center px-8 pt-12 pb-5 z-10 relative mx-auto w-full bg-primary text-primary-content">
@@ -68,7 +69,9 @@
       </svg>
     {% endif %}
 
-    <div class="content min-h-screeen flex flex-col lg:flex-row justify-center px-8 my-5 z-10 relative gap-5">
+    {% include "./hero.njk" %}
+
+    <div id="mycontent" class="content min-h-screeen flex flex-col lg:flex-row justify-center px-8 py-10 z-10 relative gap-5 {% if background %} bg-white bg-opacity-80 {% endif %}">
       <div x-data="{ toc: !!document.querySelector('.table-of-contents')}" x-show="toc" class="grow order-first lg:order-last max-w-[15rem] prose" x-cloak>
         <div class="lg:sticky lg:top-20 text-base">
           <h1 class="my-0 mb-5 text-2xl font-semibold">Table of Contents</h1>
@@ -86,7 +89,7 @@
 
     <footer class="bg-opacity-85 bg-black relative">
       <div class="py-5 flex flex-col justify-center items-center text-gray-400 text-xslg:text-sm text-center text-primary-content text-opacity-70 focus:outline-none font-medium">
-        <a href="{{ link('pages') }}" class="h-8 mb-2">{{ logo | safe }}</a>
+        <a href="{{ link('home') }}" class="h-8 mb-2">{{ logo | safe }}</a>
 
         <span>&copy; {% year %} Liberty University. All Rights Reserved.</span>
 
@@ -107,9 +110,14 @@
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.37.5/tsparticles.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery-particles@1.37.5/dist/jquery.particles.min.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.5/mousetrap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/dayjs.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/plugin/utc.min.js"></script>
 
   <script>
     {{ js | safe }}

@@ -127,7 +127,7 @@ const particles = $('#planes')
         container.options.interactivity.events.onHover.mode = 'trail';
         container.options.particles.number.density.area = 50;
         container.options.particles.shape.image.src =
-          'https://liberty-sa.terradotta.com/_customtags/ct_FileRetrieve.cfm?File_ID=34475';
+          'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35457';
         container.refresh();
       }
     );

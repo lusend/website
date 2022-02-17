@@ -4,6 +4,7 @@ module.exports = {
     './src/pages/**/*.{html,js,md,njk}',
     './src/_includes/**/*.{html,js,md,njk,svg}',
     './src/_layouts/**/*.{html,js,md,njk}',
+    './src/config/**/*.{html,js,md,njk}',
     './src/index.md',
     '!./src/_layouts/page.njk',
     '!./src/_layouts/brochure.njk'
@@ -44,6 +45,18 @@ module.exports = {
       lg: '1024px',
       xl: '1280px',
       '2xl': '1536px'
+    },
+    extend: {
+      animation: {
+        click: 'click 0.25s ease-out'
+      },
+      keyframes: {
+        click: {
+          '0%': { transform: 'scale(0.95)' },
+          '40%': { transform: 'scale(1.02)' },
+          '100%': { transform: 'scale(1)' }
+        }
+      }
     }
   },
   corePlugins: {

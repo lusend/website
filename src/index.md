@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: preview
 ---
 
 [![Build and Deploy Website](https://github.com/lusend/testwebsite/actions/workflows/build.yml/badge.svg)](https://github.com/lusend/testwebsite/actions/workflows/build.yml) [![pages-build-deployment](https://github.com/lusend/testwebsite/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/lusend/testwebsite/actions/workflows/pages/pages-build-deployment)
@@ -31,15 +31,15 @@ _The deployment status should be visible at the top of the page. Check the statu
 
 - [ ] Support Map and JS that belongs with it
 - [ ] Support Testimonials
-- [ ] Support Landing Hero
+- [x] Support Landing Hero
 - [ ] Support Large Navigation Section
-- [ ] Support Changing Backgrounds
+- [x] Support Changing Backgrounds
 
 ### Blog/Information Pages
 
-- [ ] Support Embedded Images
-- [ ] Support Header Images
-- [ ] Allow Date Sorting for Deadlines
-- [ ] Support Buttons
+- [x] Support Embedded Images
+- [x] Support Header Images
+- [x] Allow Date Sorting for Deadlines
+- [x] Support Buttons
 
 </details>
