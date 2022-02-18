@@ -1,11 +1,11 @@
 {% if hero != false %}
-  <div class="w-full min-h-[90vh] flex justify-center items-center relative z-10 bg-black bg-opacity-40 text-primary-content">
+  <div class="w-full min-h-[90vh] flex justify-center items-center relative z-10 bg-black bg-opacity-30 text-primary-content">
     <div class="flex justify-center items-center flex-col gap-5 w-3/4">
       <div class="w-full max-w-xs md:max-w-none">{{ logo | safe }}</div>
       <div class="text-center font-medium {% if hero | length <= 50 %} text-5xl {% else %} text-base {% endif %}">{{ hero }}</div>
-      <a href="#mycontent" class="animate-bounce text-[5em] h-14">
+      <button x-on:click="window.scrollBy(0, window.innerHeight - 72)" class="animate-bounce text-[5em] h-14">
         <ion-icon name="chevron-down-outline">&nbsp;</ion-icon>
-      </a>
+      </button>
     </div>
   </div>
 {% endif %}
