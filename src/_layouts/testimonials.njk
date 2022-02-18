@@ -3,9 +3,9 @@
     <h1 class="text-center {% if background %} text-primary-content {% endif %} mb-0 pt-3">Testimonials</h1>
     <div class="splide">
       <div class="splide__track">
-        <ul class="splide__list">
+        <ul class="splide__list h-auto">
           {% for testimonial in testimonials %}
-            <li class="splide__slide">
+            <li class="splide__slide p-0 m-0">
               <div x-data="{ hide: true, useHide: {{ testimonial.truncate }} }" class="bg-white shadow-md rounded-lg overflow-hidden flex justify-center items-center w-full h-full min-w-full relative">
                 <div class="w-full md:p-8 p-6 min-h-[12rem] flex justify-between gap-5 relative">
                   <svg class="h-[15rem] absolute z-10 bottom-0 right-0 -mb-16 -mr-10 opacity-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">

@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
       drag: 'free',
       lazyLoad: 'nearby',
       autoScroll: {
-        speed: 0.5
+        speed: 0.25
       }
     });
 
