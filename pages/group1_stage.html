@@ -1295,6 +1295,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   height: 1.5rem;
 }
 
+#app .h-auto{
+  height: auto;
+}
+
 #app .h-\[15rem\]{
   height: 15rem;
 }
@@ -1641,6 +1645,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .p-2{
   padding: 0.5rem;
+}
+
+#app .p-0{
+  padding: 0px;
 }
 
 #app .p-6{
@@ -2579,9 +2587,9 @@ Reset links to optimize for opt-in styling instead of opt-out.
     <h1 class="text-center  mb-0 pt-3">Testimonials</h1>
     <div class="splide">
       <div class="splide__track">
-        <ul class="splide__list">
+        <ul class="splide__list h-auto">
           
-            <li class="splide__slide">
+            <li class="splide__slide p-0 m-0">
               <div x-data="{ hide: true, useHide: true }" class="bg-white shadow-md rounded-lg overflow-hidden flex justify-center items-center w-full h-full min-w-full relative">
                 <div class="w-full md:p-8 p-6 min-h-[12rem] flex justify-between gap-5 relative">
                   <svg class="h-[15rem] absolute z-10 bottom-0 right-0 -mb-16 -mr-10 opacity-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
@@ -2612,7 +2620,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
               </div>
             </li>
           
-            <li class="splide__slide">
+            <li class="splide__slide p-0 m-0">
               <div x-data="{ hide: true, useHide: true }" class="bg-white shadow-md rounded-lg overflow-hidden flex justify-center items-center w-full h-full min-w-full relative">
                 <div class="w-full md:p-8 p-6 min-h-[12rem] flex justify-between gap-5 relative">
                   <svg class="h-[15rem] absolute z-10 bottom-0 right-0 -mb-16 -mr-10 opacity-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
@@ -2643,7 +2651,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
               </div>
             </li>
           
-            <li class="splide__slide">
+            <li class="splide__slide p-0 m-0">
               <div x-data="{ hide: true, useHide: true }" class="bg-white shadow-md rounded-lg overflow-hidden flex justify-center items-center w-full h-full min-w-full relative">
                 <div class="w-full md:p-8 p-6 min-h-[12rem] flex justify-between gap-5 relative">
                   <svg class="h-[15rem] absolute z-10 bottom-0 right-0 -mb-16 -mr-10 opacity-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
@@ -2674,7 +2682,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
               </div>
             </li>
           
-            <li class="splide__slide">
+            <li class="splide__slide p-0 m-0">
               <div x-data="{ hide: true, useHide: true }" class="bg-white shadow-md rounded-lg overflow-hidden flex justify-center items-center w-full h-full min-w-full relative">
                 <div class="w-full md:p-8 p-6 min-h-[12rem] flex justify-between gap-5 relative">
                   <svg class="h-[15rem] absolute z-10 bottom-0 right-0 -mb-16 -mr-10 opacity-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
@@ -2705,7 +2713,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
               </div>
             </li>
           
-            <li class="splide__slide">
+            <li class="splide__slide p-0 m-0">
               <div x-data="{ hide: true, useHide: true }" class="bg-white shadow-md rounded-lg overflow-hidden flex justify-center items-center w-full h-full min-w-full relative">
                 <div class="w-full md:p-8 p-6 min-h-[12rem] flex justify-between gap-5 relative">
                   <svg class="h-[15rem] absolute z-10 bottom-0 right-0 -mb-16 -mr-10 opacity-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
@@ -2771,7 +2779,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
       drag: 'free',
       lazyLoad: 'nearby',
       autoScroll: {
-        speed: 0.5
+        speed: 0.25
       }
     });
 
