@@ -30,7 +30,7 @@ _The deployment status should be visible at the top of the page. Check the statu
 ### Landing/Special Pages
 
 - [ ] Support Map and JS that belongs with it
-- [ ] Support Testimonials
+- [x] Support Testimonials
 - [x] Support Landing Hero
 - [ ] Support Large Navigation Section
 - [x] Support Changing Backgrounds
