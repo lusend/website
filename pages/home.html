@@ -329,13 +329,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   --tw-scale-x: .95;
   --tw-scale-y: .95;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  -webkit-animation: none;
-          animation: none;
 }
 
 #app .btn:active{
-  --tw-scale-x: .95;
-  --tw-scale-y: .95;
+  --tw-scale-x: .9;
+  --tw-scale-y: .9;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   -webkit-animation: none;
           animation: none;
@@ -510,6 +508,19 @@ Reset links to optimize for opt-in styling instead of opt-out.
   align-items: center;
   gap: 0.5rem;
   padding-left: 0px;
+}
+
+/* Testimonials */
+
+#app .splide__track{
+  cursor: -webkit-grab;
+  cursor: grab;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+#app .splide__track p{
+  margin: 0px;
 }
 
 *, ::before, ::after{
@@ -1092,6 +1103,18 @@ Reset links to optimize for opt-in styling instead of opt-out.
   top: 0.25rem;
 }
 
+#app .bottom-0{
+  bottom: 0px;
+}
+
+#app .bottom-6{
+  bottom: 1.5rem;
+}
+
+#app .bottom-3{
+  bottom: 0.75rem;
+}
+
 #app .-z-50{
   z-index: -50;
 }
@@ -1114,10 +1137,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .order-last{
   order: 9999;
-}
-
-#app .-m-1{
-  margin: -0.25rem;
 }
 
 #app .m-0{
@@ -1152,6 +1171,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   margin-top: 0.5rem;
 }
 
+#app .-mt-1{
+  margin-top: -0.25rem;
+}
+
 #app .mb-5{
   margin-bottom: 1.25rem;
 }
@@ -1178,6 +1201,42 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .mr-1{
   margin-right: 0.25rem;
+}
+
+#app .mb-0{
+  margin-bottom: 0px;
+}
+
+#app .-mb-16{
+  margin-bottom: -4rem;
+}
+
+#app .-mr-10{
+  margin-right: -2.5rem;
+}
+
+#app .-mt-3{
+  margin-top: -0.75rem;
+}
+
+#app .-ml-3{
+  margin-left: -0.75rem;
+}
+
+#app .-mt-10{
+  margin-top: -2.5rem;
+}
+
+#app .-mr-3{
+  margin-right: -0.75rem;
+}
+
+#app .-mt-8{
+  margin-top: -2rem;
+}
+
+#app .-mt-6{
+  margin-top: -1.5rem;
 }
 
 #app .block{
@@ -1236,12 +1295,44 @@ Reset links to optimize for opt-in styling instead of opt-out.
   height: 1.5rem;
 }
 
+#app .h-\[15rem\]{
+  height: 15rem;
+}
+
+#app .h-5{
+  height: 1.25rem;
+}
+
+#app .h-12{
+  height: 3rem;
+}
+
+#app .h-0{
+  height: 0px;
+}
+
 #app .max-h-\[calc\(90vh-72px\)\]{
   max-height: calc(90vh - 72px);
 }
 
+#app .max-h-\[5rem\]{
+  max-height: 5rem;
+}
+
+#app .max-h-\[14\.7rem\]{
+  max-height: 14.7rem;
+}
+
+#app .min-h-screen{
+  min-height: 100vh;
+}
+
 #app .min-h-\[90vh\]{
   min-height: 90vh;
+}
+
+#app .min-h-\[12rem\]{
+  min-height: 12rem;
 }
 
 #app .w-full{
@@ -1276,8 +1367,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   max-width: 15rem;
 }
 
+#app .max-w-full{
+  max-width: 100%;
+}
+
 #app .max-w-xs{
   max-width: 20rem;
+}
+
+#app .max-w-\[4rem\]{
+  max-width: 4rem;
 }
 
 #app .flex-1{
@@ -1290,6 +1389,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .flex-auto{
   flex: 1 1 auto;
+}
+
+#app .flex-shrink{
+  flex-shrink: 1;
+}
+
+#app .flex-grow{
+  flex-grow: 1;
 }
 
 #app .grow{
@@ -1359,12 +1466,20 @@ Reset links to optimize for opt-in styling instead of opt-out.
   flex-wrap: wrap;
 }
 
+#app .items-start{
+  align-items: flex-start;
+}
+
 #app .items-center{
   align-items: center;
 }
 
 #app .items-stretch{
   align-items: stretch;
+}
+
+#app .justify-start{
+  justify-content: flex-start;
 }
 
 #app .justify-center{
@@ -1403,8 +1518,22 @@ Reset links to optimize for opt-in styling instead of opt-out.
   overflow: auto;
 }
 
+#app .overflow-hidden{
+  overflow: hidden;
+}
+
+#app .overflow-y-auto{
+  overflow-y: auto;
+}
+
 #app .overflow-x-hidden{
   overflow-x: hidden;
+}
+
+#app .truncate{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 #app .whitespace-nowrap{
@@ -1481,8 +1610,17 @@ Reset links to optimize for opt-in styling instead of opt-out.
   --tw-bg-opacity: 0.8;
 }
 
-#app .bg-opacity-40{
-  --tw-bg-opacity: 0.4;
+#app .bg-opacity-30{
+  --tw-bg-opacity: 0.3;
+}
+
+#app .bg-gradient-to-t{
+  background-image: linear-gradient(to top, var(--tw-gradient-stops));
+}
+
+#app .from-white{
+  --tw-gradient-from: #ffffff;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(255 255 255 / 0));
 }
 
 #app .bg-cover{
@@ -1503,6 +1641,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .p-2{
   padding: 0.5rem;
+}
+
+#app .p-6{
+  padding: 1.5rem;
 }
 
 #app .px-8{
@@ -1565,8 +1707,24 @@ Reset links to optimize for opt-in styling instead of opt-out.
   padding-bottom: 0.75rem;
 }
 
+#app .pt-3{
+  padding-top: 0.75rem;
+}
+
+#app .text-left{
+  text-align: left;
+}
+
 #app .text-center{
   text-align: center;
+}
+
+#app .text-right{
+  text-align: right;
+}
+
+#app .font-serif{
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 #app .text-xs{
@@ -1608,6 +1766,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   line-height: 1.75rem;
 }
 
+#app .text-3xl{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 #app .font-semibold{
   font-weight: 600;
 }
@@ -1624,12 +1787,20 @@ Reset links to optimize for opt-in styling instead of opt-out.
   font-weight: 500 !important;
 }
 
+#app .font-normal{
+  font-weight: 400;
+}
+
 #app .uppercase{
   text-transform: uppercase;
 }
 
 #app .not-italic{
   font-style: normal;
+}
+
+#app .leading-tight{
+  line-height: 1.25;
 }
 
 #app .text-secondary{
@@ -1662,6 +1833,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+#app .text-base-content{
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
+#app .text-primary{
+  --tw-text-opacity: 1;
+  color: rgb(10 37 78 / var(--tw-text-opacity));
+}
+
 #app .text-opacity-70{
   --tw-text-opacity: 0.7;
 }
@@ -1676,9 +1857,19 @@ Reset links to optimize for opt-in styling instead of opt-out.
           text-decoration-line: none;
 }
 
+#app .opacity-10{
+  opacity: 0.1;
+}
+
 #app .shadow-md{
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+#app .shadow-sm{
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -1698,6 +1889,12 @@ Reset links to optimize for opt-in styling instead of opt-out.
   transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+#app .transition-all{
+  transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1819,6 +2016,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
     max-width: none;
   }
 
+  #app .md\:p-8{
+    padding: 2rem;
+  }
+
   #app .md\:px-6{
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -1911,6 +2112,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
     flex-direction: row;
   }
 
+  #app .lg\:justify-center{
+    justify-content: center;
+  }
+
   #app .lg\:space-x-2 > :not([hidden]) ~ :not([hidden]){
     --tw-space-x-reverse: 0;
     margin-right: calc(0.5rem * var(--tw-space-x-reverse));
@@ -1952,7 +2157,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
   <div  x-data="{ scroll: '' }" id="app">
     <div class="absolute  top-[calc(100vh+72px)]  overflow-none  h-[calc(100%-100vh-72px)]  w-full pointer-events-none -z-50" x-intersect:enter="scroll = 'bg-opacity-90'" x-intersect:leave="scroll = ''">&nbsp;</div>
-    <div class="fixed top-0 right-0 bg-cover bg-no-repeat bg-center bg-scroll h-screen w-full bg-white"  style="background-image: url('https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35490')" >&nbsp;</div>
+    <div class="fixed pointer-events-none top-0 right-0 bg-cover bg-no-repeat bg-center bg-scroll h-screen w-full bg-white"  style="background-image: url('https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35490')" >&nbsp;</div>
     
 
 
@@ -2306,7 +2511,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
     
 
     
-  <div class="w-full min-h-[90vh] flex justify-center items-center relative z-10 bg-black bg-opacity-40 text-primary-content">
+  <div class="w-full min-h-[90vh] flex justify-center items-center relative z-10 bg-black bg-opacity-30 text-primary-content">
     <div class="flex justify-center items-center flex-col gap-5 w-3/4">
       <div class="w-full max-w-xs md:max-w-none">
   <svg
@@ -2325,22 +2530,231 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
   </div>
       <div class="text-center font-medium  text-base ">LU Send exists to train Champions for Christ to become global citizens through experiential learning and cultural engagement</div>
-      <a href="#mycontent" class="animate-bounce text-[5em] h-14">
+      <button x-on:click="window.scrollBy(0, window.innerHeight - 72)" class="animate-bounce text-[5em] h-14">
         <ion-icon name="chevron-down-outline">&nbsp;</ion-icon>
-      </a>
+      </button>
     </div>
   </div>
 
 
 
-    <div id="mycontent" class="content min-h-screeen flex flex-col lg:flex-row justify-center px-8 py-10 z-10 relative gap-5  bg-white bg-opacity-80 ">
+    
+  <div id="testimonials" class="w-full justify-center relative z-10 text-base-content  bg-black bg-opacity-30  prose max-w-full">
+    <h1 class="text-center  text-primary-content  mb-0 pt-3">Testimonials</h1>
+    <div class="splide">
+      <div class="splide__track">
+        <ul class="splide__list">
+          
+            <li class="splide__slide">
+              <div x-data="{ hide: true, useHide: true }" class="bg-white shadow-md rounded-lg overflow-hidden flex justify-center items-center w-full h-full min-w-full relative">
+                <div class="w-full md:p-8 p-6 min-h-[12rem] flex justify-between gap-5 relative">
+                  <svg class="h-[15rem] absolute z-10 bottom-0 right-0 -mb-16 -mr-10 opacity-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                    <path d="M21.95 8.721l-.025-.168l-.026.006A4.5 4.5 0 1 0 17.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222l-.474.197l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.028 7.028 0 0 0-.063-.539zm-11 0l-.025-.168l-.026.006A4.5 4.5 0 1 0 6.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222c-.301.123-.473.195-.473.195l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.571 7.571 0 0 0-.064-.537z" fill="currentColor"></path>
+                  </svg>
+                  <div class="flex-1 flex flex-col gap-2 items-start relative">
+                    <div class="relative w-full">
+                      <div class="text-3xl text-secondary text-left leading-tight h-5 absolute top-0 left-0 -mt-3 -ml-3 z-10 font-serif">“</div>
+                      <div :class="hide && useHide ? 'max-h-[5rem] overflow-hidden' : 'max-h-[14.7rem] overflow-y-auto'" class="mb-5 w-full relative h-full transition-all" x-effect="if(hide) $el.scrollTop = 0" x-cloak>
+                        <div class="font-semibold text-base mb-5 w-full"><p>I truly believe that God gives us what we need when we need it the most. The Christian development and fellowship during this trip was exactly what I needed. This was a humbling experience for me, and it taught me the importance of faithfulness, forgiveness, and family. What an experience!</p>
+</div>
+                        <div :class="(hide ? 'h-12' : 'h-0') + ' ' + (useHide || 'hidden')" class="absolute transition-all bg-gradient-to-t bottom-0 right-0 from-white -mt-10 w-full flex justify-center items-center" x-cloak>&nbsp;</div>
+                      </div>
+                      <div :class="hide && useHide ? 'bottom-6' : 'bottom-3'" class="text-3xl text-secondary text-right leading-tight h-5 absolute z-10 right-0 -mt-3 -mr-3 font-serif">”</div>
+                    </div>
+                    <div :class="!useHide ? 'hidden' : hide ? '-mt-8' : '-mt-6'" class="text-center w-full z-10">
+                      <button class="btn text-xs py-1 px-2" x-on:click="hide = !hide" x-text="hide ? 'Show More' : 'Show Less'" x-cloak>&nbsp;</button>
+                    </div>
+                    <div class="flex flex-row items-center justify-start gap-2">
+                      <img class="m-0 flex-shrink rounded-full w-full max-w-[4rem] shadow-sm" src="https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35515" alt="Testimonial Picture">
+                      <div class="flex-grow flex flex-col items-start justify-center">
+                        <div class="font-semibold text-sm text-primary">Michelle Harper</div>
+                        <div class="font-normal text-xs text-secondary">Rwanda, Divinity &amp; Education</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          
+            <li class="splide__slide">
+              <div x-data="{ hide: true, useHide: true }" class="bg-white shadow-md rounded-lg overflow-hidden flex justify-center items-center w-full h-full min-w-full relative">
+                <div class="w-full md:p-8 p-6 min-h-[12rem] flex justify-between gap-5 relative">
+                  <svg class="h-[15rem] absolute z-10 bottom-0 right-0 -mb-16 -mr-10 opacity-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                    <path d="M21.95 8.721l-.025-.168l-.026.006A4.5 4.5 0 1 0 17.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222l-.474.197l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.028 7.028 0 0 0-.063-.539zm-11 0l-.025-.168l-.026.006A4.5 4.5 0 1 0 6.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222c-.301.123-.473.195-.473.195l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.571 7.571 0 0 0-.064-.537z" fill="currentColor"></path>
+                  </svg>
+                  <div class="flex-1 flex flex-col gap-2 items-start relative">
+                    <div class="relative w-full">
+                      <div class="text-3xl text-secondary text-left leading-tight h-5 absolute top-0 left-0 -mt-3 -ml-3 z-10 font-serif">“</div>
+                      <div :class="hide && useHide ? 'max-h-[5rem] overflow-hidden' : 'max-h-[14.7rem] overflow-y-auto'" class="mb-5 w-full relative h-full transition-all" x-effect="if(hide) $el.scrollTop = 0" x-cloak>
+                        <div class="font-semibold text-base mb-5 w-full"><p>I am a 53 year-old student, and to say that my trip to Ecuador was life-changing should say it all. The lessons were outstanding, but the relationships I formed in the process added a missing ingredient that my online education was missing.</p>
+</div>
+                        <div :class="(hide ? 'h-12' : 'h-0') + ' ' + (useHide || 'hidden')" class="absolute transition-all bg-gradient-to-t bottom-0 right-0 from-white -mt-10 w-full flex justify-center items-center" x-cloak>&nbsp;</div>
+                      </div>
+                      <div :class="hide && useHide ? 'bottom-6' : 'bottom-3'" class="text-3xl text-secondary text-right leading-tight h-5 absolute z-10 right-0 -mt-3 -mr-3 font-serif">”</div>
+                    </div>
+                    <div :class="!useHide ? 'hidden' : hide ? '-mt-8' : '-mt-6'" class="text-center w-full z-10">
+                      <button class="btn text-xs py-1 px-2" x-on:click="hide = !hide" x-text="hide ? 'Show More' : 'Show Less'" x-cloak>&nbsp;</button>
+                    </div>
+                    <div class="flex flex-row items-center justify-start gap-2">
+                      <img class="m-0 flex-shrink rounded-full w-full max-w-[4rem] shadow-sm" src="https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35519" alt="Testimonial Picture">
+                      <div class="flex-grow flex flex-col items-start justify-center">
+                        <div class="font-semibold text-sm text-primary">David Roten</div>
+                        <div class="font-normal text-xs text-secondary">Ecuador, Psychology</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          
+            <li class="splide__slide">
+              <div x-data="{ hide: true, useHide: true }" class="bg-white shadow-md rounded-lg overflow-hidden flex justify-center items-center w-full h-full min-w-full relative">
+                <div class="w-full md:p-8 p-6 min-h-[12rem] flex justify-between gap-5 relative">
+                  <svg class="h-[15rem] absolute z-10 bottom-0 right-0 -mb-16 -mr-10 opacity-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                    <path d="M21.95 8.721l-.025-.168l-.026.006A4.5 4.5 0 1 0 17.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222l-.474.197l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.028 7.028 0 0 0-.063-.539zm-11 0l-.025-.168l-.026.006A4.5 4.5 0 1 0 6.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222c-.301.123-.473.195-.473.195l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.571 7.571 0 0 0-.064-.537z" fill="currentColor"></path>
+                  </svg>
+                  <div class="flex-1 flex flex-col gap-2 items-start relative">
+                    <div class="relative w-full">
+                      <div class="text-3xl text-secondary text-left leading-tight h-5 absolute top-0 left-0 -mt-3 -ml-3 z-10 font-serif">“</div>
+                      <div :class="hide && useHide ? 'max-h-[5rem] overflow-hidden' : 'max-h-[14.7rem] overflow-y-auto'" class="mb-5 w-full relative h-full transition-all" x-effect="if(hide) $el.scrollTop = 0" x-cloak>
+                        <div class="font-semibold text-base mb-5 w-full"><p>Having the opportunity to go on an LU Send trip to Rwanda was one of the best experiences of my life. I loved learning about another culture and interacting with the people there. It has given me a fresh perspective on life that no picture could ever give.</p>
+</div>
+                        <div :class="(hide ? 'h-12' : 'h-0') + ' ' + (useHide || 'hidden')" class="absolute transition-all bg-gradient-to-t bottom-0 right-0 from-white -mt-10 w-full flex justify-center items-center" x-cloak>&nbsp;</div>
+                      </div>
+                      <div :class="hide && useHide ? 'bottom-6' : 'bottom-3'" class="text-3xl text-secondary text-right leading-tight h-5 absolute z-10 right-0 -mt-3 -mr-3 font-serif">”</div>
+                    </div>
+                    <div :class="!useHide ? 'hidden' : hide ? '-mt-8' : '-mt-6'" class="text-center w-full z-10">
+                      <button class="btn text-xs py-1 px-2" x-on:click="hide = !hide" x-text="hide ? 'Show More' : 'Show Less'" x-cloak>&nbsp;</button>
+                    </div>
+                    <div class="flex flex-row items-center justify-start gap-2">
+                      <img class="m-0 flex-shrink rounded-full w-full max-w-[4rem] shadow-sm" src="https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35513" alt="Testimonial Picture">
+                      <div class="flex-grow flex flex-col items-start justify-center">
+                        <div class="font-semibold text-sm text-primary">Sara Tschetter</div>
+                        <div class="font-normal text-xs text-secondary">Rwanda, G5</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          
+            <li class="splide__slide">
+              <div x-data="{ hide: true, useHide: true }" class="bg-white shadow-md rounded-lg overflow-hidden flex justify-center items-center w-full h-full min-w-full relative">
+                <div class="w-full md:p-8 p-6 min-h-[12rem] flex justify-between gap-5 relative">
+                  <svg class="h-[15rem] absolute z-10 bottom-0 right-0 -mb-16 -mr-10 opacity-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                    <path d="M21.95 8.721l-.025-.168l-.026.006A4.5 4.5 0 1 0 17.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222l-.474.197l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.028 7.028 0 0 0-.063-.539zm-11 0l-.025-.168l-.026.006A4.5 4.5 0 1 0 6.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222c-.301.123-.473.195-.473.195l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.571 7.571 0 0 0-.064-.537z" fill="currentColor"></path>
+                  </svg>
+                  <div class="flex-1 flex flex-col gap-2 items-start relative">
+                    <div class="relative w-full">
+                      <div class="text-3xl text-secondary text-left leading-tight h-5 absolute top-0 left-0 -mt-3 -ml-3 z-10 font-serif">“</div>
+                      <div :class="hide && useHide ? 'max-h-[5rem] overflow-hidden' : 'max-h-[14.7rem] overflow-y-auto'" class="mb-5 w-full relative h-full transition-all" x-effect="if(hide) $el.scrollTop = 0" x-cloak>
+                        <div class="font-semibold text-base mb-5 w-full"><p>I learned so much more about Israel from being there for 10 days than I could have if I had read about Israel for a whole month. In addition, the relationships that I developed over the course of my LU Send trip are ones that I will treasure for a lifetime!</p>
+</div>
+                        <div :class="(hide ? 'h-12' : 'h-0') + ' ' + (useHide || 'hidden')" class="absolute transition-all bg-gradient-to-t bottom-0 right-0 from-white -mt-10 w-full flex justify-center items-center" x-cloak>&nbsp;</div>
+                      </div>
+                      <div :class="hide && useHide ? 'bottom-6' : 'bottom-3'" class="text-3xl text-secondary text-right leading-tight h-5 absolute z-10 right-0 -mt-3 -mr-3 font-serif">”</div>
+                    </div>
+                    <div :class="!useHide ? 'hidden' : hide ? '-mt-8' : '-mt-6'" class="text-center w-full z-10">
+                      <button class="btn text-xs py-1 px-2" x-on:click="hide = !hide" x-text="hide ? 'Show More' : 'Show Less'" x-cloak>&nbsp;</button>
+                    </div>
+                    <div class="flex flex-row items-center justify-start gap-2">
+                      <img class="m-0 flex-shrink rounded-full w-full max-w-[4rem] shadow-sm" src="https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35511" alt="Testimonial Picture">
+                      <div class="flex-grow flex flex-col items-start justify-center">
+                        <div class="font-semibold text-sm text-primary">Christian Lasvel</div>
+                        <div class="font-normal text-xs text-secondary">Israel, FIRM Conference</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          
+            <li class="splide__slide">
+              <div x-data="{ hide: true, useHide: true }" class="bg-white shadow-md rounded-lg overflow-hidden flex justify-center items-center w-full h-full min-w-full relative">
+                <div class="w-full md:p-8 p-6 min-h-[12rem] flex justify-between gap-5 relative">
+                  <svg class="h-[15rem] absolute z-10 bottom-0 right-0 -mb-16 -mr-10 opacity-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                    <path d="M21.95 8.721l-.025-.168l-.026.006A4.5 4.5 0 1 0 17.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222l-.474.197l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.028 7.028 0 0 0-.063-.539zm-11 0l-.025-.168l-.026.006A4.5 4.5 0 1 0 6.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222c-.301.123-.473.195-.473.195l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.571 7.571 0 0 0-.064-.537z" fill="currentColor"></path>
+                  </svg>
+                  <div class="flex-1 flex flex-col gap-2 items-start relative">
+                    <div class="relative w-full">
+                      <div class="text-3xl text-secondary text-left leading-tight h-5 absolute top-0 left-0 -mt-3 -ml-3 z-10 font-serif">“</div>
+                      <div :class="hide && useHide ? 'max-h-[5rem] overflow-hidden' : 'max-h-[14.7rem] overflow-y-auto'" class="mb-5 w-full relative h-full transition-all" x-effect="if(hide) $el.scrollTop = 0" x-cloak>
+                        <div class="font-semibold text-base mb-5 w-full"><p>The opportunity for growth and community with other likeminded individuals was lifechanging and altered my behavior when I got back onto campus. The people of Rwanda showed me more about what it means to be a follower of God than I had seen in my life before, my whole world and future changed forever.</p>
+</div>
+                        <div :class="(hide ? 'h-12' : 'h-0') + ' ' + (useHide || 'hidden')" class="absolute transition-all bg-gradient-to-t bottom-0 right-0 from-white -mt-10 w-full flex justify-center items-center" x-cloak>&nbsp;</div>
+                      </div>
+                      <div :class="hide && useHide ? 'bottom-6' : 'bottom-3'" class="text-3xl text-secondary text-right leading-tight h-5 absolute z-10 right-0 -mt-3 -mr-3 font-serif">”</div>
+                    </div>
+                    <div :class="!useHide ? 'hidden' : hide ? '-mt-8' : '-mt-6'" class="text-center w-full z-10">
+                      <button class="btn text-xs py-1 px-2" x-on:click="hide = !hide" x-text="hide ? 'Show More' : 'Show Less'" x-cloak>&nbsp;</button>
+                    </div>
+                    <div class="flex flex-row items-center justify-start gap-2">
+                      <img class="m-0 flex-shrink rounded-full w-full max-w-[4rem] shadow-sm" src="https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35517" alt="Testimonial Picture">
+                      <div class="flex-grow flex flex-col items-start justify-center">
+                        <div class="font-semibold text-sm text-primary">Matt Cruickshank</div>
+                        <div class="font-normal text-xs text-secondary">Rwanda, G5</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.3.7/dist/js/splide-extension-auto-scroll.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+  if (document.querySelector('.splide')) {
+    const splide = new Splide('.splide', {
+      type: 'loop',
+      speed: 700,
+      gap: '2rem',
+      arrows: false,
+      padding: '5%',
+      mediaQuery: 'min',
+      keyboard: false,
+      breakpoints: {
+        640: {
+          padding: '15%'
+        },
+        840: {
+          padding: '22%'
+        },
+        1024: {
+          padding: '30%'
+        }
+      },
+      focus: 'center',
+      drag: 'free',
+      lazyLoad: 'nearby',
+      autoScroll: {
+        speed: 0.5
+      }
+    });
+
+    splide.mount(window.splide.Extensions);
+  }
+});
+
+  </script>
+
+
+
+    <div id="mycontent" class="content min-h-screen flex flex-col lg:flex-row justify-start lg:justify-center px-8 py-10 z-10 relative gap-5  bg-white bg-opacity-80 ">
       <div x-data="{ toc: !!document.querySelector('.table-of-contents')}" x-show="toc" class="grow order-first lg:order-last max-w-[15rem] prose" x-cloak>
         <div class="lg:sticky lg:top-20 text-base">
           <h1 class="my-0 mb-5 text-2xl font-semibold">Table of Contents</h1>
           <div class="table-of-contents-container lg:h-full lg:max-h-[calc(80vh-72px)] lg:overflow-y-auto overflow-x-hidden">&nbsp;</div>
         </div>
       </div>
-      <div class="prose flex-initial order-last lg:order-first">
+      <div class="prose flex-initial order-last lg:order-first  ">
         
 
         <h1 id="heading-1" tabindex="-1"><a class="header-anchor" href="#heading-1">Heading 1</a></h1>
