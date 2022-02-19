@@ -29,7 +29,7 @@ _The deployment status should be visible at the top of the page. Check the statu
 
 ### Landing/Special Pages
 
-- [ ] Support Map and JS that belongs with it
+- [x] Support Map and JS that belongs with it
 - [x] Support Testimonials
 - [x] Support Landing Hero
 - [x] Support Call to Actions
@@ -41,5 +41,16 @@ _The deployment status should be visible at the top of the page. Check the statu
 - [x] Support Header Images
 - [x] Allow Date Sorting for Deadlines
 - [x] Support Buttons
+
+### Optimizations
+
+- [ ] Add CSS minification
+- [ ] Add HTML minification
+- [ ] Add JS minification
+
+### Content
+
+- [ ] Add Correct Content to Pages
+- [ ] Document Usage of Website
 
 </details>
