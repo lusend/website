@@ -233,7 +233,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
     cursor: default;
   }
 
-#app img,
+#app img:not(.gmnoprint img),
   #app svg,
   #app video,
   #app canvas,
@@ -534,6 +534,141 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .splide__track p:last-child:not(:first-child){
   margin-top: 1.25rem;
+}
+
+/* Map Styles */
+
+#app .gmnoprint[style*='1000000']{
+  padding-bottom: 2.5rem;
+}
+
+#app .selectizer{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+#app .selectizer .selectize-control{
+  width: 50%;
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+#app #map-markers-list{
+  height: 66.666667%;
+  width: 50%;
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.95;
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+#app #map-markers-list .list-content{
+  height: 100%;
+  overflow: auto;
+}
+
+#app #map-markers-list .list-markers{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.25rem;
+}
+
+#app #map-markers-list .list-markers a{
+  cursor: pointer;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+#app #map-markers-list .list-toggle{
+  position: absolute;
+  right: -2.5rem;
+  top: 50%;
+  display: flex;
+  height: auto;
+  width: 2.5rem;
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  cursor: pointer;
+  justify-content: center;
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.95;
+}
+
+#app #map-markers-list .list-toggle svg{
+  height: 4rem;
+}
+
+#app .selectizer .selectize-control, #app .selectizer .selectize-control ~ *{
+  position: relative;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  display: inline-block;
+}
+
+#app .selectizer button.btn.btn-primary{
+  height: auto;
+  min-height: unset;
+  width: 20%;
+  border-radius: 0.375rem;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-width: 0px;
+  padding: 0px;
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+#app .selectizer .selectize-control > .selectize-input{
+  display: block;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 0.375rem;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-width: 0px;
+}
+
+#app .selectizer .selectize-control > .selectize-input, #app .selectizer .selectize-control > .selectize-dropdown, #app #map-markers-list{
+  padding: 0.5rem;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
+#app .selectizer .selectize-control > .selectize-dropdown{
+  position: absolute;
+  top: 0px;
+  z-index: 10;
+}
+
+#app .selectizer .selectize-control > .selectize-input *{
+  position: relative;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+    color: inherit;
+}
+
+#app #map{
+  height: calc(100vh - 72px);
+  width: 100%;
+}
+
+#app #map img{
+  border-radius: 0px;
 }
 
 *, ::before, ::after{
@@ -1062,6 +1197,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   visibility: visible;
 }
 
+#app .invisible{
+  visibility: hidden;
+}
+
 #app .fixed{
   position: fixed;
 }
@@ -1192,16 +1331,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   margin-top: 0.5rem;
 }
 
+#app .mb-2{
+  margin-bottom: 0.5rem;
+}
+
 #app .-mt-1{
   margin-top: -0.25rem;
 }
 
 #app .mb-5{
   margin-bottom: 1.25rem;
-}
-
-#app .mb-2{
-  margin-bottom: 0.5rem;
 }
 
 #app .mt-1{
@@ -1328,6 +1467,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   height: 3rem;
 }
 
+#app .max-h-28{
+  max-height: 7rem;
+}
+
 #app .max-h-\[calc\(90vh-72px\)\]{
   max-height: calc(90vh - 72px);
 }
@@ -1412,6 +1555,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   flex-shrink: 1;
 }
 
+#app .shrink{
+  flex-shrink: 1;
+}
+
 #app .flex-grow{
   flex-grow: 1;
 }
@@ -1431,6 +1578,25 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .-rotate-90{
   --tw-rotate: -90deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+@-webkit-keyframes spin{
+
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin{
+
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+#app .animate-spin{
+  -webkit-animation: spin 1s linear infinite;
+          animation: spin 1s linear infinite;
 }
 
 @-webkit-keyframes bounce{
@@ -1695,16 +1861,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   background-repeat: no-repeat;
 }
 
+#app .p-2{
+  padding: 0.5rem;
+}
+
 #app .p-8{
   padding: 2rem;
 }
 
 #app .p-5{
   padding: 1.25rem;
-}
-
-#app .p-2{
-  padding: 0.5rem;
 }
 
 #app .p-0{
@@ -1809,6 +1975,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   line-height: 1.75rem;
 }
 
+#app .text-xl{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 #app .text-5xl{
   font-size: 3rem;
   line-height: 1;
@@ -1835,11 +2006,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .text-\[5em\]{
   font-size: 5em;
-}
-
-#app .text-xl{
-  font-size: 1.25rem;
-  line-height: 1.75rem;
 }
 
 #app .text-3xl{
@@ -2311,7 +2477,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
   </style>
 
   <div  x-data="{ scroll: '' }" id="app">
-    <div class="absolute  top-[calc(100vh+222px)]  overflow-none  h-[calc(100%-100vh-222px)]  w-full pointer-events-none -z-50" x-intersect:enter="scroll = 'bg-opacity-90'" x-intersect:leave="scroll = ''">&nbsp;</div>
+    <div class="absolute  top-[calc(100vh+72px)]  overflow-none  h-[calc(100%-100vh-72px)]  w-full pointer-events-none -z-50" x-intersect:enter="scroll = 'bg-opacity-90'" x-intersect:leave="scroll = ''">&nbsp;</div>
     <div class="fixed top-0 right-0 w-full h-screen bg-scroll bg-white bg-center bg-no-repeat bg-cover pointer-events-none" >&nbsp;</div>
     
 
@@ -2670,84 +2836,1531 @@ Reset links to optimize for opt-in styling instead of opt-out.
 </nav>
 
     
-      <div class="relative z-10 flex flex-row justify-center w-full px-8 pt-12 pb-5 mx-auto text-base bg-primary text-primary-content">
-        <div class="max-w-[calc(65ch+16.25rem)] flex-1 flex flex-col gap-1 items-center navSmall:items-start">
-          
 
-
-
-<nav class="breadcrumbs flex" aria-label="Breadcrumb">
-  <ul class="pl-0 m-0 inline-flex flex-wrap justify-center navSmall:justify-start items-center space-x-1 lg:space-x-2 list-none">
     
-      
+
+
+    
+
+
+    
+      <div id="map"></div>
+<script>
   
-    <li class="inline-flex items-center pl-0 m-0 text-primary-content-fade">
-      <a href="/" class="hover:!font-bold no-underline inline-flex items-center gap-1 items-center text-sm !font-medium">
-        <ion-icon class="text-xs" name="home">&nbsp;</ion-icon>
-        <span class="whitespace-nowrap">Home</span>
-      </a>
-    </li>
-  
+var __async = (__this, __arguments, generator) =>
+  new Promise((resolve, reject) => {
+    var fulfilled = (value) => {
+        try {
+          step(generator.next(value));
+        } catch (e) {
+          reject(e);
+        }
+      },
+      rejected = (value) => {
+        try {
+          step(generator.throw(value));
+        } catch (e) {
+          reject(e);
+        }
+      },
+      step = (x) =>
+        x.done
+          ? resolve(x.value)
+          : Promise.resolve(x.value).then(fulfilled, rejected);
+    step((generator = generator.apply(__this, __arguments)).next());
+  });
 
-    
-      
-  
-    <li aria-current="page" class="pl-0 m-0 text-primary-content-fade">
-      <div class="flex items-center">
-        <ion-icon name="chevron-forward">&nbsp;</ion-icon>
-        <a href="#" class="hover:!font-bold whitespace-nowrap ml-1 lg:ml-2 no-underline text-sm !font-medium">Group Travel</a>
-      </div>
-    </li>
-  
+class TDDriver {
+  constructor(customID = 'custom', customName = 'Common Searches') {
+    (this.customID = 'custom'),
+      (this.customName = 'Common Searches'),
+      (this.baseURL = 'https://liberty-sa.terradotta.com/'),
+      (this.baseAPIURL = 'https://liberty-sa.terradotta.com/piapi/index.cfm?'),
+      (this.basePossibleElements = [
+        {
+          elementURL: 'program_name',
+          elementID: 'program_name',
+          searchURL: 'ProgramName',
+          searchID: 'PROGRAM_NAME',
+          terminator: !1
+        },
+        {
+          elementURL: 'city',
+          elementID: 'pi',
+          searchURL: 'City',
+          searchID: 'PROGRAM_CITY',
+          terminator: !0
+        },
+        {
+          elementURL: 'country',
+          elementID: 'pc',
+          searchURL: 'Country',
+          searchID: 'PROGRAM_COUNTRY',
+          terminator: !0
+        },
+        {
+          elementURL: 'region',
+          elementID: 'pr',
+          searchURL: 'Region',
+          searchID: 'PROGRAM_REGION',
+          terminator: !0
+        },
+        {
+          elementURL: 'terms',
+          elementID: 'pt',
+          searchURL: 'Term',
+          terminator: !0
+        },
+        {
+          elementURL: 'program_type',
+          elementID: 'program_type_id',
+          searchURL: 'ProgramType',
+          terminator: !1
+        }
+      ]),
+      (this.registeredElements = []),
+      (this.registeredResults = []),
+      (this.curSearchElementURL = ''),
+      (this.curSearchResultsURL = ''),
+      (this.curSearchResultsVerbiage = ''),
+      (this.searchElements = []),
+      (this.searchResults = []),
+      (this.customID = customID),
+      (this.customName = customName);
+  }
+  cleanseString(value) {
+    return encodeURIComponent(value).replace(/"/g, '%22').replace(/'/g, '%27');
+  }
+  cleanseValue(value) {
+    return Array.isArray(value)
+      ? value.map(this.cleanseString)
+      : this.cleanseString(value);
+  }
+  splitArray(array, filter) {
+    return array.reduce(
+      ([pass, fail], elem) =>
+        filter(elem) ? [[...pass, elem], fail] : [pass, [...fail, elem]],
+      [[], []]
+    );
+  }
+  duplicateArray(array) {
+    return array.reduce((res, current) => res.concat([current, current]), []);
+  }
+  convertToArray(value) {
+    return Object.keys(value).length
+      ? Object.values(
+          (null == value ? void 0 : value.hasOwnProperty('1'))
+            ? value
+            : {
+                1: value
+              }
+        )
+      : Array.isArray(value)
+      ? value
+      : [value];
+  }
+  onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
+  }
+  currentIDForm(id) {
+    return this.basePossibleElements.reduce(
+      (val, el) => (
+        Object.keys(el).forEach((key) => {
+          el[key] === id && (val = key);
+        }),
+        val
+      ),
+      ''
+    );
+  }
+  convertID(id, phase) {
+    var phase1Index = this.basePossibleElements.findIndex(
+        (val) => val.elementURL.toLowerCase() === id.toLowerCase()
+      ),
+      phase2Index = this.basePossibleElements.findIndex(
+        (val) => val.elementID.toLowerCase() === id.toLowerCase()
+      ),
+      phase3Index = this.basePossibleElements.findIndex(
+        (val) => val.searchURL.toLowerCase() === id.toLowerCase()
+      ),
+      phase4Index = this.basePossibleElements.findIndex((val) => {
+        var _a;
+        return (
+          (null == (_a = val.searchID) ? void 0 : _a.toLowerCase()) ===
+          id.toLowerCase()
+        );
+      });
+    return phase1Index >= 0
+      ? this.basePossibleElements[phase1Index][phase] || ''
+      : phase2Index >= 0
+      ? this.basePossibleElements[phase2Index][phase] || ''
+      : phase3Index >= 0
+      ? this.basePossibleElements[phase3Index][phase] || ''
+      : phase4Index >= 0
+      ? this.basePossibleElements[phase4Index][phase] || ''
+      : 'elementURL' === phase && id.startsWith('p_') && !isNaN(+id.substr(2))
+      ? id.substr(2)
+      : 'elementURL' === phase || id.startsWith('p_') || isNaN(+id)
+      ? id
+      : `p_${id}`;
+  }
+  createParam(
+    key,
+    value,
+    {
+      prefix: prefix = '',
+      suffix: suffix = '',
+      delimeter: delimeter = '%2C',
+      terminator: terminator = !1
+    } = {}
+  ) {
+    return (
+      (terminator =
+        !0 === terminator ? '%7F' : !1 === terminator ? '' : terminator),
+      (value = this.cleanseValue(value)),
+      `${prefix}${key}=${(value = Array.isArray(value)
+        ? value.join(terminator + delimeter)
+        : value)}${terminator}${suffix}`
+    );
+  }
+  generateInitialURL(type) {
+    return (
+      this.baseAPIURL +
+      [
+        this.createParam('callName', type),
+        this.createParam('ResponseEncoding', 'JSON'),
+        this.createParam('callback', 'false')
+      ].join('&')
+    );
+  }
+  generateElementURL() {
+    var [base, params] = this.splitArray(
+      this.registeredElements,
+      (val) => !!this.currentIDForm(val.id)
+    );
+    return [
+      this.generateInitialURL('getProgramSearchElements'),
+      ...base.map((val) =>
+        this.createParam(this.convertID(val.id, 'elementURL'), 'true')
+      ),
+      params.length && this.createParam('parameters', 'true'),
+      params.length &&
+        this.createParam(
+          'param_ids',
+          params.map((i) => i.id)
+        )
+    ]
+      .filter((i) => !!i)
+      .join('&');
+  }
+  generateProgramDataURL(id) {
+    return [
+      this.generateInitialURL('getProgramBrochure'),
+      this.createParam('Program_ID', id),
+      this.createParam('Options', 'locations,terms,parameters,dates')
+    ]
+      .filter((i) => !!i)
+      .join('&');
+  }
+  generateResultsParams(params) {
+    return (
+      (params.length ? this.createParam('Params', '') : '') +
+      this.duplicateArray(
+        params.map((p) => ((p.id = this.convertID(p.id, 'searchURL')), p))
+      )
+        .map((param, index) => {
+          var _a;
+          return index % 2 == 1
+            ? this.createParam(
+                `${param.id}_t`,
+                (null ==
+                (_a = this.searchElements.find((el) => el.id === param.id))
+                  ? void 0
+                  : _a.type) || ''
+              )
+            : this.createParam(param.id, param.value, {
+                terminator: !0
+              });
+        })
+        .join('|')
+    );
+  }
+  generateResultsURL(permanentOnly = !1) {
+    var [base, params] = this.splitArray(
+      this.registeredResults.filter((res) => !permanentOnly || !!res.permanent),
+      (val) => !!this.currentIDForm(val.id)
+    );
+    return [
+      this.generateInitialURL('getProgramSearchResults'),
+      ...base.map((val) => {
+        var _a;
+        return this.createParam(
+          this.convertID(val.id, 'searchURL'),
+          val.value,
+          {
+            terminator: !!(null ==
+            (_a = this.basePossibleElements.find(
+              (el) => el.searchURL === this.convertID(val.id, 'searchURL')
+            ))
+              ? void 0
+              : _a.terminator)
+          }
+        );
+      }),
+      this.generateResultsParams(params)
+    ]
+      .filter((i) => !!i)
+      .join('&');
+  }
+  checkSearchElementValid(id) {
+    var flag = !0;
+    return (
+      isNaN(+id) &&
+        !this.currentIDForm(id) &&
+        (console.warn(`This search element '${id}' does not exist.`),
+        (flag = !1)),
+      flag
+    );
+  }
+  checkSearchValueValid(id) {
+    var flag = !0;
+    return (
+      this.curSearchElementURL ||
+        (console.warn(
+          `Make sure to register search elements and pull them first (triggered by '${id}').`
+        ),
+        (flag = !1)),
+      ((!id.startsWith('p_') && isNaN(+id)) ||
+        (id.startsWith('p_') && isNaN(+id.substr(2)))) &&
+        !this.currentIDForm(id) &&
+        id !== this.customID &&
+        (console.warn(`This search element '${id}' does not exist.`),
+        (flag = !1)),
+      this.searchElements.some(
+        (el) => el.id === this.convertID(id, 'searchURL')
+      ) ||
+        (console.warn(`This search element '${id}' has not been registered.`),
+        (flag = !1)),
+      flag
+    );
+  }
+  checkProgramValid(id) {
+    var flag = !0;
+    return (
+      this.searchResults.some((i) => i.id === id) ||
+        (console.warn(
+          `This program id '${id}' does not exist in the current search results.`
+        ),
+        (flag = !1)),
+      flag
+    );
+  }
+  readyToSearch() {
+    return !!this.curSearchElementURL;
+  }
+  readyForResults() {
+    return !!this.curSearchResultsURL;
+  }
+  saveSearchElements(data) {
+    this.searchElements = Object.entries(data.ELEMENT)
+      .map(([, element]) => {
+        var _a;
+        var prevElement = this.registeredElements.find(
+          (el) =>
+            this.convertID(el.id, 'elementURL') ===
+            this.convertID(element.FORM_NAME, 'elementURL')
+        );
+        return {
+          id: this.convertID(element.FORM_NAME, 'searchURL'),
+          name: element.DISPLAY_NAME,
+          type: null == element ? void 0 : element.PARAM_TYPE,
+          values:
+            Object.entries(
+              (null == (_a = null == element ? void 0 : element.OPTIONS)
+                ? void 0
+                : _a.OPTION) || {}
+            )
+              .map(([, i]) => ({
+                value: i.VALUE,
+                name: i.NAME
+              }))
+              .filter((i) => !!i.value) || void 0,
+          private: !!(null == prevElement ? void 0 : prevElement.private)
+        };
+      })
+      .sort(
+        (a, b) =>
+          this.registeredElements.findIndex(
+            (el) => this.convertID(el.id, 'searchURL') === a.id
+          ) -
+          this.registeredElements.findIndex(
+            (el) => this.convertID(el.id, 'searchURL') === b.id
+          )
+      );
+  }
+  saveSearchResults(data) {
+    this.curSearchResultsVerbiage = data.SEARCHVERBIAGE.replace(
+      /^(.*), sorted by.*$/g,
+      '$1'
+    );
+    var programs = this.convertToArray(data.PROGRAM || []);
+    this.searchResults = Object.entries(programs).reduce((res, [, curProg]) => {
+      var _a;
+      return (
+        res.every((p) => p.id !== curProg.PROGRAM_ID) &&
+          res.push({
+            id: curProg.PROGRAM_ID,
+            name: curProg.PROGRAM_NAME,
+            locations: []
+          }),
+        null == (_a = res.find((p) => p.id === curProg.PROGRAM_ID)) ||
+          _a.locations.push({
+            city: curProg.PROGRAM_CITY,
+            country: curProg.PROGRAM_COUNTRY,
+            region: curProg.PROGRAM_REGION,
+            longitude: curProg.PROGRAM_LONGITUDE || 0,
+            latitude: curProg.PROGRAM_LATITUDE || 0
+          }),
+        res
+      );
+    }, []);
+  }
+  saveProgramData(data) {
+    var _a, _b, _c, _d, _e, _f, _g, _h;
+    data = data.DETAILS;
+    var res = {};
+    (res.id = data.PROGRAM_ID),
+      (res.name = data.PROGRAM_NAME),
+      (res.createdDate = data.PROGRAM_CREATED),
+      (res.modifiedDate = data.PROGRAM_MODIFIED),
+      (res.brochureText = data.PROGRAM_BROCHURE),
+      (res.active = !!data.PROGRAM_ACTIVE),
+      (res.terms = this.convertToArray(data.TERMS.TERM).map(
+        (term) => term.PROGRAM_TERM
+      )),
+      (res.parameters = this.convertToArray(data.PARAMETERS.PARAMETER).reduce(
+        (params, param) => {
+          var index2 = params.findIndex((p) => p.id === param.PARAM_ID);
+          return (
+            (params.length && -1 !== index2) ||
+              params.push({
+                id: param.PARAM_ID,
+                name: param.PROGRAM_PARAM_TEXT,
+                type: param.PARAM_TYPE,
+                value: []
+              }),
+            params[-1 === index2 ? params.length - 1 : index2].value.push(
+              param.PARAM_VALUE
+            ),
+            params
+          );
+        },
+        []
+      )),
+      (res.infoLink = (
+        null ==
+        (_b =
+          null == (_a = null == data ? void 0 : data.INFO_REQUEST)
+            ? void 0
+            : _a.LINK)
+          ? void 0
+          : _b.HREF
+      )
+        ? this.baseURL +
+          (null ==
+          (_d =
+            null == (_c = null == data ? void 0 : data.INFO_REQUEST)
+              ? void 0
+              : _c.LINK)
+            ? void 0
+            : _d.HREF)
+        : ''),
+      (res.applyLink = (
+        null ==
+        (_f =
+          null == (_e = null == data ? void 0 : data.APPLY_NOW)
+            ? void 0
+            : _e.LINK)
+          ? void 0
+          : _f.HREF
+      )
+        ? this.baseURL +
+          (null ==
+          (_h =
+            null == (_g = null == data ? void 0 : data.APPLY_NOW)
+              ? void 0
+              : _g.LINK)
+            ? void 0
+            : _h.HREF)
+        : ''),
+      (res.dates = this.convertToArray(data.DATES.DATE)
+        .map((date) => ({
+          deadline: date.OVERRIDE,
+          decision: date.OVERRIDE2,
+          start: date.TERM_START,
+          end: date.TERM_END,
+          term: date.APP_TERM,
+          year: date.APP_YEAR
+        }))
+        .reverse()),
+      (res.locations = this.convertToArray(data.LOCATIONS.LOCATION).map(
+        (loc) => ({
+          city: loc.PROGRAM_CITY,
+          country: loc.PROGRAM_COUNTRY,
+          region: loc.PROGRAM_REGION,
+          longitude: loc.PROGRAM_LONGITUDE,
+          latitude: loc.PROGRAM_LATITUDE
+        })
+      ));
+    var index = this.searchResults.findIndex((i) => i.id === res.id);
+    index >= 0 && (this.searchResults[index] = res);
+  }
+  confirmSearchElements() {
+    return __async(this, null, function* () {
+      this.curSearchElementURL = this.generateElementURL();
+      var data = yield $.getJSON(this.curSearchElementURL);
+      return this.saveSearchElements(data), this;
+    });
+  }
+  refineSearchElements() {
+    return __async(this, null, function* () {
+      var url = this.generateResultsURL(!0),
+        data = yield $.getJSON(url),
+        refinableElements = this.basePossibleElements.filter(
+          (el) => !!el.searchID
+        );
+      return (
+        this.searchElements
+          .filter((el) => refinableElements.some((i) => i.searchURL === el.id))
+          .map((el) => {
+            var key = this.convertID(el.id, 'searchID');
+            el.values = data.PROGRAM.map((p) => p[key]).filter(this.onlyUnique);
+          }),
+        this
+      );
+    });
+  }
+  confirmSearchResults() {
+    return __async(this, null, function* () {
+      var _a;
+      this.registeredResults.some((res) => res.id === this.customID) &&
+        (null ==
+          (_a = this.registeredResults.find(
+            (res) => res.id === this.customID
+          )) ||
+          _a.value.forEach((custom) => {
+            var _a2;
+            var el = this.searchElements.find(
+                (el2) => el2.id === this.customID
+              ),
+              cu =
+                null == (_a2 = null == el ? void 0 : el.values)
+                  ? void 0
+                  : _a2.find((cus) => cus.value === custom);
+            (null == cu ? void 0 : cu.search) && (null == cu || cu.search());
+          }),
+        (this.registeredResults = this.registeredResults.filter(
+          (res) => res.id !== this.customID
+        ))),
+        (this.curSearchResultsURL = this.generateResultsURL());
+      var data = yield $.getJSON(this.curSearchResultsURL);
+      return this.saveSearchResults(data), this;
+    });
+  }
+  refineProgram(id) {
+    return __async(this, null, function* () {
+      this.checkProgramValid(id);
+      var url = this.generateProgramDataURL(id),
+        data = yield $.getJSON(url);
+      return this.saveProgramData(data), this;
+    });
+  }
+  changePrivacy(index, isPrivate) {
+    return (this.registeredElements[index].private = isPrivate), this;
+  }
+  changePermanency(index, isPermanent) {
+    return (this.registeredResults[index].permanent = isPermanent), this;
+  }
+  resetRegisteredElements() {
+    (this.curSearchElementURL = ''), (this.registeredElements = []);
+  }
+  resetRegisteredResults() {
+    (this.curSearchResultsURL = ''),
+      (this.curSearchResultsVerbiage = ''),
+      (this.registeredResults = this.registeredResults.filter(
+        (res) => res.permanent
+      ));
+  }
+  searchFor(index, value) {
+    return (
+      this.registeredResults[index].value.push(value),
+      {
+        or: (val) => this.searchFor(index, val),
+        makePermanent: () => this.changePermanency(index, !0),
+        makeTemporary: () => this.changePermanency(index, !1)
+      }
+    );
+  }
+  searchIn(id) {
+    this.checkSearchValueValid(id),
+      this.readyForResults() && this.resetRegisteredResults(),
+      this.registeredResults.every((el) => el.id !== id) &&
+        this.registeredResults.push({
+          id: id,
+          value: [],
+          permanent: !1
+        });
+    var index = this.registeredResults.findIndex((el) => el.id === id);
+    return {
+      for: (value) => this.searchFor(index, value)
+    };
+  }
+  registerSearchElement(id) {
+    this.checkSearchElementValid(id),
+      this.readyToSearch() && this.resetRegisteredElements(),
+      this.registeredElements.every((el) => el.id !== id) &&
+        this.registeredElements.push({
+          id: id,
+          private: !1
+        });
+    var index = this.registeredElements.findIndex((el) => el.id === id);
+    return {
+      makePrivate: () => this.changePrivacy(index, !0),
+      makePublic: () => this.changePrivacy(index, !1)
+    };
+  }
+  registerCustomSearch(value, name, searchFunction) {
+    var _a, _b;
+    this.searchElements.some((el) => el.id === this.customID) ||
+      this.searchElements.unshift({
+        id: this.customID,
+        name: this.customName,
+        type: void 0,
+        values: [],
+        private: !1
+      }),
+      null ==
+        (_b =
+          null ==
+          (_a = this.searchElements.find((el) => el.id === this.customID))
+            ? void 0
+            : _a.values) ||
+        _b.push({
+          value: value,
+          name: name,
+          search: searchFunction
+        });
+  }
+}
 
-    
-  </ul>
-</nav>
+window.TDDriver = TDDriver;
+window.__async = __async;
 
-          <div class="prose">
-            <h1 class="text-center navSmall:text-left text-primary-content">Group Travel</h1>
-          </div>
-          
-        </div>
-      </div>
-      <svg id="header-wave" class="relative z-10 -mt-1" viewBox="0 0 1200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 1200,0 H 0 V 37 C 67,26 133,15 200,10 C 266,4 333,5 400,23 C 466,41 533,76 600,79 C 677,78 738,53 800,48 C 866,44 933,63 1000,62 C 1065,62 1131,41 1200,19 V 0 Z" fill="#0A254E"/>
-      </svg>
-    
+class MapDriver {
+  constructor(
+    APIKey,
+    {
+      MapID: MapID = 'map',
+      maxZoom: maxZoom = 9,
+      minZoom: minZoom = 1,
+      initZoom: initZoom = 3,
+      possibleColors: possibleColors = [
+        '#001219',
+        '#005f73',
+        '#0a9396',
+        '#94d2bd',
+        '#e9d8a6',
+        '#ee9b00',
+        '#ca6702',
+        '#bb3e03',
+        '#ae2012',
+        '#9b2226'
+      ]
+    } = {}
+  ) {
+    (this.initZoom = 3),
+      (this.maxZoom = 9),
+      (this.minZoom = 1),
+      (this.markers = {}),
+      (this.showID = !1),
+      (this.visible =
+        'M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5z'),
+      (this.invisible =
+        'M11.83 9L15 12.16V12a3 3 0 0 0-3-3h-.17m-4.3.8l1.55 1.55c-.05.21-.08.42-.08.65a3 3 0 0 0 3 3c.22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53a5 5 0 0 1-5-5c0-.79.2-1.53.53-2.2M2 4.27l2.28 2.28l.45.45C3.08 8.3 1.78 10 1 12c1.73 4.39 6 7.5 11 7.5c1.55 0 3.03-.3 4.38-.84l.43.42L19.73 22L21 20.73L3.27 3M12 7a5 5 0 0 1 5 5c0 .64-.13 1.26-.36 1.82l2.93 2.93c1.5-1.25 2.7-2.89 3.43-4.75c-1.73-4.39-6-7.5-11-7.5c-1.4 0-2.74.25-4 .7l2.17 2.15C10.74 7.13 11.35 7 12 7z'),
+      (this.expand =
+        'M21.92 11.62a1 1 0 0 0-.21-.33l-2.5-2.5a1 1 0 0 0-1.42 1.42l.8.79H14a1 1 0 0 0 0 2h4.59l-.8.79a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l2.5-2.5a1 1 0 0 0 .21-.33a1 1 0 0 0 0-.76zM10 11H5.41l.8-.79a1 1 0 0 0-1.42-1.42l-2.5 2.5a1 1 0 0 0-.21.33a1 1 0 0 0 0 .76a1 1 0 0 0 .21.33l2.5 2.5a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42l-.8-.79H10a1 1 0 0 0 0-2z'),
+      (this.shrink =
+        'M10.71 11.29l-2.5-2.5a1 1 0 1 0-1.42 1.42l.8.79H3a1 1 0 0 0 0 2h4.59l-.8.79a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0l2.5-2.5a1 1 0 0 0 .21-.33a1 1 0 0 0 0-.76a1 1 0 0 0-.21-.33zM21 11h-4.59l.8-.79a1 1 0 0 0-1.42-1.42l-2.5 2.5a1 1 0 0 0-.21.33a1 1 0 0 0 0 .76a1 1 0 0 0 .21.33l2.5 2.5a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.42l-.8-.79H21a1 1 0 0 0 0-2z'),
+      (this.possibleColors = ['#0a254e']),
+      (this.icons = {
+        open: (color = '#cf3e3e') =>
+          'data:image/svg+xml,' +
+          encodeURIComponent(
+            `<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' width='32' height='32' preserveAspectRatio='xMidYMid meet' viewBox='5 2 14 20'><path d='M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7m4.5 7H14v5h-4V9H7.5L12 4.5z' fill='${color}'></path></svg>`
+          ),
+        multi: (color = '#cf3e3e') =>
+          'data:image/svg+xml,' +
+          encodeURIComponent(
+            `<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' width='32' height='32' preserveAspectRatio='xMidYMid meet' viewBox='3 2 18 20'><path d='M14 11.5A2.5 2.5 0 0 0 16.5 9A2.5 2.5 0 0 0 14 6.5A2.5 2.5 0 0 0 11.5 9a2.5 2.5 0 0 0 2.5 2.5M14 2c3.86 0 7 3.13 7 7c0 5.25-7 13-7 13S7 14.25 7 9a7 7 0 0 1 7-7M5 9c0 4.5 5.08 10.66 6 11.81L10 22S3 14.25 3 9c0-3.17 2.11-5.85 5-6.71C6.16 3.94 5 6.33 5 9z' fill='${color}'></path></svg>`
+          ),
+        single: (color = '#cf3e3e') =>
+          'data:image/svg+xml,' +
+          encodeURIComponent(
+            `<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' width='32' height='32' preserveAspectRatio='xMidYMid meet' viewBox='5 2 14 20'><path d='M12 11.5A2.5 2.5 0 0 1 9.5 9A2.5 2.5 0 0 1 12 6.5A2.5 2.5 0 0 1 14.5 9a2.5 2.5 0 0 1-2.5 2.5M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7z' fill='${color}'></path></svg>`
+          )
+      }),
+      (this.APIKey = APIKey),
+      (this.MapID = MapID),
+      (this.maxZoom = maxZoom),
+      (this.minZoom = minZoom),
+      (this.initZoom = initZoom),
+      (this.possibleColors = possibleColors);
+  }
+  getCount() {
+    return Object.keys(this.markers).length;
+  }
+  getScripts() {
+    return __async(this, null, function* () {
+      yield this.getScript(
+        'https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.3/js/standalone/selectize.min.js'
+      ),
+        yield this.getCSS(
+          'https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.13.3/css/selectize.bootstrap4.min.css'
+        ),
+        yield this.getScript(
+          'https://cdnjs.cloudflare.com/ajax/libs/OverlappingMarkerSpiderfier/1.0.3/oms.min.js'
+        ),
+        yield this.getScript(
+          'https://cdnjs.cloudflare.com/ajax/libs/OverlappingMarkerSpiderfier/1.0.3/oms.js'
+        ),
+        yield this.getScript(
+          'https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js'
+        ),
+        yield this.getScript(
+          'https://unpkg.com/@googlemaps/js-api-loader@1.0.0/dist/index.min.js'
+        );
+      var loader = new google.maps.plugins.loader.Loader({
+        apiKey: this.APIKey,
+        version: 'weekly'
+      });
+      yield loader.load();
+    });
+  }
+  toggleShowID(state = undefined) {
+    this.showID = state !== undefined ? state : !this.showID;
+    return this.showID;
+  }
+  closeInfoWindow() {
+    this.lastMarker &&
+      this.lastMarker.setIcon({
+        url: this.icons.single(this.lastMarker.get('color'))
+      }),
+      this.toggleMarkerList(!1),
+      (this.lastMarker = null),
+      this.info.close();
+  }
+  addEventListeners() {
+    google.maps.event.addListener(this.map, 'idle', () => {
+      Object.getPrototypeOf(this.oms).formatMarkers.call(this.oms);
+    }),
+      google.maps.event.addListener(
+        this.map,
+        'click',
+        this.closeInfoWindow.bind(this)
+      ),
+      google.maps.event.addListener(
+        this.cluster,
+        'click',
+        this.closeInfoWindow.bind(this)
+      );
+  }
+  init() {
+    return __async(this, null, function* () {
+      yield this.getScripts(),
+        (this.map = new google.maps.Map(document.getElementById(this.MapID), {
+          center: {
+            lat: 34.033,
+            lng: -6.85
+          },
+          zoom: this.initZoom,
+          maxZoom: this.maxZoom,
+          minZoom: this.minZoom,
+          gestureHandling: 'greedy',
+          mapTypeID: google.maps.MapTypeId.HYBRID,
+          streetViewControl: !1,
+          mapTypeControlOptions: {
+            position: google.maps.ControlPosition.RIGHT_BOTTOM,
+            style: google.maps.MapTypeControlStyle.DEFAULT
+          },
+          zoomControlOptions: {
+            position: google.maps.ControlPosition.RIGHT_CENTER
+          },
+          fullscreenControlOptions: {
+            position: google.maps.ControlPosition.RIGHT_CENTER
+          },
+          backgroundColor: '#0a254e'
+        })),
+        (this.oms = new OverlappingMarkerSpiderfier(this.map, {
+          markersWontMove: !0,
+          markersWontHide: !0,
+          keepSpiderfied: !0
+        })),
+        (this.cluster = new markerClusterer.MarkerClusterer({
+          map: this.map,
+          algorithm: new markerClusterer.SuperClusterAlgorithm({
+            maxZoom: this.maxZoom - 1
+          })
+        })),
+        this.resetMarkers(),
+        yield this.addControlToggle(),
+        this.addEventListeners();
+    });
+  }
+  toggleMarkerList(force) {
+    !0 === force && $('#map-markers-list-icon path').attr('d', this.expand),
+      !1 === force && $('#map-markers-list-icon path').attr('d', this.shrink),
+      $('#map-markers-list-icon path').attr('d') === this.shrink
+        ? ($('#map-markers-list-icon path').attr('d', this.expand),
+          $('#map-markers-list').css('max-width', '0px'),
+          $('#map-markers-list').css('padding', '0px'))
+        : ($('#map-markers-list-icon path').attr('d', this.shrink),
+          $('#map-markers-list').css('max-width', '50%'),
+          $('#map-markers-list').css('padding', '0.65rem'));
+  }
+  updateMarkerList(headerElement) {
+    return __async(this, null, function* () {
+      $('#map-markers-list').length || (yield this.addMarkerList()),
+        headerElement
+          ? ($('#map-markers-list .list-content').html(''),
+            $('#map-markers-list .list-content').append(
+              $("<div class='list-header'></div>").append(
+                headerElement,
+                `<div style='text-align: center; margin-bottom: 0.5rem;'><strong>${
+                  Object.keys(this.markers).length
+                }</strong> Found</div>`
+              )
+            ))
+          : $('#map-markers-list .list-content>*:not(.list-header)').remove(),
+        Object.keys(this.markers)
+          .sort((a, b) =>
+            this.markers[a]
+              .get('name')
+              .localeCompare(this.markers[b].get('name'))
+          )
+          .forEach((id) => {
+            var marker = this.markers[id];
+            $('#map-markers-list .list-content').append(
+              '<hr>',
+              $("<div class='list-markers'>").append(
+                $('<a>')
+                  .append(
+                    "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' width='24' height='24' preserveAspectRatio='xMidYMid meet' viewBox='2 2 20 20'><path d='M12 20a8 8 0 0 1-8-8a8 8 0 0 1 8-8a8 8 0 0 1 8 8a8 8 0 0 1-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 10.5a1.5 1.5 0 0 1-1.5-1.5A1.5 1.5 0 0 1 12 9.5a1.5 1.5 0 0 1 1.5 1.5a1.5 1.5 0 0 1-1.5 1.5m0-5.3c-2.1 0-3.8 1.7-3.8 3.8c0 3 3.8 6.5 3.8 6.5s3.8-3.5 3.8-6.5c0-2.1-1.7-3.8-3.8-3.8z' fill='currentColor'></path></svg>"
+                  )
+                  .on('click', () => {
+                    this.showMarker(id), this.toggleMarkerList(!1);
+                  }),
+                `<span>${this.showID ? `(${marker.get('id')})` : ''}</span>`,
+                $(`<a href='${marker.get('link') || '#'}'>`).append(
+                  `<strong>${marker.get('name')}</strong>`
+                )
+              )
+            );
+          });
+    });
+  }
+  addLoadingControl(position, id) {
+    return __async(this, null, function* () {
+      yield this.addControl(
+        position,
+        $(
+          `<div id='${id}' style='margin: 10px'><svg class='animate-spin' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' width='32' height='32' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'><path d='M12 4V2A10 10 0 0 0 2 12h2a8 8 0 0 1 8-8z' fill='currentColor'></path></svg></div>`
+        )[0],
+        id
+      );
+    });
+  }
+  removeLoadingControl(id) {
+    $(`#${id}`).remove();
+  }
+  addMarkerList() {
+    return __async(this, null, function* () {
+      $('#map-markers-list').remove(),
+        yield this.addControl(
+          'LEFT_CENTER',
+          $("<div id='map-markers-list'></div>")[0],
+          'map-markers-list'
+        ),
+        $('#map-markers-list').append("<div class='list-content'></div>"),
+        $('#map-markers-list').append("<div class='list-toggle'></div>"),
+        $('#map-markers-list .list-toggle').append(
+          `<svg id='map-markers-list-icon' style='padding: 10px 0px' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' width='32' height='32' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'><path d='${this.shrink}' fill='#0a254e'></path></svg>`
+        ),
+        google.maps.event.addDomListener(
+          $('#map-markers-list .list-toggle')[0],
+          'click',
+          this.toggleMarkerList.bind(this)
+        );
+    });
+  }
+  toggleControls(force) {
+    !0 === force && $('#control-toggle path').attr('d', this.visible),
+      !1 === force && $('#control-toggle path').attr('d', this.invisible),
+      $('#control-toggle path').attr('d') === this.visible
+        ? ($('#control-toggle path').attr('d', this.invisible),
+          $('#map .gm-style > iframe ~ div:not(#control-toggle-parent)').hide(
+            300
+          ))
+        : ($('#control-toggle path').attr('d', this.visible),
+          $('#map .gm-style > iframe ~ div:not(#control-toggle-parent)').show(
+            300
+          ));
+  }
+  addControlToggle() {
+    return __async(this, null, function* () {
+      yield this.addControl(
+        'RIGHT_TOP',
+        $(
+          `<svg id='control-toggle' style='right: 0px; margin: 15px 10px; z-index: 2;' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' width='32' height='32' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'><path d='${this.visible}' fill='#0a254e'></path></svg>`
+        )[0],
+        'control-toggle'
+      ),
+        $('#control-toggle').parent().attr('id', 'control-toggle-parent'),
+        google.maps.event.addDomListener(
+          $('#control-toggle')[0],
+          'click',
+          this.toggleControls.bind(this)
+        );
+    });
+  }
+  addMarker(position, id, name, element, link = '') {
+    var color =
+        this.possibleColors[
+          Object.keys(this.markers).length % this.possibleColors.length
+        ],
+      marker = new google.maps.Marker({
+        position: position,
+        animation: google.maps.Animation.DROP
+      });
+    return (
+      marker.set('color', color),
+      marker.set('name', name),
+      marker.set('id', id),
+      marker.set('link', link),
+      google.maps.event.addListener(marker, 'spider_click', () => {
+        this.lastMarker !== marker
+          ? (this.info.setContent(
+              `<div id='info-${id}'>${$(element)[0].outerHTML}</div>`
+            ),
+            this.info.setOptions({
+              disableAutoPan: !1
+            }),
+            this.info.open({
+              anchor: marker,
+              map: this.map,
+              shouldFocus: !1
+            }),
+            setTimeout(() => {
+              this.info.setOptions({
+                disableAutoPan: !0
+              });
+            }, 1),
+            marker.setIcon({
+              url: this.icons.open(marker.get('color'))
+            }),
+            this.lastMarker &&
+              this.lastMarker.setIcon({
+                url: this.icons.single(this.lastMarker.get('color'))
+              }),
+            (this.lastMarker = marker))
+          : (this.info.close(),
+            marker.setIcon({
+              url: this.icons.single(marker.get('color'))
+            }),
+            (this.lastMarker = null));
+      }),
+      google.maps.event.addListener(marker, 'spider_format', (status) => {
+        var icon =
+          status === OverlappingMarkerSpiderfier.markerStatus.SPIDERFIED
+            ? this.icons.single
+            : status === OverlappingMarkerSpiderfier.markerStatus.SPIDERFIABLE
+            ? this.icons.multi
+            : (OverlappingMarkerSpiderfier.markerStatus.UNSPIDERFIABLE,
+              this.icons.single);
+        marker.setIcon({
+          url: icon(marker.get('color'))
+        });
+      }),
+      this.oms.addMarker(marker),
+      this.cluster.addMarker(marker),
+      this.bounds.extend(marker.position),
+      (this.markers[id] = marker),
+      this
+    );
+  }
+  centerMap() {
+    this.map.fitBounds(this.bounds, {
+      top: 100,
+      left: 100,
+      bottom: 100
+    });
+  }
+  resetMarkers() {
+    this.oms.removeAllMarkers(),
+      this.cluster.clearMarkers(),
+      (this.markers = {}),
+      (this.bounds = new google.maps.LatLngBounds()),
+      (this.info = new google.maps.InfoWindow({
+        content: '',
+        disableAutoPan: !1
+      }));
+  }
+  showMarker(id) {
+    this.toggleMarkerList(!1);
+    var marker = this.markers[id];
+    this.map.setZoom(this.maxZoom),
+      this.map.panTo(marker.getPosition()),
+      setTimeout(() => {
+        this.oms.markersNearMarker(marker, !0).length &&
+          google.maps.event.trigger(marker, 'click'),
+          google.maps.event.trigger(marker, 'spider_click');
+      }, 150);
+  }
+  addControl(position, element, id) {
+    return new Promise((resolve) => {
+      var interval = setInterval(() => {
+        $(`#${id}`).length && (clearInterval(interval), resolve(element));
+      }, 100);
+      this.map.controls[google.maps.ControlPosition[position]].push(element);
+    });
+  }
+  cleanseOptions(opts) {
+    return [
+      opts.reduce(
+        (res, opt) =>
+          res.concat(
+            opt.values.map((val) => {
+              var res2 = {};
+              return (
+                (null == val ? void 0 : val.hasOwnProperty('value')) ||
+                  (val = {
+                    value: val,
+                    name: val
+                  }),
+                (res2.value = opt.id + '%2C' + val.value),
+                (res2.name = val.name),
+                (res2.group = opt.id),
+                res2
+              );
+            })
+          ),
+        []
+      ),
+      opts
+    ];
+  }
+  addSelectize(_0) {
+    return __async(
+      this,
+      arguments,
+      function* (
+        position,
+        opts = [],
+        placeholder = 'Search...',
+        id = 'search',
+        submitCallback
+      ) {
+        yield this.addControl(
+          position,
+          $(
+            `<div class='selectizer' style='z-index: 1'><input type='text' id='${id}'></input><button id='${id}-submit' class='btn btn-primary'>Submit</button></div>`
+          )[0],
+          id
+        );
+        var [options, optgroups] = this.cleanseOptions(opts);
+        $(`#${id}`).selectize({
+          valueField: 'value',
+          labelField: 'name',
+          searchField: 'name',
+          optgroupValueField: 'id',
+          optgroupLabelField: 'name',
+          optgroupField: 'group',
+          lockOptgroupOrder: !0,
+          selectOnTab: !0,
+          plugins: ['remove_button', 'restore_on_backspace'],
+          delimiter: '%7F',
+          options: options,
+          optgroups: optgroups,
+          placeholder: placeholder
+        }),
+          google.maps.event.addDomListener(
+            $(`#${id}-submit`)[0],
+            'click',
+            () => {
+              submitCallback(
+                $(`#${id}`)
+                  .val()
+                  .split('%7F')
+                  .map((v) => {
+                    var [id2, value] = v.split('%2C');
+                    return {
+                      id: id2,
+                      value: value
+                    };
+                  })
+              );
+            }
+          );
+      }
+    );
+  }
+  getScriptCached(url) {
+    return $.ajax({
+      url: url,
+      dataType: 'script',
+      cache: !0
+    });
+  }
+  getScript(url) {
+    return new Promise((resolve, reject) => {
+      this.getScriptCached(url)
+        .done(function (script) {
+          resolve(script);
+        })
+        .fail(function (script) {
+          reject(script);
+        });
+    });
+  }
+  getCSS(url) {
+    return __async(this, null, function* () {
+      $('head').append(`<link rel='stylesheet' href='${url}' />`);
+    });
+  }
+}
 
-    
+window.MapDriver = MapDriver;
+
+/* Get URL Parameter */
+function urlParameter(name, value = undefined, url = window.location.href) {
+  name = name.replace(/[\[\]]/g, '\\$&');
+  var regex = new RegExp('[?&](' + name + ')(=([^&#]*)|&|#|$)'),
+    results = regex.exec(url);
+  if (value === undefined) {
+    if (!results) return null;
+    if (!results[3]) return '';
+    return decodeURIComponent(results[3].replace(/\+/g, ' '));
+  } else {
+    if (results)
+      return url.replace(
+        results[0],
+        results[0][0] + name + '=' + encodeURIComponent(value)
+      );
+
+    return (
+      url +
+      (url.includes('?') ? '&' : '?') +
+      name +
+      '=' +
+      encodeURIComponent(value)
+    );
+  }
+}
+
+/* Function used to push and pull URL History State */
+function checkHistory() {
+  /* Check if loading from a push State */
+  if (urlParameter('preload')) {
+    /* Add values to search bar. Wrapped in case of failure. Submission matters, this does not */
+    try {
+      $('#lusend-search')[0].selectize.clear();
+      urlParameter('preloadValues')
+        .split('%7F')
+        .forEach((item) => {
+          $('#lusend-search')[0].selectize.addItem(item);
+        });
+      $('#lusend-search')[0].selectize.refreshItems();
+    } catch (e) {
+      console.error(e);
+    }
+
+    /* Submit the form */
+    afterSubmit(JSON.parse(urlParameter('preload')));
+  } else {
+    mapDriver.resetMarkers();
+    mapDriver.removeLoadingControl('map-markers-list');
+    $('#lusend-search')[0].selectize.clear();
+    $('#lusend-search')[0].selectize.refreshItems();
+  }
+}
+
+/* Create the map driver */
+var mapDriver = new MapDriver('AIzaSyBcNbHG1bp2W6CQ1j6Ylp-hfv1E7qE6hZk');
+
+/* Create a new TD API driver */
+var tdDriver = new TDDriver();
+
+/* Will automatically search for a coordinator's trip based on the Coordinator Lookup Parameter */
+function searchCoordinator(e, combo) {
+  __async(this, null, function* () {
+    mapDriver.toggleShowID(true);
+
+    try {
+      tdDriver.searchIn('11049').for(combo).makeTemporary();
+      afterSubmit([{ id: 'p_11049', value: combo }]);
+    } catch (e) {
+      console.error(e);
+    }
+  });
+}
+
+window.addEventListener('load', function () {
+  /* Bind alt+1 to show ID's when necessary */
+  Mousetrap.bind('alt+1', function () {
+    __async(this, null, function* () {
+      mapDriver.toggleShowID();
+
+      try {
+        if (mapDriver.getCount()) yield mapDriver.updateMarkerList();
+        else afterSubmit([]);
+      } catch (e) {
+        console.error(e);
+      }
+    });
+  });
+
+  /* Binds each letter to a possible coordinator */
+  'abcdefghijklmnopqrstuvwxyz'
+    .split('')
+    .forEach((letter) => Mousetrap.bind(letter, searchCoordinator));
+
+  (function () {
+    __async(this, null, function* () {
+      /* Iniitialize all map driver scripts and listeners */
+      try {
+        yield mapDriver.init();
+      } catch (e) {
+        console.error(e);
+      }
+
+      /* Create a loading sign while the search elements are generated */
+      try {
+        yield mapDriver.addLoadingControl('TOP_CENTER', 'lusend-temporary');
+      } catch (e) {
+        console.error(e);
+      }
+
+      /* Register new search elements to allow public searches from map */
+      /* Registration order matters. This dictates the order they appear in the search */
+      tdDriver.registerSearchElement('City').makePublic();
+      tdDriver.registerSearchElement('Country').makePublic();
+      tdDriver.registerSearchElement('Region').makePublic();
+      tdDriver.registerSearchElement('11010').makePublic(); // Courses
+      tdDriver.registerSearchElement('11034').makePublic(); // Schools
+      tdDriver.registerSearchElement('11035').makePublic(); // Departments
+      tdDriver.registerSearchElement('11029').makePublic(); // Terms
+      tdDriver.registerSearchElement('ProgramName').makePublic();
+
+      /* Register new search elements to allow private searches from code */
+      tdDriver.registerSearchElement('ProgramType').makePrivate();
+      tdDriver.registerSearchElement('Term').makePrivate(); // Official Terms
+      tdDriver.registerSearchElement('11009').makePrivate(); // LU Send Map
+      tdDriver.registerSearchElement('11049').makePrivate(); // Coordinator
+
+      /* Solidifies registered search elements */
+      try {
+        yield tdDriver.confirmSearchElements();
+      } catch (e) {
+        console.error(e);
+      }
+
+      /* Add permanent searches here */
+      /* Only include faculty led programs */
+      tdDriver.searchIn('11009').for('Faculty-Led Programs').makePermanent();
+
+      /* Optional, but does constrain location information and populates program name */
+      /* After permanent searches so that program names that are inaccessible are not listed */
+      try {
+        yield tdDriver.refineSearchElements();
+      } catch (e) {
+        console.error(e);
+      }
+
+      /* Add custom searches here */
+      /* All Programs. Returns nothing, since not filters aree needed */
+      tdDriver.registerCustomSearch('allPrograms', 'All Trips', () => {
+        return;
+      });
+
+      /* Domestic programs. Filters for programs in the US */
+      tdDriver.registerCustomSearch(
+        'domesticPrograms',
+        'Domestic Trips',
+        () => {
+          tdDriver.searchIn('Country').for('United States').makeTemporary();
+          return;
+        }
+      );
+
+      tdDriver.registerCustomSearch('genedPrograms', 'GenEd Trips', () => {
+        tdDriver
+          .searchIn('11010')
+          .for('ENGL 101')
+          .or('COMS 101')
+          .or('ENGR 270')
+          .or('GLST 220')
+          .or('SCOM 110')
+          .or('MATH 114')
+          .or('MATH 115')
+          .or('MATH 117')
+          .or('MATH 121')
+          .or('MATH 122')
+          .or('MATH 125')
+          .or('MATH 126')
+          .or('MATH 128')
+          .or('MATH 130')
+          .or('MATH 131')
+          .or('MATH 132')
+          .or('MATH 201')
+          .or('MATH 211')
+          .or('MATH 217')
+          .or('MATH 227')
+          .or('BIOL 101')
+          .or('BIOL 102')
+          .or('BIOL 103')
+          .or('BIOL 104')
+          .or('BIOL 203')
+          .or('BIOL 213')
+          .or('BIOL 214')
+          .or('BIOL 215')
+          .or('BIOL 216')
+          .or('BIOL 224')
+          .or('CHEM 105')
+          .or('CHEM 107')
+          .or('CHEM 121')
+          .or('CHEM 122')
+          .or('ENVR 215')
+          .or('ENVR 220')
+          .or('ENVR 221')
+          .or('PHSC 121')
+          .or('PHSC 122')
+          .or('PHSC 210')
+          .or('PHSC 211')
+          .or('PHYS 101')
+          .or('PHYS 103')
+          .or('PHYS 201')
+          .or('PHYS 202')
+          .or('PHYS 231')
+          .or('PHYS 232')
+          .or('BUSI 201')
+          .or('INFT 102')
+          .or('INFT 103')
+          .or('INFT 104')
+          .or('INFT 110')
+          .or('INFT 126')
+          .or('INFT 127')
+          .or('INFT 151')
+          .or('INFT 152')
+          .or('INFT 241')
+          .or('UNIV 101')
+          .or('INQR 101')
+          .or('ARTS 209')
+          .or('ENGL 102')
+          .or('MUSC 200')
+          .or('CSIS 110')
+          .or('CSIS 111')
+          .or('CSIS 112')
+          .or('GEOG 200')
+          .or('HIEU 201')
+          .or('HIEU 202')
+          .or('HLTH 216')
+          .or('HIUS 221')
+          .or('HIUS 223')
+          .or('HIUS 222')
+          .or('HIUS 341')
+          .or('HIUS 360')
+          .or('HIUS 380')
+          .or('HIWD 370')
+          .or('RSCH 201')
+          .or('ARTS 205')
+          .or('ARTS 214')
+          .or('ENGL 201')
+          .or('ENGL 202')
+          .or('ENGL 215')
+          .or('ENGL 216')
+          .or('ENGL 221')
+          .or('ENGL 222')
+          .or('MUSC 213')
+          .or('MUSC 314')
+          .or('MUSC 371')
+          .or('BIBL 105')
+          .or('BIBL 110')
+          .or('EVAN 101')
+          .or('RLGN 105')
+          .or('THEO 201')
+          .or('THEO 202')
+          .or('APOL 201')
+          .or('ARTS 105')
+          .or('CINE 101')
+          .or('CSTU 101')
+          .or('CSTU 102')
+          .or('GLST 290')
+          .or('MUSC 103')
+          .or('MUSC 311')
+          .or('MUSC 312')
+          .or('MUSC 313')
+          .or('THEA 101')
+          .or('YOUT 220')
+          .or('BUSI 223')
+          .or('BUSI 240')
+          .or('ECON 110')
+          .or('ECON 213')
+          .or('ECON 214')
+          .or('GOVT 200')
+          .or('GOVT 210')
+          .or('GOVT 220')
+          .or('PSYC 101')
+          .or('PSYC 150')
+          .or('PSYC 210')
+          .or('SOCI 200')
+          .or('SOCI 201')
+          .or('PHIL 201')
+          .or('BWVW 301')
+          .or('CINE 340')
+          .or('CSTU 301')
+          .or('CSTU 310')
+          .or('ENGL 405')
+          .or('ENGL 442')
+          .or('ENGL 460')
+          .or('ENGL 462')
+          .or('ETHM 411')
+          .or('GEOG 410')
+          .or('HIEU 466')
+          .or('HLTH 400')
+          .or('INDS 499')
+          .or('MUSC 424')
+          .or('NASC 315')
+          .or('PHIL 429')
+          .or('PHIL 465')
+          .or('PHIL 468')
+          .or('PHSC 310')
+          .or('SPAN 324')
+          .or('THEO 324')
+          .or('THEO 340')
+          .or('CSER')
+          .makeTemporary();
+      });
+
+      /* Now that the search elements are generated, remove the loading sign */
+      mapDriver.removeLoadingControl('lusend-temporary');
+
+      /* Create the search bar */
+      try {
+        var title = 'Search Programs';
+        if ($('#pagenav a:contains(Admin Console)').length >= 1) {
+          title += ' (or press Alt+1)';
+        }
+
+        yield mapDriver.addSelectize(
+          'TOP_LEFT',
+          tdDriver.searchElements,
+          title,
+          'lusend-search',
+          afterSubmit
+        );
+      } catch (e) {
+        console.error(e);
+      }
+
+      window.addEventListener('popstate', checkHistory);
+
+      checkHistory();
+    });
+  })();
+});
+
+function afterSubmit(values) {
+  __async(this, null, function* () {
+    /* Add new values to history */
+    if (JSON.stringify(values) !== urlParameter('preload')) {
+      /* Create a new link with values stored */
+      var newLink = urlParameter('preload', JSON.stringify(values));
+      /* Also store the search values */
+      newLink = urlParameter(
+        'preloadValues',
+        $('#lusend-search').val(),
+        newLink
+      );
+      /* Push the state to the URL */
+      window.history.pushState({ reload: newLink }, '', newLink);
+    }
+
+    /* Clear markers and results if any are displayed */
+    mapDriver.resetMarkers();
+    tdDriver.resetRegisteredResults();
+
+    /* Register searches */
+    values.forEach((val) => {
+      if (val.id && val.value)
+        tdDriver.searchIn(val.id).for(val.value).makeTemporary();
+    });
+
+    /* Get search results */
+    try {
+      yield tdDriver.confirmSearchResults();
+    } catch (e) {
+      console.error(e);
+    }
+
+    /* Add the markers to the map */
+    tdDriver.searchResults.forEach((trip) => {
+      trip.locations.forEach((position, i1) => {
+        mapDriver.addMarker(
+          { lat: position.latitude, lng: position.longitude },
+          trip.id,
+          trip.name,
+          `<div class='p-2 flex justify-center flex-col items-center'>
+            <h3 class='text-xl font-bold mb-2 text-center'>${trip.name}</h3>
+            <div class='prose'>
+              <ul class='mb-2'>
+                ${trip.locations
+                  .map(
+                    (position, i2) =>
+                      `<li class='m-0 ${i1 === i2 ? 'font-bold' : ''}'>${
+                        position.city
+                      }, ${position.country} (${position.region})</li>`
+                  )
+                  .join('\n')}
+              </ul>
+            </div>
+            <a href='https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=${
+              trip.id
+            }' class='btn btn-primary btn-block'>Learn More</button>
+          </div>`,
+          `https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=${trip.id}`
+        );
+      });
+    });
+
+    /* Center the map around the bounds of the markers */
+    mapDriver.centerMap();
+
+    /* Update the marker list */
+    try {
+      yield mapDriver.updateMarkerList(
+        `<div class='text-lg text-center mb-2 max-h-28 overflow-y-auto'>${tdDriver.curSearchResultsVerbiage}</div>`
+      );
+    } catch (e) {
+      console.error(e);
+    }
+
+    /* Ensure ethat the marker list is open */
+    mapDriver.toggleMarkerList(true);
+  });
+}
 
 
-    
+</script>
 
-
-    
-      <div id="mycontent" class="content min-h-screen flex flex-col lg:flex-row justify-start lg:justify-center px-8 py-10 z-10 relative gap-5 ">
-        <div x-data="{ toc: !!document.querySelector('.table-of-contents')}" x-show="toc" class="grow order-first lg:order-last max-w-[15rem] prose" x-cloak>
-          <div class="text-base lg:sticky lg:top-20">
-            <h1 class="my-0 mb-5 text-2xl font-semibold">Table of Contents</h1>
-            <div class="table-of-contents-container lg:h-full lg:max-h-[calc(80vh-72px)] lg:overflow-y-auto overflow-x-hidden">&nbsp;</div>
-          </div>
-        </div>
-        <div class="prose flex-initial order-last lg:order-first  ">
-          
-            <h1>Stage Test</h1>
-          
-
-          <h1 id="heading-1" tabindex="-1"><a class="header-anchor" href="#heading-1">Heading 1</a></h1>
-<h2 id="heading-2" tabindex="-1"><a class="header-anchor" href="#heading-2">Heading 2</a></h2>
-<h3 id="heading-3" tabindex="-1"><a class="header-anchor" href="#heading-3">Heading 3</a></h3>
-<h4 id="heading-4" tabindex="-1"><a class="header-anchor" href="#heading-4">Heading 4</a></h4>
-<h5 id="heading-5" tabindex="-1"><a class="header-anchor" href="#heading-5">Heading 5</a></h5>
-<h6 id="heading-6" tabindex="-1"><a class="header-anchor" href="#heading-6">Heading 6</a></h6>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio ut sem nulla pharetra diam. Vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque. Habitant morbi tristique senectus et netus et. Dictumst quisque sagittis purus sit amet volutpat consequat mauris. Porttitor leo a diam sollicitudin tempor id eu. Maecenas ultricies mi eget mauris pharetra. Sed cras ornare arcu dui vivamus. Sit amet mattis vulputate enim nulla aliquet porttitor lacus luctus. Gravida dictum fusce ut placerat orci nulla pellentesque dignissim. Turpis egestas maecenas pharetra convallis. Scelerisque varius morbi enim nunc faucibus a pellentesque sit amet. Quam id leo in vitae turpis massa. Venenatis urna cursus eget nunc scelerisque viverra. Enim ut sem viverra aliquet. Ac turpis egestas integer eget aliquet nibh.</p>
-<p>In ornare quam viverra orci sagittis eu. Pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus et. Donec et odio pellentesque diam. Suscipit adipiscing bibendum est ultricies integer quis auctor elit. Arcu risus quis varius quam quisque id diam vel quam. Consectetur purus ut faucibus pulvinar elementum integer enim neque volutpat. Massa id neque aliquam vestibulum. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Mattis nunc sed blandit libero volutpat. Pellentesque nec nam aliquam sem et tortor consequat id porta. Dui vivamus arcu felis bibendum ut tristique et egestas quis. Eleifend donec pretium vulputate sapien. Dolor sit amet consectetur adipiscing. Bibendum neque egestas congue quisque egestas.</p>
-<p>Enim lobortis scelerisque fermentum dui. Dignissim convallis aenean et tortor at risus viverra adipiscing at. Nulla aliquet enim tortor at auctor urna nunc. Quis hendrerit dolor magna eget est lorem ipsum dolor. Tellus rutrum tellus pellentesque eu tincidunt tortor aliquam. Ut diam quam nulla porttitor massa id neque. Consequat nisl vel pretium lectus quam. In arcu cursus euismod quis. Cras semper auctor neque vitae tempus quam pellentesque nec. Gravida arcu ac tortor dignissim. Ante metus dictum at tempor commodo ullamcorper. Purus sit amet volutpat consequat mauris. Aliquam id diam maecenas ultricies mi. Elit ut aliquam purus sit amet. Hendrerit gravida rutrum quisque non tellus orci ac auctor. Ullamcorper sit amet risus nullam. Vitae auctor eu augue ut lectus arcu bibendum.</p>
-<p>Ut tellus elementum sagittis vitae et leo duis. In pellentesque massa placerat duis ultricies lacus sed. Purus sit amet luctus venenatis. Sit amet aliquam id diam. A erat nam at lectus urna duis convallis convallis tellus. Malesuada bibendum arcu vitae elementum curabitur vitae nunc sed velit. Ullamcorper a lacus vestibulum sed arcu non. Vestibulum morbi blandit cursus risus at ultrices mi. Magna sit amet purus gravida quis blandit turpis cursus in. Nisl purus in mollis nunc sed id. Urna nec tincidunt praesent semper feugiat. Sed adipiscing diam donec adipiscing tristique risus nec feugiat. Maecenas accumsan lacus vel facilisis volutpat. Egestas maecenas pharetra convallis posuere morbi leo urna molestie at. Sit amet venenatis urna cursus.</p>
-<p>Risus nec feugiat in fermentum posuere urna. Nulla facilisi nullam vehicula ipsum. Nisl pretium fusce id velit ut tortor pretium. Convallis convallis tellus id interdum velit laoreet id donec ultrices. Adipiscing diam donec adipiscing tristique risus nec feugiat in. Lacinia at quis risus sed vulputate odio. Id porta nibh venenatis cras sed felis eget velit aliquet. Varius quam quisque id diam vel quam. Est ullamcorper eget nulla facilisi etiam dignissim. Enim praesent elementum facilisis leo vel fringilla est. Purus gravida quis blandit turpis cursus in hac. Tincidunt praesent semper feugiat nibh sed. Elit sed vulputate mi sit. Elit sed vulputate mi sit amet. Id donec ultrices tincidunt arcu non sodales neque sodales. Sollicitudin ac orci phasellus egestas tellus.</p>
-<nav class="table-of-contents not-prose"><ol><li><a href="#heading-1">Heading 1</a><ol><li><a href="#heading-2">Heading 2</a><ol><li><a href="#heading-3">Heading 3</a><ol></ol></li></ol></li></ol></li></ol></nav>
-        </div>
-      </div>
     
 
     
