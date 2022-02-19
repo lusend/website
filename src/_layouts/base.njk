@@ -41,10 +41,10 @@
 
   <div  x-data="{ scroll: '' }" id="app">
     <div class="absolute {% if header and author %} top-[calc(100vh+272px)] {% elif header %} top-[calc(100vh+222px)] {% else %} top-[calc(100vh+72px)] {% endif %} overflow-none {% if header and author %} h-[calc(100%-100vh-272px)] {% elif header %} h-[calc(100%-100vh-222px)] {%else%} h-[calc(100%-100vh-72px)] {% endif %} w-full pointer-events-none -z-50" x-intersect:enter="scroll = 'bg-opacity-90'" x-intersect:leave="scroll = ''">&nbsp;</div>
-    <div class="fixed pointer-events-none top-0 right-0 bg-cover bg-no-repeat bg-center bg-scroll h-screen w-full bg-white" {% if background %} style="background-image: url('{{ background }}')" {% endif %}>&nbsp;</div>
+    <div class="fixed top-0 right-0 w-full h-screen bg-scroll bg-white bg-center bg-no-repeat bg-cover pointer-events-none" {% if background %} style="background-image: url('{{ background }}')" {% endif %}>&nbsp;</div>
     {% include "./nav.njk" %}
     {% if header %}
-      <div class="text-base flex flex-row justify-center px-8 pt-12 pb-5 z-10 relative mx-auto w-full bg-primary text-primary-content">
+      <div class="relative z-10 flex flex-row justify-center w-full px-8 pt-12 pb-5 mx-auto text-base bg-primary text-primary-content">
         <div class="max-w-[calc(65ch+16.25rem)] flex-1 flex flex-col gap-1 items-center navSmall:items-start">
           {% include "./breadcrumbs.njk" %}
           <div class="prose">
@@ -64,50 +64,54 @@
           {% endif %}
         </div>
       </div>
-      <svg id="header-wave" class="-mt-1 z-10 relative" viewBox="0 0 1200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg id="header-wave" class="relative z-10 -mt-1" viewBox="0 0 1200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M 1200,0 H 0 V 37 C 67,26 133,15 200,10 C 266,4 333,5 400,23 C 466,41 533,76 600,79 C 677,78 738,53 800,48 C 866,44 933,63 1000,62 C 1065,62 1131,41 1200,19 V 0 Z" fill="#0A254E"/>
       </svg>
     {% endif %}
 
     {% include "./hero.njk" %}
 
-    {% include "./testimonials.njk" %}
+    {% include "./actions.njk" %}
 
-    <div id="mycontent" class="content min-h-screen flex flex-col lg:flex-row justify-start lg:justify-center px-8 py-10 z-10 relative gap-5 {% if background %} bg-white bg-opacity-80 {% endif %}">
-      <div x-data="{ toc: !!document.querySelector('.table-of-contents')}" x-show="toc" class="grow order-first lg:order-last max-w-[15rem] prose" x-cloak>
-        <div class="lg:sticky lg:top-20 text-base">
-          <h1 class="my-0 mb-5 text-2xl font-semibold">Table of Contents</h1>
-          <div class="table-of-contents-container lg:h-full lg:max-h-[calc(80vh-72px)] lg:overflow-y-auto overflow-x-hidden">&nbsp;</div>
+    {% if content %}
+      <div id="mycontent" class="content min-h-screen flex flex-col lg:flex-row justify-start lg:justify-center px-8 py-10 z-10 relative gap-5 {% if background %} bg-white bg-opacity-80 {% endif %}">
+        <div x-data="{ toc: !!document.querySelector('.table-of-contents')}" x-show="toc" class="grow order-first lg:order-last max-w-[15rem] prose" x-cloak>
+          <div class="text-base lg:sticky lg:top-20">
+            <h1 class="my-0 mb-5 text-2xl font-semibold">Table of Contents</h1>
+            <div class="table-of-contents-container lg:h-full lg:max-h-[calc(80vh-72px)] lg:overflow-y-auto overflow-x-hidden">&nbsp;</div>
+          </div>
+        </div>
+        <div class="prose flex-initial order-last lg:order-first {% if full %} max-w-full {% endif %} ">
+          {% if env == 'stage' %}
+            <h1>Stage Test</h1>
+          {% endif %}
+
+          {{ content | safe }}
         </div>
       </div>
-      <div class="prose flex-initial order-last lg:order-first {% if full %} max-w-full {% endif %} ">
-        {% if env == 'stage' %}
-          <h1>Stage Test</h1>
-        {% endif %}
+    {% endif %}
 
-        {{ content | safe }}
-      </div>
-    </div>
+    {% include "./testimonials.njk" %}
 
-    <footer class="bg-opacity-85 bg-black relative">
-      <div class="py-5 flex flex-col justify-center items-center text-gray-400 text-xslg:text-sm text-center text-primary-content text-opacity-70 focus:outline-none font-medium">
+    <footer class="relative bg-black bg-opacity-85">
+      <div class="flex flex-col items-center justify-center py-5 font-medium text-center text-gray-400 text-xslg:text-sm text-primary-content text-opacity-70 focus:outline-none">
         <a href="{{ link('home') }}" class="h-8 mb-2">{{ logo | safe }}</a>
 
         <span>&copy; {% year %} Liberty University. All Rights Reserved.</span>
 
-        <a class="mt-1 text-accent underline hover:text-accent-focus flex items-center justify-center gap-1" href="https://www.liberty.edu/osd/lu-send/staff/">
+        <a class="flex items-center justify-center gap-1 mt-1 underline text-accent hover:text-accent-focus" href="https://www.liberty.edu/osd/lu-send/staff/">
           <ion-icon name="call-outline">&nbsp;</ion-icon>
           <span>Contact Us</span>
         </a>
 
-        <a class="text-primary-content text-opacity-70 hover:text-opacity-50 underline flex items-center justify-center gap-1" href="{{ edit }}">
+        <a class="flex items-center justify-center gap-1 underline text-primary-content text-opacity-70 hover:text-opacity-50" href="{{ edit }}">
           <ion-icon name="create-outline">&nbsp;</ion-icon>
           <span>Edit Page</span>
         </a>
       </div>
     </footer>
 
-    <div id="planes" class="fixed top-0 left-0 w-full h-full z-0 pointer-events-none">&nbsp;</div>
+    <div id="planes" class="fixed top-0 left-0 z-0 w-full h-full pointer-events-none">&nbsp;</div>
   </div>
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

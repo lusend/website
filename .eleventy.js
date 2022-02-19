@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const postcss = require('postcss');
 const markdown = require('./config/markdown');
-const { testimonial } = require('./config/pairedShortcodes');
+const { testimonial, action } = require('./config/pairedShortcodes');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const { DateTime } = require('luxon');
 
@@ -44,6 +44,7 @@ module.exports = function (eleventyConfig) {
   );
 
   eleventyConfig.addPairedAsyncShortcode('testimonial', testimonial);
+  eleventyConfig.addPairedAsyncShortcode('action', action);
 
   return {
     pathPrefix: env === 'development' ? '/' : '/testwebsite/',

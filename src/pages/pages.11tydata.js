@@ -12,6 +12,7 @@ module.exports = async function (configData) {
     hero: '',
     background: '',
     testimonials: [],
+    actions: [],
     eleventyComputed: {
       path: `{{ page.filePathStem }}{{ suffix }}`,
       permalink: `{{ path }}.html`,

@@ -16,6 +16,21 @@ const testimonial = async (
   return '';
 };
 
+const action = async (
+  text,
+  actions,
+  { picture = '', title = '', link = '' }
+) => {
+  actions.push({
+    picture,
+    title,
+    link,
+    text: markdown.render(text)
+  });
+  return '';
+};
+
 module.exports = {
-  testimonial
+  testimonial,
+  action
 };
