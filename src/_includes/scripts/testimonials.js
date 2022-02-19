@@ -5,18 +5,18 @@ document.addEventListener('DOMContentLoaded', function () {
       speed: 700,
       gap: '2rem',
       arrows: false,
-      padding: '5%',
+      padding: '10%',
       mediaQuery: 'min',
       keyboard: false,
       breakpoints: {
         640: {
-          padding: '15%'
+          padding: '24%'
         },
         840: {
-          padding: '22%'
+          padding: '28%'
         },
         1024: {
-          padding: '30%'
+          padding: '34%'
         }
       },
       focus: 'center',

@@ -1,33 +1,33 @@
 {% if testimonials | length %}
-  <div id="testimonials" class="w-full justify-center relative z-10 text-base-content {% if background %} bg-black bg-opacity-30 {% endif %} prose max-w-full">
+  <div id="testimonials" x-data="{ hide: true }" class="w-full justify-center relative z-10 text-base-content {% if background %} bg-black bg-opacity-30 {% endif %} prose max-w-full">
     <h1 class="text-center {% if background %} text-primary-content {% endif %} mb-0 pt-3">Testimonials</h1>
     <div class="splide">
       <div class="splide__track">
-        <ul class="splide__list h-auto">
+        <ul class="h-auto splide__list">
           {% for testimonial in testimonials %}
-            <li class="splide__slide p-0 m-0">
-              <div x-data="{ hide: true, useHide: {{ testimonial.truncate }} }" class="bg-white shadow-md rounded-lg overflow-hidden flex justify-center items-center w-full h-full min-w-full relative">
-                <div class="w-full md:p-8 p-6 min-h-[12rem] flex justify-between gap-5 relative">
-                  <svg class="h-[15rem] absolute z-10 bottom-0 right-0 -mb-16 -mr-10 opacity-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                    <path d="M21.95 8.721l-.025-.168l-.026.006A4.5 4.5 0 1 0 17.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222l-.474.197l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.028 7.028 0 0 0-.063-.539zm-11 0l-.025-.168l-.026.006A4.5 4.5 0 1 0 6.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222c-.301.123-.473.195-.473.195l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.571 7.571 0 0 0-.064-.537z" fill="currentColor"></path>
-                  </svg>
-                  <div class="flex-1 flex flex-col gap-2 items-start relative">
+            <li class="p-0 m-0 splide__slide">
+              <div x-data="{ useHide: {{ testimonial.truncate }} }" class="relative flex items-center justify-center w-full h-full min-w-full overflow-hidden bg-white shadow-md rounded-2xl">
+                <svg class="h-[15rem] absolute z-10 bottom-0 right-0 -mb-16 -mr-10 opacity-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                  <path d="M21.95 8.721l-.025-.168l-.026.006A4.5 4.5 0 1 0 17.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222l-.474.197l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.028 7.028 0 0 0-.063-.539zm-11 0l-.025-.168l-.026.006A4.5 4.5 0 1 0 6.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222c-.301.123-.473.195-.473.195l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.571 7.571 0 0 0-.064-.537z" fill="currentColor"></path>
+                </svg>
+                <div class="w-full h-full md:p-8 p-6 min-h-[12rem] flex justify-between gap-5 relative">
+                  <div class="relative flex flex-col items-start justify-around flex-1 gap-2">
                     <div class="relative w-full">
-                      <div class="text-3xl text-secondary text-left leading-tight h-5 absolute top-0 left-0 -mt-3 -ml-3 z-10 font-serif">“</div>
-                      <div :class="hide && useHide ? 'max-h-[5rem] overflow-hidden' : 'max-h-[14.7rem] overflow-y-auto'" class="mb-5 w-full relative h-full transition-all" x-effect="if(hide) $el.scrollTop = 0" x-cloak>
-                        <div class="font-semibold text-base mb-5 w-full">{{ testimonial.quote | safe }}</div>
-                        <div :class="(hide ? 'h-12' : 'h-0') + ' ' + (useHide || 'hidden')" class="absolute transition-all bg-gradient-to-t bottom-0 right-0 from-white -mt-10 w-full flex justify-center items-center" x-cloak>&nbsp;</div>
+                      <div class="absolute top-0 left-0 z-10 h-5 -mt-3 -ml-3 font-serif text-3xl leading-tight text-left text-secondary">“</div>
+                      <div :class="hide && useHide ? 'max-h-[5rem] overflow-hidden' : 'max-h-[14.7rem] overflow-y-auto'" class="relative w-full h-full transition-all" x-effect="if(hide) $el.scrollTop = 0" x-cloak>
+                        <div class="w-full text-sm font-semibold">{{ testimonial.quote | safe }}</div>
+                        <div :class="(hide ? 'h-12' : 'hidden') + ' ' + (useHide || 'hidden')" class="absolute bottom-0 right-0 flex items-center justify-center w-full -mt-10 transition-all bg-gradient-to-t from-white" x-cloak>&nbsp;</div>
                       </div>
-                      <div :class="hide && useHide ? 'bottom-6' : 'bottom-3'" class="text-3xl text-secondary text-right leading-tight h-5 absolute z-10 right-0 -mt-3 -mr-3 font-serif">”</div>
+                      <div class="absolute right-0 z-10 h-5 -mt-3 -mr-3 font-serif text-3xl leading-tight text-right top-full text-secondary">”</div>
+                      <div :class="useHide || 'hidden'" class="absolute z-10 w-full text-center top-full" x-cloak>
+                        <button class="px-2 py-1 text-xs btn" x-on:click="hide = !hide" x-text="hide ? 'Show More' : 'Show Less'">&nbsp;</button>
+                      </div>
                     </div>
-                    <div :class="!useHide ? 'hidden' : hide ? '-mt-8' : '-mt-6'" class="text-center w-full z-10">
-                      <button class="btn text-xs py-1 px-2" x-on:click="hide = !hide" x-text="hide ? 'Show More' : 'Show Less'" x-cloak>&nbsp;</button>
-                    </div>
-                    <div class="flex flex-row items-center justify-start gap-2">
+                    <div class="flex flex-row items-center justify-start gap-2 mt-5">
                       <img class="m-0 flex-shrink rounded-full w-full max-w-[4rem] shadow-sm" src="{{ testimonial.profile }}" alt="Testimonial Picture">
-                      <div class="flex-grow flex flex-col items-start justify-center">
-                        <div class="font-semibold text-sm text-primary">{{ testimonial.name }}</div>
-                        <div class="font-normal text-xs text-secondary">{{ testimonial.subtitle }}</div>
+                      <div class="flex flex-col items-start justify-center flex-grow">
+                        <div class="text-sm font-semibold text-primary">{{ testimonial.name }}</div>
+                        <div class="text-xs font-medium text-secondary">{{ testimonial.subtitle }}</div>
                       </div>
                     </div>
                   </div>

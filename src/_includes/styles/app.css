@@ -131,5 +131,17 @@
     p {
       @apply m-0;
     }
+
+    p:first-child:not(:last-child) {
+      @apply mb-5;
+    }
+
+    p:not(:first-child, :last-child) {
+      @apply my-5;
+    }
+
+    p:last-child:not(:first-child) {
+      @apply mt-5;
+    }
   }
 }
