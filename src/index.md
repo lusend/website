@@ -32,7 +32,7 @@ _The deployment status should be visible at the top of the page. Check the statu
 - [ ] Support Map and JS that belongs with it
 - [x] Support Testimonials
 - [x] Support Landing Hero
-- [ ] Support Large Navigation Section
+- [x] Support Call to Actions
 - [x] Support Changing Backgrounds
 
 ### Blog/Information Pages
