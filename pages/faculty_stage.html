@@ -523,6 +523,19 @@ Reset links to optimize for opt-in styling instead of opt-out.
   margin: 0px;
 }
 
+#app .splide__track p:first-child:not(:last-child){
+  margin-bottom: 1.25rem;
+}
+
+#app .splide__track p:not(:first-child, :last-child){
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+#app .splide__track p:last-child:not(:first-child){
+  margin-top: 1.25rem;
+}
+
 *, ::before, ::after{
   --tw-translate-x: 0;
   --tw-translate-y: 0;
@@ -1107,12 +1120,8 @@ Reset links to optimize for opt-in styling instead of opt-out.
   bottom: 0px;
 }
 
-#app .bottom-6{
-  bottom: 1.5rem;
-}
-
-#app .bottom-3{
-  bottom: 0.75rem;
+#app .top-full{
+  top: 100%;
 }
 
 #app .-z-50{
@@ -1231,12 +1240,8 @@ Reset links to optimize for opt-in styling instead of opt-out.
   margin-right: -0.75rem;
 }
 
-#app .-mt-8{
-  margin-top: -2rem;
-}
-
-#app .-mt-6{
-  margin-top: -1.5rem;
+#app .mt-5{
+  margin-top: 1.25rem;
 }
 
 #app .block{
@@ -1309,10 +1314,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .h-12{
   height: 3rem;
-}
-
-#app .h-0{
-  height: 0px;
 }
 
 #app .max-h-\[calc\(90vh-72px\)\]{
@@ -1494,6 +1495,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   justify-content: space-between;
 }
 
+#app .justify-around{
+  justify-content: space-around;
+}
+
 #app .gap-1{
   gap: 0.25rem;
 }
@@ -1554,6 +1559,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .rounded-full{
   border-radius: 9999px;
+}
+
+#app .rounded-2xl{
+  border-radius: 1rem;
 }
 
 #app .rounded-b-none{
@@ -1793,10 +1802,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .\!font-medium{
   font-weight: 500 !important;
-}
-
-#app .font-normal{
-  font-weight: 400;
 }
 
 #app .uppercase{

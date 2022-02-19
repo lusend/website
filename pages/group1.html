@@ -523,6 +523,19 @@ Reset links to optimize for opt-in styling instead of opt-out.
   margin: 0px;
 }
 
+#app .splide__track p:first-child:not(:last-child){
+  margin-bottom: 1.25rem;
+}
+
+#app .splide__track p:not(:first-child, :last-child){
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+#app .splide__track p:last-child:not(:first-child){
+  margin-top: 1.25rem;
+}
+
 *, ::before, ::after{
   --tw-translate-x: 0;
   --tw-translate-y: 0;
@@ -1107,12 +1120,8 @@ Reset links to optimize for opt-in styling instead of opt-out.
   bottom: 0px;
 }
 
-#app .bottom-6{
-  bottom: 1.5rem;
-}
-
-#app .bottom-3{
-  bottom: 0.75rem;
+#app .top-full{
+  top: 100%;
 }
 
 #app .-z-50{
@@ -1231,12 +1240,8 @@ Reset links to optimize for opt-in styling instead of opt-out.
   margin-right: -0.75rem;
 }
 
-#app .-mt-8{
-  margin-top: -2rem;
-}
-
-#app .-mt-6{
-  margin-top: -1.5rem;
+#app .mt-5{
+  margin-top: 1.25rem;
 }
 
 #app .block{
@@ -1309,10 +1314,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .h-12{
   height: 3rem;
-}
-
-#app .h-0{
-  height: 0px;
 }
 
 #app .max-h-\[calc\(90vh-72px\)\]{
@@ -1494,6 +1495,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   justify-content: space-between;
 }
 
+#app .justify-around{
+  justify-content: space-around;
+}
+
 #app .gap-1{
   gap: 0.25rem;
 }
@@ -1554,6 +1559,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .rounded-full{
   border-radius: 9999px;
+}
+
+#app .rounded-2xl{
+  border-radius: 1rem;
 }
 
 #app .rounded-b-none{
@@ -1793,10 +1802,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .\!font-medium{
   font-weight: 500 !important;
-}
-
-#app .font-normal{
-  font-weight: 400;
 }
 
 #app .uppercase{
@@ -2577,36 +2582,36 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 
     
-  <div id="testimonials" class="w-full justify-center relative z-10 text-base-content  prose max-w-full">
+  <div id="testimonials" x-data="{ hide: true }" class="w-full justify-center relative z-10 text-base-content  prose max-w-full">
     <h1 class="text-center  mb-0 pt-3">Testimonials</h1>
     <div class="splide">
       <div class="splide__track">
-        <ul class="splide__list h-auto">
+        <ul class="h-auto splide__list">
           
-            <li class="splide__slide p-0 m-0">
-              <div x-data="{ hide: true, useHide: true }" class="bg-white shadow-md rounded-lg overflow-hidden flex justify-center items-center w-full h-full min-w-full relative">
-                <div class="w-full md:p-8 p-6 min-h-[12rem] flex justify-between gap-5 relative">
-                  <svg class="h-[15rem] absolute z-10 bottom-0 right-0 -mb-16 -mr-10 opacity-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                    <path d="M21.95 8.721l-.025-.168l-.026.006A4.5 4.5 0 1 0 17.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222l-.474.197l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.028 7.028 0 0 0-.063-.539zm-11 0l-.025-.168l-.026.006A4.5 4.5 0 1 0 6.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222c-.301.123-.473.195-.473.195l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.571 7.571 0 0 0-.064-.537z" fill="currentColor"></path>
-                  </svg>
-                  <div class="flex-1 flex flex-col gap-2 items-start relative">
+            <li class="p-0 m-0 splide__slide">
+              <div x-data="{ useHide: true }" class="relative flex items-center justify-center w-full h-full min-w-full overflow-hidden bg-white shadow-md rounded-2xl">
+                <svg class="h-[15rem] absolute z-10 bottom-0 right-0 -mb-16 -mr-10 opacity-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                  <path d="M21.95 8.721l-.025-.168l-.026.006A4.5 4.5 0 1 0 17.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222l-.474.197l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.028 7.028 0 0 0-.063-.539zm-11 0l-.025-.168l-.026.006A4.5 4.5 0 1 0 6.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222c-.301.123-.473.195-.473.195l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.571 7.571 0 0 0-.064-.537z" fill="currentColor"></path>
+                </svg>
+                <div class="w-full h-full md:p-8 p-6 min-h-[12rem] flex justify-between gap-5 relative">
+                  <div class="relative flex flex-col items-start justify-around flex-1 gap-2">
                     <div class="relative w-full">
-                      <div class="text-3xl text-secondary text-left leading-tight h-5 absolute top-0 left-0 -mt-3 -ml-3 z-10 font-serif">“</div>
-                      <div :class="hide && useHide ? 'max-h-[5rem] overflow-hidden' : 'max-h-[14.7rem] overflow-y-auto'" class="mb-5 w-full relative h-full transition-all" x-effect="if(hide) $el.scrollTop = 0" x-cloak>
-                        <div class="font-semibold text-base mb-5 w-full"><p>I truly believe that God gives us what we need when we need it the most. The Christian development and fellowship during this trip was exactly what I needed. This was a humbling experience for me, and it taught me the importance of faithfulness, forgiveness, and family. What an experience!</p>
+                      <div class="absolute top-0 left-0 z-10 h-5 -mt-3 -ml-3 font-serif text-3xl leading-tight text-left text-secondary">“</div>
+                      <div :class="hide && useHide ? 'max-h-[5rem] overflow-hidden' : 'max-h-[14.7rem] overflow-y-auto'" class="relative w-full h-full transition-all" x-effect="if(hide) $el.scrollTop = 0" x-cloak>
+                        <div class="w-full text-sm font-semibold"><p>I truly believe that God gives us what we need when we need it the most. The Christian development and fellowship during this trip was exactly what I needed. This was a humbling experience for me, and it taught me the importance of faithfulness, forgiveness, and family. What an experience!</p>
 </div>
-                        <div :class="(hide ? 'h-12' : 'h-0') + ' ' + (useHide || 'hidden')" class="absolute transition-all bg-gradient-to-t bottom-0 right-0 from-white -mt-10 w-full flex justify-center items-center" x-cloak>&nbsp;</div>
+                        <div :class="(hide ? 'h-12' : 'hidden') + ' ' + (useHide || 'hidden')" class="absolute bottom-0 right-0 flex items-center justify-center w-full -mt-10 transition-all bg-gradient-to-t from-white" x-cloak>&nbsp;</div>
                       </div>
-                      <div :class="hide && useHide ? 'bottom-6' : 'bottom-3'" class="text-3xl text-secondary text-right leading-tight h-5 absolute z-10 right-0 -mt-3 -mr-3 font-serif">”</div>
+                      <div class="absolute right-0 z-10 h-5 -mt-3 -mr-3 font-serif text-3xl leading-tight text-right top-full text-secondary">”</div>
+                      <div :class="useHide || 'hidden'" class="absolute z-10 w-full text-center top-full" x-cloak>
+                        <button class="px-2 py-1 text-xs btn" x-on:click="hide = !hide" x-text="hide ? 'Show More' : 'Show Less'">&nbsp;</button>
+                      </div>
                     </div>
-                    <div :class="!useHide ? 'hidden' : hide ? '-mt-8' : '-mt-6'" class="text-center w-full z-10">
-                      <button class="btn text-xs py-1 px-2" x-on:click="hide = !hide" x-text="hide ? 'Show More' : 'Show Less'" x-cloak>&nbsp;</button>
-                    </div>
-                    <div class="flex flex-row items-center justify-start gap-2">
+                    <div class="flex flex-row items-center justify-start gap-2 mt-5">
                       <img class="m-0 flex-shrink rounded-full w-full max-w-[4rem] shadow-sm" src="https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35515" alt="Testimonial Picture">
-                      <div class="flex-grow flex flex-col items-start justify-center">
-                        <div class="font-semibold text-sm text-primary">Michelle Harper</div>
-                        <div class="font-normal text-xs text-secondary">Rwanda, Divinity &amp; Education</div>
+                      <div class="flex flex-col items-start justify-center flex-grow">
+                        <div class="text-sm font-semibold text-primary">Michelle Harper</div>
+                        <div class="text-xs font-medium text-secondary">Rwanda, Divinity &amp; Education</div>
                       </div>
                     </div>
                   </div>
@@ -2614,30 +2619,30 @@ Reset links to optimize for opt-in styling instead of opt-out.
               </div>
             </li>
           
-            <li class="splide__slide p-0 m-0">
-              <div x-data="{ hide: true, useHide: true }" class="bg-white shadow-md rounded-lg overflow-hidden flex justify-center items-center w-full h-full min-w-full relative">
-                <div class="w-full md:p-8 p-6 min-h-[12rem] flex justify-between gap-5 relative">
-                  <svg class="h-[15rem] absolute z-10 bottom-0 right-0 -mb-16 -mr-10 opacity-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                    <path d="M21.95 8.721l-.025-.168l-.026.006A4.5 4.5 0 1 0 17.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222l-.474.197l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.028 7.028 0 0 0-.063-.539zm-11 0l-.025-.168l-.026.006A4.5 4.5 0 1 0 6.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222c-.301.123-.473.195-.473.195l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.571 7.571 0 0 0-.064-.537z" fill="currentColor"></path>
-                  </svg>
-                  <div class="flex-1 flex flex-col gap-2 items-start relative">
+            <li class="p-0 m-0 splide__slide">
+              <div x-data="{ useHide: true }" class="relative flex items-center justify-center w-full h-full min-w-full overflow-hidden bg-white shadow-md rounded-2xl">
+                <svg class="h-[15rem] absolute z-10 bottom-0 right-0 -mb-16 -mr-10 opacity-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                  <path d="M21.95 8.721l-.025-.168l-.026.006A4.5 4.5 0 1 0 17.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222l-.474.197l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.028 7.028 0 0 0-.063-.539zm-11 0l-.025-.168l-.026.006A4.5 4.5 0 1 0 6.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222c-.301.123-.473.195-.473.195l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.571 7.571 0 0 0-.064-.537z" fill="currentColor"></path>
+                </svg>
+                <div class="w-full h-full md:p-8 p-6 min-h-[12rem] flex justify-between gap-5 relative">
+                  <div class="relative flex flex-col items-start justify-around flex-1 gap-2">
                     <div class="relative w-full">
-                      <div class="text-3xl text-secondary text-left leading-tight h-5 absolute top-0 left-0 -mt-3 -ml-3 z-10 font-serif">“</div>
-                      <div :class="hide && useHide ? 'max-h-[5rem] overflow-hidden' : 'max-h-[14.7rem] overflow-y-auto'" class="mb-5 w-full relative h-full transition-all" x-effect="if(hide) $el.scrollTop = 0" x-cloak>
-                        <div class="font-semibold text-base mb-5 w-full"><p>I am a 53 year-old student, and to say that my trip to Ecuador was life-changing should say it all. The lessons were outstanding, but the relationships I formed in the process added a missing ingredient that my online education was missing.</p>
+                      <div class="absolute top-0 left-0 z-10 h-5 -mt-3 -ml-3 font-serif text-3xl leading-tight text-left text-secondary">“</div>
+                      <div :class="hide && useHide ? 'max-h-[5rem] overflow-hidden' : 'max-h-[14.7rem] overflow-y-auto'" class="relative w-full h-full transition-all" x-effect="if(hide) $el.scrollTop = 0" x-cloak>
+                        <div class="w-full text-sm font-semibold"><p>I am a 53 year-old student, and to say that my trip to Ecuador was life-changing should say it all. The lessons were outstanding, but the relationships I formed in the process added a missing ingredient that my online education was missing.</p>
 </div>
-                        <div :class="(hide ? 'h-12' : 'h-0') + ' ' + (useHide || 'hidden')" class="absolute transition-all bg-gradient-to-t bottom-0 right-0 from-white -mt-10 w-full flex justify-center items-center" x-cloak>&nbsp;</div>
+                        <div :class="(hide ? 'h-12' : 'hidden') + ' ' + (useHide || 'hidden')" class="absolute bottom-0 right-0 flex items-center justify-center w-full -mt-10 transition-all bg-gradient-to-t from-white" x-cloak>&nbsp;</div>
                       </div>
-                      <div :class="hide && useHide ? 'bottom-6' : 'bottom-3'" class="text-3xl text-secondary text-right leading-tight h-5 absolute z-10 right-0 -mt-3 -mr-3 font-serif">”</div>
+                      <div class="absolute right-0 z-10 h-5 -mt-3 -mr-3 font-serif text-3xl leading-tight text-right top-full text-secondary">”</div>
+                      <div :class="useHide || 'hidden'" class="absolute z-10 w-full text-center top-full" x-cloak>
+                        <button class="px-2 py-1 text-xs btn" x-on:click="hide = !hide" x-text="hide ? 'Show More' : 'Show Less'">&nbsp;</button>
+                      </div>
                     </div>
-                    <div :class="!useHide ? 'hidden' : hide ? '-mt-8' : '-mt-6'" class="text-center w-full z-10">
-                      <button class="btn text-xs py-1 px-2" x-on:click="hide = !hide" x-text="hide ? 'Show More' : 'Show Less'" x-cloak>&nbsp;</button>
-                    </div>
-                    <div class="flex flex-row items-center justify-start gap-2">
+                    <div class="flex flex-row items-center justify-start gap-2 mt-5">
                       <img class="m-0 flex-shrink rounded-full w-full max-w-[4rem] shadow-sm" src="https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35519" alt="Testimonial Picture">
-                      <div class="flex-grow flex flex-col items-start justify-center">
-                        <div class="font-semibold text-sm text-primary">David Roten</div>
-                        <div class="font-normal text-xs text-secondary">Ecuador, Psychology</div>
+                      <div class="flex flex-col items-start justify-center flex-grow">
+                        <div class="text-sm font-semibold text-primary">David Roten</div>
+                        <div class="text-xs font-medium text-secondary">Ecuador, Psychology</div>
                       </div>
                     </div>
                   </div>
@@ -2645,30 +2650,30 @@ Reset links to optimize for opt-in styling instead of opt-out.
               </div>
             </li>
           
-            <li class="splide__slide p-0 m-0">
-              <div x-data="{ hide: true, useHide: true }" class="bg-white shadow-md rounded-lg overflow-hidden flex justify-center items-center w-full h-full min-w-full relative">
-                <div class="w-full md:p-8 p-6 min-h-[12rem] flex justify-between gap-5 relative">
-                  <svg class="h-[15rem] absolute z-10 bottom-0 right-0 -mb-16 -mr-10 opacity-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                    <path d="M21.95 8.721l-.025-.168l-.026.006A4.5 4.5 0 1 0 17.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222l-.474.197l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.028 7.028 0 0 0-.063-.539zm-11 0l-.025-.168l-.026.006A4.5 4.5 0 1 0 6.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222c-.301.123-.473.195-.473.195l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.571 7.571 0 0 0-.064-.537z" fill="currentColor"></path>
-                  </svg>
-                  <div class="flex-1 flex flex-col gap-2 items-start relative">
+            <li class="p-0 m-0 splide__slide">
+              <div x-data="{ useHide: true }" class="relative flex items-center justify-center w-full h-full min-w-full overflow-hidden bg-white shadow-md rounded-2xl">
+                <svg class="h-[15rem] absolute z-10 bottom-0 right-0 -mb-16 -mr-10 opacity-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                  <path d="M21.95 8.721l-.025-.168l-.026.006A4.5 4.5 0 1 0 17.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222l-.474.197l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.028 7.028 0 0 0-.063-.539zm-11 0l-.025-.168l-.026.006A4.5 4.5 0 1 0 6.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222c-.301.123-.473.195-.473.195l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.571 7.571 0 0 0-.064-.537z" fill="currentColor"></path>
+                </svg>
+                <div class="w-full h-full md:p-8 p-6 min-h-[12rem] flex justify-between gap-5 relative">
+                  <div class="relative flex flex-col items-start justify-around flex-1 gap-2">
                     <div class="relative w-full">
-                      <div class="text-3xl text-secondary text-left leading-tight h-5 absolute top-0 left-0 -mt-3 -ml-3 z-10 font-serif">“</div>
-                      <div :class="hide && useHide ? 'max-h-[5rem] overflow-hidden' : 'max-h-[14.7rem] overflow-y-auto'" class="mb-5 w-full relative h-full transition-all" x-effect="if(hide) $el.scrollTop = 0" x-cloak>
-                        <div class="font-semibold text-base mb-5 w-full"><p>Having the opportunity to go on an LU Send trip to Rwanda was one of the best experiences of my life. I loved learning about another culture and interacting with the people there. It has given me a fresh perspective on life that no picture could ever give.</p>
+                      <div class="absolute top-0 left-0 z-10 h-5 -mt-3 -ml-3 font-serif text-3xl leading-tight text-left text-secondary">“</div>
+                      <div :class="hide && useHide ? 'max-h-[5rem] overflow-hidden' : 'max-h-[14.7rem] overflow-y-auto'" class="relative w-full h-full transition-all" x-effect="if(hide) $el.scrollTop = 0" x-cloak>
+                        <div class="w-full text-sm font-semibold"><p>Having the opportunity to go on an LU Send trip to Rwanda was one of the best experiences of my life. I loved learning about another culture and interacting with the people there. It has given me a fresh perspective on life that no picture could ever give.</p>
 </div>
-                        <div :class="(hide ? 'h-12' : 'h-0') + ' ' + (useHide || 'hidden')" class="absolute transition-all bg-gradient-to-t bottom-0 right-0 from-white -mt-10 w-full flex justify-center items-center" x-cloak>&nbsp;</div>
+                        <div :class="(hide ? 'h-12' : 'hidden') + ' ' + (useHide || 'hidden')" class="absolute bottom-0 right-0 flex items-center justify-center w-full -mt-10 transition-all bg-gradient-to-t from-white" x-cloak>&nbsp;</div>
                       </div>
-                      <div :class="hide && useHide ? 'bottom-6' : 'bottom-3'" class="text-3xl text-secondary text-right leading-tight h-5 absolute z-10 right-0 -mt-3 -mr-3 font-serif">”</div>
+                      <div class="absolute right-0 z-10 h-5 -mt-3 -mr-3 font-serif text-3xl leading-tight text-right top-full text-secondary">”</div>
+                      <div :class="useHide || 'hidden'" class="absolute z-10 w-full text-center top-full" x-cloak>
+                        <button class="px-2 py-1 text-xs btn" x-on:click="hide = !hide" x-text="hide ? 'Show More' : 'Show Less'">&nbsp;</button>
+                      </div>
                     </div>
-                    <div :class="!useHide ? 'hidden' : hide ? '-mt-8' : '-mt-6'" class="text-center w-full z-10">
-                      <button class="btn text-xs py-1 px-2" x-on:click="hide = !hide" x-text="hide ? 'Show More' : 'Show Less'" x-cloak>&nbsp;</button>
-                    </div>
-                    <div class="flex flex-row items-center justify-start gap-2">
+                    <div class="flex flex-row items-center justify-start gap-2 mt-5">
                       <img class="m-0 flex-shrink rounded-full w-full max-w-[4rem] shadow-sm" src="https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35513" alt="Testimonial Picture">
-                      <div class="flex-grow flex flex-col items-start justify-center">
-                        <div class="font-semibold text-sm text-primary">Sara Tschetter</div>
-                        <div class="font-normal text-xs text-secondary">Rwanda, G5</div>
+                      <div class="flex flex-col items-start justify-center flex-grow">
+                        <div class="text-sm font-semibold text-primary">Sara Tschetter</div>
+                        <div class="text-xs font-medium text-secondary">Rwanda, G5</div>
                       </div>
                     </div>
                   </div>
@@ -2676,30 +2681,30 @@ Reset links to optimize for opt-in styling instead of opt-out.
               </div>
             </li>
           
-            <li class="splide__slide p-0 m-0">
-              <div x-data="{ hide: true, useHide: true }" class="bg-white shadow-md rounded-lg overflow-hidden flex justify-center items-center w-full h-full min-w-full relative">
-                <div class="w-full md:p-8 p-6 min-h-[12rem] flex justify-between gap-5 relative">
-                  <svg class="h-[15rem] absolute z-10 bottom-0 right-0 -mb-16 -mr-10 opacity-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                    <path d="M21.95 8.721l-.025-.168l-.026.006A4.5 4.5 0 1 0 17.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222l-.474.197l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.028 7.028 0 0 0-.063-.539zm-11 0l-.025-.168l-.026.006A4.5 4.5 0 1 0 6.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222c-.301.123-.473.195-.473.195l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.571 7.571 0 0 0-.064-.537z" fill="currentColor"></path>
-                  </svg>
-                  <div class="flex-1 flex flex-col gap-2 items-start relative">
+            <li class="p-0 m-0 splide__slide">
+              <div x-data="{ useHide: true }" class="relative flex items-center justify-center w-full h-full min-w-full overflow-hidden bg-white shadow-md rounded-2xl">
+                <svg class="h-[15rem] absolute z-10 bottom-0 right-0 -mb-16 -mr-10 opacity-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                  <path d="M21.95 8.721l-.025-.168l-.026.006A4.5 4.5 0 1 0 17.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222l-.474.197l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.028 7.028 0 0 0-.063-.539zm-11 0l-.025-.168l-.026.006A4.5 4.5 0 1 0 6.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222c-.301.123-.473.195-.473.195l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.571 7.571 0 0 0-.064-.537z" fill="currentColor"></path>
+                </svg>
+                <div class="w-full h-full md:p-8 p-6 min-h-[12rem] flex justify-between gap-5 relative">
+                  <div class="relative flex flex-col items-start justify-around flex-1 gap-2">
                     <div class="relative w-full">
-                      <div class="text-3xl text-secondary text-left leading-tight h-5 absolute top-0 left-0 -mt-3 -ml-3 z-10 font-serif">“</div>
-                      <div :class="hide && useHide ? 'max-h-[5rem] overflow-hidden' : 'max-h-[14.7rem] overflow-y-auto'" class="mb-5 w-full relative h-full transition-all" x-effect="if(hide) $el.scrollTop = 0" x-cloak>
-                        <div class="font-semibold text-base mb-5 w-full"><p>I learned so much more about Israel from being there for 10 days than I could have if I had read about Israel for a whole month. In addition, the relationships that I developed over the course of my LU Send trip are ones that I will treasure for a lifetime!</p>
+                      <div class="absolute top-0 left-0 z-10 h-5 -mt-3 -ml-3 font-serif text-3xl leading-tight text-left text-secondary">“</div>
+                      <div :class="hide && useHide ? 'max-h-[5rem] overflow-hidden' : 'max-h-[14.7rem] overflow-y-auto'" class="relative w-full h-full transition-all" x-effect="if(hide) $el.scrollTop = 0" x-cloak>
+                        <div class="w-full text-sm font-semibold"><p>I learned so much more about Israel from being there for 10 days than I could have if I had read about Israel for a whole month. In addition, the relationships that I developed over the course of my LU Send trip are ones that I will treasure for a lifetime!</p>
 </div>
-                        <div :class="(hide ? 'h-12' : 'h-0') + ' ' + (useHide || 'hidden')" class="absolute transition-all bg-gradient-to-t bottom-0 right-0 from-white -mt-10 w-full flex justify-center items-center" x-cloak>&nbsp;</div>
+                        <div :class="(hide ? 'h-12' : 'hidden') + ' ' + (useHide || 'hidden')" class="absolute bottom-0 right-0 flex items-center justify-center w-full -mt-10 transition-all bg-gradient-to-t from-white" x-cloak>&nbsp;</div>
                       </div>
-                      <div :class="hide && useHide ? 'bottom-6' : 'bottom-3'" class="text-3xl text-secondary text-right leading-tight h-5 absolute z-10 right-0 -mt-3 -mr-3 font-serif">”</div>
+                      <div class="absolute right-0 z-10 h-5 -mt-3 -mr-3 font-serif text-3xl leading-tight text-right top-full text-secondary">”</div>
+                      <div :class="useHide || 'hidden'" class="absolute z-10 w-full text-center top-full" x-cloak>
+                        <button class="px-2 py-1 text-xs btn" x-on:click="hide = !hide" x-text="hide ? 'Show More' : 'Show Less'">&nbsp;</button>
+                      </div>
                     </div>
-                    <div :class="!useHide ? 'hidden' : hide ? '-mt-8' : '-mt-6'" class="text-center w-full z-10">
-                      <button class="btn text-xs py-1 px-2" x-on:click="hide = !hide" x-text="hide ? 'Show More' : 'Show Less'" x-cloak>&nbsp;</button>
-                    </div>
-                    <div class="flex flex-row items-center justify-start gap-2">
+                    <div class="flex flex-row items-center justify-start gap-2 mt-5">
                       <img class="m-0 flex-shrink rounded-full w-full max-w-[4rem] shadow-sm" src="https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35511" alt="Testimonial Picture">
-                      <div class="flex-grow flex flex-col items-start justify-center">
-                        <div class="font-semibold text-sm text-primary">Christian Lasvel</div>
-                        <div class="font-normal text-xs text-secondary">Israel, FIRM Conference</div>
+                      <div class="flex flex-col items-start justify-center flex-grow">
+                        <div class="text-sm font-semibold text-primary">Christian Lasvel</div>
+                        <div class="text-xs font-medium text-secondary">Israel, FIRM Conference</div>
                       </div>
                     </div>
                   </div>
@@ -2707,30 +2712,30 @@ Reset links to optimize for opt-in styling instead of opt-out.
               </div>
             </li>
           
-            <li class="splide__slide p-0 m-0">
-              <div x-data="{ hide: true, useHide: true }" class="bg-white shadow-md rounded-lg overflow-hidden flex justify-center items-center w-full h-full min-w-full relative">
-                <div class="w-full md:p-8 p-6 min-h-[12rem] flex justify-between gap-5 relative">
-                  <svg class="h-[15rem] absolute z-10 bottom-0 right-0 -mb-16 -mr-10 opacity-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                    <path d="M21.95 8.721l-.025-.168l-.026.006A4.5 4.5 0 1 0 17.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222l-.474.197l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.028 7.028 0 0 0-.063-.539zm-11 0l-.025-.168l-.026.006A4.5 4.5 0 1 0 6.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222c-.301.123-.473.195-.473.195l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.571 7.571 0 0 0-.064-.537z" fill="currentColor"></path>
-                  </svg>
-                  <div class="flex-1 flex flex-col gap-2 items-start relative">
+            <li class="p-0 m-0 splide__slide">
+              <div x-data="{ useHide: true }" class="relative flex items-center justify-center w-full h-full min-w-full overflow-hidden bg-white shadow-md rounded-2xl">
+                <svg class="h-[15rem] absolute z-10 bottom-0 right-0 -mb-16 -mr-10 opacity-10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                  <path d="M21.95 8.721l-.025-.168l-.026.006A4.5 4.5 0 1 0 17.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222l-.474.197l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.028 7.028 0 0 0-.063-.539zm-11 0l-.025-.168l-.026.006A4.5 4.5 0 1 0 6.5 14c.223 0 .437-.034.65-.065c-.069.232-.14.468-.254.68c-.114.308-.292.575-.469.844c-.148.291-.409.488-.601.737c-.201.242-.475.403-.692.604c-.213.21-.492.315-.714.463c-.232.133-.434.28-.65.35l-.539.222c-.301.123-.473.195-.473.195l.484 1.939l.597-.144c.191-.048.424-.104.689-.171c.271-.05.56-.187.882-.312c.317-.143.686-.238 1.028-.467c.344-.218.741-.4 1.091-.692c.339-.301.748-.562 1.05-.944c.33-.358.656-.734.909-1.162c.293-.408.492-.856.702-1.299c.19-.443.343-.896.468-1.336c.237-.882.343-1.72.384-2.437c.034-.718.014-1.315-.028-1.747a7.571 7.571 0 0 0-.064-.537z" fill="currentColor"></path>
+                </svg>
+                <div class="w-full h-full md:p-8 p-6 min-h-[12rem] flex justify-between gap-5 relative">
+                  <div class="relative flex flex-col items-start justify-around flex-1 gap-2">
                     <div class="relative w-full">
-                      <div class="text-3xl text-secondary text-left leading-tight h-5 absolute top-0 left-0 -mt-3 -ml-3 z-10 font-serif">“</div>
-                      <div :class="hide && useHide ? 'max-h-[5rem] overflow-hidden' : 'max-h-[14.7rem] overflow-y-auto'" class="mb-5 w-full relative h-full transition-all" x-effect="if(hide) $el.scrollTop = 0" x-cloak>
-                        <div class="font-semibold text-base mb-5 w-full"><p>The opportunity for growth and community with other likeminded individuals was lifechanging and altered my behavior when I got back onto campus. The people of Rwanda showed me more about what it means to be a follower of God than I had seen in my life before, my whole world and future changed forever.</p>
+                      <div class="absolute top-0 left-0 z-10 h-5 -mt-3 -ml-3 font-serif text-3xl leading-tight text-left text-secondary">“</div>
+                      <div :class="hide && useHide ? 'max-h-[5rem] overflow-hidden' : 'max-h-[14.7rem] overflow-y-auto'" class="relative w-full h-full transition-all" x-effect="if(hide) $el.scrollTop = 0" x-cloak>
+                        <div class="w-full text-sm font-semibold"><p>The opportunity for growth and community with other likeminded individuals was lifechanging and altered my behavior when I got back onto campus. The people of Rwanda showed me more about what it means to be a follower of God than I had seen in my life before, my whole world and future changed forever.</p>
 </div>
-                        <div :class="(hide ? 'h-12' : 'h-0') + ' ' + (useHide || 'hidden')" class="absolute transition-all bg-gradient-to-t bottom-0 right-0 from-white -mt-10 w-full flex justify-center items-center" x-cloak>&nbsp;</div>
+                        <div :class="(hide ? 'h-12' : 'hidden') + ' ' + (useHide || 'hidden')" class="absolute bottom-0 right-0 flex items-center justify-center w-full -mt-10 transition-all bg-gradient-to-t from-white" x-cloak>&nbsp;</div>
                       </div>
-                      <div :class="hide && useHide ? 'bottom-6' : 'bottom-3'" class="text-3xl text-secondary text-right leading-tight h-5 absolute z-10 right-0 -mt-3 -mr-3 font-serif">”</div>
+                      <div class="absolute right-0 z-10 h-5 -mt-3 -mr-3 font-serif text-3xl leading-tight text-right top-full text-secondary">”</div>
+                      <div :class="useHide || 'hidden'" class="absolute z-10 w-full text-center top-full" x-cloak>
+                        <button class="px-2 py-1 text-xs btn" x-on:click="hide = !hide" x-text="hide ? 'Show More' : 'Show Less'">&nbsp;</button>
+                      </div>
                     </div>
-                    <div :class="!useHide ? 'hidden' : hide ? '-mt-8' : '-mt-6'" class="text-center w-full z-10">
-                      <button class="btn text-xs py-1 px-2" x-on:click="hide = !hide" x-text="hide ? 'Show More' : 'Show Less'" x-cloak>&nbsp;</button>
-                    </div>
-                    <div class="flex flex-row items-center justify-start gap-2">
+                    <div class="flex flex-row items-center justify-start gap-2 mt-5">
                       <img class="m-0 flex-shrink rounded-full w-full max-w-[4rem] shadow-sm" src="https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35517" alt="Testimonial Picture">
-                      <div class="flex-grow flex flex-col items-start justify-center">
-                        <div class="font-semibold text-sm text-primary">Matt Cruickshank</div>
-                        <div class="font-normal text-xs text-secondary">Rwanda, G5</div>
+                      <div class="flex flex-col items-start justify-center flex-grow">
+                        <div class="text-sm font-semibold text-primary">Matt Cruickshank</div>
+                        <div class="text-xs font-medium text-secondary">Rwanda, G5</div>
                       </div>
                     </div>
                   </div>
@@ -2755,18 +2760,18 @@ Reset links to optimize for opt-in styling instead of opt-out.
       speed: 700,
       gap: '2rem',
       arrows: false,
-      padding: '5%',
+      padding: '10%',
       mediaQuery: 'min',
       keyboard: false,
       breakpoints: {
         640: {
-          padding: '15%'
+          padding: '24%'
         },
         840: {
-          padding: '22%'
+          padding: '28%'
         },
         1024: {
-          padding: '30%'
+          padding: '34%'
         }
       },
       focus: 'center',

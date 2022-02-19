@@ -531,6 +531,19 @@ Reset links to optimize for opt-in styling instead of opt-out.
   margin: 0px;
 }
 
+#app .splide__track p:first-child:not(:last-child){
+  margin-bottom: 1.25rem;
+}
+
+#app .splide__track p:not(:first-child, :last-child){
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+#app .splide__track p:last-child:not(:first-child){
+  margin-top: 1.25rem;
+}
+
 *, ::before, ::after{
   --tw-translate-x: 0;
   --tw-translate-y: 0;
@@ -1115,12 +1128,8 @@ Reset links to optimize for opt-in styling instead of opt-out.
   bottom: 0px;
 }
 
-#app .bottom-6{
-  bottom: 1.5rem;
-}
-
-#app .bottom-3{
-  bottom: 0.75rem;
+#app .top-full{
+  top: 100%;
 }
 
 #app .-z-50{
@@ -1239,12 +1248,8 @@ Reset links to optimize for opt-in styling instead of opt-out.
   margin-right: -0.75rem;
 }
 
-#app .-mt-8{
-  margin-top: -2rem;
-}
-
-#app .-mt-6{
-  margin-top: -1.5rem;
+#app .mt-5{
+  margin-top: 1.25rem;
 }
 
 #app .block{
@@ -1317,10 +1322,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .h-12{
   height: 3rem;
-}
-
-#app .h-0{
-  height: 0px;
 }
 
 #app .max-h-\[calc\(90vh-72px\)\]{
@@ -1502,6 +1503,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   justify-content: space-between;
 }
 
+#app .justify-around{
+  justify-content: space-around;
+}
+
 #app .gap-1{
   gap: 0.25rem;
 }
@@ -1562,6 +1567,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .rounded-full{
   border-radius: 9999px;
+}
+
+#app .rounded-2xl{
+  border-radius: 1rem;
 }
 
 #app .rounded-b-none{
@@ -1801,10 +1810,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .\!font-medium{
   font-weight: 500 !important;
-}
-
-#app .font-normal{
-  font-weight: 400;
 }
 
 #app .uppercase{
@@ -2181,11 +2186,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 <p><em>The deployment status should be visible at the top of the page. Check the status by clicking on either of the status badges or visiting the <a href="https://github.com/lusend/testwebsite">repository</a>.</em></p>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/testwebsite/commit/ed1c89e27c0966ac10506ba84699222984b8f8b2" class="no-underline hover:underline" target="_blank">fix: 💄 Fixed Testimonial CSS and Speed<br />
+  <a href="https://github.com/lusend/testwebsite/commit/f2754efc54ede468b0e0fe87e9e0133c82d77762" class="no-underline hover:underline" target="_blank">style: 💄 Updated Testimonial Styles<br />
 <br />
-Fixed some height and prose style overrides. Also decreased the autoscroll speed.</a>
+Cleaned up some of the testimonial styles to better support truncation if necessary.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-18T21:14:21Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-19T00:22:43Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
