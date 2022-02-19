@@ -54,7 +54,7 @@ The opportunity for growth and community with other likeminded individuals was l
 {% endtestimonial %}
 
 {% action actions,
-  picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=26354',
+  picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35534',
   title = 'Group Travel',
   link = link('group')
 %}
@@ -62,7 +62,7 @@ At LU Send, we want students, faculty, and alumni at Liberty to have the opportu
 {% endaction %}
 
 {% action actions,
-  picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21406',
+  picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35532',
   title = 'Individual Travel',
   link = link('individual')
 %}
@@ -70,7 +70,7 @@ LU Send has partnered with trusted study abroad organizations and built connecti
 {% endaction %}
 
 {% action actions,
-  picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21405',
+  picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35530',
   title = 'Faculty Gateway',
   link = link('faculty')
 %}
