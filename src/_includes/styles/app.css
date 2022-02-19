@@ -144,4 +144,77 @@
       @apply mt-5;
     }
   }
+
+  /* Map Styles */
+  .gmnoprint[style*='1000000'] {
+    @apply pb-10;
+  }
+
+  .selectizer {
+    @apply flex w-full justify-center;
+  }
+
+  .selectizer .selectize-control {
+    @apply shadow-lg w-1/2;
+  }
+
+  #map-markers-list {
+    @apply bg-white bg-opacity-95 w-1/2 h-4/6 rounded-r-md transition-all shadow-lg;
+  }
+
+  #map-markers-list .list-content {
+    @apply overflow-auto h-full;
+  }
+
+  #map-markers-list .list-markers {
+    @apply p-1 flex items-center gap-4;
+  }
+
+  #map-markers-list .list-markers a {
+    @apply underline cursor-pointer;
+  }
+
+  #map-markers-list .list-toggle {
+    @apply absolute flex justify-center cursor-pointer -right-10 top-1/2 w-10 h-auto -translate-y-1/2 bg-white bg-opacity-95 rounded-r-md;
+  }
+
+  #map-markers-list .list-toggle svg {
+    @apply h-16;
+  }
+
+  .selectizer .selectize-control,
+  .selectizer .selectize-control ~ * {
+    @apply my-3 inline-block relative;
+  }
+
+  .selectizer button.btn.btn-primary {
+    @apply rounded-md rounded-l-none border-0 w-1/5 h-auto min-h-[unset] p-0 shadow-lg;
+  }
+
+  .selectizer .selectize-control > .selectize-input {
+    @apply rounded-md rounded-r-none border-0 overflow-y-auto overflow-x-hidden block;
+  }
+
+  .selectizer .selectize-control > .selectize-input,
+  .selectizer .selectize-control > .selectize-dropdown,
+  #map-markers-list {
+    @apply font-sans text-sm p-2 no-underline;
+  }
+
+  .selectizer .selectize-control > .selectize-dropdown {
+    @apply absolute z-10 top-0;
+  }
+
+  .selectizer .selectize-control > .selectize-input * {
+    @apply no-underline relative;
+    color: inherit;
+  }
+
+  #map {
+    @apply w-full h-[calc(100vh-72px)];
+
+    img {
+      @apply rounded-none;
+    }
+  }
 }

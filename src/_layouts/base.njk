@@ -73,7 +73,7 @@
 
     {% include "./actions.njk" %}
 
-    {% if content %}
+    {% if content and not custom %}
       <div id="mycontent" class="content min-h-screen flex flex-col lg:flex-row justify-start lg:justify-center px-8 py-10 z-10 relative gap-5 {% if background %} bg-white bg-opacity-80 {% endif %}">
         <div x-data="{ toc: !!document.querySelector('.table-of-contents')}" x-show="toc" class="grow order-first lg:order-last max-w-[15rem] prose" x-cloak>
           <div class="text-base lg:sticky lg:top-20">
@@ -89,6 +89,8 @@
           {{ content | safe }}
         </div>
       </div>
+    {% elif content %}
+      {{ content | safe }}
     {% endif %}
 
     {% include "./testimonials.njk" %}

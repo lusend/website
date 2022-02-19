@@ -9,6 +9,7 @@ module.exports = async function (configData) {
     planes: false,
     header: true,
     full: false,
+    custom: false,
     hero: '',
     background: '',
     testimonials: [],
