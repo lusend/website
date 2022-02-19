@@ -1084,6 +1084,18 @@ Reset links to optimize for opt-in styling instead of opt-out.
   bottom: 0px;
 }
 
+#app .-bottom-16{
+  bottom: -4rem;
+}
+
+#app .-right-12{
+  right: -3rem;
+}
+
+#app .-left-12{
+  left: -3rem;
+}
+
 #app .top-\[calc\(100vh\+272px\)\]{
   top: calc(100vh + 272px);
 }
@@ -1124,16 +1136,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   top: 100%;
 }
 
-#app .-z-50{
-  z-index: -50;
-}
-
 #app .z-10{
   z-index: 10;
 }
 
 #app .z-0{
   z-index: 0;
+}
+
+#app .-z-50{
+  z-index: -50;
 }
 
 #app .z-50{
@@ -1364,16 +1376,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   min-width: 100%;
 }
 
+#app .max-w-full{
+  max-width: 100%;
+}
+
 #app .max-w-\[calc\(65ch\+16\.25rem\)\]{
   max-width: calc(65ch + 16.25rem);
 }
 
 #app .max-w-\[15rem\]{
   max-width: 15rem;
-}
-
-#app .max-w-full{
-  max-width: 100%;
 }
 
 #app .max-w-xs{
@@ -1384,16 +1396,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   max-width: 4rem;
 }
 
+#app .flex-auto{
+  flex: 1 1 auto;
+}
+
 #app .flex-1{
   flex: 1 1 0%;
 }
 
 #app .flex-initial{
   flex: 0 1 auto;
-}
-
-#app .flex-auto{
-  flex: 1 1 auto;
 }
 
 #app .flex-shrink{
@@ -1408,8 +1420,17 @@ Reset links to optimize for opt-in styling instead of opt-out.
   flex-grow: 1;
 }
 
+#app .basis-auto{
+  flex-basis: auto;
+}
+
 #app .basis-full{
   flex-basis: 100%;
+}
+
+#app .-rotate-90{
+  --tw-rotate: -90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 @-webkit-keyframes bounce{
@@ -1499,16 +1520,20 @@ Reset links to optimize for opt-in styling instead of opt-out.
   justify-content: space-around;
 }
 
+#app .gap-10{
+  gap: 2.5rem;
+}
+
+#app .gap-2{
+  gap: 0.5rem;
+}
+
 #app .gap-1{
   gap: 0.25rem;
 }
 
 #app .gap-5{
   gap: 1.25rem;
-}
-
-#app .gap-2{
-  gap: 0.5rem;
 }
 
 #app .space-x-1 > :not([hidden]) ~ :not([hidden]){
@@ -1565,6 +1590,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   border-radius: 1rem;
 }
 
+#app .rounded-t-2xl{
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+#app .rounded-b-2xl{
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
 #app .rounded-b-none{
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
@@ -1585,6 +1620,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   border-bottom-left-radius: 0px;
 }
 
+#app .bg-black{
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
 #app .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1593,11 +1633,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .bg-primary{
   --tw-bg-opacity: 1;
   background-color: rgb(10 37 78 / var(--tw-bg-opacity));
-}
-
-#app .bg-black{
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 #app .bg-primary-focus{
@@ -1615,16 +1650,24 @@ Reset links to optimize for opt-in styling instead of opt-out.
   background-color: rgb(153 0 0 / var(--tw-bg-opacity));
 }
 
+#app .bg-opacity-30{
+  --tw-bg-opacity: 0.3;
+}
+
+#app .bg-opacity-40{
+  --tw-bg-opacity: 0.4;
+}
+
+#app .bg-opacity-60{
+  --tw-bg-opacity: 0.6;
+}
+
 #app .bg-opacity-90{
   --tw-bg-opacity: 0.9;
 }
 
 #app .bg-opacity-80{
   --tw-bg-opacity: 0.8;
-}
-
-#app .bg-opacity-30{
-  --tw-bg-opacity: 0.3;
 }
 
 #app .bg-gradient-to-t{
@@ -1650,6 +1693,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .bg-no-repeat{
   background-repeat: no-repeat;
+}
+
+#app .p-8{
+  padding: 2rem;
+}
+
+#app .p-5{
+  padding: 1.25rem;
 }
 
 #app .p-2{
@@ -1704,6 +1755,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   padding-right: 1.25rem;
 }
 
+#app .pb-16{
+  padding-bottom: 4rem;
+}
+
 #app .pt-12{
   padding-top: 3rem;
 }
@@ -1754,9 +1809,18 @@ Reset links to optimize for opt-in styling instead of opt-out.
   line-height: 1.75rem;
 }
 
+#app .text-5xl{
+  font-size: 3rem;
+  line-height: 1;
+}
+
 #app .text-base{
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+#app .text-\[20rem\]{
+  font-size: 20rem;
 }
 
 #app .text-sm{
@@ -1767,11 +1831,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-#app .text-5xl{
-  font-size: 3rem;
-  line-height: 1;
 }
 
 #app .text-\[5em\]{
@@ -1826,6 +1885,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+#app .text-base-content{
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
 #app .text-base-300{
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
@@ -1846,11 +1910,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-#app .text-base-content{
-  --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity));
-}
-
 #app .text-primary{
   --tw-text-opacity: 1;
   color: rgb(10 37 78 / var(--tw-text-opacity));
@@ -1868,6 +1927,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .no-underline{
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
+}
+
+#app .opacity-30{
+  opacity: 0.3;
 }
 
 #app .opacity-10{
@@ -1890,6 +1953,24 @@ Reset links to optimize for opt-in styling instead of opt-out.
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+#app .backdrop-blur-sm{
+  --tw-backdrop-blur: blur(4px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+#app .transition-all{
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+#app .transition-transform{
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 #app .transition-colors{
   transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
@@ -1902,12 +1983,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
   transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-#app .transition-all{
-  transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1941,6 +2016,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   font-weight: inherit;
 }
 
+#app .hover\:rotate-1:hover{
+  --tw-rotate: 1deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+#app .hover\:-rotate-1:hover{
+  --tw-rotate: -1deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 #app .hover\:bg-primary-content:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1954,6 +2039,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .hover\:bg-secondary-focus:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(138 0 0 / var(--tw-bg-opacity));
+}
+
+#app .hover\:bg-opacity-50:hover{
+  --tw-bg-opacity: 0.5;
 }
 
 #app .hover\:bg-opacity-20:hover{
@@ -2002,6 +2091,21 @@ Reset links to optimize for opt-in styling instead of opt-out.
   --tw-bg-opacity: 0.1;
 }
 
+#app .group:hover .group-hover\:-translate-x-1{
+  --tw-translate-x: -0.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+#app .group:hover .group-hover\:rotate-\[-93deg\]{
+  --tw-rotate: -93deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+#app .group:hover .group-hover\:rotate-3{
+  --tw-rotate: 3deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 #app .peer:checked ~ .peer-checked\:translate-x-full{
   --tw-translate-x: 100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2025,8 +2129,42 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 @media (min-width: 768px){
 
+  #app .md\:min-h-\[20rem\]{
+    min-height: 20rem;
+  }
+
   #app .md\:max-w-none{
     max-width: none;
+  }
+
+  #app .md\:flex-1{
+    flex: 1 1 0%;
+  }
+
+  #app .md\:basis-0{
+    flex-basis: 0px;
+  }
+
+  #app .md\:flex-row{
+    flex-direction: row;
+  }
+
+  #app .md\:flex-row-reverse{
+    flex-direction: row-reverse;
+  }
+
+  #app .md\:rounded-none{
+    border-radius: 0px;
+  }
+
+  #app .md\:rounded-l-2xl{
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+  }
+
+  #app .md\:rounded-r-2xl{
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
   }
 
   #app .md\:p-8{
@@ -2036,6 +2174,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   #app .md\:px-6{
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  #app .md\:text-\[25rem\]{
+    font-size: 25rem;
   }
 }
 
@@ -2170,7 +2312,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
   <div  x-data="{ scroll: '' }" id="app">
     <div class="absolute  top-[calc(100vh+222px)]  overflow-none  h-[calc(100%-100vh-222px)]  w-full pointer-events-none -z-50" x-intersect:enter="scroll = 'bg-opacity-90'" x-intersect:leave="scroll = ''">&nbsp;</div>
-    <div class="fixed pointer-events-none top-0 right-0 bg-cover bg-no-repeat bg-center bg-scroll h-screen w-full bg-white" >&nbsp;</div>
+    <div class="fixed top-0 right-0 w-full h-screen bg-scroll bg-white bg-center bg-no-repeat bg-cover pointer-events-none" >&nbsp;</div>
     
 
 
@@ -2528,7 +2670,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
 </nav>
 
     
-      <div class="text-base flex flex-row justify-center px-8 pt-12 pb-5 z-10 relative mx-auto w-full bg-primary text-primary-content">
+      <div class="relative z-10 flex flex-row justify-center w-full px-8 pt-12 pb-5 mx-auto text-base bg-primary text-primary-content">
         <div class="max-w-[calc(65ch+16.25rem)] flex-1 flex flex-col gap-1 items-center navSmall:items-start">
           
 
@@ -2568,7 +2710,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
           
         </div>
       </div>
-      <svg id="header-wave" class="-mt-1 z-10 relative" viewBox="0 0 1200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg id="header-wave" class="relative z-10 -mt-1" viewBox="0 0 1200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M 1200,0 H 0 V 37 C 67,26 133,15 200,10 C 266,4 333,5 400,23 C 466,41 533,76 600,79 C 677,78 738,53 800,48 C 866,44 933,63 1000,62 C 1065,62 1131,41 1200,19 V 0 Z" fill="#0A254E"/>
       </svg>
     
@@ -2579,35 +2721,163 @@ Reset links to optimize for opt-in styling instead of opt-out.
     
 
 
-    <div id="mycontent" class="content min-h-screen flex flex-col lg:flex-row justify-start lg:justify-center px-8 py-10 z-10 relative gap-5 ">
-      <div x-data="{ toc: !!document.querySelector('.table-of-contents')}" x-show="toc" class="grow order-first lg:order-last max-w-[15rem] prose" x-cloak>
-        <div class="lg:sticky lg:top-20 text-base">
-          <h1 class="my-0 mb-5 text-2xl font-semibold">Table of Contents</h1>
-          <div class="table-of-contents-container lg:h-full lg:max-h-[calc(80vh-72px)] lg:overflow-y-auto overflow-x-hidden">&nbsp;</div>
+    
+      <div id="mycontent" class="content min-h-screen flex flex-col lg:flex-row justify-start lg:justify-center px-8 py-10 z-10 relative gap-5 ">
+        <div x-data="{ toc: !!document.querySelector('.table-of-contents')}" x-show="toc" class="grow order-first lg:order-last max-w-[15rem] prose" x-cloak>
+          <div class="text-base lg:sticky lg:top-20">
+            <h1 class="my-0 mb-5 text-2xl font-semibold">Table of Contents</h1>
+            <div class="table-of-contents-container lg:h-full lg:max-h-[calc(80vh-72px)] lg:overflow-y-auto overflow-x-hidden">&nbsp;</div>
+          </div>
         </div>
-      </div>
-      <div class="prose flex-initial order-last lg:order-first  ">
-        
-          <h1>Stage Test</h1>
-        
+        <div class="prose flex-initial order-last lg:order-first  ">
+          
+            <h1>Stage Test</h1>
+          
 
-        <h1 id="heading-1" tabindex="-1"><a class="header-anchor" href="#heading-1">Heading 1</a></h1>
+          <h1 id="heading-1" tabindex="-1"><a class="header-anchor" href="#heading-1">Heading 1</a></h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pulvinar sapien et ligula ullamcorper malesuada proin libero. In cursus turpis massa tincidunt dui ut. Donec ultrices tincidunt arcu non. Nunc vel risus commodo viverra maecenas. Dignissim suspendisse in est ante in nibh mauris cursus mattis. Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo. Odio eu feugiat pretium nibh ipsum. Pellentesque habitant morbi tristique senectus et. Ac auctor augue mauris augue. Scelerisque in dictum non consectetur a erat nam at. Eleifend mi in nulla posuere sollicitudin aliquam ultrices. Ut diam quam nulla porttitor massa id neque aliquam vestibulum. Egestas quis ipsum suspendisse ultrices. Ornare massa eget egestas purus. Aliquet nibh praesent tristique magna sit amet. Donec massa sapien faucibus et molestie ac feugiat sed. Aliquam purus sit amet luctus venenatis.</p>
 <h2 id="heading-2" tabindex="-1"><a class="header-anchor" href="#heading-2">Heading 2</a></h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pulvinar sapien et ligula ullamcorper malesuada proin libero. In cursus turpis massa tincidunt dui ut. Donec ultrices tincidunt arcu non. Nunc vel risus commodo viverra maecenas. Dignissim suspendisse in est ante in nibh mauris cursus mattis. Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo. Odio eu feugiat pretium nibh ipsum. Pellentesque habitant morbi tristique senectus et. Ac auctor augue mauris augue. Scelerisque in dictum non consectetur a erat nam at. Eleifend mi in nulla posuere sollicitudin aliquam ultrices. Ut diam quam nulla porttitor massa id neque aliquam vestibulum. Egestas quis ipsum suspendisse ultrices. Ornare massa eget egestas purus. Aliquet nibh praesent tristique magna sit amet. Donec massa sapien faucibus et molestie ac feugiat sed. Aliquam purus sit amet luctus venenatis.</p>
 <h3 id="heading-3" tabindex="-1"><a class="header-anchor" href="#heading-3">Heading 3</a></h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pulvinar sapien et ligula ullamcorper malesuada proin libero. In cursus turpis massa tincidunt dui ut. Donec ultrices tincidunt arcu non. Nunc vel risus commodo viverra maecenas. Dignissim suspendisse in est ante in nibh mauris cursus mattis. Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo. Odio eu feugiat pretium nibh ipsum. Pellentesque habitant morbi tristique senectus et. Ac auctor augue mauris augue. Scelerisque in dictum non consectetur a erat nam at. Eleifend mi in nulla posuere sollicitudin aliquam ultrices. Ut diam quam nulla porttitor massa id neque aliquam vestibulum. Egestas quis ipsum suspendisse ultrices. Ornare massa eget egestas purus. Aliquet nibh praesent tristique magna sit amet. Donec massa sapien faucibus et molestie ac feugiat sed. Aliquam purus sit amet luctus venenatis.</p>
 <h4 id="heading-4" tabindex="-1"><a class="header-anchor" href="#heading-4">Heading 4</a></h4>
 <h5 id="heading-5" tabindex="-1"><a class="header-anchor" href="#heading-5">Heading 5</a></h5>
 <h6 id="heading-6" tabindex="-1"><a class="header-anchor" href="#heading-6">Heading 6</a></h6>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Eu sem integer vitae justo eget magna fermentum iaculis eu. Vel turpis nunc eget lorem dolor sed. Vitae nunc sed velit dignissim sodales. Ante metus dictum at tempor. Gravida cum sociis natoque penatibus et magnis dis parturient. Consequat id porta nibh venenatis cras sed. Maecenas sed enim ut sem viverra aliquet eget sit. Donec et odio pellentesque diam volutpat commodo. Non odio euismod lacinia at quis risus sed. Non sodales neque sodales ut etiam sit amet nisl. Nunc sed velit dignissim sodales ut. Egestas sed tempus urna et pharetra pharetra massa massa ultricies. Cursus metus aliquam eleifend mi in nulla posuere. Tempus urna et pharetra pharetra massa. In iaculis nunc sed augue lacus viverra vitae. Sed sed risus pretium quam vulputate dignissim suspendisse. Nunc eget lorem dolor sed. Mattis molestie a iaculis at erat pellentesque adipiscing.</p>
-<p>Quis varius quam quisque id diam vel quam elementum pulvinar. Amet est placerat in egestas erat imperdiet sed euismod. Odio euismod lacinia at quis risus sed vulputate odio ut. Hendrerit dolor magna eget est lorem ipsum dolor. Facilisi morbi tempus iaculis urna id volutpat lacus laoreet non. Sed blandit libero volutpat sed cras ornare. Nisl suscipit adipiscing bibendum est ultricies. At in tellus integer feugiat scelerisque varius. Malesuada proin libero nunc consequat. Donec et odio pellentesque diam volutpat commodo sed egestas. Quam vulputate dignissim suspendisse in est ante in. Nisi scelerisque eu ultrices vitae auctor eu augue. Donec massa sapien faucibus et. Sem viverra aliquet eget sit amet tellus cras adipiscing.</p>
-<p>Diam maecenas sed enim ut sem viverra aliquet eget sit. Dictumst quisque sagittis purus sit amet volutpat consequat mauris nunc. Nulla malesuada pellentesque elit eget gravida cum. Purus non enim praesent elementum facilisis leo vel fringilla est. Sed libero enim sed faucibus turpis in. Placerat vestibulum lectus mauris ultrices eros in cursus turpis massa. Nisl pretium fusce id velit ut tortor. Lectus urna duis convallis convallis tellus id interdum. Turpis egestas sed tempus urna et. Bibendum enim facilisis gravida neque convallis a cras semper auctor. Turpis tincidunt id aliquet risus. Ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget gravida. Scelerisque varius morbi enim nunc faucibus a pellentesque sit. At tempor commodo ullamcorper a lacus vestibulum. Natoque penatibus et magnis dis parturient montes nascetur ridiculus. Ipsum a arcu cursus vitae congue mauris. Enim nulla aliquet porttitor lacus luctus accumsan. Malesuada bibendum arcu vitae elementum curabitur vitae nunc sed velit.</p>
-<p>Semper feugiat nibh sed pulvinar proin gravida hendrerit lectus. Amet luctus venenatis lectus magna. Quis imperdiet massa tincidunt nunc pulvinar sapien et. Etiam non quam lacus suspendisse faucibus interdum posuere lorem. Tellus cras adipiscing enim eu turpis egestas. Scelerisque felis imperdiet proin fermentum. Ridiculus mus mauris vitae ultricies leo. Faucibus interdum posuere lorem ipsum dolor. Consequat interdum varius sit amet mattis vulputate enim nulla aliquet. Enim neque volutpat ac tincidunt. Felis eget nunc lobortis mattis.</p>
-<p>Neque convallis a cras semper auctor neque vitae. Tincidunt ornare massa eget egestas purus. Consequat ac felis donec et odio pellentesque diam. Amet aliquam id diam maecenas ultricies mi eget mauris. Nisi porta lorem mollis aliquam ut porttitor leo a diam. Aliquet eget sit amet tellus cras adipiscing enim eu. Mattis nunc sed blandit libero volutpat sed cras ornare. Gravida arcu ac tortor dignissim convallis aenean et tortor. Orci phasellus egestas tellus rutrum tellus pellentesque. Sit amet risus nullam eget felis eget nunc lobortis mattis. Vel eros donec ac odio. Vehicula ipsum a arcu cursus vitae. Tincidunt arcu non sodales neque sodales ut etiam sit amet. Dapibus ultrices in iaculis nunc sed. Et egestas quis ipsum suspendisse ultrices gravida dictum.</p>
-<nav class="table-of-contents not-prose"><ol><li><a href="#heading-1">Heading 1</a><ol><li><a href="#heading-2">Heading 2</a><ol><li><a href="#heading-3">Heading 3</a><ol></ol></li></ol></li></ol></li></ol></nav>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pulvinar sapien et ligula ullamcorper malesuada proin libero. In cursus turpis massa tincidunt dui ut. Donec ultrices tincidunt arcu non. Nunc vel risus commodo viverra maecenas. Dignissim suspendisse in est ante in nibh mauris cursus mattis. Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo. Odio eu feugiat pretium nibh ipsum. Pellentesque habitant morbi tristique senectus et. Ac auctor augue mauris augue. Scelerisque in dictum non consectetur a erat nam at. Eleifend mi in nulla posuere sollicitudin aliquam ultrices. Ut diam quam nulla porttitor massa id neque aliquam vestibulum. Egestas quis ipsum suspendisse ultrices. Ornare massa eget egestas purus. Aliquet nibh praesent tristique magna sit amet. Donec massa sapien faucibus et molestie ac feugiat sed. Aliquam purus sit amet luctus venenatis.</p>
+<p>At quis risus sed vulputate odio ut enim. Sed id semper risus in. Sem viverra aliquet eget sit amet. Varius duis at consectetur lorem. Et netus et malesuada fames ac. Diam phasellus vestibulum lorem sed risus. Viverra maecenas accumsan lacus vel facilisis volutpat est. Eu lobortis elementum nibh tellus molestie nunc non. Sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper. Odio facilisis mauris sit amet massa. Massa vitae tortor condimentum lacinia quis vel.</p>
+<p>Aliquam nulla facilisi cras fermentum odio eu. Est velit egestas dui id ornare arcu. Phasellus egestas tellus rutrum tellus pellentesque eu. Lectus arcu bibendum at varius vel pharetra. Venenatis cras sed felis eget velit aliquet sagittis id. Arcu bibendum at varius vel pharetra vel turpis nunc. Mollis nunc sed id semper risus in. Ac ut consequat semper viverra nam libero. Donec massa sapien faucibus et molestie ac feugiat sed. Posuere sollicitudin aliquam ultrices sagittis orci a. Porttitor leo a diam sollicitudin tempor id eu nisl. Id cursus metus aliquam eleifend mi in nulla posuere sollicitudin. Non enim praesent elementum facilisis leo vel fringilla est. Eget mauris pharetra et ultrices. Fermentum dui faucibus in ornare. Ultrices tincidunt arcu non sodales neque. Habitant morbi tristique senectus et netus et malesuada fames ac. Odio aenean sed adipiscing diam donec adipiscing. Nec dui nunc mattis enim ut tellus elementum. Dignissim diam quis enim lobortis.</p>
+<p>Pharetra sit amet aliquam id diam maecenas ultricies mi eget. Odio aenean sed adipiscing diam donec adipiscing tristique. Egestas dui id ornare arcu odio ut sem. Risus in hendrerit gravida rutrum quisque. Tellus elementum sagittis vitae et leo duis. Et molestie ac feugiat sed lectus. Volutpat est velit egestas dui id ornare arcu. Quis varius quam quisque id diam vel quam. Nunc mattis enim ut tellus elementum sagittis vitae. Faucibus et molestie ac feugiat sed lectus vestibulum. Donec ac odio tempor orci. Libero enim sed faucibus turpis in eu mi bibendum neque. Metus dictum at tempor commodo ullamcorper a lacus vestibulum sed. Justo donec enim diam vulputate.</p>
+<p>Sit amet nisl suscipit adipiscing bibendum est. Euismod nisi porta lorem mollis. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa. Porta non pulvinar neque laoreet. Lectus magna fringilla urna porttitor rhoncus dolor purus. Ac ut consequat semper viverra nam libero justo laoreet sit. Sit amet est placerat in. In nulla posuere sollicitudin aliquam. Tellus in metus vulputate eu scelerisque felis. Vel risus commodo viverra maecenas accumsan lacus. Ullamcorper sit amet risus nullam eget felis eget nunc lobortis. Cursus metus aliquam eleifend mi.</p>
+<h1 id="plugin-demonstration" tabindex="-1"><a class="header-anchor" href="#plugin-demonstration">Plugin Demonstration</a></h1>
+<p><img src="https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21502" alt="Header Image" class="header" /></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bold</td>
+<td><strong>Test</strong></td>
+</tr>
+<tr>
+<td>Italic</td>
+<td><em>Test</em></td>
+</tr>
+<tr>
+<td>Superscript</td>
+<td><sup>Test</sup></td>
+</tr>
+<tr>
+<td>Subscript</td>
+<td><sub>Test</sub></td>
+</tr>
+<tr>
+<td>Strikethrough</td>
+<td><s>Test</s></td>
+</tr>
+<tr>
+<td>Highlight</td>
+<td><mark>Test</mark></td>
+</tr>
+<tr>
+<td>Typographer</td>
+<td>© © ® ® ™ ™ § § ± “Test” ‘Test’</td>
+</tr>
+<tr>
+<td>Inline Code</td>
+<td><code>Test</code></td>
+</tr>
+<tr>
+<td>Emoji</td>
+<td>😃</td>
+</tr>
+<tr>
+<td>Adding Classes</td>
+<td><span class="text-secondary font-bold">Text</span></td>
+</tr>
+<tr>
+<td>Adding Buttons</td>
+<td><a href="/?go=group" class="btn btn-secondary text-lg">Group Travel</a></td>
+</tr>
+</tbody>
+</table>
+<!-- Will automatically update and sort -->
+<!-- Make sure {date-turnredafter="number"} is included -->
+<table data-turnredafter="30">
+<thead>
+<tr>
+<th>Trip Dates</th>
+<th>Proposal Deadlines</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>January/Early Spring (2023)</td>
+<td>April 1, 2022</td>
+</tr>
+<tr>
+<td>Spring Break (2023)</td>
+<td>June 15, 2022</td>
+</tr>
+<tr>
+<td>Summer May/June (2023)</td>
+<td>August 15, 2022</td>
+</tr>
+<tr>
+<td>Summer July/August (2023)</td>
+<td>October 1, 2022</td>
+</tr>
+<tr>
+<td>Fall (2023)</td>
+<td>February 15, 2023</td>
+</tr>
+</tbody>
+</table>
+<!-- Will automatically update and sort -->
+<!-- Make sure {date-turnredafter="number"} is included -->
+<table data-turnredafter="30">
+<thead>
+<tr>
+<th>Trip Dates</th>
+<th>Proposal Deadlines</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>January/Early Spring (2024)</td>
+<td>December 1, 2022</td>
+</tr>
+<tr>
+<td>Spring Break (2024)</td>
+<td>February 15, 2023</td>
+</tr>
+<tr>
+<td>Summer May/June (2023)</td>
+<td>April 30, 2022</td>
+</tr>
+<tr>
+<td>Summer July/August (2023)</td>
+<td>May 30, 2022</td>
+</tr>
+<tr>
+<td>Fall (2023)</td>
+<td>October 1, 2022</td>
+</tr>
+</tbody>
+</table>
+<nav class="table-of-contents not-prose"><ol><li><a href="#heading-1">Heading 1</a><ol><li><a href="#heading-2">Heading 2</a><ol><li><a href="#heading-3">Heading 3</a><ol></ol></li></ol></li></ol></li><li><a href="#plugin-demonstration">Plugin Demonstration</a></li></ol></nav>
+        </div>
       </div>
-    </div>
+    
 
-    <footer class="bg-opacity-85 bg-black relative">
-      <div class="py-5 flex flex-col justify-center items-center text-gray-400 text-xslg:text-sm text-center text-primary-content text-opacity-70 focus:outline-none font-medium">
+    
+
+
+    <footer class="relative bg-black bg-opacity-85">
+      <div class="flex flex-col items-center justify-center py-5 font-medium text-center text-gray-400 text-xslg:text-sm text-primary-content text-opacity-70 focus:outline-none">
         <a href="/" class="h-8 mb-2">
   <svg
   class="h-full"
@@ -2633,19 +2903,19 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
         <span>&copy; 2022 Liberty University. All Rights Reserved.</span>
 
-        <a class="mt-1 text-accent underline hover:text-accent-focus flex items-center justify-center gap-1" href="https://www.liberty.edu/osd/lu-send/staff/">
+        <a class="flex items-center justify-center gap-1 mt-1 underline text-accent hover:text-accent-focus" href="https://www.liberty.edu/osd/lu-send/staff/">
           <ion-icon name="call-outline">&nbsp;</ion-icon>
           <span>Contact Us</span>
         </a>
 
-        <a class="text-primary-content text-opacity-70 hover:text-opacity-50 underline flex items-center justify-center gap-1" href="https://github.com/lusend/testwebsite/edit/main/src/pages/faculty.md">
+        <a class="flex items-center justify-center gap-1 underline text-primary-content text-opacity-70 hover:text-opacity-50" href="https://github.com/lusend/testwebsite/edit/main/src/pages/faculty.md">
           <ion-icon name="create-outline">&nbsp;</ion-icon>
           <span>Edit Page</span>
         </a>
       </div>
     </footer>
 
-    <div id="planes" class="fixed top-0 left-0 w-full h-full z-0 pointer-events-none">&nbsp;</div>
+    <div id="planes" class="fixed top-0 left-0 z-0 w-full h-full pointer-events-none">&nbsp;</div>
   </div>
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

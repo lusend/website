@@ -1092,6 +1092,18 @@ Reset links to optimize for opt-in styling instead of opt-out.
   bottom: 0px;
 }
 
+#app .-bottom-16{
+  bottom: -4rem;
+}
+
+#app .-right-12{
+  right: -3rem;
+}
+
+#app .-left-12{
+  left: -3rem;
+}
+
 #app .top-\[calc\(100vh\+272px\)\]{
   top: calc(100vh + 272px);
 }
@@ -1132,16 +1144,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   top: 100%;
 }
 
-#app .-z-50{
-  z-index: -50;
-}
-
 #app .z-10{
   z-index: 10;
 }
 
 #app .z-0{
   z-index: 0;
+}
+
+#app .-z-50{
+  z-index: -50;
 }
 
 #app .z-50{
@@ -1372,16 +1384,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   min-width: 100%;
 }
 
+#app .max-w-full{
+  max-width: 100%;
+}
+
 #app .max-w-\[calc\(65ch\+16\.25rem\)\]{
   max-width: calc(65ch + 16.25rem);
 }
 
 #app .max-w-\[15rem\]{
   max-width: 15rem;
-}
-
-#app .max-w-full{
-  max-width: 100%;
 }
 
 #app .max-w-xs{
@@ -1392,16 +1404,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   max-width: 4rem;
 }
 
+#app .flex-auto{
+  flex: 1 1 auto;
+}
+
 #app .flex-1{
   flex: 1 1 0%;
 }
 
 #app .flex-initial{
   flex: 0 1 auto;
-}
-
-#app .flex-auto{
-  flex: 1 1 auto;
 }
 
 #app .flex-shrink{
@@ -1416,8 +1428,17 @@ Reset links to optimize for opt-in styling instead of opt-out.
   flex-grow: 1;
 }
 
+#app .basis-auto{
+  flex-basis: auto;
+}
+
 #app .basis-full{
   flex-basis: 100%;
+}
+
+#app .-rotate-90{
+  --tw-rotate: -90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 @-webkit-keyframes bounce{
@@ -1507,16 +1528,20 @@ Reset links to optimize for opt-in styling instead of opt-out.
   justify-content: space-around;
 }
 
+#app .gap-10{
+  gap: 2.5rem;
+}
+
+#app .gap-2{
+  gap: 0.5rem;
+}
+
 #app .gap-1{
   gap: 0.25rem;
 }
 
 #app .gap-5{
   gap: 1.25rem;
-}
-
-#app .gap-2{
-  gap: 0.5rem;
 }
 
 #app .space-x-1 > :not([hidden]) ~ :not([hidden]){
@@ -1573,6 +1598,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   border-radius: 1rem;
 }
 
+#app .rounded-t-2xl{
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+#app .rounded-b-2xl{
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
 #app .rounded-b-none{
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
@@ -1593,6 +1628,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   border-bottom-left-radius: 0px;
 }
 
+#app .bg-black{
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
 #app .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1601,11 +1641,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .bg-primary{
   --tw-bg-opacity: 1;
   background-color: rgb(10 37 78 / var(--tw-bg-opacity));
-}
-
-#app .bg-black{
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 #app .bg-primary-focus{
@@ -1623,16 +1658,24 @@ Reset links to optimize for opt-in styling instead of opt-out.
   background-color: rgb(153 0 0 / var(--tw-bg-opacity));
 }
 
+#app .bg-opacity-30{
+  --tw-bg-opacity: 0.3;
+}
+
+#app .bg-opacity-40{
+  --tw-bg-opacity: 0.4;
+}
+
+#app .bg-opacity-60{
+  --tw-bg-opacity: 0.6;
+}
+
 #app .bg-opacity-90{
   --tw-bg-opacity: 0.9;
 }
 
 #app .bg-opacity-80{
   --tw-bg-opacity: 0.8;
-}
-
-#app .bg-opacity-30{
-  --tw-bg-opacity: 0.3;
 }
 
 #app .bg-gradient-to-t{
@@ -1658,6 +1701,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .bg-no-repeat{
   background-repeat: no-repeat;
+}
+
+#app .p-8{
+  padding: 2rem;
+}
+
+#app .p-5{
+  padding: 1.25rem;
 }
 
 #app .p-2{
@@ -1712,6 +1763,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   padding-right: 1.25rem;
 }
 
+#app .pb-16{
+  padding-bottom: 4rem;
+}
+
 #app .pt-12{
   padding-top: 3rem;
 }
@@ -1762,9 +1817,18 @@ Reset links to optimize for opt-in styling instead of opt-out.
   line-height: 1.75rem;
 }
 
+#app .text-5xl{
+  font-size: 3rem;
+  line-height: 1;
+}
+
 #app .text-base{
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+#app .text-\[20rem\]{
+  font-size: 20rem;
 }
 
 #app .text-sm{
@@ -1775,11 +1839,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-#app .text-5xl{
-  font-size: 3rem;
-  line-height: 1;
 }
 
 #app .text-\[5em\]{
@@ -1834,6 +1893,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+#app .text-base-content{
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
 #app .text-base-300{
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
@@ -1854,11 +1918,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-#app .text-base-content{
-  --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity));
-}
-
 #app .text-primary{
   --tw-text-opacity: 1;
   color: rgb(10 37 78 / var(--tw-text-opacity));
@@ -1876,6 +1935,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .no-underline{
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
+}
+
+#app .opacity-30{
+  opacity: 0.3;
 }
 
 #app .opacity-10{
@@ -1898,6 +1961,24 @@ Reset links to optimize for opt-in styling instead of opt-out.
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+#app .backdrop-blur-sm{
+  --tw-backdrop-blur: blur(4px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+#app .transition-all{
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+#app .transition-transform{
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 #app .transition-colors{
   transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
@@ -1910,12 +1991,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
   transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-#app .transition-all{
-  transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1949,6 +2024,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   font-weight: inherit;
 }
 
+#app .hover\:rotate-1:hover{
+  --tw-rotate: 1deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+#app .hover\:-rotate-1:hover{
+  --tw-rotate: -1deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 #app .hover\:bg-primary-content:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1962,6 +2047,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .hover\:bg-secondary-focus:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(138 0 0 / var(--tw-bg-opacity));
+}
+
+#app .hover\:bg-opacity-50:hover{
+  --tw-bg-opacity: 0.5;
 }
 
 #app .hover\:bg-opacity-20:hover{
@@ -2010,6 +2099,21 @@ Reset links to optimize for opt-in styling instead of opt-out.
   --tw-bg-opacity: 0.1;
 }
 
+#app .group:hover .group-hover\:-translate-x-1{
+  --tw-translate-x: -0.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+#app .group:hover .group-hover\:rotate-\[-93deg\]{
+  --tw-rotate: -93deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+#app .group:hover .group-hover\:rotate-3{
+  --tw-rotate: 3deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 #app .peer:checked ~ .peer-checked\:translate-x-full{
   --tw-translate-x: 100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2033,8 +2137,42 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 @media (min-width: 768px){
 
+  #app .md\:min-h-\[20rem\]{
+    min-height: 20rem;
+  }
+
   #app .md\:max-w-none{
     max-width: none;
+  }
+
+  #app .md\:flex-1{
+    flex: 1 1 0%;
+  }
+
+  #app .md\:basis-0{
+    flex-basis: 0px;
+  }
+
+  #app .md\:flex-row{
+    flex-direction: row;
+  }
+
+  #app .md\:flex-row-reverse{
+    flex-direction: row-reverse;
+  }
+
+  #app .md\:rounded-none{
+    border-radius: 0px;
+  }
+
+  #app .md\:rounded-l-2xl{
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+  }
+
+  #app .md\:rounded-r-2xl{
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
   }
 
   #app .md\:p-8{
@@ -2044,6 +2182,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   #app .md\:px-6{
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  #app .md\:text-\[25rem\]{
+    font-size: 25rem;
   }
 }
 
@@ -2186,11 +2328,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 <p><em>The deployment status should be visible at the top of the page. Check the status by clicking on either of the status badges or visiting the <a href="https://github.com/lusend/testwebsite">repository</a>.</em></p>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/testwebsite/commit/7a1caf549bac6fef7d681f97d8e1d22b47656bf5" class="no-underline hover:underline" target="_blank">feat: ✨ Added TOC Auto Scroller<br />
+  <a href="https://github.com/lusend/testwebsite/commit/8eb7e78fb9a0dd0d79f77cb0520b26604bfdbf83" class="no-underline hover:underline" target="_blank">feat: ✨ Added Call to Actions<br />
 <br />
-Added an auto scroller to the table of contents if something gets out of view.</a>
+Added the ability to include call to actions. Also includes a couple extra hover animations to improve polish.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-19T00:52:56Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-19T02:38:17Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>

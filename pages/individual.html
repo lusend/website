@@ -1084,6 +1084,18 @@ Reset links to optimize for opt-in styling instead of opt-out.
   bottom: 0px;
 }
 
+#app .-bottom-16{
+  bottom: -4rem;
+}
+
+#app .-right-12{
+  right: -3rem;
+}
+
+#app .-left-12{
+  left: -3rem;
+}
+
 #app .top-\[calc\(100vh\+272px\)\]{
   top: calc(100vh + 272px);
 }
@@ -1124,16 +1136,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   top: 100%;
 }
 
-#app .-z-50{
-  z-index: -50;
-}
-
 #app .z-10{
   z-index: 10;
 }
 
 #app .z-0{
   z-index: 0;
+}
+
+#app .-z-50{
+  z-index: -50;
 }
 
 #app .z-50{
@@ -1364,16 +1376,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   min-width: 100%;
 }
 
+#app .max-w-full{
+  max-width: 100%;
+}
+
 #app .max-w-\[calc\(65ch\+16\.25rem\)\]{
   max-width: calc(65ch + 16.25rem);
 }
 
 #app .max-w-\[15rem\]{
   max-width: 15rem;
-}
-
-#app .max-w-full{
-  max-width: 100%;
 }
 
 #app .max-w-xs{
@@ -1384,16 +1396,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   max-width: 4rem;
 }
 
+#app .flex-auto{
+  flex: 1 1 auto;
+}
+
 #app .flex-1{
   flex: 1 1 0%;
 }
 
 #app .flex-initial{
   flex: 0 1 auto;
-}
-
-#app .flex-auto{
-  flex: 1 1 auto;
 }
 
 #app .flex-shrink{
@@ -1408,8 +1420,17 @@ Reset links to optimize for opt-in styling instead of opt-out.
   flex-grow: 1;
 }
 
+#app .basis-auto{
+  flex-basis: auto;
+}
+
 #app .basis-full{
   flex-basis: 100%;
+}
+
+#app .-rotate-90{
+  --tw-rotate: -90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 @-webkit-keyframes bounce{
@@ -1499,16 +1520,20 @@ Reset links to optimize for opt-in styling instead of opt-out.
   justify-content: space-around;
 }
 
+#app .gap-10{
+  gap: 2.5rem;
+}
+
+#app .gap-2{
+  gap: 0.5rem;
+}
+
 #app .gap-1{
   gap: 0.25rem;
 }
 
 #app .gap-5{
   gap: 1.25rem;
-}
-
-#app .gap-2{
-  gap: 0.5rem;
 }
 
 #app .space-x-1 > :not([hidden]) ~ :not([hidden]){
@@ -1565,6 +1590,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   border-radius: 1rem;
 }
 
+#app .rounded-t-2xl{
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+#app .rounded-b-2xl{
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
 #app .rounded-b-none{
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
@@ -1585,6 +1620,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   border-bottom-left-radius: 0px;
 }
 
+#app .bg-black{
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
 #app .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1593,11 +1633,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .bg-primary{
   --tw-bg-opacity: 1;
   background-color: rgb(10 37 78 / var(--tw-bg-opacity));
-}
-
-#app .bg-black{
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 #app .bg-primary-focus{
@@ -1615,16 +1650,24 @@ Reset links to optimize for opt-in styling instead of opt-out.
   background-color: rgb(153 0 0 / var(--tw-bg-opacity));
 }
 
+#app .bg-opacity-30{
+  --tw-bg-opacity: 0.3;
+}
+
+#app .bg-opacity-40{
+  --tw-bg-opacity: 0.4;
+}
+
+#app .bg-opacity-60{
+  --tw-bg-opacity: 0.6;
+}
+
 #app .bg-opacity-90{
   --tw-bg-opacity: 0.9;
 }
 
 #app .bg-opacity-80{
   --tw-bg-opacity: 0.8;
-}
-
-#app .bg-opacity-30{
-  --tw-bg-opacity: 0.3;
 }
 
 #app .bg-gradient-to-t{
@@ -1650,6 +1693,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .bg-no-repeat{
   background-repeat: no-repeat;
+}
+
+#app .p-8{
+  padding: 2rem;
+}
+
+#app .p-5{
+  padding: 1.25rem;
 }
 
 #app .p-2{
@@ -1704,6 +1755,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   padding-right: 1.25rem;
 }
 
+#app .pb-16{
+  padding-bottom: 4rem;
+}
+
 #app .pt-12{
   padding-top: 3rem;
 }
@@ -1754,9 +1809,18 @@ Reset links to optimize for opt-in styling instead of opt-out.
   line-height: 1.75rem;
 }
 
+#app .text-5xl{
+  font-size: 3rem;
+  line-height: 1;
+}
+
 #app .text-base{
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+#app .text-\[20rem\]{
+  font-size: 20rem;
 }
 
 #app .text-sm{
@@ -1767,11 +1831,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-#app .text-5xl{
-  font-size: 3rem;
-  line-height: 1;
 }
 
 #app .text-\[5em\]{
@@ -1826,6 +1885,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+#app .text-base-content{
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
 #app .text-base-300{
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
@@ -1846,11 +1910,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-#app .text-base-content{
-  --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity));
-}
-
 #app .text-primary{
   --tw-text-opacity: 1;
   color: rgb(10 37 78 / var(--tw-text-opacity));
@@ -1868,6 +1927,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .no-underline{
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
+}
+
+#app .opacity-30{
+  opacity: 0.3;
 }
 
 #app .opacity-10{
@@ -1890,6 +1953,24 @@ Reset links to optimize for opt-in styling instead of opt-out.
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+#app .backdrop-blur-sm{
+  --tw-backdrop-blur: blur(4px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+#app .transition-all{
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+#app .transition-transform{
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 #app .transition-colors{
   transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
@@ -1902,12 +1983,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
   transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-#app .transition-all{
-  transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1941,6 +2016,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   font-weight: inherit;
 }
 
+#app .hover\:rotate-1:hover{
+  --tw-rotate: 1deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+#app .hover\:-rotate-1:hover{
+  --tw-rotate: -1deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 #app .hover\:bg-primary-content:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1954,6 +2039,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .hover\:bg-secondary-focus:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(138 0 0 / var(--tw-bg-opacity));
+}
+
+#app .hover\:bg-opacity-50:hover{
+  --tw-bg-opacity: 0.5;
 }
 
 #app .hover\:bg-opacity-20:hover{
@@ -2002,6 +2091,21 @@ Reset links to optimize for opt-in styling instead of opt-out.
   --tw-bg-opacity: 0.1;
 }
 
+#app .group:hover .group-hover\:-translate-x-1{
+  --tw-translate-x: -0.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+#app .group:hover .group-hover\:rotate-\[-93deg\]{
+  --tw-rotate: -93deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+#app .group:hover .group-hover\:rotate-3{
+  --tw-rotate: 3deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 #app .peer:checked ~ .peer-checked\:translate-x-full{
   --tw-translate-x: 100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2025,8 +2129,42 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 @media (min-width: 768px){
 
+  #app .md\:min-h-\[20rem\]{
+    min-height: 20rem;
+  }
+
   #app .md\:max-w-none{
     max-width: none;
+  }
+
+  #app .md\:flex-1{
+    flex: 1 1 0%;
+  }
+
+  #app .md\:basis-0{
+    flex-basis: 0px;
+  }
+
+  #app .md\:flex-row{
+    flex-direction: row;
+  }
+
+  #app .md\:flex-row-reverse{
+    flex-direction: row-reverse;
+  }
+
+  #app .md\:rounded-none{
+    border-radius: 0px;
+  }
+
+  #app .md\:rounded-l-2xl{
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+  }
+
+  #app .md\:rounded-r-2xl{
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
   }
 
   #app .md\:p-8{
@@ -2036,6 +2174,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   #app .md\:px-6{
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  #app .md\:text-\[25rem\]{
+    font-size: 25rem;
   }
 }
 
@@ -2170,7 +2312,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
   <div  x-data="{ scroll: '' }" id="app">
     <div class="absolute  top-[calc(100vh+222px)]  overflow-none  h-[calc(100%-100vh-222px)]  w-full pointer-events-none -z-50" x-intersect:enter="scroll = 'bg-opacity-90'" x-intersect:leave="scroll = ''">&nbsp;</div>
-    <div class="fixed pointer-events-none top-0 right-0 bg-cover bg-no-repeat bg-center bg-scroll h-screen w-full bg-white" >&nbsp;</div>
+    <div class="fixed top-0 right-0 w-full h-screen bg-scroll bg-white bg-center bg-no-repeat bg-cover pointer-events-none" >&nbsp;</div>
     
 
 
@@ -2522,7 +2664,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
 </nav>
 
     
-      <div class="text-base flex flex-row justify-center px-8 pt-12 pb-5 z-10 relative mx-auto w-full bg-primary text-primary-content">
+      <div class="relative z-10 flex flex-row justify-center w-full px-8 pt-12 pb-5 mx-auto text-base bg-primary text-primary-content">
         <div class="max-w-[calc(65ch+16.25rem)] flex-1 flex flex-col gap-1 items-center navSmall:items-start">
           
 
@@ -2562,7 +2704,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
           
         </div>
       </div>
-      <svg id="header-wave" class="-mt-1 z-10 relative" viewBox="0 0 1200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg id="header-wave" class="relative z-10 -mt-1" viewBox="0 0 1200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M 1200,0 H 0 V 37 C 67,26 133,15 200,10 C 266,4 333,5 400,23 C 466,41 533,76 600,79 C 677,78 738,53 800,48 C 866,44 933,63 1000,62 C 1065,62 1131,41 1200,19 V 0 Z" fill="#0A254E"/>
       </svg>
     
@@ -2573,17 +2715,18 @@ Reset links to optimize for opt-in styling instead of opt-out.
     
 
 
-    <div id="mycontent" class="content min-h-screen flex flex-col lg:flex-row justify-start lg:justify-center px-8 py-10 z-10 relative gap-5 ">
-      <div x-data="{ toc: !!document.querySelector('.table-of-contents')}" x-show="toc" class="grow order-first lg:order-last max-w-[15rem] prose" x-cloak>
-        <div class="lg:sticky lg:top-20 text-base">
-          <h1 class="my-0 mb-5 text-2xl font-semibold">Table of Contents</h1>
-          <div class="table-of-contents-container lg:h-full lg:max-h-[calc(80vh-72px)] lg:overflow-y-auto overflow-x-hidden">&nbsp;</div>
+    
+      <div id="mycontent" class="content min-h-screen flex flex-col lg:flex-row justify-start lg:justify-center px-8 py-10 z-10 relative gap-5 ">
+        <div x-data="{ toc: !!document.querySelector('.table-of-contents')}" x-show="toc" class="grow order-first lg:order-last max-w-[15rem] prose" x-cloak>
+          <div class="text-base lg:sticky lg:top-20">
+            <h1 class="my-0 mb-5 text-2xl font-semibold">Table of Contents</h1>
+            <div class="table-of-contents-container lg:h-full lg:max-h-[calc(80vh-72px)] lg:overflow-y-auto overflow-x-hidden">&nbsp;</div>
+          </div>
         </div>
-      </div>
-      <div class="prose flex-initial order-last lg:order-first  ">
-        
+        <div class="prose flex-initial order-last lg:order-first  ">
+          
 
-        <h1 id="heading-1" tabindex="-1"><a class="header-anchor" href="#heading-1">Heading 1</a></h1>
+          <h1 id="heading-1" tabindex="-1"><a class="header-anchor" href="#heading-1">Heading 1</a></h1>
 <h2 id="heading-2" tabindex="-1"><a class="header-anchor" href="#heading-2">Heading 2</a></h2>
 <h3 id="heading-3" tabindex="-1"><a class="header-anchor" href="#heading-3">Heading 3</a></h3>
 <h4 id="heading-4" tabindex="-1"><a class="header-anchor" href="#heading-4">Heading 4</a></h4>
@@ -2595,11 +2738,15 @@ Reset links to optimize for opt-in styling instead of opt-out.
 <p>Sed lectus vestibulum mattis ullamcorper velit sed. Est ullamcorper eget nulla facilisi etiam. Nisl vel pretium lectus quam id leo in vitae. Arcu dui vivamus arcu felis bibendum. Vitae tortor condimentum lacinia quis vel eros donec ac. Arcu ac tortor dignissim convallis. Ac ut consequat semper viverra. Turpis massa tincidunt dui ut ornare lectus sit amet est. Magna eget est lorem ipsum dolor sit amet. Sed vulputate mi sit amet mauris commodo quis. Etiam non quam lacus suspendisse. Cras adipiscing enim eu turpis egestas pretium. Facilisis magna etiam tempor orci eu lobortis elementum nibh. Risus feugiat in ante metus dictum at. Vitae turpis massa sed elementum tempus egestas sed sed risus. Mattis rhoncus urna neque viverra justo. Duis ut diam quam nulla porttitor massa.</p>
 <p>Eget duis at tellus at urna condimentum. Vestibulum lorem sed risus ultricies tristique. Velit sed ullamcorper morbi tincidunt ornare massa eget egestas. Quam pellentesque nec nam aliquam. Nisl pretium fusce id velit ut tortor pretium. Cras fermentum odio eu feugiat pretium. Cursus risus at ultrices mi. Cras adipiscing enim eu turpis egestas pretium. Maecenas sed enim ut sem. Ultrices mi tempus imperdiet nulla. Velit laoreet id donec ultrices. Commodo elit at imperdiet dui accumsan. Et malesuada fames ac turpis egestas sed tempus urna. Lectus magna fringilla urna porttitor rhoncus.</p>
 <nav class="table-of-contents not-prose"><ol><li><a href="#heading-1">Heading 1</a><ol><li><a href="#heading-2">Heading 2</a><ol><li><a href="#heading-3">Heading 3</a><ol></ol></li></ol></li></ol></li></ol></nav>
+        </div>
       </div>
-    </div>
+    
 
-    <footer class="bg-opacity-85 bg-black relative">
-      <div class="py-5 flex flex-col justify-center items-center text-gray-400 text-xslg:text-sm text-center text-primary-content text-opacity-70 focus:outline-none font-medium">
+    
+
+
+    <footer class="relative bg-black bg-opacity-85">
+      <div class="flex flex-col items-center justify-center py-5 font-medium text-center text-gray-400 text-xslg:text-sm text-primary-content text-opacity-70 focus:outline-none">
         <a href="/" class="h-8 mb-2">
   <svg
   class="h-full"
@@ -2619,19 +2766,19 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
         <span>&copy; 2022 Liberty University. All Rights Reserved.</span>
 
-        <a class="mt-1 text-accent underline hover:text-accent-focus flex items-center justify-center gap-1" href="https://www.liberty.edu/osd/lu-send/staff/">
+        <a class="flex items-center justify-center gap-1 mt-1 underline text-accent hover:text-accent-focus" href="https://www.liberty.edu/osd/lu-send/staff/">
           <ion-icon name="call-outline">&nbsp;</ion-icon>
           <span>Contact Us</span>
         </a>
 
-        <a class="text-primary-content text-opacity-70 hover:text-opacity-50 underline flex items-center justify-center gap-1" href="https://github.com/lusend/testwebsite/edit/main/src/pages/individual.md">
+        <a class="flex items-center justify-center gap-1 underline text-primary-content text-opacity-70 hover:text-opacity-50" href="https://github.com/lusend/testwebsite/edit/main/src/pages/individual.md">
           <ion-icon name="create-outline">&nbsp;</ion-icon>
           <span>Edit Page</span>
         </a>
       </div>
     </footer>
 
-    <div id="planes" class="fixed top-0 left-0 w-full h-full z-0 pointer-events-none">&nbsp;</div>
+    <div id="planes" class="fixed top-0 left-0 z-0 w-full h-full pointer-events-none">&nbsp;</div>
   </div>
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
