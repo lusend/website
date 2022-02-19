@@ -3192,6 +3192,18 @@ try {
   tocExists = false;
 }
 
+function putInView(element) {
+  var offset = element.offsetTop - tocContainer.scrollTop;
+
+  if (offset + 10 > tocContainer.clientHeight || offset - 10 < 0) {
+    tocContainer.scroll({
+      top: offset + tocContainer.scrollTop - tocContainer.clientHeight / 2,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
+}
+
 function drawPath() {
   let path = [],
     pathIndent;
@@ -3269,15 +3281,19 @@ function syncPath() {
 
 function decideVisibility() {
   let prevItem;
+  let lastActive;
   tocElements.forEach((item, index) => {
     if (item.status === 'present') {
       item.element.classList.add(visibleClass);
+      lastActive = item;
     } else if (item.status === 'past') {
       if (prevItem) prevItem.element.classList.remove(visibleClass);
       item.element.classList.remove(visibleClass);
     } else if (item.status === 'future') {
-      if (prevItem && prevItem.status !== 'future')
+      if (prevItem && prevItem.status !== 'future') {
         prevItem.element.classList.add(visibleClass);
+        lastActive = prevItem;
+      }
       item.element.classList.remove(visibleClass);
     }
 
@@ -3286,7 +3302,10 @@ function decideVisibility() {
 
   if (prevItem && prevItem.status !== 'future') {
     prevItem.element.classList.add(visibleClass);
+    lastActive = prevItem;
   }
+
+  if (lastActive) putInView(lastActive.element);
 }
 
 function markVisibleSection(observedEls) {
