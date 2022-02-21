@@ -58,7 +58,7 @@ The opportunity for growth and community with other likeminded individuals was l
   title = 'Group Travel',
   link = link('group')
 %}
-At LU Send, we want students, faculty, and alumni at Liberty to have the opportunity to see the world! Working with both the Office of Spiritual Development and the Office of the Provost, LU Send helps to craft a variety of experiential learning opportunities for students during their time at Liberty. Click below to find out about upcoming opportunities.
+At LU Send, we want students, faculty, and alumni at Liberty to have the opportunity to see the world! Working with both the Office of Spiritual Development and the Office of the Provost, LU Send helps to craft a variety of experiential learning opportunities for students during their time at Liberty.
 {% endaction %}
 
 {% action actions,
@@ -74,5 +74,5 @@ LU Send has partnered with trusted study abroad organizations and built connecti
   title = 'Faculty Gateway',
   link = link('faculty')
 %}
-Whether you are planning international travel or domestic travel, LU Send works with you to develop the educational, cultural, spiritual, and logistical components of your trip and to ensure exceptional experiences for every Liberty student traveling with the University. Click below to find out how faculty members can create trips for your students.
+Whether you are planning international travel or domestic travel, LU Send works with you to develop the educational, cultural, spiritual, and logistical components of your trip and to ensure exceptional experiences for every Liberty student traveling with the University.
 {% endaction %}
