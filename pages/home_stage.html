@@ -1223,18 +1223,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
   bottom: 0px;
 }
 
-#app .-bottom-16{
-  bottom: -4rem;
-}
-
-#app .-right-12{
-  right: -3rem;
-}
-
-#app .-left-12{
-  left: -3rem;
-}
-
 #app .top-\[calc\(100vh\+272px\)\]{
   top: calc(100vh + 272px);
 }
@@ -1279,12 +1267,12 @@ Reset links to optimize for opt-in styling instead of opt-out.
   z-index: 10;
 }
 
-#app .z-0{
-  z-index: 0;
-}
-
 #app .-z-50{
   z-index: -50;
+}
+
+#app .z-0{
+  z-index: 0;
 }
 
 #app .z-50{
@@ -1575,11 +1563,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
   flex-basis: 100%;
 }
 
-#app .-rotate-90{
-  --tw-rotate: -90deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 @-webkit-keyframes spin{
 
   to{
@@ -1824,16 +1807,12 @@ Reset links to optimize for opt-in styling instead of opt-out.
   --tw-bg-opacity: 0.4;
 }
 
-#app .bg-opacity-60{
-  --tw-bg-opacity: 0.6;
+#app .bg-opacity-80{
+  --tw-bg-opacity: 0.8;
 }
 
 #app .bg-opacity-90{
   --tw-bg-opacity: 0.9;
-}
-
-#app .bg-opacity-80{
-  --tw-bg-opacity: 0.8;
 }
 
 #app .bg-gradient-to-t{
@@ -1881,6 +1860,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   padding: 1.5rem;
 }
 
+#app .px-5{
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 #app .px-8{
   padding-left: 2rem;
   padding-right: 2rem;
@@ -1914,11 +1898,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .py-1{
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-}
-
-#app .px-5{
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
 }
 
 #app .pb-16{
@@ -1980,18 +1959,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
   line-height: 1.75rem;
 }
 
-#app .text-5xl{
-  font-size: 3rem;
-  line-height: 1;
+#app .text-4xl{
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 #app .text-base{
   font-size: 1rem;
   line-height: 1.5rem;
-}
-
-#app .text-\[20rem\]{
-  font-size: 20rem;
 }
 
 #app .text-sm{
@@ -2002,6 +1977,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+#app .text-5xl{
+  font-size: 3rem;
+  line-height: 1;
 }
 
 #app .text-\[5em\]{
@@ -2093,10 +2073,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .no-underline{
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
-}
-
-#app .opacity-30{
-  opacity: 0.3;
 }
 
 #app .opacity-10{
@@ -2262,16 +2238,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-#app .group:hover .group-hover\:rotate-\[-93deg\]{
-  --tw-rotate: -93deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-#app .group:hover .group-hover\:rotate-3{
-  --tw-rotate: 3deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 #app .peer:checked ~ .peer-checked\:translate-x-full{
   --tw-translate-x: 100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2290,6 +2256,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
   #app .xs\:\!block{
     display: block !important;
+  }
+}
+
+@media (min-width: 640px){
+
+  #app .sm\:text-5xl{
+    font-size: 3rem;
+    line-height: 1;
   }
 }
 
@@ -2342,8 +2316,9 @@ Reset links to optimize for opt-in styling instead of opt-out.
     padding-right: 1.5rem;
   }
 
-  #app .md\:text-\[25rem\]{
-    font-size: 25rem;
+  #app .md\:text-lg{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
 
@@ -2469,6 +2444,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
   #app .lg\:px-8{
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1280px){
+
+  #app .xl\:text-xl{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
 
@@ -2877,57 +2860,54 @@ Reset links to optimize for opt-in styling instead of opt-out.
       <div class="flex items-stretch flex-col  md:flex-row  justify-center items-center">
         <div class="flex-auto md:flex-1 text-center bg-center bg-no-repeat bg-cover rounded-t-2xl md:rounded-none md:min-h-[20rem]  md:rounded-l-2xl  basis-auto md:basis-0" style="background-image: url('https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35534')">
           <div class="hover:bg-opacity-50 transition-all flex flex-col justify-center w-full h-full p-5 bg-black rounded-t-2xl md:rounded-none  md:rounded-l-2xl  backdrop-blur-sm bg-opacity-40">
-            <h1 class="text-5xl text-primary-content">Group Travel</h1>
+            <h1 class="text-4xl sm:text-5xl text-primary-content">Group Travel</h1>
             <a href="/?go=group" class="inline-flex items-center justify-center gap-2 group btn">
               <span class="text-base">See More</span>
               <ion-icon class="text-base transition-transform group-hover:-translate-x-1" name="arrow-forward-outline"></ion-icon>
             </a>
           </div>
         </div>
-        <div class="group flex-auto md:flex-1 text-base overflow-hidden font-medium bg-white bg-opacity-60 backdrop-blur-sm rounded-b-2xl md:rounded-none  md:rounded-r-2xl  basis-auto md:basis-0 text-base-content relative flex justify-center items-center">
-          <div class="z-10 p-5">
-            <p>At LU Send, we want students, faculty, and alumni at Liberty to have the opportunity to see the world! Working with both the Office of Spiritual Development and the Office of the Provost, LU Send helps to craft a variety of experiential learning opportunities for students during their time at Liberty. Click below to find out about upcoming opportunities.</p>
+        <div class="group flex-auto md:flex-1 text-base md:text-lg xl:text-xl overflow-hidden font-medium bg-white bg-opacity-80 backdrop-blur-sm rounded-b-2xl md:rounded-none  md:rounded-r-2xl  basis-auto md:basis-0 text-base-content relative flex justify-center items-center">
+          <div class="z-10 px-5">
+            <p>At LU Send, we want students, faculty, and alumni at Liberty to have the opportunity to see the world! Working with both the Office of Spiritual Development and the Office of the Provost, LU Send helps to craft a variety of experiential learning opportunities for students during their time at Liberty.</p>
 
           </div>
-          <ion-icon class="transition-transform absolute -bottom-16  -right-12 -rotate-90  group-hover:rotate-[-93deg]   z-0 opacity-30 text-base-content text-[20rem] md:text-[25rem]" name="paper-plane">&nbsp;</ion-icon>
         </div>
       </div>
     
       <div class="flex items-stretch flex-col  md:flex-row-reverse  justify-center items-center">
         <div class="flex-auto md:flex-1 text-center bg-center bg-no-repeat bg-cover rounded-t-2xl md:rounded-none md:min-h-[20rem]  md:rounded-r-2xl  basis-auto md:basis-0" style="background-image: url('https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35532')">
           <div class="hover:bg-opacity-50 transition-all flex flex-col justify-center w-full h-full p-5 bg-black rounded-t-2xl md:rounded-none  md:rounded-r-2xl  backdrop-blur-sm bg-opacity-40">
-            <h1 class="text-5xl text-primary-content">Individual Travel</h1>
+            <h1 class="text-4xl sm:text-5xl text-primary-content">Individual Travel</h1>
             <a href="/?go=individual" class="inline-flex items-center justify-center gap-2 group btn">
               <span class="text-base">See More</span>
               <ion-icon class="text-base transition-transform group-hover:-translate-x-1" name="arrow-forward-outline"></ion-icon>
             </a>
           </div>
         </div>
-        <div class="group flex-auto md:flex-1 text-base overflow-hidden font-medium bg-white bg-opacity-60 backdrop-blur-sm rounded-b-2xl md:rounded-none  md:rounded-l-2xl  basis-auto md:basis-0 text-base-content relative flex justify-center items-center">
-          <div class="z-10 p-5">
+        <div class="group flex-auto md:flex-1 text-base md:text-lg xl:text-xl overflow-hidden font-medium bg-white bg-opacity-80 backdrop-blur-sm rounded-b-2xl md:rounded-none  md:rounded-l-2xl  basis-auto md:basis-0 text-base-content relative flex justify-center items-center">
+          <div class="z-10 px-5">
             <p>LU Send has partnered with trusted study abroad organizations and built connections with organizations in business to offer over 150 locations around the world! There is at least one study abroad location or internship opportunity for every field of study at Liberty. Increase your marketability, gain college credit, and prepare for life after graduation in a global setting!</p>
 
           </div>
-          <ion-icon class="transition-transform absolute -bottom-16  -left-12 group-hover:rotate-3  z-0 opacity-30 text-base-content text-[20rem] md:text-[25rem]" name="paper-plane">&nbsp;</ion-icon>
         </div>
       </div>
     
       <div class="flex items-stretch flex-col  md:flex-row  justify-center items-center">
         <div class="flex-auto md:flex-1 text-center bg-center bg-no-repeat bg-cover rounded-t-2xl md:rounded-none md:min-h-[20rem]  md:rounded-l-2xl  basis-auto md:basis-0" style="background-image: url('https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35530')">
           <div class="hover:bg-opacity-50 transition-all flex flex-col justify-center w-full h-full p-5 bg-black rounded-t-2xl md:rounded-none  md:rounded-l-2xl  backdrop-blur-sm bg-opacity-40">
-            <h1 class="text-5xl text-primary-content">Faculty Gateway</h1>
+            <h1 class="text-4xl sm:text-5xl text-primary-content">Faculty Gateway</h1>
             <a href="/?go=faculty" class="inline-flex items-center justify-center gap-2 group btn">
               <span class="text-base">See More</span>
               <ion-icon class="text-base transition-transform group-hover:-translate-x-1" name="arrow-forward-outline"></ion-icon>
             </a>
           </div>
         </div>
-        <div class="group flex-auto md:flex-1 text-base overflow-hidden font-medium bg-white bg-opacity-60 backdrop-blur-sm rounded-b-2xl md:rounded-none  md:rounded-r-2xl  basis-auto md:basis-0 text-base-content relative flex justify-center items-center">
-          <div class="z-10 p-5">
-            <p>Whether you are planning international travel or domestic travel, LU Send works with you to develop the educational, cultural, spiritual, and logistical components of your trip and to ensure exceptional experiences for every Liberty student traveling with the University. Click below to find out how faculty members can create trips for your students.</p>
+        <div class="group flex-auto md:flex-1 text-base md:text-lg xl:text-xl overflow-hidden font-medium bg-white bg-opacity-80 backdrop-blur-sm rounded-b-2xl md:rounded-none  md:rounded-r-2xl  basis-auto md:basis-0 text-base-content relative flex justify-center items-center">
+          <div class="z-10 px-5">
+            <p>Whether you are planning international travel or domestic travel, LU Send works with you to develop the educational, cultural, spiritual, and logistical components of your trip and to ensure exceptional experiences for every Liberty student traveling with the University.</p>
 
           </div>
-          <ion-icon class="transition-transform absolute -bottom-16  -right-12 -rotate-90  group-hover:rotate-[-93deg]   z-0 opacity-30 text-base-content text-[20rem] md:text-[25rem]" name="paper-plane">&nbsp;</ion-icon>
         </div>
       </div>
     

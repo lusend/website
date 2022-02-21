@@ -1231,18 +1231,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
   bottom: 0px;
 }
 
-#app .-bottom-16{
-  bottom: -4rem;
-}
-
-#app .-right-12{
-  right: -3rem;
-}
-
-#app .-left-12{
-  left: -3rem;
-}
-
 #app .top-\[calc\(100vh\+272px\)\]{
   top: calc(100vh + 272px);
 }
@@ -1287,12 +1275,12 @@ Reset links to optimize for opt-in styling instead of opt-out.
   z-index: 10;
 }
 
-#app .z-0{
-  z-index: 0;
-}
-
 #app .-z-50{
   z-index: -50;
+}
+
+#app .z-0{
+  z-index: 0;
 }
 
 #app .z-50{
@@ -1583,11 +1571,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
   flex-basis: 100%;
 }
 
-#app .-rotate-90{
-  --tw-rotate: -90deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 @-webkit-keyframes spin{
 
   to{
@@ -1832,16 +1815,12 @@ Reset links to optimize for opt-in styling instead of opt-out.
   --tw-bg-opacity: 0.4;
 }
 
-#app .bg-opacity-60{
-  --tw-bg-opacity: 0.6;
+#app .bg-opacity-80{
+  --tw-bg-opacity: 0.8;
 }
 
 #app .bg-opacity-90{
   --tw-bg-opacity: 0.9;
-}
-
-#app .bg-opacity-80{
-  --tw-bg-opacity: 0.8;
 }
 
 #app .bg-gradient-to-t{
@@ -1889,6 +1868,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   padding: 1.5rem;
 }
 
+#app .px-5{
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 #app .px-8{
   padding-left: 2rem;
   padding-right: 2rem;
@@ -1922,11 +1906,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .py-1{
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-}
-
-#app .px-5{
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
 }
 
 #app .pb-16{
@@ -1988,18 +1967,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
   line-height: 1.75rem;
 }
 
-#app .text-5xl{
-  font-size: 3rem;
-  line-height: 1;
+#app .text-4xl{
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 #app .text-base{
   font-size: 1rem;
   line-height: 1.5rem;
-}
-
-#app .text-\[20rem\]{
-  font-size: 20rem;
 }
 
 #app .text-sm{
@@ -2010,6 +1985,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+#app .text-5xl{
+  font-size: 3rem;
+  line-height: 1;
 }
 
 #app .text-\[5em\]{
@@ -2101,10 +2081,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .no-underline{
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
-}
-
-#app .opacity-30{
-  opacity: 0.3;
 }
 
 #app .opacity-10{
@@ -2270,16 +2246,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-#app .group:hover .group-hover\:rotate-\[-93deg\]{
-  --tw-rotate: -93deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-#app .group:hover .group-hover\:rotate-3{
-  --tw-rotate: 3deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 #app .peer:checked ~ .peer-checked\:translate-x-full{
   --tw-translate-x: 100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2298,6 +2264,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
   #app .xs\:\!block{
     display: block !important;
+  }
+}
+
+@media (min-width: 640px){
+
+  #app .sm\:text-5xl{
+    font-size: 3rem;
+    line-height: 1;
   }
 }
 
@@ -2350,8 +2324,9 @@ Reset links to optimize for opt-in styling instead of opt-out.
     padding-right: 1.5rem;
   }
 
-  #app .md\:text-\[25rem\]{
-    font-size: 25rem;
+  #app .md\:text-lg{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
 
@@ -2480,6 +2455,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
   }
 }
 
+@media (min-width: 1280px){
+
+  #app .xl\:text-xl{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
 
     </style>
   </head>
@@ -2494,11 +2477,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 <p><em>The deployment status should be visible at the top of the page. Check the status by clicking on either of the status badges or visiting the <a href="https://github.com/lusend/testwebsite">repository</a>.</em></p>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/testwebsite/commit/0185557f248105bc1fd7aae992776067f1eec86a" class="no-underline hover:underline" target="_blank">docs: 📝 Updated Documentation<br />
+  <a href="https://github.com/lusend/testwebsite/commit/bf812ba84da65e3ef3040ff1715e9926048efd32" class="no-underline hover:underline" target="_blank">feat: 💄 Updated Actions<br />
 <br />
-Added Optimizations and Content sections to github pages front page. Also checked off the completion of the map.</a>
+Cleaned up action styles for better readability and mobile support</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-19T04:43:54Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-21T18:29:10Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
