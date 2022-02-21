@@ -472,7 +472,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
     }
 
 #app :is(h1, h2, h3, h4, h5, h6) > a.header-anchor:hover::before {
-        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' class='iconify iconify--ph' width='100%25' height='100%25' preserveAspectRatio='xMidYMid meet' viewBox='0 0 256 256'%3E%3Cpath d='M212.9 122.3l-30.3 30.3a56 56 0 0 1-79.2 0a12 12 0 1 1 16.9-16.9a32.2 32.2 0 0 0 45.3 0l30.3-30.3a32 32 0 0 0-45.3-45.3l-9.6 9.7a12 12 0 0 1-17-17l9.7-9.7a56 56 0 1 1 79.2 79.2zM115 186.2l-9.6 9.7a32 32 0 0 1-45.3-45.3l30.3-30.3a32.2 32.2 0 0 1 45.3 0a12 12 0 0 0 16.9-16.9a55.9 55.9 0 0 0-79.2 0l-30.3 30.3a56 56 0 0 0 79.2 79.2l9.7-9.7a12 12 0 0 0-17-17z' fill='currentColor'%3E%3C/path%3E%3C/svg%3E");
+        content: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIGFyaWEtaGlkZGVuPSd0cnVlJyB2aWV3Qm94PScwIDAgMjU2IDI1Nic+DQogIDxwYXRoDQogICAgZD0nbTIxMi45IDEyMi4zLTMwLjMgMzAuM2E1NiA1NiAwIDAgMS03OS4yIDAgMTIgMTIgMCAxIDEgMTYuOS0xNi45IDMyLjIgMzIuMiAwIDAgMCA0NS4zIDBsMzAuMy0zMC4zYTMyIDMyIDAgMCAwLTQ1LjMtNDUuM2wtOS42IDkuN2ExMiAxMiAwIDAgMS0xNy0xN2w5LjctOS43YTU2IDU2IDAgMSAxIDc5LjIgNzkuMnpNMTE1IDE4Ni4ybC05LjYgOS43YTMyIDMyIDAgMCAxLTQ1LjMtNDUuM2wzMC4zLTMwLjNhMzIuMiAzMi4yIDAgMCAxIDQ1LjMgMCAxMiAxMiAwIDAgMCAxNi45LTE2LjkgNTUuOSA1NS45IDAgMCAwLTc5LjIgMGwtMzAuMyAzMC4zYTU2IDU2IDAgMCAwIDc5LjIgNzkuMmw5LjctOS43YTEyIDEyIDAgMCAwLTE3LTE3eicNCiAgICBmaWxsPSdjdXJyZW50Q29sb3InIC8+DQo8L3N2Zz4NCg==');
         left: calc(2rem - 0.85em);
         position: absolute;
         width: 0.8em;
@@ -2477,11 +2477,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 <p><em>The deployment status should be visible at the top of the page. Check the status by clicking on either of the status badges or visiting the <a href="https://github.com/lusend/testwebsite">repository</a>.</em></p>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/testwebsite/commit/bf812ba84da65e3ef3040ff1715e9926048efd32" class="no-underline hover:underline" target="_blank">feat: 💄 Updated Actions<br />
+  <a href="https://github.com/lusend/testwebsite/commit/894941bfe6eb7e1c8684e159077932460c03910d" class="no-underline hover:underline" target="_blank">feat: ⚡ Added Production Minifier (Parcel JS)<br />
 <br />
-Cleaned up action styles for better readability and mobile support</a>
+Added a post build bundler to bundle pages (mostly minification more than anything else since only inlining is allowed). This ensures that (for the most part) edits can be made within the WYSIWYG without issue: both on the page and in the brochure.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-21T18:29:10Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-21T20:36:36Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
@@ -2541,7 +2541,7 @@ Cleaned up action styles for better readability and mobile support</a>
       </button>
     </div>
 
-    <script>
+    <script type="module">
       window.addEventListener('load', function () {
         preview('home', '/testwebsite/pages/home.html', '/testwebsite/pages/home_stage.html');
       })
@@ -2565,7 +2565,7 @@ Cleaned up action styles for better readability and mobile support</a>
       </button>
     </div>
 
-    <script>
+    <script type="module">
       window.addEventListener('load', function () {
         preview('faculty', '/testwebsite/pages/faculty.html', '/testwebsite/pages/faculty_stage.html');
       })
@@ -2592,7 +2592,7 @@ Cleaned up action styles for better readability and mobile support</a>
       </button>
     </div>
 
-    <script>
+    <script type="module">
       window.addEventListener('load', function () {
         preview('group', '/testwebsite/pages/group.html', '/testwebsite/pages/group_stage.html');
       })
@@ -2616,7 +2616,7 @@ Cleaned up action styles for better readability and mobile support</a>
       </button>
     </div>
 
-    <script>
+    <script type="module">
       window.addEventListener('load', function () {
         preview('group1', '/testwebsite/pages/group1.html', '/testwebsite/pages/group1_stage.html');
       })
@@ -2643,7 +2643,7 @@ Cleaned up action styles for better readability and mobile support</a>
       </button>
     </div>
 
-    <script>
+    <script type="module">
       window.addEventListener('load', function () {
         preview('group2', '/testwebsite/pages/group2.html', '/testwebsite/pages/group2_stage.html');
       })
@@ -2673,7 +2673,7 @@ Cleaned up action styles for better readability and mobile support</a>
       </button>
     </div>
 
-    <script>
+    <script type="module">
       window.addEventListener('load', function () {
         preview('individual', '/testwebsite/pages/individual.html', '/testwebsite/pages/individual_stage.html');
       })
@@ -2697,7 +2697,7 @@ Cleaned up action styles for better readability and mobile support</a>
       </button>
     </div>
 
-    <script>
+    <script type="module">
       window.addEventListener('load', function () {
         preview('individual1', '/testwebsite/pages/individual1.html', '/testwebsite/pages/individual1_stage.html');
       })
@@ -2721,7 +2721,7 @@ Cleaned up action styles for better readability and mobile support</a>
       </button>
     </div>
 
-    <script>
+    <script type="module">
       window.addEventListener('load', function () {
         preview('individual11', '/testwebsite/pages/individual11.html', '/testwebsite/pages/individual11_stage.html');
       })
@@ -2748,7 +2748,7 @@ Cleaned up action styles for better readability and mobile support</a>
       </button>
     </div>
 
-    <script>
+    <script type="module">
       window.addEventListener('load', function () {
         preview('individual12', '/testwebsite/pages/individual12.html', '/testwebsite/pages/individual12_stage.html');
       })
@@ -2778,7 +2778,7 @@ Cleaned up action styles for better readability and mobile support</a>
       </button>
     </div>
 
-    <script>
+    <script type="module">
       window.addEventListener('load', function () {
         preview('individual2', '/testwebsite/pages/individual2.html', '/testwebsite/pages/individual2_stage.html');
       })
@@ -2799,12 +2799,11 @@ Cleaned up action styles for better readability and mobile support</a>
       </div>
     </div>
 
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-    <script>
+    <script type="module">
       
 document.addEventListener('alpine:init', () => {
   Alpine.store('env', {
