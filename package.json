@@ -14,7 +14,7 @@
     "predev": "npm run clean",
     "prebuild": "npm run stage",
     "prestage": "npm run clean",
-    "postbuild": "npx parcel build dist/pages/* --dist-dir dist/pages --no-source-maps"
+    "postbuild": "npx parcel build 'dist/pages/**/*.html' 'dist/pages/*.html' --dist-dir dist/pages --no-source-maps"
   },
   "repository": {
     "type": "git",
