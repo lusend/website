@@ -95,12 +95,12 @@ let config = {
 
 window.togglePlanes = function (planes) {};
 
-const particles = $('#planes')
-  .particles()
-  .init(config, (container) => {
+tsParticles
+  .load('planes', config)
+  .then((container) => {
     window.togglePlanes = function (planes) {
       if (planes) {
-        $('#planes').css('opacity', 1);
+        document.getElementById('planes').style.opacity = 1;
         container.options.particles.size.value = 64;
         container.options.particles.opacity.value.min = 0.1;
         container.options.particles.opacity.value.max = 0.5;
@@ -111,7 +111,7 @@ const particles = $('#planes')
         container.options.particles.shape.image.src = planeBase64;
         container.start();
       } else {
-        $('#planes').css('opacity', 0);
+        document.getElementById('planes').style.opacity = 0;
         container.stop();
       }
     };
@@ -131,4 +131,7 @@ const particles = $('#planes')
         container.refresh();
       }
     );
+  })
+  .catch((error) => {
+    console.error(error);
   });
