@@ -31,9 +31,14 @@
   {% include "scripts/smoothscroll.js" %}
   {% include "scripts/wave.js" %}
   {% include "scripts/toc.js" %}
-  {% include "scripts/deadlines.js" %}
   {% include "scripts/planes.js" %}
+  {% include "scripts/deadlines.js" %}
   {% endset %}
+
+  {% if env != 'development' %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  {% endif %}
 
   <style>
     {{css | postcss | safe}}
