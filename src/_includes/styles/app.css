@@ -85,7 +85,7 @@
       text-decoration: underline;
 
       &::before {
-        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' aria-hidden='true' role='img' class='iconify iconify--ph' width='100%25' height='100%25' preserveAspectRatio='xMidYMid meet' viewBox='0 0 256 256'%3E%3Cpath d='M212.9 122.3l-30.3 30.3a56 56 0 0 1-79.2 0a12 12 0 1 1 16.9-16.9a32.2 32.2 0 0 0 45.3 0l30.3-30.3a32 32 0 0 0-45.3-45.3l-9.6 9.7a12 12 0 0 1-17-17l9.7-9.7a56 56 0 1 1 79.2 79.2zM115 186.2l-9.6 9.7a32 32 0 0 1-45.3-45.3l30.3-30.3a32.2 32.2 0 0 1 45.3 0a12 12 0 0 0 16.9-16.9a55.9 55.9 0 0 0-79.2 0l-30.3 30.3a56 56 0 0 0 79.2 79.2l9.7-9.7a12 12 0 0 0-17-17z' fill='currentColor'%3E%3C/path%3E%3C/svg%3E");
+        content: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIGFyaWEtaGlkZGVuPSd0cnVlJyB2aWV3Qm94PScwIDAgMjU2IDI1Nic+DQogIDxwYXRoDQogICAgZD0nbTIxMi45IDEyMi4zLTMwLjMgMzAuM2E1NiA1NiAwIDAgMS03OS4yIDAgMTIgMTIgMCAxIDEgMTYuOS0xNi45IDMyLjIgMzIuMiAwIDAgMCA0NS4zIDBsMzAuMy0zMC4zYTMyIDMyIDAgMCAwLTQ1LjMtNDUuM2wtOS42IDkuN2ExMiAxMiAwIDAgMS0xNy0xN2w5LjctOS43YTU2IDU2IDAgMSAxIDc5LjIgNzkuMnpNMTE1IDE4Ni4ybC05LjYgOS43YTMyIDMyIDAgMCAxLTQ1LjMtNDUuM2wzMC4zLTMwLjNhMzIuMiAzMi4yIDAgMCAxIDQ1LjMgMCAxMiAxMiAwIDAgMCAxNi45LTE2LjkgNTUuOSA1NS45IDAgMCAwLTc5LjIgMGwtMzAuMyAzMC4zYTU2IDU2IDAgMCAwIDc5LjIgNzkuMmw5LjctOS43YTEyIDEyIDAgMCAwLTE3LTE3eicNCiAgICBmaWxsPSdjdXJyZW50Q29sb3InIC8+DQo8L3N2Zz4NCg==');
         left: calc(2rem - 0.85em);
         position: absolute;
         width: 0.8em;

@@ -46,6 +46,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPairedAsyncShortcode('testimonial', testimonial);
   eleventyConfig.addPairedAsyncShortcode('action', action);
 
+  if (env !== 'development') {
+    eleventyConfig.addTransform('scriptmodule', (content) =>
+      content.replace(/<script>/g, `<script type="module">`)
+    );
+  }
+
   return {
     pathPrefix: env === 'development' ? '/' : '/testwebsite/',
     dir: {

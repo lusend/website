@@ -1,0 +1,13 @@
+{
+  "preset": [
+    "default",
+    {
+      "normalizeString": {
+        "preferredQuote": "single"
+      },
+      "discardComments": {
+        "removeAll": true
+      }
+    }
+  ]
+}
