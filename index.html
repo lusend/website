@@ -1395,6 +1395,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   display: block;
 }
 
+#app .inline-block{
+  display: inline-block;
+}
+
 #app .flex{
   display: flex;
 }
@@ -1441,6 +1445,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .h-16{
   height: 4rem;
+}
+
+#app .h-4{
+  height: 1rem;
 }
 
 #app .h-6{
@@ -2469,19 +2477,19 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
   <body>
     <div id="app">
-      <div class="prose prose-a:font-[initial] m-auto">
-        <p><a href="https://github.com/lusend/testwebsite/actions/workflows/build.yml"><img src="https://github.com/lusend/testwebsite/actions/workflows/build.yml/badge.svg" alt="Build and Deploy Website" /></a> <a href="https://github.com/lusend/testwebsite/actions/workflows/pages/pages-build-deployment"><img src="https://github.com/lusend/testwebsite/actions/workflows/pages/pages-build-deployment/badge.svg" alt="pages-build-deployment" /></a></p>
+      <div class="prose prose-a:font-[initial] m-auto p-5">
+        <p><a href="https://github.com/lusend/testwebsite/actions/workflows/build.yml" class="inline-block"><img src="https://github.com/lusend/testwebsite/actions/workflows/build.yml/badge.svg" alt="Build and Deploy Website" /></a> <a href="https://github.com/lusend/testwebsite/actions/workflows/pages/pages-build-deployment" class="inline-block"><img src="https://github.com/lusend/testwebsite/actions/workflows/pages/pages-build-deployment/badge.svg" alt="pages-build-deployment" /></a></p>
 <p><span id="status" class="text-xs font-semibold"> </span></p>
 <h1 id="lu-send-website" tabindex="-1"><a class="header-anchor" href="#lu-send-website">LU Send Website</a></h1>
 <p>All pages are listed below. Copy each page for the stage and/or production environments, or preview the page as desired. If the <code>Current Deployment Commit</code> does not match the most recent change made to the website, the website is still deploying. Please reload to check again.</p>
 <p><em>The deployment status should be visible at the top of the page. Check the status by clicking on either of the status badges or visiting the <a href="https://github.com/lusend/testwebsite">repository</a>.</em></p>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/testwebsite/commit/275b2d9b3b36db74731776b0b775d6beef0cabaa" class="no-underline hover:underline" target="_blank">feat: 🎨 Improved Preview<br />
+  <a href="https://github.com/lusend/testwebsite/commit/1ebba40fd8a7076b3e981adf377d1ca536832ec1" class="no-underline hover:underline" target="_blank">style: 💄 Cleaned up Preview Styles<br />
 <br />
-The only thing that will not work in the preview now is any jQuery code (only the map and deadlines as of this commit). Mobile support and utf-8 encoding is now supported.</a>
+Improved preview styles (better responsiveness for mobile, clearer annotation of nested pages).</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-21T21:07:53Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-21T21:35:19Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
@@ -2528,9 +2536,12 @@ The only thing that will not work in the preview now is any jQuery code (only th
         
           
 
-  <div class="mb-2">
+  <div class="mb-5">
     <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Home</div>
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        
+        <span>Home</span>
+      </div>
       <button id="home_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
@@ -2552,9 +2563,16 @@ The only thing that will not work in the preview now is any jQuery code (only th
     
       
 
-  <div class="mb-2">
+  <div class="mb-5">
     <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Faculty Gateway</div>
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        
+          <svg class="h-4" style="margin-left: 20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
+          </svg>
+        
+        <span>Faculty Gateway</span>
+      </div>
       <button id="faculty_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
@@ -2579,9 +2597,16 @@ The only thing that will not work in the preview now is any jQuery code (only th
     
       
 
-  <div class="mb-2">
+  <div class="mb-5">
     <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Group Travel</div>
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        
+          <svg class="h-4" style="margin-left: 20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
+          </svg>
+        
+        <span>Group Travel</span>
+      </div>
       <button id="group_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
@@ -2603,9 +2628,16 @@ The only thing that will not work in the preview now is any jQuery code (only th
     
       
 
-  <div class="mb-2">
+  <div class="mb-5">
     <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Group Travel 1</div>
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        
+          <svg class="h-4" style="margin-left: 40px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
+          </svg>
+        
+        <span>Group Travel 1</span>
+      </div>
       <button id="group1_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
@@ -2630,9 +2662,16 @@ The only thing that will not work in the preview now is any jQuery code (only th
     
       
 
-  <div class="mb-2">
+  <div class="mb-5">
     <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Group Travel 2</div>
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        
+          <svg class="h-4" style="margin-left: 40px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
+          </svg>
+        
+        <span>Group Travel 2</span>
+      </div>
       <button id="group2_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
@@ -2660,9 +2699,16 @@ The only thing that will not work in the preview now is any jQuery code (only th
     
       
 
-  <div class="mb-2">
+  <div class="mb-5">
     <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Individual Travel</div>
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        
+          <svg class="h-4" style="margin-left: 20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
+          </svg>
+        
+        <span>Individual Travel</span>
+      </div>
       <button id="individual_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
@@ -2684,9 +2730,16 @@ The only thing that will not work in the preview now is any jQuery code (only th
     
       
 
-  <div class="mb-2">
+  <div class="mb-5">
     <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Individual Travel 1</div>
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        
+          <svg class="h-4" style="margin-left: 40px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
+          </svg>
+        
+        <span>Individual Travel 1</span>
+      </div>
       <button id="individual1_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
@@ -2708,9 +2761,16 @@ The only thing that will not work in the preview now is any jQuery code (only th
     
       
 
-  <div class="mb-2">
+  <div class="mb-5">
     <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Individual Travel 1_1</div>
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        
+          <svg class="h-4" style="margin-left: 60px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
+          </svg>
+        
+        <span>Individual Travel 1_1</span>
+      </div>
       <button id="individual11_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
@@ -2735,9 +2795,16 @@ The only thing that will not work in the preview now is any jQuery code (only th
     
       
 
-  <div class="mb-2">
+  <div class="mb-5">
     <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Individual Travel 1_2</div>
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        
+          <svg class="h-4" style="margin-left: 60px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
+          </svg>
+        
+        <span>Individual Travel 1_2</span>
+      </div>
       <button id="individual12_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
@@ -2765,9 +2832,16 @@ The only thing that will not work in the preview now is any jQuery code (only th
     
       
 
-  <div class="mb-2">
+  <div class="mb-5">
     <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex- bg-base-300">Individual Travel 2</div>
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        
+          <svg class="h-4" style="margin-left: 40px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
+          </svg>
+        
+        <span>Individual Travel 2</span>
+      </div>
       <button id="individual2_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
