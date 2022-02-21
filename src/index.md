@@ -2,7 +2,7 @@
 layout: preview
 ---
 
-[![Build and Deploy Website](https://github.com/lusend/testwebsite/actions/workflows/build.yml/badge.svg)](https://github.com/lusend/testwebsite/actions/workflows/build.yml) [![pages-build-deployment](https://github.com/lusend/testwebsite/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/lusend/testwebsite/actions/workflows/pages/pages-build-deployment)
+[![Build and Deploy Website](https://github.com/lusend/testwebsite/actions/workflows/build.yml/badge.svg)](https://github.com/lusend/testwebsite/actions/workflows/build.yml){.inline-block} [![pages-build-deployment](https://github.com/lusend/testwebsite/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/lusend/testwebsite/actions/workflows/pages/pages-build-deployment){.inline-block}
 
 <span id="status" class="text-xs font-semibold">&nbsp;</span>
 
