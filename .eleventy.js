@@ -47,9 +47,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPairedAsyncShortcode('action', action);
 
   if (env !== 'development') {
-    eleventyConfig.addTransform('scriptmodule', (content) =>
-      content.replace(/<script>/g, `<script type="module">`)
-    );
+    eleventyConfig.addTransform('scriptmodule', (content, outputPath) => {
+      if (outputPath === 'index.html')
+        return content.replace(/<script>/g, `<script type="module">`);
+      return content;
+    });
   }
 
   return {
