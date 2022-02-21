@@ -2485,11 +2485,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 <p><em>The deployment status should be visible at the top of the page. Check the status by clicking on either of the status badges or visiting the <a href="https://github.com/lusend/testwebsite">repository</a>.</em></p>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/testwebsite/commit/1ebba40fd8a7076b3e981adf377d1ca536832ec1" class="no-underline hover:underline" target="_blank">style: 💄 Cleaned up Preview Styles<br />
+  <a href="https://github.com/lusend/testwebsite/commit/a5038202536f66278dd4dbb96edb6ed333311d40" class="no-underline hover:underline" target="_blank">ci: 💚 Added Support for Nested Pages<br />
 <br />
-Improved preview styles (better responsiveness for mobile, clearer annotation of nested pages).</a>
+Added support for nested pages by allowing parcel JS to look within directories as well.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-21T21:35:19Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-21T21:44:20Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
@@ -2591,6 +2591,74 @@ Improved preview styles (better responsiveness for mobile, clearer annotation of
   </div>
 
   
+    
+      
+
+  <div class="mb-5">
+    <div class="flex flex-wrap items-stretch">
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        
+          <svg class="h-4" style="margin-left: 40px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
+          </svg>
+        
+        <span>Faculty Gateway Test</span>
+      </div>
+      <button id="test_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+        <ion-icon name="open-outline">&nbsp;</ion-icon>
+        <span>Preview</span>
+      </button>
+      <button id="test_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+        <span id="test_copytext">Copy</span>
+      </button>
+    </div>
+
+    <script>
+      window.addEventListener('load', function () {
+        preview('test', '/testwebsite/pages/test/test.html', '/testwebsite/pages/test/test_stage.html');
+      })
+    </script>
+  </div>
+
+  
+    
+  
+
+    
+      
+
+  <div class="mb-5">
+    <div class="flex flex-wrap items-stretch">
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        
+          <svg class="h-4" style="margin-left: 40px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
+          </svg>
+        
+        <span>Faculty Gateway Test 2</span>
+      </div>
+      <button id="bro_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+        <ion-icon name="open-outline">&nbsp;</ion-icon>
+        <span>Preview</span>
+      </button>
+      <button id="bro_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+        <span id="bro_copytext">Copy</span>
+      </button>
+    </div>
+
+    <script>
+      window.addEventListener('load', function () {
+        preview('bro', '/testwebsite/pages/test/test/bro.html', '/testwebsite/pages/test/test/bro_stage.html');
+      })
+    </script>
+  </div>
+
+  
+    
+  
+
     
   
 
