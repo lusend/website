@@ -66,6 +66,7 @@ _The deployment status should be visible at the top of the page. Check the statu
 ### Default Architecture
 
 ```yaml
+title: undefined
 planes: false,
 header: true,
 full: false,
@@ -76,12 +77,16 @@ hero: '',
 background: '',
 order: [],
 nav:
-  title: undefined
+  title: {{ "{{ title }}" }}
   parent: undefined
   order: undefined
 ```
 
 ### Options
+
+#### `title`
+
+The title of the page. Will be used in the header if included. Has no default.
 
 #### `planes`
 
@@ -127,7 +132,7 @@ This will result in an order of `content`, then `actions`, then `testimonials`.
 
 #### `nav`
 
-This option allows you to define navigation heirarchy and will apply to the navigation bar as well as the breadcrumbs if the header is visible. If you set the `parent` option to a slug (the file name of a page without the extension), that slug will become its parent and the link in the header will be nested under its parent. If you set the `title` option, you can have a separate title for your navbar and breadcrumbs. If you set the `order` option to a number, you can manually position an item relative to its siblings.
+This option allows you to define navigation heirarchy and will apply to the navigation bar as well as the breadcrumbs if the header is visible. If you set the `parent` option to a slug (the file name of a page without the extension), that slug will become its parent and the link in the header will be nested under its parent. If you set the `title` option, you can have a separate title for your navbar and breadcrumbs. Otherwise, it defaults to the base title. If you set the `order` option to a number, you can manually position an item relative to its siblings.
 
 </details>
 
