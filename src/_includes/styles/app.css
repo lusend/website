@@ -10,7 +10,7 @@
 
   /* Buttons */
   .btn {
-    @apply !text-white !no-underline inline-block animate-click m-0 focus:scale-95 active:scale-90 active:animate-none !font-medium rounded-md text-sm px-5 py-2.5 text-center;
+    @apply !text-white !no-underline inline-block whitespace-normal animate-click m-0 focus:scale-95 active:scale-90 active:animate-none !font-medium rounded-md text-sm px-5 py-2.5 text-center;
 
     & {
       @apply bg-primary hover:bg-primary-focus;
@@ -22,6 +22,10 @@
 
     &-secondary {
       @apply bg-secondary hover:bg-secondary-focus;
+    }
+
+    &-full {
+      @apply block m-auto text-lg w-fit;
     }
   }
 
@@ -51,11 +55,11 @@
     } */
 
     li.visible > a {
-      @apply lg:font-semibold lg:translate-x-3;
+      @apply lg:font-medium lg:translate-x-3;
     }
 
     li > a:hover {
-      @apply font-bold;
+      @apply underline;
     }
 
     li > a {

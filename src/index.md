@@ -43,6 +43,8 @@ _The deployment status should be visible at the top of the page. Check the statu
 | Emoji                         | `:) OR :thumbsdown:`                                     | :thumbsdown: :1st_place_medal: :) :adult: :( :P       |
 | Adding Classes                | `[Text]{.text-accent .font-bold}`                        | [Text]{.text-secondary .font-bold}                    |
 | Adding Buttons                | {{ "`[text]({{link(slug)}} OR link){.btn}`" }}           | [Button](#){.btn}                                     |
+| Adding Buttons Secondary      | {{ "`[text](link){.btn .btn-secondary}`" }}              | [Button](#){.btn .btn-secondary}                      |
+| Adding Buttons Full           | {{ "`[text](link){.btn .btn-full}`" }}                   | [Button](#){.btn .btn-full}                           |
 | Header Images                 | `![description](link){.header}`                          | ![Header Image](https://cataas.com/cat){.header .h-8} |
 | Regular Images                | `![description](link)`                                   | ![Header Image](https://cataas.com/cat){.h-8}         |
 | Current Year                  | {{ "`{% year %}`" }}                                     | {% year %}                                            |
@@ -66,6 +68,7 @@ _The deployment status should be visible at the top of the page. Check the statu
 ### Default Architecture
 
 ```yaml
+type: page
 title: undefined
 planes: false,
 header: true,
@@ -83,6 +86,10 @@ nav:
 ```
 
 ### Options
+
+#### `type`
+
+If set to `brochure`, the layout will be specific to a brochure page rather than a normal page. Defaults to `page`.
 
 #### `title`
 
@@ -162,10 +169,20 @@ This option allows you to define navigation heirarchy and will apply to the navi
 - [x] Add CSS minification
 - [x] Add HTML minification
 - [x] Add JS minification
+- [x] Optimize Testimonial Images
+- [x] Optimize Home Images
+- [x] Optimize Individual Images
+- [ ] Optimize Faculty Images
+- [ ] Optimize Program Process Images
+- [ ] Optimize Getting Started Images
+- [ ] Optimize Individual Programs Images
+- [ ] Optimize Policies Images
+- [ ] Optimize Int Proposal Images
+- [ ] Optimize Dom Proposal Images
 
 ### Content
 
-- [ ] Add Correct Content to Pages
+- [x] Add Correct Content to Pages
 - [x] Document Usage of Website
 
 </details>
