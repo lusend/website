@@ -2,12 +2,15 @@ document.addEventListener('DOMContentLoaded', function () {
   if (document.querySelector('.splide')) {
     const splide = new Splide('.splide', {
       type: 'loop',
-      speed: 700,
+      speed: 400,
+      start: 1,
       gap: '2rem',
+      perMove: 1,
       arrows: false,
       padding: '10%',
       mediaQuery: 'min',
-      keyboard: false,
+      keyboard: 'focus',
+      waitForTransition: false,
       breakpoints: {
         640: {
           padding: '24%'
@@ -21,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       focus: 'center',
       drag: 'free',
-      lazyLoad: 'nearby',
       autoScroll: {
         speed: 0.25
       }
