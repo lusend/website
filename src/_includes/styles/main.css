@@ -33,3 +33,7 @@
 .prose :where(a):not(:where([class~='not-prose'] *)) {
   font-weight: inherit;
 }
+
+.prose :where(tbody td):not(:where([class~='not-prose'] *)) {
+  @apply align-middle;
+}

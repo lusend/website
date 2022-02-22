@@ -5,7 +5,7 @@ custom: true
 nav:
   title: Group Travel
   parent: home
-  order: 2
+  order: 1
 ---
 
 {% set js %}
