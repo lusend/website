@@ -283,6 +283,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .btn{
   margin: 0px;
+  display: inline-block !important;
 }
 
 @-webkit-keyframes click{
@@ -1283,6 +1284,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   z-index: 0;
 }
 
+#app .z-20{
+  z-index: 20;
+}
+
 #app .z-50{
   z-index: 50;
 }
@@ -1303,14 +1308,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
   margin: auto;
 }
 
-#app .mx-auto{
-  margin-left: auto;
-  margin-right: auto;
-}
-
 #app .my-0{
   margin-top: 0px;
   margin-bottom: 0px;
+}
+
+#app .mx-auto{
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #app .my-1{
@@ -1331,8 +1336,8 @@ Reset links to optimize for opt-in styling instead of opt-out.
   margin-bottom: 0.5rem;
 }
 
-#app .-mt-1{
-  margin-top: -0.25rem;
+#app .ml-1{
+  margin-left: 0.25rem;
 }
 
 #app .mb-5{
@@ -1343,8 +1348,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   margin-top: 0.25rem;
 }
 
-#app .ml-1{
-  margin-left: 0.25rem;
+#app .mt-3{
+  margin-top: 0.75rem;
+}
+
+#app .-mt-1{
+  margin-top: -0.25rem;
+}
+
+#app .-mt-20{
+  margin-top: -5rem;
 }
 
 #app .mt-4{
@@ -1491,6 +1504,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   min-height: 100vh;
 }
 
+#app .min-h-\[100vh\]{
+  min-height: 100vh;
+}
+
 #app .min-h-\[90vh\]{
   min-height: 90vh;
 }
@@ -1515,24 +1532,28 @@ Reset links to optimize for opt-in styling instead of opt-out.
   width: 3.5rem;
 }
 
-#app .min-w-\[15rem\]{
-  min-width: 15rem;
+#app .min-w-\[18rem\]{
+  min-width: 18rem;
 }
 
 #app .min-w-full{
   min-width: 100%;
 }
 
+#app .min-w-\[15rem\]{
+  min-width: 15rem;
+}
+
 #app .max-w-full{
   max-width: 100%;
 }
 
-#app .max-w-\[calc\(65ch\+16\.25rem\)\]{
-  max-width: calc(65ch + 16.25rem);
-}
-
 #app .max-w-\[15rem\]{
   max-width: 15rem;
+}
+
+#app .max-w-\[calc\(65ch\+16\.25rem\)\]{
+  max-width: calc(65ch + 16.25rem);
 }
 
 #app .max-w-xs{
@@ -1547,12 +1568,12 @@ Reset links to optimize for opt-in styling instead of opt-out.
   flex: 1 1 auto;
 }
 
-#app .flex-1{
-  flex: 1 1 0%;
-}
-
 #app .flex-initial{
   flex: 0 1 auto;
+}
+
+#app .flex-1{
+  flex: 1 1 0%;
 }
 
 #app .flex-shrink{
@@ -1577,6 +1598,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .basis-full{
   flex-basis: 100%;
+}
+
+#app .rotate-1{
+  --tw-rotate: 1deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+#app .-rotate-1{
+  --tw-rotate: -1deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 @-webkit-keyframes spin{
@@ -1739,6 +1770,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   white-space: nowrap;
 }
 
+#app .rounded-2xl{
+  border-radius: 1rem;
+}
+
 #app .rounded-md{
   border-radius: 0.375rem;
 }
@@ -1749,10 +1784,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .rounded-full{
   border-radius: 9999px;
-}
-
-#app .rounded-2xl{
-  border-radius: 1rem;
 }
 
 #app .rounded-t-2xl{
@@ -1815,10 +1846,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
   background-color: rgb(153 0 0 / var(--tw-bg-opacity));
 }
 
-#app .bg-opacity-30{
-  --tw-bg-opacity: 0.3;
-}
-
 #app .bg-opacity-40{
   --tw-bg-opacity: 0.4;
 }
@@ -1827,8 +1854,8 @@ Reset links to optimize for opt-in styling instead of opt-out.
   --tw-bg-opacity: 0.8;
 }
 
-#app .bg-opacity-90{
-  --tw-bg-opacity: 0.9;
+#app .bg-opacity-95{
+  --tw-bg-opacity: 0.95;
 }
 
 #app .bg-gradient-to-t{
@@ -1920,6 +1947,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   padding-bottom: 4rem;
 }
 
+#app .pl-0{
+  padding-left: 0px;
+}
+
 #app .pt-12{
   padding-top: 3rem;
 }
@@ -1928,8 +1959,8 @@ Reset links to optimize for opt-in styling instead of opt-out.
   padding-bottom: 1.25rem;
 }
 
-#app .pl-0{
-  padding-left: 0px;
+#app .pt-20{
+  padding-top: 5rem;
 }
 
 #app .pt-2{
@@ -2052,9 +2083,9 @@ Reset links to optimize for opt-in styling instead of opt-out.
   color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
-#app .text-base-300{
+#app .text-primary-content-fade{
   --tw-text-opacity: 1;
-  color: rgb(209 213 219 / var(--tw-text-opacity));
+  color: rgb(197 197 197 / var(--tw-text-opacity));
 }
 
 #app .text-accent{
@@ -2062,9 +2093,9 @@ Reset links to optimize for opt-in styling instead of opt-out.
   color: rgb(155 199 238 / var(--tw-text-opacity));
 }
 
-#app .text-primary-content-fade{
+#app .text-base-300{
   --tw-text-opacity: 1;
-  color: rgb(197 197 197 / var(--tw-text-opacity));
+  color: rgb(209 213 219 / var(--tw-text-opacity));
 }
 
 #app .text-secondary-content{
@@ -2093,6 +2124,12 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .opacity-10{
   opacity: 0.1;
+}
+
+#app .shadow-lg{
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 #app .shadow-md{
@@ -2174,14 +2211,8 @@ Reset links to optimize for opt-in styling instead of opt-out.
   font-weight: inherit;
 }
 
-#app .hover\:rotate-1:hover{
-  --tw-rotate: 1deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-#app .hover\:-rotate-1:hover{
-  --tw-rotate: -1deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+#app .prose :where(tbody td):not(:where([class~='not-prose'] *)){
+  vertical-align: middle;
 }
 
 #app .hover\:bg-primary-content:hover{
@@ -2254,6 +2285,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+#app .group:hover .group-hover\:rotate-0{
+  --tw-rotate: 0deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 #app .peer:checked ~ .peer-checked\:translate-x-full{
   --tw-translate-x: 100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2280,6 +2316,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   #app .sm\:text-5xl{
     font-size: 3rem;
     line-height: 1;
+  }
+
+  #app .sm\:leading-tight{
+    line-height: 1.25;
   }
 }
 
@@ -2327,6 +2367,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
     padding: 2rem;
   }
 
+  #app .md\:px-12{
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
   #app .md\:px-6{
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -2336,9 +2381,18 @@ Reset links to optimize for opt-in styling instead of opt-out.
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
+
+  #app .md\:text-5xl{
+    font-size: 3rem;
+    line-height: 1;
+  }
 }
 
 @media (min-width: 870px){
+
+  #app .navSmall\:mt-0{
+    margin-top: 0px;
+  }
 
   #app .navSmall\:mr-0{
     margin-right: 0px;
@@ -2457,6 +2511,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
     border-top-right-radius: 0.5rem;
   }
 
+  #app .lg\:px-20{
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
   #app .lg\:px-8{
     padding-left: 2rem;
     padding-right: 2rem;
@@ -2485,11 +2544,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 <p><em>The deployment status should be visible at the top of the page. Check the status by clicking on either of the status badges or visiting the <a href="https://github.com/lusend/testwebsite">repository</a>.</em></p>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/testwebsite/commit/a5038202536f66278dd4dbb96edb6ed333311d40" class="no-underline hover:underline" target="_blank">ci: 💚 Added Support for Nested Pages<br />
+  <a href="https://github.com/lusend/testwebsite/commit/e5861f7053c3ad6079b2f4d43eb2ab4f84ff7d42" class="no-underline hover:underline" target="_blank">feat: ✨ Style Tweaks and Nav Update<br />
 <br />
-Added support for nested pages by allowing parcel JS to look within directories as well.</a>
+Updated the navigation to include the actual production pages. Content is not up-to-date as of this commit. Also tweaked a couple nav, table, button and testimonial styles.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-21T21:44:20Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-22T18:53:33Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
@@ -2571,108 +2630,6 @@ Added support for nested pages by allowing parcel JS to look within directories 
             <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
           </svg>
         
-        <span>Faculty Gateway</span>
-      </div>
-      <button id="faculty_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
-        <ion-icon name="open-outline">&nbsp;</ion-icon>
-        <span>Preview</span>
-      </button>
-      <button id="faculty_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
-        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
-        <span id="faculty_copytext">Copy</span>
-      </button>
-    </div>
-
-    <script>
-      window.addEventListener('load', function () {
-        preview('faculty', '/testwebsite/pages/faculty.html', '/testwebsite/pages/faculty_stage.html');
-      })
-    </script>
-  </div>
-
-  
-    
-      
-
-  <div class="mb-5">
-    <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
-        
-          <svg class="h-4" style="margin-left: 40px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
-          </svg>
-        
-        <span>Faculty Gateway Test</span>
-      </div>
-      <button id="test_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
-        <ion-icon name="open-outline">&nbsp;</ion-icon>
-        <span>Preview</span>
-      </button>
-      <button id="test_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
-        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
-        <span id="test_copytext">Copy</span>
-      </button>
-    </div>
-
-    <script>
-      window.addEventListener('load', function () {
-        preview('test', '/testwebsite/pages/test/test.html', '/testwebsite/pages/test/test_stage.html');
-      })
-    </script>
-  </div>
-
-  
-    
-  
-
-    
-      
-
-  <div class="mb-5">
-    <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
-        
-          <svg class="h-4" style="margin-left: 40px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
-          </svg>
-        
-        <span>Faculty Gateway Test 2</span>
-      </div>
-      <button id="bro_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
-        <ion-icon name="open-outline">&nbsp;</ion-icon>
-        <span>Preview</span>
-      </button>
-      <button id="bro_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
-        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
-        <span id="bro_copytext">Copy</span>
-      </button>
-    </div>
-
-    <script>
-      window.addEventListener('load', function () {
-        preview('bro', '/testwebsite/pages/test/test/bro.html', '/testwebsite/pages/test/test/bro_stage.html');
-      })
-    </script>
-  </div>
-
-  
-    
-  
-
-    
-  
-
-    
-      
-
-  <div class="mb-5">
-    <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
-        
-          <svg class="h-4" style="margin-left: 20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
-          </svg>
-        
         <span>Group Travel</span>
       </div>
       <button id="group_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
@@ -2687,80 +2644,12 @@ Added support for nested pages by allowing parcel JS to look within directories 
 
     <script>
       window.addEventListener('load', function () {
-        preview('group', '/testwebsite/pages/group.html', '/testwebsite/pages/group_stage.html');
+        preview('group', '/testwebsite/pages/group/group.html', '/testwebsite/pages/group/group_stage.html');
       })
     </script>
   </div>
 
   
-    
-      
-
-  <div class="mb-5">
-    <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
-        
-          <svg class="h-4" style="margin-left: 40px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
-          </svg>
-        
-        <span>Group Travel 1</span>
-      </div>
-      <button id="group1_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
-        <ion-icon name="open-outline">&nbsp;</ion-icon>
-        <span>Preview</span>
-      </button>
-      <button id="group1_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
-        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
-        <span id="group1_copytext">Copy</span>
-      </button>
-    </div>
-
-    <script>
-      window.addEventListener('load', function () {
-        preview('group1', '/testwebsite/pages/group1.html', '/testwebsite/pages/group1_stage.html');
-      })
-    </script>
-  </div>
-
-  
-    
-  
-
-    
-      
-
-  <div class="mb-5">
-    <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
-        
-          <svg class="h-4" style="margin-left: 40px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
-          </svg>
-        
-        <span>Group Travel 2</span>
-      </div>
-      <button id="group2_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
-        <ion-icon name="open-outline">&nbsp;</ion-icon>
-        <span>Preview</span>
-      </button>
-      <button id="group2_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
-        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
-        <span id="group2_copytext">Copy</span>
-      </button>
-    </div>
-
-    <script>
-      window.addEventListener('load', function () {
-        preview('group2', '/testwebsite/pages/group2.html', '/testwebsite/pages/group2_stage.html');
-      })
-    </script>
-  </div>
-
-  
-    
-  
-
     
   
 
@@ -2789,7 +2678,7 @@ Added support for nested pages by allowing parcel JS to look within directories 
 
     <script>
       window.addEventListener('load', function () {
-        preview('individual', '/testwebsite/pages/individual.html', '/testwebsite/pages/individual_stage.html');
+        preview('individual', '/testwebsite/pages/individual/individual.html', '/testwebsite/pages/individual/individual_stage.html');
       })
     </script>
   </div>
@@ -2806,94 +2695,26 @@ Added support for nested pages by allowing parcel JS to look within directories 
             <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
           </svg>
         
-        <span>Individual Travel 1</span>
+        <span>Getting Started &amp; Advising</span>
       </div>
-      <button id="individual1_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+      <button id="advising_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button id="individual1_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+      <button id="advising_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
-        <span id="individual1_copytext">Copy</span>
+        <span id="advising_copytext">Copy</span>
       </button>
     </div>
 
     <script>
       window.addEventListener('load', function () {
-        preview('individual1', '/testwebsite/pages/individual1.html', '/testwebsite/pages/individual1_stage.html');
+        preview('advising', '/testwebsite/pages/individual/information/advising.html', '/testwebsite/pages/individual/information/advising_stage.html');
       })
     </script>
   </div>
 
   
-    
-      
-
-  <div class="mb-5">
-    <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
-        
-          <svg class="h-4" style="margin-left: 60px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
-          </svg>
-        
-        <span>Individual Travel 1_1</span>
-      </div>
-      <button id="individual11_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
-        <ion-icon name="open-outline">&nbsp;</ion-icon>
-        <span>Preview</span>
-      </button>
-      <button id="individual11_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
-        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
-        <span id="individual11_copytext">Copy</span>
-      </button>
-    </div>
-
-    <script>
-      window.addEventListener('load', function () {
-        preview('individual11', '/testwebsite/pages/individual11.html', '/testwebsite/pages/individual11_stage.html');
-      })
-    </script>
-  </div>
-
-  
-    
-  
-
-    
-      
-
-  <div class="mb-5">
-    <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
-        
-          <svg class="h-4" style="margin-left: 60px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
-          </svg>
-        
-        <span>Individual Travel 1_2</span>
-      </div>
-      <button id="individual12_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
-        <ion-icon name="open-outline">&nbsp;</ion-icon>
-        <span>Preview</span>
-      </button>
-      <button id="individual12_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
-        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
-        <span id="individual12_copytext">Copy</span>
-      </button>
-    </div>
-
-    <script>
-      window.addEventListener('load', function () {
-        preview('individual12', '/testwebsite/pages/individual12.html', '/testwebsite/pages/individual12_stage.html');
-      })
-    </script>
-  </div>
-
-  
-    
-  
-
     
   
 
@@ -2908,21 +2729,191 @@ Added support for nested pages by allowing parcel JS to look within directories 
             <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
           </svg>
         
-        <span>Individual Travel 2</span>
+        <span>Browse Programs</span>
       </div>
-      <button id="individual2_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+      <button id="programs_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button id="individual2_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+      <button id="programs_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
-        <span id="individual2_copytext">Copy</span>
+        <span id="programs_copytext">Copy</span>
       </button>
     </div>
 
     <script>
       window.addEventListener('load', function () {
-        preview('individual2', '/testwebsite/pages/individual2.html', '/testwebsite/pages/individual2_stage.html');
+        preview('programs', '/testwebsite/pages/individual/information/programs.html', '/testwebsite/pages/individual/information/programs_stage.html');
+      })
+    </script>
+  </div>
+
+  
+    
+  
+
+    
+      
+
+  <div class="mb-5">
+    <div class="flex flex-wrap items-stretch">
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        
+          <svg class="h-4" style="margin-left: 40px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
+          </svg>
+        
+        <span>Program Process</span>
+      </div>
+      <button id="process_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+        <ion-icon name="open-outline">&nbsp;</ion-icon>
+        <span>Preview</span>
+      </button>
+      <button id="process_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+        <span id="process_copytext">Copy</span>
+      </button>
+    </div>
+
+    <script>
+      window.addEventListener('load', function () {
+        preview('process', '/testwebsite/pages/individual/information/process.html', '/testwebsite/pages/individual/information/process_stage.html');
+      })
+    </script>
+  </div>
+
+  
+    
+  
+
+    
+      
+
+  <div class="mb-5">
+    <div class="flex flex-wrap items-stretch">
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        
+          <svg class="h-4" style="margin-left: 40px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
+          </svg>
+        
+        <span>Policies, Guidelines &amp; FAQ</span>
+      </div>
+      <button id="policies_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+        <ion-icon name="open-outline">&nbsp;</ion-icon>
+        <span>Preview</span>
+      </button>
+      <button id="policies_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+        <span id="policies_copytext">Copy</span>
+      </button>
+    </div>
+
+    <script>
+      window.addEventListener('load', function () {
+        preview('policies', '/testwebsite/pages/individual/information/policies.html', '/testwebsite/pages/individual/information/policies_stage.html');
+      })
+    </script>
+  </div>
+
+  
+    
+  
+
+    
+  
+
+    
+      
+
+  <div class="mb-5">
+    <div class="flex flex-wrap items-stretch">
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        
+          <svg class="h-4" style="margin-left: 20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
+          </svg>
+        
+        <span>Faculty Gateway</span>
+      </div>
+      <button id="faculty_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+        <ion-icon name="open-outline">&nbsp;</ion-icon>
+        <span>Preview</span>
+      </button>
+      <button id="faculty_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+        <span id="faculty_copytext">Copy</span>
+      </button>
+    </div>
+
+    <script>
+      window.addEventListener('load', function () {
+        preview('faculty', '/testwebsite/pages/faculty/faculty.html', '/testwebsite/pages/faculty/faculty_stage.html');
+      })
+    </script>
+  </div>
+
+  
+    
+      
+
+  <div class="mb-5">
+    <div class="flex flex-wrap items-stretch">
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        
+          <svg class="h-4" style="margin-left: 40px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
+          </svg>
+        
+        <span>Domestic Proposal Process</span>
+      </div>
+      <button id="domestic_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+        <ion-icon name="open-outline">&nbsp;</ion-icon>
+        <span>Preview</span>
+      </button>
+      <button id="domestic_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+        <span id="domestic_copytext">Copy</span>
+      </button>
+    </div>
+
+    <script>
+      window.addEventListener('load', function () {
+        preview('domestic', '/testwebsite/pages/faculty/proposal/domestic.html', '/testwebsite/pages/faculty/proposal/domestic_stage.html');
+      })
+    </script>
+  </div>
+
+  
+    
+  
+
+    
+      
+
+  <div class="mb-5">
+    <div class="flex flex-wrap items-stretch">
+      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        
+          <svg class="h-4" style="margin-left: 40px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
+          </svg>
+        
+        <span>International Proposal Process</span>
+      </div>
+      <button id="international_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+        <ion-icon name="open-outline">&nbsp;</ion-icon>
+        <span>Preview</span>
+      </button>
+      <button id="international_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+        <span id="international_copytext">Copy</span>
+      </button>
+    </div>
+
+    <script>
+      window.addEventListener('load', function () {
+        preview('international', '/testwebsite/pages/faculty/proposal/international.html', '/testwebsite/pages/faculty/proposal/international_stage.html');
       })
     </script>
   </div>
