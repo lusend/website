@@ -1,0 +1,19 @@
+{% if content and not custom %}
+  <div id="mycontent" class="content min-h-screen flex flex-col lg:flex-row justify-start lg:justify-center px-8 py-10 z-10 relative gap-5 {% if background %} bg-white bg-opacity-80 backdrop-blur-sm {% endif %}">
+    <div x-data="{ toc: !!document.querySelector('.table-of-contents')}" x-show="toc" class="grow order-first lg:order-last max-w-[15rem] prose" x-cloak>
+      <div class="text-base lg:sticky lg:top-20">
+        <h1 class="my-0 mb-5 text-2xl font-semibold">Table of Contents</h1>
+        <div class="table-of-contents-container lg:h-full lg:max-h-[calc(80vh-72px)] lg:overflow-y-auto overflow-x-hidden">&nbsp;</div>
+      </div>
+    </div>
+    <div class="prose flex-initial order-last lg:order-first {% if full %} max-w-full {% endif %} ">
+      {% if env === 'stage' %}
+        <h1>Stage Test</h1>
+      {% endif %}
+
+      {{ content | safe }}
+    </div>
+  </div>
+{% elif content %}
+  {{ content | safe }}
+{% endif %}

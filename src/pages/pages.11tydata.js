@@ -10,10 +10,12 @@ module.exports = async function (configData) {
     header: true,
     full: false,
     custom: false,
+    author: false,
     hero: '',
     background: '',
     testimonials: [],
     actions: [],
+    order: [],
     eleventyComputed: {
       path: `{{ page.filePathStem }}{{ suffix }}`,
       permalink: `{{ path }}.html`,

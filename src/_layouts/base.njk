@@ -1,5 +1,5 @@
-{% if env == 'development' %}
-  {% if type == 'brochure' %}
+{% if env === 'development' %}
+  {% if type === 'brochure' %}
     {% extends './brochure.njk' %}
   {% else %}
     {% extends './page.njk' %}
@@ -8,7 +8,7 @@
   {% extends './prod.njk' %}
 {% endif %}
 
-{% if env == 'stage' %}
+{% if env === 'stage' %}
   {% set logo %}
   {% include "images/logo_stage.svg" %}
   {% endset %}
@@ -18,11 +18,23 @@
   {% endset %}
 {% endif %}
 
+{% if not('actions' in order) %}
+  {{ order.push('actions') }}
+{% endif %}
+
+{% if not('content' in order) %}
+  {{ order.push('content') }}
+{% endif %}
+
+{% if not('testimonials' in order) %}
+  {{ order.push('testimonials') }}
+{% endif %}
+
 {% block content %}
 
   {% set css %}
   {% include "styles/main.css" %}
-  {% if type == 'brochure' %}
+  {% if type === 'brochure' %}
     {% include "styles/brochure.css" %}
   {% endif %}
   {% endset %}
@@ -35,7 +47,7 @@
   {% include "scripts/deadlines.js" %}
   {% endset %}
 
-  {% if env != 'development' %}
+  {% if env !== 'development' %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   {% endif %}
@@ -47,76 +59,25 @@
   <div  x-data="{ scroll: '' }" id="app">
     <div class="absolute {% if header and author %} top-[calc(100vh+272px)] {% elif header %} top-[calc(100vh+222px)] {% else %} top-[calc(100vh+72px)] {% endif %} overflow-none {% if header and author %} h-[calc(100%-100vh-272px)] {% elif header %} h-[calc(100%-100vh-222px)] {%else%} h-[calc(100%-100vh-72px)] {% endif %} w-full pointer-events-none -z-50" x-intersect:enter="scroll = 'bg-opacity-90'" x-intersect:leave="scroll = ''">&nbsp;</div>
     <div class="fixed top-0 right-0 w-full h-screen bg-scroll bg-white bg-center bg-no-repeat bg-cover pointer-events-none" {% if background %} style="background-image: url('{{ background }}')" {% endif %}>&nbsp;</div>
+
     {% include "./nav.njk" %}
-    {% if header %}
-      <div class="relative z-10 flex flex-row justify-center w-full px-8 pt-12 pb-5 mx-auto text-base bg-primary text-primary-content">
-        <div class="max-w-[calc(65ch+16.25rem)] flex-1 flex flex-col gap-1 items-center navSmall:items-start">
-          {% include "./breadcrumbs.njk" %}
-          <div class="prose">
-            <h1 class="text-center navSmall:text-left text-primary-content">{{ title }}</h1>
-          </div>
-          {% if author %}
-            <div class="text-sm text-base-300">
-              <div>
-                <span>Written By </span>
-                <strong>{{ author }}</strong>
-              </div>
-              <div>
-                <span>On</span>
-                <strong>{{ page.date | postDate }}</strong>
-              </div>
-            </div>
-          {% endif %}
-        </div>
-      </div>
-      <svg id="header-wave" class="relative z-10 -mt-1" viewBox="0 0 1200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 1200,0 H 0 V 37 C 67,26 133,15 200,10 C 266,4 333,5 400,23 C 466,41 533,76 600,79 C 677,78 738,53 800,48 C 866,44 933,63 1000,62 C 1065,62 1131,41 1200,19 V 0 Z" fill="#0A254E"/>
-      </svg>
-    {% endif %}
+
+    {% include "./header.njk"%}
 
     {% include "./hero.njk" %}
 
-    {% include "./actions.njk" %}
+    {% for item in order %}
 
-    {% if content and not custom %}
-      <div id="mycontent" class="content min-h-screen flex flex-col lg:flex-row justify-start lg:justify-center px-8 py-10 z-10 relative gap-5 {% if background %} bg-white bg-opacity-80 {% endif %}">
-        <div x-data="{ toc: !!document.querySelector('.table-of-contents')}" x-show="toc" class="grow order-first lg:order-last max-w-[15rem] prose" x-cloak>
-          <div class="text-base lg:sticky lg:top-20">
-            <h1 class="my-0 mb-5 text-2xl font-semibold">Table of Contents</h1>
-            <div class="table-of-contents-container lg:h-full lg:max-h-[calc(80vh-72px)] lg:overflow-y-auto overflow-x-hidden">&nbsp;</div>
-          </div>
-        </div>
-        <div class="prose flex-initial order-last lg:order-first {% if full %} max-w-full {% endif %} ">
-          {% if env == 'stage' %}
-            <h1>Stage Test</h1>
-          {% endif %}
+      {% if item === 'actions' %}
+        {% include "./actions.njk" %}
+      {% elif item === 'content' %}
+        {% include "./content.njk" %}
+      {% elif item === 'testimonials' %}
+        {% include "./testimonials.njk" %}
+      {% endif %}
+    {% endfor %}
 
-          {{ content | safe }}
-        </div>
-      </div>
-    {% elif content %}
-      {{ content | safe }}
-    {% endif %}
-
-    {% include "./testimonials.njk" %}
-
-    <footer class="relative bg-black bg-opacity-85">
-      <div class="flex flex-col items-center justify-center py-5 font-medium text-center text-gray-400 text-xslg:text-sm text-primary-content text-opacity-70 focus:outline-none">
-        <a href="{{ link('home') }}" class="h-8 mb-2">{{ logo | safe }}</a>
-
-        <span>&copy; {% year %} Liberty University. All Rights Reserved.</span>
-
-        <a class="flex items-center justify-center gap-1 mt-1 underline text-accent hover:text-accent-focus" href="https://www.liberty.edu/osd/lu-send/staff/">
-          <ion-icon name="call-outline">&nbsp;</ion-icon>
-          <span>Contact Us</span>
-        </a>
-
-        <a class="flex items-center justify-center gap-1 underline text-primary-content text-opacity-70 hover:text-opacity-50" href="{{ edit }}">
-          <ion-icon name="create-outline">&nbsp;</ion-icon>
-          <span>Edit Page</span>
-        </a>
-      </div>
-    </footer>
+    {% include "./footer.njk" %}
 
     <div id="planes" class="fixed top-0 left-0 z-0 w-full h-full pointer-events-none">&nbsp;</div>
   </div>

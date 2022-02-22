@@ -1,0 +1,17 @@
+<footer class="relative bg-black bg-opacity-85">
+  <div class="flex flex-col items-center justify-center py-5 font-medium text-center text-gray-400 text-xslg:text-sm text-primary-content text-opacity-70 focus:outline-none">
+    <a href="{{ link('home') }}" class="h-8 mb-2">{{ logo | safe }}</a>
+
+    <span>&copy; {% year %} Liberty University. All Rights Reserved.</span>
+
+    <a class="flex items-center justify-center gap-1 mt-1 underline text-accent hover:text-accent-focus" href="https://www.liberty.edu/osd/lu-send/staff/">
+      <ion-icon name="call-outline">&nbsp;</ion-icon>
+      <span>Contact Us</span>
+    </a>
+
+    <a class="flex items-center justify-center gap-1 underline text-primary-content text-opacity-70 hover:text-opacity-50" href="{{ edit }}">
+      <ion-icon name="create-outline">&nbsp;</ion-icon>
+      <span>Edit Page</span>
+    </a>
+  </div>
+</footer>
