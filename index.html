@@ -2684,7 +2684,8 @@ Reset links to optimize for opt-in styling instead of opt-out.
 <summary>View Front Matter Documentation</summary>
 <h2 id="front-matter-documentation" tabindex="-1"><a class="header-anchor" href="#front-matter-documentation">Front Matter Documentation</a></h2>
 <h3 id="default-architecture" tabindex="-1"><a class="header-anchor" href="#default-architecture">Default Architecture</a></h3>
-<pre><code class="language-yaml">planes: false,
+<pre><code class="language-yaml">title: undefined
+planes: false,
 header: true,
 full: false,
 custom: false,
@@ -2694,11 +2695,13 @@ hero: '',
 background: '',
 order: [],
 nav:
-  title: undefined
+  title: {{ title }}
   parent: undefined
   order: undefined
 </code></pre>
 <h3 id="options" tabindex="-1"><a class="header-anchor" href="#options">Options</a></h3>
+<h4 id="title" tabindex="-1"><a class="header-anchor" href="#title"><code>title</code></a></h4>
+<p>The title of the page. Will be used in the header if included. Has no default.</p>
 <h4 id="planes" tabindex="-1"><a class="header-anchor" href="#planes"><code>planes</code></a></h4>
 <p>If set to <code>true</code>, the planes will be on by default when you navigate to the page and will have to be toggled off. The default is <code>false</code> (i.e. A person on the website would have to manually turn them on).</p>
 <h4 id="header" tabindex="-1"><a class="header-anchor" href="#header"><code>header</code></a></h4>
@@ -2721,7 +2724,7 @@ nav:
 </code></pre>
 <p>This will result in an order of <code>content</code>, then <code>actions</code>, then <code>testimonials</code>.</p>
 <h4 id="nav" tabindex="-1"><a class="header-anchor" href="#nav"><code>nav</code></a></h4>
-<p>This option allows you to define navigation heirarchy and will apply to the navigation bar as well as the breadcrumbs if the header is visible. If you set the <code>parent</code> option to a slug (the file name of a page without the extension), that slug will become its parent and the link in the header will be nested under its parent. If you set the <code>title</code> option, you can have a separate title for your navbar and breadcrumbs. If you set the <code>order</code> option to a number, you can manually position an item relative to its siblings.</p>
+<p>This option allows you to define navigation heirarchy and will apply to the navigation bar as well as the breadcrumbs if the header is visible. If you set the <code>parent</code> option to a slug (the file name of a page without the extension), that slug will become its parent and the link in the header will be nested under its parent. If you set the <code>title</code> option, you can have a separate title for your navbar and breadcrumbs. Otherwise, it defaults to the base title. If you set the <code>order</code> option to a number, you can manually position an item relative to its siblings.</p>
 </details>
 <details>
 <summary>View TODO Tracker</summary>
@@ -2755,11 +2758,11 @@ nav:
 </details>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/testwebsite/commit/8fcf157c0562eab63c3db55bb38a2da35eccdada" class="no-underline hover:underline" target="_blank">docs: 📝 Updated Documentation<br />
+  <a href="https://github.com/lusend/testwebsite/commit/9f714299469daa07c65a812293ded4509e080e1c" class="no-underline hover:underline" target="_blank">docs: 📝 Added Title Option to Documentation<br />
 <br />
-Completed documentation and updated the README appropriately. Also added a table of contents to the content editing page  to help with navigation.</a>
+Added the missing title option to the documentation. Also clarified that the nav title defaults to the base title.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-22T20:26:50Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-22T20:31:47Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
