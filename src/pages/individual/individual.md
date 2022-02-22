@@ -15,7 +15,7 @@ nav:
 {% action actions,
   picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35562',
   title = 'Getting Started & Advising',
-  link = link('group')
+  link = link('advising')
 %}
 If you are just getting started with your study abroad or international internship experience, this is the perfect place to start.
 {% endaction %}
@@ -23,7 +23,7 @@ If you are just getting started with your study abroad or international internsh
 {% action actions,
   picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35564',
   title = 'Individual Programs',
-  link = link('faculty')
+  link = link('programs')
 %}
 If you have not decided on a program yet, browse LU Send's Signature Programs, Custom Programs, and International Internships here.
 {% endaction %}
@@ -31,7 +31,7 @@ If you have not decided on a program yet, browse LU Send's Signature Programs, C
 {% action actions,
   picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35576',
   title = 'Program Process',
-  link = link('individual')
+  link = link('process')
 %}
 Visit this page for a more in-depth view of our program process from start to finish.
 {% endaction %}
@@ -39,7 +39,7 @@ Visit this page for a more in-depth view of our program process from start to fi
 {% action actions,
   picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35574',
   title = 'Policies, Guidelines & FAQ',
-  link = link('faculty')
+  link = link('policies')
 %}
 This page provides key information about eligibility, fees, registration, courses, deadlines, and more.
 {% endaction %}
