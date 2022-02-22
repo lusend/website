@@ -25,7 +25,8 @@ const action = async (
     picture,
     title,
     link,
-    text: markdown.render(text)
+    text: markdown.render(text),
+    short: text.length < 150
   });
   return '';
 };
