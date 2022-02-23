@@ -2,7 +2,7 @@
   <div class="w-full {% if header %} -mt-20 pt-20 min-h-[100vh] {% else %} min-h-[90vh] {% endif %} flex justify-center items-center relative z-10 bg-black bg-opacity-40 text-primary-content">
     <div class="flex justify-center items-center flex-col gap-5 w-3/4">
       <div class="w-full max-w-xs md:max-w-none">{{ logo | safe }}</div>
-      <div class="text-center {% if hero | length <= 50 %} text-5xl font-semibold {% else %} text-base font-medium {% endif %}">{{ hero }}</div>
+      <div class="text-center leading-tight {% if hero | length <= 50 %} text-5xl font-semibold {% else %} text-base font-medium {% endif %}">{{ hero }}</div>
       <button x-on:click="window.scrollBy(0, window.innerHeight - 72)" class="animate-bounce text-[5em] h-14">
         <ion-icon name="chevron-down-outline">&nbsp;</ion-icon>
       </button>

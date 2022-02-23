@@ -49,13 +49,8 @@
       padding-left: 1.5em;
     }
 
-    /* & > ol > li {
-      padding-top: 0.15em;
-      padding-bottom: 0.15em;
-    } */
-
-    li.visible > a {
-      @apply lg:font-medium lg:translate-x-3;
+    li > a.active {
+      @apply lg:font-medium lg:translate-x-1;
     }
 
     li > a:hover {
@@ -63,14 +58,14 @@
     }
 
     li > a {
-      @apply py-1;
+      @apply py-1 leading-tight mr-3 ml-2;
     }
 
     svg {
-      @apply absolute top-0 left-0 h-full -z-[1] hidden lg:!block;
+      @apply absolute top-0 left-0 h-full -z-[1] hidden lg:!block -translate-x-px pointer-events-none;
 
       path {
-        @apply transition-all fill-transparent stroke-[3px] stroke-primary;
+        @apply transition-all fill-transparent stroke-[3px] stroke-primary pointer-events-none;
         stroke-linecap: round;
         stroke-linejoin: round;
         stroke-dasharray: 0 0 0 1000;
