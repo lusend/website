@@ -416,19 +416,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
       padding-left: 1.5em;
     }
 
-/* & > ol > li {
-      padding-top: 0.15em;
-      padding-bottom: 0.15em;
-    } */
-
 @media (min-width: 1024px){
 
-  #app .table-of-contents li.visible > a{
-    --tw-translate-x: 0.75rem;
+  #app .table-of-contents li > a.active{
+    --tw-translate-x: 0.25rem;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
-  #app .table-of-contents li.visible > a{
+  #app .table-of-contents li > a.active{
     font-weight: 500;
   }
 }
@@ -439,17 +434,23 @@ Reset links to optimize for opt-in styling instead of opt-out.
 }
 
 #app .table-of-contents li > a{
+  margin-right: 0.75rem;
+  margin-left: 0.5rem;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+  line-height: 1.25;
 }
 
 #app .table-of-contents svg{
+  pointer-events: none;
   position: absolute;
   top: 0px;
   left: 0px;
   z-index: -1;
   display: none;
   height: 100%;
+  --tw-translate-x: -1px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 @media (min-width: 1024px){
@@ -460,6 +461,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
 }
 
 #app .table-of-contents svg path{
+  pointer-events: none;
   fill: transparent;
   stroke: #0A254E;
   stroke-width: 3px;
@@ -2808,11 +2810,11 @@ nav:
 </details>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/testwebsite/commit/605b09be1a310fdb72e9e27175fa51a4cd4e475b" class="no-underline hover:underline" target="_blank">fix: 🐛 Fixed Broken Links<br />
+  <a href="https://github.com/lusend/testwebsite/commit/a8617c8d6f4e3ed23980b80889b1c051d3d36747" class="no-underline hover:underline" target="_blank">refactor: ♻️ Refactored TOC<br />
 <br />
-Fixed broken links on the individual page.</a>
+Refactored TOC for a smoother, more reliable animation.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-22T22:03:13Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-23T19:55:46Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
