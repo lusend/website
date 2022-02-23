@@ -24,7 +24,7 @@ Whether you are planning international travel, domestic travel, or individual tr
 {% action actions,
   picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21518',
   title = 'Individual Travel Proposal',
-  link = 'https://liberty-sa.terradotta.com/index.cfm?FuseAction=OneStep.Apply&Program_ID=11900'
+  link = 'https://liberty-sa.terradotta.com/index.cfm?FuseAction=Students.Apply&Program_ID=11900'
 %}
 Liberty University faculty and staff must register their international travel with the University. Visit this link to register your travel.
 {% endaction %}
