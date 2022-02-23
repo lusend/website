@@ -1,49 +1,56 @@
-const elementsToObserve = document.querySelectorAll('h1[id], h2[id], h3[id]');
+const toc = {
+  container: document.querySelector('.table-of-contents-container'),
+  element: document.querySelector('.table-of-contents'),
+  headings: [...document.querySelectorAll('h1[id], h2[id], h3[id]')].map(
+    (header) => ({
+      element: header
+    })
+  ),
+  links:
+    document.querySelector('.table-of-contents') &&
+    [...document.querySelector('.table-of-contents').querySelectorAll('a')].map(
+      (link) => ({
+        element: link
+      })
+    ),
+  svg: document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+  path: document.createElementNS('http://www.w3.org/2000/svg', 'path'),
+  exists: true,
+  smooth: !window.matchMedia('(prefers-reduced-motion)').matches,
+  mostRecentlyActive: null
+};
 
-const visibleClass = 'visible';
+let allowPutLinkInView = true;
 
-const tocContainer = document.querySelector('.table-of-contents-container');
-
-const toc = document.querySelector('.table-of-contents');
-
-const tocSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-
-const tocPath = tocSVG.appendChild(
-  document.createElementNS('http://www.w3.org/2000/svg', 'path')
+let timer = null;
+window.addEventListener(
+  'scroll',
+  function () {
+    if (timer !== null) clearTimeout(timer);
+    timer = setTimeout(function () {
+      allowPutLinkInView = true;
+    }, 150);
+  },
+  false
 );
 
-const tocElements = [];
+window.addEventListener(
+  'resize',
+  function () {
+    if (toc.exists) drawPath();
+  },
+  false
+);
 
-let tocExists = true;
+function putLinkInView(link) {
+  var offset = link.offsetTop - toc.container.scrollTop;
 
-let tocItems;
-
-try {
-  tocContainer.innerHTML = '';
-  tocContainer.appendChild(toc);
-
-  toc.appendChild(tocSVG);
-
-  const tocListItems = [...toc.querySelectorAll('li')];
-
-  tocItems = tocListItems
-    .map((listItem) => {
-      const anchor = listItem.querySelector('a'),
-        targetID = anchor && anchor.getAttribute('href').slice(1),
-        target = document.getElementById(targetID);
-      return { listItem, anchor, target };
-    })
-    .filter((item) => item.target);
-} catch (error) {
-  tocExists = false;
-}
-
-function putInView(element) {
-  var offset = element.offsetTop - tocContainer.scrollTop;
-
-  if (offset + 10 > tocContainer.clientHeight || offset - 10 < 0) {
-    tocContainer.scroll({
-      top: offset + tocContainer.scrollTop - tocContainer.clientHeight / 2,
+  if (
+    allowPutLinkInView &&
+    (offset + 10 > toc.container.clientHeight || offset - 10 < 0)
+  ) {
+    toc.container.scroll({
+      top: offset + toc.container.scrollTop - toc.container.clientHeight / 2,
       left: 0,
       behavior: 'smooth'
     });
@@ -51,61 +58,61 @@ function putInView(element) {
 }
 
 function drawPath() {
-  let path = [],
-    pathIndent;
+  let path = [];
+  let pathIndent;
 
-  tocItems.forEach((item, i) => {
-    const x = item.anchor.offsetLeft - 5,
-      y = item.anchor.offsetTop,
-      height = item.anchor.offsetHeight;
+  toc.links.forEach((link, i) => {
+    const x = link.element.offsetLeft - 5;
+    const y = link.element.offsetTop;
+    const height = link.element.offsetHeight;
 
     if (i === 0) {
       path.push('M', x, y, 'L', x, y + height);
-      item.pathStart = 0;
+      link.pathStart = 0;
     } else {
       if (pathIndent !== x) path.push('L', pathIndent, y);
 
       path.push('L', x, y);
 
-      tocPath.setAttribute('d', path.join(' '));
-      item.pathStart = tocPath.getTotalLength() || 0;
+      toc.path.setAttribute('d', path.join(' '));
+      link.pathStart = toc.path.getTotalLength() || 0;
       path.push('L', x, y + height);
     }
 
     pathIndent = x;
-    tocPath.setAttribute('d', path.join(' '));
-    item.pathEnd = tocPath.getTotalLength();
+    toc.path.setAttribute('d', path.join(' '));
+    link.pathEnd = toc.path.getTotalLength();
   });
 
-  const coord = tocPath.getBBox();
-  tocSVG.setAttribute(
+  const coord = toc.path.getBBox();
+  toc.svg.setAttribute(
     'viewBox',
-    coord.x -
-      5 +
+    '' +
+      (coord.x - 5) +
       ' ' +
-      (coord.y - 5) +
+      coord.y +
       ' ' +
       (coord.width + 10) +
       ' ' +
-      (coord.height + 10)
+      (coord.height + 5)
   );
 }
 
 function syncPath() {
   const someElsAreVisible = () =>
-      toc.querySelectorAll(`.${visibleClass}`).length > 0,
-    thisElIsVisible = (el) => el.classList.contains(visibleClass),
-    pathLength = tocPath.getTotalLength();
+    toc.element.querySelectorAll(`.active`).length > 0;
+  const thisElIsVisible = (el) => el.classList.contains('active');
+  const pathLength = toc.path.getTotalLength();
 
-  let pathStart = pathLength,
-    pathEnd = 0,
-    lastPathStart,
-    lastPathEnd;
+  let pathStart = pathLength;
+  let pathEnd = 0;
+  let lastPathStart;
+  let lastPathEnd;
 
-  tocItems.forEach((item) => {
-    if (thisElIsVisible(item.listItem)) {
-      pathStart = Math.min(item.pathStart, pathStart);
-      pathEnd = Math.max(item.pathEnd, pathEnd);
+  toc.links.forEach((link) => {
+    if (thisElIsVisible(link.element)) {
+      pathStart = Math.min(link.pathStart, pathStart);
+      pathEnd = Math.max(link.pathEnd, pathEnd);
     }
   });
 
@@ -113,93 +120,139 @@ function syncPath() {
     if (pathStart !== lastPathStart || pathEnd !== lastPathEnd) {
       const dashArray = `1 ${pathStart} ${pathEnd - pathStart} ${pathLength}`;
 
-      tocPath.style.setProperty('stroke-dashoffset', '1');
-      tocPath.style.setProperty('stroke-dasharray', dashArray);
-      tocPath.style.setProperty('opacity', 1);
+      toc.path.style.setProperty('stroke-dashoffset', '1');
+      toc.path.style.setProperty('stroke-dasharray', dashArray);
+      toc.path.style.setProperty('opacity', 1);
     }
   } else {
-    tocPath.style.setProperty('opacity', 0);
+    toc.path.style.setProperty('opacity', 0);
   }
 
   lastPathStart = pathStart;
   lastPathEnd = pathEnd;
 }
 
-function decideVisibility() {
-  let prevItem;
-  let lastActive;
-  tocElements.forEach((item, index) => {
-    if (item.status === 'present') {
-      item.element.classList.add(visibleClass);
-      lastActive = item;
-    } else if (item.status === 'past') {
-      if (prevItem) prevItem.element.classList.remove(visibleClass);
-      item.element.classList.remove(visibleClass);
-    } else if (item.status === 'future') {
-      if (prevItem && prevItem.status !== 'future') {
-        prevItem.element.classList.add(visibleClass);
-        lastActive = prevItem;
-      }
-      item.element.classList.remove(visibleClass);
-    }
-
-    prevItem = item;
-  });
-
-  if (prevItem && prevItem.status !== 'future') {
-    prevItem.element.classList.add(visibleClass);
-    lastActive = prevItem;
-  }
-
-  if (lastActive) putInView(lastActive.element);
+function isBelowViewport(element) {
+  var distance = element.getBoundingClientRect();
+  return (
+    distance.bottom >=
+    (window.innerHeight || document.documentElement.clientHeight)
+  );
 }
 
-function markVisibleSection(observedEls) {
-  observedEls.forEach((observedEl) => {
-    let status;
+function setupTOC() {
+  const observer = new IntersectionObserver(observerHandler, {
+    rootMargin: '0px',
+    threshold: 1
+  });
 
-    if (observedEl.isIntersecting) {
-      status = 'present';
-    } else if (observedEl.boundingClientRect.top < 0) {
-      status = 'past';
-    } else {
-      status = 'future';
-    }
+  try {
+    toc.container.innerHTML = '';
+    toc.svg.appendChild(toc.path);
+    toc.element.appendChild(toc.svg);
+    toc.container.appendChild(toc.element);
+    toc.links.forEach((link) => handleTOCClick(link));
+    toc.headings.forEach((heading) => observer.observe(heading.element));
+    drawPath();
+  } catch (error) {
+    console.warn(
+      'Table of Contents threw an error. This may be because it does not exist.\n\n',
+      error
+    );
+    toc.exists = false;
+  }
 
-    const id = observedEl.target.getAttribute('id');
-    const anchor = document.querySelector(
-      `.table-of-contents li a[href="#${id}"]`
+  if (!toc.exists) {
+    observer.disconnect();
+    toc.svg.remove();
+  }
+}
+
+function handleTOCClick(link) {
+  function clickHandler(evt) {
+    evt.preventDefault();
+    const id = evt.target.getAttribute('href').replace('#', '');
+    const heading = toc.headings.find(
+      (heading) => heading.element.getAttribute('id') === id
     );
 
-    const elId = tocElements.findIndex((el) => el.id === id);
-    if (elId < 0) {
-      tocElements.push({
-        heading: observedEl,
-        element: !!anchor && anchor.parentElement,
-        id,
-        status
-      });
+    heading.element.setAttribute('tabindex', -1);
+    heading.element.focus();
+    allowPutLinkInView = false;
+    window.scroll({
+      behavior: toc.smooth ? 'smooth' : 'instant',
+      top:
+        heading.element.offsetTop +
+        document.querySelector('#mycontent').offsetTop -
+        90
+    });
+  }
+
+  if (toc.exists) link.element.addEventListener('click', clickHandler);
+}
+
+function observerHandler(entries) {
+  entries.forEach((entry) => {
+    const href = `#${entry.target.getAttribute('id')}`;
+    const link = toc.links.find(
+      (link) => link.element.getAttribute('href') === href
+    );
+
+    if (entry.isIntersecting && entry.intersectionRatio >= 1) {
+      link.element.classList.add('visible');
+      toc.mostRecentlyActive = entry.target.getAttribute('id');
     } else {
-      tocElements[elId].status = status;
+      link.element.classList.remove('visible');
+    }
+  });
+
+  highlight();
+}
+
+function highlight() {
+  const visibleLinks = [...toc.element.querySelectorAll('.visible')];
+
+  toc.links.forEach((link) => {
+    link.element.classList.remove('active');
+  });
+
+  if (visibleLinks.length) {
+    let index = toc.links.findIndex(
+      (link) =>
+        link.element.getAttribute('href') ===
+        visibleLinks[visibleLinks.length - 1].getAttribute('href')
+    );
+
+    const firstToChange = toc.links[index].element;
+    let lastToChange;
+    for (; index >= 0; index--) {
+      if (!toc.links[index].element.classList.contains('visible')) break;
+      toc.links[index].element.classList.add('active');
+      lastToChange = toc.links[index].element;
     }
 
-    decideVisibility();
-  });
+    toc.mostRecentlyActive = lastToChange.getAttribute('href').replace('#', '');
+    putLinkInView(firstToChange);
+  }
+
+  if (!visibleLinks.length && toc.mostRecentlyActive) {
+    const href = `#${toc.mostRecentlyActive}`;
+
+    const index = toc.links.findIndex(
+      (link) => link.element.getAttribute('href') === href
+    );
+
+    const link =
+      isBelowViewport(toc.headings[index].element) && index > 0
+        ? toc.links[index - 1]
+        : toc.links[index];
+
+    link.element.classList.add('active');
+    toc.mostRecentlyActive = link.element.getAttribute('href').replace('#', '');
+    putLinkInView(link.element);
+  }
 
   syncPath();
 }
 
-if (tocExists) {
-  window.onresize = function () {
-    drawPath();
-    syncPath();
-  };
-
-  window.addEventListener('load', function () {
-    drawPath();
-    syncPath();
-  });
-
-  const observer = new IntersectionObserver(markVisibleSection);
-  elementsToObserve.forEach((thisEl) => observer.observe(thisEl));
-}
+document.addEventListener('DOMContentLoaded', setupTOC, false);
