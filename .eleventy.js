@@ -55,7 +55,7 @@ module.exports = function (eleventyConfig) {
   }
 
   return {
-    pathPrefix: env === 'development' ? '/' : '/testwebsite/',
+    pathPrefix: env === 'development' ? '/' : '/website/',
     dir: {
       input: 'src',
       output: 'dist',

@@ -8,11 +8,11 @@ async function get(link, { asText = false, headers = {} } = {}) {
 async function checkIfDeployed() {
   try {
     const deployments = await get(
-      'https://api.github.com/repos/lusend/testwebsite/deployments'
+      'https://api.github.com/repos/lusend/website/deployments'
     );
 
     const branches = await get(
-      'https://api.github.com/repos/lusend/testwebsite/branches'
+      'https://api.github.com/repos/lusend/website/branches'
     );
 
     const { sha: commitID } = branches.find((el) => el.name === 'main').commit;

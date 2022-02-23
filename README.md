@@ -4,7 +4,7 @@
 ![](https://img.shields.io/github/v/release/lusend/website)
 ![](https://img.shields.io/github/stars/lusend/website?style=social)
 
-A content management system for the LU Send Terradotta Website using [11ty](https://www.11ty.dev/). Several plugins and libraries have been included to ease content editing while still providing robust and aesthetic webpages. Visit the [Content Editing Home Page](https://lusend.github.io/testwebsite/) for more details and previews. View the [Production Website](https://liberty-sa.terradotta.com) or the [Staging Website](https://liberty-sa-test.terradotta.com) to see it in action.
+A content management system for the LU Send Terradotta Website using [11ty](https://www.11ty.dev/). Several plugins and libraries have been included to ease content editing while still providing robust and aesthetic webpages. Visit the [Content Editing Home Page](https://lusend.github.io/website/) for more details and previews. View the [Production Website](https://liberty-sa.terradotta.com) or the [Staging Website](https://liberty-sa-test.terradotta.com) to see it in action.
 
 ## Libraries and Plugins Included (Besides [11ty](https://www.npmjs.com/package/@11ty/eleventy))
 

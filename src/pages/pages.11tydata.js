@@ -21,7 +21,7 @@ module.exports = async function (configData) {
       permalink: `{{ path }}.html`,
       slug: '{{ page.fileSlug }}',
       edit: (data) =>
-        'https://github.com/lusend/testwebsite/edit/main/src' +
+        'https://github.com/lusend/website/edit/main/src' +
         data.page.filePathStem +
         '.' +
         data.page.inputPath.split('.').pop(),
