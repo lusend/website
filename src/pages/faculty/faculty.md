@@ -31,7 +31,7 @@ Liberty University faculty and staff must register their international travel wi
 
 {% action actions,
   picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21520',
-  title = 'International Travel Proposal Process',
+  title = 'Inter&shy;national Travel Proposal Process',
   link = link('international')
 %}
 LU Send works with you to develop the educational, cultural, spiritual, and logistical components of your international trips.

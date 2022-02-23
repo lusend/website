@@ -26,8 +26,8 @@
                     <div class="flex flex-row items-center justify-start gap-2 mt-5">
                       <img class="m-0 flex-shrink rounded-full w-full max-w-[4rem] shadow-sm" src="{{ testimonial.profile }}" alt="Testimonial Picture">
                       <div class="flex flex-col items-start justify-center flex-grow">
-                        <div class="text-sm font-semibold text-primary">{{ testimonial.name }}</div>
-                        <div class="text-xs font-medium text-secondary">{{ testimonial.subtitle }}</div>
+                        <div class="text-sm font-semibold text-primary">{{ testimonial.name | safe }}</div>
+                        <div class="text-xs font-medium text-secondary">{{ testimonial.subtitle | safe }}</div>
                       </div>
                     </div>
                   </div>

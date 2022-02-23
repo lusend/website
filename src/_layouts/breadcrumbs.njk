@@ -5,14 +5,14 @@
     <li class="inline-flex items-center pl-0 m-0 text-primary-content-fade">
       <{% if last %}div{% else %}a{% endif %} href="{{ entry.url }}" class="hover:!font-bold no-underline inline-flex items-center gap-1 items-center text-sm !font-medium">
         <ion-icon class="text-xs" name="home">&nbsp;</ion-icon>
-        <span class="whitespace-nowrap">{{ entry.title }}</span>
+        <span class="whitespace-nowrap">{{ entry.title | safe }}</span>
       </{% if last %}div{% else %}a{% endif %}>
     </li>
   {% else %}
     <li {% if last %}aria-current="page"{% endif %} class="pl-0 m-0 text-primary-content-fade">
       <div class="flex items-center">
         <ion-icon name="chevron-forward">&nbsp;</ion-icon>
-        <a href="{{ '#' if last else entry.url }}" class="hover:!font-bold whitespace-nowrap ml-1 lg:ml-2 no-underline text-sm !font-medium">{{ entry.title }}</a>
+        <a href="{{ '#' if last else entry.url }}" class="hover:!font-bold whitespace-nowrap ml-1 lg:ml-2 no-underline text-sm !font-medium">{{ entry.title | safe }}</a>
       </div>
     </li>
   {% endif %}

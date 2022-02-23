@@ -82,8 +82,6 @@ Please note that applications will be reviewed as they are received. A decision 
 
 ![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21489){.header}
 
-<p>{{ link('policies') }}</p>
-
 Congratulations! You’ve submitted your LU Send Application and you’ve been accepted. Log into your LU Send Application Portal, commit to your acceptance and begin working on your post-decision application. Please see **[Policies & Guidelines (Deadlines)]({{ link('policies') }}#deadlines)**.
 
 # Advising 301

@@ -10,7 +10,7 @@
           {% if author | length %}
             <div>
               <span>Written By </span>
-              <strong>{{ author }}</strong>
+              <strong>{{ author | safe }}</strong>
             </div>
           {% endif %}
           <div>

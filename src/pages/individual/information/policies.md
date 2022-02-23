@@ -58,7 +58,7 @@ If the student is pursuing an independent internship, then the student will be r
 
 NOTE: **Students who have completed Financial Check-In will be prompted to make one full payment; if needed, please contact Student Accounts at [studentaccounts@liberty.edu](mailto:studentaccounts@liberty.edu) to setup a payment plan.**
 
-# Study Abroad/Internship Fees
+# Study Abroad and Internship Fees
 
 ![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21488){.header}
 

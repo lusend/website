@@ -4,7 +4,7 @@
       <div class="flex items-stretch flex-col {% if loop.index % 2 %} md:flex-row {% else %} md:flex-row-reverse {% endif %} justify-center items-center shadow-lg rounded-2xl">
         <div class="flex-auto md:flex-1 text-center bg-center bg-no-repeat bg-cover rounded-t-2xl md:rounded-none md:min-h-[20rem] {% if loop.index % 2 %} md:rounded-l-2xl {% else %} md:rounded-r-2xl {% endif %} basis-auto md:basis-0" style="background-image: url('{{ action.picture }}')">
           <div class="hover:bg-opacity-50 transition-all flex flex-col justify-center w-full h-full p-5 bg-black rounded-t-2xl md:rounded-none {% if loop.index % 2 %} md:rounded-l-2xl {% else %} md:rounded-r-2xl {% endif %} backdrop-blur-sm bg-opacity-40">
-            <h1 class="text-4xl sm:text-5xl leading-tight sm:leading-tight text-primary-content">{{ action.title }}</h1>
+            <h1 class="text-4xl sm:text-5xl leading-tight sm:leading-tight text-primary-content">{{ action.title | safe }}</h1>
             <a href="{{ action.link }}" class="inline-flex items-center justify-center gap-2 group btn">
               <span class="text-base">See More</span>
               <ion-icon class="text-base transition-transform group-hover:-translate-x-1" name="arrow-forward-outline"></ion-icon>
