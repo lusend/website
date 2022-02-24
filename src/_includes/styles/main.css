@@ -7,14 +7,24 @@
 
 #pagefooter,
 #pageheader,
-#pagenav-wrapper,
 #pagebodycontentheader {
+  display: none;
+}
+
+#pagenav-wrapper {
   display: none;
 }
 
 #pagebodycontent {
   float: none;
   padding: 0;
+}
+
+#pagenav.navbar,
+#pagenav.navbar-fixed-top {
+  position: relative;
+  margin-bottom: 0;
+  border: 0px;
 }
 
 #pagebody {
