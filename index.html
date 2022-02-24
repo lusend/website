@@ -389,6 +389,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
   line-height: 1.75rem;
 }
 
+#app #map .btn:focus, #app #map .btn:active, #app #map .btn{
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  -webkit-animation: none;
+          animation: none;
+}
+
 /* Table of Contents */
 
 #app .table-of-contents{
@@ -2276,6 +2284,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   vertical-align: middle;
 }
 
+#app .prose .btn{
+  margin-bottom: 0.25rem;
+}
+
 #app .hover\:bg-primary-content:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -2854,15 +2866,18 @@ nav:
 <li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Add Correct Content to Pages</li>
 <li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Document Usage of Website</li>
 <li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Include Advanced Menu Button</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Improve TD Driver</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Improve Map Driver</li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> Improve Map Styles</li>
 </ul>
 </details>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/website/commit/12b67e0e2ea1b49caf805ded1ae1b34b018204a9" class="no-underline hover:underline" target="_blank">style: 💄 Improved TOC Styles<br />
+  <a href="https://github.com/lusend/website/commit/57ead9ea2334847f1a86f3ef6a3c337eb0a2d69b" class="no-underline hover:underline" target="_blank">fix: 💬 Improved Small Phone Experience<br />
 <br />
-Added a gap on larger screens ffor the table of contents. Also improved background options when the planes are active.</a>
+Improved the experience on small devices by ensuring `­``s (a dash that will only appear when the viewport is too small) are placed appropriately. Also made sure buttons had a slight margin bottom in case they end up stacking.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-24T18:08:21Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-24T18:35:13Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
