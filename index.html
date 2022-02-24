@@ -1489,10 +1489,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
   height: 4rem;
 }
 
-#app .h-4{
-  height: 1rem;
-}
-
 #app .h-6{
   height: 1.5rem;
 }
@@ -1849,6 +1845,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   border-bottom-left-radius: 0px;
 }
 
+#app .rounded-tl-lg{
+  border-top-left-radius: 0.5rem;
+}
+
 #app .border-2{
   border-width: 2px;
 }
@@ -1881,6 +1881,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .bg-base-300{
   --tw-bg-opacity: 1;
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+
+#app .bg-primary-content-fade{
+  --tw-bg-opacity: 1;
+  background-color: rgb(197 197 197 / var(--tw-bg-opacity));
 }
 
 #app .bg-secondary{
@@ -2113,10 +2118,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .\!font-medium{
   font-weight: 500 !important;
-}
-
-#app .uppercase{
-  text-transform: uppercase;
 }
 
 #app .not-italic{
@@ -2386,6 +2387,42 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 @media (min-width: 640px){
 
+  #app .sm\:flex-auto{
+    flex: 1 1 auto;
+  }
+
+  #app .sm\:flex-initial{
+    flex: 0 1 auto;
+  }
+
+  #app .sm\:basis-0{
+    flex-basis: 0px;
+  }
+
+  #app .sm\:rounded-b-lg{
+    border-bottom-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+  }
+
+  #app .sm\:rounded-r-none{
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+
+  #app .sm\:rounded-l-lg{
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+  }
+
+  #app .sm\:rounded-l-none{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
+  #app .sm\:rounded-tr-lg{
+    border-top-right-radius: 0.5rem;
+  }
+
   #app .sm\:text-5xl{
     font-size: 3rem;
     line-height: 1;
@@ -2551,18 +2588,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
     max-width: 65ch;
   }
 
-  #app .lg\:flex-auto{
-    flex: 1 1 auto;
-  }
-
-  #app .lg\:flex-initial{
-    flex: 0 1 auto;
-  }
-
-  #app .lg\:basis-0{
-    flex-basis: 0px;
-  }
-
   #app .lg\:flex-row{
     flex-direction: row;
   }
@@ -2575,25 +2600,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
     --tw-space-x-reverse: 0;
     margin-right: calc(0.5rem * var(--tw-space-x-reverse));
     margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
-  }
-
-  #app .lg\:rounded-b-lg{
-    border-bottom-right-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
-  }
-
-  #app .lg\:rounded-r-none{
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-  }
-
-  #app .lg\:rounded-l-none{
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-  }
-
-  #app .lg\:rounded-tr-lg{
-    border-top-right-radius: 0.5rem;
   }
 
   #app .lg\:px-20{
@@ -2873,11 +2879,11 @@ nav:
 </details>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/website/commit/57ead9ea2334847f1a86f3ef6a3c337eb0a2d69b" class="no-underline hover:underline" target="_blank">fix: 💬 Improved Small Phone Experience<br />
+  <a href="https://github.com/lusend/website/commit/edcc4a2a42081c1473315cd429306e1e6217f11d" class="no-underline hover:underline" target="_blank">style: 💄 Updated Preview Font Size<br />
 <br />
-Improved the experience on small devices by ensuring `­``s (a dash that will only appear when the viewport is too small) are placed appropriately. Also made sure buttons had a slight margin bottom in case they end up stacking.</a>
+Added a decreasing font size onn pages to better differentiate page levels.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-24T18:35:13Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-24T19:05:17Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
@@ -2895,17 +2901,19 @@ Improved the experience on small devices by ensuring `­``s (a dash that will on
         
           
 
-  <div class="mb-5">
-    <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
-        
-        <span>Home</span>
+  <div class="mb-2">
+    <div class="flex flex-wrap items-stretch leading-tight">
+      <div style="font-size: calc(1.25rem - 0px)" class="px-2 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        <div style="margin-left: 0px">
+          <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 0px;">&nbsp;</div>
+          <span>Home</span>
+        </div>
       </div>
-      <button id="home_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+      <button id="home_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button id="home_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+      <button id="home_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="home_copytext">Copy</span>
       </button>
@@ -2919,24 +2927,23 @@ Improved the experience on small devices by ensuring `­``s (a dash that will on
   </div>
 
   
-    
+    <div class="py-2">
       
+        
 
-  <div class="mb-5">
-    <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
-        
-          <svg class="h-4" style="margin-left: 20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
-          </svg>
-        
-        <span>Group Travel</span>
+  <div class="mb-2">
+    <div class="flex flex-wrap items-stretch leading-tight">
+      <div style="font-size: calc(1.25rem - 2px)" class="px-2 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        <div style="margin-left: 30px">
+          <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 30px;">&nbsp;</div>
+          <span>Group Travel</span>
+        </div>
       </div>
-      <button id="group_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+      <button id="group_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button id="group_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+      <button id="group_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="group_copytext">Copy</span>
       </button>
@@ -2950,27 +2957,23 @@ Improved the experience on small devices by ensuring `­``s (a dash that will on
   </div>
 
   
-    
-  
 
-    
       
+        
 
-  <div class="mb-5">
-    <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
-        
-          <svg class="h-4" style="margin-left: 20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
-          </svg>
-        
-        <span>Individual Travel</span>
+  <div class="mb-2">
+    <div class="flex flex-wrap items-stretch leading-tight">
+      <div style="font-size: calc(1.25rem - 2px)" class="px-2 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        <div style="margin-left: 30px">
+          <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 30px;">&nbsp;</div>
+          <span>Individual Travel</span>
+        </div>
       </div>
-      <button id="individual_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+      <button id="individual_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button id="individual_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+      <button id="individual_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="individual_copytext">Copy</span>
       </button>
@@ -2984,24 +2987,23 @@ Improved the experience on small devices by ensuring `­``s (a dash that will on
   </div>
 
   
-    
+    <div class="py-2">
       
+        
 
-  <div class="mb-5">
-    <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
-        
-          <svg class="h-4" style="margin-left: 40px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
-          </svg>
-        
-        <span>Getting Started &amp; Advising</span>
+  <div class="mb-2">
+    <div class="flex flex-wrap items-stretch leading-tight">
+      <div style="font-size: calc(1.25rem - 4px)" class="px-2 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        <div style="margin-left: 60px">
+          <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 60px;">&nbsp;</div>
+          <span>Getting Started &amp; Advising</span>
+        </div>
       </div>
-      <button id="advising_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+      <button id="advising_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button id="advising_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+      <button id="advising_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="advising_copytext">Copy</span>
       </button>
@@ -3015,27 +3017,23 @@ Improved the experience on small devices by ensuring `­``s (a dash that will on
   </div>
 
   
-    
-  
 
-    
       
+        
 
-  <div class="mb-5">
-    <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
-        
-          <svg class="h-4" style="margin-left: 40px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
-          </svg>
-        
-        <span>Browse Programs</span>
+  <div class="mb-2">
+    <div class="flex flex-wrap items-stretch leading-tight">
+      <div style="font-size: calc(1.25rem - 4px)" class="px-2 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        <div style="margin-left: 60px">
+          <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 60px;">&nbsp;</div>
+          <span>Browse Programs</span>
+        </div>
       </div>
-      <button id="programs_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+      <button id="programs_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button id="programs_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+      <button id="programs_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="programs_copytext">Copy</span>
       </button>
@@ -3049,27 +3047,23 @@ Improved the experience on small devices by ensuring `­``s (a dash that will on
   </div>
 
   
-    
-  
 
-    
       
+        
 
-  <div class="mb-5">
-    <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
-        
-          <svg class="h-4" style="margin-left: 40px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
-          </svg>
-        
-        <span>Program Process</span>
+  <div class="mb-2">
+    <div class="flex flex-wrap items-stretch leading-tight">
+      <div style="font-size: calc(1.25rem - 4px)" class="px-2 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        <div style="margin-left: 60px">
+          <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 60px;">&nbsp;</div>
+          <span>Program Process</span>
+        </div>
       </div>
-      <button id="process_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+      <button id="process_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button id="process_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+      <button id="process_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="process_copytext">Copy</span>
       </button>
@@ -3083,27 +3077,23 @@ Improved the experience on small devices by ensuring `­``s (a dash that will on
   </div>
 
   
-    
-  
 
-    
       
+        
 
-  <div class="mb-5">
-    <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
-        
-          <svg class="h-4" style="margin-left: 40px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
-          </svg>
-        
-        <span>Policies, Guidelines &amp; FAQ</span>
+  <div class="mb-2">
+    <div class="flex flex-wrap items-stretch leading-tight">
+      <div style="font-size: calc(1.25rem - 4px)" class="px-2 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        <div style="margin-left: 60px">
+          <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 60px;">&nbsp;</div>
+          <span>Policies, Guidelines &amp; FAQ</span>
+        </div>
       </div>
-      <button id="policies_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+      <button id="policies_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button id="policies_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+      <button id="policies_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="policies_copytext">Copy</span>
       </button>
@@ -3117,30 +3107,27 @@ Improved the experience on small devices by ensuring `­``s (a dash that will on
   </div>
 
   
-    
-  
 
-    
-  
-
-    
       
+    </div>
+  
 
-  <div class="mb-5">
-    <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
+      
         
-          <svg class="h-4" style="margin-left: 20px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
-          </svg>
-        
-        <span>Faculty Gateway</span>
+
+  <div class="mb-2">
+    <div class="flex flex-wrap items-stretch leading-tight">
+      <div style="font-size: calc(1.25rem - 2px)" class="px-2 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        <div style="margin-left: 30px">
+          <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 30px;">&nbsp;</div>
+          <span>Faculty Gateway</span>
+        </div>
       </div>
-      <button id="faculty_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+      <button id="faculty_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button id="faculty_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+      <button id="faculty_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="faculty_copytext">Copy</span>
       </button>
@@ -3154,24 +3141,23 @@ Improved the experience on small devices by ensuring `­``s (a dash that will on
   </div>
 
   
-    
+    <div class="py-2">
       
+        
 
-  <div class="mb-5">
-    <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
-        
-          <svg class="h-4" style="margin-left: 40px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
-          </svg>
-        
-        <span>Domestic Proposal Process</span>
+  <div class="mb-2">
+    <div class="flex flex-wrap items-stretch leading-tight">
+      <div style="font-size: calc(1.25rem - 4px)" class="px-2 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        <div style="margin-left: 60px">
+          <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 60px;">&nbsp;</div>
+          <span>Domestic Proposal Process</span>
+        </div>
       </div>
-      <button id="domestic_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+      <button id="domestic_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button id="domestic_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+      <button id="domestic_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="domestic_copytext">Copy</span>
       </button>
@@ -3185,27 +3171,23 @@ Improved the experience on small devices by ensuring `­``s (a dash that will on
   </div>
 
   
-    
-  
 
-    
       
+        
 
-  <div class="mb-5">
-    <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
-        
-          <svg class="h-4" style="margin-left: 40px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
-          </svg>
-        
-        <span>International Proposal Process</span>
+  <div class="mb-2">
+    <div class="flex flex-wrap items-stretch leading-tight">
+      <div style="font-size: calc(1.25rem - 4px)" class="px-2 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        <div style="margin-left: 60px">
+          <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 60px;">&nbsp;</div>
+          <span>International Proposal Process</span>
+        </div>
       </div>
-      <button id="international_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+      <button id="international_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button id="international_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+      <button id="international_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="international_copytext">Copy</span>
       </button>
@@ -3219,13 +3201,13 @@ Improved the experience on small devices by ensuring `­``s (a dash that will on
   </div>
 
   
-    
+
+      
+    </div>
   
 
-    
-  
-
-    
+      
+    </div>
   
 
         
