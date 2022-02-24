@@ -172,18 +172,19 @@ This option allows you to define navigation hierarchy and will apply to the navi
 - [x] Optimize Testimonial Images
 - [x] Optimize Home Images
 - [x] Optimize Individual Images
-- [ ] Optimize Faculty Images
-- [ ] Optimize Program Process Images
-- [ ] Optimize Getting Started Images
-- [ ] Optimize Individual Programs Images
-- [ ] Optimize Policies Images
-- [ ] Optimize Int Proposal Images
-- [ ] Optimize Dom Proposal Images
+- [x] Optimize Faculty Images
+- [x] Optimize Program Process Images
+- [x] Optimize Getting Started Images
+- [x] Optimize Individual Programs Images
+- [x] Optimize Policies Images
+- [x] Optimize Int Proposal Images
+- [x] Optimize Dom Proposal Images
 
 ### Content
 
 - [x] Add Correct Content to Pages
 - [x] Document Usage of Website
+- [x] Include Advanced Menu Button
 
 </details>
 

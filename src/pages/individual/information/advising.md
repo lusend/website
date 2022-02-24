@@ -10,7 +10,7 @@ LU Send Study Abroad provides experiences through Study Abroad and International
 
 # Program Opportunities
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21502){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35534){.header}
 
 ## Study Abroad Signature Program
 
@@ -29,7 +29,7 @@ These opportunities provide tangible ways to gain professional, hands-on experie
 
 # Advising 101
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21487){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35701){.header}
 
 Begin the advising process by signing up for a 101 session. The Advising 101 group session is **mandatory** for all students seeking to participate in the LU Send Study Abroad program. You will learn about the overall details of what study abroad and international internships looks like with Liberty University.
 
@@ -39,13 +39,13 @@ Please email any inquiries to [lusendstudyabroad@liberty.edu](mailto:lusendstudy
 
 # Advising 201
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21486){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35703){.header}
 
 This group session will cover: application process, financial aid, course registration, and planning & preparation. There will be time for students to ask specific questions about their program. The Advising 201 group session is **mandatory** for all students seeking to participate in the LU Send Study Abroad Program. A link to register for Advising 201 will be sent to you after you complete Advising 101.
 
 # Advising 301
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=26354){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35713){.header}
 
 These group sessions are interactive advising sessions for all students who have taken the next steps in their journey abroad. These sessions aim to develop the whole student in their preparation to go abroad.
 
@@ -53,7 +53,7 @@ Please Note: _Students are required to attend at least one Advising 301 session 
 
 # Advising 401
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=26355){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35711){.header}
 
 Advising 401 is the Pre-Departure Training, held near the end of the semester prior to your semester abroad. You have completed all LU Send application requirements and have been approved to study and/or intern abroad next semester. Several departments are coming together to help prepare you for your journey abroad. During this training you will learn about Cultural Intelligence, culture shock, travel safety, and much more. We hope this event also allows you space to connect with your peers who will also be studying or interning abroad. Event details will be sent to you via email in advance.
 

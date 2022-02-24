@@ -2,7 +2,7 @@
 title: Faculty & Staff Gateway
 hero: 'Faculty & Staff Gateway'
 header: false
-background: https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21517
+background: https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35627
 nav:
   title: Faculty Gateway
   parent: home
@@ -22,7 +22,7 @@ Whether you are planning international travel, domestic travel, or individual tr
 - We've got a library of training resources available to equip you & your students to maximize your travel experiences.
 
 {% action actions,
-  picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21518',
+  picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35630',
   title = 'Individual Travel Proposal',
   link = 'https://liberty-sa.terradotta.com/index.cfm?FuseAction=Students.Apply&Program_ID=11900'
 %}
@@ -30,7 +30,7 @@ Liberty University faculty and staff must register their international travel wi
 {% endaction %}
 
 {% action actions,
-  picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21520',
+  picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35632',
   title = 'Inter&shy;national Travel Proposal Process',
   link = link('international')
 %}
@@ -38,7 +38,7 @@ LU Send works with you to develop the educational, cultural, spiritual, and logi
 {% endaction %}
 
 {% action actions,
-  picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21521',
+  picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35628',
   title = 'Domestic Travel Proposal Process',
   link = link('domestic')
 %}

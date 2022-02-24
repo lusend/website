@@ -5,15 +5,13 @@ nav:
   parent: faculty
 ---
 
-# Trip Proposal
-
 Through LU Send, Liberty University strives to partner with faculty and staff to provide quality academic experiences with minimal risk to the students. With that in mind, here are some policies that have been put in place, along with some guidelines that can assist with providing a positive experience for our faculty and students.
 
 [Submit Trip Proposal](https://liberty.co1.qualtrics.com/jfe/form/SV_6WLZxhZxu6fhntc?BaseType=domestic){.btn .btn-full}
 
 # Domestic Proposal Deadlines
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=34515){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35651){.header}
 
 _\*The dates below are for trips that operate as a full LU Send Trip. These trips are overnight, more than 50 miles away from Liberty’s campus, include culture immersion, academic credit (or CSER credit), and a service opportunity. An LU Send Trip Coordinator manages the logistics, budget, excused absences, out of bed requests, etc. Proposals should be sent in 9 months before departure._
 
@@ -36,7 +34,7 @@ _\*If your trip does not operate as a full LU Send trip (does not require logist
 
 # Trip Proposal Process
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=26354){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35653){.header}
 
 As the centralized hub for all student group travel, LU Send ensures risk mitigation, a smooth approval process, and executive reporting to the Provost. Having processed 200+ academic trips per academic year, we are glad to walk with you in providing exceptional student group travel opportunities within the United States!
 
@@ -56,7 +54,7 @@ LU Send will communicate the proposal’s approval status to the faculty/staff l
 
 # Faculty-Led Trips
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=26351){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35657){.header ."object-[center_30%]"}
 
 LU Send is the centralized hub of support for all student travel and processes all faculty-led academic/co-curricular trips. Faculty/Staff who wish to host a group of students on a domestic or international trip must work with LU Send to obtain approval and support for those trips, whether during the semester or during breaks.
 
@@ -82,7 +80,7 @@ In order to remain in compliance with academic regulations for states outside of
 
 # General Policy
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=26353){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35574){.header}
 
 Domestic Student Travel encompasses a large variety of trips, but there are a few policies that apply to all travel:
 

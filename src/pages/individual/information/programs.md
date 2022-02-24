@@ -8,7 +8,7 @@ nav:
 
 # Signature Programs
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21503){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35684){.header}
 
 Experiencing a different culture in the context of a biblical Christian community.
 
@@ -23,7 +23,7 @@ _NOTE: Students **can** use their Liberty awarded scholarships for Signature Pro
 
 # Custom Programs
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21500){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35534){.header}
 
 LU Send has partnered with a number of organizations to provide students with a unique variety of options to study abroad or intern. Below you will find the available partner organizations that students can study abroad with.
 
@@ -57,7 +57,7 @@ _NOTE: Students can use outside loans, scholarships, and grants but **cannot** u
 
 # International Internships
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21518){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35657){.header ."object-[center_30%]"}
 
 These internships are exclusively for students looking for tangible ways to gain hands on professional experience in a cross culturally rich environments.
 

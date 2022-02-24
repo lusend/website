@@ -5,15 +5,13 @@ nav:
   parent: faculty
 ---
 
-# Trip Proposal
-
 Staff is available to consult with faculty in-person at any point in the proposal or development process. Email lusend@liberty.edu to connect today!
 
 [Submit Trip Proposal](https://liberty.co1.qualtrics.com/jfe/form/SV_6WLZxhZxu6fhntc?BaseType=international){.btn .btn-full}
 
 # International Proposal Deadlines
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=34515){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35651){.header}
 
 All of the proposal dates are hard deadlines. Deadlines will appear in red 30 days out and be removed once they have passed.
 
@@ -32,7 +30,7 @@ All of the proposal dates are hard deadlines. Deadlines will appear in red 30 da
 
 # Trip Proposal Process
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=26354){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35653){.header}
 
 As faculty, your involvement is integral in equipping Liberty students to be fully prepared to meet their futures in a globalizing marketplace. LU Send works with you to create cross-cultural opportunities that contribute to your students’ development as lifelong learners and Champions for Christ, wherever their journey takes them.
 
@@ -50,7 +48,7 @@ LU Send will communicate the proposal’s approval status to the faculty/staff l
 
 # Development Process
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=26355){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35655){.header}
 
 1. The Trip Coordinator assigned to your trip will meet with you to assess and finalize the specific logistical needs of your trip. This includes:
    - Trip itinerary
@@ -66,7 +64,7 @@ LU Send will communicate the proposal’s approval status to the faculty/staff l
 
 # Unsponsored Group Travel
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21492){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35657){.header ."object-[center_30%]"}
 
 Any Faculty member participating in international group travel opportunities **that are not related to the University** but which do have Liberty University students attending (i.e. church mission trips) must be disclosed to LU Send no later than 3 weeks before travel. This short disclosure form can be found through the Faculty/Staff Resources Gateway on our website. In addition to registration, none of these international opportunities are to be presented or marketed to Liberty University students on campus without express written permission from LU Send.
 

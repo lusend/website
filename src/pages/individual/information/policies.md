@@ -10,7 +10,7 @@ All LU Send Study Abroad programs are university approved with oversight from mu
 
 # Eligibilities
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21486){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35669){.header}
 
 _Students must meet specific requirements to be eligible to participate in any LU Send Study Abroad program._
 
@@ -28,7 +28,7 @@ _Students must meet specific requirements to be eligible to participate in any L
 
 # Billing & Payments
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21487){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35671){.header}
 
 ## Signature Programs
 
@@ -60,7 +60,7 @@ NOTE: **Students who have completed Financial Check-In will be prompted to make 
 
 # Study Abroad and Internship Fees
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21488){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35673){.header}
 
 Students participating in an LU Send Study Abroad program will pay a fee to help cover expenses including: background check, international health and travel insurance, Alert Traveler, travel package, Pre-Departure Training, and administrative & processing fees.
 
@@ -73,7 +73,7 @@ NOTE: **The LU Send Study Abroad Fee is placed on the student’s account. This 
 
 # Financial Aid
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21489){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35675){.header}
 
 ## Signature Programs
 
@@ -104,7 +104,7 @@ NOTE: **If you have questions regarding your Financial Aid, please contact Caleb
 
 # Consortium Agreement
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21490){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35677){.header}
 
 - A consortium agreement is a document for students taking courses for transfer credit at a host university or study center. The agreement allows students with federal aid, scholarships, and loans to allocate those funds toward their study abroad costs. The consortium agreement is completed in conjunction with the final Course Approval Form. Students will work with the LU Send Financial Aid representative to complete and sign their consortium agreement. The student will upload a copy of the completed form to their LU Send Study Abroad application.
 - Students participating in a Custom Program who are not using financial aid do not need to complete a consortium agreement.
@@ -112,7 +112,7 @@ NOTE: **If you have questions regarding your Financial Aid, please contact Caleb
 
 # Registration & Enrollment
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21491){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35691){.header}
 
 Students must maintain full-time student status while studying abroad by taking the equivalent of at least 12 U.S. credits (for Spring and Fall semesters). Students may take more than 12 credits, but at least 12 credits **must** satisfy the requirements of their Degree Completion Plan (DCP).
 
@@ -141,7 +141,7 @@ NOTE: **Online students are not held to the 12 credit minimum for Spring and Fal
 
 # Courses, Credits, & Grades
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21492){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35693){.header}
 
 - Students must obtain a passing grade in courses taken abroad (C or above) to satisfy Degree Completion Plan requirements.
 - For students participating in a Custom Program, classes will post on their transcript as Pass or Fail based on the grades received overseas and how those grades equate to the Liberty grading system.
@@ -152,7 +152,7 @@ NOTE: **Online students are not held to the 12 credit minimum for Spring and Fal
 
 # Deadlines
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=34515){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35651){.header}
 
 Please note that these deadlines are for LU Send Study Abroad & International Internship applications only. Please be sure to check with your partner organization or host institution for specific program application deadlines.
 
@@ -197,7 +197,7 @@ Please note that these deadlines are for LU Send Study Abroad & International In
 
 # Withdrawal & Refunds
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21495){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35681){.header}
 
 LU Send does not charge withdrawal fees. Additionally, the LU Send Study Abroad fee is fully refundable if you withdraw from your program before you leave the U.S.
 
@@ -205,13 +205,13 @@ Note: **Refunds for fees associated with your program provider will be based on 
 
 # International Health & Travel Insurance Requirement
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21497){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35679){.header}
 
 All study abroad students are required to carry International Health & Travel insurance which is purchased for them by LU Send prior to their departure. Please review the insurance documents in your LU Send application that explain the coverage and summary of benefits.
 
 # Passport & Visas
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21496){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35695){.header}
 
 ## Passports
 
@@ -226,14 +226,14 @@ All study abroad students are required to carry International Health & Travel in
 
 # Housing at Liberty University
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21498){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35684){.header}
 
 - Students who will be abroad during any spring semester and not returning to Liberty on-campus housing in the fall will need to submit an “Off-Campus Living Request” when completing FCI for the following fall semester.
 - Students are responsible to register for LU housing and complete FCI for the semester following their semester abroad.
 
 # Risk Management
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21499){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35686){.header}
 
 LU Send works with Risk Management and LUPD to assess security conditions of all programs and host countries around the world.
 
@@ -244,7 +244,7 @@ LU Send works with Risk Management and LUPD to assess security conditions of all
 
 # FAQ
 
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21493){.header}
+![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35688){.header}
 
 ## I have International coverage through my Program, do I have to have / pay for Liberty Insurance?
 
