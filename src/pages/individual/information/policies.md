@@ -238,7 +238,7 @@ All study abroad students are required to carry International Health & Travel in
 LU Send works with Risk Management and LUPD to assess security conditions of all programs and host countries around the world.
 
 - LU Send receives real time reports and continuously monitors travel alerts and advisories. LU Send takes into consideration recommendations issued by the U.S. Department of State, Centers for Disease Control, and Alert Traveler.
-- For specific details on travel advisories and countries that are restricted for Liberty University travel, please contact LU Send at [lusendstudyabroad@liberty.edu](mailto:lusendstudyabroad@liberty.edu).
+- For specific details on travel advisories and countries that are restricted for Liberty University travel, please contact LU Send at [lusendstudyabroad&shy;@liberty.edu](mailto:lusendstudyabroad@liberty.edu).
 
 <hr />
 

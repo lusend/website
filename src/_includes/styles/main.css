@@ -47,3 +47,9 @@
 .prose :where(tbody td):not(:where([class~='not-prose'] *)) {
   @apply align-middle;
 }
+
+.prose {
+  .btn {
+    @apply mb-1;
+  }
+}
