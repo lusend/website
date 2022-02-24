@@ -29,6 +29,16 @@
     }
   }
 
+  #map {
+    .btn {
+      &:focus,
+      &:active,
+      & {
+        @apply animate-none scale-100;
+      }
+    }
+  }
+
   /* Table of Contents */
   .table-of-contents {
     @apply relative;
