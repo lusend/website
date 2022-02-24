@@ -132,7 +132,11 @@ class MapDriver {
           streetViewControl: !1,
           mapTypeControlOptions: {
             position: google.maps.ControlPosition.RIGHT_BOTTOM,
-            style: google.maps.MapTypeControlStyle.DEFAULT
+            style: google.maps.MapTypeControlStyle.DEFAULT,
+            mapTypeIds: [
+              google.maps.MapTypeId.ROADMAP,
+              google.maps.MapTypeId.HYBRID
+            ]
           },
           zoomControlOptions: {
             position: google.maps.ControlPosition.RIGHT_CENTER
@@ -166,7 +170,7 @@ class MapDriver {
           $('#map-markers-list').css('max-width', '0px'),
           $('#map-markers-list').css('padding', '0px'))
         : ($('#map-markers-list-icon path').attr('d', this.shrink),
-          $('#map-markers-list').css('max-width', '50%'),
+          $('#map-markers-list').css('max-width', '70%'),
           $('#map-markers-list').css('padding', '0.65rem'));
   }
   updateMarkerList(headerElement) {

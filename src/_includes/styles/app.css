@@ -145,9 +145,9 @@
   }
 
   /* Map Styles */
-  .gmnoprint[style*='1000000'] {
+  /* .gmnoprint[style*='1000000'] {
     @apply pb-10;
-  }
+  } */
 
   .selectizer {
     @apply flex w-full justify-center;
@@ -158,7 +158,7 @@
   }
 
   #map-markers-list {
-    @apply bg-white bg-opacity-95 w-1/2 h-4/6 rounded-r-md transition-all shadow-lg;
+    @apply bg-white bg-opacity-95 w-3/4 sm:w-1/2 h-4/6 rounded-r-md transition-all shadow-lg;
   }
 
   #map-markers-list .list-content {
@@ -166,7 +166,7 @@
   }
 
   #map-markers-list .list-markers {
-    @apply p-1 flex items-center gap-4;
+    @apply p-1 flex items-center gap-2;
   }
 
   #map-markers-list .list-markers a {
