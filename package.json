@@ -11,10 +11,11 @@
     "build": "ELEVENTY_ENV=production npx @11ty/eleventy",
     "stage": "ELEVENTY_ENV=stage npx @11ty/eleventy",
     "clean": "rm -Rf dist",
+    "minify": "npx parcel build 'dist/pages/**/*.html' 'dist/pages/*.html' --dist-dir dist/pages --no-source-maps",
     "predev": "npm run clean",
     "prebuild": "npm run stage",
     "prestage": "npm run clean",
-    "postbuild": "npx parcel build 'dist/pages/**/*.html' 'dist/pages/*.html' --dist-dir dist/pages --no-source-maps"
+    "postbuild": "npm run minify"
   },
   "repository": {
     "type": "git",
