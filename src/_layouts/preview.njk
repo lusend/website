@@ -14,10 +14,11 @@
 
   <div class="mb-2">
     <div class="flex flex-wrap items-stretch leading-tight">
-      <div style="font-size: calc(1.25rem - {{childMargin * 2}}px)" class="px-2 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
-        <div style="margin-left: {{(childMargin) * 30}}px">
+      <div style="font-size: calc(1.25rem - {{childMargin * 3}}px)" class="px-2 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        <div style="margin-left: {{(childMargin) * 30}}px" class="">
           <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: {{(childMargin) * 30}}px;">&nbsp;</div>
-          <span>{{ entry.title }}</span>
+          <div>{{ entry.title }}</div>
+          <div style="font-size: 10px;" class="text-xs leading-tight">({{ entry.slug }})</div>
         </div>
       </div>
       <button id="{{ entry.key + "_preview" }}" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">

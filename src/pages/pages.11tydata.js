@@ -31,6 +31,7 @@ module.exports = async function (configData) {
           ?.eleventyNavigation.url || '#',
       eleventyNavigation: {
         path: (data) => data.path,
+        slug: (data) => data.slug,
         permalink: (data) => data.permalink,
         key: (data) => data.slug,
         title: (data) => data.nav?.title || data.title,
