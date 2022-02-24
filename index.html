@@ -397,6 +397,12 @@ Reset links to optimize for opt-in styling instead of opt-out.
           animation: none;
 }
 
+/* Hide Badges for Preview */
+
+#app div[data-hidebadge] {
+    display: none;
+  }
+
 /* Table of Contents */
 
 #app .table-of-contents{
@@ -1285,6 +1291,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
   left: 0px;
 }
 
+#app .-top-\[0\.4rem\]{
+  top: -0.4rem;
+}
+
+#app .-left-\[0\.4rem\]{
+  left: -0.4rem;
+}
+
 #app .left-1{
   left: 0.25rem;
 }
@@ -1489,6 +1503,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   height: 4rem;
 }
 
+#app .h-5{
+  height: 1.25rem;
+}
+
 #app .h-6{
   height: 1.5rem;
 }
@@ -1499,10 +1517,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .h-\[15rem\]{
   height: 15rem;
-}
-
-#app .h-5{
-  height: 1.25rem;
 }
 
 #app .h-12{
@@ -1555,6 +1569,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .w-3\/4{
   width: 75%;
+}
+
+#app .w-5{
+  width: 1.25rem;
 }
 
 #app .w-6{
@@ -2879,14 +2897,15 @@ nav:
 </details>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/website/commit/dfe20f970bae912b5940fdf30973d4617502d2b4" class="no-underline hover:underline" target="_blank">feat: ✨ Allow Advanced Menu Persistence<br />
+  <a href="https://github.com/lusend/website/commit/bf99388d29989d8904d2d9aea35bc983c7de0387" class="no-underline hover:underline" target="_blank">feat: ✨ Added Badges to Preview<br />
 <br />
-Added ability to persist advanced menu toggle state across website.</a>
+Added badges to the preview to indicate when a page has been changed or not.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-24T19:51:53Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-24T21:08:32Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
+<p><em>If any page content was changed based on the above comment, a badge will appear next to the page.</em></p>
 
 
         <label for="envToggle" class="flex items-center w-full my-5 cursor-pointer not-prose">
@@ -2903,8 +2922,11 @@ Added ability to persist advanced menu toggle state across website.</a>
 
   <div class="mb-2">
     <div class="flex flex-wrap items-stretch leading-tight">
-      <div style="font-size: calc(1.25rem - 0px)" class="px-2 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+      <div style="font-size: calc(1.25rem - 0px)" class="px-3 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
         <div style="margin-left: 0px" class="">
+          <div data-inputpath="./src/pages/home.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
+            <ion-icon name="sparkles" class="text-primary-content" style="font-size: 12px;">&nbsp;</ion-icon>
+          </div>
           <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 0px;">&nbsp;</div>
           <div>Home</div>
           <div style="font-size: 10px;" class="text-xs leading-tight">(home)</div>
@@ -2934,8 +2956,11 @@ Added ability to persist advanced menu toggle state across website.</a>
 
   <div class="mb-2">
     <div class="flex flex-wrap items-stretch leading-tight">
-      <div style="font-size: calc(1.25rem - 3px)" class="px-2 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+      <div style="font-size: calc(1.25rem - 3px)" class="px-3 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
         <div style="margin-left: 30px" class="">
+          <div data-inputpath="./src/pages/group/group.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
+            <ion-icon name="sparkles" class="text-primary-content" style="font-size: 12px;">&nbsp;</ion-icon>
+          </div>
           <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 30px;">&nbsp;</div>
           <div>Group Travel</div>
           <div style="font-size: 10px;" class="text-xs leading-tight">(group)</div>
@@ -2965,8 +2990,11 @@ Added ability to persist advanced menu toggle state across website.</a>
 
   <div class="mb-2">
     <div class="flex flex-wrap items-stretch leading-tight">
-      <div style="font-size: calc(1.25rem - 3px)" class="px-2 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+      <div style="font-size: calc(1.25rem - 3px)" class="px-3 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
         <div style="margin-left: 30px" class="">
+          <div data-inputpath="./src/pages/individual/individual.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
+            <ion-icon name="sparkles" class="text-primary-content" style="font-size: 12px;">&nbsp;</ion-icon>
+          </div>
           <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 30px;">&nbsp;</div>
           <div>Individual Travel</div>
           <div style="font-size: 10px;" class="text-xs leading-tight">(individual)</div>
@@ -2996,8 +3024,11 @@ Added ability to persist advanced menu toggle state across website.</a>
 
   <div class="mb-2">
     <div class="flex flex-wrap items-stretch leading-tight">
-      <div style="font-size: calc(1.25rem - 6px)" class="px-2 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+      <div style="font-size: calc(1.25rem - 6px)" class="px-3 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
         <div style="margin-left: 60px" class="">
+          <div data-inputpath="./src/pages/individual/information/advising.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
+            <ion-icon name="sparkles" class="text-primary-content" style="font-size: 12px;">&nbsp;</ion-icon>
+          </div>
           <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 60px;">&nbsp;</div>
           <div>Getting Started &amp; Advising</div>
           <div style="font-size: 10px;" class="text-xs leading-tight">(advising)</div>
@@ -3027,8 +3058,11 @@ Added ability to persist advanced menu toggle state across website.</a>
 
   <div class="mb-2">
     <div class="flex flex-wrap items-stretch leading-tight">
-      <div style="font-size: calc(1.25rem - 6px)" class="px-2 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+      <div style="font-size: calc(1.25rem - 6px)" class="px-3 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
         <div style="margin-left: 60px" class="">
+          <div data-inputpath="./src/pages/individual/information/programs.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
+            <ion-icon name="sparkles" class="text-primary-content" style="font-size: 12px;">&nbsp;</ion-icon>
+          </div>
           <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 60px;">&nbsp;</div>
           <div>Browse Programs</div>
           <div style="font-size: 10px;" class="text-xs leading-tight">(programs)</div>
@@ -3058,8 +3092,11 @@ Added ability to persist advanced menu toggle state across website.</a>
 
   <div class="mb-2">
     <div class="flex flex-wrap items-stretch leading-tight">
-      <div style="font-size: calc(1.25rem - 6px)" class="px-2 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+      <div style="font-size: calc(1.25rem - 6px)" class="px-3 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
         <div style="margin-left: 60px" class="">
+          <div data-inputpath="./src/pages/individual/information/process.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
+            <ion-icon name="sparkles" class="text-primary-content" style="font-size: 12px;">&nbsp;</ion-icon>
+          </div>
           <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 60px;">&nbsp;</div>
           <div>Program Process</div>
           <div style="font-size: 10px;" class="text-xs leading-tight">(process)</div>
@@ -3089,8 +3126,11 @@ Added ability to persist advanced menu toggle state across website.</a>
 
   <div class="mb-2">
     <div class="flex flex-wrap items-stretch leading-tight">
-      <div style="font-size: calc(1.25rem - 6px)" class="px-2 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+      <div style="font-size: calc(1.25rem - 6px)" class="px-3 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
         <div style="margin-left: 60px" class="">
+          <div data-inputpath="./src/pages/individual/information/policies.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
+            <ion-icon name="sparkles" class="text-primary-content" style="font-size: 12px;">&nbsp;</ion-icon>
+          </div>
           <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 60px;">&nbsp;</div>
           <div>Policies, Guidelines &amp; FAQ</div>
           <div style="font-size: 10px;" class="text-xs leading-tight">(policies)</div>
@@ -3124,8 +3164,11 @@ Added ability to persist advanced menu toggle state across website.</a>
 
   <div class="mb-2">
     <div class="flex flex-wrap items-stretch leading-tight">
-      <div style="font-size: calc(1.25rem - 3px)" class="px-2 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+      <div style="font-size: calc(1.25rem - 3px)" class="px-3 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
         <div style="margin-left: 30px" class="">
+          <div data-inputpath="./src/pages/faculty/faculty.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
+            <ion-icon name="sparkles" class="text-primary-content" style="font-size: 12px;">&nbsp;</ion-icon>
+          </div>
           <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 30px;">&nbsp;</div>
           <div>Faculty Gateway</div>
           <div style="font-size: 10px;" class="text-xs leading-tight">(faculty)</div>
@@ -3155,8 +3198,11 @@ Added ability to persist advanced menu toggle state across website.</a>
 
   <div class="mb-2">
     <div class="flex flex-wrap items-stretch leading-tight">
-      <div style="font-size: calc(1.25rem - 6px)" class="px-2 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+      <div style="font-size: calc(1.25rem - 6px)" class="px-3 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
         <div style="margin-left: 60px" class="">
+          <div data-inputpath="./src/pages/faculty/proposal/domestic.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
+            <ion-icon name="sparkles" class="text-primary-content" style="font-size: 12px;">&nbsp;</ion-icon>
+          </div>
           <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 60px;">&nbsp;</div>
           <div>Domestic Proposal Process</div>
           <div style="font-size: 10px;" class="text-xs leading-tight">(domestic)</div>
@@ -3186,8 +3232,11 @@ Added ability to persist advanced menu toggle state across website.</a>
 
   <div class="mb-2">
     <div class="flex flex-wrap items-stretch leading-tight">
-      <div style="font-size: calc(1.25rem - 6px)" class="px-2 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+      <div style="font-size: calc(1.25rem - 6px)" class="px-3 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
         <div style="margin-left: 60px" class="">
+          <div data-inputpath="./src/pages/faculty/proposal/international.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
+            <ion-icon name="sparkles" class="text-primary-content" style="font-size: 12px;">&nbsp;</ion-icon>
+          </div>
           <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 60px;">&nbsp;</div>
           <div>International Proposal Process</div>
           <div style="font-size: 10px;" class="text-xs leading-tight">(international)</div>
@@ -3275,16 +3324,24 @@ async function checkIfDeployed() {
     ).commit;
 
     const deploymentCommit = await get(url);
-    const { sha: deploymentID } = deployments[0];
+    const { sha: deploymentID, files } = deployments[0];
     const { message: deploymentCommitMessage } = deploymentCommit.commit;
 
     const deployed =
       deploymentCommitMessage.includes(commitID) &&
       deploymentID === deploymentCommitID;
 
-    if (deployed)
+    if (deployed) {
       document.getElementById('status').innerHTML =
         'Deployment Status: ✅ Deployed!';
+
+      files.map((file) => {
+        const name = './src/' + file.filename.slice(0, -4) + 'md';
+        const badge = document.querySelector(`[data-inputpath='${name}'`);
+
+        if (badge) badge.style.display = 'flex';
+      });
+    }
 
     if (!deployed)
       document.getElementById('status').innerHTML =
