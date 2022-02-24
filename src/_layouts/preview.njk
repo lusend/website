@@ -13,8 +13,8 @@
 {% macro renderPage(entry, isChild = false, childMargin = 0) %}
 
   <div class="mb-2">
-    <div class="flex flex-wrap items-stretch">
-      <div class="px-2 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+    <div class="flex flex-wrap items-stretch leading-tight">
+      <div style="font-size: calc(1.25rem - {{childMargin * 2}}px)" class="px-2 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
         <div style="margin-left: {{(childMargin) * 30}}px">
           <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: {{(childMargin) * 30}}px;">&nbsp;</div>
           <span>{{ entry.title }}</span>
