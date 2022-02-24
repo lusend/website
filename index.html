@@ -2224,14 +2224,24 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #pagefooter,
 #pageheader,
-#pagenav-wrapper,
 #pagebodycontentheader {
+  display: none;
+}
+
+#pagenav-wrapper {
   display: none;
 }
 
 #pagebodycontent {
   float: none;
   padding: 0;
+}
+
+#pagenav.navbar,
+#pagenav.navbar-fixed-top {
+  position: relative;
+  margin-bottom: 0;
+  border: 0px;
 }
 
 #pagebody {
@@ -2817,11 +2827,11 @@ nav:
 </details>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/website/commit/e9f16d8fe872868bf7acb53fca3f89b5903c5e9a" class="no-underline hover:underline" target="_blank">fix: 💬 Ran Spell Check<br />
+  <a href="https://github.com/lusend/website/commit/5a5769869dea0675bd238111b40b856bb0f20fc7" class="no-underline hover:underline" target="_blank">feat: ✨ Added Advanced Menu<br />
 <br />
-Fixed various spelling errors in the different pages.</a>
+Included an advanced menu on the navigation bar to show the original navigation with everything listed.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-24T13:44:21Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-24T14:11:09Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
