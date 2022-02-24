@@ -12,21 +12,19 @@
 
 {% macro renderPage(entry, isChild = false, childMargin = 0) %}
 
-  <div class="mb-5">
+  <div class="mb-2">
     <div class="flex flex-wrap items-stretch">
-      <div class="px-5 py-2 font-bold uppercase rounded-lg rounded-b-none lg:rounded-b-lg lg:rounded-r-none basis-full lg:basis-0 lg:flex-auto flex justify-start items-center gap-2 bg-base-300">
-        {% if isChild %}
-          <svg class="h-4" style="margin-left: {{(childMargin) * 20}}px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-            <path fill="currentColor" d="m19 15l-6 6l-1.42-1.42L15.17 16H4V4h2v10h9.17l-3.59-3.58L13 9l6 6Z"></path>
-          </svg>
-        {% endif %}
-        <span>{{ entry.title }}</span>
+      <div class="px-2 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+        <div style="margin-left: {{(childMargin) * 30}}px">
+          <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: {{(childMargin) * 30}}px;">&nbsp;</div>
+          <span>{{ entry.title }}</span>
+        </div>
       </div>
-      <button id="{{ entry.key + "_preview" }}" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none lg:rounded-r-none lg:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+      <button id="{{ entry.key + "_preview" }}" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button id="{{ entry.key + "_copy" }}" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none lg:rounded-tr-lg lg:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+      <button id="{{ entry.key + "_copy" }}" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="{{ entry.key + "_copytext" }}">Copy</span>
       </button>
@@ -39,10 +37,12 @@
     </script>
   </div>
 
-  {% if entry.children %}
-    {% for item in entry.children %}
-      {{ renderPage(item, true, childMargin + 1) }}
-    {% endfor %}
+  {% if entry.children | length %}
+    <div class="py-2">
+      {% for item in entry.children %}
+        {{ renderPage(item, true, childMargin + 1) }}
+      {% endfor %}
+    </div>
   {% endif %}
 {% endmacro %}
 
