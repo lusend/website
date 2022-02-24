@@ -100,8 +100,9 @@
                   <ion-icon name="person-outline" class='text-lg'>&nbsp;</ion-icon>
                   <span>My Applications</span>
                 </a>
-                <a x-show="admin" href="#" x-on:click="document.querySelector('#pagenav-wrapper').style.display = document.querySelector('#pagenav-wrapper').style.display === 'block' ? '' : 'block'" class="inline-flex gap-2 items-center w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10" x-cloak>
-                  <ion-icon name="hammer-outline" class='text-lg'>&nbsp;</ion-icon>
+                <a x-show="admin" x-data="{ advancedMenu: $persist(false) }" href="#" x-on:click="advancedMenu = !advancedMenu" x-effect="document.querySelector('#pagenav-wrapper').style.display = advancedMenu ? 'block' : ''" class="inline-flex gap-2 items-center w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10" x-cloak>
+                  <ion-icon x-show="!advancedMenu" name="hammer-outline" class='text-lg' x-cloak>&nbsp;</ion-icon>
+                  <ion-icon x-show="advancedMenu" name="hammer" class='text-lg' x-cloak>&nbsp;</ion-icon>
                   <span>Advanced Menu</span>
                 </a>
               </li>
