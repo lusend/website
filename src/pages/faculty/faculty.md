@@ -19,7 +19,7 @@ Whether you are planning international travel, domestic travel, or individual tr
 - Our experienced staff walks with you through a personalized trip development process that begins with your idea and builds to include the strategic integration of the academic, cultural, and spiritual components.
 - Our team is equipped to connect you with the leading educational travel vendors, local experts, and Christian service organizations at your destination and to assist you with the facilitation of logistics, payments, training, promotions, and compliance requirements.
 - We've streamlined the approval process for you by documenting all of the University's policies for student group travel in one place. When you submit your trip request for LU Send, we'll walk you through our processes as well as help make sure you're on track to meet these various requirements.
-- We've got a library of training resources available to equip you & your students to maximize your travel experiences.
+- We've got a library of training resources available to equip you and your students to maximize your travel experiences.
 
 {% action actions,
   picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35630',

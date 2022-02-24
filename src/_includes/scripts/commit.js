@@ -22,8 +22,9 @@ async function checkIfDeployed() {
     ).commit;
 
     const deploymentCommit = await get(url);
-    const { sha: deploymentID, files } = deployments[0];
+    const { sha: deploymentID } = deployments[0];
     const { message: deploymentCommitMessage } = deploymentCommit.commit;
+    const files = deploymentCommit.files;
 
     const deployed =
       deploymentCommitMessage.includes(commitID) &&
