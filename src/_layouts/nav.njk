@@ -71,7 +71,7 @@
     </div>
 
     <div class="absolute inset-y-0 right-0 flex items-center text-primary-content">
-      <button x-data="{ planes: {{ planes }} }" x-effect="togglePlanes(planes)" x-on:click="planes = !planes" class="mr-1 inline-flex items-center justify-center gap-1 p-2 rounded-md hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-sm font-medium">
+      <button x-data="{ planes: {{ '$persist(' + planes + ')' if slug !== 'home' else planes }} }" x-effect="togglePlanes(planes)" x-on:click="planes = !planes" class="mr-1 inline-flex items-center justify-center gap-1 p-2 rounded-md hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-sm font-medium">
         <ion-icon x-show="!planes" name="airplane-outline"class='text-xl' x-cloak>&nbsp;</ion-icon>
         <ion-icon x-show="planes" name="airplane"class='text-xl' x-cloak>&nbsp;</ion-icon>
       </button>
