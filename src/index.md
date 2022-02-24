@@ -201,3 +201,5 @@ This option allows you to define navigation hierarchy and will apply to the navi
 </blockquote>
 
 ## Pages
+
+_If any page content was changed based on the above comment, a badge will appear next to the page._

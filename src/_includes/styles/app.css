@@ -39,6 +39,11 @@
     }
   }
 
+  /* Hide Badges for Preview */
+  div[data-hidebadge] {
+    display: none;
+  }
+
   /* Table of Contents */
   .table-of-contents {
     @apply relative;

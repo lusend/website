@@ -33,6 +33,7 @@ module.exports = async function (configData) {
         path: (data) => data.path,
         slug: (data) => data.slug,
         permalink: (data) => data.permalink,
+        inputPath: (data) => data.page.inputPath,
         key: (data) => data.slug,
         title: (data) => data.nav?.title || data.title,
         parent: (data) => data.nav?.parent,

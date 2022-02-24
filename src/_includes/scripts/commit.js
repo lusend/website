@@ -22,16 +22,24 @@ async function checkIfDeployed() {
     ).commit;
 
     const deploymentCommit = await get(url);
-    const { sha: deploymentID } = deployments[0];
+    const { sha: deploymentID, files } = deployments[0];
     const { message: deploymentCommitMessage } = deploymentCommit.commit;
 
     const deployed =
       deploymentCommitMessage.includes(commitID) &&
       deploymentID === deploymentCommitID;
 
-    if (deployed)
+    if (deployed) {
       document.getElementById('status').innerHTML =
         'Deployment Status: ✅ Deployed!';
+
+      files.map((file) => {
+        const name = './src/' + file.filename.slice(0, -4) + 'md';
+        const badge = document.querySelector(`[data-inputpath='${name}'`);
+
+        if (badge) badge.style.display = 'flex';
+      });
+    }
 
     if (!deployed)
       document.getElementById('status').innerHTML =

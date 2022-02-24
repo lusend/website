@@ -14,8 +14,11 @@
 
   <div class="mb-2">
     <div class="flex flex-wrap items-stretch leading-tight">
-      <div style="font-size: calc(1.25rem - {{childMargin * 3}}px)" class="px-2 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+      <div style="font-size: calc(1.25rem - {{childMargin * 3}}px)" class="px-3 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
         <div style="margin-left: {{(childMargin) * 30}}px" class="">
+          <div data-inputpath="{{ entry.inputPath }}" {% if not (entry.inputPath in commit.files) %} data-hidebadge="yes" {% endif %} class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
+            <ion-icon name="sparkles" class="text-primary-content" style="font-size: 12px;">&nbsp;</ion-icon>
+          </div>
           <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: {{(childMargin) * 30}}px;">&nbsp;</div>
           <div>{{ entry.title }}</div>
           <div style="font-size: 10px;" class="text-xs leading-tight">({{ entry.slug }})</div>

@@ -35,12 +35,15 @@ module.exports = async function () {
       committer: { name, email, date }
     } = main.commit;
 
+    const files = main.files.map((file) => './' + file.filename);
+
     return {
       message: markdown.renderInline(message),
       name,
       email,
       date,
-      id
+      id,
+      files
     };
   } catch (error) {
     console.log(error);
@@ -50,7 +53,8 @@ module.exports = async function () {
       name: undefined,
       email: undefined,
       date: undefined,
-      id: undefined
+      id: undefined,
+      files: []
     };
   }
 };
