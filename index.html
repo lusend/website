@@ -2638,7 +2638,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
   <body>
     <div id="app">
-      <div class="prose prose-a:font-[initial] m-auto p-5">
+      <div x-data class="prose prose-a:font-[initial] m-auto p-5">
         <p><a href="https://github.com/lusend/website/actions/workflows/build.yml" class="inline-block mb-2"><img src="https://github.com/lusend/website/actions/workflows/build.yml/badge.svg" alt="Build and Deploy Website" /></a> <a href="https://github.com/lusend/website/actions/workflows/pages/pages-build-deployment" class="inline-block mb-2"><img src="https://github.com/lusend/website/actions/workflows/pages/pages-build-deployment/badge.svg" alt="pages-build-deployment" /></a></p>
 <details>
 <summary>Table of Contents</summary>
@@ -2879,17 +2879,17 @@ nav:
 </details>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/website/commit/e156165400cd5d6a868f146c3d2bc90a07e927aa" class="no-underline hover:underline" target="_blank">feat: 💬 Added Slug to Preview<br />
+  <a href="https://github.com/lusend/website/commit/173a08ec885a2429c0417f5554b0e56b63b2aa66" class="no-underline hover:underline" target="_blank">style: 💄 Added Color Swap on Env Change<br />
 <br />
-Added the slug underneath the title of each page within the preview.</a>
+Added a swap to the button colors when the environment toggle is tapped. This makes the change between environments clearer.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-24T19:16:23Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-24T19:20:47Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
 
 
-        <label x-data for="envToggle" class="flex items-center w-full my-5 cursor-pointer not-prose">
+        <label for="envToggle" class="flex items-center w-full my-5 cursor-pointer not-prose">
           <strong class="flex-auto" x-text="$store.env.label">&nbsp;</strong>
           <div class="relative">
             <input x-on:input="$store.env.toggle()" type="checkbox" checked="checked" autocomplete="off" id="envToggle" class="sr-only peer"/>
@@ -2910,11 +2910,11 @@ Added the slug underneath the title of each page within the preview.</a>
           <div style="font-size: 10px;" class="text-xs leading-tight">(home)</div>
         </div>
       </div>
-      <button id="home_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="home_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content transition-colors">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button id="home_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="home_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content transition-colors">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="home_copytext">Copy</span>
       </button>
@@ -2941,11 +2941,11 @@ Added the slug underneath the title of each page within the preview.</a>
           <div style="font-size: 10px;" class="text-xs leading-tight">(group)</div>
         </div>
       </div>
-      <button id="group_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="group_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content transition-colors">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button id="group_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="group_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content transition-colors">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="group_copytext">Copy</span>
       </button>
@@ -2972,11 +2972,11 @@ Added the slug underneath the title of each page within the preview.</a>
           <div style="font-size: 10px;" class="text-xs leading-tight">(individual)</div>
         </div>
       </div>
-      <button id="individual_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="individual_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content transition-colors">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button id="individual_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="individual_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content transition-colors">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="individual_copytext">Copy</span>
       </button>
@@ -3003,11 +3003,11 @@ Added the slug underneath the title of each page within the preview.</a>
           <div style="font-size: 10px;" class="text-xs leading-tight">(advising)</div>
         </div>
       </div>
-      <button id="advising_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="advising_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content transition-colors">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button id="advising_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="advising_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content transition-colors">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="advising_copytext">Copy</span>
       </button>
@@ -3034,11 +3034,11 @@ Added the slug underneath the title of each page within the preview.</a>
           <div style="font-size: 10px;" class="text-xs leading-tight">(programs)</div>
         </div>
       </div>
-      <button id="programs_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="programs_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content transition-colors">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button id="programs_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="programs_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content transition-colors">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="programs_copytext">Copy</span>
       </button>
@@ -3065,11 +3065,11 @@ Added the slug underneath the title of each page within the preview.</a>
           <div style="font-size: 10px;" class="text-xs leading-tight">(process)</div>
         </div>
       </div>
-      <button id="process_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="process_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content transition-colors">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button id="process_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="process_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content transition-colors">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="process_copytext">Copy</span>
       </button>
@@ -3096,11 +3096,11 @@ Added the slug underneath the title of each page within the preview.</a>
           <div style="font-size: 10px;" class="text-xs leading-tight">(policies)</div>
         </div>
       </div>
-      <button id="policies_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="policies_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content transition-colors">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button id="policies_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="policies_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content transition-colors">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="policies_copytext">Copy</span>
       </button>
@@ -3131,11 +3131,11 @@ Added the slug underneath the title of each page within the preview.</a>
           <div style="font-size: 10px;" class="text-xs leading-tight">(faculty)</div>
         </div>
       </div>
-      <button id="faculty_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="faculty_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content transition-colors">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button id="faculty_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="faculty_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content transition-colors">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="faculty_copytext">Copy</span>
       </button>
@@ -3162,11 +3162,11 @@ Added the slug underneath the title of each page within the preview.</a>
           <div style="font-size: 10px;" class="text-xs leading-tight">(domestic)</div>
         </div>
       </div>
-      <button id="domestic_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="domestic_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content transition-colors">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button id="domestic_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="domestic_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content transition-colors">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="domestic_copytext">Copy</span>
       </button>
@@ -3193,11 +3193,11 @@ Added the slug underneath the title of each page within the preview.</a>
           <div style="font-size: 10px;" class="text-xs leading-tight">(international)</div>
         </div>
       </div>
-      <button id="international_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content bg-primary hover:bg-primary-focus">
+      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="international_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content transition-colors">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button id="international_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content bg-secondary hover:bg-secondary-focus">
+      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="international_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content transition-colors">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="international_copytext">Copy</span>
       </button>
