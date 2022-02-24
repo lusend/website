@@ -70,6 +70,6 @@ LU Send will communicate the proposal’s approval status to the faculty/staff l
 
 Any Faculty member participating in international group travel opportunities **that are not related to the University** but which do have Liberty University students attending (i.e. church mission trips) must be disclosed to LU Send no later than 3 weeks before travel. This short disclosure form can be found through the Faculty/Staff Resources Gateway on our website. In addition to registration, none of these international opportunities are to be presented or marketed to Liberty University students on campus without express written permission from LU Send.
 
-[Complete Unponsored Registration](https://liberty.co1.qualtrics.com/jfe/form/SV_0Pd6ClKtZ0lF7xj){.btn .btn-full}
+[Complete Unsponsored Registration](https://liberty.co1.qualtrics.com/jfe/form/SV_0Pd6ClKtZ0lF7xj){.btn .btn-full}
 
 ${toc}

@@ -163,7 +163,7 @@ Please note that these deadlines are for LU Send Study Abroad & International In
 
 | Trip Dates                       | Proposal Deadlines |
 | -------------------------------- | ------------------ |
-| Pre-Application Form (2023)      | Octoboer 15, 2022  |
+| Pre-Application Form (2023)      | October 15, 2022   |
 | Pre-Decision Application (2023)  | November 1, 2022   |
 | Post-Decision Application (2023) | December 1, 2022   |
 

@@ -109,7 +109,7 @@ If set to `true`, the main content section will take up the entire width rather 
 
 #### `custom`
 
-If set to `true`, the content would have no presets. This is uesful when injecting HTML and no default classes/layout is desired. Defaults to `false`.
+If set to `true`, the content would have no presets. This is useful when injecting HTML and no default classes/layout is desired. Defaults to `false`.
 
 #### `author`
 
@@ -139,7 +139,7 @@ This will result in an order of `content`, then `actions`, then `testimonials`.
 
 #### `nav`
 
-This option allows you to define navigation heirarchy and will apply to the navigation bar as well as the breadcrumbs if the header is visible. If you set the `parent` option to a slug (the file name of a page without the extension), that slug will become its parent and the link in the header will be nested under its parent. If you set the `title` option, you can have a separate title for your navbar and breadcrumbs. Otherwise, it defaults to the base title. If you set the `order` option to a number, you can manually position an item relative to its siblings.
+This option allows you to define navigation hierarchy and will apply to the navigation bar as well as the breadcrumbs if the header is visible. If you set the `parent` option to a slug (the file name of a page without the extension), that slug will become its parent and the link in the header will be nested under its parent. If you set the `title` option, you can have a separate title for your navbar and breadcrumbs. Otherwise, it defaults to the base title. If you set the `order` option to a number, you can manually position an item relative to its siblings.
 
 </details>
 

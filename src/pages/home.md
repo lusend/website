@@ -50,7 +50,7 @@ I learned so much more about Israel from being there for 10 days than I could ha
   subtitle = 'Rwanda, G5',
   truncate = false
 %}
-The opportunity for growth and community with other likeminded individuals was lifechanging and altered my behavior when I got back onto campus. The people of Rwanda showed me more about what it means to be a follower of God than I had seen in my life before, my whole world and future changed forever.
+The opportunity for growth and community with other like-minded individuals was life-changing and altered my behavior when I got back onto campus. The people of Rwanda showed me more about what it means to be a follower of God than I had seen in my life before, my whole world and future changed forever.
 {% endtestimonial %}
 
 {% action actions,
