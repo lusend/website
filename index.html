@@ -1265,24 +1265,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-#app .ring-primary{
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(10 37 78 / var(--tw-ring-opacity));
-}
-
-#app .ring-secondary{
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(153 0 0 / var(--tw-ring-opacity));
-}
-
-#app .ring-opacity-50{
-  --tw-ring-opacity: 0.5;
-}
-
-#app .ring-offset-2{
-  --tw-ring-offset-width: 2px;
-}
-
 #app .transition-colors{
   transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
@@ -1379,12 +1361,6 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .hover\:underline:hover{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
-}
-
-#app .focus\:ring-2:focus{
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 
 #app .peer:checked ~ .peer-checked\:translate-x-full{
@@ -1692,11 +1668,11 @@ nav:
 </details>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/website/commit/60b2f5298da6325a1c115766b9001991439f1803" class="no-underline hover:underline" target="_blank">feat: ✨ Include Ring on Copy Buttons<br />
+  <a href="https://github.com/lusend/website/commit/bfe4ee1f2af9ed52467cb468abbed5f9a6a351cc" class="no-underline hover:underline" target="_blank">feat: ✨ Added Icon Preview Clarification<br />
 <br />
-Added a ring to every copy button to make it clear which item was last copied.</a>
+When previewing, one will typically go back and forth between copying a page and pasting it in a different tab. Unfortunately, moving to a different tab or window removes focus and the previous commit did not help track the last copied page. This update changes the clipboard icon to filled once copied as a better alternative.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-28T22:53:25Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-28T23:17:54Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
@@ -1731,8 +1707,9 @@ Added a ring to every copy button to make it clear which item was last copied.</
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus ring-primary' : 'bg-primary hover:bg-primary-focus ring-secondary'" id="home_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content focus:ring-2 ring-offset-2 ring-opacity-50">
-        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+      <button x-data="{ clicked: false }" x-on:click="clicked = true" x-effect="if ($store.env.value) clicked = false" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="home_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
+        <ion-icon x-show="!clicked" name="clipboard-outline" x-cloak>&nbsp;</ion-icon>
+        <ion-icon x-show="clicked" name="clipboard" x-cloak>&nbsp;</ion-icon>
         <span id="home_copytext">Copy</span>
       </button>
     </div>
@@ -1765,8 +1742,9 @@ Added a ring to every copy button to make it clear which item was last copied.</
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus ring-primary' : 'bg-primary hover:bg-primary-focus ring-secondary'" id="group_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content focus:ring-2 ring-offset-2 ring-opacity-50">
-        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+      <button x-data="{ clicked: false }" x-on:click="clicked = true" x-effect="if ($store.env.value) clicked = false" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="group_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
+        <ion-icon x-show="!clicked" name="clipboard-outline" x-cloak>&nbsp;</ion-icon>
+        <ion-icon x-show="clicked" name="clipboard" x-cloak>&nbsp;</ion-icon>
         <span id="group_copytext">Copy</span>
       </button>
     </div>
@@ -1799,8 +1777,9 @@ Added a ring to every copy button to make it clear which item was last copied.</
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus ring-primary' : 'bg-primary hover:bg-primary-focus ring-secondary'" id="individual_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content focus:ring-2 ring-offset-2 ring-opacity-50">
-        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+      <button x-data="{ clicked: false }" x-on:click="clicked = true" x-effect="if ($store.env.value) clicked = false" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="individual_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
+        <ion-icon x-show="!clicked" name="clipboard-outline" x-cloak>&nbsp;</ion-icon>
+        <ion-icon x-show="clicked" name="clipboard" x-cloak>&nbsp;</ion-icon>
         <span id="individual_copytext">Copy</span>
       </button>
     </div>
@@ -1833,8 +1812,9 @@ Added a ring to every copy button to make it clear which item was last copied.</
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus ring-primary' : 'bg-primary hover:bg-primary-focus ring-secondary'" id="advising_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content focus:ring-2 ring-offset-2 ring-opacity-50">
-        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+      <button x-data="{ clicked: false }" x-on:click="clicked = true" x-effect="if ($store.env.value) clicked = false" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="advising_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
+        <ion-icon x-show="!clicked" name="clipboard-outline" x-cloak>&nbsp;</ion-icon>
+        <ion-icon x-show="clicked" name="clipboard" x-cloak>&nbsp;</ion-icon>
         <span id="advising_copytext">Copy</span>
       </button>
     </div>
@@ -1867,8 +1847,9 @@ Added a ring to every copy button to make it clear which item was last copied.</
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus ring-primary' : 'bg-primary hover:bg-primary-focus ring-secondary'" id="programs_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content focus:ring-2 ring-offset-2 ring-opacity-50">
-        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+      <button x-data="{ clicked: false }" x-on:click="clicked = true" x-effect="if ($store.env.value) clicked = false" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="programs_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
+        <ion-icon x-show="!clicked" name="clipboard-outline" x-cloak>&nbsp;</ion-icon>
+        <ion-icon x-show="clicked" name="clipboard" x-cloak>&nbsp;</ion-icon>
         <span id="programs_copytext">Copy</span>
       </button>
     </div>
@@ -1901,8 +1882,9 @@ Added a ring to every copy button to make it clear which item was last copied.</
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus ring-primary' : 'bg-primary hover:bg-primary-focus ring-secondary'" id="process_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content focus:ring-2 ring-offset-2 ring-opacity-50">
-        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+      <button x-data="{ clicked: false }" x-on:click="clicked = true" x-effect="if ($store.env.value) clicked = false" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="process_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
+        <ion-icon x-show="!clicked" name="clipboard-outline" x-cloak>&nbsp;</ion-icon>
+        <ion-icon x-show="clicked" name="clipboard" x-cloak>&nbsp;</ion-icon>
         <span id="process_copytext">Copy</span>
       </button>
     </div>
@@ -1935,8 +1917,9 @@ Added a ring to every copy button to make it clear which item was last copied.</
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus ring-primary' : 'bg-primary hover:bg-primary-focus ring-secondary'" id="policies_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content focus:ring-2 ring-offset-2 ring-opacity-50">
-        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+      <button x-data="{ clicked: false }" x-on:click="clicked = true" x-effect="if ($store.env.value) clicked = false" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="policies_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
+        <ion-icon x-show="!clicked" name="clipboard-outline" x-cloak>&nbsp;</ion-icon>
+        <ion-icon x-show="clicked" name="clipboard" x-cloak>&nbsp;</ion-icon>
         <span id="policies_copytext">Copy</span>
       </button>
     </div>
@@ -1973,8 +1956,9 @@ Added a ring to every copy button to make it clear which item was last copied.</
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus ring-primary' : 'bg-primary hover:bg-primary-focus ring-secondary'" id="faculty_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content focus:ring-2 ring-offset-2 ring-opacity-50">
-        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+      <button x-data="{ clicked: false }" x-on:click="clicked = true" x-effect="if ($store.env.value) clicked = false" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="faculty_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
+        <ion-icon x-show="!clicked" name="clipboard-outline" x-cloak>&nbsp;</ion-icon>
+        <ion-icon x-show="clicked" name="clipboard" x-cloak>&nbsp;</ion-icon>
         <span id="faculty_copytext">Copy</span>
       </button>
     </div>
@@ -2007,8 +1991,9 @@ Added a ring to every copy button to make it clear which item was last copied.</
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus ring-primary' : 'bg-primary hover:bg-primary-focus ring-secondary'" id="domestic_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content focus:ring-2 ring-offset-2 ring-opacity-50">
-        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+      <button x-data="{ clicked: false }" x-on:click="clicked = true" x-effect="if ($store.env.value) clicked = false" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="domestic_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
+        <ion-icon x-show="!clicked" name="clipboard-outline" x-cloak>&nbsp;</ion-icon>
+        <ion-icon x-show="clicked" name="clipboard" x-cloak>&nbsp;</ion-icon>
         <span id="domestic_copytext">Copy</span>
       </button>
     </div>
@@ -2041,8 +2026,9 @@ Added a ring to every copy button to make it clear which item was last copied.</
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus ring-primary' : 'bg-primary hover:bg-primary-focus ring-secondary'" id="international_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content focus:ring-2 ring-offset-2 ring-opacity-50">
-        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+      <button x-data="{ clicked: false }" x-on:click="clicked = true" x-effect="if ($store.env.value) clicked = false" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="international_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
+        <ion-icon x-show="!clicked" name="clipboard-outline" x-cloak>&nbsp;</ion-icon>
+        <ion-icon x-show="clicked" name="clipboard" x-cloak>&nbsp;</ion-icon>
         <span id="international_copytext">Copy</span>
       </button>
     </div>
@@ -2089,8 +2075,6 @@ document.addEventListener('alpine:init', () => {
         default:
           this.label = 'Preview & Copy Production Content';
       }
-
-      console.log(this.value);
     }
   });
 });
@@ -2173,11 +2157,11 @@ function preview(slug, production, stage) {
     });
     navigator.clipboard.writeText(page);
 
-    document.getElementById(slug + '_copytext').innerHTML = 'Copied';
+    document.getElementById(slug + '_copytext').innerHTML = 'Copied!';
 
     setTimeout(function () {
       document.getElementById(slug + '_copytext').innerHTML = 'Copy';
-    }, 500);
+    }, 2000);
   };
 }
 
