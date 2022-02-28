@@ -57,7 +57,7 @@
     }
 
     ol {
-      @apply list-none;
+      @apply list-none py-1;
     }
 
     ol > li > ol {
@@ -65,7 +65,7 @@
     }
 
     li > a.active {
-      @apply lg:font-medium lg:translate-x-1;
+      @apply lg:font-medium lg:translate-x-2;
     }
 
     li > a:hover {
