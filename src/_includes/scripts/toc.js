@@ -3,7 +3,8 @@ const toc = {
   element: document.querySelector('.table-of-contents'),
   headings: [...document.querySelectorAll('h1[id], h2[id], h3[id]')].map(
     (header) => ({
-      element: header
+      element: header,
+      link: header.querySelector('a')
     })
   ),
   links:
@@ -20,7 +21,7 @@ const toc = {
   mostRecentlyActive: null
 };
 
-let allowPutLinkInView = true;
+let allowPutLinkInView = false;
 
 let timer = null;
 window.addEventListener(
@@ -29,6 +30,10 @@ window.addEventListener(
     if (timer !== null) clearTimeout(timer);
     timer = setTimeout(function () {
       allowPutLinkInView = true;
+      if (toc.exists) {
+        drawPath();
+        syncPath();
+      }
     }, 150);
   },
   false
@@ -37,7 +42,10 @@ window.addEventListener(
 window.addEventListener(
   'resize',
   function () {
-    if (toc.exists) drawPath();
+    if (toc.exists) {
+      drawPath();
+      syncPath();
+    }
   },
   false
 );
@@ -62,7 +70,7 @@ function drawPath() {
   let pathIndent;
 
   toc.links.forEach((link, i) => {
-    const x = link.element.offsetLeft - 5;
+    const x = link.element.offsetLeft + 3;
     const y = link.element.offsetTop;
     const height = link.element.offsetHeight;
 
@@ -83,19 +91,6 @@ function drawPath() {
     toc.path.setAttribute('d', path.join(' '));
     link.pathEnd = toc.path.getTotalLength();
   });
-
-  const coord = toc.path.getBBox();
-  toc.svg.setAttribute(
-    'viewBox',
-    '' +
-      (coord.x - 5) +
-      ' ' +
-      coord.y +
-      ' ' +
-      (coord.width + 10) +
-      ' ' +
-      (coord.height + 5)
-  );
 }
 
 function syncPath() {
@@ -152,7 +147,7 @@ function setupTOC() {
     toc.element.appendChild(toc.svg);
     toc.container.appendChild(toc.element);
     toc.links.forEach((link) => handleTOCClick(link));
-    toc.headings.forEach((heading) => observer.observe(heading.element));
+    toc.headings.forEach((heading) => observer.observe(heading.link));
     drawPath();
   } catch (error) {
     console.warn(
@@ -176,15 +171,31 @@ function handleTOCClick(link) {
       (heading) => heading.element.getAttribute('id') === id
     );
 
+    const scrollTop =
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop ||
+      0;
+
+    const elementTop = heading.element.getBoundingClientRect().top;
+
+    const navOffset = 90;
+
+    const focusOffset =
+      getComputedStyle(heading.element, '::before').content === 'none'
+        ? navOffset
+        : 0;
+
+    const top = elementTop - focusOffset + scrollTop;
+
     heading.element.setAttribute('tabindex', -1);
     heading.element.focus();
     allowPutLinkInView = false;
+    window.location.hash = '#' + id;
+
     window.scroll({
       behavior: toc.smooth ? 'smooth' : 'instant',
-      top:
-        heading.element.offsetTop +
-        document.querySelector('#mycontent').offsetTop -
-        90
+      top
     });
   }
 
@@ -193,7 +204,7 @@ function handleTOCClick(link) {
 
 function observerHandler(entries) {
   entries.forEach((entry) => {
-    const href = `#${entry.target.getAttribute('id')}`;
+    const href = entry.target.getAttribute('href');
     const link = toc.links.find(
       (link) => link.element.getAttribute('href') === href
     );
