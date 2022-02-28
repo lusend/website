@@ -418,6 +418,38 @@ Reset links to optimize for opt-in styling instead of opt-out.
   line-height: 1.25;
 }
 
+#app .table-of-contents svg{
+  pointer-events: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  display: none;
+  height: 100%;
+  --tw-translate-x: -1px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+@media (min-width: 1024px){
+
+  #app .table-of-contents svg{
+    display: block !important;
+  }
+}
+
+#app .table-of-contents svg path{
+  pointer-events: none;
+  fill: transparent;
+  stroke: #0A254E;
+  stroke-width: 3px;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 0 0 0 1000;
+}
+
 /* Header Anchor Links */
 
 #app :is(h1, h2, h3, h4, h5, h6) > a.header-anchor {
@@ -959,6 +991,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   left: -0.4rem;
 }
 
+#app .left-full{
+  left: 100%;
+}
+
 #app .left-1{
   left: 0.25rem;
 }
@@ -996,6 +1032,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   margin-top: 0.5rem;
 }
 
+#app .ml-2{
+  margin-left: 0.5rem;
+}
+
 #app .inline-block{
   display: inline-block;
 }
@@ -1008,6 +1048,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   display: table;
 }
 
+#app .hidden{
+  display: none;
+}
+
 #app .h-8{
   height: 2rem;
 }
@@ -1018,6 +1062,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .h-5{
   height: 1.25rem;
+}
+
+#app .h-4{
+  height: 1rem;
 }
 
 #app .h-6{
@@ -1100,6 +1148,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
   cursor: pointer;
 }
 
+#app .flex-row{
+  flex-direction: row;
+}
+
 #app .flex-wrap{
   flex-wrap: wrap;
 }
@@ -1122,6 +1174,10 @@ Reset links to optimize for opt-in styling instead of opt-out.
 
 #app .gap-2{
   gap: 0.5rem;
+}
+
+#app .gap-1{
+  gap: 0.25rem;
 }
 
 #app .overflow-auto{
@@ -1193,13 +1249,14 @@ Reset links to optimize for opt-in styling instead of opt-out.
   padding: 0.75rem;
 }
 
-#app .p-5{
-  padding: 1.25rem;
-}
-
 #app .px-5{
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+}
+
+#app .py-5{
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 #app .px-3{
@@ -1210,6 +1267,11 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .py-2{
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+#app .px-10{
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
 #app .text-xs{
@@ -1416,6 +1478,13 @@ Reset links to optimize for opt-in styling instead of opt-out.
   }
 }
 
+@media (min-width: 880px){
+
+  #app .navMD\:\!block{
+    display: block !important;
+  }
+}
+
 
 
 
@@ -1427,14 +1496,18 @@ Reset links to optimize for opt-in styling instead of opt-out.
     
 <body>
   <div id="app">
-    <div x-data class="prose prose-a:font-[initial] m-auto p-5">
+    <div x-data="{ current: null }" class="prose prose-a:font-[initial] m-auto py-5 px-10">
       <p><a href="https://github.com/lusend/website/actions/workflows/build.yml" class="inline-block mb-2"><img src="https://github.com/lusend/website/actions/workflows/build.yml/badge.svg" alt="Build and Deploy Website" /></a> <a href="https://github.com/lusend/website/actions/workflows/pages/pages-build-deployment" class="inline-block mb-2"><img src="https://github.com/lusend/website/actions/workflows/pages/pages-build-deployment/badge.svg" alt="pages-build-deployment" /></a></p>
 <details>
 <summary>Table of Contents</summary>
-<div class="max-h-44 overflow-auto p-3 rounded-2xl shadow-md mt-5">
+<div class="p-3 mt-5 overflow-auto shadow-md max-h-44 rounded-2xl">
 <nav class="table-of-contents not-prose"><ol><li><a href="#lu-send-website">LU Send Website</a><ol><li><a href="#plugin-documentation">Plugin Documentation</a></li><li><a href="#front-matter-documentation">Front Matter Documentation</a><ol><li><a href="#default-architecture">Default Architecture</a></li><li><a href="#options">Options</a><ol></ol></li></ol></li><li><a href="#todo-tracker">TODO Tracker</a><ol><li><a href="#landing%2Fspecial-pages">Landing/Special Pages</a></li><li><a href="#blog%2Finformation-pages">Blog/Information Pages</a></li><li><a href="#optimizations">Optimizations</a></li><li><a href="#content">Content</a></li></ol></li><li><a href="#current-deployment-commit">Current Deployment Commit</a></li><li><a href="#pages">Pages</a></li></ol></li></ol></nav></div>
 </details>
-<p><span id="status" class="text-xs font-semibold"> </span></p>
+<p>
+  <a href="https://github.com/lusend/website/actions" class="no-underline">
+    <span id="status" class="text-xs font-semibold">&nbsp;</span>
+  </a>
+</p>
 <h1 id="lu-send-website" tabindex="-1"><a class="header-anchor" href="#lu-send-website">LU Send Website</a></h1>
 <p>Welcome to the Content Editing Page for the LU Send Website! All pages are listed below. Copy each page for the stage and/or production environments, or preview the page as desired. If the <code>Current Deployment Commit</code> does not match the most recent change made to the website, the website is still deploying. Please reload to check again.</p>
 <p><em>The deployment status should be visible at the top of the page. Check the status by clicking on either of the status badges or visiting the <a href="https://github.com/lusend/website">repository</a>.</em></p>
@@ -1668,11 +1741,11 @@ nav:
 </details>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/website/commit/bfe4ee1f2af9ed52467cb468abbed5f9a6a351cc" class="no-underline hover:underline" target="_blank">feat: ✨ Added Icon Preview Clarification<br />
+  <a href="https://github.com/lusend/website/commit/00aeeb997cd2d083bd597619b9722c64a1737a6a" class="no-underline hover:underline" target="_blank">feat: ✨ Added Copy Indicator<br />
 <br />
-When previewing, one will typically go back and forth between copying a page and pasting it in a different tab. Unfortunately, moving to a different tab or window removes focus and the previous commit did not help track the last copied page. This update changes the clipboard icon to filled once copied as a better alternative.</a>
+After messing around with the copy indicators, I decided adding a dedicated indicator was best to show exactly which ones have been copied (based on the filled vs not filled) and which was last copied (based on the copied text).</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-28T23:17:54Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-28T23:47:43Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
@@ -1691,8 +1764,8 @@ When previewing, one will typically go back and forth between copying a page and
       
         
 
-  <div class="mb-2">
-    <div class="flex flex-wrap items-stretch leading-tight">
+  <div x-data="{ clicked: false }" class="mb-2">
+    <div class="relative flex flex-wrap items-stretch leading-tight">
       <div style="font-size: calc(1.25rem - 0px)" class="relative flex items-center justify-start gap-2 px-3 py-2 font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto bg-base-300">
         <div style="margin-left: 0px" class="">
           <div data-inputpath="./src/pages/home.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
@@ -1707,11 +1780,19 @@ When previewing, one will typically go back and forth between copying a page and
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button x-data="{ clicked: false }" x-on:click="clicked = true" x-effect="if ($store.env.value) clicked = false" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="home_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
+      <button x-on:click="clicked = true; current = 'home'" x-effect="if ($store.env.value) { clicked = false; current = null }" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="home_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
         <ion-icon x-show="!clicked" name="clipboard-outline" x-cloak>&nbsp;</ion-icon>
         <ion-icon x-show="clicked" name="clipboard" x-cloak>&nbsp;</ion-icon>
-        <span id="home_copytext">Copy</span>
+        <span>Copy</span>
       </button>
+      <div x-show="current === 'home'" x-transition class="absolute top-0 flex items-center justify-center h-full ml-2 text-xs left-full" x-cloak>
+        <div class="flex flex-row items-center justify-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="h-4" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
+            <path fill="currentColor" d="M7.085 3A1.5 1.5 0 0 1 8.5 2h3a1.5 1.5 0 0 1 1.415 1H14.5A1.5 1.5 0 0 1 16 4.5v4.707A5.5 5.5 0 0 0 10.257 18H5.5A1.5 1.5 0 0 1 4 16.5v-12A1.5 1.5 0 0 1 5.5 3h1.585ZM8.5 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3ZM19 14.5a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0Zm-2.146-1.854a.5.5 0 0 0-.708 0L13.5 15.293l-.646-.647a.5.5 0 0 0-.708.708l1 1a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0 0-.708Z"></path>
+          </svg>
+          <span class="hidden navMD:!block">Copied!</span>
+        </div>
+      </div>
     </div>
 
     <script>
@@ -1726,8 +1807,8 @@ When previewing, one will typically go back and forth between copying a page and
       
         
 
-  <div class="mb-2">
-    <div class="flex flex-wrap items-stretch leading-tight">
+  <div x-data="{ clicked: false }" class="mb-2">
+    <div class="relative flex flex-wrap items-stretch leading-tight">
       <div style="font-size: calc(1.25rem - 3px)" class="relative flex items-center justify-start gap-2 px-3 py-2 font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto bg-base-300">
         <div style="margin-left: 30px" class="">
           <div data-inputpath="./src/pages/group/group.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
@@ -1742,11 +1823,19 @@ When previewing, one will typically go back and forth between copying a page and
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button x-data="{ clicked: false }" x-on:click="clicked = true" x-effect="if ($store.env.value) clicked = false" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="group_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
+      <button x-on:click="clicked = true; current = 'group'" x-effect="if ($store.env.value) { clicked = false; current = null }" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="group_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
         <ion-icon x-show="!clicked" name="clipboard-outline" x-cloak>&nbsp;</ion-icon>
         <ion-icon x-show="clicked" name="clipboard" x-cloak>&nbsp;</ion-icon>
-        <span id="group_copytext">Copy</span>
+        <span>Copy</span>
       </button>
+      <div x-show="current === 'group'" x-transition class="absolute top-0 flex items-center justify-center h-full ml-2 text-xs left-full" x-cloak>
+        <div class="flex flex-row items-center justify-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="h-4" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
+            <path fill="currentColor" d="M7.085 3A1.5 1.5 0 0 1 8.5 2h3a1.5 1.5 0 0 1 1.415 1H14.5A1.5 1.5 0 0 1 16 4.5v4.707A5.5 5.5 0 0 0 10.257 18H5.5A1.5 1.5 0 0 1 4 16.5v-12A1.5 1.5 0 0 1 5.5 3h1.585ZM8.5 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3ZM19 14.5a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0Zm-2.146-1.854a.5.5 0 0 0-.708 0L13.5 15.293l-.646-.647a.5.5 0 0 0-.708.708l1 1a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0 0-.708Z"></path>
+          </svg>
+          <span class="hidden navMD:!block">Copied!</span>
+        </div>
+      </div>
     </div>
 
     <script>
@@ -1761,8 +1850,8 @@ When previewing, one will typically go back and forth between copying a page and
       
         
 
-  <div class="mb-2">
-    <div class="flex flex-wrap items-stretch leading-tight">
+  <div x-data="{ clicked: false }" class="mb-2">
+    <div class="relative flex flex-wrap items-stretch leading-tight">
       <div style="font-size: calc(1.25rem - 3px)" class="relative flex items-center justify-start gap-2 px-3 py-2 font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto bg-base-300">
         <div style="margin-left: 30px" class="">
           <div data-inputpath="./src/pages/individual/individual.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
@@ -1777,11 +1866,19 @@ When previewing, one will typically go back and forth between copying a page and
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button x-data="{ clicked: false }" x-on:click="clicked = true" x-effect="if ($store.env.value) clicked = false" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="individual_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
+      <button x-on:click="clicked = true; current = 'individual'" x-effect="if ($store.env.value) { clicked = false; current = null }" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="individual_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
         <ion-icon x-show="!clicked" name="clipboard-outline" x-cloak>&nbsp;</ion-icon>
         <ion-icon x-show="clicked" name="clipboard" x-cloak>&nbsp;</ion-icon>
-        <span id="individual_copytext">Copy</span>
+        <span>Copy</span>
       </button>
+      <div x-show="current === 'individual'" x-transition class="absolute top-0 flex items-center justify-center h-full ml-2 text-xs left-full" x-cloak>
+        <div class="flex flex-row items-center justify-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="h-4" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
+            <path fill="currentColor" d="M7.085 3A1.5 1.5 0 0 1 8.5 2h3a1.5 1.5 0 0 1 1.415 1H14.5A1.5 1.5 0 0 1 16 4.5v4.707A5.5 5.5 0 0 0 10.257 18H5.5A1.5 1.5 0 0 1 4 16.5v-12A1.5 1.5 0 0 1 5.5 3h1.585ZM8.5 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3ZM19 14.5a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0Zm-2.146-1.854a.5.5 0 0 0-.708 0L13.5 15.293l-.646-.647a.5.5 0 0 0-.708.708l1 1a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0 0-.708Z"></path>
+          </svg>
+          <span class="hidden navMD:!block">Copied!</span>
+        </div>
+      </div>
     </div>
 
     <script>
@@ -1796,8 +1893,8 @@ When previewing, one will typically go back and forth between copying a page and
       
         
 
-  <div class="mb-2">
-    <div class="flex flex-wrap items-stretch leading-tight">
+  <div x-data="{ clicked: false }" class="mb-2">
+    <div class="relative flex flex-wrap items-stretch leading-tight">
       <div style="font-size: calc(1.25rem - 6px)" class="relative flex items-center justify-start gap-2 px-3 py-2 font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto bg-base-300">
         <div style="margin-left: 60px" class="">
           <div data-inputpath="./src/pages/individual/information/advising.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
@@ -1812,11 +1909,19 @@ When previewing, one will typically go back and forth between copying a page and
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button x-data="{ clicked: false }" x-on:click="clicked = true" x-effect="if ($store.env.value) clicked = false" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="advising_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
+      <button x-on:click="clicked = true; current = 'advising'" x-effect="if ($store.env.value) { clicked = false; current = null }" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="advising_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
         <ion-icon x-show="!clicked" name="clipboard-outline" x-cloak>&nbsp;</ion-icon>
         <ion-icon x-show="clicked" name="clipboard" x-cloak>&nbsp;</ion-icon>
-        <span id="advising_copytext">Copy</span>
+        <span>Copy</span>
       </button>
+      <div x-show="current === 'advising'" x-transition class="absolute top-0 flex items-center justify-center h-full ml-2 text-xs left-full" x-cloak>
+        <div class="flex flex-row items-center justify-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="h-4" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
+            <path fill="currentColor" d="M7.085 3A1.5 1.5 0 0 1 8.5 2h3a1.5 1.5 0 0 1 1.415 1H14.5A1.5 1.5 0 0 1 16 4.5v4.707A5.5 5.5 0 0 0 10.257 18H5.5A1.5 1.5 0 0 1 4 16.5v-12A1.5 1.5 0 0 1 5.5 3h1.585ZM8.5 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3ZM19 14.5a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0Zm-2.146-1.854a.5.5 0 0 0-.708 0L13.5 15.293l-.646-.647a.5.5 0 0 0-.708.708l1 1a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0 0-.708Z"></path>
+          </svg>
+          <span class="hidden navMD:!block">Copied!</span>
+        </div>
+      </div>
     </div>
 
     <script>
@@ -1831,8 +1936,8 @@ When previewing, one will typically go back and forth between copying a page and
       
         
 
-  <div class="mb-2">
-    <div class="flex flex-wrap items-stretch leading-tight">
+  <div x-data="{ clicked: false }" class="mb-2">
+    <div class="relative flex flex-wrap items-stretch leading-tight">
       <div style="font-size: calc(1.25rem - 6px)" class="relative flex items-center justify-start gap-2 px-3 py-2 font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto bg-base-300">
         <div style="margin-left: 60px" class="">
           <div data-inputpath="./src/pages/individual/information/programs.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
@@ -1847,11 +1952,19 @@ When previewing, one will typically go back and forth between copying a page and
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button x-data="{ clicked: false }" x-on:click="clicked = true" x-effect="if ($store.env.value) clicked = false" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="programs_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
+      <button x-on:click="clicked = true; current = 'programs'" x-effect="if ($store.env.value) { clicked = false; current = null }" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="programs_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
         <ion-icon x-show="!clicked" name="clipboard-outline" x-cloak>&nbsp;</ion-icon>
         <ion-icon x-show="clicked" name="clipboard" x-cloak>&nbsp;</ion-icon>
-        <span id="programs_copytext">Copy</span>
+        <span>Copy</span>
       </button>
+      <div x-show="current === 'programs'" x-transition class="absolute top-0 flex items-center justify-center h-full ml-2 text-xs left-full" x-cloak>
+        <div class="flex flex-row items-center justify-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="h-4" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
+            <path fill="currentColor" d="M7.085 3A1.5 1.5 0 0 1 8.5 2h3a1.5 1.5 0 0 1 1.415 1H14.5A1.5 1.5 0 0 1 16 4.5v4.707A5.5 5.5 0 0 0 10.257 18H5.5A1.5 1.5 0 0 1 4 16.5v-12A1.5 1.5 0 0 1 5.5 3h1.585ZM8.5 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3ZM19 14.5a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0Zm-2.146-1.854a.5.5 0 0 0-.708 0L13.5 15.293l-.646-.647a.5.5 0 0 0-.708.708l1 1a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0 0-.708Z"></path>
+          </svg>
+          <span class="hidden navMD:!block">Copied!</span>
+        </div>
+      </div>
     </div>
 
     <script>
@@ -1866,8 +1979,8 @@ When previewing, one will typically go back and forth between copying a page and
       
         
 
-  <div class="mb-2">
-    <div class="flex flex-wrap items-stretch leading-tight">
+  <div x-data="{ clicked: false }" class="mb-2">
+    <div class="relative flex flex-wrap items-stretch leading-tight">
       <div style="font-size: calc(1.25rem - 6px)" class="relative flex items-center justify-start gap-2 px-3 py-2 font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto bg-base-300">
         <div style="margin-left: 60px" class="">
           <div data-inputpath="./src/pages/individual/information/process.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
@@ -1882,11 +1995,19 @@ When previewing, one will typically go back and forth between copying a page and
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button x-data="{ clicked: false }" x-on:click="clicked = true" x-effect="if ($store.env.value) clicked = false" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="process_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
+      <button x-on:click="clicked = true; current = 'process'" x-effect="if ($store.env.value) { clicked = false; current = null }" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="process_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
         <ion-icon x-show="!clicked" name="clipboard-outline" x-cloak>&nbsp;</ion-icon>
         <ion-icon x-show="clicked" name="clipboard" x-cloak>&nbsp;</ion-icon>
-        <span id="process_copytext">Copy</span>
+        <span>Copy</span>
       </button>
+      <div x-show="current === 'process'" x-transition class="absolute top-0 flex items-center justify-center h-full ml-2 text-xs left-full" x-cloak>
+        <div class="flex flex-row items-center justify-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="h-4" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
+            <path fill="currentColor" d="M7.085 3A1.5 1.5 0 0 1 8.5 2h3a1.5 1.5 0 0 1 1.415 1H14.5A1.5 1.5 0 0 1 16 4.5v4.707A5.5 5.5 0 0 0 10.257 18H5.5A1.5 1.5 0 0 1 4 16.5v-12A1.5 1.5 0 0 1 5.5 3h1.585ZM8.5 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3ZM19 14.5a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0Zm-2.146-1.854a.5.5 0 0 0-.708 0L13.5 15.293l-.646-.647a.5.5 0 0 0-.708.708l1 1a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0 0-.708Z"></path>
+          </svg>
+          <span class="hidden navMD:!block">Copied!</span>
+        </div>
+      </div>
     </div>
 
     <script>
@@ -1901,8 +2022,8 @@ When previewing, one will typically go back and forth between copying a page and
       
         
 
-  <div class="mb-2">
-    <div class="flex flex-wrap items-stretch leading-tight">
+  <div x-data="{ clicked: false }" class="mb-2">
+    <div class="relative flex flex-wrap items-stretch leading-tight">
       <div style="font-size: calc(1.25rem - 6px)" class="relative flex items-center justify-start gap-2 px-3 py-2 font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto bg-base-300">
         <div style="margin-left: 60px" class="">
           <div data-inputpath="./src/pages/individual/information/policies.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
@@ -1917,11 +2038,19 @@ When previewing, one will typically go back and forth between copying a page and
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button x-data="{ clicked: false }" x-on:click="clicked = true" x-effect="if ($store.env.value) clicked = false" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="policies_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
+      <button x-on:click="clicked = true; current = 'policies'" x-effect="if ($store.env.value) { clicked = false; current = null }" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="policies_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
         <ion-icon x-show="!clicked" name="clipboard-outline" x-cloak>&nbsp;</ion-icon>
         <ion-icon x-show="clicked" name="clipboard" x-cloak>&nbsp;</ion-icon>
-        <span id="policies_copytext">Copy</span>
+        <span>Copy</span>
       </button>
+      <div x-show="current === 'policies'" x-transition class="absolute top-0 flex items-center justify-center h-full ml-2 text-xs left-full" x-cloak>
+        <div class="flex flex-row items-center justify-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="h-4" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
+            <path fill="currentColor" d="M7.085 3A1.5 1.5 0 0 1 8.5 2h3a1.5 1.5 0 0 1 1.415 1H14.5A1.5 1.5 0 0 1 16 4.5v4.707A5.5 5.5 0 0 0 10.257 18H5.5A1.5 1.5 0 0 1 4 16.5v-12A1.5 1.5 0 0 1 5.5 3h1.585ZM8.5 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3ZM19 14.5a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0Zm-2.146-1.854a.5.5 0 0 0-.708 0L13.5 15.293l-.646-.647a.5.5 0 0 0-.708.708l1 1a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0 0-.708Z"></path>
+          </svg>
+          <span class="hidden navMD:!block">Copied!</span>
+        </div>
+      </div>
     </div>
 
     <script>
@@ -1940,8 +2069,8 @@ When previewing, one will typically go back and forth between copying a page and
       
         
 
-  <div class="mb-2">
-    <div class="flex flex-wrap items-stretch leading-tight">
+  <div x-data="{ clicked: false }" class="mb-2">
+    <div class="relative flex flex-wrap items-stretch leading-tight">
       <div style="font-size: calc(1.25rem - 3px)" class="relative flex items-center justify-start gap-2 px-3 py-2 font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto bg-base-300">
         <div style="margin-left: 30px" class="">
           <div data-inputpath="./src/pages/faculty/faculty.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
@@ -1956,11 +2085,19 @@ When previewing, one will typically go back and forth between copying a page and
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button x-data="{ clicked: false }" x-on:click="clicked = true" x-effect="if ($store.env.value) clicked = false" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="faculty_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
+      <button x-on:click="clicked = true; current = 'faculty'" x-effect="if ($store.env.value) { clicked = false; current = null }" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="faculty_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
         <ion-icon x-show="!clicked" name="clipboard-outline" x-cloak>&nbsp;</ion-icon>
         <ion-icon x-show="clicked" name="clipboard" x-cloak>&nbsp;</ion-icon>
-        <span id="faculty_copytext">Copy</span>
+        <span>Copy</span>
       </button>
+      <div x-show="current === 'faculty'" x-transition class="absolute top-0 flex items-center justify-center h-full ml-2 text-xs left-full" x-cloak>
+        <div class="flex flex-row items-center justify-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="h-4" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
+            <path fill="currentColor" d="M7.085 3A1.5 1.5 0 0 1 8.5 2h3a1.5 1.5 0 0 1 1.415 1H14.5A1.5 1.5 0 0 1 16 4.5v4.707A5.5 5.5 0 0 0 10.257 18H5.5A1.5 1.5 0 0 1 4 16.5v-12A1.5 1.5 0 0 1 5.5 3h1.585ZM8.5 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3ZM19 14.5a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0Zm-2.146-1.854a.5.5 0 0 0-.708 0L13.5 15.293l-.646-.647a.5.5 0 0 0-.708.708l1 1a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0 0-.708Z"></path>
+          </svg>
+          <span class="hidden navMD:!block">Copied!</span>
+        </div>
+      </div>
     </div>
 
     <script>
@@ -1975,8 +2112,8 @@ When previewing, one will typically go back and forth between copying a page and
       
         
 
-  <div class="mb-2">
-    <div class="flex flex-wrap items-stretch leading-tight">
+  <div x-data="{ clicked: false }" class="mb-2">
+    <div class="relative flex flex-wrap items-stretch leading-tight">
       <div style="font-size: calc(1.25rem - 6px)" class="relative flex items-center justify-start gap-2 px-3 py-2 font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto bg-base-300">
         <div style="margin-left: 60px" class="">
           <div data-inputpath="./src/pages/faculty/proposal/domestic.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
@@ -1991,11 +2128,19 @@ When previewing, one will typically go back and forth between copying a page and
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button x-data="{ clicked: false }" x-on:click="clicked = true" x-effect="if ($store.env.value) clicked = false" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="domestic_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
+      <button x-on:click="clicked = true; current = 'domestic'" x-effect="if ($store.env.value) { clicked = false; current = null }" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="domestic_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
         <ion-icon x-show="!clicked" name="clipboard-outline" x-cloak>&nbsp;</ion-icon>
         <ion-icon x-show="clicked" name="clipboard" x-cloak>&nbsp;</ion-icon>
-        <span id="domestic_copytext">Copy</span>
+        <span>Copy</span>
       </button>
+      <div x-show="current === 'domestic'" x-transition class="absolute top-0 flex items-center justify-center h-full ml-2 text-xs left-full" x-cloak>
+        <div class="flex flex-row items-center justify-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="h-4" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
+            <path fill="currentColor" d="M7.085 3A1.5 1.5 0 0 1 8.5 2h3a1.5 1.5 0 0 1 1.415 1H14.5A1.5 1.5 0 0 1 16 4.5v4.707A5.5 5.5 0 0 0 10.257 18H5.5A1.5 1.5 0 0 1 4 16.5v-12A1.5 1.5 0 0 1 5.5 3h1.585ZM8.5 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3ZM19 14.5a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0Zm-2.146-1.854a.5.5 0 0 0-.708 0L13.5 15.293l-.646-.647a.5.5 0 0 0-.708.708l1 1a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0 0-.708Z"></path>
+          </svg>
+          <span class="hidden navMD:!block">Copied!</span>
+        </div>
+      </div>
     </div>
 
     <script>
@@ -2010,8 +2155,8 @@ When previewing, one will typically go back and forth between copying a page and
       
         
 
-  <div class="mb-2">
-    <div class="flex flex-wrap items-stretch leading-tight">
+  <div x-data="{ clicked: false }" class="mb-2">
+    <div class="relative flex flex-wrap items-stretch leading-tight">
       <div style="font-size: calc(1.25rem - 6px)" class="relative flex items-center justify-start gap-2 px-3 py-2 font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto bg-base-300">
         <div style="margin-left: 60px" class="">
           <div data-inputpath="./src/pages/faculty/proposal/international.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
@@ -2026,11 +2171,19 @@ When previewing, one will typically go back and forth between copying a page and
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button x-data="{ clicked: false }" x-on:click="clicked = true" x-effect="if ($store.env.value) clicked = false" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="international_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
+      <button x-on:click="clicked = true; current = 'international'" x-effect="if ($store.env.value) { clicked = false; current = null }" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="international_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
         <ion-icon x-show="!clicked" name="clipboard-outline" x-cloak>&nbsp;</ion-icon>
         <ion-icon x-show="clicked" name="clipboard" x-cloak>&nbsp;</ion-icon>
-        <span id="international_copytext">Copy</span>
+        <span>Copy</span>
       </button>
+      <div x-show="current === 'international'" x-transition class="absolute top-0 flex items-center justify-center h-full ml-2 text-xs left-full" x-cloak>
+        <div class="flex flex-row items-center justify-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="h-4" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
+            <path fill="currentColor" d="M7.085 3A1.5 1.5 0 0 1 8.5 2h3a1.5 1.5 0 0 1 1.415 1H14.5A1.5 1.5 0 0 1 16 4.5v4.707A5.5 5.5 0 0 0 10.257 18H5.5A1.5 1.5 0 0 1 4 16.5v-12A1.5 1.5 0 0 1 5.5 3h1.585ZM8.5 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3ZM19 14.5a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0Zm-2.146-1.854a.5.5 0 0 0-.708 0L13.5 15.293l-.646-.647a.5.5 0 0 0-.708.708l1 1a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0 0-.708Z"></path>
+          </svg>
+          <span class="hidden navMD:!block">Copied!</span>
+        </div>
+      </div>
     </div>
 
     <script>
@@ -2156,12 +2309,6 @@ function preview(slug, production, stage) {
       asText: true
     });
     navigator.clipboard.writeText(page);
-
-    document.getElementById(slug + '_copytext').innerHTML = 'Copied!';
-
-    setTimeout(function () {
-      document.getElementById(slug + '_copytext').innerHTML = 'Copy';
-    }, 2000);
   };
 }
 
