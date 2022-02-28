@@ -21,15 +21,15 @@ const toc = {
   mostRecentlyActive: null
 };
 
-let allowPutLinkInView = false;
-
 let timer = null;
+let currentLink = null;
 window.addEventListener(
   'scroll',
   function () {
     if (timer !== null) clearTimeout(timer);
+
     timer = setTimeout(function () {
-      allowPutLinkInView = true;
+      if (currentLink) putLinkInView();
       if (toc.exists) {
         drawPath();
         syncPath();
@@ -50,16 +50,12 @@ window.addEventListener(
   false
 );
 
-function putLinkInView(link) {
-  var offset = link.offsetTop - toc.container.scrollTop;
+function putLinkInView() {
+  var offset = currentLink.offsetTop - toc.container.scrollTop;
 
-  if (
-    allowPutLinkInView &&
-    (offset + 10 > toc.container.clientHeight || offset - 10 < 0)
-  ) {
+  if (offset + 10 > toc.container.clientHeight || offset - 10 < 0) {
     toc.container.scroll({
       top: offset + toc.container.scrollTop - toc.container.clientHeight / 2,
-      left: 0,
       behavior: 'smooth'
     });
   }
@@ -146,7 +142,6 @@ function setupTOC() {
     toc.svg.appendChild(toc.path);
     toc.element.appendChild(toc.svg);
     toc.container.appendChild(toc.element);
-    toc.links.forEach((link) => handleTOCClick(link));
     toc.headings.forEach((heading) => observer.observe(heading.link));
     drawPath();
   } catch (error) {
@@ -161,45 +156,6 @@ function setupTOC() {
     observer.disconnect();
     toc.svg.remove();
   }
-}
-
-function handleTOCClick(link) {
-  function clickHandler(evt) {
-    evt.preventDefault();
-    const id = evt.target.getAttribute('href').replace('#', '');
-    const heading = toc.headings.find(
-      (heading) => heading.element.getAttribute('id') === id
-    );
-
-    const scrollTop =
-      window.pageYOffset ||
-      document.documentElement.scrollTop ||
-      document.body.scrollTop ||
-      0;
-
-    const elementTop = heading.element.getBoundingClientRect().top;
-
-    const navOffset = 90;
-
-    const focusOffset =
-      getComputedStyle(heading.element, '::before').content === 'none'
-        ? navOffset
-        : 0;
-
-    const top = elementTop - focusOffset + scrollTop;
-
-    heading.element.setAttribute('tabindex', -1);
-    heading.element.focus();
-    allowPutLinkInView = false;
-    window.location.hash = '#' + id;
-
-    window.scroll({
-      behavior: toc.smooth ? 'smooth' : 'instant',
-      top
-    });
-  }
-
-  if (toc.exists) link.element.addEventListener('click', clickHandler);
 }
 
 function observerHandler(entries) {
@@ -243,7 +199,7 @@ function highlight() {
     }
 
     toc.mostRecentlyActive = lastToChange.getAttribute('href').replace('#', '');
-    putLinkInView(firstToChange);
+    currentLink = firstToChange;
   }
 
   if (!visibleLinks.length && toc.mostRecentlyActive) {
@@ -260,7 +216,7 @@ function highlight() {
 
     link.element.classList.add('active');
     toc.mostRecentlyActive = link.element.getAttribute('href').replace('#', '');
-    putLinkInView(link.element);
+    currentLink = link.element;
   }
 
   syncPath();
