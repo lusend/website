@@ -1,5 +1,7 @@
 @import 'fonts.css';
 
+/* purgecss start ignore */
+
 html,
 body {
   margin: 0;
@@ -244,3 +246,5 @@ Reset links to optimize for opt-in styling instead of opt-out.
     display: none;
   }
 }
+
+/* purgecss end ignore */

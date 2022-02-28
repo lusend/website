@@ -1,6 +1,4 @@
-{% set css %}
-{% include "styles/main.css" %}
-{% endset %}
+{% extends './css.njk' %}
 
 {% set js %}
 {% include "scripts/env.js" %}
@@ -50,44 +48,34 @@
   {% endif %}
 {% endmacro %}
 
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LU Send Website</title>
-    <style>
-      {{css | postcss | safe}}
-    </style>
-  </head>
+{% set content %}
+<body>
+  <div id="app">
+    <div x-data class="prose prose-a:font-[initial] m-auto p-5">
+      {{ content | safe }}
 
-  <body>
-    <div id="app">
-      <div x-data class="prose prose-a:font-[initial] m-auto p-5">
-        {{ content | safe }}
+      <label for="envToggle" class="flex items-center w-full my-5 cursor-pointer not-prose">
+        <strong class="flex-auto" x-text="$store.env.label">&nbsp;</strong>
+        <div class="relative">
+          <input x-on:input="$store.env.toggle()" type="checkbox" checked="checked" autocomplete="off" id="envToggle" class="sr-only peer"/>
+          <div class="absolute z-10 w-6 h-6 transition bg-white rounded-full left-1 top-1 peer-checked:translate-x-full bg-primary peer-checked:bg-secondary"></div>
+          <div class="z-0 h-8 rounded-full bg-base-300 w-14"></div>
+        </div>
+      </label>
 
-        <label for="envToggle" class="flex items-center w-full my-5 cursor-pointer not-prose">
-          <strong class="flex-auto" x-text="$store.env.label">&nbsp;</strong>
-          <div class="relative">
-            <input x-on:input="$store.env.toggle()" type="checkbox" checked="checked" autocomplete="off" id="envToggle" class="sr-only peer"/>
-            <div class="absolute z-10 w-6 h-6 transition bg-white rounded-full left-1 top-1 peer-checked:translate-x-full bg-primary peer-checked:bg-secondary"></div>
-            <div class="z-0 h-8 rounded-full bg-base-300 w-14"></div>
-          </div>
-        </label>
-
-        {% for item in myPages %}
-          {{ renderPage(item) }}
-        {% endfor %}
-      </div>
+      {% for item in myPages %}
+        {{ renderPage(item) }}
+      {% endfor %}
     </div>
+  </div>
 
-    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-    <script>
-      {{ js | safe }}
-      checkIfDeployed();
-    </script>
-  </body>
-</html>
+  <script>
+    {{ js | safe }}
+    checkIfDeployed();
+  </script>
+</body>
+{% endset %}

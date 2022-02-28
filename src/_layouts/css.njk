@@ -1,0 +1,39 @@
+{% if type %}
+  {% if env === 'development' %}
+    {% if type === 'brochure' %}
+      {% extends './brochure.njk' %}
+    {% else %}
+      {% extends './page.njk' %}
+    {% endif %}
+  {% else %}
+    {% extends './prod.njk' %}
+  {% endif %}
+{% endif %}
+
+{% set css %}
+{% include "styles/main.css" %}
+{% if type === 'brochure' %}
+  {% include "styles/brochure.css" %}
+{% endif %}
+{% if content.includes('MapDriver') %}
+  {% include "styles/map.css" %}
+{% endif %}
+{% endset %}
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LU Send Website</title>
+    {% block css %}
+      <style>
+        {{css | postcss(content) | safe}}
+      </style>
+    {% endblock %}
+  </head>
+
+  {% block content %}
+    {{ content | safe}}
+  {% endblock %}
+</html>

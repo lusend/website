@@ -5,6 +5,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* purgecss start ignore */
+
 #pagefooter,
 #pageheader,
 #pagebodycontentheader {
@@ -53,3 +55,22 @@
     @apply mb-1;
   }
 }
+
+/* Badges */
+#app img[src*="https://github.com/"]
+{
+  display: inline;
+  margin: 0;
+}
+
+/* Alpine JS Cloack Until Loaded */
+#app [x-cloak] {
+  display: none !important;
+}
+
+/* Hide Badges for Preview */
+#app div[data-hidebadge] {
+  display: none;
+}
+
+/* purgecss end ignore */

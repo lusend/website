@@ -8,13 +8,26 @@ const { DateTime } = require('luxon');
 
 const env = process.env.ELEVENTY_ENV || 'development';
 
-async function renderPostCSS(css, callback) {
-  await postcss([
+async function renderPostCSS(css, html, callback) {
+  const plugins = [
     require('postcss-import'),
     require('tailwindcss/nesting'),
     require('tailwindcss'),
     require('autoprefixer')
-  ])
+  ];
+
+  if (env !== 'development') {
+    plugins.push(
+      require('@fullhuman/postcss-purgecss')({
+        content: [{ extension: 'html', raw: html }],
+        css: [{ raw: css }],
+        defaultExtractor: (content) =>
+          content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || []
+      })
+    );
+  }
+
+  await postcss(plugins)
     .process(css, { from: 'src/_includes/styles/main.css' })
     .then(
       (result) => callback(null, result.css.replace(/\.prose/g, '#app .prose')),
