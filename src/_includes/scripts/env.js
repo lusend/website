@@ -13,8 +13,6 @@ document.addEventListener('alpine:init', () => {
         default:
           this.label = 'Preview & Copy Production Content';
       }
-
-      console.log(this.value);
     }
   });
 });

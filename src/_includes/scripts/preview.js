@@ -21,10 +21,10 @@ function preview(slug, production, stage) {
     });
     navigator.clipboard.writeText(page);
 
-    document.getElementById(slug + '_copytext').innerHTML = 'Copied';
+    document.getElementById(slug + '_copytext').innerHTML = 'Copied!';
 
     setTimeout(function () {
       document.getElementById(slug + '_copytext').innerHTML = 'Copy';
-    }, 500);
+    }, 2000);
   };
 }

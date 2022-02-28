@@ -26,8 +26,9 @@
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus ring-primary' : 'bg-primary hover:bg-primary-focus ring-secondary'" id="{{ entry.key + "_copy" }}" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content focus:ring-2 ring-offset-2 ring-opacity-50">
-        <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
+      <button x-data="{ clicked: false }" x-on:click="clicked = true" x-effect="if ($store.env.value) clicked = false" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="{{ entry.key + "_copy" }}" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
+        <ion-icon x-show="!clicked" name="clipboard-outline" x-cloak>&nbsp;</ion-icon>
+        <ion-icon x-show="clicked" name="clipboard" x-cloak>&nbsp;</ion-icon>
         <span id="{{ entry.key + "_copytext" }}">Copy</span>
       </button>
     </div>
