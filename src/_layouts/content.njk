@@ -3,7 +3,7 @@
     <div x-data="{ toc: !!document.querySelector('.table-of-contents')}" x-show="toc" class="grow order-first mb-5 lg:mb-0 lg:order-last lg:min-w-[15rem] lg:max-w-[20rem] prose max-w-full" x-cloak>
       <div class="text-base lg:sticky lg:top-20 shadow-lg rounded-2xl p-5 border-2 border-base-200 {% if not background %} bg-white bg-opacity-90 backdrop-blur-sm {% endif %}">
         <h1 class="my-0 mb-5 text-2xl font-semibold">Table of Contents</h1>
-        <div class="table-of-contents-container lg:h-full max-h-[calc(80vh-132px)] overflow-y-auto overflow-x-hidden">&nbsp;</div>
+        <div class="table-of-contents-container max-h-[calc(80vh-132px)] overflow-y-auto overflow-x-hidden">&nbsp;</div>
       </div>
     </div>
     <div class="prose flex-initial order-last lg:order-first py-5 px-2 rounded-2xl {% if not background %} bg-white bg-opacity-50 backdrop-blur-sm {% endif %} {% if full %} lg:max-w-full {% else %} lg:max-w-[65ch] {% endif %} max-w-full">
