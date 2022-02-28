@@ -20,7 +20,7 @@ A content management system for the LU Send Terradotta Website using [11ty](http
   - [markdown-it-task-lists](https://www.npmjs.com/package/markdown-it-task-lists)
   - [markdown-it-toc-done-right](https://www.npmjs.com/package/markdown-it-toc-done-right)
 - CSS Libraries
-  - [PostCSS](https://postcss.org/) (Includes [autoprefixer](https://www.npmjs.com/package/autoprefixer))
+  - [PostCSS](https://postcss.org/) (Includes [autoprefixer](https://www.npmjs.com/package/autoprefixer) and [PurgeCSS](https://purgecss.com/))
   - [Tailwind CSS](https://tailwindcss.com/) (Includes [@tailwindcss/typography](https://www.npmjs.com/package/@tailwindcss/typography))
 - Post Processing Libraries
   - [Parcel JS](https://parceljs.org/) (Includes [parcel-resolver-ignore](https://www.npmjs.com/package/parcel-resolver-ignore))
