@@ -41,10 +41,20 @@
 
   {% set js %}
   {% include "scripts/smoothscroll.js" %}
-  {% include "scripts/wave.js" %}
-  {% include "scripts/toc.js" %}
+
+  {% if header %}
+    {% include "scripts/wave.js" %}
+  {% endif %}
+
   {% include "scripts/planes.js" %}
-  {% include "scripts/deadlines.js" %}
+
+  {% if content.includes('table-of-contents') %}
+    {% include "scripts/toc.js" %}
+  {% endif %}
+
+  {% if content.includes('turnredafter') %}
+    {% include "scripts/deadlines.js" %}
+  {% endif %}
   {% endset %}
 
   {% if env !== 'development' %}

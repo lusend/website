@@ -1,12 +1,12 @@
 {% if header %}
   <div class="relative z-20 flex flex-row justify-center w-full px-8 pt-12 pb-5 mx-auto text-base bg-primary text-primary-content">
-    <div class="max-w-[calc(65ch+16.25rem)] flex-1 flex flex-col gap-1 items-center navSmall:items-start">
+    <div class="max-w-[calc(65ch+16.25rem)] flex-1 flex flex-col gap-1 items-center navMD:items-start">
       {% include "./breadcrumbs.njk" %}
       <div class="prose">
-        <h1 class="text-center navSmall:text-left text-primary-content">{{ title }}</h1>
+        <h1 class="text-center navMD:text-left text-primary-content">{{ title }}</h1>
       </div>
       {% if author !== false %}
-        <div class="text-sm text-base-300 text-center navSmall:text-left mt-3 navSmall:mt-0">
+        <div class="text-sm text-base-300 text-center navMD:text-left mt-3 navMD:mt-0">
           {% if author | length %}
             <div>
               <span>Written By </span>

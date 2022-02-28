@@ -19,7 +19,7 @@
 {% endmacro %}
 
 <nav class="breadcrumbs flex" aria-label="Breadcrumb">
-  <ul class="pl-0 m-0 inline-flex flex-wrap justify-center navSmall:justify-start items-center gap-1 lg:space-x-2 list-none">
+  <ul class="pl-0 m-0 inline-flex flex-wrap justify-center navMD:justify-start items-center gap-1 lg:space-x-2 list-none">
     {% for entry in breadcrumbs %}
       {{ renderBreadcrumbItem(entry, loop.first, loop.last)}}
     {% endfor %}

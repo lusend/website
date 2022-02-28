@@ -48,20 +48,20 @@
 <div class="mx-auto px-2 md:px-6 lg:px-8">
   <div class="relative flex items-center justify-between h-16">
 
-    <div class="absolute inset-y-0 left-0 flex items-center navSmall:hidden">
+    <div class="absolute inset-y-0 left-0 flex items-center navMD:hidden">
       <button type="button" x-on:click="menu = !menu" class="inline-flex items-center text-primary-content justify-center p-2 rounded-md gap-1 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-sm font-medium" aria-controls="mobile-menu" aria-expanded="false">
         <ion-icon x-show="!menu" name="menu-outline" class="text-xl">&nbsp;</ion-icon>
         <ion-icon x-show="menu" name="close-outline" class="text-xl" x-cloak>&nbsp;</ion-icon>
-        <span class="hidden xs:!block">Menu</span>
+        <span class="hidden navXS:!block">Menu</span>
       </button>
     </div>
 
-    <div class="flex-1 mr-8 navSmall:mr-0 navSmall:flex-auto flex items-center justify-center navSmall:items-stretch navSmall:justify-start">
+    <div class="flex-1 mr-8 navMD:mr-0 navMD:flex-auto flex items-center justify-center navMD:items-stretch navMD:justify-start">
       <div class="flex items-center">
         <a href="{{ link('home') }}" :class="scroll" class="h-8 px-3 py-1 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 rounded-md text-primary-content">{{ logo | safe }}</a>
       </div>
 
-      <div class="hidden navSmall:!block navSmall:ml-6">
+      <div class="hidden navMD:!block navMD:ml-6">
         <div class="flex space-x-1 text-primary-content">
           {% for entry in navPages %}
             {{ renderNavListItem(entry, true) }}
@@ -76,12 +76,12 @@
         <ion-icon x-show="planes" name="airplane"class='text-xl' x-cloak>&nbsp;</ion-icon>
       </button>
       <a x-show="!applicant && !admin" href="/index.cfm?FuseAction=Security.AngLogin" class="inline-flex items-center justify-center space-x-1 p-2 rounded-md hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-sm font-medium">
-        <span class="hidden xs:!block">Login</span>
+        <span class="hidden navXS:!block">Login</span>
         <ion-icon  name="log-in-outline" class='text-xl'>&nbsp;</ion-icon>
       </a>
       <div x-show="applicant || admin" class="relative" x-data="{ open: false }" x-on:click="open = !open" x-on:click.outside="open = false">
         <button class="inline-flex items-center justify-center gap-1 p-2 rounded-md hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white text-sm font-medium" x-cloak>
-          <span class="hidden xs:!block">Account</span>
+          <span class="hidden navXS:!block">Account</span>
           <ion-icon name="person-circle-outline" class='text-xl'>&nbsp;</ion-icon>
         </button>
         <div x-show="open" :class="scroll" class="absolute mt-4 right-0 bg-primary rounded-md min-w-[15rem] shadow-md z-50" x-cloak>
@@ -114,7 +114,7 @@
   </div>
 </div>
 
-<div :class="scroll" class="absolute navSmall:hidden bg-primary w-full" x-on:click.outside="menu = false" x-show="menu" x-cloak>
+<div :class="scroll" class="absolute navMD:hidden bg-primary text-primary-content w-full" x-on:click.outside="menu = false" x-show="menu" x-cloak>
   <div class="px-2 pt-2 pb-3 space-y-1 max-h-[calc(90vh-72px)] overflow-auto">
     <ul>
       {% for entry in navPages %}
