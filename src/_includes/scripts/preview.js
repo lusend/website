@@ -20,11 +20,5 @@ function preview(slug, production, stage) {
       asText: true
     });
     navigator.clipboard.writeText(page);
-
-    document.getElementById(slug + '_copytext').innerHTML = 'Copied!';
-
-    setTimeout(function () {
-      document.getElementById(slug + '_copytext').innerHTML = 'Copy';
-    }, 2000);
   };
 }

@@ -10,8 +10,8 @@
 
 {% macro renderPage(entry, isChild = false, childMargin = 0) %}
 
-  <div class="mb-2">
-    <div class="flex flex-wrap items-stretch leading-tight">
+  <div x-data="{ clicked: false }" class="mb-2">
+    <div class="relative flex flex-wrap items-stretch leading-tight">
       <div style="font-size: calc(1.25rem - {{childMargin * 3}}px)" class="relative flex items-center justify-start gap-2 px-3 py-2 font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto bg-base-300">
         <div style="margin-left: {{(childMargin) * 30}}px" class="">
           <div data-inputpath="{{ entry.inputPath }}" {% if not (entry.inputPath in commit.files) %} data-hidebadge="yes" {% endif %} class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
@@ -26,11 +26,19 @@
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button x-data="{ clicked: false }" x-on:click="clicked = true" x-effect="if ($store.env.value) clicked = false" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="{{ entry.key + "_copy" }}" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
+      <button x-on:click="clicked = true; current = '{{ entry.key }}'" x-effect="if ($store.env.value) { clicked = false; current = null }" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="{{ entry.key + "_copy" }}" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
         <ion-icon x-show="!clicked" name="clipboard-outline" x-cloak>&nbsp;</ion-icon>
         <ion-icon x-show="clicked" name="clipboard" x-cloak>&nbsp;</ion-icon>
-        <span id="{{ entry.key + "_copytext" }}">Copy</span>
+        <span>Copy</span>
       </button>
+      <div x-show="current === '{{ entry.key }}'" x-transition class="absolute top-0 flex items-center justify-center h-full ml-2 text-xs left-full" x-cloak>
+        <div class="flex flex-row items-center justify-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="h-4" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
+            <path fill="currentColor" d="M7.085 3A1.5 1.5 0 0 1 8.5 2h3a1.5 1.5 0 0 1 1.415 1H14.5A1.5 1.5 0 0 1 16 4.5v4.707A5.5 5.5 0 0 0 10.257 18H5.5A1.5 1.5 0 0 1 4 16.5v-12A1.5 1.5 0 0 1 5.5 3h1.585ZM8.5 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3ZM19 14.5a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0Zm-2.146-1.854a.5.5 0 0 0-.708 0L13.5 15.293l-.646-.647a.5.5 0 0 0-.708.708l1 1a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0 0-.708Z"></path>
+          </svg>
+          <span class="hidden navMD:!block">Copied!</span>
+        </div>
+      </div>
     </div>
 
     <script>
@@ -52,7 +60,7 @@
 {% set content %}
 <body>
   <div id="app">
-    <div x-data class="prose prose-a:font-[initial] m-auto p-5">
+    <div x-data="{ current: null }" class="prose prose-a:font-[initial] m-auto py-5 px-10">
       {{ content | safe }}
 
       <label for="envToggle" class="flex items-center w-full my-5 cursor-pointer not-prose">

@@ -8,7 +8,7 @@ layout: preview
 
 <summary>Table of Contents</summary>
 
-<div class="max-h-44 overflow-auto p-3 rounded-2xl shadow-md mt-5">
+<div class="p-3 mt-5 overflow-auto shadow-md max-h-44 rounded-2xl">
 
 [[_toc_]]
 
@@ -16,7 +16,11 @@ layout: preview
 
 </details>
 
-<span id="status" class="text-xs font-semibold">&nbsp;</span>
+<p>
+  <a href="https://github.com/lusend/website/actions" class="no-underline">
+    <span id="status" class="text-xs font-semibold">&nbsp;</span>
+  </a>
+</p>
 
 # LU Send Website
 
