@@ -12,21 +12,21 @@
 
   <div class="mb-2">
     <div class="flex flex-wrap items-stretch leading-tight">
-      <div style="font-size: calc(1.25rem - {{childMargin * 3}}px)" class="px-3 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+      <div style="font-size: calc(1.25rem - {{childMargin * 3}}px)" class="relative flex items-center justify-start gap-2 px-3 py-2 font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto bg-base-300">
         <div style="margin-left: {{(childMargin) * 30}}px" class="">
           <div data-inputpath="{{ entry.inputPath }}" {% if not (entry.inputPath in commit.files) %} data-hidebadge="yes" {% endif %} class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
             <ion-icon name="sparkles" class="text-primary-content" style="font-size: 12px;">&nbsp;</ion-icon>
           </div>
-          <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: {{(childMargin) * 30}}px;">&nbsp;</div>
+          <div class="absolute top-0 left-0 h-full rounded-tl-lg sm:rounded-l-lg bg-primary-content-fade" style="width: {{(childMargin) * 30}}px;">&nbsp;</div>
           <div>{{ entry.title }}</div>
           <div style="font-size: 10px;" class="text-xs leading-tight">({{ entry.slug }})</div>
         </div>
       </div>
-      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="{{ entry.key + "_preview" }}" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content transition-colors">
+      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="{{ entry.key + "_preview" }}" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="{{ entry.key + "_copy" }}" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content transition-colors">
+      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus ring-primary' : 'bg-primary hover:bg-primary-focus ring-secondary'" id="{{ entry.key + "_copy" }}" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content focus:ring-2 ring-offset-2 ring-opacity-50">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="{{ entry.key + "_copytext" }}">Copy</span>
       </button>
