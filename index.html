@@ -1265,6 +1265,24 @@ Reset links to optimize for opt-in styling instead of opt-out.
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+#app .ring-primary{
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(10 37 78 / var(--tw-ring-opacity));
+}
+
+#app .ring-secondary{
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(153 0 0 / var(--tw-ring-opacity));
+}
+
+#app .ring-opacity-50{
+  --tw-ring-opacity: 0.5;
+}
+
+#app .ring-offset-2{
+  --tw-ring-offset-width: 2px;
+}
+
 #app .transition-colors{
   transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
@@ -1361,6 +1379,12 @@ Reset links to optimize for opt-in styling instead of opt-out.
 #app .hover\:underline:hover{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
+}
+
+#app .focus\:ring-2:focus{
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 
 #app .peer:checked ~ .peer-checked\:translate-x-full{
@@ -1668,11 +1692,11 @@ nav:
 </details>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/website/commit/5c40620730d3e8e421278913509568ce86475700" class="no-underline hover:underline" target="_blank">feat: ✨ Hide Advanced Menu Until Logged In<br />
+  <a href="https://github.com/lusend/website/commit/60b2f5298da6325a1c115766b9001991439f1803" class="no-underline hover:underline" target="_blank">feat: ✨ Include Ring on Copy Buttons<br />
 <br />
-This update hides the advanced menu when a user is not logged in yet. This provides a better user experience.</a>
+Added a ring to every copy button to make it clear which item was last copied.</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-28T22:46:23Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-02-28T22:53:25Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
@@ -1693,21 +1717,21 @@ This update hides the advanced menu when a user is not logged in yet. This provi
 
   <div class="mb-2">
     <div class="flex flex-wrap items-stretch leading-tight">
-      <div style="font-size: calc(1.25rem - 0px)" class="px-3 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+      <div style="font-size: calc(1.25rem - 0px)" class="relative flex items-center justify-start gap-2 px-3 py-2 font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto bg-base-300">
         <div style="margin-left: 0px" class="">
           <div data-inputpath="./src/pages/home.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
             <ion-icon name="sparkles" class="text-primary-content" style="font-size: 12px;">&nbsp;</ion-icon>
           </div>
-          <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 0px;">&nbsp;</div>
+          <div class="absolute top-0 left-0 h-full rounded-tl-lg sm:rounded-l-lg bg-primary-content-fade" style="width: 0px;">&nbsp;</div>
           <div>Home</div>
           <div style="font-size: 10px;" class="text-xs leading-tight">(home)</div>
         </div>
       </div>
-      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="home_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content transition-colors">
+      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="home_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="home_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content transition-colors">
+      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus ring-primary' : 'bg-primary hover:bg-primary-focus ring-secondary'" id="home_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content focus:ring-2 ring-offset-2 ring-opacity-50">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="home_copytext">Copy</span>
       </button>
@@ -1727,21 +1751,21 @@ This update hides the advanced menu when a user is not logged in yet. This provi
 
   <div class="mb-2">
     <div class="flex flex-wrap items-stretch leading-tight">
-      <div style="font-size: calc(1.25rem - 3px)" class="px-3 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+      <div style="font-size: calc(1.25rem - 3px)" class="relative flex items-center justify-start gap-2 px-3 py-2 font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto bg-base-300">
         <div style="margin-left: 30px" class="">
           <div data-inputpath="./src/pages/group/group.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
             <ion-icon name="sparkles" class="text-primary-content" style="font-size: 12px;">&nbsp;</ion-icon>
           </div>
-          <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 30px;">&nbsp;</div>
+          <div class="absolute top-0 left-0 h-full rounded-tl-lg sm:rounded-l-lg bg-primary-content-fade" style="width: 30px;">&nbsp;</div>
           <div>Group Travel</div>
           <div style="font-size: 10px;" class="text-xs leading-tight">(group)</div>
         </div>
       </div>
-      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="group_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content transition-colors">
+      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="group_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="group_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content transition-colors">
+      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus ring-primary' : 'bg-primary hover:bg-primary-focus ring-secondary'" id="group_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content focus:ring-2 ring-offset-2 ring-opacity-50">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="group_copytext">Copy</span>
       </button>
@@ -1761,21 +1785,21 @@ This update hides the advanced menu when a user is not logged in yet. This provi
 
   <div class="mb-2">
     <div class="flex flex-wrap items-stretch leading-tight">
-      <div style="font-size: calc(1.25rem - 3px)" class="px-3 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+      <div style="font-size: calc(1.25rem - 3px)" class="relative flex items-center justify-start gap-2 px-3 py-2 font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto bg-base-300">
         <div style="margin-left: 30px" class="">
           <div data-inputpath="./src/pages/individual/individual.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
             <ion-icon name="sparkles" class="text-primary-content" style="font-size: 12px;">&nbsp;</ion-icon>
           </div>
-          <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 30px;">&nbsp;</div>
+          <div class="absolute top-0 left-0 h-full rounded-tl-lg sm:rounded-l-lg bg-primary-content-fade" style="width: 30px;">&nbsp;</div>
           <div>Individual Travel</div>
           <div style="font-size: 10px;" class="text-xs leading-tight">(individual)</div>
         </div>
       </div>
-      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="individual_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content transition-colors">
+      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="individual_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="individual_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content transition-colors">
+      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus ring-primary' : 'bg-primary hover:bg-primary-focus ring-secondary'" id="individual_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content focus:ring-2 ring-offset-2 ring-opacity-50">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="individual_copytext">Copy</span>
       </button>
@@ -1795,21 +1819,21 @@ This update hides the advanced menu when a user is not logged in yet. This provi
 
   <div class="mb-2">
     <div class="flex flex-wrap items-stretch leading-tight">
-      <div style="font-size: calc(1.25rem - 6px)" class="px-3 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+      <div style="font-size: calc(1.25rem - 6px)" class="relative flex items-center justify-start gap-2 px-3 py-2 font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto bg-base-300">
         <div style="margin-left: 60px" class="">
           <div data-inputpath="./src/pages/individual/information/advising.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
             <ion-icon name="sparkles" class="text-primary-content" style="font-size: 12px;">&nbsp;</ion-icon>
           </div>
-          <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 60px;">&nbsp;</div>
+          <div class="absolute top-0 left-0 h-full rounded-tl-lg sm:rounded-l-lg bg-primary-content-fade" style="width: 60px;">&nbsp;</div>
           <div>Getting Started &amp; Advising</div>
           <div style="font-size: 10px;" class="text-xs leading-tight">(advising)</div>
         </div>
       </div>
-      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="advising_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content transition-colors">
+      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="advising_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="advising_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content transition-colors">
+      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus ring-primary' : 'bg-primary hover:bg-primary-focus ring-secondary'" id="advising_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content focus:ring-2 ring-offset-2 ring-opacity-50">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="advising_copytext">Copy</span>
       </button>
@@ -1829,21 +1853,21 @@ This update hides the advanced menu when a user is not logged in yet. This provi
 
   <div class="mb-2">
     <div class="flex flex-wrap items-stretch leading-tight">
-      <div style="font-size: calc(1.25rem - 6px)" class="px-3 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+      <div style="font-size: calc(1.25rem - 6px)" class="relative flex items-center justify-start gap-2 px-3 py-2 font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto bg-base-300">
         <div style="margin-left: 60px" class="">
           <div data-inputpath="./src/pages/individual/information/programs.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
             <ion-icon name="sparkles" class="text-primary-content" style="font-size: 12px;">&nbsp;</ion-icon>
           </div>
-          <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 60px;">&nbsp;</div>
+          <div class="absolute top-0 left-0 h-full rounded-tl-lg sm:rounded-l-lg bg-primary-content-fade" style="width: 60px;">&nbsp;</div>
           <div>Browse Programs</div>
           <div style="font-size: 10px;" class="text-xs leading-tight">(programs)</div>
         </div>
       </div>
-      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="programs_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content transition-colors">
+      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="programs_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="programs_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content transition-colors">
+      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus ring-primary' : 'bg-primary hover:bg-primary-focus ring-secondary'" id="programs_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content focus:ring-2 ring-offset-2 ring-opacity-50">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="programs_copytext">Copy</span>
       </button>
@@ -1863,21 +1887,21 @@ This update hides the advanced menu when a user is not logged in yet. This provi
 
   <div class="mb-2">
     <div class="flex flex-wrap items-stretch leading-tight">
-      <div style="font-size: calc(1.25rem - 6px)" class="px-3 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+      <div style="font-size: calc(1.25rem - 6px)" class="relative flex items-center justify-start gap-2 px-3 py-2 font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto bg-base-300">
         <div style="margin-left: 60px" class="">
           <div data-inputpath="./src/pages/individual/information/process.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
             <ion-icon name="sparkles" class="text-primary-content" style="font-size: 12px;">&nbsp;</ion-icon>
           </div>
-          <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 60px;">&nbsp;</div>
+          <div class="absolute top-0 left-0 h-full rounded-tl-lg sm:rounded-l-lg bg-primary-content-fade" style="width: 60px;">&nbsp;</div>
           <div>Program Process</div>
           <div style="font-size: 10px;" class="text-xs leading-tight">(process)</div>
         </div>
       </div>
-      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="process_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content transition-colors">
+      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="process_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="process_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content transition-colors">
+      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus ring-primary' : 'bg-primary hover:bg-primary-focus ring-secondary'" id="process_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content focus:ring-2 ring-offset-2 ring-opacity-50">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="process_copytext">Copy</span>
       </button>
@@ -1897,21 +1921,21 @@ This update hides the advanced menu when a user is not logged in yet. This provi
 
   <div class="mb-2">
     <div class="flex flex-wrap items-stretch leading-tight">
-      <div style="font-size: calc(1.25rem - 6px)" class="px-3 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+      <div style="font-size: calc(1.25rem - 6px)" class="relative flex items-center justify-start gap-2 px-3 py-2 font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto bg-base-300">
         <div style="margin-left: 60px" class="">
           <div data-inputpath="./src/pages/individual/information/policies.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
             <ion-icon name="sparkles" class="text-primary-content" style="font-size: 12px;">&nbsp;</ion-icon>
           </div>
-          <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 60px;">&nbsp;</div>
+          <div class="absolute top-0 left-0 h-full rounded-tl-lg sm:rounded-l-lg bg-primary-content-fade" style="width: 60px;">&nbsp;</div>
           <div>Policies, Guidelines &amp; FAQ</div>
           <div style="font-size: 10px;" class="text-xs leading-tight">(policies)</div>
         </div>
       </div>
-      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="policies_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content transition-colors">
+      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="policies_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="policies_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content transition-colors">
+      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus ring-primary' : 'bg-primary hover:bg-primary-focus ring-secondary'" id="policies_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content focus:ring-2 ring-offset-2 ring-opacity-50">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="policies_copytext">Copy</span>
       </button>
@@ -1935,21 +1959,21 @@ This update hides the advanced menu when a user is not logged in yet. This provi
 
   <div class="mb-2">
     <div class="flex flex-wrap items-stretch leading-tight">
-      <div style="font-size: calc(1.25rem - 3px)" class="px-3 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+      <div style="font-size: calc(1.25rem - 3px)" class="relative flex items-center justify-start gap-2 px-3 py-2 font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto bg-base-300">
         <div style="margin-left: 30px" class="">
           <div data-inputpath="./src/pages/faculty/faculty.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
             <ion-icon name="sparkles" class="text-primary-content" style="font-size: 12px;">&nbsp;</ion-icon>
           </div>
-          <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 30px;">&nbsp;</div>
+          <div class="absolute top-0 left-0 h-full rounded-tl-lg sm:rounded-l-lg bg-primary-content-fade" style="width: 30px;">&nbsp;</div>
           <div>Faculty Gateway</div>
           <div style="font-size: 10px;" class="text-xs leading-tight">(faculty)</div>
         </div>
       </div>
-      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="faculty_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content transition-colors">
+      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="faculty_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="faculty_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content transition-colors">
+      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus ring-primary' : 'bg-primary hover:bg-primary-focus ring-secondary'" id="faculty_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content focus:ring-2 ring-offset-2 ring-opacity-50">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="faculty_copytext">Copy</span>
       </button>
@@ -1969,21 +1993,21 @@ This update hides the advanced menu when a user is not logged in yet. This provi
 
   <div class="mb-2">
     <div class="flex flex-wrap items-stretch leading-tight">
-      <div style="font-size: calc(1.25rem - 6px)" class="px-3 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+      <div style="font-size: calc(1.25rem - 6px)" class="relative flex items-center justify-start gap-2 px-3 py-2 font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto bg-base-300">
         <div style="margin-left: 60px" class="">
           <div data-inputpath="./src/pages/faculty/proposal/domestic.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
             <ion-icon name="sparkles" class="text-primary-content" style="font-size: 12px;">&nbsp;</ion-icon>
           </div>
-          <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 60px;">&nbsp;</div>
+          <div class="absolute top-0 left-0 h-full rounded-tl-lg sm:rounded-l-lg bg-primary-content-fade" style="width: 60px;">&nbsp;</div>
           <div>Domestic Proposal Process</div>
           <div style="font-size: 10px;" class="text-xs leading-tight">(domestic)</div>
         </div>
       </div>
-      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="domestic_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content transition-colors">
+      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="domestic_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="domestic_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content transition-colors">
+      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus ring-primary' : 'bg-primary hover:bg-primary-focus ring-secondary'" id="domestic_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content focus:ring-2 ring-offset-2 ring-opacity-50">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="domestic_copytext">Copy</span>
       </button>
@@ -2003,21 +2027,21 @@ This update hides the advanced menu when a user is not logged in yet. This provi
 
   <div class="mb-2">
     <div class="flex flex-wrap items-stretch leading-tight">
-      <div style="font-size: calc(1.25rem - 6px)" class="px-3 py-2 relative font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto flex justify-start items-center gap-2 bg-base-300">
+      <div style="font-size: calc(1.25rem - 6px)" class="relative flex items-center justify-start gap-2 px-3 py-2 font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto bg-base-300">
         <div style="margin-left: 60px" class="">
           <div data-inputpath="./src/pages/faculty/proposal/international.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
             <ion-icon name="sparkles" class="text-primary-content" style="font-size: 12px;">&nbsp;</ion-icon>
           </div>
-          <div class="absolute h-full rounded-tl-lg sm:rounded-l-lg top-0 left-0 bg-primary-content-fade" style="width: 60px;">&nbsp;</div>
+          <div class="absolute top-0 left-0 h-full rounded-tl-lg sm:rounded-l-lg bg-primary-content-fade" style="width: 60px;">&nbsp;</div>
           <div>International Proposal Process</div>
           <div style="font-size: 10px;" class="text-xs leading-tight">(international)</div>
         </div>
       </div>
-      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="international_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content transition-colors">
+      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="international_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content">
         <ion-icon name="open-outline">&nbsp;</ion-icon>
         <span>Preview</span>
       </button>
-      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="international_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content transition-colors">
+      <button :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus ring-primary' : 'bg-primary hover:bg-primary-focus ring-secondary'" id="international_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content focus:ring-2 ring-offset-2 ring-opacity-50">
         <ion-icon name="clipboard-outline">&nbsp;</ion-icon>
         <span id="international_copytext">Copy</span>
       </button>
