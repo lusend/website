@@ -76,7 +76,9 @@ _*All trips must be approved by the Dean of the Faculty member's department. Add
 
 ## State Approvals
 
-In order to remain in compliance with academic regulations for states outside of Virginia, we must abide by the parameters defined under the NC-SARA policy. Unfortunately, requiring students to physically meet in a location outside of the home state of their institution for instructional purposes more than twice per full-term course for a total of more than six hours is considered out of compliance. As you can imagine, this impacts all of our academic opportunities for domestic trips that are held outside of the state of Virginia. If you are interested in proposing a domestic trip in the future with your department, please consider including pre and post trip course work, as well as prepping the students for experiential learning while on the trip.
+Liberty University is an institutional participant with NC-SARA which allows the university to offer our programs and conduct certain activities outside of the state of Virginia. However, NC-SARA does limit the activities the University can conduct without first obtaining approval from the destination state. Some of the activities that require approval are multi-night out of state trips, faculty and/or student led instruction such as debriefings and trips that lead to academic credit.
+
+Please be advised that the Office of State Approvals cannot guarantee the destination state will approve a trip that exceeds the limitations of NC-SARA. For additional information or guidance please reach out to The Office of State Approvals at [stateapprovals@liberty.edu](mailto:stateapprovals@liberty.edu).
 
 # General Policy
 
