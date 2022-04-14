@@ -30,7 +30,7 @@ All of the proposal dates are hard deadlines. Deadlines will appear in red 30 da
 
 {data-turnredafter="30"}
 
-_\*If your trip does not operate as a full LU Send trip (does not require logistical support, budget, academic credit, or have culture/service opportunities) you will need to submit all proposals at least a month before departure. This will give us enough time to get excused absence request/approvals, assumption of risk, and out of bed request in time for your departure. If you are not able to get this request in this time frame, please email [lusend@liberty.edu](mailto:lusend@liberty.edu) for further information._
+_\***If your trip does not operate as a full LU Send trip (does not require logistical support, budget, academic credit, or have culture/service opportunities) you will need to submit all proposals [at least a month]{.text-secondary} before departure**. This will give us enough time to get excused absence request/approvals, assumption of risk, and out of bed request in time for your departure. If you are not able to get this request in this time frame, please email [lusend@liberty.edu](mailto:lusend@liberty.edu) for further information._
 
 # Trip Proposal Process
 
