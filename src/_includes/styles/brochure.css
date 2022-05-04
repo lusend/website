@@ -51,11 +51,11 @@
 }
 
 #app #appMainContent > div[id^='app']:not([id='appMenu']) > .ProseMirror {
-  @apply border-x-[3px] border-b-[3px] rounded-b-lg border-primary py-5 px-3;
+  @apply border-x-[3px] border-b-[3px] rounded-b-lg border-primary py-5 px-3 max-w-[85ch];
 }
 
 #app .pdf-wrapper {
-  @apply w-full p-5 bg-primary-content-fade flex justify-center items-center text-center font-medium rounded-md;
+  @apply w-full p-5 bg-primary-content-fade flex justify-center items-center text-center font-medium rounded-md break-all;
 }
 
 #app .pdf-wrapper::before {

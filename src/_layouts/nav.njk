@@ -102,7 +102,7 @@
                   <ion-icon name="person-outline" class='text-lg'>&nbsp;</ion-icon>
                   <span>My Applications</span>
                 </a>
-                <a x-show="admin" x-data="{ advancedMenu: $persist(false) }" x-on:click="advancedMenu = !advancedMenu" x-effect="document.querySelector('#pagenav-wrapper').style.display = advancedMenu && (admin || applicant) ? 'block' : ''; advancedMenu && (admin || applicant) && window.scroll({ top: 0 })" class="inline-flex items-center block w-full h-full gap-2 px-3 py-2 rounded-md cursor-pointer hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10" x-cloak>
+                <a x-show="admin" x-data="{ advancedMenu: $persist(false) }" x-on:click="advancedMenu = !advancedMenu" x-effect="document.querySelector('#pagenav-wrapper') ? (document.querySelector('#pagenav-wrapper').style.display = advancedMenu && (admin || applicant) ? 'block' : '') : false; advancedMenu && (admin || applicant) && window.scroll({ top: 0 })" class="inline-flex items-center block w-full h-full gap-2 px-3 py-2 rounded-md cursor-pointer hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10" x-cloak>
                   <ion-icon x-show="!advancedMenu" name="hammer-outline" class='text-lg' x-cloak>&nbsp;</ion-icon>
                   <ion-icon x-show="advancedMenu" name="hammer" class='text-lg' x-cloak>&nbsp;</ion-icon>
                   <span>Advanced Menu</span>

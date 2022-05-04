@@ -53,7 +53,7 @@ function pdfListener() {
         const id = pdf.id;
 
         var adobeDCView = new AdobeDC.View({
-          clientId: 'd524c2ec58d64536a73d247ffbc2d07b',
+          clientId: '9ec6f2abc7b34e9c87f0639106879d49',
           divId: id
         });
 
@@ -209,6 +209,7 @@ document.addEventListener('alpine:init', () => {
       updatedAt: null,
 
       init() {
+        console.log(this);
         this.id = customId ? customId : this.$el.id;
         const section = document.getElementById(this.id);
         console.log(this.$data.lastUpdate);
@@ -413,11 +414,14 @@ async function copyBrochure() {
   let finalHTML = parser.parseFromString(strippedHTML, 'text/html');
   for (const [section, editor] of Object.entries(window.tiptapEditors)) {
     finalHTML.getElementById(section).innerHTML = editor.getHTML();
+    finalHTML.getElementById(section).removeAttribute('x-data');
   }
 
   finalHTML.getElementById('app').appendChild(pdfListener());
 
-  navigator.clipboard.writeText(finalHTML);
+  navigator.clipboard.writeText(
+    finalHTML.head.innerHTML + finalHTML.body.innerHTML
+  );
 }
 
 /**
