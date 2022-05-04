@@ -26,6 +26,22 @@
   @apply relative;
 }
 
+#app .ProseMirror .ProseMirror-gapcursor:after {
+  height: 1px;
+  background-color: black;
+}
+
+.prose :where(iframe):not(:where([class~='not-prose'] *)),
+.prose :where(.pdf-wrapper):not(:where([class~='not-prose'] *)) {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+.prose > :where(iframe:last-child):not(:where([class~='not-prose'] *)),
+.prose > :where(.pdf-wrapper:last-child):not(:where([class~='not-prose'] *)) {
+  margin-bottom: 0;
+}
+
 #app li > p {
   @apply m-0;
 }
@@ -81,7 +97,7 @@
 
 #app .tip:before,
 #app .tip:after {
-  @apply opacity-0 transition-all duration-100 ease-in-out;
+  @apply opacity-0 transition-all duration-100 ease-in-out z-50;
 }
 
 #app .tip:hover:before,

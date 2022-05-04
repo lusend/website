@@ -209,10 +209,8 @@ document.addEventListener('alpine:init', () => {
       updatedAt: null,
 
       init() {
-        console.log(this);
         this.id = customId ? customId : this.$el.id;
         const section = document.getElementById(this.id);
-        console.log(this.$data.lastUpdate);
         const _this = this;
 
         [
@@ -258,8 +256,14 @@ document.addEventListener('alpine:init', () => {
             History,
             TextStyle,
             Color,
-            Link,
-            Image,
+            Link.configure({
+              openOnClick: false
+            }),
+            Image.configure({
+              HTMLAttributes: {
+                class: 'header'
+              }
+            }),
             Superscript,
             TaskList,
             TaskItem,
@@ -350,17 +354,101 @@ document.addEventListener('alpine:init', () => {
       clearFormat() {
         return (
           this.$data.editor() &&
-          this.$data.editor().chain().focus().clearNodes().unsetAllMarks().run()
+          this.$data.editor().chain().focus().unsetAllMarks().run()
+        );
+      },
+      toggleLink() {
+        let previousLink =
+          this.$data.editor() && this.$data.editor().getAttributes('link').href;
+        let link = prompt('Enter your URL Link: ', previousLink);
+
+        if (!link)
+          return (
+            this.$data.editor() &&
+            this.$data
+              .editor()
+              .chain()
+              .focus()
+              .extendMarkRange('link')
+              .unsetLink()
+              .run()
+          );
+
+        return (
+          this.$data.editor() &&
+          this.$data
+            .editor()
+            .chain()
+            .focus()
+            .extendMarkRange('link')
+            .setLink({ href: link, target: '_self' })
+            .run()
+        );
+      },
+      createIframe() {
+        let previousIframe =
+          this.$data.editor() &&
+          this.$data.editor().getAttributes('iframe').src;
+        let iframe = prompt('Enter your Video Embed Link: ', previousIframe);
+
+        if (!iframe) return;
+
+        return (
+          this.$data.editor() &&
+          this.$data.editor().chain().focus().setIframe({ src: iframe }).run()
+        );
+      },
+      createImage() {
+        let previousImage =
+          this.$data.editor() &&
+          this.$data.editor().getAttributes('iframe').src;
+        let image = prompt('Enter the link to your Image: ', previousImage);
+
+        if (!image) return;
+
+        return (
+          this.$data.editor() &&
+          this.$data.editor().chain().focus().setImage({ src: image }).run()
+        );
+      },
+      createPDF() {
+        let previousPDF =
+          this.$data.editor() && this.$data.editor().getAttributes('pdf').src;
+        let previousFilename =
+          this.$data.editor() &&
+          this.$data.editor().getAttributes('pdf').filename;
+
+        let pdf = prompt('Enter the link to the PDF: ', previousPDF);
+        let filename =
+          prompt('Enter an optional filename: ', previousFilename) || undefined;
+
+        if (!pdf) return;
+
+        return (
+          this.$data.editor() &&
+          this.$data
+            .editor()
+            .chain()
+            .focus()
+            .setPDF({ src: pdf, filename })
+            .run()
         );
       },
       canUndo(lastUpdate) {
         // lastUpdate forces a rerender
-        console.log(this.$data.editor() && this.$data.editor().can().undo());
         return this.$data.editor() && this.$data.editor().can().undo();
       },
       canRedo(lastUpdate) {
         // lastUpdate forces a rerender
         return this.$data.editor() && this.$data.editor().can().redo();
+      },
+      isSelected(lastUpdate) {
+        // lastUpdate forces a rerender
+        return (
+          this.$data.editor() &&
+          this.$data.editor().view.state.selection &&
+          !this.$data.editor().view.state.selection.empty
+        );
       },
       undo() {
         return (

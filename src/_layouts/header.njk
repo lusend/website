@@ -23,13 +23,13 @@
       {% if type === 'brochure' %}
         <div class="navMD:hidden w-full mt-5 max-w-md">
           <label for="tabs" class="sr-only">Select a tab</label>
-          <select id="tabs" class="text-white rounded-lg block w-full p-2.5 bg-primary-focus border-2 border-primary-content-fade">
-            <option>Trip Overview</option>
-            <option>Travel Resources</option>
-            <option>Travel Safety</option>
-            <option>Traveler Checklist</option>
-            <option>Flight Itinerary</option>
-            <option>Packing Guide</option>
+          <select id="tabs" x-model="currentId" class="text-white rounded-lg block w-full p-2.5 bg-primary-focus border-2 border-primary-content-fade">
+            <option value="appOverview">Trip Overview</option>
+            <option value="appResources">Travel Resources</option>
+            <option value="appSafety">Travel Safety</option>
+            <option value="appChecklist">Traveler Checklist</option>
+            <option value="appFlights">Flight Itinerary</option>
+            <option value="appPacking">Packing Guide</option>
           </select>
         </div>
         <div class="hidden border-b border-neutral navMD:!block w-full mt-5">
