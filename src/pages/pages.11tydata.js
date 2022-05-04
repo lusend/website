@@ -16,6 +16,7 @@ module.exports = async function (configData) {
     testimonials: [],
     actions: [],
     order: [],
+    pathPrefix: env === 'development' ? '/' : '/website/',
     eleventyComputed: {
       path: `{{ page.filePathStem }}{{ suffix }}`,
       permalink: `{{ path }}.html`,
