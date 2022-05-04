@@ -23,6 +23,7 @@
 {% endif %}
 
 {% set content %}
+
 {% set js %}
 {% include "scripts/smoothscroll.js" %}
 
@@ -46,7 +47,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 {% endif %}
 
-<div  x-data="{ scroll: '' }" id="app" class="relative">
+<div  x-data="{ scroll: '', currentId: 'appOverview', lastUpdate: null, editor: () => null }" id="app" class="relative">
   <div class="absolute {% if header and author %} top-[calc(100vh+272px)] {% elif header %} top-[calc(100vh+222px)] {% else %} top-[calc(100vh+72px)] {% endif %} overflow-none {% if header and author %} h-[calc(100%-100vh-272px)] {% elif header %} h-[calc(100%-100vh-222px)] {%else%} h-[calc(100%-100vh-72px)] {% endif %} w-full pointer-events-none -z-50" x-intersect:enter="scroll = 'bg-opacity-95'" x-intersect:leave="scroll = ''">&nbsp;</div>
   <div class="fixed top-0 right-0 w-full h-screen bg-scroll bg-white bg-center bg-no-repeat bg-cover pointer-events-none" {% if background %} style="background-image: url('{{ background }}')" {% endif %}>&nbsp;</div>
 
@@ -70,33 +71,48 @@
   {% include "./footer.njk" %}
 
   <div id="planes" class="fixed top-0 left-0 z-0 w-full h-full pointer-events-none">&nbsp;</div>
-</div>
 
-{% if testimonials | length %}
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.3.7/dist/js/splide-extension-auto-scroll.min.js"></script>
+  {% if testimonials | length %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.3.7/dist/js/splide-extension-auto-scroll.min.js"></script>
+
+    <script>
+      {% include "scripts/testimonials.js" %}
+    </script>
+  {% endif %}
+
+  <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.41.4/tsparticles.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.5/mousetrap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/dayjs.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/plugin/utc.min.js"></script>
 
   <script>
-    {% include "scripts/testimonials.js" %}
+    {{ js | safe }}
   </script>
-{% endif %}
 
-<script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script defer src="https://unpkg.com/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.41.4/tsparticles.min.js"></script>
+  {% if type === 'brochure' %}
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.5/mousetrap.min.js"></script>
+    <!--STRIP SCRIPT-->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/dayjs.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/plugin/utc.min.js"></script>
+    <script>
+      {% include "scripts/get.js" %}
+    </script>
 
-<script>
-  {{ js | safe }}
-</script>
+    <script src="./tiptap.js"></script>
 
-<script defer src="https://unpkg.com/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script>
-<script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
-<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!--STRIPEND SCRIPT-->
+
+  {% endif %}
+</div>
 
 {% endset %}

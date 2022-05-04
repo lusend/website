@@ -14,6 +14,141 @@
   border: 0;
   padding: 0;
   margin: 0;
+  height: 100vh;
+}
+
+#app .is-empty.is-editor-empty::before {
+  @apply text-neutral absolute;
+  content: attr(data-placeholder);
+}
+
+#app .ProseMirror {
+  @apply relative;
+}
+
+#app li > p {
+  @apply m-0;
+}
+
+#app blockquote > p {
+  @apply m-0;
+}
+
+#app .iframe-wrapper {
+  @apply relative pb-[56.25%] w-full h-auto overflow-hidden rounded-md;
+}
+
+#app iframe {
+  @apply w-full rounded-md overflow-hidden;
+}
+
+#app #appMainContent .menu .is-active {
+  @apply bg-primary text-white;
+}
+
+#app #appMainContent .menu button[disabled] {
+  @apply !text-primary-content-fade hover:!bg-transparent hover:!text-primary-content-fade;
+}
+
+#app #appMainContent > div[id^='app']:not([id='appMenu']) > .ProseMirror {
+  @apply border-x-[3px] border-b-[3px] rounded-b-lg border-primary py-5 px-3;
+}
+
+#app .pdf-wrapper {
+  @apply w-full p-5 bg-primary-content-fade flex justify-center items-center text-center font-medium rounded-md;
+}
+
+#app .pdf-wrapper::before {
+  content: 'PDF Embed for:';
+  @apply mr-2;
+}
+
+#app .iframe-wrapper > iframe {
+  @apply absolute top-0 left-0 h-full w-full rounded-md overflow-hidden;
+}
+
+#app .tip {
+  @apply relative inline-block text-center;
+  --tooltip-offset: calc(100% + 1px + var(--tooltip-tail, 0px));
+  --tooltip-tail-offset: calc(100% + 1px - var(--tooltip-tail));
+  --tooltip-tail: 3px;
+}
+
+#app .tip:before {
+  @apply max-w-xs rounded px-2 py-1 text-xs font-mono absolute bg-primary text-primary-content w-max;
+  pointer-events: none;
+}
+
+#app .tip:before,
+#app .tip:after {
+  @apply opacity-0 transition-all duration-100 ease-in-out;
+}
+
+#app .tip:hover:before,
+#app .tip:hover:after {
+  @apply opacity-100 delay-1000;
+}
+
+#app .tip:after {
+  @apply absolute;
+}
+
+#app .tip:before {
+  content: attr(data-tip);
+}
+
+#app .tip:after {
+  content: '';
+  border-style: solid;
+  border-width: var(--tooltip-tail, 0);
+  width: 0;
+  height: 0;
+  display: block;
+  position: absolute;
+}
+
+#app .tip {
+  &:before {
+    transform: translateX(-50%);
+    top: var(--tooltip-offset);
+    left: 50%;
+    right: auto;
+    bottom: auto;
+  }
+
+  &:after {
+    @apply border-transparent !border-b-primary;
+    transform: translateX(-50%);
+    top: var(--tooltip-tail-offset);
+    left: 50%;
+    right: auto;
+    bottom: auto;
+  }
+}
+
+#app ul[data-type='taskList'] {
+  list-style: none;
+  padding: 0;
+  label {
+    @apply m-0;
+  }
+  p {
+    margin: 0;
+  }
+
+  li {
+    @apply flex m-px;
+
+    > label {
+      flex: 0 0 auto;
+      margin-right: 0.5rem;
+      user-select: none;
+    }
+
+    > div {
+      flex: 1 1 auto;
+    }
+  }
 }
 
 /* purgecss end ignore */

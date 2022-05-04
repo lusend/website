@@ -1,45 +1,47 @@
 {% set navPages = collections.pages | eleventyNavigation('home') %}
 
 {% macro renderNavListItem(entry, separateDropdown = false, spaces = "") %}
-  {% if separateDropdown %}
-    {%if entry.children.length %}
-      <div class="relative" x-data="{ open_{{ entry.key }}: false }" x-on:click="open_{{ entry.key }} = !open_{{ entry.key }}" x-on:click.outside="open_{{ entry.key }} = false">
-        <button :class="open_{{ entry.key }} && scroll + ' bg-primary'" class="flex items-center px-3 py-2 space-x-1 text-sm font-medium rounded-md cursor-pointer hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10" aria-current="page">
-          <span>{{ entry.title }}</span>
-          <ion-icon x-show="!open_{{ entry.key }}" name="chevron-down-outline">&nbsp;</ion-icon>
-          <ion-icon x-show="open_{{ entry.key }}" name="chevron-up-outline" x-cloak>&nbsp;</ion-icon>
-        </button>
-        <div x-show="open_{{ entry.key }}" :class="scroll" class="absolute mt-4 bg-primary rounded-md min-w-[18rem] shadow-md z-50 text-primary-content" x-cloak>
-          <div class="px-2 pt-2 pb-3 space-y-1 max-h-[calc(90vh-72px)] overflow-auto">
-            <ul>
-              <li class="relative block my-1 text-base font-medium">
-                <a href="{{ entry.url }}" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 {% if entry.url === eleventyNavigation.url %} bg-primary-focus underline {% endif %}">
-                  <span class="font-semibold">{{ entry.title }}</span>
-                </a>
-              </li>
-              {% for child in entry.children %}
-                {{ renderNavListItem(child, false, spaces) }}
-              {% endfor %}
-            </ul>
+  {% if entry.type !== 'brochure' %}
+    {% if separateDropdown %}
+      {%if entry.children.length %}
+        <div class="relative" x-data="{ open_{{ entry.key }}: false }" x-on:click="open_{{ entry.key }} = !open_{{ entry.key }}" x-on:click.outside="open_{{ entry.key }} = false">
+          <button :class="open_{{ entry.key }} && scroll + ' bg-primary'" class="flex items-center px-3 py-2 space-x-1 text-sm font-medium rounded-md cursor-pointer hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10" aria-current="page">
+            <span>{{ entry.title }}</span>
+            <ion-icon x-show="!open_{{ entry.key }}" name="chevron-down-outline">&nbsp;</ion-icon>
+            <ion-icon x-show="open_{{ entry.key }}" name="chevron-up-outline" x-cloak>&nbsp;</ion-icon>
+          </button>
+          <div x-show="open_{{ entry.key }}" :class="scroll" class="absolute mt-4 bg-primary rounded-md min-w-[18rem] shadow-md z-50 text-primary-content" x-cloak>
+            <div class="px-2 pt-2 pb-3 space-y-1 max-h-[calc(90vh-72px)] overflow-auto">
+              <ul>
+                <li class="relative block my-1 text-base font-medium">
+                  <a href="{{ entry.url }}" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 {% if entry.url === eleventyNavigation.url %} bg-primary-focus underline {% endif %}">
+                    <span class="font-semibold">{{ entry.title }}</span>
+                  </a>
+                </li>
+                {% for child in entry.children %}
+                  {{ renderNavListItem(child, false, spaces) }}
+                {% endfor %}
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
+      {% else %}
+        <a href="{{ entry.url }}" :class="scroll" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 px-3 py-2 rounded-md text-sm font-medium {% if entry.url === eleventyNavigation.url %} bg-primary-focus underline {% endif %}">{{ entry.title }}</a>
+      {% endif %}
     {% else %}
-      <a href="{{ entry.url }}" :class="scroll" class="hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 px-3 py-2 rounded-md text-sm font-medium {% if entry.url === eleventyNavigation.url %} bg-primary-focus underline {% endif %}">{{ entry.title }}</a>
-    {% endif %}
-  {% else %}
-    <li class="relative block my-1 text-base font-medium">
-      <a href="{{ entry.url }}" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 {% if entry.url === eleventyNavigation.url %} bg-primary-focus {% endif %}">
-        <span class="no-underline">{{ spaces | safe }}</span><span class="{% if entry.url === eleventyNavigation.url %} underline {% endif %}">{{ entry.title }}</span>
-      </a>
-      {% if entry.children.length %}
-        <ul>
-          {% for child in entry.children %}
-            {{ renderNavListItem(child, false, spaces + "&emsp;") }}
-          {% endfor %}
-      </ul>
-    {% endif %}
-  </li>
+      <li class="relative block my-1 text-base font-medium">
+        <a href="{{ entry.url }}" :class="scroll" class="w-full h-full rounded-md block px-3 py-2 hover:bg-primary-content hover:bg-opacity-20 active:bg-opacity-10 {% if entry.url === eleventyNavigation.url %} bg-primary-focus {% endif %}">
+          <span class="no-underline">{{ spaces | safe }}</span><span class="{% if entry.url === eleventyNavigation.url %} underline {% endif %}">{{ entry.title }}</span>
+        </a>
+        {% if entry.children.length %}
+          <ul>
+            {% for child in entry.children %}
+              {{ renderNavListItem(child, false, spaces + "&emsp;") }}
+            {% endfor %}
+        </ul>
+      {% endif %}
+    </li>
+  {% endif %}
 {% endif %}
 
 {% endmacro %}

@@ -30,6 +30,7 @@ module.exports = async function (configData) {
         data.collections.pages.find((page) => page.data.slug === slug)?.data
           ?.eleventyNavigation.url || '#',
       eleventyNavigation: {
+        type: (data) => data.type,
         path: (data) => data.path,
         slug: (data) => data.slug,
         permalink: (data) => data.permalink,
