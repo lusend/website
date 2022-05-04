@@ -239,7 +239,7 @@ Reset links to optimize for opt-in styling instead of opt-out.
   }
 
 #app img:not(.gmnoprint img),
-  #app svg,
+  #app svg:not(.icon),
   #app video,
   #app canvas,
   #app audio,
@@ -1080,16 +1080,16 @@ Reset links to optimize for opt-in styling instead of opt-out.
   width: 100%;
 }
 
+#app .w-14{
+  width: 3.5rem;
+}
+
 #app .w-5{
   width: 1.25rem;
 }
 
 #app .w-6{
   width: 1.5rem;
-}
-
-#app .w-14{
-  width: 3.5rem;
 }
 
 #app .flex-auto{
@@ -1188,12 +1188,12 @@ Reset links to optimize for opt-in styling instead of opt-out.
   border-radius: 1rem;
 }
 
-#app .rounded-lg{
-  border-radius: 0.5rem;
-}
-
 #app .rounded-full{
   border-radius: 9999px;
+}
+
+#app .rounded-lg{
+  border-radius: 0.5rem;
 }
 
 #app .rounded-b-none{
@@ -1741,11 +1741,11 @@ nav:
 </details>
 <h2 id="current-deployment-commit" tabindex="-1"><a class="header-anchor" href="#current-deployment-commit">Current Deployment Commit</a></h2>
 <blockquote class="not-italic">
-  <a href="https://github.com/lusend/website/commit/7e0e865c7613506339921bbad65c0bf641efc37f" class="no-underline hover:underline" target="_blank">feat: 💬 Added Deadline Clarification<br />
+  <a href="https://github.com/lusend/website/commit/2b7ed86b3d3902a07a15550cd08be5559a35fdff" class="no-underline hover:underline" target="_blank">feat: 🚧 Added brochure update<br />
 <br />
-Bolded and added text coloring to clarify when non-full LU Send (standard) domestic proposals need to be submitted.</a>
+Began process of building out brochure</a>
   <div class='mt-2 text-xs'>
-    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-04-14T14:13:56Z</span>
+    <a href="mailto:pcbowers@gmail.com" target="_blank">P. Christopher Bowers</a> on <span id="committerDate">2022-05-04T15:19:43Z</span>
   </div>
 </blockquote>
 <h2 id="pages" tabindex="-1"><a class="header-anchor" href="#pages">Pages</a></h2>
@@ -1804,6 +1804,49 @@ Bolded and added text coloring to clarify when non-full LU Send (standard) domes
 
   
     <div class="py-2">
+      
+        
+
+  <div x-data="{ clicked: false }" class="mb-2">
+    <div class="relative flex flex-wrap items-stretch leading-tight">
+      <div style="font-size: calc(1.25rem - 3px)" class="relative flex items-center justify-start gap-2 px-3 py-2 font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto bg-base-300">
+        <div style="margin-left: 30px" class="">
+          <div data-inputpath="./src/pages/brochure.md"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
+            <ion-icon name="sparkles" class="text-primary-content" style="font-size: 12px;">&nbsp;</ion-icon>
+          </div>
+          <div class="absolute top-0 left-0 h-full rounded-tl-lg sm:rounded-l-lg bg-primary-content-fade" style="width: 30px;">&nbsp;</div>
+          <div>Brochure Title</div>
+          <div style="font-size: 10px;" class="text-xs leading-tight">(brochure)</div>
+        </div>
+      </div>
+      <button :class="$store.env.value === 'production' ? 'bg-primary hover:bg-primary-focus' : 'bg-secondary hover:bg-secondary-focus'" id="brochure_preview" class="flex items-center justify-center gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-r-none sm:rounded-r-none sm:rounded-l-none text-primary-content">
+        <ion-icon name="open-outline">&nbsp;</ion-icon>
+        <span>Preview</span>
+      </button>
+      <button x-on:click="clicked = true; current = 'brochure'" x-effect="if ($store.env.value) { clicked = false; current = null }" :class="$store.env.value === 'production' ? 'bg-secondary hover:bg-secondary-focus' : 'bg-primary hover:bg-primary-focus'" id="brochure_copy" class="flex items-center justify-center flex-auto gap-2 px-5 py-2 font-semibold transition-colors rounded-lg rounded-t-none rounded-l-none sm:rounded-tr-lg sm:flex-initial text-secondary-content">
+        <ion-icon x-show="!clicked" name="clipboard-outline" x-cloak>&nbsp;</ion-icon>
+        <ion-icon x-show="clicked" name="clipboard" x-cloak>&nbsp;</ion-icon>
+        <span>Copy</span>
+      </button>
+      <div x-show="current === 'brochure'" x-transition class="absolute top-0 flex items-center justify-center h-full ml-2 text-xs left-full" x-cloak>
+        <div class="flex flex-row items-center justify-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="h-4" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
+            <path fill="currentColor" d="M7.085 3A1.5 1.5 0 0 1 8.5 2h3a1.5 1.5 0 0 1 1.415 1H14.5A1.5 1.5 0 0 1 16 4.5v4.707A5.5 5.5 0 0 0 10.257 18H5.5A1.5 1.5 0 0 1 4 16.5v-12A1.5 1.5 0 0 1 5.5 3h1.585ZM8.5 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3ZM19 14.5a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0Zm-2.146-1.854a.5.5 0 0 0-.708 0L13.5 15.293l-.646-.647a.5.5 0 0 0-.708.708l1 1a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0 0-.708Z"></path>
+          </svg>
+          <span class="hidden navMD:!block">Copied!</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.addEventListener('load', function () {
+        preview('brochure', '/website/pages/brochure.html', '/website/pages/brochure_stage.html');
+      })
+    </script>
+  </div>
+
+  
+
       
         
 
@@ -2116,7 +2159,7 @@ Bolded and added text coloring to clarify when non-full LU Send (standard) domes
     <div class="relative flex flex-wrap items-stretch leading-tight">
       <div style="font-size: calc(1.25rem - 6px)" class="relative flex items-center justify-start gap-2 px-3 py-2 font-semibold rounded-lg rounded-b-none sm:rounded-b-lg sm:rounded-r-none basis-full sm:basis-0 sm:flex-auto bg-base-300">
         <div style="margin-left: 60px" class="">
-          <div data-inputpath="./src/pages/faculty/proposal/domestic.md"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
+          <div data-inputpath="./src/pages/faculty/proposal/domestic.md"  data-hidebadge="yes"  class="absolute h-5 w-5 rounded-full -top-[0.4rem] -left-[0.4rem] shadow-sm z-10 flex items-center justify-center" style="background: goldenrod;">
             <ion-icon name="sparkles" class="text-primary-content" style="font-size: 12px;">&nbsp;</ion-icon>
           </div>
           <div class="absolute top-0 left-0 h-full rounded-tl-lg sm:rounded-l-lg bg-primary-content-fade" style="width: 60px;">&nbsp;</div>
@@ -2213,6 +2256,15 @@ Bolded and added text coloring to clarify when non-full LU Send (standard) domes
 
   <script>
     
+async function get(link, { asText = false, headers = {} } = {}) {
+  const res = await fetch(link, { headers });
+  if (res.status !== 200) throw res;
+  if (asText) return await res.text();
+  return await res.json();
+}
+
+window.get = get;
+
 document.addEventListener('alpine:init', () => {
   Alpine.store('env', {
     value: 'production',
@@ -2231,13 +2283,6 @@ document.addEventListener('alpine:init', () => {
     }
   });
 });
-
-async function get(link, { asText = false, headers = {} } = {}) {
-  const res = await fetch(link, { headers });
-  if (res.status !== 200) throw res;
-  if (asText) return await res.text();
-  return await res.json();
-}
 
 async function checkIfDeployed() {
   try {
@@ -2285,13 +2330,6 @@ async function checkIfDeployed() {
     document.getElementById('status').innerHTML =
       'Deployment Status: ⛔ Unknown (Reached API Rate Limit)';
   }
-}
-
-async function get(link, { asText = false, headers = {} } = {}) {
-  const res = await fetch(link, { headers });
-  if (res.status !== 200) throw res;
-  if (asText) return await res.text();
-  return await res.json();
 }
 
 function preview(slug, production, stage) {
