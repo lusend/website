@@ -7,6 +7,9 @@ const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const { DateTime } = require('luxon');
 
 const env = process.env.ELEVENTY_ENV || 'development';
+const preview = process.env.ELEVENTY_PREVIEW || false;
+
+console.log(preview);
 
 async function renderPostCSS(css, html, callback) {
   const plugins = [
@@ -68,7 +71,7 @@ module.exports = function (eleventyConfig) {
   }
 
   return {
-    pathPrefix: env === 'development' ? '/' : '/website/',
+    pathPrefix: env === 'development' || preview ? '/' : '/website/',
     dir: {
       input: 'src',
       output: 'dist',

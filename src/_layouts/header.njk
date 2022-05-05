@@ -3,33 +3,37 @@
     <div class="max-w-[calc(65ch+16.25rem)] flex-1 flex flex-col gap-1 items-center navMD:items-start">
       {% include "./breadcrumbs.njk" %}
       <div class="prose">
-        <h1 class="text-center navMD:text-left text-primary-content">{{ title }}</h1>
+        <h1 id="appTitle" class="text-center navMD:text-left text-primary-content">{{ title }}</h1>
       </div>
-      {% if author !== false %}
-        <div class="text-sm text-base-300 text-center navMD:text-left mt-3 navMD:mt-0">
-          {% if author | length %}
+      {% if author !== false or type === 'brochure' %}
+        <div id="appSubtitle" class="text-sm text-base-300 text-center navMD:text-left mt-3 navMD:mt-0">
+          {% if author !== false %}
+            {% if author | length %}
+              <div>
+                <span>Written By </span>
+                <strong>{{ author | safe }}</strong>
+              </div>
+            {% endif %}
             <div>
-              <span>Written By </span>
-              <strong>{{ author | safe }}</strong>
+              <span>Last Updated</span>
+              <strong>{{ page.date | postDate }}</strong>
             </div>
           {% endif %}
-          <div>
-            <span>Last Updated</span>
-            <strong>{{ page.date | postDate }}</strong>
-          </div>
+          {% if type === 'brochure' %} &nbsp; {% endif %}
         </div>
       {% endif %}
 
       {% if type === 'brochure' %}
+        <div id="appApplicationDeadline" class="text-xs text-base-300 font-extralight text-center navMD:text-left">&nbsp;</div>
         <div class="navMD:hidden w-full mt-5 max-w-md">
           <label for="tabs" class="sr-only">Select a tab</label>
           <select id="tabs" x-model="currentId" class="text-white rounded-lg block w-full p-2.5 bg-primary-focus border-2 border-primary-content-fade">
             <option value="appOverview">Trip Overview</option>
-            <option value="appResources">Travel Resources</option>
-            <option value="appSafety">Travel Safety</option>
-            <option value="appChecklist">Traveler Checklist</option>
-            <option value="appFlights">Flight Itinerary</option>
-            <option value="appPacking">Packing Guide</option>
+            <option value="appResources" x-show="document.getElementById('appResources').innerHTML" x-cloak>Travel Resources</option>
+            <option value="appSafety" x-show="document.getElementById('appSafety').innerHTML" x-cloak>Travel Safety</option>
+            <option value="appChecklist" x-show="document.getElementById('appChecklist').innerHTML" x-cloak>Traveler Checklist</option>
+            <option value="appFlights" x-show="document.getElementById('appFlights').innerHTML" x-cloak>Flight Itinerary</option>
+            <option value="appPacking" x-show="document.getElementById('appPacking').innerHTML" x-cloak>Packing Guide</option>
           </select>
         </div>
         <div class="hidden border-b border-neutral navMD:!block w-full mt-5">
@@ -40,31 +44,31 @@
                 <span>Trip Overview</span>
               </button>
             </li>
-            <li class="mr-2">
+            <li class="mr-2" x-show="document.getElementById('appResources').innerHTML" x-cloak>
               <button href="#" x-on:click.prevent="currentId = 'appResources'" x-bind:class="currentId === 'appResources' && '!text-accent !border-accent'" class="transition-colors inline-flex p-2.5 jusitfy-center items-center gap-1 rounded-t-lg border-b-2 border-transparent hover:text-primary-content hover:border-primary-content-fade group">
                 <ion-icon name="book">&nbsp;</ion-icon>
                 <span>Travel Resources</span>
               </button>
             </li>
-            <li class="mr-2">
+            <li class="mr-2" x-show="document.getElementById('appSafety').innerHTML" x-cloak>
               <button href="#" x-on:click.prevent="currentId = 'appSafety'" x-bind:class="currentId === 'appSafety' && '!text-accent !border-accent'" class="transition-colors inline-flex p-2.5 jusitfy-center items-center gap-1 rounded-t-lg border-b-2 border-transparent hover:text-primary-content hover:border-primary-content-fade group">
                 <ion-icon name="nuclear">&nbsp;</ion-icon>
                 <span>Travel Safety</span>
               </button>
             </li>
-            <li class="mr-2">
+            <li class="mr-2" x-show="document.getElementById('appChecklist').innerHTML" x-cloak>
               <button href="#" x-on:click.prevent="currentId = 'appChecklist'" x-bind:class="currentId === 'appChecklist' && '!text-accent !border-accent'" class="transition-colors inline-flex p-2.5 jusitfy-center items-center gap-1 rounded-t-lg border-b-2 border-transparent hover:text-primary-content hover:border-primary-content-fade group">
                 <ion-icon name="checkbox">&nbsp;</ion-icon>
                 <span>Traveler Checklist</span>
               </button>
             </li>
-            <li class="mr-2">
+            <li class="mr-2" x-show="document.getElementById('appFlights').innerHTML" x-cloak>
               <button href="#" x-on:click.prevent="currentId = 'appFlights'" x-bind:class="currentId === 'appFlights' && '!text-accent !border-accent'" class="transition-colors inline-flex p-2.5 jusitfy-center items-center gap-1 rounded-t-lg border-b-2 border-transparent hover:text-primary-content hover:border-primary-content-fade group">
                 <ion-icon name="paper-plane">&nbsp;</ion-icon>
                 <span>Flight Itinerary</span>
               </button>
             </li>
-            <li class="mr-2">
+            <li class="mr-2" x-show="document.getElementById('appPacking').innerHTML" x-cloak>
               <button href="#" x-on:click.prevent="currentId = 'appPacking'" x-bind:class="currentId === 'appPacking' && '!text-accent !border-accent'" class="transition-colors inline-flex p-2.5 jusitfy-center items-center gap-1 rounded-t-lg border-b-2 border-transparent hover:text-primary-content hover:border-primary-content-fade group">
                 <ion-icon name="briefcase">&nbsp;</ion-icon>
                 <span>Packing Guide</span>

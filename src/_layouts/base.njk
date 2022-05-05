@@ -40,6 +40,10 @@
 {% if content.includes('turnredafter') %}
   {% include "scripts/deadlines.js" %}
 {% endif %}
+
+{% if type === 'brochure' %}
+  {% include "scripts/brochure.js" %}
+{% endif %}
 {% endset %}
 
 {% if env !== 'development' %}
@@ -101,6 +105,7 @@
 
   {% if type === 'brochure' %}
     <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
 
     <!--STRIP SCRIPT-->
 
@@ -108,7 +113,7 @@
       {% include "scripts/get.js" %}
     </script>
 
-    <script src="{{ pathPrefix }}pages/tiptap.js"></script>
+    <script src="{% if preview %}.{% endif %}{{ pathPrefix }}{% if not preview %}pages/{% endif %}tiptap.js"></script>
 
     <!--STRIPEND SCRIPT-->
 

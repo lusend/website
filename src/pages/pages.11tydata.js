@@ -1,4 +1,5 @@
 const env = process.env.ELEVENTY_ENV || 'development';
+const preview = process.env.ELEVENTY_PREVIEW || false;
 
 module.exports = async function (configData) {
   return {
@@ -16,7 +17,7 @@ module.exports = async function (configData) {
     testimonials: [],
     actions: [],
     order: [],
-    pathPrefix: env === 'development' ? '/' : '/website/',
+    pathPrefix: env === 'development' || preview ? '/' : '/website/',
     eleventyComputed: {
       path: `{{ page.filePathStem }}{{ suffix }}`,
       permalink: `{{ path }}.html`,

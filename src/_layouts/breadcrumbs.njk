@@ -12,7 +12,7 @@
     <li {% if last %}aria-current="page"{% endif %} class="pl-0 m-0 text-primary-content-fade">
       <div class="flex items-center">
         <ion-icon name="chevron-forward">&nbsp;</ion-icon>
-        <a href="{{ '#' if last else entry.url }}" class="hover:!font-bold whitespace-nowrap ml-1 lg:ml-2 no-underline text-sm !font-medium">{{ entry.title | safe }}</a>
+        <a {% if last %} id="appCurrentBreadcrumb" {% endif %} href="{{ '#' if last else entry.url }}" class="hover:!font-bold whitespace-nowrap ml-1 lg:ml-2 no-underline text-sm !font-medium">{{ entry.title | safe }}</a>
       </div>
     </li>
   {% endif %}

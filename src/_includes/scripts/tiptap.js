@@ -490,6 +490,11 @@ function removeStrip(html, sections) {
     );
 }
 
+document.querySelector('#appSubtitle').innerHTML =
+  'X Month, 20XX - 20 Month, 20XX';
+document.querySelector('#appApplicationDeadline').innerHTML =
+  'Application Due XX/XX/20XX';
+
 /**
  * Copies the brochure to be pasted into the TD WYSIWYG
  */
@@ -501,7 +506,9 @@ async function copyBrochure() {
 
   let finalHTML = parser.parseFromString(strippedHTML, 'text/html');
   for (const [section, editor] of Object.entries(window.tiptapEditors)) {
-    finalHTML.getElementById(section).innerHTML = editor.getHTML();
+    const tempHTML = editor.getHTML();
+    finalHTML.getElementById(section).innerHTML =
+      tempHTML === '<p></p>' ? '' : tempHTML;
     finalHTML.getElementById(section).removeAttribute('x-data');
   }
 
