@@ -51,7 +51,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 {% endif %}
 
-<div  x-data="{ scroll: '', currentId: 'appOverview', lastUpdate: null, editor: function(){ return null } }" id="app" style="position: relative; {% if type === 'brochure' %} height: 100%; {% endif %}">
+<div  x-data="{ scroll: '', currentId: window.location.hash ? window.location.hash.slice(1) : 'appOverview', lastUpdate: null, editor: function(){ return null } }" id="app" style="position: relative; {% if type === 'brochure' %} height: 100%; {% endif %}">
   <div class="absolute {% if header and author %} top-[calc(100vh+272px)] {% elif header %} top-[calc(100vh+222px)] {% else %} top-[calc(100vh+72px)] {% endif %} overflow-none {% if header and author %} h-[calc(100%-100vh-272px)] {% elif header %} h-[calc(100%-100vh-222px)] {%else%} h-[calc(100%-100vh-72px)] {% endif %} w-full pointer-events-none -z-50" x-intersect:enter="scroll = 'bg-opacity-95'" x-intersect:leave="scroll = ''">&nbsp;</div>
   <div class="fixed top-0 right-0 w-full h-screen bg-scroll bg-white bg-center bg-no-repeat bg-cover pointer-events-none" {% if background %} style="background-image: url('{{ background }}')" {% endif %}>&nbsp;</div>
 

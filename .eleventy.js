@@ -9,8 +9,6 @@ const { DateTime } = require('luxon');
 const env = process.env.ELEVENTY_ENV || 'development';
 const preview = process.env.ELEVENTY_PREVIEW || false;
 
-console.log(preview);
-
 async function renderPostCSS(css, html, callback) {
   const plugins = [
     require('postcss-import'),

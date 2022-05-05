@@ -8,37 +8,37 @@ nav:
   parent: home
 ---
 
-<div id="appOverview" x-data="editor()" x-init="currentId = 'appOverview'" x-show="currentId === $el.id" x-cloak>
+<div id="appOverview" x-ref="appOverview" x-data="editor()" x-show="currentId === $el.id" x-cloak>
 
 # Trip Overview
 
 </div>
 
-<div id="appResources" x-data="editor()" x-show="currentId === $el.id" x-cloak>
+<div id="appResources" x-ref="appResources" x-data="editor()" x-show="currentId === $el.id" x-cloak>
 
 # Travel Resources
 
 </div>
 
-<div id="appSafety" x-data="editor()" x-show="currentId === $el.id" x-cloak>
+<div id="appSafety" x-ref="appSafety" x-data="editor()" x-show="currentId === $el.id" x-cloak>
 
 # Travel Safety
 
 </div>
 
-<div id="appChecklist" x-data="editor()" x-show="currentId === $el.id" x-cloak>
+<div id="appChecklist" x-ref="appChecklist" x-data="editor()" x-show="currentId === $el.id" x-cloak>
 
 # Traveler Checklist
 
 </div>
 
-<div id="appFlights" x-data="editor()" x-show="currentId === $el.id" x-cloak>
+<div id="appFlights" x-ref="appFlights" x-data="editor()" x-show="currentId === $el.id" x-cloak>
 
 # Flight Itinerary
 
 </div>
 
-<div id="appPacking" x-data="editor()" x-show="currentId === $el.id" x-cloak>
+<div id="appPacking" x-ref="appPacking" x-data="editor()" x-show="currentId === $el.id" x-cloak>
 
 # Packing Guide
 

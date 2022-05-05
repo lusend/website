@@ -508,7 +508,7 @@ async function copyBrochure() {
   for (const [section, editor] of Object.entries(window.tiptapEditors)) {
     const tempHTML = editor.getHTML();
     finalHTML.getElementById(section).innerHTML =
-      tempHTML === '<p></p>' ? '' : tempHTML;
+      tempHTML === '<p></p>' ? '&nbsp;' : tempHTML;
     finalHTML.getElementById(section).removeAttribute('x-data');
   }
 

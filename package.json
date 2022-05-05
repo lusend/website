@@ -23,7 +23,7 @@
     "prebuild": "npm run stage",
     "prestage": "npm run clean",
     "postbuild": "npm run minify",
-    "postpreview": "npx serve dist"
+    "postpreview": "npx serve dist -p 8080"
   },
   "repository": {
     "type": "git",
