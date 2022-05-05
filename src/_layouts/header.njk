@@ -27,7 +27,7 @@
         <div id="appApplicationDeadline" class="text-xs text-base-300 font-extralight text-center navMD:text-left">&nbsp;</div>
         <div class="navMD:hidden w-full mt-5 max-w-md">
           <label for="tabs" class="sr-only">Select a tab</label>
-          <select id="tabs" x-model="currentId" class="text-white rounded-lg block w-full p-2.5 bg-primary-focus border-2 border-primary-content-fade">
+          <select id="tabs" x-model="currentId" x-on:change="window.location.hash = currentId" class="text-white rounded-lg block w-full p-2.5 bg-primary-focus border-2 border-primary-content-fade">
             <option value="appOverview">Trip Overview</option>
             <option value="appResources" x-show="document.getElementById('appResources').innerHTML.trim().slice(6)" x-cloak>Travel Resources</option>
             <option value="appSafety" x-show="document.getElementById('appSafety').innerHTML.trim().slice(6)" x-cloak>Travel Safety</option>

@@ -491,7 +491,7 @@ function removeStrip(html, sections) {
 }
 
 document.querySelector('#appSubtitle').innerHTML =
-  'X Month, 20XX - 20 Month, 20XX';
+  'XX Month, 20XX - XX Month, 20XX';
 document.querySelector('#appApplicationDeadline').innerHTML =
   'Application Due XX/XX/20XX';
 
