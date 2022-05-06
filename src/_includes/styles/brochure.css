@@ -89,7 +89,7 @@
 
 #app div[id^='pdf'] {
   object[type='application/pdf'] {
-    @apply w-full h-96 flex justify-center items-center text-center bg-base-300 font-medium rounded-md break-all;
+    @apply w-full h-96 flex justify-center items-center text-center bg-base-300 font-medium rounded-md;
 
     & span {
       @apply p-5;

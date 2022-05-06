@@ -134,8 +134,9 @@ const PDF = Node.create({
         [
           'span',
           {},
-          'PDF embeds are not supported in this browser, and/or you are trying to access a PDF you do not have access to on this website. Try downloading the PDF by navigating to ',
-          ['a', { href, target: '_blank' }, 'this link.']
+          'PDF embeds are not supported in this browser, and/or you are trying to access a PDF you do not have access to on this website. Try viewing the PDF by navigating to ',
+          ['a', { href, target: '_blank' }, 'this link'],
+          '.'
         ]
       ]
     ];
