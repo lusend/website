@@ -74,7 +74,9 @@ function pdfListener() {
 
 function addGlobalVar(name, value) {
   const script = document.createElement('script');
-  script.innerHTML = `const ${name} = '${JSON.stringify(value)}'`;
+  script.innerHTML = `const ${name} = '${JSON.stringify(
+    value
+  )}'; window.${name} = ${name}`;
   return script;
 }
 
