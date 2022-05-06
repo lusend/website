@@ -523,9 +523,9 @@ async function copyBrochure(programID) {
     finalJSON[section] = editor.getJSON();
   }
 
+  finalHTML.getElementById('app').appendChild(pdfListener());
   finalHTML
     .getElementById('app')
-    .appendChild(pdfListener())
     .appendChild(addGlobalVar('appData', finalJSON));
 
   await navigator.clipboard.writeText(
