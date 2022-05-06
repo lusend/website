@@ -533,6 +533,10 @@ async function exportBrochure(programID) {
     finalJSON[section] = editor.getJSON();
   }
 
+  finalJSON.other = {
+    background: window.backgroundImage
+  };
+
   finalHTML.getElementById('app').appendChild(pdfListener());
   finalHTML
     .getElementById('app')
@@ -565,6 +569,17 @@ async function importBrochure(importData) {
           if (data && data[section]) editor.commands.setContent(data[section]);
           document.getElementById('importBrochureButton').style.display =
             'none';
+        }
+
+        if (data.other) {
+          const other = data.other;
+
+          if (other.background) {
+            window.backgroundImage = other.background;
+            document.getElementById(
+              'appBackground'
+            ).style.backgroundImage = `url('${other.background}')`;
+          }
         }
       }, 0);
     } catch (error) {
