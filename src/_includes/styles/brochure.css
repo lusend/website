@@ -33,24 +33,20 @@
 }
 
 .prose :where(.iframe-wrapper):not(:where([class~='not-prose'] *)),
-.prose
-  :where(object[type='application/pdf']):not(:where([class~='not-prose'] *)) {
+.prose :where(div[id^='pdf']):not(:where([class~='not-prose'] *)) {
   margin-top: 1.25em;
   margin-bottom: 1.25em;
 }
 
 .prose > :where(.iframe-wrapper:last-child):not(:where([class~='not-prose'] *)),
-.prose
-  > :where(object[type='application/pdf']:last-child):not(:where([class~='not-prose']
-      *)) {
+.prose > :where(div[id^='pdf']:last-child):not(:where([class~='not-prose'] *)) {
   margin-bottom: 0;
 }
 
 .prose
   > :where(.iframe-wrapper:first-child):not(:where([class~='not-prose'] *)),
 .prose
-  > :where(object[type='application/pdf']:first-child):not(:where([class~='not-prose']
-      *)) {
+  > :where(div[id^='pdf']:first-child):not(:where([class~='not-prose'] *)) {
   margin-top: 0;
 }
 
@@ -91,14 +87,17 @@
   @apply border-x-[3px] border-b-[3px] rounded-b-lg border-primary py-5 px-3 max-w-[85ch];
 }
 
-#app object[type='application/pdf'] {
-  @apply w-full h-96 flex justify-center items-center text-center bg-base-300 font-medium rounded-md break-all;
-  &.ProseMirror-selectednode {
-    @apply bg-primary-content-fade;
+#app div[id^='pdf'] {
+  object[type='application/pdf'] {
+    @apply w-full h-96 flex justify-center items-center text-center bg-base-300 font-medium rounded-md break-all;
+
+    & span {
+      @apply p-5;
+    }
   }
 
-  & span {
-    @apply p-5;
+  &.ProseMirror-selectednode object[type='application/pdf'] {
+    @apply bg-primary-content-fade ring-2 ring-offset-2 ring-primary-focus;
   }
 }
 
@@ -169,7 +168,7 @@
   list-style: none;
   padding: 0;
   label {
-    @apply m-0;
+    @apply m-0 flex items-center;
   }
   p {
     margin: 0;
