@@ -1,12 +1,12 @@
 {% if header %}
-  <div class="relative z-20 flex flex-row justify-center w-full px-8 pt-12 pb-5 mx-auto text-base bg-primary text-primary-content">
+  <div class="relative z-20 flex flex-row justify-center w-full px-8 pt-12 pb-5 mx-auto text-base bg-primary {% if background %} !bg-black !bg-opacity-70 {% endif %} text-primary-content">
     <div class="max-w-[calc(65ch+16.25rem)] flex-1 flex flex-col gap-1 items-center navMD:items-start">
       {% include "./breadcrumbs.njk" %}
       <div class="prose">
         <h1 id="appTitle" class="text-center navMD:text-left text-primary-content">{{ title }}</h1>
       </div>
       {% if author !== false or type === 'brochure' %}
-        <div id="appSubtitle" class="text-sm text-base-300 text-center navMD:text-left mt-3 navMD:mt-0">
+        <div id="appSubtitle" class="mt-3 text-sm text-center {% if background %} text-white {% else %} text-base-300 {% endif %} navMD:text-left navMD:mt-0">
           {% if author !== false %}
             {% if author | length %}
               <div>
@@ -24,8 +24,8 @@
       {% endif %}
 
       {% if type === 'brochure' %}
-        <div id="appApplicationDeadline" class="text-xs text-base-300 font-extralight text-center navMD:text-left">&nbsp;</div>
-        <div class="navMD:hidden w-full mt-5 max-w-md">
+        <div id="appApplicationDeadline" class="text-xs text-center {% if background %} text-white {% else %} text-base-300 {% endif %} font-extralight navMD:text-left">&nbsp;</div>
+        <div class="w-full max-w-md mt-5 navMD:hidden">
           <label for="tabs" class="sr-only">Select a tab</label>
           <select id="tabs" x-model="currentId" x-on:change="window.location.hash = currentId" class="text-white rounded-lg block w-full p-2.5 bg-primary-focus border-2 border-primary-content-fade">
             <option value="appOverview">Trip Overview</option>
@@ -37,7 +37,7 @@
           </select>
         </div>
         <div class="hidden border-b border-neutral navMD:!block w-full mt-5">
-          <ul class="flex flex-wrap -mb-px -mb-px text-sm font-medium text-center text-primary-content-fade">
+          <ul class="flex flex-wrap -mb-px text-sm font-medium text-center {% if background %}text-primary-content {% else %} text-primary-content-fade {% endif %}">
             <li class="mr-2">
               <button href="#" x-on:click.prevent="currentId = 'appOverview'; window.location.hash = 'appOverview';" x-bind:class="currentId === 'appOverview' && '!text-accent !border-accent'" class="transition-colors inline-flex p-2.5 jusitfy-center items-center gap-1 rounded-t-lg border-b-2 border-transparent hover:text-primary-content hover:border-primary-content-fade group">
                 <ion-icon name="folder">&nbsp;</ion-icon>
@@ -79,9 +79,15 @@
       {% endif %}
     </div>
   </div>
-  <svg id="header-wave" class="relative z-20 -mt-1" viewBox="0 0 1200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg id="header-wave" class="relative z-20 -mt-1 text-primary {% if background %} rotate-180 origin-center !text-white !mt-0 {% endif %} h-20" viewBox="0 0 1200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
+    {% if background %} style="fill-opacity: 0.8;" {% endif %}
     d="M 1200,0 H 0 V 37 C 67,26 133,15 200,10 C 266,4 333,5 400,23 C 466,41 533,76 600,79 C 677,78 738,53 800,48 C 866,44 933,63 1000,62 C 1065,62 1131,41 1200,19 V 0 Z"
-    fill="#0A254E"/>
+    fill="currentColor"
+/>
+    <path
+    {% if background %} style="fill-opacity: 0.7;" fill="black" {% else %} fill="transparent" {% endif %}
+    d="M 1200,0 H 0 V 37 C 67,26 133,15 200,10 C 266,4 333,5 400,23 C 466,41 533,76 600,79 C 677,78 738,53 800,48 C 866,44 933,63 1000,62 C 1065,62 1131,41 1200,19 V 0 Z"
+/>
   </svg>
 {% endif %}

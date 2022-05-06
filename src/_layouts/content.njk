@@ -1,12 +1,12 @@
 {% if content and not custom or type === 'brochure' %}
-  <div id="mycontent" class="content min-h-screen flex flex-col lg:flex-row justify-start lg:justify-center px-8 py-10 z-10 relative gap-5 xl:gap-10 2xl:gap-16 {% if background %} bg-white bg-opacity-80 backdrop-blur-sm {% endif %}">
+  <div id="mycontent" class="content min-h-screen flex flex-col lg:flex-row justify-start lg:justify-center px-8 py-10 z-10 relative gap-5 xl:gap-10 2xl:gap-16 {% if background %} bg-white bg-opacity-80 {% endif %}">
     <div x-data="{ toc: !!document.querySelector('.table-of-contents')}" x-show="toc" class="grow order-first mb-5 lg:mb-0 lg:order-last lg:min-w-[15rem] lg:max-w-[20rem] prose max-w-full" x-cloak>
       <div class="text-base lg:sticky lg:top-20 shadow-lg rounded-2xl p-5 border-2 border-base-200 {% if not background %} bg-white bg-opacity-90 backdrop-blur-sm {% endif %}">
         <h1 class="my-0 mb-5 text-2xl font-semibold">Table of Contents</h1>
         <div class="table-of-contents-container max-h-[calc(80vh-132px)] overflow-y-auto overflow-x-hidden">&nbsp;</div>
       </div>
     </div>
-    <div id="appMainContent" class="prose flex-initial order-last lg:order-first py-5 px-2 rounded-2xl {% if not background %} bg-white bg-opacity-50 backdrop-blur-sm {% endif %} {% if full %} lg:max-w-full {% else %} lg:max-w-[65ch] {% endif %} max-w-full {% if type === 'brochure' %} flex-1 lg:!max-w-[85ch] {% endif %}">
+    <div id="appMainContent" class="prose flex-initial order-last lg:order-first py-5 px-2 rounded-2xl backdrop-blur-sm {% if not background %} bg-white bg-opacity-50 {% endif %} {% if full %} lg:max-w-full {% else %} lg:max-w-[65ch] {% endif %} max-w-full {% if type === 'brochure' %} flex-1 lg:!max-w-[85ch] {% endif %}">
       {% if type === 'brochure' %}
 
         <!--STRIP MENU-->
@@ -233,12 +233,16 @@
 
         <!--STRIP IMPORTEXPORT-->
 
-        <div x-data="{ url: window.location.host, programID: new URLSearchParams(window.location.search).get('programID') || false, clipboard: '' }", class="flex w-full gap-2 mt-2">
-          <button id="copyBrochureButton" x-on:click="copyBrochure(programID)" x-show="url !== 'liberty-sa.terrradotta.com'" class="flex items-center justify-center flex-1 gap-2 px-4 py-2 rounded-xl bg-primary hover:bg-primary-focus text-primary-content">
+        <div x-data="{ url: window.location.host, programID: new URLSearchParams(window.location.search).get('programID') || false, clipboard: '' }", class="flex flex-col w-full gap-2 mt-2 navMD:flex-row">
+          <button id="exportBrochureButton" x-on:click="exportBrochure(programID)" x-show="url !== 'liberty-sa.terrradotta.com'" class="flex items-center justify-center flex-1 gap-2 px-4 py-2 rounded-xl bg-primary hover:bg-primary-focus text-primary-content">
             <ion-icon name="copy" class="text-2xl text-white">&nbsp;</ion-icon>
             <span>Export Brochure</span>
           </button>
-          <button  id="importBrochureButton" x-init="clipboard = !programID ? '' : await navigator.clipboard.readText();" x-effect="importBrochure(clipboard)" x-on:click="clipboard = prompt('If it did not import automatically, try pasting your clipboard here. You can also try going back to the brochure and clicking the edit button again.', clipboard)"  x-show="url !== 'liberty-sa.terrradotta.com'" class="flex items-center justify-center flex-1 gap-2 px-4 py-2 rounded-xl bg-primary hover:bg-primary-focus text-primary-content">
+          <button id="changeBackgroundButton" x-on:click="background = prompt('Enter the link to the Background Image:', background)" x-effect="window.backgroundImage = background" class="flex items-center justify-center flex-1 gap-2 px-4 py-2 rounded-xl bg-secondary hover:bg-secondary-focus text-secondary-content">
+            <ion-icon name="copy" class="text-2xl text-white">&nbsp;</ion-icon>
+            <span>Change Background</span>
+          </button>
+          <button  id="importBrochureButton" x-init="clipboard = !programID ? '' : await navigator.clipboard.readText();" x-effect="importBrochure(clipboard)" x-on:click="clipboard = prompt('If it did not import automatically, try pasting your clipboard here. You can also try going back to the brochure and clicking the edit button again.', clipboard)"  x-show="url !== 'liberty-sa.terrradotta.com'" class="flex items-center justify-center flex-1 gap-2 px-4 py-2 rounded-xl bg-accent hover:bg-accent-focus text-accent-content">
             <ion-icon name="clipboard" class="text-2xl text-white">&nbsp;</ion-icon>
             <span>Import Brochure</span>
           </button>

@@ -45,12 +45,13 @@ import Typography from '@tiptap/extension-typography';
  */
 function pdfListener() {
   const script = document.createElement('script');
-  script.innerHTML = `document.addEventListener('adobe_dc_view_sdk.ready', function () {
-    [...document.querySelectorAll('div.pdf-wrapper[id^=pdf]')].forEach(
-      (pdf) => {
-        const url = pdf.dataset.src;
-        const fileName = pdf.dataset.filename;
-        const id = pdf.id;
+  script.innerHTML = `window.addEventListener('load', function () {
+    [...document.querySelectorAll('div[id^=pdf]')].forEach(
+      (pdfWrapper) => {
+        const pdf = pdfWrapper.querySelector('object');
+        const url = pdf.data;
+        const fileName = 'download.pdf';
+        const id = pdfWrapper.id;
 
         var adobeDCView = new AdobeDC.View({
           clientId: '9ec6f2abc7b34e9c87f0639106879d49',
@@ -59,12 +60,8 @@ function pdfListener() {
 
         adobeDCView.previewFile(
           { content: { location: { url } }, metaData: { fileName } },
-          { embedMode: 'IN_LINE', enableLinearization: true }
+          { embedMode: 'IN_LINE', enableLinearization: false }
         );
-
-        delete pdf.dataset['src'];
-        delete pdf.dataset['filename'];
-        pdf.className = '';
       }
     );
   });`;
@@ -91,50 +88,56 @@ const PDF = Node.create({
 
   addOptions() {
     return {
-      HTMLAttributes: { class: 'pdf-wrapper' }
+      HTMLAttributes: {}
     };
   },
 
   addAttributes() {
     return {
-      src: {
-        default: null,
-        rendered: false
+      data: {
+        default: ''
       },
-      filename: {
-        default: 'download.pdf',
-        rendered: false
-      },
-      'data-src': {
-        default: null
-      },
-      'data-filename': {
-        default: null
+      type: {
+        default: 'application/pdf'
       }
     };
   },
 
   parseHTML() {
-    return [{ tag: 'div[id^=pdf][data-src][data-filename]' }];
+    return [
+      {
+        tag: 'object[data][type="application/pdf"]'
+      }
+    ];
   },
 
   renderHTML({ node, HTMLAttributes }) {
-    const dataSrc = HTMLAttributes['data-src'];
-    const dataFilename = HTMLAttributes['data-filename'];
-
-    if (dataSrc) delete HTMLAttributes['data-src'];
-    if (dataFilename) delete HTMLAttributes['data-filename'];
-
+    const href =
+      node.attrs.data ||
+      this.options.HTMLAttributes.data ||
+      HTMLAttributes.data ||
+      '';
     return [
       'div',
-      mergeAttributes(this.options.HTMLAttributes, HTMLAttributes, {
-        id: 'pdf-' + nanoid(),
-        'data-src': dataSrc || node.attrs.src || null,
-        'data-filename': dataFilename || node.attrs.filename || null
-      }),
-      `${dataFilename || node.attrs.filename || null} (${
-        dataSrc || node.attrs.src || null
-      })`
+      {
+        id: 'pdf-' + nanoid()
+      },
+      [
+        'object',
+        mergeAttributes(this.options.HTMLAttributes, HTMLAttributes, {
+          width: '100%',
+          height: '100%',
+          data:
+            href +
+            '#page=1&view=FitH&toolbar=0&navpanes=0&scrollbar=0&pagemode=none'
+        }),
+        [
+          'span',
+          {},
+          'PDF embeds are not supported in this browser, and/or you are trying to access a PDF you do not have access to on this website. Try downloading the PDF by navigating to ',
+          ['a', { href, target: '_blank' }, 'this link.']
+        ]
+      ]
     ];
   },
 
@@ -155,6 +158,16 @@ const PDF = Node.create({
 /**
  * A custom Iframe/Video embed extension for tiptap
  */
+
+function manipulateEmbedURL(url) {
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+  const match = url.match(regExp);
+
+  return match && match[2].length === 11
+    ? '//www.youtube.com/embed/' + match[2]
+    : url;
+}
+
 const Iframe = Node.create({
   name: 'iframe',
   group: 'block',
@@ -243,6 +256,7 @@ document.addEventListener('alpine:init', () => {
           },
           extensions: [
             Document,
+            PDF,
             Paragraph,
             Text,
             Bold,
@@ -255,7 +269,6 @@ document.addEventListener('alpine:init', () => {
             Blockquote,
             BulletList,
             Iframe,
-            PDF,
             OrderedList,
             ListItem,
             HorizontalRule,
@@ -403,7 +416,12 @@ document.addEventListener('alpine:init', () => {
 
         return (
           this.$data.editor() &&
-          this.$data.editor().chain().focus().setIframe({ src: iframe }).run()
+          this.$data
+            .editor()
+            .chain()
+            .focus()
+            .setIframe({ src: manipulateEmbedURL(iframe) })
+            .run()
         );
       },
       createImage() {
@@ -421,25 +439,15 @@ document.addEventListener('alpine:init', () => {
       },
       createPDF() {
         let previousPDF =
-          this.$data.editor() && this.$data.editor().getAttributes('pdf').src;
-        let previousFilename =
-          this.$data.editor() &&
-          this.$data.editor().getAttributes('pdf').filename;
+          this.$data.editor() && this.$data.editor().getAttributes('pdf').data;
 
         let pdf = prompt('Enter the link to the PDF: ', previousPDF);
-        let filename =
-          prompt('Enter an optional filename: ', previousFilename) || undefined;
 
         if (!pdf) return;
 
         return (
           this.$data.editor() &&
-          this.$data
-            .editor()
-            .chain()
-            .focus()
-            .setPDF({ src: pdf, filename })
-            .run()
+          this.$data.editor().chain().focus().setPDF({ data: pdf }).run()
         );
       },
       canUndo(lastUpdate) {
@@ -509,7 +517,7 @@ document.querySelector('#appApplicationDeadline').innerHTML =
 /**
  * Copies the brochure to be pasted into the TD WYSIWYG
  */
-async function copyBrochure(programID) {
+async function exportBrochure(programID) {
   const html = await get(window.location.href, { asText: true });
   const strippedHTML = removeStrip(html, ['script', 'menu', 'importexport']);
 
@@ -529,6 +537,11 @@ async function copyBrochure(programID) {
   finalHTML
     .getElementById('app')
     .appendChild(addGlobalVar('appData', finalJSON));
+
+  if (window.backgroundImage)
+    finalHTML
+      .getElementById('appBackground')
+      .setAttribute('x-init', `background = '${window.backgroundImage}'`);
 
   await navigator.clipboard.writeText(
     finalHTML.head.innerHTML + finalHTML.body.innerHTML
@@ -550,6 +563,8 @@ async function importBrochure(importData) {
       setTimeout(function () {
         for (const [section, editor] of Object.entries(window.tiptapEditors)) {
           if (data && data[section]) editor.commands.setContent(data[section]);
+          document.getElementById('importBrochureButton').style.display =
+            'none';
         }
       }, 0);
     } catch (error) {
@@ -561,6 +576,6 @@ async function importBrochure(importData) {
 /**
  * Makes this function publicly available
  */
-window.copyBrochure = copyBrochure;
+window.exportBrochure = exportBrochure;
 window.importBrochure = importBrochure;
 window.appData = appData;

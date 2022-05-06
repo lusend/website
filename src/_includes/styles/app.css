@@ -1,7 +1,12 @@
+/* purgecss start ignore */
 #app {
   /* Header Images */
   .header {
     @apply h-44 object-cover object-center rounded-md w-full;
+
+    &.full {
+      @apply h-full;
+    }
   }
 
   img {
@@ -142,3 +147,4 @@
     }
   }
 }
+/* purgecss end ignore */

@@ -3,6 +3,7 @@ title: Brochure Title
 type: brochure
 planes: false
 header: true
+background: https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35684
 nav:
   title: Brochure
   parent: home
@@ -11,6 +12,10 @@ nav:
 <div id="appOverview" x-ref="appOverview" x-data="editor()" x-show="currentId === $el.id" x-cloak>
 
 # Trip Overview
+
+<object data="https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf" type="application/pdf">
+  <span>Test</span>
+</object>
 
 </div>
 

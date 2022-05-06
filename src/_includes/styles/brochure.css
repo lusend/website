@@ -27,31 +27,52 @@
 }
 
 #app .ProseMirror .ProseMirror-gapcursor:after {
-  height: 1px;
+  border-width: 1px;
+  top: -5px;
   background-color: black;
 }
 
-.prose :where(iframe):not(:where([class~='not-prose'] *)),
-.prose :where(.pdf-wrapper):not(:where([class~='not-prose'] *)) {
+.prose :where(.iframe-wrapper):not(:where([class~='not-prose'] *)),
+.prose
+  :where(object[type='application/pdf']):not(:where([class~='not-prose'] *)) {
   margin-top: 1.25em;
   margin-bottom: 1.25em;
 }
 
-.prose > :where(iframe:last-child):not(:where([class~='not-prose'] *)),
-.prose > :where(.pdf-wrapper:last-child):not(:where([class~='not-prose'] *)) {
+.prose > :where(.iframe-wrapper:last-child):not(:where([class~='not-prose'] *)),
+.prose
+  > :where(object[type='application/pdf']:last-child):not(:where([class~='not-prose']
+      *)) {
   margin-bottom: 0;
 }
 
-#app li > p {
+.prose
+  > :where(.iframe-wrapper:first-child):not(:where([class~='not-prose'] *)),
+.prose
+  > :where(object[type='application/pdf']:first-child):not(:where([class~='not-prose']
+      *)) {
+  margin-top: 0;
+}
+
+#app #appMainContent li > p {
   @apply m-0;
 }
 
-#app blockquote > p {
+#app #appMainContent blockquote > p {
   @apply m-0;
+}
+
+#app img {
+  &.ProseMirror-selectednode {
+    @apply ring-2 ring-offset-2 ring-primary-focus;
+  }
 }
 
 #app .iframe-wrapper {
   @apply relative pb-[56.25%] w-full h-auto overflow-hidden rounded-md;
+  &.ProseMirror-selectednode {
+    @apply ring-2 ring-offset-2 ring-primary-focus;
+  }
 }
 
 #app iframe {
@@ -70,13 +91,15 @@
   @apply border-x-[3px] border-b-[3px] rounded-b-lg border-primary py-5 px-3 max-w-[85ch];
 }
 
-#app .pdf-wrapper {
-  @apply w-full p-5 bg-primary-content-fade flex justify-center items-center text-center font-medium rounded-md break-all;
-}
+#app object[type='application/pdf'] {
+  @apply w-full h-96 flex justify-center items-center text-center bg-base-300 font-medium rounded-md break-all;
+  &.ProseMirror-selectednode {
+    @apply bg-primary-content-fade;
+  }
 
-#app .pdf-wrapper::before {
-  content: 'PDF Embed for:';
-  @apply mr-2;
+  & span {
+    @apply p-5;
+  }
 }
 
 #app .iframe-wrapper > iframe {

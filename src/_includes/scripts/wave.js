@@ -34,12 +34,14 @@ const svgPathRender = (points) => {
     return `${acc} C ${cs[0]},${cs[1]} ${ce[0]},${ce[1]} ${e[0]},${e[1]}`;
   }, '');
 
-  return `<path d='M 1200,0 H 0 ${d} V 0 Z' fill='#0A254E' />`;
+  return d;
 };
 
 const svg = document.querySelector('#header-wave');
+const mainPath = svg.querySelector('path:nth-child(1)');
+const fillPath = svg.querySelector('path:nth-child(2)');
 
-if (svg) {
+if (svg && mainPath && fillPath) {
   const points = [
     [0, 37],
     [200, 10],
@@ -54,5 +56,8 @@ if (svg) {
     return item;
   });
 
-  svg.innerHTML = svgPathRender(points);
+  const renderedPoints = svgPathRender(points);
+
+  mainPath.setAttribute('d', `M 1200,0 H 0 ${renderedPoints} V 0 Z`);
+  fillPath.setAttribute('d', `M 1200,80 H 0 ${renderedPoints} V 80 Z`);
 }
