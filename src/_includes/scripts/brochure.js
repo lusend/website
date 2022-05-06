@@ -12,18 +12,20 @@ function replaceHTML({
 }) {
   try {
     if (!sourceSelector && !destSelector) return false;
-    const source = $(sourceSelector);
+    const source =
+      typeof sourceSelector === 'string'
+        ? $(sourceSelector)
+        : $('<p>' + sourceSelector() + '</p>');
 
     if (!source.length && !defaultSource) return false;
 
     const sourceValue = source.length
-      ? $(sourceSelector)
+      ? source
           .contents()
           .filter(function () {
             return this.nodeType == 3;
           })[0]
           .nodeValue.trim()
-          .replace()
       : defaultSource;
 
     if (!Array.isArray(destSelector)) destSelector = [destSelector];
@@ -63,6 +65,17 @@ function formatDate(str, long = true) {
     );
 
   return str;
+}
+
+function gup(paramName) {
+  return window.location.search
+    .substring(1)
+    .split('&')
+    .reduce((prev, param) => {
+      const pair = param.split('=');
+      if (pair.length <= 1) return prev;
+      if (pair[0] === paramName) return decodeURIComponent(pair[1]);
+    }, null);
 }
 
 window.addEventListener('load', function () {
@@ -116,4 +129,8 @@ window.addEventListener('load', function () {
         .replace(/LUS - /g, '')
         .trim()
   });
+
+  // EDIT LINK
+  if ($('#appEdit').length && gup('Program_ID'))
+    $('#appEdit').attr('href', $('#appEdit').attr('href') + gup('Program_ID'));
 });

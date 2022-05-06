@@ -72,6 +72,12 @@ function pdfListener() {
   return script;
 }
 
+function addGlobalVar(name, value) {
+  const script = document.createElement('script');
+  script.innerHTML = `const ${name} = '${JSON.stringify(value)}'`;
+  return script;
+}
+
 /**
  * A custom PDF Extension for tiptap
  */
@@ -490,6 +496,9 @@ function removeStrip(html, sections) {
     );
 }
 
+const appData =
+  '{"appOverview":{"type":"doc","content":[{"type":"heading","attrs":{"textAlign":"left","level":1},"content":[{"type":"text","text":"Trip Overview"}]}]},"appResources":{"type":"doc","content":[{"type":"heading","attrs":{"textAlign":"left","level":1},"content":[{"type":"text","text":"Travel Resources"}]}]},"appSafety":{"type":"doc","content":[{"type":"heading","attrs":{"textAlign":"left","level":1},"content":[{"type":"text","text":"Travel Safety"}]}]},"appChecklist":{"type":"doc","content":[{"type":"heading","attrs":{"textAlign":"left","level":1},"content":[{"type":"text","text":"Traveler Checklist"}]}]},"appFlights":{"type":"doc","content":[{"type":"heading","attrs":{"textAlign":"left","level":1},"content":[{"type":"text","text":"Flight Itinerary"}]}]},"appPacking":{"type":"doc","content":[{"type":"heading","attrs":{"textAlign":"left","level":1},"content":[{"type":"text","text":"Packing Guide"}]}]}}';
+
 document.querySelector('#appSubtitle').innerHTML =
   'XX Month, 20XX - XX Month, 20XX';
 document.querySelector('#appApplicationDeadline').innerHTML =
@@ -498,28 +507,58 @@ document.querySelector('#appApplicationDeadline').innerHTML =
 /**
  * Copies the brochure to be pasted into the TD WYSIWYG
  */
-async function copyBrochure() {
+async function copyBrochure(programID) {
   const html = await get(window.location.href, { asText: true });
-  const strippedHTML = removeStrip(html, ['script', 'copy']);
+  const strippedHTML = removeStrip(html, ['script', 'menu', 'importexport']);
 
   const parser = new DOMParser();
 
+  const finalJSON = {};
   let finalHTML = parser.parseFromString(strippedHTML, 'text/html');
   for (const [section, editor] of Object.entries(window.tiptapEditors)) {
     const tempHTML = editor.getHTML();
     finalHTML.getElementById(section).innerHTML =
       tempHTML === '<p></p>' ? '&nbsp;' : tempHTML;
     finalHTML.getElementById(section).removeAttribute('x-data');
+    finalJSON[section] = editor.getJSON();
   }
 
-  finalHTML.getElementById('app').appendChild(pdfListener());
+  finalHTML
+    .getElementById('app')
+    .appendChild(pdfListener())
+    .appendChild(addGlobalVar('appData', finalJSON));
 
-  navigator.clipboard.writeText(
+  await navigator.clipboard.writeText(
     finalHTML.head.innerHTML + finalHTML.body.innerHTML
   );
+
+  if (programID !== false) {
+    window.open(
+      'https://liberty-sa.terradotta.com/index.cfm?FuseAction=ProgramAdmin.BrochureEdit&Program_ID=' +
+        programID,
+      '_blank'
+    );
+  }
+}
+
+async function importBrochure(importData) {
+  if (importData) {
+    try {
+      const data = JSON.parse(importData);
+      setTimeout(function () {
+        for (const [section, editor] of Object.entries(window.tiptapEditors)) {
+          if (data && data[section]) editor.commands.setContent(data[section]);
+        }
+      }, 0);
+    } catch (error) {
+      console.warn(error);
+    }
+  }
 }
 
 /**
  * Makes this function publicly available
  */
 window.copyBrochure = copyBrochure;
+window.importBrochure = importBrochure;
+window.appData = appData;

@@ -9,7 +9,7 @@
       <span>Contact Us</span>
     </a>
 
-    <a class="flex items-center justify-center gap-1 underline text-primary-content text-opacity-70 hover:text-opacity-50" href="{{ edit }}">
+    <a id="appEdit" {% if type === 'brochure' %} x-on:click.prevent="await navigator.clipboard.writeText(window.appData); window.open($el.getAttribute('href'), '_self')" {% endif %} class="flex items-center justify-center gap-1 underline text-primary-content text-opacity-70 hover:text-opacity-50" href="{% if type !== 'brochure' %}{{ edit }}{% else %}https://lusend.github.io/website/pages/brochure?programID={% endif %}">
       <ion-icon name="create-outline">&nbsp;</ion-icon>
       <span>Edit Page</span>
     </a>
