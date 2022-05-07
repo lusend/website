@@ -109,10 +109,11 @@ tsParticles
         container.options.interactivity.events.onHover.mode = 'repulse';
         container.options.particles.number.density.area = 800;
         container.options.particles.shape.image.src = planeBase64;
-        container.start();
+        container.play();
       } else {
         document.getElementById('planes').style.opacity = 0;
-        container.stop();
+        container.pause();
+        container.refresh();
       }
     };
 

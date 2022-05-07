@@ -80,14 +80,13 @@
     </div>
   </div>
   <div class="overflow-hidden">
-    <svg id="header-wave" class="relative -mt-1 text-primary {% if background %} !text-white !mt-0 {% endif %}" viewBox="0 0 1200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg id="header-wave" class="z-10 relative -mt-1 text-primary {% if background %} !text-white !mt-0 {% endif %}" viewBox="0 0 1200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
-    {% if background %} style="fill-opacity: 0.6;" fill="black" {% else %} fill="transparent" {% endif %}
+    {% if background %} style="fill-opacity: 0.6;" fill="black" {% else %} fill="currentColor" {% endif %}
     d="M 1200,0 H 0 V 37 C 67,26 133,15 200,10 C 266,4 333,5 400,23 C 466,41 533,76 600,79 C 677,78 738,53 800,48 C 866,44 933,63 1000,62 C 1065,62 1131,41 1200,19 V 0 Z"
-    fill="currentColor"
 />
       <path
-    {% if background %} style="fill-opacity: 0.8;" {% endif %}
+    {% if background %} style="fill-opacity: 0.8;" {% else %} style="fill-opacity: 0;" {% endif %}
     d="M 1200,0 H 0 V 37 C 67,26 133,15 200,10 C 266,4 333,5 400,23 C 466,41 533,76 600,79 C 677,78 738,53 800,48 C 866,44 933,63 1000,62 C 1065,62 1131,41 1200,19 V 0 Z"
     fill="currentColor"
 />
