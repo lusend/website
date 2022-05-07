@@ -164,6 +164,10 @@
   }
 }
 
+#app ul > li::marker {
+  @apply !text-neutral-focus;
+}
+
 #app ul[data-type='taskList'] {
   list-style: none;
   padding: 0;

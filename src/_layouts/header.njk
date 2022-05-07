@@ -1,5 +1,5 @@
 {% if header %}
-  <div class="relative z-20 flex flex-row justify-center w-full px-8 pt-12 pb-5 mx-auto text-base bg-primary {% if background %} !bg-black !bg-opacity-70 pt-[calc(100vh-400px)] {% endif %} text-primary-content">
+  <div class="relative z-20 flex flex-row justify-center w-full px-8 pt-12 pb-5 mx-auto text-base bg-primary {% if background %} !bg-black !bg-opacity-60 !pt-[calc(100vh-400px)] {% endif %} text-primary-content">
     <div class="max-w-[calc(65ch+16.25rem)] flex-1 flex flex-col gap-1 items-center navMD:items-start">
       {% include "./breadcrumbs.njk" %}
       <div class="prose">
@@ -36,40 +36,40 @@
             <option value="appPacking" x-show="document.getElementById('appPacking').innerHTML.trim().slice(6)" x-cloak>Packing Guide</option>
           </select>
         </div>
-        <div class="hidden border-b border-neutral navMD:!block w-full mt-5">
+        <div class="hidden navMD:!block w-full mt-5">
           <ul class="flex flex-wrap -mb-px text-sm font-medium text-center {% if background %}text-primary-content {% else %} text-primary-content-fade {% endif %}">
-            <li class="mr-2">
-              <button href="#" x-on:click.prevent="currentId = 'appOverview'; window.location.hash = 'appOverview';" x-bind:class="currentId === 'appOverview' && '!text-accent !border-accent'" class="transition-colors inline-flex p-2.5 jusitfy-center items-center gap-1 rounded-t-lg border-b-2 border-transparent hover:text-primary-content hover:border-primary-content-fade group">
+            <li>
+              <button href="#" x-on:click.prevent="currentId = 'appOverview'; window.location.hash = 'appOverview';" x-bind:class="currentId === 'appOverview' && '!text-accent !border-accent'" class="transition-colors inline-flex p-2.5 jusitfy-center items-center gap-1 rounded-t-lg border-b-2 border-neutral hover:text-primary-content hover:border-primary-content-fade group">
                 <ion-icon name="folder">&nbsp;</ion-icon>
                 <span>Trip Overview</span>
               </button>
             </li>
-            <li class="mr-2" x-show="document.getElementById('appResources').innerHTML.trim().slice(6)" x-cloak>
-              <button href="#" x-on:click.prevent="currentId = 'appResources'; window.location.hash = 'appResources'" x-bind:class="currentId === 'appResources' && '!text-accent !border-accent'" class="transition-colors inline-flex p-2.5 jusitfy-center items-center gap-1 rounded-t-lg border-b-2 border-transparent hover:text-primary-content hover:border-primary-content-fade group">
+            <li x-show="document.getElementById('appResources').innerHTML.trim().slice(6)" x-cloak>
+              <button href="#" x-on:click.prevent="currentId = 'appResources'; window.location.hash = 'appResources'" x-bind:class="currentId === 'appResources' && '!text-accent !border-accent'" class="transition-colors inline-flex p-2.5 jusitfy-center items-center gap-1 rounded-t-lg border-b-2 border-neutral hover:text-primary-content hover:border-primary-content-fade group">
                 <ion-icon name="book">&nbsp;</ion-icon>
                 <span>Travel Resources</span>
               </button>
             </li>
-            <li class="mr-2" x-show="document.getElementById('appSafety').innerHTML.trim().slice(6)" x-cloak>
-              <button href="#" x-on:click.prevent="currentId = 'appSafety'; window.location.hash = 'appSafety'" x-bind:class="currentId === 'appSafety' && '!text-accent !border-accent'" class="transition-colors inline-flex p-2.5 jusitfy-center items-center gap-1 rounded-t-lg border-b-2 border-transparent hover:text-primary-content hover:border-primary-content-fade group">
+            <li x-show="document.getElementById('appSafety').innerHTML.trim().slice(6)" x-cloak>
+              <button href="#" x-on:click.prevent="currentId = 'appSafety'; window.location.hash = 'appSafety'" x-bind:class="currentId === 'appSafety' && '!text-accent !border-accent'" class="transition-colors inline-flex p-2.5 jusitfy-center items-center gap-1 rounded-t-lg border-b-2 border-neutral hover:text-primary-content hover:border-primary-content-fade group">
                 <ion-icon name="nuclear">&nbsp;</ion-icon>
                 <span>Travel Safety</span>
               </button>
             </li>
-            <li class="mr-2" x-show="document.getElementById('appChecklist').innerHTML.trim().slice(6)" x-cloak>
-              <button href="#" x-on:click.prevent="currentId = 'appChecklist'; window.location.hash = 'appChecklist'" x-bind:class="currentId === 'appChecklist' && '!text-accent !border-accent'" class="transition-colors inline-flex p-2.5 jusitfy-center items-center gap-1 rounded-t-lg border-b-2 border-transparent hover:text-primary-content hover:border-primary-content-fade group">
+            <li x-show="document.getElementById('appChecklist').innerHTML.trim().slice(6)" x-cloak>
+              <button href="#" x-on:click.prevent="currentId = 'appChecklist'; window.location.hash = 'appChecklist'" x-bind:class="currentId === 'appChecklist' && '!text-accent !border-accent'" class="transition-colors inline-flex p-2.5 jusitfy-center items-center gap-1 rounded-t-lg border-b-2 border-neutral hover:text-primary-content hover:border-primary-content-fade group">
                 <ion-icon name="checkbox">&nbsp;</ion-icon>
                 <span>Traveler Checklist</span>
               </button>
             </li>
-            <li class="mr-2" x-show="document.getElementById('appFlights').innerHTML.trim().slice(6)" x-cloak>
-              <button href="#" x-on:click.prevent="currentId = 'appFlights'; window.location.hash = 'appFlights'" x-bind:class="currentId === 'appFlights' && '!text-accent !border-accent'" class="transition-colors inline-flex p-2.5 jusitfy-center items-center gap-1 rounded-t-lg border-b-2 border-transparent hover:text-primary-content hover:border-primary-content-fade group">
+            <li x-show="document.getElementById('appFlights').innerHTML.trim().slice(6)" x-cloak>
+              <button href="#" x-on:click.prevent="currentId = 'appFlights'; window.location.hash = 'appFlights'" x-bind:class="currentId === 'appFlights' && '!text-accent !border-accent'" class="transition-colors inline-flex p-2.5 jusitfy-center items-center gap-1 rounded-t-lg border-b-2 border-neutral hover:text-primary-content hover:border-primary-content-fade group">
                 <ion-icon name="paper-plane">&nbsp;</ion-icon>
                 <span>Flight Itinerary</span>
               </button>
             </li>
-            <li class="mr-2" x-show="document.getElementById('appPacking').innerHTML.trim().slice(6)" x-cloak>
-              <button href="#" x-on:click.prevent="currentId = 'appPacking'; window.location.hash = 'appPacking'" x-bind:class="currentId === 'appPacking' && '!text-accent !border-accent'" class="transition-colors inline-flex p-2.5 jusitfy-center items-center gap-1 rounded-t-lg border-b-2 border-transparent hover:text-primary-content hover:border-primary-content-fade group">
+            <li x-show="document.getElementById('appPacking').innerHTML.trim().slice(6)" x-cloak>
+              <button href="#" x-on:click.prevent="currentId = 'appPacking'; window.location.hash = 'appPacking'" x-bind:class="currentId === 'appPacking' && '!text-accent !border-accent'" class="transition-colors inline-flex p-2.5 jusitfy-center items-center gap-1 rounded-t-lg border-b-2 border-neutral hover:text-primary-content hover:border-primary-content-fade group">
                 <ion-icon name="briefcase">&nbsp;</ion-icon>
                 <span>Packing Guide</span>
               </button>
@@ -80,15 +80,16 @@
     </div>
   </div>
   <div class="overflow-hidden">
-    <svg id="header-wave" class="relative z-20 -mt-1 text-primary {% if background %} rotate-180 origin-center !text-white !mt-0 {% endif %}" viewBox="0 0 1200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg id="header-wave" class="relative -mt-1 text-primary {% if background %} !text-white !mt-0 {% endif %}" viewBox="0 0 1200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
-    {% if background %} style="fill-opacity: 0.8;" {% endif %}
+    {% if background %} style="fill-opacity: 0.6;" fill="black" {% else %} fill="transparent" {% endif %}
     d="M 1200,0 H 0 V 37 C 67,26 133,15 200,10 C 266,4 333,5 400,23 C 466,41 533,76 600,79 C 677,78 738,53 800,48 C 866,44 933,63 1000,62 C 1065,62 1131,41 1200,19 V 0 Z"
     fill="currentColor"
 />
       <path
-    {% if background %} style="fill-opacity: 0.7;" fill="black" {% else %} fill="transparent" {% endif %}
+    {% if background %} style="fill-opacity: 0.8;" {% endif %}
     d="M 1200,0 H 0 V 37 C 67,26 133,15 200,10 C 266,4 333,5 400,23 C 466,41 533,76 600,79 C 677,78 738,53 800,48 C 866,44 933,63 1000,62 C 1065,62 1131,41 1200,19 V 0 Z"
+    fill="currentColor"
 />
     </svg>
   </div>

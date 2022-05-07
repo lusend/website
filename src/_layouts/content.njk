@@ -1,7 +1,7 @@
 {% if content and not custom or type === 'brochure' %}
   <div id="mycontent" class="content min-h-screen flex flex-col lg:flex-row justify-start lg:justify-center px-8 py-10 z-10 relative gap-5 xl:gap-10 2xl:gap-16 {% if background %} bg-white bg-opacity-80 {% endif %}">
     <div x-data="{ toc: !!document.querySelector('.table-of-contents')}" x-show="toc" class="grow order-first mb-5 lg:mb-0 lg:order-last lg:min-w-[15rem] lg:max-w-[20rem] prose max-w-full" x-cloak>
-      <div class="text-base lg:sticky lg:top-20 shadow-lg rounded-2xl p-5 border-2 border-base-200 {% if not background %} bg-white bg-opacity-90 backdrop-blur-sm {% endif %}">
+      <div class="text-base lg:sticky lg:top-20 shadow-lg rounded-2xl p-5 border-2 border-base-200 backdrop-blur-sm {% if not background %} bg-white bg-opacity-90 {% endif %}">
         <h1 class="my-0 mb-5 text-2xl font-semibold">Table of Contents</h1>
         <div class="table-of-contents-container max-h-[calc(80vh-132px)] overflow-y-auto overflow-x-hidden">&nbsp;</div>
       </div>
@@ -238,7 +238,7 @@
             <ion-icon name="copy" class="text-2xl text-white">&nbsp;</ion-icon>
             <span>Export Brochure</span>
           </button>
-          <button id="changeBackgroundButton" x-on:click="background = prompt('Enter the link to the Background Image:', background)" x-effect="window.backgroundImage = background" class="flex items-center justify-center flex-1 gap-2 px-4 py-2 rounded-xl bg-secondary hover:bg-secondary-focus text-secondary-content">
+          <button id="changeBackgroundButton" x-on:click="background = prompt('Enter the link to the Background Image:', window.backgroundImage)" x-effect="window.backgroundImage = background" class="flex items-center justify-center flex-1 gap-2 px-4 py-2 rounded-xl bg-secondary hover:bg-secondary-focus text-secondary-content">
             <ion-icon name="copy" class="text-2xl text-white">&nbsp;</ion-icon>
             <span>Change Background</span>
           </button>

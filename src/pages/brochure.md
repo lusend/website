@@ -13,10 +13,6 @@ nav:
 
 # Trip Overview
 
-<object data="https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea Brochure.pdf" type="application/pdf">
-  <span>Test</span>
-</object>
-
 </div>
 
 <div id="appResources" x-ref="appResources" x-data="editor()" x-show="currentId === $el.id" x-cloak>
