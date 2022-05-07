@@ -51,8 +51,8 @@ if (svg && mainPath && fillPath) {
     [1000, 62],
     [1200, 19]
   ].map((item, idx) => {
-    if (idx % 2 === 0) item[1] = getRandomInt(10, 45);
-    else item[1] = getRandomInt(45, 80);
+    if (idx % 2 === 0) item[1] = getRandomInt(5, 45);
+    else item[1] = getRandomInt(45, 75);
     return item;
   });
 
@@ -61,3 +61,12 @@ if (svg && mainPath && fillPath) {
   mainPath.setAttribute('d', `M 1200,0 H 0 ${renderedPoints} V 0 Z`);
   fillPath.setAttribute('d', `M 1200,80 H 0 ${renderedPoints} V 80 Z`);
 }
+
+function resizeSVG() {
+  const ratio = 80 / 1200;
+  const svg = document.querySelector('#header-wave');
+  svg.style.height = Math.ceil(window.innerWidth * ratio);
+}
+
+window.addEventListener('load', resizeSVG);
+window.addEventListener('resize', resizeSVG);

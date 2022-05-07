@@ -1,5 +1,5 @@
 {% if header %}
-  <div class="relative z-20 flex flex-row justify-center w-full px-8 pt-12 pb-5 mx-auto text-base bg-primary {% if background %} !bg-black !bg-opacity-70 {% endif %} text-primary-content">
+  <div class="relative z-20 flex flex-row justify-center w-full px-8 pt-12 pb-5 mx-auto text-base bg-primary {% if background %} !bg-black !bg-opacity-70 pt-[calc(100vh-400px)] {% endif %} text-primary-content">
     <div class="max-w-[calc(65ch+16.25rem)] flex-1 flex flex-col gap-1 items-center navMD:items-start">
       {% include "./breadcrumbs.njk" %}
       <div class="prose">
@@ -79,15 +79,17 @@
       {% endif %}
     </div>
   </div>
-  <svg id="header-wave" class="relative z-20 -mt-1 text-primary {% if background %} rotate-180 origin-center !text-white !mt-0 {% endif %} h-20" viewBox="0 0 1200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path
+  <div class="overflow-hidden">
+    <svg id="header-wave" class="relative z-20 -mt-1 text-primary {% if background %} rotate-180 origin-center !text-white !mt-0 {% endif %}" viewBox="0 0 1200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
     {% if background %} style="fill-opacity: 0.8;" {% endif %}
     d="M 1200,0 H 0 V 37 C 67,26 133,15 200,10 C 266,4 333,5 400,23 C 466,41 533,76 600,79 C 677,78 738,53 800,48 C 866,44 933,63 1000,62 C 1065,62 1131,41 1200,19 V 0 Z"
     fill="currentColor"
 />
-    <path
+      <path
     {% if background %} style="fill-opacity: 0.7;" fill="black" {% else %} fill="transparent" {% endif %}
     d="M 1200,0 H 0 V 37 C 67,26 133,15 200,10 C 266,4 333,5 400,23 C 466,41 533,76 600,79 C 677,78 738,53 800,48 C 866,44 933,63 1000,62 C 1065,62 1131,41 1200,19 V 0 Z"
 />
-  </svg>
+    </svg>
+  </div>
 {% endif %}
