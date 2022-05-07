@@ -148,3 +148,7 @@ window.addEventListener('load', function () {
   if ($('#appEdit').length && gup('Program_ID'))
     $('#appEdit').attr('href', $('#appEdit').attr('href') + gup('Program_ID'));
 });
+
+function moreThan(x, y) {
+  return x > y;
+}

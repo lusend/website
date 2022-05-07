@@ -1,27 +1,32 @@
 {% if content and not custom or type === 'brochure' %}
   <div id="mycontent" class="content min-h-screen flex flex-col lg:flex-row justify-start lg:justify-center px-8 py-10 z-10 relative gap-5 xl:gap-10 2xl:gap-16 {% if background %} bg-white bg-opacity-80 {% endif %}">
-    <div {% if type !== 'brochure' %} x-data="{ toc: !!document.querySelector('.table-of-contents'), open: true }" x-show="toc" x-cloak {% else %} x-data="{ open: false }" x-on:resize.window="window.innerWidth > 1024 ? open = false : open = true;" x-init="window.innerWidth > 1024 ? open = false : open = true;" x-bind:class="!open && '!min-w-[5rem] !max-w-[5rem]'" {% endif %} class="transition-all lg:grow order-first mb-5 lg:mb-0 lg:order-last lg:min-w-[15rem] lg:max-w-[20rem] prose max-w-full">
+    <div {% if type !== 'brochure' %} x-data="{ toc: !!document.querySelector('.table-of-contents'), open: true }" x-show="toc" x-cloak {% else %} x-data="{ open: false }" x-on:resize.window="moreThan(window.innerWidth, 1024) ? (open = false) : (open = true)" x-init="moreThan(window.innerWidth, 1024) ? (open = false) : (open = true)" x-bind:class="!open && '!min-w-[5rem] !max-w-[5rem]'" {% endif %} class="transition-all lg:grow order-first mb-5 lg:mb-0 lg:order-last lg:min-w-[15rem] lg:max-w-[20rem] prose max-w-full">
       <div class="text-base lg:sticky lg:top-20">
         <div x-bind:style="!open && 'writing-mode: vertical-rl;'" class="transition-all rounded-2xl p-5 backdrop-blur-sm border-2 {% if not background %} shadow-lg border-base-200 bg-white bg-opacity-90 {% else %} border-[rgba(255,255,255,0.6)] {% endif %}">
           <h1 {%if type === 'brochure' %} x-on:click="open = !open" x-bind:class="!open && 'h-full'" {% endif %} class="{% if type === 'brochure' %} cursor-pointer {% endif %} my-0 mb-5 text-2xl flex gap-1 items-center justify-between font-semibold transition-all">
             <ion-icon x-show="!open" name="caret-forward-circle">&nbsp;</ion-icon>
             <span x-data="{ title: {%if type === 'brochure' %}'At A Glance'{% else %}'Table of Contents'{% endif %}}" x-text="title" class="transition-all origin-center" x-bind:class="!open && 'rotate-180'">&nbsp;</span>
-            <ion-icon x-show="open" name="caret-forward-circle">&nbsp;</ion-icon>
+            {% if type === 'brochure' %}
+              <ion-icon x-show="open" name="caret-forward-circle">&nbsp;</ion-icon>
+            {% endif %}
           </h1>
-          <div id="appGlance" x-data="editor('appGlance', '')" x-show="open" class="table-of-contents-container max-h-[calc(80vh-132px)] overflow-y-auto overflow-x-hidden">&nbsp;</div>
+          <div id="appGlance" {% if type === 'brochure' %} x-data="editor('appGlance', '')" {% endif %} x-show="open" class="table-of-contents-container max-h-[calc(80vh-132px)] overflow-y-auto overflow-x-hidden">&nbsp;</div>
+          {% if type === 'brochure' %}
 
-          <!--STRIP AAG-->
+            <!--STRIP AAG-->
 
-          <button x-show="open" x-on:click="addAAG()" class="flex items-center justify-center w-full gap-2 mt-5 btn btn-primary">
-            <ion-icon name="add-circle">&nbsp;</ion-icon>
-            <span>Add Item</span>
-          </button>
+            <button x-show="open" x-on:click="addAAG()" class="flex items-center justify-center w-full gap-2 mt-5 btn btn-primary">
+              <ion-icon name="add-circle">&nbsp;</ion-icon>
+              <span>Add Item</span>
+            </button>
 
-          <!--STRIPEND AAG-->
+            <!--STRIPEND AAG-->
+
+          {% endif %}
         </div>
       </div>
     </div>
-    <div id="appMainContent" class="prose flex-initial order-last lg:order-first py-5 px-2 rounded-2xl backdrop-blur-sm {% if not background %} bg-white bg-opacity-50 {% endif %} {% if full %} lg:max-w-full {% else %} lg:max-w-[65ch] {% endif %} max-w-full {% if type === 'brochure' %} lg:!max-w-[85ch] {% endif %}">
+    <div id="appMainContent" class="prose flex-grow order-last lg:order-first py-5 px-2 rounded-2xl backdrop-blur-sm {% if not background %} bg-white bg-opacity-50 {% endif %} {% if full %} lg:max-w-full {% else %} lg:max-w-[65ch] {% endif %} max-w-full {% if type === 'brochure' %} lg:!max-w-[85ch] {% endif %}">
       {% if type === 'brochure' %}
 
         <!--STRIP MENU-->
