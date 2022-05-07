@@ -1,33 +1,45 @@
 {% if header %}
-  <div class="relative z-20 flex flex-row justify-center w-full px-8 pt-12 pb-5 mx-auto text-base bg-primary {% if background %} !bg-black !bg-opacity-60 !pt-[calc(100vh-400px)] {% endif %} text-primary-content">
+  <div class="relative z-20 flex flex-row justify-center w-full px-8 pt-12 pb-5 mx-auto text-base bg-primary {% if background %} !bg-black !bg-opacity-60 !pt-[38vh] {% endif %} text-primary-content">
     <div class="max-w-[calc(65ch+16.25rem)] flex-1 flex flex-col gap-1 items-center navMD:items-start">
-      {% include "./breadcrumbs.njk" %}
-      <div class="prose">
-        <h1 id="appTitle" class="text-center navMD:text-left text-primary-content">{{ title }}</h1>
-      </div>
-      {% if author !== false or type === 'brochure' %}
-        <div id="appSubtitle" class="mt-3 text-sm text-center {% if background %} text-white {% else %} text-base-300 {% endif %} navMD:text-left navMD:mt-0">
-          {% if author !== false %}
-            {% if author | length %}
-              <div>
-                <span>Written By </span>
-                <strong>{{ author | safe }}</strong>
-              </div>
-            {% endif %}
-            <div>
-              <span>Last Updated</span>
-              <strong>{{ page.date | postDate }}</strong>
+      <div class="flex flex-col items-stretch justify-center w-full gap-5 navMD:gap-10 navMD:flex-row navMD:justify-between">
+        <div class="flex flex-col max-w-[65ch]">
+          {% include "./breadcrumbs.njk" %}
+          <div class="prose">
+            <h1 id="appTitle" class="text-center navMD:text-left text-primary-content">{{ title }}</h1>
+          </div>
+          {% if author !== false or type === 'brochure' %}
+            <div id="appSubtitle" class="mt-3 text-sm text-center {% if background %} text-white {% else %} text-base-300 {% endif %} navMD:text-left navMD:mt-0">
+              {% if author !== false %}
+                {% if author | length %}
+                  <div>
+                    <span>Written By </span>
+                    <strong>{{ author | safe }}</strong>
+                  </div>
+                {% endif %}
+                <div>
+                  <span>Last Updated</span>
+                  <strong>{{ page.date | postDate }}</strong>
+                </div>
+              {% endif %}
+              {% if type === 'brochure' %} &nbsp; {% endif %}
             </div>
+            {% if type === 'brochure' %}
+              <div id="appApplicationDeadline" class="text-xs text-center {% if background %} text-white {% else %} text-base-300 {% endif %} font-extralight navMD:text-left">&nbsp;</div>
+            {% endif %}
           {% endif %}
-          {% if type === 'brochure' %} &nbsp; {% endif %}
         </div>
-      {% endif %}
+        {% if type === 'brochure' %}
+          <div class="flex flex-col items-center justify-center gap-2">
+            <a id="appApplyNow" target="_blank" class="w-full max-w-sm bg-transparent border-2 btn border-primary-content hover:bg-white hover:!text-primary transition-colors" href="https://liberty-sa.terradotta.com/index.cfm?FuseAction=Students.AngApply&Program_ID=">Apply Now</a>
+            <a id="appRequestInfo" target="_blank" class="w-full max-w-sm bg-transparent border-2 btn border-primary-content hover:bg-white hover:!text-primary transition-colors" href="https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.InfoRequest&Program_ID=">Request More Info</a>
+          </div>
+        {% endif %}
+      </div>
 
       {% if type === 'brochure' %}
-        <div id="appApplicationDeadline" class="text-xs text-center {% if background %} text-white {% else %} text-base-300 {% endif %} font-extralight navMD:text-left">&nbsp;</div>
         <div class="w-full max-w-md mt-5 navMD:hidden">
           <label for="tabs" class="sr-only">Select a tab</label>
-          <select id="tabs" x-model="currentId" x-on:change="window.location.hash = currentId" class="text-white rounded-lg block w-full p-2.5 bg-primary-focus border-2 border-primary-content-fade">
+          <select id="tabs" x-model="currentId" x-on:change="window.location.hash = currentId" class="text-white rounded-lg block w-full p-2.5 bg-neutral bg-opacity-80 border-2 border-primary-content-fade">
             <option value="appOverview">Trip Overview</option>
             <option value="appResources" x-show="document.getElementById('appResources').innerHTML.trim().slice(6)" x-cloak>Travel Resources</option>
             <option value="appSafety" x-show="document.getElementById('appSafety').innerHTML.trim().slice(6)" x-cloak>Travel Safety</option>
@@ -37,7 +49,7 @@
           </select>
         </div>
         <div class="hidden navMD:!block w-full mt-5">
-          <ul class="flex flex-wrap -mb-px text-sm font-medium text-center {% if background %}text-primary-content {% else %} text-primary-content-fade {% endif %}">
+          <ul class="flex flex-wrap justify-center -mb-px text-sm font-medium text-center {% if background %}text-primary-content {% else %} text-primary-content-fade {% endif %}">
             <li>
               <button href="#" x-on:click.prevent="currentId = 'appOverview'; window.location.hash = 'appOverview';" x-bind:class="currentId === 'appOverview' && '!text-accent !border-accent'" class="transition-colors inline-flex p-2.5 jusitfy-center items-center gap-1 rounded-t-lg border-b-2 border-neutral hover:text-primary-content hover:border-primary-content-fade group">
                 <ion-icon name="folder">&nbsp;</ion-icon>

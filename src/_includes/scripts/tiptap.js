@@ -242,9 +242,8 @@ document.addEventListener('alpine:init', () => {
             (heading.innerHTML = heading.querySelector('a').innerHTML)
         );
 
-        const content = customContent
-          ? customContent
-          : section.innerHTML.trim();
+        const content =
+          customContent !== null ? customContent : section.innerHTML.trim();
 
         section.innerHTML = '';
 
@@ -520,7 +519,12 @@ document.querySelector('#appApplicationDeadline').innerHTML =
  */
 async function exportBrochure(programID) {
   const html = await get(window.location.href, { asText: true });
-  const strippedHTML = removeStrip(html, ['script', 'menu', 'importexport']);
+  const strippedHTML = removeStrip(html, [
+    'script',
+    'menu',
+    'importexport',
+    'aag'
+  ]);
 
   const parser = new DOMParser();
 
@@ -589,9 +593,21 @@ async function importBrochure(importData) {
   }
 }
 
+async function addAAG() {
+  if (window.tiptapEditors.appGlance) {
+    const editor = window.tiptapEditors.appGlance;
+    editor
+      .chain()
+      .focus()
+      .insertContent('<p><strong>Title</strong><br />Details</p>')
+      .run();
+  }
+}
+
 /**
  * Makes this function publicly available
  */
 window.exportBrochure = exportBrochure;
 window.importBrochure = importBrochure;
 window.appData = appData;
+window.addAAG = addAAG;

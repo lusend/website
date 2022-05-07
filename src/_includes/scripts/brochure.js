@@ -130,6 +130,20 @@ window.addEventListener('load', function () {
         .trim()
   });
 
+  // REQUEST INFO
+  if ($('#appRequestInfo').length && gup('Program_ID'))
+    $('#appRequestInfo').attr(
+      'href',
+      $('#appRequestInfo').attr('href') + gup('Program_ID')
+    );
+
+  // APPLY NOW
+  if ($('#appApplyNow').length && gup('Program_ID'))
+    $('#appApplyNow').attr(
+      'href',
+      $('#appApplyNow').attr('href') + gup('Program_ID')
+    );
+
   // EDIT LINK
   if ($('#appEdit').length && gup('Program_ID'))
     $('#appEdit').attr('href', $('#appEdit').attr('href') + gup('Program_ID'));

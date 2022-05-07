@@ -50,6 +50,20 @@
   margin-top: 0;
 }
 
+.prose :where(hr):not(:where([class~='not-prose'] *)) {
+  @apply border-primary;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.prose :where(hr:first-child):not(:where([class~='not-prose'] *)) {
+  margin-top: 0;
+}
+
+.prose :where(hr:last-child):not(:where([class~='not-prose'] *)) {
+  margin-bottom: 0;
+}
+
 #app #appMainContent li > p {
   @apply m-0;
 }
