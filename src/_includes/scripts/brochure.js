@@ -229,21 +229,20 @@ document.addEventListener('alpine:init', () => {
       this.courses.all =
         replaceHTML({
           sourceSelector: '[id^=id_11010]',
-          mangleData: (source) => {
+          mangleData: (source) =>
             source.split(', ').filter((item) => {
               if (item.toLowerCase() === 'cser') {
-                this.course.cser = true;
+                this.courses.cser = true;
                 return false;
               }
 
               if (item.toLowerCase() === 'not for credit') {
-                this.course.academicEnrichment = true;
+                this.courses.academicEnrichment = true;
                 return false;
               }
 
               return true;
-            });
-          }
+            })
         }) || [];
 
       // REQUEST INFO
