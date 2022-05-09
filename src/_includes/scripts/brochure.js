@@ -98,18 +98,52 @@ function gup(paramName) {
     }, null);
 }
 
-function getDefaultBackground(title) {
+function getBackgroundID(searchText) {
+  for (let bg in window.backgrounds) {
+    const keyword = window.backgrounds[bg].keyword.toLowerCase();
+    const id = window.backgrounds[bg].id;
+    if (searchText.toLowerCase().includes(keyword)) {
+      return id;
+    }
+  }
+
+  return undefined;
+}
+
+function getDefaultBackground(title, schools, departments, locations) {
   const baseLink =
     'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=';
 
+  let backgroundID = undefined;
+
   if (window.backgrounds) {
-    for (let bg in window.backgrounds) {
-      const keyword = window.backgrounds[bg].keyword.toLowerCase();
-      const id = window.backgrounds[bg].id;
-      if (title.toLowerCase().includes(keyword)) {
-        return baseLink + id;
-      }
-    }
+    // Based on Title
+    backgroundID = getBackgroundID(title);
+
+    if (backgroundID !== undefined) return baseLink + backgroundID;
+
+    // Based on School
+    const schoolBackupTitle = schools.join(', ');
+
+    backgroundID = getBackgroundID(schoolBackupTitle);
+
+    if (backgroundID !== undefined) return baseLink + backgroundID;
+
+    // Based on Department
+    const departmentBackupTitle = departments.join(', ');
+
+    backgroundID = getBackgroundID(departmentBackupTitle);
+
+    if (backgroundID !== undefined) return baseLink + backgroundID;
+
+    // Based on Location
+    const locationBackupTitle = locations
+      .map((loc) => loc.city + ', ' + loc.country)
+      .join(' | ');
+
+    backgroundID = getBackgroundID(locationBackupTitle);
+
+    if (backgroundID !== undefined) return baseLink + backgroundID;
   }
 
   return baseLink + '21698';

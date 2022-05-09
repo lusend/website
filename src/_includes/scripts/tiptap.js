@@ -603,7 +603,7 @@ async function exportBrochure(programID) {
         .getElementById('app')
         .setAttribute(
           'x-init',
-          `$store.background = getDefaultBackground($store.program.title)`
+          `$store.background = getDefaultBackground($store.program.title, $store.program.schools, $store.program.departments, $store.program.locations)`
         );
   }
 
