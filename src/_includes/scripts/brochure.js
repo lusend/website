@@ -103,12 +103,12 @@ function getDefaultBackground(title) {
       const keyword = window.backgrounds[bg].keyword.toLowerCase();
       const id = window.backgrounds[bg].id;
       if (title.toLowerCase().includes(keyword)) {
-        return Alpine.store('background', baseLink + id);
+        return baseLink + id;
       }
     }
   }
 
-  Alpine.store('background', baseLink + '21698');
+  baseLink + '21698';
 }
 
 document.addEventListener('alpine:init', () => {
