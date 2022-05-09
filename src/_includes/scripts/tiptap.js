@@ -277,7 +277,16 @@ document.addEventListener('alpine:init', () => {
             History,
             TextStyle,
             Color,
-            Link.configure({
+            Link.extend({
+              addAttributes() {
+                return {
+                  ...this.parent?.(),
+                  class: {
+                    default: ''
+                  }
+                };
+              }
+            }).configure({
               openOnClick: false
             }),
             Image.configure({
@@ -403,6 +412,40 @@ document.addEventListener('alpine:init', () => {
             .focus()
             .extendMarkRange('link')
             .setLink({ href: link, target: '_self' })
+            .run()
+        );
+      },
+      toggleButton() {
+        let previousLink =
+          this.$data.editor() && this.$data.editor().getAttributes('link').href;
+        let link = prompt('Enter a URL for the Button: ', previousLink);
+
+        if (!link)
+          return (
+            this.$data.editor() &&
+            this.$data
+              .editor()
+              .chain()
+              .focus()
+              .extendMarkRange('link')
+              .unsetLink()
+              .run()
+          );
+
+        console.log(this.$data.editor().commands.setLink);
+
+        return (
+          this.$data.editor() &&
+          this.$data
+            .editor()
+            .chain()
+            .focus()
+            .extendMarkRange('link')
+            .setLink({
+              href: link,
+              target: '_blank',
+              class: 'btn btn-primary'
+            })
             .run()
         );
       },

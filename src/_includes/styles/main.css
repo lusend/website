@@ -7,6 +7,16 @@
 
 /* purgecss start ignore */
 
+@layer utilities {
+  .text-vertical {
+    writing-mode: vertical-rl;
+  }
+
+  .text-normal {
+    writing-mode: initial;
+  }
+}
+
 #pagefooter,
 #pageheader,
 #pagebodycontentheader {

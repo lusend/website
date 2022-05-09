@@ -1,16 +1,52 @@
 {% if content and not custom or type === 'brochure' %}
   <div id="mycontent" class="content min-h-screen flex flex-col lg:flex-row justify-start lg:justify-center px-8 py-10 z-10 relative gap-5 xl:gap-10 2xl:gap-16 {% if background %} bg-white bg-opacity-80 {% endif %}">
-    <div {% if type !== 'brochure' %} x-data="{ toc: !!document.querySelector('.table-of-contents'), open: true }" x-show="toc" x-cloak {% else %} x-data="{ open: false }" x-on:resize.window="moreThan(window.innerWidth, 1024) ? (open = false) : (open = true)" x-init="moreThan(window.innerWidth, 1024) ? (open = false) : (open = true)" x-bind:class="!open && '!min-w-[5rem] !max-w-[5rem]'" {% endif %} class="transition-all lg:grow order-first mb-5 lg:mb-0 lg:order-last lg:min-w-[15rem] lg:max-w-[20rem] prose max-w-full">
+    <div {% if type !== 'brochure' %} x-data="{ toc: !!document.querySelector('.table-of-contents'), open: true }" x-show="toc" x-cloak {% else %} x-data="{ open: false }" x-on:resize.window="Math.max(window.innerWidth, 1024) === 1024 ? (open = true) : (open = false)" x-init="Math.max(window.innerWidth, 1024) === 1024 ? (open = true) : (open = false)" x-bind:class="!open && 'min-w-full max-w-full lg:!min-w-[5rem] lg:!max-w-[5rem]'" {% endif %} class="transition-all lg:grow order-first mb-5 lg:mb-0 lg:order-last lg:min-w-[15rem] lg:max-w-[20rem] prose max-w-full">
       <div class="text-base lg:sticky lg:top-20">
-        <div x-bind:style="!open && 'writing-mode: vertical-rl;'" class="transition-all rounded-2xl p-5 backdrop-blur-sm border-2 {% if not background %} shadow-lg border-base-200 bg-white bg-opacity-90 {% else %} border-[rgba(255,255,255,0.6)] {% endif %}">
-          <h1 {%if type === 'brochure' %} x-on:click="open = !open" x-bind:class="!open && 'h-full'" {% endif %} class="{% if type === 'brochure' %} cursor-pointer {% endif %} my-0 mb-5 text-2xl flex gap-1 items-center justify-between font-semibold transition-all">
-            <ion-icon x-show="!open" name="caret-forward-circle">&nbsp;</ion-icon>
-            <span x-data="{ title: {%if type === 'brochure' %}'At A Glance'{% else %}'Table of Contents'{% endif %}}" x-text="title" class="transition-all origin-center" x-bind:class="!open && 'rotate-180'">&nbsp;</span>
+        <div x-bind:class="!open && 'text-normal lg:text-vertical'" class="transition-all rounded-2xl p-5 backdrop-blur-sm border-2 {% if not background %} shadow-lg border-base-200 bg-white bg-opacity-90 {% else %} border-[rgba(255,255,255,0.6)] {% endif %}">
+          <h1 {%if type === 'brochure' %} x-on:click="open = !open" x-bind:class="!open && 'h-full lg:flex-row-reverse !mb-0'" {% endif %} class="{% if type === 'brochure' %} cursor-pointer {% endif %} my-0 mb-5 text-2xl flex gap-1 items-center justify-between font-semibold transition-all">
+            <span x-data="{ title: {%if type === 'brochure' %}'At A Glance'{% else %}'Table of Contents'{% endif %}}" x-text="title" class="transition-all origin-center" x-bind:class="!open && 'lg:rotate-180'">&nbsp;</span>
             {% if type === 'brochure' %}
-              <ion-icon x-show="open" name="caret-forward-circle">&nbsp;</ion-icon>
+              <ion-icon x-show="open" name="caret-up-circle" class="origin-center lg:rotate-90" x-cloak>&nbsp;</ion-icon>
+              <ion-icon x-show="!open" name="caret-down-circle" class="origin-center lg:-rotate-90" x-cloak>&nbsp;</ion-icon>
             {% endif %}
           </h1>
-          <div id="appGlance" {% if type === 'brochure' %} x-data="editor('appGlance', '')" {% endif %} x-show="open" class="table-of-contents-container max-h-[calc(80vh-132px)] overflow-y-auto overflow-x-hidden">&nbsp;</div>
+          <div id="appGlance" {% if type === 'brochure' %} x-data="editor('appGlance')"  x-show="open" {% endif %} class="table-of-contents-container max-h-[calc(80vh-132px)] overflow-y-auto overflow-x-hidden {% if type === 'brochure' %} pr-1 {% endif %}" x-cloak>
+            {% if type === 'brochure' %}
+              <p>
+                <strong>Term</strong>
+                <br/>
+                <i>Coming Soon</i>
+              </p>
+              <p>
+                <strong>Sponsor</strong>
+                <br/>
+                <i>Coming Soon</i>
+              </p>
+              <p>
+                <strong>Estimated Cost</strong>
+                <br/>
+                <i>Coming Soon</i>
+              </p>
+              <hr/>
+              <p>
+                <strong>Courses</strong>
+                <br/>
+                <i>Coming Soon</i>
+              </p>
+              <p>
+                <strong>CSER</strong>
+                <br/>
+                <i>Coming Soon</i>
+              </p>
+              <p>
+                <strong>Academic Enrichment</strong>
+                <br/>
+                <i>Coming Soon</i>
+              </p>
+            {% else %}
+              &nbsp;
+            {% endif %}
+          </div>
           {% if type === 'brochure' %}
 
             <!--STRIP AAG-->
@@ -148,6 +184,11 @@
 
           <div class="h-5 my-1 w-[2px] rounded-md mx-2 bg-base-300">&nbsp;</div>
 
+          <div class="tip" data-tip="Button Link">
+            <button id="tt-button" x-on:click="toggleButton()" x-bind:disabled="!isSelected(lastUpdate) && !isActive('link', lastUpdate)" class="flex items-center justify-center p-1 transition-colors rounded-md w-7 h-7 hover:bg-primary hover:text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M15.388 13.498l2.552 7.014-4.698 1.71-2.553-7.014-3.899 2.445L8.41 1.633l11.537 11.232-4.558.633zm-.011 5.818l-2.715-7.46 2.96-.41-5.64-5.49-.79 7.83 2.53-1.587 2.715 7.46.94-.343z" fill="currentColor"/></svg>
+            </button>
+          </div>
           <div class="tip" data-tip="URL Link">
             <button id="tt-link" x-on:click="toggleLink()" x-bind:disabled="!isSelected(lastUpdate) && !isActive('link', lastUpdate)" class="flex items-center justify-center p-1 transition-colors rounded-md w-7 h-7 hover:bg-primary hover:text-white">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M18.364 15.536L16.95 14.12l1.414-1.414a5 5 0 1 0-7.071-7.071L9.879 7.05 8.464 5.636 9.88 4.222a7 7 0 0 1 9.9 9.9l-1.415 1.414zm-2.828 2.828l-1.415 1.414a7 7 0 0 1-9.9-9.9l1.415-1.414L7.05 9.88l-1.414 1.414a5 5 0 1 0 7.071 7.071l1.414-1.414 1.415 1.414zm-.708-10.607l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z" fill="currentColor"/></svg>
@@ -165,7 +206,12 @@
           </div>
           <div class="tip" data-tip="Image Header">
             <button id="tt-image-header" x-on:click="createImage()" class="flex items-center justify-center p-1 transition-colors rounded-md w-7 h-7 hover:bg-primary hover:text-white">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M21 15v3h3v2h-3v3h-2v-3h-3v-2h3v-3h2zm.008-12c.548 0 .992.445.992.993V13h-2V5H4v13.999L14 9l3 3v2.829l-3-3L6.827 19H14v2H2.992A.993.993 0 0 1 2 20.007V3.993A1 1 0 0 1 2.992 3h18.016zM8 7a2 2 0 1 1 0 4 2 2 0 0 1 0-4z" fill="currentColor"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M4.828 21l-.02.02-.021-.02H2.992A.993.993 0 0 1 2 20.007V3.993A1 1 0 0 1 2.992 3h18.016c.548 0 .992.445.992.993v16.014a1 1 0 0 1-.992.993H4.828zM20 15V5H4v14L14 9l6 6zm0 2.828l-6-6L6.828 19H20v-1.172zM8 11a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" fill="currentColor"/></svg>
+            </button>
+          </div>
+          <div class="tip" data-tip="Coming Soon">
+            <button disabled id="tt-image-full" x-on:click="createImage()" class="flex items-center justify-center p-1 transition-colors rounded-md w-7 h-7 hover:bg-primary hover:text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M11.27 12.216L15 6l8 15H2L9 8l2.27 4.216zm1.12 2.022L14.987 19h4.68l-4.77-8.942-2.507 4.18zM5.348 19h7.304L9 12.219 5.348 19zM5.5 8a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"/></svg>
             </button>
           </div>
 

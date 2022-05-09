@@ -51,6 +51,11 @@ function validDate(str) {
   return !!Date.parse(str);
 }
 
+function dateBeforeToday(str) {
+  if (!Date.parse(str)) return false;
+  return Date.parse(str) < new Date().setHours(0, 0, 0, 0);
+}
+
 function formatDate(str, long = true) {
   if (Date.parse(str))
     return new Date(str).toLocaleDateString(
@@ -106,14 +111,16 @@ window.addEventListener('load', function () {
     passChecks: (source, dest) => source && validDate(source) && dest.length
   });
 
+  let appDeadline = undefined;
+
   // APP DEADLINE
   replaceHTML({
     sourceSelector: `#pagebody > div.panel.panel-primary > div.table-responsive > table > tbody > tr:nth-child(${dateRow}) > td:nth-child(3) > span`,
     destSelector: '#appApplicationDeadline',
-    modifyContent: (source) =>
-      'Applications Due By ' +
-      formatDate(source.replace(/\*/g, '').trim(), false) +
-      '',
+    modifyContent: (source) => {
+      appDeadline = formatDate(source.replace(/\*/g, '').trim(), false);
+      return 'Applications Due By ' + appDeadline + '';
+    },
     passChecks: (source, dest) => source && validDate(source) && dest.length
   });
 
@@ -144,8 +151,22 @@ window.addEventListener('load', function () {
       $('#appApplyNow').attr('href') + gup('Program_ID')
     );
 
-  // EDIT LINK
+  // APPLY NOW DISABLED
+  if (
+    $('#appApplicationDeadline').length &&
+    appDeadline !== undefined &&
+    dateBeforeToday(appDeadline)
+  ) {
+    $('#appApplyNow').attr('disabled', 'true');
+    $('#appApplyNow').removeAttr('href');
+    $('#appApplyNow').attr(
+      'title',
+      'The Application Deadline is Already Passed!'
+    );
+  }
+
   if ($('#appEdit').length && gup('Program_ID'))
+    // EDIT LINK
     $('#appEdit').attr('href', $('#appEdit').attr('href') + gup('Program_ID'));
 });
 
