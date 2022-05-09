@@ -38,13 +38,11 @@
   margin-bottom: 1.25em;
 }
 
-.prose > :where(img:last-child):not(:where([class~='not-prose'] *)),
 .prose > :where(.iframe-wrapper:last-child):not(:where([class~='not-prose'] *)),
 .prose > :where(div[id^='pdf']:last-child):not(:where([class~='not-prose'] *)) {
   margin-bottom: 0;
 }
 
-.prose > :where(img:first-child):not(:where([class~='not-prose'] *)),
 .prose
   > :where(.iframe-wrapper:first-child):not(:where([class~='not-prose'] *)),
 .prose
@@ -97,6 +95,19 @@
 
 #app #appMainContent .menu button[disabled] {
   @apply !text-primary-content-fade hover:!bg-transparent hover:!text-primary-content-fade;
+}
+
+#app
+  #appMainContent
+  > div[id^='app']:not([id='appMenu'])
+  > :where(:first-child):not(:where([class~='not-prose'] *)) {
+  @apply mt-0;
+}
+#app
+  #appMainContent
+  > div[id^='app']:not([id='appMenu'])
+  > :where(:lasat-child):not(:where([class~='not-prose'] *)) {
+  @apply mb-0;
 }
 
 #app #appMainContent > div[id^='app']:not([id='appMenu']) > .ProseMirror {
