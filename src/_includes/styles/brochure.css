@@ -38,11 +38,13 @@
   margin-bottom: 1.25em;
 }
 
+.prose > :where(img:last-child):not(:where([class~='not-prose'] *)),
 .prose > :where(.iframe-wrapper:last-child):not(:where([class~='not-prose'] *)),
 .prose > :where(div[id^='pdf']:last-child):not(:where([class~='not-prose'] *)) {
   margin-bottom: 0;
 }
 
+.prose > :where(img:first-child):not(:where([class~='not-prose'] *)),
 .prose
   > :where(.iframe-wrapper:first-child):not(:where([class~='not-prose'] *)),
 .prose
