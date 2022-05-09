@@ -245,7 +245,7 @@ document.addEventListener('alpine:init', () => {
         const content =
           customContent !== null ? customContent : section.innerHTML.trim();
 
-        section.innerHTML = '';
+        if (customContent === null) section.innerHTML = '';
 
         editors[this.id] = new Editor({
           element: section,

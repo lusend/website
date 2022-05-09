@@ -10,39 +10,50 @@
               <ion-icon x-show="!open" name="caret-down-circle" class="origin-center lg:-rotate-90" x-cloak>&nbsp;</ion-icon>
             {% endif %}
           </h1>
-          <div id="appGlance" {% if type === 'brochure' %} x-data="editor('appGlance')"  x-show="open" {% endif %} class="table-of-contents-container max-h-[calc(80vh-132px)] overflow-y-auto overflow-x-hidden {% if type === 'brochure' %} pr-1 {% endif %}" x-cloak>
+          <div id="appGlance" {% if type === 'brochure' %} x-data="editor('appGlance', '<p><strong>Estimated Cost</strong><br/><i>Coming Soon</i></p>')"  x-show="open" {% endif %} class="table-of-contents-container max-h-[calc(80vh-132px)] overflow-y-auto overflow-x-hidden {% if type === 'brochure' %} pr-1 {% endif %}" x-cloak>
             {% if type === 'brochure' %}
               <p>
                 <strong>Term</strong>
                 <br/>
-                <i>Coming Soon</i>
+                <span id="appTerm" x-text="$store.program.term || 'N/A'">&nbsp;</span>
               </p>
               <p>
-                <strong>Sponsor</strong>
+                <strong>Schools</strong>
                 <br/>
-                <i>Coming Soon</i>
+                <span id="appSchools" x-text="$store.program.schools.join(', ') || 'N/A'">&nbsp;</span>
               </p>
               <p>
-                <strong>Estimated Cost</strong>
+                <strong>Departments</strong>
                 <br/>
-                <i>Coming Soon</i>
+                <span id="appDepartments" x-text="$store.program.departments.join(', ') || 'N/A'">&nbsp;</span>
+              </p>
+              <p>
+                <strong>Countries</strong>
+                <br/>
+                <span id="appCountries" x-text="$store.program.locations.map(function(i){return i.country}).filter(onlyUnique).join(', ') || 'N/A'">&nbsp;</span>
+              </p>
+              <p>
+                <strong>Cities</strong>
+                <br/>
+                <span id="appCities" x-text="$store.program.locations.map(function(i){return i.city}).filter(onlyUnique).join(', ') || 'N/A'">&nbsp;</span>
               </p>
               <hr/>
               <p>
                 <strong>Courses</strong>
                 <br/>
-                <i>Coming Soon</i>
+                <span id="appCourses" x-text="$store.program.courses.all.join(', ') || 'N/A'">&nbsp;</span>
               </p>
               <p>
                 <strong>CSER</strong>
                 <br/>
-                <i>Coming Soon</i>
+                <span id="appCSER" x-text="$store.program.courses.cser ? '👍' : '👎'">&nbsp;</span>
               </p>
-              <p>
+              <p title="Academic Enrichment means you can attend this program without taking a course">
                 <strong>Academic Enrichment</strong>
                 <br/>
-                <i>Coming Soon</i>
+                <span id="appAcademicEnrichment" x-text="$store.program.courses.academicEnrichment ? '👍' : '👎'">&nbsp;</span>
               </p>
+              <hr/>
             {% else %}
               &nbsp;
             {% endif %}

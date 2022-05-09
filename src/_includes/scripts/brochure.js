@@ -5,16 +5,17 @@ function replaceHTML({
   defaultSource = false,
   prefix = '',
   suffix = '',
-  toData = false,
-  toString = function (source) {
+  mangleData = false,
+  mangleString = function (source) {
     return source;
   },
-  passChecks = function (source, dest) {
-    return source && dest.length;
+  passChecks = function (source) {
+    return source;
   }
 }) {
   try {
-    if (!sourceSelector && !destSelector) return undefined;
+    if (!sourceSelector) return undefined;
+
     const source =
       typeof sourceSelector === 'string'
         ? $(sourceSelector)
@@ -27,27 +28,30 @@ function replaceHTML({
           .contents()
           .filter(function () {
             return this.nodeType == 3;
-          })[0]
-          .nodeValue.trim()
+          })
+          .text()
+          .trim()
       : defaultSource;
 
-    if (!Array.isArray(destSelector)) destSelector = [destSelector];
-    const dest = destSelector.map((selector) => $(selector));
-
-    if (!passChecks(sourceValue || defaultSource, dest)) return undefined;
+    if (!passChecks(sourceValue || defaultSource)) return undefined;
 
     const finalValue = sourceValue || defaultSource;
 
-    dest.forEach((element) =>
-      element.html(
-        (appendDest ? element.html() : '') +
-          prefix +
-          toString(finalValue) +
-          suffix
-      )
-    );
+    if (destSelector) {
+      if (!Array.isArray(destSelector)) destSelector = [destSelector];
+      const dest = destSelector.map((selector) => $(selector));
 
-    return toData ? toData(finalValue) : toString(finalValue);
+      dest.forEach((element) =>
+        element.html(
+          (appendDest ? element.html() : '') +
+            prefix +
+            mangleString(finalValue) +
+            suffix
+        )
+      );
+    }
+
+    return mangleData ? mangleData(finalValue) : mangleString(finalValue);
   } catch (error) {
     console.warn(error);
     return undefined;
@@ -108,7 +112,11 @@ function getDefaultBackground(title) {
     }
   }
 
-  baseLink + '21698';
+  return baseLink + '21698';
+}
+
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
 }
 
 document.addEventListener('alpine:init', () => {
@@ -118,6 +126,15 @@ document.addEventListener('alpine:init', () => {
     endDate: undefined,
     appDeadline: undefined,
     id: undefined,
+    term: undefined,
+    schools: [],
+    departments: [],
+    courses: {
+      all: [],
+      cser: undefined,
+      academicEnrichment: undefined
+    },
+    locations: [],
     canApply: true,
 
     init() {
@@ -133,12 +150,10 @@ document.addEventListener('alpine:init', () => {
         sourceSelector: `#pagebody > div.panel.panel-primary > div.table-responsive > table > tbody > tr:nth-child(${dateRow}) > td:nth-child(5) > span`,
         destSelector: '#appSubtitle',
         defaultSource: 'Program Dates TBA',
-        toString: (source) => formatDate(source.replace(/\*/g, '').trim()),
-        toData: (source) => new Date(source),
-        passChecks: (source, dest) =>
-          source &&
-          (validDate(source) || source === 'Program Dates TBA') &&
-          dest.length
+        mangleString: (source) => formatDate(source.replace(/\*/g, '').trim()),
+        mangleData: (source) => new Date(source),
+        passChecks: (source) =>
+          source && (validDate(source) || source === 'Program Dates TBA')
       });
 
       // END DATE
@@ -147,9 +162,9 @@ document.addEventListener('alpine:init', () => {
         destSelector: '#appSubtitle',
         appendDest: true,
         prefix: ' – ',
-        toString: (source) => formatDate(source.replace(/\*/g, '').trim()),
-        toData: (source) => new Date(source),
-        passChecks: (source, dest) => source && validDate(source) && dest.length
+        mangleString: (source) => formatDate(source.replace(/\*/g, '').trim()),
+        mangleData: (source) => new Date(source),
+        passChecks: (source) => source && validDate(source)
       });
 
       // APP DEADLINE
@@ -157,10 +172,10 @@ document.addEventListener('alpine:init', () => {
         sourceSelector: `#pagebody > div.panel.panel-primary > div.table-responsive > table > tbody > tr:nth-child(${dateRow}) > td:nth-child(3) > span`,
         destSelector: '#appApplicationDeadline',
         prefix: 'Applications Due By ',
-        toString: (source) =>
+        mangleString: (source) =>
           formatDate(source.replace(/\*/g, '').trim(), false),
-        toData: (source) => new Date(source),
-        passChecks: (source, dest) => source && validDate(source) && dest.length
+        mangleData: (source) => new Date(source),
+        passChecks: (source) => source && validDate(source)
       });
 
       // TITLE
@@ -169,13 +184,67 @@ document.addEventListener('alpine:init', () => {
           '#pagebodycontent > div.page-header > div > h3.col-sm-10',
         destSelector: ['#appTitle', '#appCurrentBreadcrumb'],
         defaultSource: 'Program Brochure',
-        toString: (source) =>
+        mangleString: (source) =>
           source
             .replace(/LU Send - /g, '')
             .replace(/LU Send Domestic - /g, '')
             .replace(/LUS - /g, '')
             .trim()
       });
+
+      // TERM
+      this.term =
+        replaceHTML({
+          sourceSelector: '[id^=id_11029]'
+        }) || '';
+
+      // SCHOOLS
+      this.schools =
+        replaceHTML({
+          sourceSelector: '[id^=id_11034]',
+          mangleData: (source) => source.split(', ')
+        }) || [];
+
+      // DEPARTMENTS
+      this.departments =
+        replaceHTML({
+          sourceSelector: '[id^=id_11035]',
+          mangleData: (source) => source.split(', ')
+        }) || [];
+
+      // LOCATIONS
+      this.locations =
+        replaceHTML({
+          sourceSelector:
+            '#pagebodycontent div.row div.col-sm-8.col-lg-9 ul li:nth-child(1) span',
+          mangleString: (source) => source.split(';').join(' | '),
+          mangleData: (source) =>
+            source.split(';').map((item) => ({
+              city: item.split(', ')[0],
+              country: item.split(', ')[1]
+            }))
+        }) || [];
+
+      // COURSES
+      this.courses.all =
+        replaceHTML({
+          sourceSelector: '[id^=id_11010]',
+          mangleData: (source) => {
+            source.split(', ').filter((item) => {
+              if (item.toLowerCase() === 'cser') {
+                this.course.cser = true;
+                return false;
+              }
+
+              if (item.toLowerCase() === 'not for credit') {
+                this.course.academicEnrichment = true;
+                return false;
+              }
+
+              return true;
+            });
+          }
+        }) || [];
 
       // REQUEST INFO
       if ($('#appRequestInfo').length && gup('Program_ID'))
