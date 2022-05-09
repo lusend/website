@@ -636,7 +636,7 @@ async function importBrochure(importData) {
           const other = data.other;
 
           if (other.background) {
-            Alpine.store('background') = other.background;
+            Alpine.store('background', other.background);
           }
         }
       }, 0);
