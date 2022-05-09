@@ -575,7 +575,10 @@ async function exportBrochure(programID) {
 
   let finalHTML = parser.parseFromString(strippedHTML, 'text/html');
   for (const [section, editor] of Object.entries(window.tiptapEditors)) {
-    const tempHTML = editor.getHTML();
+    const tempHTML =
+      section === 'appGlance'
+        ? finalHTML.getElementById(section).innerHTML + editor.getHTML()
+        : editor.getHTML();
     finalHTML.getElementById(section).innerHTML =
       tempHTML === '<p></p>' ? '&nbsp;' : tempHTML;
     finalHTML.getElementById(section).removeAttribute('x-data');
