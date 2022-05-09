@@ -46,6 +46,14 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
   eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
+  eleventyConfig.addNunjucksFilter('printCode', (code) => {
+    try {
+      return JSON.stringify(code).replace(/\"/g, "'");
+    } catch (error) {
+      console.error('JSON Parse Error for Print Filter: ', error);
+      return code;
+    }
+  });
   eleventyConfig.addNunjucksAsyncFilter('postcss', renderPostCSS);
   eleventyConfig.addNunjucksAsyncFilter('link', (slug, callback) =>
     callback(null, `https://liberty-sa.terradotta.com?go=${slug}`)

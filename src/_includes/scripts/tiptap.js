@@ -572,6 +572,7 @@ async function exportBrochure(programID) {
   const parser = new DOMParser();
 
   const finalJSON = {};
+
   let finalHTML = parser.parseFromString(strippedHTML, 'text/html');
   for (const [section, editor] of Object.entries(window.tiptapEditors)) {
     const tempHTML = editor.getHTML();
@@ -581,19 +582,31 @@ async function exportBrochure(programID) {
     finalJSON[section] = editor.getJSON();
   }
 
-  finalJSON.other = {
-    background: window.backgroundImage
-  };
-
   finalHTML.getElementById('app').appendChild(pdfListener());
+
+  finalJSON.other = {};
+
+  if (Alpine.store('background')) {
+    finalJSON.other.background = Alpine.store('background');
+    if (!Alpine.store('background').endsWith('21698'))
+      finalHTML
+        .getElementById('app')
+        .setAttribute(
+          'x-init',
+          `$store.background = '${Alpine.store('background')}'`
+        );
+    else
+      finalHTML
+        .getElementById('app')
+        .setAttribute(
+          'x-init',
+          `$store.background = getDefaultBackground($store.program.title)`
+        );
+  }
+
   finalHTML
     .getElementById('app')
     .appendChild(addGlobalVar('appData', finalJSON));
-
-  if (window.backgroundImage)
-    finalHTML
-      .getElementById('appBackground')
-      .setAttribute('x-init', `background = '${window.backgroundImage}'`);
 
   await navigator.clipboard.writeText(
     finalHTML.head.innerHTML + finalHTML.body.innerHTML
@@ -623,7 +636,7 @@ async function importBrochure(importData) {
           const other = data.other;
 
           if (other.background) {
-            window.backgroundImage = other.background;
+            Alpine.store('program').background = other.background;
             document.getElementById(
               'appBackground'
             ).style.backgroundImage = `url('${other.background}')`;

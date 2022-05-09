@@ -68,5 +68,9 @@ function resizeSVG() {
   svg.style.height = Math.ceil(window.innerWidth * ratio);
 }
 
+document.addEventListener('alpine:init', () => {
+  Alpine.store('background', '');
+});
+
 window.addEventListener('load', resizeSVG);
 window.addEventListener('resize', resizeSVG);

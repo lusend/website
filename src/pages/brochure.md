@@ -3,7 +3,7 @@ title: Brochure Title
 type: brochure
 planes: false
 header: true
-background: https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35684
+background: https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21698
 nav:
   title: Brochure
   parent: home
