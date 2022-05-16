@@ -5,7 +5,7 @@
         <div class="flex flex-col max-w-[65ch]">
           {% include "./breadcrumbs.njk" %}
           <div class="prose">
-            <h1 id="appTitle" class="text-center navMD:text-left text-primary-content">{{ title }}</h1>
+            <h1 id="appTitle" class="text-center navMD:text-left text-primary-content" {% if type === 'brochure' %} x-text="$store.program.title" {% endif %}>{{ title }}</h1>
           </div>
           {% if author !== false or type === 'brochure' %}
             <div id="appSubtitle" class="mt-3 text-sm text-center {% if background %} text-white {% else %} text-base-300 {% endif %} navMD:text-left navMD:mt-0">

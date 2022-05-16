@@ -139,6 +139,21 @@
           theme: 'light',
           arrow: tippy.roundArrow
         })
+
+        const changeBrochureSettings = document.getElementById('changeBrochureSettings-template')
+        changeBrochureSettings.style.display = 'block'
+
+        tippy("#changeBrochureSettings", {
+          content: changeBrochureSettings,
+          allowHTML: true,
+          trigger: "click",
+          interactive: true,
+          theme: 'light',
+          arrow: tippy.roundArrow,
+          popperOptions: {
+            positionFixed: true
+          }
+        })
       })
     </script>
 

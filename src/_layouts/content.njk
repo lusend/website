@@ -323,11 +323,29 @@
             <ion-icon name="copy" class="text-2xl text-white">&nbsp;</ion-icon>
             <span>Export Brochure</span>
           </button>
-          <button id="changeBackgroundButton" x-on:click="$store.background = prompt('Enter the link to the Background Image:', $store.background) || $store.background" class="flex items-center justify-center flex-1 gap-2 px-4 py-2 rounded-xl bg-secondary hover:bg-secondary-focus text-secondary-content">
-            <ion-icon name="copy" class="text-2xl text-white">&nbsp;</ion-icon>
-            <span>Change Background</span>
+          <button id="changeBrochureSettings" class="flex items-center justify-center flex-1 gap-2 px-4 py-2 rounded-xl bg-secondary hover:bg-secondary-focus text-secondary-content">
+            <ion-icon name="settings" class="text-2xl text-white">&nbsp;</ion-icon>
+            <span>Change Brochure Settings</span>
           </button>
-          <button  id="importBrochureButton" x-init="clipboard = !programID ? '' : await navigator.clipboard.readText();" x-effect="importBrochure(clipboard)" x-on:click="clipboard = prompt('If it did not import automatically, try pasting your clipboard here. You can also try going back to the brochure and clicking the edit button again.', clipboard)"  x-show="url !== 'liberty-sa.terrradotta.com'" class="flex items-center justify-center flex-1 gap-2 px-4 py-2 rounded-xl bg-accent hover:bg-accent-focus text-accent-content">
+          <div id="changeBrochureSettings-template" style="display: none;">
+            <div class="w-72 p-2 flex flex-col gap-1 z-50">
+              <div x-data="{ useCustomBackground: false }" x-init="useCustomBackground = $store.background.endsWith('21698') ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
+                <div x-on:change="$store.background = useCustomBackground ? $store.background.endsWith('21698') ? '' : $store.background : 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21698'" class="inline-flex items-center gap-1 w-full">
+                  <input id="brochureBackground" type="checkbox" x-model="useCustomBackground"/>
+                  <label for="brochureBackground" class="m-0 leading-tight">Use Custom Background</label>
+                </div>
+                <input type="text" x-show="useCustomBackground" x-model="$store.background" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Background URL" x-cloak/>
+              </div>
+              <div x-data="{ useCustomTitle: false }" x-init="useCustomTitle = $store.program.title ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
+                <div x-on:change="$store.program.title = useCustomTitle ? $store.program.title : $store.program.setTitle()" class="inline-flex items-center gap-1 w-full">
+                  <input id="brochureTitle" type="checkbox" x-model="useCustomTitle"/>
+                  <label for="brochureTitle" class="m-0 leading-tight">Use Custom Title</label>
+                </div>
+                <input type="text" x-show="useCustomTitle" x-model="$store.program.title" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Background URL" x-cloak/>
+              </div>
+            </div>
+          </div>
+          <button id="importBrochureButton" x-init="clipboard = !programID ? '' : await navigator.clipboard.readText();" x-effect="importBrochure(clipboard)" x-on:click="clipboard = prompt('If it did not import automatically, try pasting your clipboard here. You can also try going back to the brochure and clicking the edit button again.', clipboard)"  x-show="url !== 'liberty-sa.terrradotta.com'" class="flex items-center justify-center flex-1 gap-2 px-4 py-2 rounded-xl bg-accent hover:bg-accent-focus text-accent-content">
             <ion-icon name="clipboard" class="text-2xl text-white">&nbsp;</ion-icon>
             <span>Import Brochure</span>
           </button>
