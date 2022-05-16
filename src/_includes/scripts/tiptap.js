@@ -441,7 +441,6 @@ document.addEventListener('alpine:init', () => {
         });
 
         this.txtColorPicker.on('input:change', (color) => {
-          console.log(color.rgbaString);
           this.setColor(color.rgbaString);
         });
       },
