@@ -64,11 +64,24 @@
   margin-bottom: 0;
 }
 
-#app #appMainContent li > p {
-  @apply m-0;
+.prose :where(tbody th):not(:where([class~='not-prose'] *)) {
+  vertical-align: middle;
+  padding: 0.5714286em;
 }
 
-#app #appMainContent blockquote > p {
+.prose :where(tbody th:first-child):not(:where([class~='not-prose'] *)) {
+  padding-left: 0;
+}
+
+.prose :where(tbody th:last-child):not(:where([class~='not-prose'] *)) {
+  padding-right: 0;
+}
+
+#app :is(#appMainContent, #mycontent) td > p,
+#app :is(#appMainContent, #mycontent) td > p,
+#app :is(#appMainContent, #mycontent) th > p,
+#app :is(#appMainContent, #mycontent) blockquote > p,
+#app :is(#appMainContent, #mycontent) li > p {
   @apply m-0;
 }
 
@@ -89,29 +102,47 @@
   @apply w-full rounded-md overflow-hidden;
 }
 
-#app #appMainContent .menu .is-active {
+#app :is(#appMainContent, #mycontent) .menu .is-active {
   @apply bg-primary text-white;
 }
 
-#app #appMainContent .menu button[disabled] {
+#app :is(#appMainContent, #mycontent) .menu button[disabled] {
   @apply !text-primary-content-fade hover:!bg-transparent hover:!text-primary-content-fade;
 }
 
 #app
-  #appMainContent
-  > div[id^='app']:not([id='appMenu'])
+  :is(#appMainContent, #mycontent)
+  > div[id^='app']:not([id='appMenu'], [id='appMainContent'])
   > :where(:first-child):not(:where([class~='not-prose'] *)) {
   @apply mt-0;
 }
+
 #app
-  #appMainContent
-  > div[id^='app']:not([id='appMenu'])
+  :is(#appMainContent, #mycontent)
+  > div[id^='app']:not([id='appMenu'], [id='appMainContent'])
   > :where(:lasat-child):not(:where([class~='not-prose'] *)) {
   @apply mb-0;
 }
 
-#app #appMainContent > div[id^='app']:not([id='appMenu']) > .ProseMirror {
+#app
+  :is(#appMainContent, #mycontent)
+  > div[id^='app']:not([id='appMenu'], [id='appMainContent'])
+  > .ProseMirror {
   @apply border-x-[3px] border-b-[3px] rounded-b-lg border-primary py-5 px-3 max-w-[85ch];
+}
+
+#app
+  :is(#appMainContent, #mycontent)
+  > div[id^='app']:not([id='appMenu'], [id='appMainContent'], .active) {
+  @apply pointer-events-none;
+}
+
+#app
+  :is(#appMainContent, #mycontent)
+  > div[id^='app']:not([id='appMenu'], [id='appMainContent'], .active)
+  > .ProseMirror::before {
+  @apply w-full h-full absolute right-0 left-0 top-0 bottom-0 rounded-b-lg bg-base-300 bg-opacity-80 backdrop-blur-3xl pointer-events-none z-10;
+  content: '';
 }
 
 #app div[id^='pdf'] {
@@ -132,67 +163,21 @@
   @apply absolute top-0 left-0 h-full w-full rounded-md overflow-hidden;
 }
 
-#app .tip {
-  @apply relative inline-block text-center;
-  --tooltip-offset: calc(100% + 1px + var(--tooltip-tail, 0px));
-  --tooltip-tail-offset: calc(100% + 1px - var(--tooltip-tail));
-  --tooltip-tail: 3px;
-}
-
-#app .tip:before {
-  @apply max-w-xs rounded px-2 py-1 text-xs font-mono absolute bg-primary text-primary-content w-max;
-  pointer-events: none;
-}
-
-#app .tip:before,
-#app .tip:after {
-  @apply opacity-0 transition-all duration-100 ease-in-out z-50;
-}
-
-#app .tip:hover:before,
-#app .tip:hover:after {
-  @apply opacity-100 delay-1000;
-}
-
-#app .tip:after {
-  @apply absolute;
-}
-
-#app .tip:before {
-  content: attr(data-tip);
-}
-
-#app .tip:after {
-  content: '';
-  border-style: solid;
-  border-width: var(--tooltip-tail, 0);
-  width: 0;
-  height: 0;
-  display: block;
-  position: absolute;
-}
-
-#app .tip {
-  &:before {
-    transform: translateX(-50%);
-    top: var(--tooltip-offset);
-    left: 50%;
-    right: auto;
-    bottom: auto;
-  }
-
-  &:after {
-    @apply border-transparent !border-b-primary;
-    transform: translateX(-50%);
-    top: var(--tooltip-tail-offset);
-    left: 50%;
-    right: auto;
-    bottom: auto;
-  }
-}
-
 #app ul > li::marker {
   @apply !text-neutral-focus;
+}
+
+#app mark {
+  @apply p-0 bg-[#ff0];
+  color: unset;
+}
+
+.tippy-box[data-theme~='light'] {
+  @apply bg-primary rounded-lg backdrop-blur-sm shadow-md;
+}
+
+.tippy-box[data-theme~='light'] > .tippy-svg-arrow {
+  fill: #0a254e;
 }
 
 #app ul[data-type='taskList'] {

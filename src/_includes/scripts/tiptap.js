@@ -289,9 +289,14 @@ document.addEventListener('alpine:init', () => {
             }).configure({
               openOnClick: false
             }),
-            Image.configure({
-              HTMLAttributes: {
-                class: 'header'
+            Image.extend({
+              addAttributes() {
+                return {
+                  ...this.parent?.(),
+                  class: {
+                    default: ''
+                  }
+                };
               }
             }),
             Superscript,
@@ -310,7 +315,18 @@ document.addEventListener('alpine:init', () => {
             TableCell,
             Highlight.configure({ multicolor: true }),
             Heading.configure({ levels: [1, 2, 3] }),
-            TextAlign.configure({ types: ['heading', 'paragraph'] }),
+            TextAlign.extend({
+              addKeyboardShortcuts() {
+                return {
+                  'Mod-Alt-l': () => this.editor.commands.setTextAlign('left'),
+                  'Mod-Alt-e': () =>
+                    this.editor.commands.setTextAlign('center'),
+                  'Mod-Alt-r': () => this.editor.commands.setTextAlign('right'),
+                  'Mod-Alt-j': () =>
+                    this.editor.commands.setTextAlign('justify')
+                };
+              }
+            }).configure({ types: ['heading', 'paragraph'] }),
             Placeholder.configure({
               placeholder: 'Your Content Goes Here...'
             }),
@@ -338,7 +354,9 @@ document.addEventListener('alpine:init', () => {
         window.tiptapEditors = editors;
 
         this.$data.editor = () => {
-          return editors[this.currentId];
+          return this.aagFocused
+            ? editors[this.aagFocused]
+            : editors[this.currentId];
         };
       }
     };
@@ -346,10 +364,92 @@ document.addEventListener('alpine:init', () => {
 
   Alpine.data('menu', () => {
     return {
-      init() {},
-      isActive(type, lastUpdate) {
+      bgColorPicker: null,
+      txtColorPicker: null,
+      init() {
+        this.bgColorPicker = new iro.ColorPicker(
+          '#template-tt-background-color',
+          {
+            width: 250,
+            color: 'rgba(55, 65, 81, 1)',
+            borderWidth: 1,
+            borderColor: '#fff',
+            layout: [
+              {
+                component: iro.ui.Slider,
+                options: {
+                  sliderType: 'hue'
+                }
+              },
+              {
+                component: iro.ui.Slider,
+                options: {
+                  sliderType: 'saturation'
+                }
+              },
+              {
+                component: iro.ui.Slider,
+                options: {
+                  sliderType: 'value'
+                }
+              },
+              {
+                component: iro.ui.Slider,
+                options: {
+                  sliderType: 'alpha'
+                }
+              }
+            ]
+          }
+        );
+
+        this.txtColorPicker = new iro.ColorPicker('#template-tt-text-color', {
+          width: 250,
+          color: 'rgba(55, 65, 81, 1)',
+          borderWidth: 1,
+          borderColor: '#fff',
+          layout: [
+            {
+              component: iro.ui.Slider,
+              options: {
+                sliderType: 'hue'
+              }
+            },
+            {
+              component: iro.ui.Slider,
+              options: {
+                sliderType: 'saturation'
+              }
+            },
+            {
+              component: iro.ui.Slider,
+              options: {
+                sliderType: 'value'
+              }
+            },
+            {
+              component: iro.ui.Slider,
+              options: {
+                sliderType: 'alpha'
+              }
+            }
+          ]
+        });
+
+        this.bgColorPicker.on('input:change', (color) => {
+          this.setBackground(color.rgbaString);
+        });
+
+        this.txtColorPicker.on('input:change', (color) => {
+          console.log(color.rgbaString);
+          this.setColor(color.rgbaString);
+        });
+      },
+      isActive(type, lastUpdate, options = {}) {
         // lastUpdate forces a rerender
-        return this.$data.editor() && this.$data.editor().isActive(type);
+        return (
+          this.$data.editor() && this.$data.editor().isActive(type, options)
+        );
       },
       toggleBold() {
         return (
@@ -379,6 +479,193 @@ document.addEventListener('alpine:init', () => {
         return (
           this.$data.editor() &&
           this.$data.editor().chain().toggleItalic().focus().run()
+        );
+      },
+      toggleSuperscript() {
+        return (
+          this.$data.editor() &&
+          this.$data.editor().chain().toggleSuperscript().focus().run()
+        );
+      },
+      toggleSubscript() {
+        return (
+          this.$data.editor() &&
+          this.$data.editor().chain().toggleSubscript().focus().run()
+        );
+      },
+      toggleBulletList() {
+        return (
+          this.$data.editor() &&
+          this.$data.editor().chain().toggleBulletList().focus().run()
+        );
+      },
+      toggleOrderedList() {
+        return (
+          this.$data.editor() &&
+          this.$data.editor().chain().toggleOrderedList().focus().run()
+        );
+      },
+      toggleTaskList() {
+        return (
+          this.$data.editor() &&
+          this.$data.editor().chain().toggleTaskList().focus().run()
+        );
+      },
+      toggleCodeBlock() {
+        return (
+          this.$data.editor() &&
+          this.$data.editor().chain().toggleCodeBlock().focus().run()
+        );
+      },
+      toggleBlockquote() {
+        return (
+          this.$data.editor() &&
+          this.$data.editor().chain().toggleBlockquote().focus().run()
+        );
+      },
+      toggleBlockquote() {
+        return (
+          this.$data.editor() &&
+          this.$data.editor().chain().toggleBlockquote().focus().run()
+        );
+      },
+      setHardBreak() {
+        return (
+          this.$data.editor() &&
+          this.$data.editor().chain().setHardBreak().focus().run()
+        );
+      },
+      setHorizontalRule() {
+        return (
+          this.$data.editor() &&
+          this.$data.editor().chain().setHorizontalRule().focus().run()
+        );
+      },
+      toggleTable() {
+        if (!this.isActive('table'))
+          return (
+            this.$data.editor() &&
+            this.$data
+              .editor()
+              .chain()
+              .insertTable({ rows: 3, cols: 3, withHeaderRow: true })
+              .focus()
+              .run()
+          );
+
+        return (
+          this.$data.editor() &&
+          this.$data.editor().chain().deleteTable().focus().run()
+        );
+      },
+      deleteRow() {
+        return (
+          this.$data.editor() &&
+          this.$data.editor().chain().deleteRow().focus().run()
+        );
+      },
+      addRowAfter() {
+        return (
+          this.$data.editor() &&
+          this.$data.editor().chain().addRowAfter().focus().run()
+        );
+      },
+      deleteColumn() {
+        return (
+          this.$data.editor() &&
+          this.$data.editor().chain().deleteColumn().focus().run()
+        );
+      },
+      addColumnAfter() {
+        return (
+          this.$data.editor() &&
+          this.$data.editor().chain().addColumnAfter().focus().run()
+        );
+      },
+      setColor(color) {
+        return (
+          this.$data.editor() &&
+          this.$data.editor().chain().focus().setColor(color).run()
+        );
+      },
+      toggleColor() {
+        if (this.isActive('textStyle')) {
+          this.bgColorPicker.color.rgbaString = 'rgba(55, 65, 81, 1)';
+          return (
+            this.$data.editor() &&
+            this.$data.editor().chain().focus().unsetColor().run()
+          );
+        }
+
+        const color = 'rgba(255, 33, 33, 1)';
+        this.bgColorPicker.color.rgbaString = color;
+        return (
+          this.$data.editor() &&
+          this.$data.editor().chain().focus().setColor(color).run()
+        );
+      },
+      getColor(lastUpdate) {
+        // lastUpdate forces a rerender
+        const color =
+          (this.$data.editor() &&
+            this.$data.editor().getAttributes('textStyle').color) ||
+          'rgba(55, 65, 81, 1)';
+
+        if (this.txtColorPicker.color.rgbaString !== color)
+          this.txtColorPicker.color.rgbaString = color;
+
+        return color;
+      },
+      setBackground(color) {
+        return (
+          this.$data.editor() &&
+          this.$data.editor().chain().focus().setHighlight({ color }).run()
+        );
+      },
+      toggleBackground() {
+        if (this.isActive('highlight')) {
+          this.bgColorPicker.color.rgbaString = 'rgba(55, 65, 81, 1)';
+          return (
+            this.$data.editor() &&
+            this.$data.editor().chain().focus().unsetHighlight().run()
+          );
+        }
+
+        const color = 'rgba(255, 255, 0, 1)';
+        this.bgColorPicker.color.rgbaString = color;
+        return (
+          this.$data.editor() &&
+          this.$data.editor().chain().focus().setHighlight({ color }).run()
+        );
+      },
+      getBackground(lastUpdate) {
+        // lastUpdate forces a rerender
+        const color =
+          (this.$data.editor() &&
+            this.$data.editor().getAttributes('highlight').color) ||
+          'rgba(55, 65, 81, 1)';
+
+        if (this.bgColorPicker.color.rgbaString !== color)
+          this.bgColorPicker.color.rgbaString = color;
+
+        return color;
+      },
+      setTextAlign(align) {
+        return (
+          this.$data.editor() &&
+          this.$data.editor().chain().focus().setTextAlign(align).run()
+        );
+      },
+      setHeading(level) {
+        return (
+          this.$data.editor() &&
+          this.$data.editor().chain().focus().setHeading({ level }).run()
+        );
+      },
+      setParagraph() {
+        return (
+          this.$data.editor() &&
+          this.$data.editor().chain().focus().setParagraph().run()
         );
       },
       clearFormat() {
@@ -432,8 +719,6 @@ document.addEventListener('alpine:init', () => {
               .run()
           );
 
-        console.log(this.$data.editor().commands.setLink);
-
         return (
           this.$data.editor() &&
           this.$data
@@ -467,17 +752,41 @@ document.addEventListener('alpine:init', () => {
             .run()
         );
       },
-      createImage() {
+      createFullImage() {
         let previousImage =
-          this.$data.editor() &&
-          this.$data.editor().getAttributes('iframe').src;
-        let image = prompt('Enter the link to your Image: ', previousImage);
+          this.$data.editor() && this.$data.editor().getAttributes('image').src;
+        let image = prompt('Enter the link to your image: ', previousImage);
 
         if (!image) return;
 
         return (
           this.$data.editor() &&
-          this.$data.editor().chain().focus().setImage({ src: image }).run()
+          this.$data
+            .editor()
+            .chain()
+            .focus()
+            .setImage({ src: image, class: 'header full' })
+            .run()
+        );
+      },
+      createHeaderImage() {
+        let previousImage =
+          this.$data.editor() && this.$data.editor().getAttributes('image').src;
+        let image = prompt(
+          'Enter the link to your header image: ',
+          previousImage
+        );
+
+        if (!image) return;
+
+        return (
+          this.$data.editor() &&
+          this.$data
+            .editor()
+            .chain()
+            .focus()
+            .setImage({ src: image, class: 'header' })
+            .run()
         );
       },
       createPDF() {

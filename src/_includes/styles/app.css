@@ -5,7 +5,7 @@
     @apply h-44 object-cover object-center rounded-md w-full;
 
     &.full {
-      @apply h-full;
+      height: unset;
     }
   }
 
