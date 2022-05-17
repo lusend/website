@@ -154,6 +154,7 @@ function onlyUnique(value, index, self) {
 }
 
 document.addEventListener('alpine:init', () => {
+  Alpine.store('background', '');
   Alpine.store('program', {
     title: undefined,
     startDate: undefined,

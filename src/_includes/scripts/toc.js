@@ -1,12 +1,12 @@
 const toc = {
   container: document.querySelector('.table-of-contents-container'),
   element: document.querySelector('.table-of-contents'),
-  headings: [...document.querySelectorAll('h1[id], h2[id], h3[id]')].map(
-    (header) => ({
-      element: header,
-      link: header.querySelector('a')
-    })
-  ),
+  headings: [
+    ...document.querySelectorAll('#appMainContent h1[id], h2[id], h3[id]')
+  ].map((header) => ({
+    element: header,
+    link: header.querySelector('a')
+  })),
   links:
     document.querySelector('.table-of-contents') &&
     [...document.querySelector('.table-of-contents').querySelectorAll('a')].map(
