@@ -203,35 +203,60 @@
 
           <div class="h-5 my-1 w-[2px] rounded-md mx-2 bg-primary-content-fade">&nbsp;</div>
 
-          <span tabindex="0" data-tippy-content="Button Link">
-            <button id="tt-button" x-on:click="toggleButton()" x-bind:disabled="!isSelected(lastUpdate) && !isActive('link', lastUpdate)"  class="flex items-center justify-center p-1 transition-colors rounded-md w-7 h-7 hover:bg-primary hover:text-white">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M15.388 13.498l2.552 7.014-4.698 1.71-2.553-7.014-3.899 2.445L8.41 1.633l11.537 11.232-4.558.633zm-.011 5.818l-2.715-7.46 2.96-.41-5.64-5.49-.79 7.83 2.53-1.587 2.715 7.46.94-.343z" fill="currentColor"/></svg>
-            </button>
-          </span>
-          <span tabindex="0" data-tippy-content="URL Link">
-            <button id="tt-link" x-on:click="toggleLink()" x-bind:disabled="!isSelected(lastUpdate) && !isActive('link', lastUpdate)"  class="flex items-center justify-center p-1 transition-colors rounded-md w-7 h-7 hover:bg-primary hover:text-white">
+          <span tabindex="0" x-data="{ link: getLink(lastUpdate), target: getTarget(lastUpdate) === '_self' ? false : true, classes: getLinkClasses(lastUpdate) }" x-on:click="link = getLink(lastUpdate); target = getTarget(lastUpdate) === '_self' ? false : true; classes = getLinkClasses(lastUpdate)" data-tippy-content="URL Link">
+            <button id="tt-link" x-bind:disabled="!isSelected(lastUpdate) && !isActive('link', lastUpdate)" x-bind:class="isActive('link', lastUpdate) && 'is-active'" class="flex items-center justify-center p-1 transition-colors rounded-md w-7 h-7 hover:bg-primary hover:text-white">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M18.364 15.536L16.95 14.12l1.414-1.414a5 5 0 1 0-7.071-7.071L9.879 7.05 8.464 5.636 9.88 4.222a7 7 0 0 1 9.9 9.9l-1.415 1.414zm-2.828 2.828l-1.415 1.414a7 7 0 0 1-9.9-9.9l1.415-1.414L7.05 9.88l-1.414 1.414a5 5 0 1 0 7.071 7.071l1.414-1.414 1.415 1.414zm-.708-10.607l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z" fill="currentColor"/></svg>
             </button>
+            <div id="template-tt-link" class="p-2 prose w-72" style="display: none;">
+              <div class="w-full flex flex-col gap-4">
+                <div class="inline-flex items-center gap-1 w-full text-white">
+                  <input id="brochureTTLink" x-on:change="toggleLink(link, target, classes)" type="checkbox" x-model="target"/>
+                  <label for="brochureTTLink" class="m-0 leading-tight">Open Link in a New Tab</label>
+                </div>
+                <input type="text" x-on:input="toggleLink(link, target, classes)" placeholder="Set Your Link" x-model="link" class="p-1 rounded-md text-sm w-full" x-cloak/>
+                <select x-model="classes" x-on:change="toggleLink(link, target, classes)" class="rounded-md block w-full p-1 text-sm bg-opacity-80 border-1 border-primary-content-fade">
+                  <option value="">Normal Link</option>
+                  <option value="btn btn-primary">Primary</option>
+                  <option value="btn btn-secondary">Secondary</option>
+                  <option value="btn btn-accent">Accent</option>
+                </select>
+                <button class="full text-sm btn btn-secondary" x-show="isActive('link', lastUpdate)" x-on:click="toggleLink(false, false, false, true)">Clear Link</button>
+              </div>
+            </div>
           </span>
-          <span tabindex="0" data-tippy-content="Video Embed">
-            <button id="tt-embed"   x-on:click="createIframe()" class="flex items-center justify-center p-1 transition-colors rounded-md w-7 h-7 hover:bg-primary hover:text-white">
+          <span tabindex="0" x-data="{ embed: getIframe(lastUpdate) }" x-on:click="embed = getIframe(lastUpdate)" data-tippy-content="Video Embed">
+            <button id="tt-embed" x-bind:class="isActive('iframe', lastUpdate) && 'is-active'" class="flex items-center justify-center p-1 transition-colors rounded-md w-7 h-7 hover:bg-primary hover:text-white">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M2 3.993A1 1 0 0 1 2.992 3h18.016c.548 0 .992.445.992.993v16.014a1 1 0 0 1-.992.993H2.992A.993.993 0 0 1 2 20.007V3.993zM8 5v14h8V5H8zM4 5v2h2V5H4zm14 0v2h2V5h-2zM4 9v2h2V9H4zm14 0v2h2V9h-2zM4 13v2h2v-2H4zm14 0v2h2v-2h-2zM4 17v2h2v-2H4zm14 0v2h2v-2h-2z" fill="currentColor"/></svg>
             </button>
+            <div id="template-tt-embed" class="p-2 prose w-72" style="display: none;">
+              <div class="w-full flex flex-col gap-4">
+                <input type="text" x-on:change="setIframe(embed)" placeholder="Set Your Video Embed Link" x-model="embed" class="p-1 rounded-md text-sm w-full" x-cloak/>
+              </div>
+            </div>
           </span>
-          <span tabindex="0" data-tippy-content="PDF Embed">
-            <button id="tt-pdf" x-on:click="createPDF()" class="flex items-center justify-center p-1 transition-colors rounded-md w-7 h-7 hover:bg-primary hover:text-white">
+          <span tabindex="0" x-data="{ pdf: getPDF(lastUpdate) }" x-on:click="pdf = getPDF(lastUpdate)" data-tippy-content="PDF Embed">
+            <button id="tt-pdf" x-bind:class="isActive('pdf', lastUpdate) && 'is-active'" class="flex items-center justify-center p-1 transition-colors rounded-md w-7 h-7 hover:bg-primary hover:text-white">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M9 2.003V2h10.998C20.55 2 21 2.455 21 2.992v18.016a.993.993 0 0 1-.993.992H3.993A1 1 0 0 1 3 20.993V8l6-5.997zM5.83 8H9V4.83L5.83 8zM11 4v5a1 1 0 0 1-1 1H5v10h14V4h-8z" fill="currentColor"/></svg>
             </button>
+            <div id="template-tt-pdf" class="p-2 prose w-72" style="display: none;">
+              <div class="w-full flex flex-col gap-4">
+                <input type="text" x-on:change="setPDF(pdf)" placeholder="Set Your PDF Embed Link" x-model="pdf" class="p-1 rounded-md text-sm w-full" x-cloak/>
+              </div>
+            </div>
           </span>
-          <span tabindex="0" data-tippy-content="Image Header">
-            <button id="tt-image-header" x-on:click="createHeaderImage()" class="flex items-center justify-center p-1 transition-colors rounded-md w-7 h-7 hover:bg-primary hover:text-white">
+          <span tabindex="0" x-data="{ image: getImage(lastUpdate), classes: getImageClasses(lastUpdate) }" x-on:click="image = getImage(lastUpdate); classes = getImageClasses(lastUpdate)" data-tippy-content="Image">
+            <button id="tt-image" x-bind:class="isActive('image', lastUpdate) && 'is-active'" class="flex items-center justify-center p-1 transition-colors rounded-md w-7 h-7 hover:bg-primary hover:text-white">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M4.828 21l-.02.02-.021-.02H2.992A.993.993 0 0 1 2 20.007V3.993A1 1 0 0 1 2.992 3h18.016c.548 0 .992.445.992.993v16.014a1 1 0 0 1-.992.993H4.828zM20 15V5H4v14L14 9l6 6zm0 2.828l-6-6L6.828 19H20v-1.172zM8 11a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" fill="currentColor"/></svg>
             </button>
-          </span>
-          <span tabindex="0" data-tippy-content="Image Full">
-            <button id="tt-image-full" x-on:click="createFullImage()" class="flex items-center justify-center p-1 transition-colors rounded-md w-7 h-7 hover:bg-primary hover:text-white">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M11.27 12.216L15 6l8 15H2L9 8l2.27 4.216zm1.12 2.022L14.987 19h4.68l-4.77-8.942-2.507 4.18zM5.348 19h7.304L9 12.219 5.348 19zM5.5 8a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="currentColor"/></svg>
-            </button>
+            <div id="template-tt-image" class="p-2 prose w-72" style="display: none;">
+              <div class="w-full flex flex-col gap-4">
+                <input type="text" x-on:change="setImage(image, classes)" placeholder="Set Your Image Link" x-model="image" class="p-1 rounded-md text-sm w-full" x-cloak/>
+                <select x-model="classes" x-on:change="setImage(image, classes)" class="rounded-md block w-full p-1 text-sm bg-opacity-80 border-1 border-primary-content-fade">
+                  <option value="header full">Full Image</option>
+                  <option value="header">Header Image</option>
+                </select>
+              </div>
+            </div>
           </span>
 
           <div class="h-5 my-1 w-[2px] rounded-md mx-2 bg-primary-content-fade">&nbsp;</div>

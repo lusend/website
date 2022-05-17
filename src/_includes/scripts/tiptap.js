@@ -673,18 +673,15 @@ document.addEventListener('alpine:init', () => {
           this.$data.editor().chain().focus().unsetAllMarks().run()
         );
       },
-      toggleLink() {
-        let previousLink =
-          this.$data.editor() && this.$data.editor().getAttributes('link').href;
-        let link = prompt('Enter your URL Link: ', previousLink);
+      toggleLink(link, target, classes, clear) {
+        target = target === true ? '_blank' : '_self';
 
-        if (!link)
+        if (clear)
           return (
             this.$data.editor() &&
             this.$data
               .editor()
               .chain()
-              .focus()
               .extendMarkRange('link')
               .unsetLink()
               .run()
@@ -695,110 +692,90 @@ document.addEventListener('alpine:init', () => {
           this.$data
             .editor()
             .chain()
-            .focus()
             .extendMarkRange('link')
-            .setLink({ href: link, target: '_self' })
+            .setLink({ href: link, target, class: classes })
             .run()
         );
       },
-      toggleButton() {
-        let previousLink =
-          this.$data.editor() && this.$data.editor().getAttributes('link').href;
-        let link = prompt('Enter a URL for the Button: ', previousLink);
-
-        if (!link)
-          return (
-            this.$data.editor() &&
-            this.$data
-              .editor()
-              .chain()
-              .focus()
-              .extendMarkRange('link')
-              .unsetLink()
-              .run()
-          );
-
+      getLink(lastUpdate) {
+        // lastUpdate forces a rerender
+        return (
+          (this.$data.editor() &&
+            this.$data.editor().getAttributes('link').href) ||
+          ''
+        );
+      },
+      getTarget(lastUpdate) {
+        // lastUpdate forces a rerender
+        return (
+          (this.$data.editor() &&
+            this.$data.editor().getAttributes('link').target) ||
+          '_self'
+        );
+      },
+      getLinkClasses(lastUpdate) {
+        // lastUpdate forces a rerender
+        return (
+          (this.$data.editor() &&
+            this.$data.editor().getAttributes('link').class) ||
+          ''
+        );
+      },
+      setIframe(src) {
         return (
           this.$data.editor() &&
           this.$data
             .editor()
             .chain()
             .focus()
-            .extendMarkRange('link')
-            .setLink({
-              href: link,
-              target: '_blank',
-              class: 'btn btn-primary'
-            })
+            .setIframe({ src: manipulateEmbedURL(src) })
             .run()
         );
       },
-      createIframe() {
-        let previousIframe =
-          this.$data.editor() &&
-          this.$data.editor().getAttributes('iframe').src;
-        let iframe = prompt('Enter your Video Embed Link: ', previousIframe);
-
-        if (!iframe) return;
-
+      getIframe() {
+        return (
+          (this.$data.editor() &&
+            this.$data.editor().getAttributes('iframe').src) ||
+          ''
+        );
+      },
+      setImage(src, classes) {
         return (
           this.$data.editor() &&
           this.$data
             .editor()
             .chain()
             .focus()
-            .setIframe({ src: manipulateEmbedURL(iframe) })
+            .setImage({ src: src, class: classes })
             .run()
         );
       },
-      createFullImage() {
-        let previousImage =
-          this.$data.editor() && this.$data.editor().getAttributes('image').src;
-        let image = prompt('Enter the link to your image: ', previousImage);
-
-        if (!image) return;
-
+      getImage() {
         return (
-          this.$data.editor() &&
-          this.$data
-            .editor()
-            .chain()
-            .focus()
-            .setImage({ src: image, class: 'header full' })
-            .run()
+          (this.$data.editor() &&
+            this.$data.editor().getAttributes('image').src) ||
+          ''
         );
       },
-      createHeaderImage() {
-        let previousImage =
-          this.$data.editor() && this.$data.editor().getAttributes('image').src;
-        let image = prompt(
-          'Enter the link to your header image: ',
-          previousImage
-        );
-
-        if (!image) return;
-
+      getImageClasses(lastUpdate) {
+        // lastUpdate forces a rerender
         return (
-          this.$data.editor() &&
-          this.$data
-            .editor()
-            .chain()
-            .focus()
-            .setImage({ src: image, class: 'header' })
-            .run()
+          (this.$data.editor() &&
+            this.$data.editor().getAttributes('image').class) ||
+          'header full'
         );
       },
-      createPDF() {
-        let previousPDF =
-          this.$data.editor() && this.$data.editor().getAttributes('pdf').data;
-
-        let pdf = prompt('Enter the link to the PDF: ', previousPDF);
-
-        if (!pdf) return;
-
+      setPDF(pdf) {
         return (
           this.$data.editor() &&
           this.$data.editor().chain().focus().setPDF({ data: pdf }).run()
+        );
+      },
+      getPDF() {
+        return (
+          (this.$data.editor() &&
+            this.$data.editor().getAttributes('pdf').data) ||
+          ''
         );
       },
       canUndo(lastUpdate) {
