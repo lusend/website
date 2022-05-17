@@ -44,7 +44,7 @@
             <option value="appResources" x-show="document.getElementById('appResources').innerHTML.trim().slice(6)" x-cloak>Travel Resources</option>
             <option value="appSafety" x-show="document.getElementById('appSafety').innerHTML.trim().slice(6)" x-cloak>Travel Safety</option>
             <option value="appChecklist" x-show="document.getElementById('appChecklist').innerHTML.trim().slice(6)" x-cloak>Traveler Checklist</option>
-            <option value="appFlights" x-show="document.getElementById('appFlights').innerHTML.trim().slice(6)" x-cloak>Flight Itinerary</option>
+            <option value="appFlights" x-show="document.getElementById('appFlights').innerHTML.trim().slice(6)" x-cloak>Program Itinerary</option>
             <option value="appPacking" x-show="document.getElementById('appPacking').innerHTML.trim().slice(6)" x-cloak>Packing Guide</option>
           </select>
         </div>
@@ -77,7 +77,7 @@
             <li x-show="document.getElementById('appFlights').innerHTML.trim().slice(6)" x-cloak>
               <button href="#" x-on:click.prevent="currentId = 'appFlights'; window.location.hash = 'appFlights'" x-bind:class="currentId === 'appFlights' && '!text-accent !border-accent'" class="transition-colors inline-flex p-2.5 jusitfy-center items-center gap-1 rounded-t-lg border-b-2 border-neutral hover:text-primary-content hover:border-primary-content-fade group">
                 <ion-icon name="paper-plane">&nbsp;</ion-icon>
-                <span>Flight Itinerary</span>
+                <span>Program Itinerary</span>
               </button>
             </li>
             <li x-show="document.getElementById('appPacking').innerHTML.trim().slice(6)" x-cloak>
