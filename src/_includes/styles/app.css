@@ -29,6 +29,10 @@
       @apply bg-secondary hover:bg-secondary-focus;
     }
 
+    &-accent {
+      @apply bg-accent hover:bg-accent-focus;
+    }
+
     &-full {
       @apply block m-auto text-lg w-fit;
     }
