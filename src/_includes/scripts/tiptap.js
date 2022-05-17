@@ -904,15 +904,32 @@ async function exportBrochure(programID) {
         .getElementById('app')
         .setAttribute(
           'x-init',
-          `$store.background = '${Alpine.store('background')}'`
+          `$store.background = '${Alpine.store('background')}';`
         );
     else
       finalHTML
         .getElementById('app')
         .setAttribute(
           'x-init',
-          `$store.background = getDefaultBackground($store.program.title, $store.program.schools, $store.program.departments, $store.program.locations)`
+          `$store.background = getDefaultBackground($store.program.title, $store.program.schools, $store.program.departments, $store.program.locations);`
         );
+  }
+
+  if (Alpine.store('program')) {
+    for (let [key, value] of Object.entries(Alpine.store('program'))) {
+      if (value instanceof Function || key === 'dateRow') continue;
+      if (value === undefined) continue;
+      if (!finalJSON.other.program) finalJSON.other.program = {};
+
+      finalJSON.other.program[key] = value;
+      finalHTML
+        .getElementById('app')
+        .setAttribute(
+          'x-init',
+          finalHTML.getElementById('app').getAttribute('x-init') +
+            `$store.program.${key} = '${value}';`
+        );
+    }
   }
 
   finalHTML
@@ -948,6 +965,12 @@ async function importBrochure(importData) {
 
           if (other.background) {
             Alpine.store('background', other.background);
+          }
+
+          if (other.program) {
+            for (let [key, value] of Object.entries(other.program)) {
+              Alpine.store('program')[key] = value;
+            }
           }
         }
       }, 0);

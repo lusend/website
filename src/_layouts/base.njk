@@ -101,6 +101,9 @@
     <script src="https://unpkg.com/tippy.js@6"></script>
     <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/svg-arrow.css"/>
     <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+    {% if env === 'production' %}
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    {% endif %}
 
     <script>
       window.backgrounds = {{ backgrounds | printCode | safe }};

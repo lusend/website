@@ -1,61 +1,52 @@
-function replaceHTML({
-  sourceSelector = false,
-  destSelector = false,
-  appendDest = false,
-  defaultSource = false,
+function getSelectorContents({
+  selector = '',
+  defaultValue = undefined,
   prefix = '',
   suffix = '',
-  mangleData = false,
-  mangleString = function (source) {
-    return source;
+  verifyContent = function (str) {
+    return !!str;
   },
-  passChecks = function (source) {
-    return source;
+  formatString = function (str) {
+    return str;
+  },
+  formatData = function (str) {
+    return str;
   }
 }) {
-  try {
-    if (!sourceSelector) return undefined;
+  const source =
+    typeof selector === 'string' ? $(selector) : $('<p>' + selector() + '</p>');
 
-    const source =
-      typeof sourceSelector === 'string'
-        ? $(sourceSelector)
-        : $('<p>' + sourceSelector() + '</p>');
+  const results = {
+    data: undefined,
+    string: undefined,
+    value: undefined
+  };
 
-    if (!source.length && !defaultSource) return undefined;
+  if (!source.length && defaultValue === undefined) return results;
 
-    const sourceValue = source.length
-      ? source
-          .contents()
-          .filter(function () {
-            return this.nodeType == 3;
-          })
-          .text()
-          .trim()
-      : defaultSource;
+  const sourceValue = source.length
+    ? source
+        .contents()
+        .filter(function () {
+          return this.nodeType == 3;
+        })
+        .text()
+        .trim()
+    : defaultValue;
 
-    if (!passChecks(sourceValue || defaultSource)) return undefined;
-
-    const finalValue = sourceValue || defaultSource;
-
-    if (destSelector) {
-      if (!Array.isArray(destSelector)) destSelector = [destSelector];
-      const dest = destSelector.map((selector) => $(selector));
-
-      dest.forEach((element) =>
-        element.html(
-          (appendDest ? element.html() : '') +
-            prefix +
-            mangleString(finalValue) +
-            suffix
-        )
-      );
-    }
-
-    return mangleData ? mangleData(finalValue) : mangleString(finalValue);
-  } catch (error) {
-    console.warn(error);
-    return undefined;
+  if (!verifyContent(sourceValue)) {
+    const formattedString = formatString(defaultValue);
+    results.value = formattedString;
+    results.string = formattedString;
+    results.data = formatData(formattedString);
+    return results;
   }
+
+  const formattedString = formatString(sourceValue);
+  results.value = prefix + formattedString + suffix;
+  results.string = formattedString;
+  results.data = formatData(formattedString);
+  return results;
 }
 
 function validDate(str) {
@@ -156,163 +147,288 @@ function onlyUnique(value, index, self) {
 document.addEventListener('alpine:init', () => {
   Alpine.store('background', '');
   Alpine.store('program', {
-    title: undefined,
+    id: undefined,
+    dateRow: undefined,
+
     startDate: undefined,
     endDate: undefined,
     appDeadline: undefined,
-    id: undefined,
+    title: undefined,
     term: undefined,
-    schools: [],
-    departments: [],
-    courses: {
-      all: [],
-      cser: undefined,
-      academicEnrichment: undefined
+    schools: undefined,
+    departments: undefined,
+    countries: undefined,
+    cities: undefined,
+    courses: undefined,
+    cser: undefined,
+    academicEnrichment: undefined,
+    disableApply: undefined,
+
+    getDefaultStartDate() {
+      return getSelectorContents({
+        selector: `#pagebody > div.panel.panel-primary > div.table-responsive > table > tbody > tr:nth-child(${this.dateRow}) > td:nth-child(5) > span`,
+        defaultValue: 'Program Dates TBA',
+        formatData: function (str) {
+          return new Date(str);
+        },
+        formatString: function (str) {
+          return formatDate(str.replace(/\*/g, '').trim());
+        },
+        verifyContent: function (str) {
+          return str && validDate(str);
+        }
+      });
     },
-    locations: [],
-    canApply: true,
 
-    init() {
-      this.id = gup('Program_ID');
+    getStartDate() {
+      return this.startDate || this.getDefaultStartDate().value;
+    },
 
-      const dateRow =
-        $(
-          '#pagebody > div.panel.panel-primary > div.table-responsive > table > tbody > tr td[headers^=h_1]'
-        ).length + 1;
-
-      // START DATE
-      this.startDate = replaceHTML({
-        sourceSelector: `#pagebody > div.panel.panel-primary > div.table-responsive > table > tbody > tr:nth-child(${dateRow}) > td:nth-child(5) > span`,
-        destSelector: '#appSubtitle',
-        defaultSource: 'Program Dates TBA',
-        mangleString: (source) => formatDate(source.replace(/\*/g, '').trim()),
-        mangleData: (source) => new Date(source),
-        passChecks: (source) =>
-          source && (validDate(source) || source === 'Program Dates TBA')
+    getDefaultEndDate() {
+      return getSelectorContents({
+        selector: `#pagebody > div.panel.panel-primary > div.table-responsive > table > tbody > tr:nth-child(${this.dateRow}) > td:nth-child(6) > span`,
+        defaultValue: '',
+        formatData: function (str) {
+          return new Date(str);
+        },
+        formatString: function (str) {
+          return formatDate(str.replace(/\*/g, '').trim());
+        },
+        verifyContent: function (str) {
+          return str && validDate(str);
+        }
       });
+    },
 
-      // END DATE
-      this.endDate = replaceHTML({
-        sourceSelector: `#pagebody > div.panel.panel-primary > div.table-responsive > table > tbody > tr:nth-child(${dateRow}) > td:nth-child(6) > span`,
-        destSelector: '#appSubtitle',
-        appendDest: true,
-        prefix: ' – ',
-        mangleString: (source) => formatDate(source.replace(/\*/g, '').trim()),
-        mangleData: (source) => new Date(source),
-        passChecks: (source) => source && validDate(source)
-      });
+    getEndDate() {
+      return this.endDate || this.getDefaultEndDate().value;
+    },
 
-      // APP DEADLINE
-      this.appDeadline = replaceHTML({
-        sourceSelector: `#pagebody > div.panel.panel-primary > div.table-responsive > table > tbody > tr:nth-child(${dateRow}) > td:nth-child(3) > span`,
-        destSelector: '#appApplicationDeadline',
+    getDate() {
+      if (this.getEndDate())
+        return this.getStartDate() + ' - ' + this.getEndDate();
+      return this.getStartDate();
+    },
+
+    getDefaultAppDeadline() {
+      return getSelectorContents({
+        selector: `#pagebody > div.panel.panel-primary > div.table-responsive > table > tbody > tr:nth-child(${this.dateRow}) > td:nth-child(3) > span`,
         prefix: 'Applications Due By ',
-        mangleString: (source) =>
-          formatDate(source.replace(/\*/g, '').trim(), false),
-        mangleData: (source) => new Date(source),
-        passChecks: (source) => source && validDate(source)
+        defaultValue: 'Unknown Application Deadline',
+        formatData: function (str) {
+          return new Date(str);
+        },
+        formatString: function (str) {
+          return formatDate(str.replace(/\*/g, '').trim(), false);
+        },
+        verifyContent: function (str) {
+          return str && validDate(str);
+        }
       });
+    },
 
-      // TITLE
-      this.title = replaceHTML({
-        sourceSelector:
-          '#pagebodycontent > div.page-header > div > h3.col-sm-10',
-        destSelector: ['#appTitle', '#appCurrentBreadcrumb'],
-        defaultSource: 'Program Brochure',
-        mangleString: (source) =>
-          source
+    getAppDeadline() {
+      return this.appDeadline || this.getDefaultAppDeadline().value;
+    },
+
+    getDefaultTitle() {
+      return getSelectorContents({
+        selector: '#pagebodycontent > div.page-header > div > h3.col-sm-10',
+        defaultValue: 'Program Brochure',
+        formatString: function (str) {
+          return str
             .replace(/LU Send - /g, '')
             .replace(/LU Send Domestic - /g, '')
             .replace(/LUS - /g, '')
-            .trim()
+            .trim();
+        }
       });
+    },
 
-      // TERM
-      this.term =
-        replaceHTML({
-          sourceSelector: '[id^=id_11029]'
-        }) || '';
+    getTitle() {
+      return this.title || this.getDefaultTitle().value;
+    },
 
-      // SCHOOLS
-      this.schools =
-        replaceHTML({
-          sourceSelector: '[id^=id_11034]',
-          mangleData: (source) => source.split(', ')
-        }) || [];
+    getDefaultTerm() {
+      return getSelectorContents({
+        selector: '[id^=id_11029]',
+        defaultValue: 'N/A'
+      });
+    },
 
-      // DEPARTMENTS
-      this.departments =
-        replaceHTML({
-          sourceSelector: '[id^=id_11035]',
-          mangleData: (source) => source.split(', ')
-        }) || [];
+    getTerm() {
+      return this.term || this.getDefaultTerm().value;
+    },
 
-      // LOCATIONS
-      this.locations =
-        replaceHTML({
-          sourceSelector:
-            '#pagebodycontent div.row div.col-sm-8.col-lg-9 ul li:nth-child(1) span',
-          mangleString: (source) => source.split(';').join(' | '),
-          mangleData: (source) =>
-            source.split(';').map((item) => ({
-              city: item.split(', ')[0],
-              country: item.split(', ')[1]
-            }))
-        }) || [];
+    getDefaultSchools() {
+      return getSelectorContents({
+        selector: '[id^=id_11034]',
+        defaultValue: 'N/A',
+        formatData: function (str) {
+          return str.split(', ');
+        }
+      });
+    },
 
-      // COURSES
-      this.courses.all =
-        replaceHTML({
-          sourceSelector: '[id^=id_11010]',
-          mangleData: (source) =>
-            source.split(', ').filter((item) => {
-              if (item.toLowerCase() === 'cser') {
-                this.courses.cser = true;
-                return false;
-              }
+    getSchools() {
+      return this.schools || this.getDefaultSchools().value;
+    },
 
-              if (item.toLowerCase() === 'not for credit') {
-                this.courses.academicEnrichment = true;
-                return false;
-              }
+    getDefaultDepartments() {
+      return getSelectorContents({
+        selector: '[id^=id_11035]',
+        defaultValue: 'N/A',
+        formatData: function (str) {
+          return str.split(', ');
+        }
+      });
+    },
 
-              return true;
+    getDepartments() {
+      return this.departments || this.getDefaultDepartments().value;
+    },
+
+    getDefaultCountries() {
+      return getSelectorContents({
+        selector:
+          '#pagebodycontent div.row div.col-sm-8.col-lg-9 ul li:nth-child(1) span',
+        defaultValue: 'N/A',
+        formatString: function (str) {
+          return str
+            .split(';')
+            .map(function (item) {
+              const items = item.split(', ');
+              return items.length > 1 ? items[1] : items[0];
             })
-        }) || [];
+            .filter(onlyUnique)
+            .join(', ');
+        },
+        formatData: function (str) {
+          return str.split(', ');
+        }
+      });
+    },
 
-      // REQUEST INFO
-      if ($('#appRequestInfo').length && gup('Program_ID'))
-        $('#appRequestInfo').attr(
-          'href',
-          $('#appRequestInfo').attr('href') + gup('Program_ID')
-        );
+    getCountries() {
+      return this.countries || this.getDefaultCountries().value;
+    },
 
-      // APPLY NOW
-      if ($('#appApplyNow').length && gup('Program_ID'))
-        $('#appApplyNow').attr(
-          'href',
-          $('#appApplyNow').attr('href') + gup('Program_ID')
-        );
+    getDefaultCities() {
+      return getSelectorContents({
+        selector:
+          '#pagebodycontent div.row div.col-sm-8.col-lg-9 ul li:nth-child(1) span',
+        defaultValue: 'N/A',
+        formatString: function (str) {
+          return str
+            .split(';')
+            .map(function (item) {
+              return item.split(', ')[0];
+            })
+            .filter(onlyUnique)
+            .join(', ');
+        },
+        formatData: function (str) {
+          return str.split(', ');
+        }
+      });
+    },
 
-      // PAST APP DEADLINE
+    getCities() {
+      return this.cities || this.getDefaultCities().value;
+    },
+
+    getDefaultCourses() {
+      return getSelectorContents({
+        selector: '[id^=id_11010]',
+        defaultValue: 'N/A',
+        formatString: function (str) {
+          return str
+            .split(', ')
+            .filter(function (item) {
+              return (
+                item.toLowerCase() !== 'cser' &&
+                item.toLowerCase() !== 'not for credit'
+              );
+            })
+            .join(', ');
+        },
+        formatData: function (str) {
+          return str.split(', ');
+        }
+      });
+    },
+
+    getCourses() {
+      return this.courses || this.getDefaultCourses().value;
+    },
+
+    getDefaultCSER() {
+      return getSelectorContents({
+        selector: '[id^=id_11010]',
+        defaultValue: '👎',
+        formatString: function (str) {
+          return str.toLowerCase().includes('cser') ? '👍' : '👎';
+        },
+        formatData: function (str) {
+          return str.includes('👎') ? false : true;
+        }
+      });
+    },
+
+    getCSER() {
+      return this.cser || this.getDefaultCSER().value;
+    },
+
+    getDefaultAcademicEnrichment() {
+      return getSelectorContents({
+        selector: '[id^=id_11010]',
+        defaultValue: '👎',
+        formatString: function (str) {
+          return str.toLowerCase().includes('not for credit') ? '👍' : '👎';
+        },
+        formatData: function (str) {
+          return str.includes('👎') ? false : true;
+        }
+      });
+    },
+
+    getAcademicEnrichment() {
+      return (
+        this.academicEnrichment || this.getDefaultAcademicEnrichment().value
+      );
+    },
+
+    getDefaultDisableApply() {
       if (
         $('#appApplicationDeadline').length &&
-        this.appDeadline !== undefined &&
-        dateBeforeToday(this.appDeadline)
+        this.getDefaultAppDeadline().data &&
+        dateBeforeToday(this.getDefaultAppDeadline().data)
       ) {
-        this.canApply = 'The application deadline has already passed!';
+        return 'The application deadline has already passed!';
       }
 
-      // APPLY NOW DISABLED
       if (!$("button[onclick='ApplyNow();']").length)
-        this.canApply = 'New applications are currently disabled!';
+        return 'New applications are currently disabled!';
 
-      // EDIT BROCHURE
-      if ($('#appEdit').length && gup('Program_ID'))
-        $('#appEdit').attr(
-          'href',
-          $('#appEdit').attr('href') + gup('Program_ID')
-        );
+      return '';
+    },
+
+    getDisableApply() {
+      return this.disableApply === undefined
+        ? this.getDefaultDisableApply()
+        : this.disableApply;
+    },
+
+    init() {
+      this.id =
+        gup('Program_ID') === 'undefined'
+          ? undefined
+          : gup('Program_ID') || undefined;
+
+      this.dateRow =
+        $(
+          '#pagebody > div.panel.panel-primary > div.table-responsive > table > tbody > tr td[headers^=h_1]'
+        ).length + 1;
     }
   });
 });

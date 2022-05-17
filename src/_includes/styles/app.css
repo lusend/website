@@ -32,6 +32,10 @@
     &-full {
       @apply block m-auto text-lg w-fit;
     }
+
+    &[disabled] {
+      @apply cursor-not-allowed opacity-60;
+    }
   }
 
   #map {

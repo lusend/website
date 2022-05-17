@@ -12,48 +12,48 @@
           </h1>
           <div id="appGlance" {% if type === 'brochure' %} x-data="editor('appGlance', '<p><strong>Estimated Cost</strong><br/><i>Coming Soon</i></p>')" x-show="open" {% endif %} class="table-of-contents-container max-h-[calc(80vh-132px)] overflow-y-auto overflow-x-hidden {% if type === 'brochure' %} pr-1 {% endif %}" x-cloak>
             {% if type === 'brochure' %}
-              <p>
+              <p x-show="$store.program.term === undefined || $store.program.term" x-cloak>
                 <strong>Term</strong>
                 <br/>
-                <span id="appTerm" x-text="$store.program.term || 'N/A'">&nbsp;</span>
+                <span id="appTerm" x-text="$store.program.getTerm()">&nbsp;</span>
               </p>
-              <p>
+              <p x-show="$store.program.schools === undefined || $store.program.schools" x-cloak>
                 <strong>Schools</strong>
                 <br/>
-                <span id="appSchools" x-text="$store.program.schools.join(', ') || 'N/A'">&nbsp;</span>
+                <span id="appSchools" x-text="$store.program.getSchools()">&nbsp;</span>
               </p>
-              <p>
+              <p x-show="$store.program.departments === undefined || $store.program.departments" x-cloak>
                 <strong>Departments</strong>
                 <br/>
-                <span id="appDepartments" x-text="$store.program.departments.join(', ') || 'N/A'">&nbsp;</span>
+                <span id="appDepartments" x-text="$store.program.getDepartments()">&nbsp;</span>
               </p>
-              <p>
+              <p x-show="$store.program.countries === undefined || $store.program.countries" x-cloak>
                 <strong>Countries</strong>
                 <br/>
-                <span id="appCountries" x-text="$store.program.locations.map(function(i){return i.country}).filter(onlyUnique).join(', ') || 'N/A'">&nbsp;</span>
+                <span id="appCountries" x-text="$store.program.getCountries()">&nbsp;</span>
               </p>
-              <p>
+              <p x-show="$store.program.cities === undefined || $store.program.cities" x-cloak>
                 <strong>Cities</strong>
                 <br/>
-                <span id="appCities" x-text="$store.program.locations.map(function(i){return i.city}).filter(onlyUnique).join(', ') || 'N/A'">&nbsp;</span>
+                <span id="appCities" x-text="$store.program.getCities()">&nbsp;</span>
               </p>
-              <hr/>
-              <p>
+              <hr x-show="$store.program.term === undefined || $store.program.term || $store.program.schools === undefined || $store.program.schools || $store.program.departments === undefined || $store.program.departments || $store.program.countries === undefined || $store.program.countries || $store.program.cities === undefined || $store.program.cities" x-cloak/>
+              <p x-show="$store.program.courses === undefined || $store.program.courses" x-cloak>
                 <strong>Courses</strong>
                 <br/>
-                <span id="appCourses" x-text="$store.program.courses.all.join(', ') || 'N/A'">&nbsp;</span>
+                <span id="appCourses" x-text="$store.program.getCourses()">&nbsp;</span>
               </p>
-              <p>
+              <p x-show="$store.program.cser === undefined || $store.program.cser" x-cloak>
                 <strong>CSER</strong>
                 <br/>
-                <span id="appCSER" x-text="$store.program.courses.cser ? '👍' : '👎'">&nbsp;</span>
+                <span id="appCSER" x-text="$store.program.getCSER()">&nbsp;</span>
               </p>
-              <p title="Academic Enrichment means you can attend this program without taking a course">
+              <p title="Academic Enrichment means you can attend this program without taking a course" x-show="$store.program.academicEnrichment === undefined || $store.program.academicEnrichment" x-cloak>
                 <strong>Academic Enrichment</strong>
                 <br/>
-                <span id="appAcademicEnrichment" x-text="$store.program.courses.academicEnrichment ? '👍' : '👎'">&nbsp;</span>
+                <span id="appAcademicEnrichment" x-text="$store.program.getAcademicEnrichment()">&nbsp;</span>
               </p>
-              <hr/>
+              <hr x-show="$store.program.academicEnrichment === undefined || $store.program.academicEnrichment || $store.program.courses === undefined || $store.program.courses || $store.program.cser === undefined || $store.program.cser"/>
             {% else %}
               &nbsp;
             {% endif %}
@@ -325,10 +325,13 @@
           </button>
           <button id="changeBrochureSettings" class="flex items-center justify-center flex-1 gap-2 px-4 py-2 rounded-xl bg-secondary hover:bg-secondary-focus text-secondary-content">
             <ion-icon name="settings" class="text-2xl text-white">&nbsp;</ion-icon>
-            <span>Change Brochure Settings</span>
+            <span>Change Settings</span>
           </button>
           <div id="changeBrochureSettings-template" style="display: none;">
-            <div class="w-72 p-2 flex flex-col gap-1 z-50">
+            <div class="w-72 p-2 flex flex-col gap-2 prose text-white max-h-44 overflow-y-auto">
+              <p class="leading-tight">
+                <i class="text-sm">Note: these settings do not effect the underlying program. They only override what is shown on the brochure. When at all possible, stick with the defaults instead of using these overrides.</i>
+              </p>
               <div x-data="{ useCustomBackground: false }" x-init="useCustomBackground = $store.background.endsWith('21698') ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
                 <div x-on:change="$store.background = useCustomBackground ? $store.background.endsWith('21698') ? '' : $store.background : 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21698'" class="inline-flex items-center gap-1 w-full">
                   <input id="brochureBackground" type="checkbox" x-model="useCustomBackground"/>
@@ -336,12 +339,96 @@
                 </div>
                 <input type="text" x-show="useCustomBackground" x-model="$store.background" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Background URL" x-cloak/>
               </div>
-              <div x-data="{ useCustomTitle: false }" x-init="useCustomTitle = $store.program.title ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
-                <div x-on:change="$store.program.title = useCustomTitle ? $store.program.title : $store.program.setTitle()" class="inline-flex items-center gap-1 w-full">
-                  <input id="brochureTitle" type="checkbox" x-model="useCustomTitle"/>
+              <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.title === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
+                <div x-on:change="$store.program.title = isCustom ? $store.program.getTitle() : undefined" class="inline-flex items-center gap-1 w-full">
+                  <input id="brochureTitle" type="checkbox" x-model="isCustom"/>
                   <label for="brochureTitle" class="m-0 leading-tight">Use Custom Title</label>
                 </div>
-                <input type="text" x-show="useCustomTitle" x-model="$store.program.title" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Background URL" x-cloak/>
+                <input type="text" x-show="isCustom" x-model="$store.program.title" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Program Title" x-cloak/>
+              </div>
+              <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.startDate === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
+                <div x-on:change="$store.program.startDate = isCustom ? $store.program.getStartDate() : undefined" class="inline-flex items-center gap-1 w-full">
+                  <input id="brochureStartDate" type="checkbox" x-model="isCustom"/>
+                  <label for="brochureStartDate" class="m-0 leading-tight">Use Custom Start Date</label>
+                </div>
+                <input type="text" x-show="isCustom" x-model="$store.program.startDate" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Start Date" x-cloak/>
+              </div>
+              <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.endDate === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
+                <div x-on:change="$store.program.endDate = isCustom ? $store.program.getEndDate() : undefined" class="inline-flex items-center gap-1 w-full">
+                  <input id="brochureEndDate" type="checkbox" x-model="isCustom"/>
+                  <label for="brochureEndDate" class="m-0 leading-tight">Use Custom End Date</label>
+                </div>
+                <input type="text" x-show="isCustom" x-model="$store.program.endDate" class="rounded-sm p-1 text-primary w-full" placeholder="Custom End Date" x-cloak/>
+              </div>
+              <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.appDeadline === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
+                <div x-on:change="$store.program.appDeadline = isCustom ? $store.program.getAppDeadline() : undefined" class="inline-flex items-center gap-1 w-full">
+                  <input id="brochureAppDeadline" type="checkbox" x-model="isCustom"/>
+                  <label for="brochureAppDeadline" class="m-0 leading-tight">Use Custom Application Deadline</label>
+                </div>
+                <input type="text" x-show="isCustom" x-model="$store.program.appDeadline" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Application Deadline" x-cloak/>
+              </div>
+              <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.disableApply === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
+                <div x-on:change="$store.program.disableApply = isCustom ? 'New applications are currently disabled!' : undefined" class="inline-flex items-center gap-1 w-full">
+                  <input id="brochureDisableApply" type="checkbox" x-model="isCustom"/>
+                  <label for="brochureDisableApply" class="m-0 leading-tight" title="This disables new applications regardless of application deadline">Disable New Applications</label>
+                </div>
+              </div>
+              <div class="h-px bg-white w-full">&nbsp;</div>
+              <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.term === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
+                <div x-on:change="$store.program.term = isCustom ? $store.program.getTerm() : undefined" class="inline-flex items-center gap-1 w-full">
+                  <input id="brochureTerm" type="checkbox" x-model="isCustom"/>
+                  <label for="brochureTerm" class="m-0 leading-tight">Use Custom Term</label>
+                </div>
+                <input type="text" x-show="isCustom" x-model="$store.program.term" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Term" x-cloak/>
+              </div>
+              <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.schools === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
+                <div x-on:change="$store.program.schools = isCustom ? $store.program.getSchools() : undefined" class="inline-flex items-center gap-1 w-full">
+                  <input id="brochureSchools" type="checkbox" x-model="isCustom"/>
+                  <label for="brochureSchools" class="m-0 leading-tight">Use Custom Schools</label>
+                </div>
+                <input type="text" x-show="isCustom" x-model="$store.program.schools" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Schools" x-cloak/>
+              </div>
+              <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.departments === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
+                <div x-on:change="$store.program.departments = isCustom ? $store.program.getDepartments() : undefined" class="inline-flex items-center gap-1 w-full">
+                  <input id="brochureDepartments" type="checkbox" x-model="isCustom"/>
+                  <label for="brochureDepartments" class="m-0 leading-tight">Use Custom Departments</label>
+                </div>
+                <input type="text" x-show="isCustom" x-model="$store.program.departments" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Departments" x-cloak/>
+              </div>
+              <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.countries === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
+                <div x-on:change="$store.program.countries = isCustom ? $store.program.getCountries() : undefined" class="inline-flex items-center gap-1 w-full">
+                  <input id="brochureCountries" type="checkbox" x-model="isCustom"/>
+                  <label for="brochureCountries" class="m-0 leading-tight">Use Custom Countries</label>
+                </div>
+                <input type="text" x-show="isCustom" x-model="$store.program.countries" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Countries" x-cloak/>
+              </div>
+              <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.cities === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
+                <div x-on:change="$store.program.cities = isCustom ? $store.program.getCities() : undefined" class="inline-flex items-center gap-1 w-full">
+                  <input id="brochureCities" type="checkbox" x-model="isCustom"/>
+                  <label for="brochureCities" class="m-0 leading-tight">Use Custom Cities</label>
+                </div>
+                <input type="text" x-show="isCustom" x-model="$store.program.cities" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Cities" x-cloak/>
+              </div>
+              <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.courses === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
+                <div x-on:change="$store.program.courses = isCustom ? $store.program.getCourses() : undefined" class="inline-flex items-center gap-1 w-full">
+                  <input id="brochureCourses" type="checkbox" x-model="isCustom"/>
+                  <label for="brochureCourses" class="m-0 leading-tight">Use Custom Courses</label>
+                </div>
+                <input type="text" x-show="isCustom" x-model="$store.program.courses" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Courses" x-cloak/>
+              </div>
+              <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.cser === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
+                <div x-on:change="$store.program.cser = isCustom ? $store.program.getCSER() : undefined" class="inline-flex items-center gap-1 w-full">
+                  <input id="brochureCSER" type="checkbox" x-model="isCustom"/>
+                  <label for="brochureCSER" class="m-0 leading-tight">Use Custom CSER</label>
+                </div>
+                <input type="text" x-show="isCustom" x-model="$store.program.cser" class="rounded-sm p-1 text-primary w-full" placeholder="Custom CSER" x-cloak/>
+              </div>
+              <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.academicEnrichment === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
+                <div x-on:change="$store.program.academicEnrichment = isCustom ? $store.program.getAcademicEnrichment() : undefined" class="inline-flex items-center gap-1 w-full">
+                  <input id="brochureAcademicEnrichment" type="checkbox" x-model="isCustom"/>
+                  <label for="brochureAcademicEnrichment" class="m-0 leading-tight">Use Custom Academic Enrichment</label>
+                </div>
+                <input type="text" x-show="isCustom" x-model="$store.program.academicEnrichment" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Academic Enrichment" x-cloak/>
               </div>
             </div>
           </div>

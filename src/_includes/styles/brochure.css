@@ -117,14 +117,6 @@
   @apply mt-0;
 }
 
-#appGlance > :first-child:is(hr) {
-  display: none;
-}
-
-#appGlance > :first-child:is(hr) + hr {
-  display: none;
-}
-
 #app
   :is(#appMainContent, #mycontent)
   > div[id^='app']:not([id='appMenu'], [id='appMainContent'])
