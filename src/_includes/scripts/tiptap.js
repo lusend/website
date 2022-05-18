@@ -60,7 +60,7 @@ function pdfListener() {
 
         adobeDCView.previewFile(
           { content: { location: { url } }, metaData: { fileName } },
-          { embedMode: 'IN_LINE', enableLinearization: false }
+          { embedMode: 'IN_LINE', enableLinearization: false, focusOnRendering: false }
         );
       }
     );
