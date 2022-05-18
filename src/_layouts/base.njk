@@ -97,16 +97,20 @@
 
   {% if type === 'brochure' %}
     <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+
+    <script>
+      window.backgrounds = {{ backgrounds | printCode | safe }};
+    </script>
+
+    <!--STRIP SCRIPT-->
+
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
     <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/svg-arrow.css"/>
     <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
-    {% if env === 'production' %}
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    {% endif %}
 
     <script>
-      window.backgrounds = {{ backgrounds | printCode | safe }};
+      {% include "scripts/get.js" %}
 
       window.addEventListener('load', function () {
         tippy.createSingleton(tippy('[data-tippy-content]'), {
@@ -210,12 +214,6 @@
           }
         })
       })
-    </script>
-
-    <!--STRIP SCRIPT-->
-
-    <script>
-      {% include "scripts/get.js" %}
     </script>
 
     <script src="{% if preview %}.{% endif %}{{ pathPrefix }}{% if not preview %}pages/{% endif %}tiptap.js"></script>
