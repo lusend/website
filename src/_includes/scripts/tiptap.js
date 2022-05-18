@@ -917,7 +917,7 @@ async function exportBrochure(programID) {
     finalHTML.head.innerHTML + finalHTML.body.innerHTML
   );
 
-  if (programID !== false) {
+  if (programID !== undefined) {
     window.open(
       'https://liberty-sa.terradotta.com/index.cfm?FuseAction=ProgramAdmin.BrochureEdit&Program_ID=' +
         programID,
