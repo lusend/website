@@ -894,7 +894,8 @@ async function exportBrochure(programID) {
 
   if (Alpine.store('program')) {
     for (let [key, value] of Object.entries(Alpine.store('program'))) {
-      if (value instanceof Function || key === 'dateRow') continue;
+      if (value instanceof Function || ['dateRow', 'id'].includes(key))
+        continue;
       if (value === undefined) continue;
       if (!finalJSON.other.program) finalJSON.other.program = {};
 

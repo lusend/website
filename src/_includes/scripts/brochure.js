@@ -86,7 +86,7 @@ function gup(paramName) {
       const pair = param.split('=');
       if (pair.length <= 1) return prev;
       if (pair[0] === paramName) return decodeURIComponent(pair[1]);
-    }, null);
+    }, undefined);
 }
 
 function getBackgroundID(searchText) {
@@ -421,9 +421,7 @@ document.addEventListener('alpine:init', () => {
 
     init() {
       this.id =
-        gup('Program_ID') === 'undefined'
-          ? undefined
-          : gup('Program_ID') || undefined;
+        gup('Program_ID') === 'undefined' ? undefined : gup('Program_ID');
 
       this.dateRow =
         $(
