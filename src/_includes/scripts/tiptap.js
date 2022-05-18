@@ -874,24 +874,6 @@ async function exportBrochure(programID) {
 
   finalJSON.other = {};
 
-  if (Alpine.store('background')) {
-    finalJSON.other.background = Alpine.store('background');
-    if (!Alpine.store('background').endsWith('21698'))
-      finalHTML
-        .getElementById('app')
-        .setAttribute(
-          'x-init',
-          `$store.background = '${Alpine.store('background')}';`
-        );
-    else
-      finalHTML
-        .getElementById('app')
-        .setAttribute(
-          'x-init',
-          `$store.background = getDefaultBackground($store.program.title, $store.program.schools, $store.program.departments, $store.program.locations);`
-        );
-  }
-
   if (Alpine.store('program')) {
     for (let [key, value] of Object.entries(Alpine.store('program'))) {
       if (value instanceof Function || ['dateRow', 'id'].includes(key))
@@ -908,6 +890,24 @@ async function exportBrochure(programID) {
             `$store.program.${key} = '${value}';`
         );
     }
+  }
+
+  if (Alpine.store('background')) {
+    finalJSON.other.background = Alpine.store('background');
+    if (!Alpine.store('background').endsWith('21698'))
+      finalHTML
+        .getElementById('app')
+        .setAttribute(
+          'x-init',
+          `$store.background = '${Alpine.store('background')}';`
+        );
+    else
+      finalHTML
+        .getElementById('app')
+        .setAttribute(
+          'x-init',
+          `$store.background = getDefaultBackground([$store.program.getTitle(), $store.program.getSchools(), $store.program.getDepartments(), $store.program.getCities(), $store.program.getCountries()]);`
+        );
   }
 
   finalHTML
