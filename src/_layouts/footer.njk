@@ -9,7 +9,7 @@
       <span>Contact Us</span>
     </a>
 
-    <a id="appEdit" {% if type === 'brochure' %} x-on:click.prevent="await navigator.clipboard.writeText(window.appData); window.open($el.getAttribute('href'), $event.ctrlKey ? '_blank' : '_self')" x-cloak {% endif %} class="flex items-center justify-center gap-1 underline text-primary-content text-opacity-70 hover:text-opacity-50" x-bind:href="{% if type !== 'brochure' %}'{{ edit }}'{% else %}'https://lusend.github.io/website/pages/brochure?programID=' + $store.program.id{% endif %}">
+    <a id="appEdit" {% if type === 'brochure' %} x-on:click.prevent="await navigator.clipboard.writeText(window.appData); window.open($el.getAttribute('href'), $event.ctrlKey ? '_blank' : '_self')" x-cloak {% endif %} class="flex items-center justify-center gap-1 underline text-primary-content text-opacity-70 hover:text-opacity-50" x-bind:href="{% if type !== 'brochure' %}'{{ edit }}'{% else %}'https://lusend.github.io/website/pages/brochure?Program_ID=' + $store.program.id{% endif %}">
       <ion-icon name="create-outline">&nbsp;</ion-icon>
       <span>Edit Page</span>
     </a>
