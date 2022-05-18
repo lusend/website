@@ -875,6 +875,8 @@ async function exportBrochure(programID) {
   finalJSON.other = {};
 
   if (Alpine.store('program')) {
+    finalHTML.getElementById('app').setAttribute('x-init', '');
+
     for (let [key, value] of Object.entries(Alpine.store('program'))) {
       if (value instanceof Function || ['dateRow', 'id'].includes(key))
         continue;
@@ -882,6 +884,7 @@ async function exportBrochure(programID) {
       if (!finalJSON.other.program) finalJSON.other.program = {};
 
       finalJSON.other.program[key] = value;
+
       finalHTML
         .getElementById('app')
         .setAttribute(
@@ -899,7 +902,8 @@ async function exportBrochure(programID) {
         .getElementById('app')
         .setAttribute(
           'x-init',
-          `$store.background = '${Alpine.store('background')}';`
+          finalHTML.getElementById('app').getAttribute('x-init') +
+            `$store.background = '${Alpine.store('background')}';`
         );
     else
       finalHTML
