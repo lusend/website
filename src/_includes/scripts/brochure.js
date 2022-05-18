@@ -107,7 +107,6 @@ function getDefaultBackground(items = ['']) {
 
   if (window.backgrounds) {
     for (let item of items) {
-      console.log(item);
       const backgroundID = getBackgroundID(item);
       if (backgroundID !== undefined) return baseLink + backgroundID;
     }
