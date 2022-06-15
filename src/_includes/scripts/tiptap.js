@@ -911,8 +911,19 @@ async function exportBrochure(programID) {
         .setAttribute(
           'x-init',
           finalHTML.getElementById('app').getAttribute('x-init') +
-            `$store.background = getDefaultBackground([$store.program.getTitle(), $store.program.getSchools(), $store.program.getDepartments(), $store.program.getCities(), $store.program.getCountries()]);`
+            `{ image: $store.background, position: $store.bgPosition } = getDefaultBackground([$store.program.getTitle(), $store.program.getSchools(), $store.program.getDepartments(), $store.program.getCities(), $store.program.getCountries()]);`
         );
+  }
+
+  if (Alpine.store('bgPosition') && Alpine.store('bgPosition') !== '50%') {
+    finalJSON.other.bgPosition = Alpine.store('bgPosition');
+    finalHTML
+      .getElementById('app')
+      .setAttribute(
+        'x-init',
+        finalHTML.getElementById('app').getAttribute('x-init') +
+          `$store.bgPosition = '${Alpine.store('bgPosition')}';`
+      );
   }
 
   finalHTML
@@ -948,6 +959,10 @@ async function importBrochure(importData) {
 
           if (other.background) {
             Alpine.store('background', other.background);
+          }
+
+          if (other.bgPosition) {
+            Alpine.store('bgPosition', other.bgPosition);
           }
 
           if (other.program) {

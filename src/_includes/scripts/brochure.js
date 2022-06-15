@@ -89,16 +89,16 @@ function gup(paramName) {
     }, undefined);
 }
 
-function getBackgroundID(searchText) {
+function getBackground(searchText) {
   for (let bg in window.backgrounds) {
     const keyword = window.backgrounds[bg].keyword.toLowerCase();
     const id = window.backgrounds[bg].id;
     if (searchText.toLowerCase().includes(keyword)) {
-      return id;
+      return window.backgrounds[bg];
     }
   }
 
-  return undefined;
+  return { id: undefined, keyword: undefined, position: '50%' };
 }
 
 function getDefaultBackground(items = ['']) {
@@ -107,12 +107,19 @@ function getDefaultBackground(items = ['']) {
 
   if (window.backgrounds) {
     for (let item of items) {
-      const backgroundID = getBackgroundID(item);
-      if (backgroundID !== undefined) return baseLink + backgroundID;
+      const background = getBackground(item);
+      if (background.id !== undefined)
+        return {
+          image: baseLink + background.id,
+          position: background.position || '50%'
+        };
     }
   }
 
-  return baseLink + '21698';
+  return {
+    image: baseLink + '21698',
+    position: '50%'
+  };
 }
 
 function onlyUnique(value, index, self) {
@@ -120,7 +127,6 @@ function onlyUnique(value, index, self) {
 }
 
 document.addEventListener('alpine:init', () => {
-  Alpine.store('background', '');
   Alpine.store('program', {
     id: undefined,
     dateRow: undefined,

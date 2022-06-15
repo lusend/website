@@ -14,6 +14,7 @@ module.exports = async function (configData) {
     author: false,
     hero: '',
     background: '',
+    bgPosition: '50%',
     testimonials: [],
     actions: [],
     order: [],

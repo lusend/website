@@ -367,6 +367,13 @@
                 </div>
                 <input type="text" x-show="useCustomBackground" x-model="$store.background" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Background URL" x-cloak/>
               </div>
+              <div x-data="{ useCustomBgPosition: false }" x-init="useCustomBgPosition = $store.bgPosition && $store.bgPosition !== '50%' ? true : false" class="flex flex-col justify-center items-start gap-1 w-full">
+                <div x-on:change="$store.bgPosition = useCustomBgPosition ? $store.bgPosition : '50%'" class="inline-flex items-center gap-1 w-full">
+                  <input id="brochureBgPosition" type="checkbox" x-model="useCustomBgPosition"/>
+                  <label for="brochureBgPosition" class="m-0 leading-tight">Use Custom Background Position</label>
+                </div>
+                <input type="text" x-show="useCustomBgPosition" x-model="$store.bgPosition" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Background Position" x-cloak/>
+              </div>
               <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.title === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
                 <div x-on:change="$store.program.title = isCustom ? $store.program.getTitle() : undefined" class="inline-flex items-center gap-1 w-full">
                   <input id="brochureTitle" type="checkbox" x-model="isCustom"/>

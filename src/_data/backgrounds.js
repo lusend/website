@@ -40,7 +40,7 @@ module.exports = async function (configData) {
     // COUNTRIES
 
     { keyword: 'Australia', id: '32500' },
-    { keyword: 'Albania', id: '21716' },
+    { keyword: 'Albania', id: '21716', position: '10% 30%' },
     { keyword: 'Austria', id: '24652' },
     { keyword: 'Bahamas', id: '29801' },
     { keyword: 'Bangladesh', id: '26367' },
@@ -84,6 +84,7 @@ module.exports = async function (configData) {
     { keyword: 'Peru', id: '30440' },
     { keyword: 'Portugal', id: '21770' },
     { keyword: 'Poland', id: '25379' },
+    { keyword: 'Puerto Rico', id: '36897', position: 'center 70%' },
     { keyword: 'Romania', id: '21771' },
     { keyword: 'Rwanda', id: '21772' },
     { keyword: 'Slovenia', id: '30499' },

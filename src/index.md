@@ -82,6 +82,7 @@ author: false,
 date: today's date
 hero: '',
 background: '',
+bgPosition: '50%',
 order: [],
 nav:
   title: {{ "{{ title }}" }}
@@ -130,6 +131,10 @@ If set to a value, a section will be included that contains the website logo, th
 #### `background`
 
 If set to a value, a background will be applied to the website. Defaults to `''`.
+
+#### `bgPosition`
+
+If set to a value, a background position will be applied to the website. Defaults to `50%`. See [background-position documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/background-position) for more details.
 
 #### `order`
 
