@@ -148,7 +148,7 @@ document.addEventListener('alpine:init', () => {
     getDefaultStartDate() {
       return getSelectorContents({
         selector: `#pagebody > div.panel.panel-primary > div.table-responsive > table > tbody > tr:nth-child(${this.dateRow}) > td:nth-child(5) > span`,
-        defaultValue: 'Program Dates TBA',
+        defaultValue: 'Program Dates Unknown',
         formatData: function (str) {
           return new Date(str);
         },
@@ -162,7 +162,7 @@ document.addEventListener('alpine:init', () => {
     },
 
     getStartDate() {
-      return this.startDate || this.getDefaultStartDate().value;
+      return this.startDate || this.getDefaultStartDate().value || '';
     },
 
     getDefaultEndDate() {
@@ -182,7 +182,7 @@ document.addEventListener('alpine:init', () => {
     },
 
     getEndDate() {
-      return this.endDate || this.getDefaultEndDate().value;
+      return this.endDate || this.getDefaultEndDate().value || '';
     },
 
     getDate() {
@@ -209,7 +209,7 @@ document.addEventListener('alpine:init', () => {
     },
 
     getAppDeadline() {
-      return this.appDeadline || this.getDefaultAppDeadline().value;
+      return this.appDeadline || this.getDefaultAppDeadline().value || '';
     },
 
     getDefaultTitle() {
@@ -227,7 +227,7 @@ document.addEventListener('alpine:init', () => {
     },
 
     getTitle() {
-      return this.title || this.getDefaultTitle().value;
+      return this.title || this.getDefaultTitle().value || '';
     },
 
     getDefaultTerm() {
@@ -238,7 +238,7 @@ document.addEventListener('alpine:init', () => {
     },
 
     getTerm() {
-      return this.term || this.getDefaultTerm().value;
+      return this.term || this.getDefaultTerm().value || '';
     },
 
     getDefaultSchools() {
@@ -252,7 +252,7 @@ document.addEventListener('alpine:init', () => {
     },
 
     getSchools() {
-      return this.schools || this.getDefaultSchools().value;
+      return this.schools || this.getDefaultSchools().value || '';
     },
 
     getDefaultDepartments() {
@@ -266,7 +266,7 @@ document.addEventListener('alpine:init', () => {
     },
 
     getDepartments() {
-      return this.departments || this.getDefaultDepartments().value;
+      return this.departments || this.getDefaultDepartments().value || '';
     },
 
     getDefaultCountries() {
@@ -291,7 +291,7 @@ document.addEventListener('alpine:init', () => {
     },
 
     getCountries() {
-      return this.countries || this.getDefaultCountries().value;
+      return this.countries || this.getDefaultCountries().value || '';
     },
 
     getDefaultCities() {
@@ -315,7 +315,7 @@ document.addEventListener('alpine:init', () => {
     },
 
     getCities() {
-      return this.cities || this.getDefaultCities().value;
+      return this.cities || this.getDefaultCities().value || '';
     },
 
     getDefaultCourses() {
@@ -340,7 +340,7 @@ document.addEventListener('alpine:init', () => {
     },
 
     getCourses() {
-      return this.courses || this.getDefaultCourses().value;
+      return this.courses || this.getDefaultCourses().value || '';
     },
 
     getDefaultCSER() {
@@ -357,7 +357,7 @@ document.addEventListener('alpine:init', () => {
     },
 
     getCSER() {
-      return this.cser || this.getDefaultCSER().value;
+      return this.cser || this.getDefaultCSER().value || '';
     },
 
     getDefaultAcademicEnrichment() {
@@ -375,7 +375,9 @@ document.addEventListener('alpine:init', () => {
 
     getAcademicEnrichment() {
       return (
-        this.academicEnrichment || this.getDefaultAcademicEnrichment().value
+        this.academicEnrichment ||
+        this.getDefaultAcademicEnrichment().value ||
+        ''
       );
     },
 

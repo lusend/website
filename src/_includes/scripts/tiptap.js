@@ -911,7 +911,7 @@ async function exportBrochure(programID) {
         .setAttribute(
           'x-init',
           finalHTML.getElementById('app').getAttribute('x-init') +
-            `{ image: $store.background, position: $store.bgPosition } = getDefaultBackground([$store.program.getTitle(), $store.program.getSchools(), $store.program.getDepartments(), $store.program.getCities(), $store.program.getCountries()]);`
+            `$store.temp = getDefaultBackground([$store.program.getTitle(), $store.program.getSchools(), $store.program.getDepartments(), $store.program.getCities(), $store.program.getCountries()]); $store.background = $store.temp.image; $store.bgPosition = $store.temp.position;`
         );
   }
 

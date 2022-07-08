@@ -1,6 +1,6 @@
 {% if content and not custom or type === 'brochure' %}
   <div id="mycontent" class="content min-h-screen flex flex-col lg:flex-row justify-start lg:justify-center px-8 py-10 z-10 relative gap-5 xl:gap-10 2xl:gap-16 {% if background %} bg-white bg-opacity-80 {% endif %}">
-    <div {% if type !== 'brochure' %} x-data="{ toc: !!document.querySelector('.table-of-contents'), open: true }" x-show="toc" x-cloak {% else %} x-data="{ open: false }" x-bind:class="!open && 'min-w-full max-w-full lg:!min-w-[5rem] lg:!max-w-[5rem]'" {% endif %} class="transition-all lg:grow order-first mb-5 lg:mb-0 lg:order-last lg:min-w-[15rem] lg:max-w-[20rem] prose max-w-full">
+    <div {% if type !== 'brochure' %} x-data="{ toc: !!document.querySelector('.table-of-contents'), open: location.href.includes("terradotta") }" x-show="toc" x-cloak {% else %} x-data="{ open: true }" x-bind:class="!open && 'min-w-full max-w-full lg:!min-w-[5rem] lg:!max-w-[5rem]'" {% endif %} class="transition-all lg:grow order-first mb-5 lg:mb-0 lg:order-last lg:min-w-[15rem] lg:max-w-[20rem] prose max-w-full">
       <div class="text-base lg:sticky lg:top-20">
         <div x-bind:class="!open ? 'text-normal lg:text-vertical' : editor() && aagFocused && '!border-secondary'" class="transition-all rounded-2xl p-5 backdrop-blur-sm border-2 {% if not background %} shadow-lg border-base-200 bg-white bg-opacity-90 {% else %} border-[rgba(255,255,255,0.6)] {% endif %}">
           <h1 {%if type === 'brochure' %} x-on:click="open = !open; aagFocused = open ? 'appGlance' : false" x-bind:class="!open && 'h-full lg:flex-row-reverse !mb-0'" {% endif %} class="{% if type === 'brochure' %} cursor-pointer {% endif %} my-0 mb-5 text-2xl flex gap-1 items-center justify-between font-semibold transition-all">
@@ -12,6 +12,11 @@
           </h1>
           <div id="appGlance" {% if type === 'brochure' %} x-data="editor('appGlance', '<p><strong>Estimated Cost</strong><br/><i>Coming Soon</i></p>')" x-show="open" {% endif %} class="table-of-contents-container max-h-[calc(80vh-132px)] overflow-y-auto overflow-x-hidden {% if type === 'brochure' %} pr-1 {% endif %}" x-cloak>
             {% if type === 'brochure' %}
+              <p x-show="$store.program.appDeadline === undefined || $store.program.appDeadline" x-cloak>
+                <strong>Application Deadline</strong>
+                <br/>
+                <span id="appDeadline" x-text="$store.program.getAppDeadline().replace('Applications Due By ', '')">&nbsp;</span>
+              </p>
               <p x-show="$store.program.term === undefined || $store.program.term" x-cloak>
                 <strong>Term</strong>
                 <br/>
@@ -73,7 +78,7 @@
         </div>
       </div>
     </div>
-    <div id="appMainContent" class="prose flex-grow order-last lg:order-first py-5 px-2 rounded-2xl backdrop-blur-sm {% if not background %} bg-white bg-opacity-50 {% endif %} {% if full %} lg:max-w-full {% else %} lg:max-w-[65ch] {% endif %} max-w-full {% if type === 'brochure' %} lg:!max-w-[85ch] {% endif %}">
+    <div id="appMainContent" class="prose flex-grow order-last lg:order-first py-5 px-2 rounded-2xl backdrop-blur-sm border-2 {% if not background %} bg-white bg-opacity-50 border-base-100 {% else %} border-[rgba(255,255,255,0.2)] {% endif %} {% if full %} lg:max-w-full {% else %} lg:max-w-[65ch] {% endif %} max-w-full {% if type === 'brochure' %} lg:!max-w-[85ch] {% endif %}">
       {% if type === 'brochure' %}
 
         <!--STRIP MENU-->
