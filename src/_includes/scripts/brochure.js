@@ -383,12 +383,10 @@ document.addEventListener('alpine:init', () => {
 
     getDefaultDisableApply(disable) {
       if (
-        $('#appApplicationDeadline').length &&
         this.getDefaultAppDeadline().data &&
         dateBeforeToday(this.getDefaultAppDeadline().data)
-      ) {
+      )
         return 'The application deadline has already passed!';
-      }
 
       if (!$("button[onclick='ApplyNow();']").length)
         return 'An application is not yet available for this program!';

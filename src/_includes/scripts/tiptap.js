@@ -890,7 +890,9 @@ async function exportBrochure(programID) {
         .setAttribute(
           'x-init',
           finalHTML.getElementById('app').getAttribute('x-init') +
-            `$store.program.${key} = '${value}';`
+            `$store.program.${key} = ${
+              typeof value === 'string' ? `'${value}'` : value
+            };`
         );
     }
   }
