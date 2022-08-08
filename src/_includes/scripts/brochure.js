@@ -381,7 +381,7 @@ document.addEventListener('alpine:init', () => {
       );
     },
 
-    getDefaultDisableApply() {
+    getDefaultDisableApply(disable) {
       if (
         $('#appApplicationDeadline').length &&
         this.getDefaultAppDeadline().data &&
@@ -391,14 +391,16 @@ document.addEventListener('alpine:init', () => {
       }
 
       if (!$("button[onclick='ApplyNow();']").length)
-        return 'New applications are currently disabled!';
+        return 'An application is not yet available for this program!';
+
+      if (disable) return 'New applications are currently disabled!';
 
       return '';
     },
 
     getDisableApply() {
       return this.disableApply === undefined
-        ? this.getDefaultDisableApply()
+        ? this.getDefaultDisableApply(true)
         : this.disableApply;
     },
 

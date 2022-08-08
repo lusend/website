@@ -13,11 +13,15 @@ nav:
 
 # Trip Overview
 
+<i><strong>Details are coming soon.</strong> As the program details are finalized, more information will be added. Until then, check out the 'At a Glance' side panel for some quick facts about this trip!</i>
+
 </div>
 
 <div id="appResources" x-ref="appResources" x-data="editor()" x-bind:class="currentId === $el.id && !aagFocused && 'active'" x-show="currentId === $el.id" x-cloak>
 
 # Travel Resources
+
+<i><strong>Details are coming soon.</strong> As the program details are finalized, more information will be added. Until then, check out the 'At a Glance' side panel for some quick facts about this trip!</i>
 
 </div>
 
@@ -25,22 +29,26 @@ nav:
 
 # Travel Safety
 
+<i><strong>Details are coming soon.</strong> As the program details are finalized, more information will be added. Until then, check out the 'At a Glance' side panel for some quick facts about this trip!</i>
+
 </div>
 
 <div id="appChecklist" x-ref="appChecklist" x-data="editor()" x-bind:class="currentId === $el.id && !aagFocused && 'active'" x-show="currentId === $el.id" x-cloak>
 
 # Traveler Checklist
 
+<i><strong>Details are coming soon.</strong> As the program details are finalized, more information will be added. Until then, check out the 'At a Glance' side panel for some quick facts about this trip!</i>
+
 </div>
 
 <div id="appFlights" x-ref="appFlights" x-data="editor()" x-bind:class="currentId === $el.id && !aagFocused && 'active'" x-show="currentId === $el.id" x-cloak>
-
-# Flight Itinerary
 
 </div>
 
 <div id="appPacking" x-ref="appPacking" x-data="editor()" x-bind:class="currentId === $el.id && !aagFocused && 'active'" x-show="currentId === $el.id" x-cloak>
 
 # Packing Guide
+
+<i><strong>Details are coming soon.</strong> As the program details are finalized, more information will be added. Until then, check out the 'At a Glance' side panel for some quick facts about this trip!</i>
 
 </div>

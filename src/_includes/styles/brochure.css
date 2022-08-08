@@ -172,8 +172,12 @@
   color: unset;
 }
 
+.tippy-box[data-theme~='hover'] {
+  @apply font-sans;
+}
+
 .tippy-box[data-theme~='light'] {
-  @apply bg-primary rounded-lg backdrop-blur-sm shadow-md;
+  @apply bg-primary rounded-lg backdrop-blur-sm shadow-md font-sans;
 }
 
 .tippy-box[data-theme~='light'] > .tippy-svg-arrow {

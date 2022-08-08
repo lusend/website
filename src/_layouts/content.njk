@@ -1,5 +1,5 @@
 {% if content and not custom or type === 'brochure' %}
-  <div id="mycontent" class="content min-h-screen flex flex-col lg:flex-row justify-start lg:justify-center px-8 py-10 z-10 relative gap-5 xl:gap-10 2xl:gap-16 {% if background %} bg-white bg-opacity-80 {% endif %}">
+  <div id="mycontent" class="content {% if type !== 'brochure' %}min-h-screen{% endif %} flex flex-col lg:flex-row justify-start lg:justify-center px-8 py-10 z-10 relative gap-5 xl:gap-10 2xl:gap-16 {% if background %} bg-white bg-opacity-80 {% endif %}">
     <div {% if type !== 'brochure' %} x-data="{ toc: !!document.querySelector('.table-of-contents'), open: true }" x-show="toc" x-cloak {% else %} x-data="{ open: location.href.includes('terradotta') }" x-bind:class="!open && 'min-w-full max-w-full lg:!min-w-[5rem] lg:!max-w-[5rem]'" {% endif %} class="transition-all lg:grow order-first mb-5 lg:mb-0 lg:order-last lg:min-w-[15rem] lg:max-w-[20rem] prose max-w-full">
       <div class="text-base lg:sticky lg:top-20">
         <div x-bind:class="!open ? 'text-normal lg:text-vertical' : editor() && aagFocused && '!border-secondary'" class="transition-all rounded-2xl p-5 backdrop-blur-sm border-2 {% if not background %} shadow-lg border-base-200 bg-white bg-opacity-90 {% else %} border-[rgba(255,255,255,0.6)] {% endif %}">
@@ -361,15 +361,16 @@
             <span>Change Settings</span>
           </button>
           <div id="changeBrochureSettings-template" style="display: none;">
-            <div class="w-72 p-2 flex flex-col gap-2 prose text-white max-h-44 overflow-y-auto">
+            <div class="p-5 w-full flex flex-col gap-4 prose text-white max-h-60 overflow-y-auto z-50">
               <p class="leading-tight">
-                <i class="text-sm">Note: these settings do not effect the underlying program. They only override what is shown on the brochure. When at all possible, stick with the defaults instead of using these overrides.</i>
+                <span class="text-sm">Note: these settings do not effect the underlying program. They only override what is shown on the brochure. When at all possible, stick with the defaults instead of using these overrides.</span>
               </p>
               <div x-data="{ useCustomBackground: false }" x-init="useCustomBackground = $store.background.endsWith('21698') ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
                 <div x-on:change="$store.background = useCustomBackground ? $store.background.endsWith('21698') ? '' : $store.background : 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=21698'" class="inline-flex items-center gap-1 w-full">
                   <input id="brochureBackground" type="checkbox" x-model="useCustomBackground"/>
                   <label for="brochureBackground" class="m-0 leading-tight">Use Custom Background</label>
                 </div>
+                <span class="text-xs italic">A background will be automatically generated based on the name of the program and its locations. Input a link to a picture here to customize it.</span>
                 <input type="text" x-show="useCustomBackground" x-model="$store.background" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Background URL" x-cloak/>
               </div>
               <div x-data="{ useCustomBgPosition: false }" x-init="useCustomBgPosition = $store.bgPosition && $store.bgPosition !== '50%' ? true : false" class="flex flex-col justify-center items-start gap-1 w-full">
@@ -377,6 +378,7 @@
                   <input id="brochureBgPosition" type="checkbox" x-model="useCustomBgPosition"/>
                   <label for="brochureBgPosition" class="m-0 leading-tight">Use Custom Background Position</label>
                 </div>
+                <span class="text-xs italic">A background is automatically centered horizontally and vertically. Input a horizontal and vertical percentage (i.e. '25% 75%') here to customize it.</span>
                 <input type="text" x-show="useCustomBgPosition" x-model="$store.bgPosition" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Background Position" x-cloak/>
               </div>
               <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.title === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
@@ -384,6 +386,7 @@
                   <input id="brochureTitle" type="checkbox" x-model="isCustom"/>
                   <label for="brochureTitle" class="m-0 leading-tight">Use Custom Title</label>
                 </div>
+                <span class="text-xs italic">The title is pulled from the program. Input a custom title for the program here.</span>
                 <input type="text" x-show="isCustom" x-model="$store.program.title" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Program Title" x-cloak/>
               </div>
               <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.startDate === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
@@ -391,6 +394,7 @@
                   <input id="brochureStartDate" type="checkbox" x-model="isCustom"/>
                   <label for="brochureStartDate" class="m-0 leading-tight">Use Custom Start Date</label>
                 </div>
+                <span class="text-xs italic">The start date is pulled from the most recent date record. Input a custom start date here.</span>
                 <input type="text" x-show="isCustom" x-model="$store.program.startDate" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Start Date" x-cloak/>
               </div>
               <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.endDate === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
@@ -398,6 +402,7 @@
                   <input id="brochureEndDate" type="checkbox" x-model="isCustom"/>
                   <label for="brochureEndDate" class="m-0 leading-tight">Use Custom End Date</label>
                 </div>
+                <span class="text-xs italic">The end date is pulled from the most recent date record. Input a custom end date here.</span>
                 <input type="text" x-show="isCustom" x-model="$store.program.endDate" class="rounded-sm p-1 text-primary w-full" placeholder="Custom End Date" x-cloak/>
               </div>
               <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.appDeadline === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
@@ -405,13 +410,15 @@
                   <input id="brochureAppDeadline" type="checkbox" x-model="isCustom"/>
                   <label for="brochureAppDeadline" class="m-0 leading-tight">Use Custom Application Deadline</label>
                 </div>
+                <span class="text-xs italic">The application deadline date is pulled from the most recent date record. Input a custom deadline date here. Note: if the application deadline begins with anything other than 'Applications Due By', the full text will appear in the 'At a Glance'.</span>
                 <input type="text" x-show="isCustom" x-model="$store.program.appDeadline" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Application Deadline" x-cloak/>
               </div>
-              <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.disableApply === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
-                <div x-on:change="$store.program.disableApply = isCustom ? 'New applications are currently disabled!' : undefined" class="inline-flex items-center gap-1 w-full">
+              <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.disableApply === undefined ? !!$store.program.getDefaultDisableApply(true).length : false" class="flex flex-col justify-center items-start gap-1 w-full">
+                <div x-on:change="$store.program.disableApply = isCustom ? $store.program.getDefaultDisableApply(true) : false" class="inline-flex items-center gap-1 w-full">
                   <input id="brochureDisableApply" type="checkbox" x-model="isCustom"/>
                   <label for="brochureDisableApply" class="m-0 leading-tight" title="This disables new applications regardless of application deadline">Disable New Applications</label>
                 </div>
+                <span class="text-xs italic">By default, applications are disabled and the hover text is automatically generated. Uncheck this to allow new applications.</span>
               </div>
               <div class="h-px bg-white w-full">&nbsp;</div>
               <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.term === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
@@ -419,6 +426,7 @@
                   <input id="brochureTerm" type="checkbox" x-model="isCustom"/>
                   <label for="brochureTerm" class="m-0 leading-tight">Use Custom Term</label>
                 </div>
+                <span class="text-xs italic">Use this setting to customize the terms pulled from the program parameters. Leave blank to hide it from the 'At a Glance'.</span>
                 <input type="text" x-show="isCustom" x-model="$store.program.term" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Term" x-cloak/>
               </div>
               <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.schools === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
@@ -426,6 +434,7 @@
                   <input id="brochureSchools" type="checkbox" x-model="isCustom"/>
                   <label for="brochureSchools" class="m-0 leading-tight">Use Custom Schools</label>
                 </div>
+                <span class="text-xs italic">Use this setting to customize the schools pulled from the program parameters. Leave blank to hide it from the 'At a Glance'.</span>
                 <input type="text" x-show="isCustom" x-model="$store.program.schools" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Schools" x-cloak/>
               </div>
               <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.departments === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
@@ -433,6 +442,7 @@
                   <input id="brochureDepartments" type="checkbox" x-model="isCustom"/>
                   <label for="brochureDepartments" class="m-0 leading-tight">Use Custom Departments</label>
                 </div>
+                <span class="text-xs italic">Use this setting to customize the departments pulled from the program parameters. Leave blank to hide it from the 'At a Glance'.</span>
                 <input type="text" x-show="isCustom" x-model="$store.program.departments" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Departments" x-cloak/>
               </div>
               <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.countries === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
@@ -440,6 +450,7 @@
                   <input id="brochureCountries" type="checkbox" x-model="isCustom"/>
                   <label for="brochureCountries" class="m-0 leading-tight">Use Custom Countries</label>
                 </div>
+                <span class="text-xs italic">Use this setting to customize the countries pulled from the program parameters. Leave blank to hide it from the 'At a Glance'.</span>
                 <input type="text" x-show="isCustom" x-model="$store.program.countries" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Countries" x-cloak/>
               </div>
               <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.cities === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
@@ -447,6 +458,7 @@
                   <input id="brochureCities" type="checkbox" x-model="isCustom"/>
                   <label for="brochureCities" class="m-0 leading-tight">Use Custom Cities</label>
                 </div>
+                <span class="text-xs italic">Use this setting to customize the cities pulled from the program parameters. Leave blank to hide it from the 'At a Glance'.</span>
                 <input type="text" x-show="isCustom" x-model="$store.program.cities" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Cities" x-cloak/>
               </div>
               <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.courses === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
@@ -454,6 +466,7 @@
                   <input id="brochureCourses" type="checkbox" x-model="isCustom"/>
                   <label for="brochureCourses" class="m-0 leading-tight">Use Custom Courses</label>
                 </div>
+                <span class="text-xs italic">Use this setting to customize the courses pulled from the program parameters. Leave blank to hide it from the 'At a Glance'.</span>
                 <input type="text" x-show="isCustom" x-model="$store.program.courses" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Courses" x-cloak/>
               </div>
               <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.cser === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
@@ -461,6 +474,7 @@
                   <input id="brochureCSER" type="checkbox" x-model="isCustom"/>
                   <label for="brochureCSER" class="m-0 leading-tight">Use Custom CSER</label>
                 </div>
+                <span class="text-xs italic">Use this setting to customize the CSER option pulled from the program parameters. Leave blank to hide it from the 'At a Glance'.</span>
                 <input type="text" x-show="isCustom" x-model="$store.program.cser" class="rounded-sm p-1 text-primary w-full" placeholder="Custom CSER" x-cloak/>
               </div>
               <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.academicEnrichment === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
@@ -468,6 +482,7 @@
                   <input id="brochureAcademicEnrichment" type="checkbox" x-model="isCustom"/>
                   <label for="brochureAcademicEnrichment" class="m-0 leading-tight">Use Custom Academic Enrichment</label>
                 </div>
+                <span class="text-xs italic">Use this setting to customize the Academic Enrichment option pulled from the program parameters. Leave blank to hide it from the 'At a Glance'.</span>
                 <input type="text" x-show="isCustom" x-model="$store.program.academicEnrichment" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Academic Enrichment" x-cloak/>
               </div>
             </div>

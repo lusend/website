@@ -41,11 +41,11 @@
           <label for="tabs" class="sr-only">Select a tab</label>
           <select id="tabs" x-model="currentId" x-on:change="window.location.hash = currentId" class="text-white rounded-lg block w-full p-2.5 bg-neutral bg-opacity-80 border-2 border-primary-content-fade">
             <option value="appOverview">Trip Overview</option>
-            <option value="appResources" x-show="document.getElementById('appResources').innerHTML.trim().slice(6)" x-cloak>Travel Resources</option>
-            <option value="appSafety" x-show="document.getElementById('appSafety').innerHTML.trim().slice(6)" x-cloak>Travel Safety</option>
-            <option value="appChecklist" x-show="document.getElementById('appChecklist').innerHTML.trim().slice(6)" x-cloak>Traveler Checklist</option>
-            <option value="appFlights" x-show="document.getElementById('appFlights').innerHTML.trim().slice(6)" x-cloak>Program Itinerary</option>
-            <option value="appPacking" x-show="document.getElementById('appPacking').innerHTML.trim().slice(6)" x-cloak>Packing Guide</option>
+            <option value="appResources" x-show="!location.href.includes('terradotta') || document.getElementById('appResources').innerHTML.trim().slice(6)" x-cloak>Travel Resources</option>
+            <option value="appSafety" x-show="!location.href.includes('terradotta') || document.getElementById('appSafety').innerHTML.trim().slice(6)" x-cloak>Travel Safety</option>
+            <option value="appChecklist" x-show="!location.href.includes('terradotta') || document.getElementById('appChecklist').innerHTML.trim().slice(6)" x-cloak>Traveler Checklist</option>
+            <option value="appFlights" x-show="!location.href.includes('terradotta') || document.getElementById('appFlights').innerHTML.trim().slice(6)" x-cloak>Program Itinerary</option>
+            <option value="appPacking" x-show="!location.href.includes('terradotta') || document.getElementById('appPacking').innerHTML.trim().slice(6)" x-cloak>Packing Guide</option>
           </select>
         </div>
         <div class="hidden navMD:!block w-full mt-5">
@@ -56,31 +56,31 @@
                 <span>Trip Overview</span>
               </button>
             </li>
-            <li x-show="document.getElementById('appResources').innerHTML.trim().slice(6)" x-cloak>
+            <li x-show="!location.href.includes('terradotta') || document.getElementById('appResources').innerHTML.trim().slice(6)" x-cloak>
               <button href="#" x-on:click.prevent="currentId = 'appResources'; window.location.hash = 'appResources'" x-bind:class="currentId === 'appResources' && '!text-accent !border-accent'" class="transition-colors inline-flex p-2.5 jusitfy-center items-center gap-1 rounded-t-lg border-b-2 border-neutral hover:text-primary-content hover:border-primary-content-fade group">
                 <ion-icon name="book">&nbsp;</ion-icon>
                 <span>Travel Resources</span>
               </button>
             </li>
-            <li x-show="document.getElementById('appSafety').innerHTML.trim().slice(6)" x-cloak>
+            <li x-show="!location.href.includes('terradotta') || document.getElementById('appSafety').innerHTML.trim().slice(6)" x-cloak>
               <button href="#" x-on:click.prevent="currentId = 'appSafety'; window.location.hash = 'appSafety'" x-bind:class="currentId === 'appSafety' && '!text-accent !border-accent'" class="transition-colors inline-flex p-2.5 jusitfy-center items-center gap-1 rounded-t-lg border-b-2 border-neutral hover:text-primary-content hover:border-primary-content-fade group">
                 <ion-icon name="nuclear">&nbsp;</ion-icon>
                 <span>Travel Safety</span>
               </button>
             </li>
-            <li x-show="document.getElementById('appChecklist').innerHTML.trim().slice(6)" x-cloak>
+            <li x-show="!location.href.includes('terradotta') || document.getElementById('appChecklist').innerHTML.trim().slice(6)" x-cloak>
               <button href="#" x-on:click.prevent="currentId = 'appChecklist'; window.location.hash = 'appChecklist'" x-bind:class="currentId === 'appChecklist' && '!text-accent !border-accent'" class="transition-colors inline-flex p-2.5 jusitfy-center items-center gap-1 rounded-t-lg border-b-2 border-neutral hover:text-primary-content hover:border-primary-content-fade group">
                 <ion-icon name="checkbox">&nbsp;</ion-icon>
                 <span>Traveler Checklist</span>
               </button>
             </li>
-            <li x-show="document.getElementById('appFlights').innerHTML.trim().slice(6)" x-cloak>
+            <li x-show="!location.href.includes('terradotta') || document.getElementById('appFlights').innerHTML.trim().slice(6)" x-cloak>
               <button href="#" x-on:click.prevent="currentId = 'appFlights'; window.location.hash = 'appFlights'" x-bind:class="currentId === 'appFlights' && '!text-accent !border-accent'" class="transition-colors inline-flex p-2.5 jusitfy-center items-center gap-1 rounded-t-lg border-b-2 border-neutral hover:text-primary-content hover:border-primary-content-fade group">
                 <ion-icon name="paper-plane">&nbsp;</ion-icon>
                 <span>Program Itinerary</span>
               </button>
             </li>
-            <li x-show="document.getElementById('appPacking').innerHTML.trim().slice(6)" x-cloak>
+            <li x-show="!location.href.includes('terradotta') || document.getElementById('appPacking').innerHTML.trim().slice(6)" x-cloak>
               <button href="#" x-on:click.prevent="currentId = 'appPacking'; window.location.hash = 'appPacking'" x-bind:class="currentId === 'appPacking' && '!text-accent !border-accent'" class="transition-colors inline-flex p-2.5 jusitfy-center items-center gap-1 rounded-t-lg border-b-2 border-neutral hover:text-primary-content hover:border-primary-content-fade group">
                 <ion-icon name="briefcase">&nbsp;</ion-icon>
                 <span>Packing Guide</span>
