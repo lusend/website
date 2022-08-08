@@ -413,8 +413,8 @@
                 <span class="text-xs italic">The application deadline date is pulled from the most recent date record. Input a custom deadline date here. Note: if the application deadline begins with anything other than 'Applications Due By', the full text will appear in the 'At a Glance'.</span>
                 <input type="text" x-show="isCustom" x-model="$store.program.appDeadline" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Application Deadline" x-cloak/>
               </div>
-              <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.disableApply === undefined ? !!$store.program.getDefaultDisableApply(true).length : false" class="flex flex-col justify-center items-start gap-1 w-full">
-                <div x-on:change="$store.program.disableApply = isCustom ? $store.program.getDefaultDisableApply(true) : false" class="inline-flex items-center gap-1 w-full">
+              <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.disableApply === undefined ? true : false" class="flex flex-col justify-center items-start gap-1 w-full">
+                <div x-on:change="$store.program.disableApply = isCustom ? undefined : false" class="inline-flex items-center gap-1 w-full">
                   <input id="brochureDisableApply" type="checkbox" x-model="isCustom"/>
                   <label for="brochureDisableApply" class="m-0 leading-tight" title="This disables new applications regardless of application deadline">Disable New Applications</label>
                 </div>
