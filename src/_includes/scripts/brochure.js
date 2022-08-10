@@ -282,6 +282,7 @@ document.addEventListener('alpine:init', () => {
               return items.length > 1 ? items[items.length - 1] : items[0];
             })
             .filter(onlyUnique)
+            .filter((item) => !!item)
             .join(', ');
         },
         formatData: function (str) {
@@ -308,6 +309,7 @@ document.addEventListener('alpine:init', () => {
               return newItems.join(' ');
             })
             .filter(onlyUnique)
+            .filter((item) => !!item)
             .join(', ');
         },
         formatData: function (str) {
