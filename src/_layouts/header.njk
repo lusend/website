@@ -5,10 +5,10 @@
         <div class="flex flex-col max-w-[65ch]">
           {% include "./breadcrumbs.njk" %}
           <div class="prose">
-            <h1 id="appTitle" class="text-center navMD:text-left text-primary-content" {% if type === 'brochure' %} x-text="$store.program.getTitle()" {% endif %}>{{ title }}</h1>
+            <h1 id="appTitle" class="text-center navMD:text-left text-primary-content" {% if type === 'brochure' %} x-html="$store.program.getTitle()" {% endif %}>{{ title }}</h1>
           </div>
           {% if author !== false or type === 'brochure' %}
-            <div id="appSubtitle" {% if type === 'brochure' %} x-text="$store.program.getDate()" {% endif %} class="mt-3 text-sm text-center {% if background %} text-white {% else %} text-base-300 {% endif %} navMD:text-left">
+            <div id="appSubtitle" {% if type === 'brochure' %} x-html="$store.program.getDate()" {% endif %} class="mt-3 text-sm text-center {% if background %} text-white {% else %} text-base-300 {% endif %} navMD:text-left">
               {% if author !== false %}
                 {% if author | length %}
                   <div>
@@ -24,13 +24,13 @@
               {% if type === 'brochure' %} &nbsp; {% endif %}
             </div>
             {% if type === 'brochure' %}
-              <div id="appApplicationDeadline" x-text="$store.program.getAppDeadline()" class="text-xs text-center {% if background %} text-white {% else %} text-base-300 {% endif %} font-extralight navMD:text-left">&nbsp;</div>
+              <div id="appApplicationDeadline" x-html="$store.program.getAppDeadline()" class="text-xs text-center {% if background %} text-white {% else %} text-base-300 {% endif %} font-extralight navMD:text-left">&nbsp;</div>
             {% endif %}
           {% endif %}
         </div>
         {% if type === 'brochure' %}
           <div class="flex flex-col items-center justify-center gap-2" x-data="{ clicked: false }">
-            <span x-show="$store.program.getDisableApply() && clicked" x-text="$store.program.getDisableApply()" class="max-w-sm navMD:max-w-[11rem] text-xs justify-self-start" x-transition x-cloak>&nbps;</span>
+            <span x-show="$store.program.getDisableApply() && clicked" x-html="$store.program.getDisableApply()" class="max-w-sm navMD:max-w-[11rem] text-xs justify-self-start" x-transition x-cloak>&nbps;</span>
             <a id="appApplyNow" x-on:click="clicked = true" x-on:click.outside="clicked = false" x-bind:title="$store.program.getDisableApply()" x-bind:disabled="!!$store.program.getDisableApply()" target="_blank" class="w-full max-w-sm bg-transparent border-2 btn border-primary-content hover:bg-white hover:!text-primary transition-colors" x-bind:href="$store.program.getDisableApply() ? false : 'https://liberty-sa.terradotta.com/index.cfm?FuseAction=Students.AngApply&RequiredProfile=1&Program_ID=' + $store.program.id" x-cloak>Apply Now</a>
             <a id="appRequestInfo" target="_blank" class="w-full max-w-sm bg-transparent border-2 btn border-primary-content hover:bg-white hover:!text-primary transition-colors" x-bind:href="'https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.InfoRequest&Program_ID=' + $store.program.id" x-cloak>Request More Info</a>
           </div>

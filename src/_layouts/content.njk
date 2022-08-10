@@ -4,7 +4,7 @@
       <div class="text-base lg:sticky lg:top-20">
         <div x-bind:class="!open ? 'text-normal lg:text-vertical' : editor() && aagFocused && '!border-secondary'" class="transition-all rounded-2xl p-5 backdrop-blur-sm border-2 {% if not background %} shadow-lg border-base-200 bg-white bg-opacity-90 {% else %} border-[rgba(255,255,255,0.6)] {% endif %}">
           <h1 {%if type === 'brochure' %} x-on:click="open = !open; aagFocused = open ? 'appGlance' : false" x-bind:class="!open && 'h-full lg:flex-row-reverse !mb-0'" {% endif %} class="{% if type === 'brochure' %} cursor-pointer {% endif %} my-0 mb-5 text-2xl flex gap-1 items-center justify-between font-semibold transition-all">
-            <span x-data="{ title: {%if type === 'brochure' %}'At A Glance'{% else %}'Table of Contents'{% endif %}}" x-text="title" class="transition-all origin-center" x-bind:class="!open && 'lg:rotate-180'">&nbsp;</span>
+            <span x-data="{ title: {%if type === 'brochure' %}'At A Glance'{% else %}'Table of Contents'{% endif %}}" x-html="title" class="transition-all origin-center" x-bind:class="!open && 'lg:rotate-180'">&nbsp;</span>
             {% if type === 'brochure' %}
               <ion-icon x-show="open" name="caret-up-circle" class="origin-center lg:rotate-90" x-cloak>&nbsp;</ion-icon>
               <ion-icon x-show="!open" name="caret-down-circle" class="origin-center lg:-rotate-90" x-cloak>&nbsp;</ion-icon>
@@ -15,48 +15,48 @@
               <p x-show="$store.program.appDeadline === undefined || $store.program.appDeadline" x-cloak>
                 <strong>Application Deadline</strong>
                 <br/>
-                <span id="appDeadline" x-text="$store.program.getAppDeadline().replace('Applications Due By ', '')">&nbsp;</span>
+                <span id="appDeadline" x-html="$store.program.getAppDeadline().replace('Applications Due By ', '')">&nbsp;</span>
               </p>
               <p x-show="$store.program.term === undefined || $store.program.term" x-cloak>
                 <strong>Term</strong>
                 <br/>
-                <span id="appTerm" x-text="$store.program.getTerm()">&nbsp;</span>
+                <span id="appTerm" x-html="$store.program.getTerm()">&nbsp;</span>
               </p>
               <p x-show="$store.program.schools === undefined || $store.program.schools" x-cloak>
                 <strong>Schools</strong>
                 <br/>
-                <span id="appSchools" x-text="$store.program.getSchools()">&nbsp;</span>
+                <span id="appSchools" x-html="$store.program.getSchools()">&nbsp;</span>
               </p>
               <p x-show="$store.program.departments === undefined || $store.program.departments" x-cloak>
                 <strong>Departments</strong>
                 <br/>
-                <span id="appDepartments" x-text="$store.program.getDepartments()">&nbsp;</span>
+                <span id="appDepartments" x-html="$store.program.getDepartments()">&nbsp;</span>
               </p>
               <p x-show="$store.program.countries === undefined || $store.program.countries" x-cloak>
                 <strong>Countries</strong>
                 <br/>
-                <span id="appCountries" x-text="$store.program.getCountries()">&nbsp;</span>
+                <span id="appCountries" x-html="$store.program.getCountries()">&nbsp;</span>
               </p>
               <p x-show="$store.program.cities === undefined || $store.program.cities" x-cloak>
                 <strong>Cities</strong>
                 <br/>
-                <span id="appCities" x-text="$store.program.getCities()">&nbsp;</span>
+                <span id="appCities" x-html="$store.program.getCities()">&nbsp;</span>
               </p>
               <hr x-show="$store.program.term === undefined || $store.program.term || $store.program.schools === undefined || $store.program.schools || $store.program.departments === undefined || $store.program.departments || $store.program.countries === undefined || $store.program.countries || $store.program.cities === undefined || $store.program.cities" x-cloak/>
               <p x-show="$store.program.courses === undefined || $store.program.courses" x-cloak>
                 <strong>Courses</strong>
                 <br/>
-                <span id="appCourses" x-text="$store.program.getCourses()">&nbsp;</span>
+                <span id="appCourses" x-html="$store.program.getCourses()">&nbsp;</span>
               </p>
               <p x-show="$store.program.cser === undefined || $store.program.cser" x-cloak>
                 <strong>CSER</strong>
                 <br/>
-                <span id="appCSER" x-text="$store.program.getCSER()">&nbsp;</span>
+                <span id="appCSER" x-html="$store.program.getCSER()">&nbsp;</span>
               </p>
               <div title="Academic Enrichment means you can attend this program without taking a course" x-show="$store.program.academicEnrichment === undefined || $store.program.academicEnrichment" x-cloak>
                 <strong>Academic Enrichment</strong>
                 <div class="text-[10px] italic leading-tight mb-2">Academic Enrichment means you can attend this program without taking a course</div>
-                <span id="appAcademicEnrichment" x-text="$store.program.getAcademicEnrichment()">&nbsp;</span>
+                <span id="appAcademicEnrichment" x-html="$store.program.getAcademicEnrichment()">&nbsp;</span>
               </div>
               <hr x-show="$store.program.academicEnrichment === undefined || $store.program.academicEnrichment || $store.program.courses === undefined || $store.program.courses || $store.program.cser === undefined || $store.program.cser"/>
             {% else %}

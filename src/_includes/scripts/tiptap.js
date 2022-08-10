@@ -1,6 +1,7 @@
 import { nanoid } from 'nanoid';
 
 import { Editor, Node, mergeAttributes } from '@tiptap/core';
+import { generateHTML } from '@tiptap/html';
 
 import Document from '@tiptap/extension-document';
 import Paragraph from '@tiptap/extension-paragraph';
@@ -69,11 +70,29 @@ function pdfListener() {
   return script;
 }
 
+function replaceQuotes(o, reverse = false) {
+  Object.keys(o).forEach((k) => {
+    if (typeof o[k] === 'object') {
+      return replaceQuotes(o[k], reverse);
+    }
+
+    if (typeof o[k] === 'string') {
+      if (reverse) {
+        o[k] = o[k].replace(/&quot;/g, '"').replace(/&apos;/g, "'");
+      } else {
+        o[k] = o[k].replace(/"/g, '&quot;').replace(/'/g, '&apos;');
+      }
+    }
+  });
+
+  return o;
+}
+
 function addGlobalVar(name, value) {
   const script = document.createElement('script');
-  script.innerHTML = `const ${name} = '${JSON.stringify(
-    value
-  )}'; window.${name} = ${name}`;
+  script.innerHTML = `\nconst ${name} = '${JSON.stringify(
+    replaceQuotes(value)
+  )}';\nwindow.${name} = ${name};\n`;
   return script;
 }
 
@@ -219,6 +238,83 @@ const Iframe = Node.create({
   }
 });
 
+const extensions = [
+  Document,
+  PDF,
+  Paragraph,
+  Text,
+  Bold,
+  Underline,
+  Code,
+  Italic,
+  Strike,
+  HardBreak,
+  CodeBlock,
+  Blockquote,
+  BulletList,
+  Iframe,
+  OrderedList,
+  ListItem,
+  HorizontalRule,
+  DropCursor,
+  GapCursor,
+  History,
+  TextStyle,
+  Color,
+  Link.extend({
+    addAttributes() {
+      return {
+        ...this.parent?.(),
+        class: {
+          default: ''
+        }
+      };
+    }
+  }).configure({
+    openOnClick: false
+  }),
+  Image.extend({
+    addAttributes() {
+      return {
+        ...this.parent?.(),
+        class: {
+          default: ''
+        }
+      };
+    }
+  }),
+  Superscript,
+  TaskList,
+  TaskItem,
+  Subscript.extend({
+    addKeyboardShortcuts() {
+      return {
+        'Mod-Shift-,': () => this.editor.commands.toggleSubscript()
+      };
+    }
+  }),
+  Table.configure({ resizable: false }),
+  TableRow,
+  TableHeader,
+  TableCell,
+  Highlight.configure({ multicolor: true }),
+  Heading.configure({ levels: [1, 2, 3] }),
+  TextAlign.extend({
+    addKeyboardShortcuts() {
+      return {
+        'Mod-Alt-l': () => this.editor.commands.setTextAlign('left'),
+        'Mod-Alt-e': () => this.editor.commands.setTextAlign('center'),
+        'Mod-Alt-r': () => this.editor.commands.setTextAlign('right'),
+        'Mod-Alt-j': () => this.editor.commands.setTextAlign('justify')
+      };
+    }
+  }).configure({ types: ['heading', 'paragraph'] }),
+  Placeholder.configure({
+    placeholder: 'Your Content Goes Here...'
+  }),
+  Typography
+];
+
 /**
  * Alpine Store for creating an editor and handling its data
  */
@@ -254,84 +350,7 @@ document.addEventListener('alpine:init', () => {
               class: 'prose focus:outline-none w-full max-w-[85ch]'
             }
           },
-          extensions: [
-            Document,
-            PDF,
-            Paragraph,
-            Text,
-            Bold,
-            Underline,
-            Code,
-            Italic,
-            Strike,
-            HardBreak,
-            CodeBlock,
-            Blockquote,
-            BulletList,
-            Iframe,
-            OrderedList,
-            ListItem,
-            HorizontalRule,
-            DropCursor,
-            GapCursor,
-            History,
-            TextStyle,
-            Color,
-            Link.extend({
-              addAttributes() {
-                return {
-                  ...this.parent?.(),
-                  class: {
-                    default: ''
-                  }
-                };
-              }
-            }).configure({
-              openOnClick: false
-            }),
-            Image.extend({
-              addAttributes() {
-                return {
-                  ...this.parent?.(),
-                  class: {
-                    default: ''
-                  }
-                };
-              }
-            }),
-            Superscript,
-            TaskList,
-            TaskItem,
-            Subscript.extend({
-              addKeyboardShortcuts() {
-                return {
-                  'Mod-Shift-,': () => this.editor.commands.toggleSubscript()
-                };
-              }
-            }),
-            Table.configure({ resizable: false }),
-            TableRow,
-            TableHeader,
-            TableCell,
-            Highlight.configure({ multicolor: true }),
-            Heading.configure({ levels: [1, 2, 3] }),
-            TextAlign.extend({
-              addKeyboardShortcuts() {
-                return {
-                  'Mod-Alt-l': () => this.editor.commands.setTextAlign('left'),
-                  'Mod-Alt-e': () =>
-                    this.editor.commands.setTextAlign('center'),
-                  'Mod-Alt-r': () => this.editor.commands.setTextAlign('right'),
-                  'Mod-Alt-j': () =>
-                    this.editor.commands.setTextAlign('justify')
-                };
-              }
-            }).configure({ types: ['heading', 'paragraph'] }),
-            Placeholder.configure({
-              placeholder: 'Your Content Goes Here...'
-            }),
-            Typography
-          ],
+          extensions,
           content,
           onCreate() {
             _this.updatedAt = Date.now();
@@ -860,14 +879,16 @@ async function exportBrochure(programID) {
 
   let finalHTML = parser.parseFromString(strippedHTML, 'text/html');
   for (const [section, editor] of Object.entries(window.tiptapEditors)) {
+    finalJSON[section] = replaceQuotes(editor.getJSON());
+
     const tempHTML =
       section === 'appGlance'
-        ? finalHTML.getElementById(section).innerHTML + editor.getHTML()
-        : editor.getHTML();
+        ? finalHTML.getElementById(section).innerHTML +
+          generateHTML(finalJSON[section], extensions)
+        : generateHTML(finalJSON[section], extensions);
     finalHTML.getElementById(section).innerHTML =
       tempHTML === '<p></p>' ? '&nbsp;' : tempHTML;
     finalHTML.getElementById(section).removeAttribute('x-data');
-    finalJSON[section] = editor.getJSON();
   }
 
   finalHTML.getElementById('app').appendChild(pdfListener());
@@ -883,7 +904,13 @@ async function exportBrochure(programID) {
       if (value === undefined) continue;
       if (!finalJSON.other.program) finalJSON.other.program = {};
 
-      finalJSON.other.program[key] = value;
+      const newValue =
+        typeof value === 'string'
+          ? value
+              .replace(/[\/\(\)\"]/g, '&quot;')
+              .replace(/[\/\(\)\']/g, '&apos;')
+          : value;
+      finalJSON.other.program[key] = newValue;
 
       finalHTML
         .getElementById('app')
@@ -891,7 +918,7 @@ async function exportBrochure(programID) {
           'x-init',
           finalHTML.getElementById('app').getAttribute('x-init') +
             `$store.program.${key} = ${
-              typeof value === 'string' ? `'${value}'` : value
+              typeof newValue === 'string' ? `'${newValue}'` : newValue
             };`
         );
     }
@@ -933,7 +960,12 @@ async function exportBrochure(programID) {
     .appendChild(addGlobalVar('appData', finalJSON));
 
   await navigator.clipboard.writeText(
-    finalHTML.head.innerHTML + finalHTML.body.innerHTML
+    finalHTML.head.innerHTML
+      .replace(/&amp;apos;/g, '&apos;')
+      .replace(/&amp;quot;/g, '&quot;') +
+      finalHTML.body.innerHTML
+        .replace(/&amp;apos;/g, '&apos;')
+        .replace(/&amp;quot;/g, '&quot;')
   );
 
   if (programID !== undefined) {
@@ -951,7 +983,8 @@ async function importBrochure(importData) {
       const data = JSON.parse(importData);
       setTimeout(function () {
         for (const [section, editor] of Object.entries(window.tiptapEditors)) {
-          if (data && data[section]) editor.commands.setContent(data[section]);
+          if (data && data[section])
+            editor.commands.setContent(replaceQuotes(data[section], true));
           document.getElementById('importBrochureButton').style.display =
             'none';
         }
@@ -969,7 +1002,10 @@ async function importBrochure(importData) {
 
           if (other.program) {
             for (let [key, value] of Object.entries(other.program)) {
-              Alpine.store('program')[key] = value;
+              Alpine.store('program')[key] =
+                typeof value === 'string'
+                  ? value.replace(/&quot;/g, '"').replace(/&apos;/g, "'")
+                  : value;
             }
           }
         }
