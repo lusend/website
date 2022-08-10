@@ -279,7 +279,7 @@ document.addEventListener('alpine:init', () => {
             .split(';')
             .map(function (item) {
               const items = item.split(', ');
-              return items.length > 1 ? items[1] : items[0];
+              return items.length > 1 ? items[items.length - 1] : items[0];
             })
             .filter(onlyUnique)
             .join(', ');
@@ -303,7 +303,9 @@ document.addEventListener('alpine:init', () => {
           return str
             .split(';')
             .map(function (item) {
-              return item.split(', ')[0];
+              const newItems = item.split(', ');
+              newItems.pop();
+              return newItems.join(' ');
             })
             .filter(onlyUnique)
             .join(', ');
