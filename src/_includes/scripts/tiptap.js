@@ -71,6 +71,8 @@ function pdfListener() {
 }
 
 function replaceQuotes(o, reverse = false) {
+  if (o === undefined || o === null) return o;
+
   Object.keys(o).forEach((k) => {
     if (typeof o[k] === 'object') {
       return replaceQuotes(o[k], reverse);
