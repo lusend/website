@@ -391,7 +391,8 @@ document.addEventListener('alpine:init', () => {
       if (!$("button[onclick='ApplyNow();']").length)
         return 'An application is not yet available for this program!';
 
-      if (disable) return 'New applications are currently disabled!';
+      if (disable)
+        return 'This program is currently not accepting applications.';
 
       return '';
     },
