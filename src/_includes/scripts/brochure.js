@@ -348,7 +348,7 @@ document.addEventListener('alpine:init', () => {
         selector: '[id^=id_11010]',
         defaultValue: '👎',
         formatString: function (str) {
-          return str.toLowerCase().includes('cser') ? '👍' : '👎';
+          return str.toLowerCase().includes('cser') ? '👍 Yes' : '👎 No';
         },
         formatData: function (str) {
           return str.includes('👎') ? false : true;
@@ -365,7 +365,9 @@ document.addEventListener('alpine:init', () => {
         selector: '[id^=id_11010]',
         defaultValue: '👎',
         formatString: function (str) {
-          return str.toLowerCase().includes('not for credit') ? '👍' : '👎';
+          return str.toLowerCase().includes('not for credit')
+            ? '👍 Yes'
+            : '👎 No';
         },
         formatData: function (str) {
           return str.includes('👎') ? false : true;

@@ -53,11 +53,11 @@
                 <br/>
                 <span id="appCSER" x-text="$store.program.getCSER()">&nbsp;</span>
               </p>
-              <p title="Academic Enrichment means you can attend this program without taking a course" x-show="$store.program.academicEnrichment === undefined || $store.program.academicEnrichment" x-cloak>
+              <div title="Academic Enrichment means you can attend this program without taking a course" x-show="$store.program.academicEnrichment === undefined || $store.program.academicEnrichment" x-cloak>
                 <strong>Academic Enrichment</strong>
-                <br/>
+                <div class="text-[10px] italic leading-tight mb-2">Academic Enrichment means you can attend this program without taking a course</div>
                 <span id="appAcademicEnrichment" x-text="$store.program.getAcademicEnrichment()">&nbsp;</span>
-              </p>
+              </div>
               <hr x-show="$store.program.academicEnrichment === undefined || $store.program.academicEnrichment || $store.program.courses === undefined || $store.program.courses || $store.program.cser === undefined || $store.program.cser"/>
             {% else %}
               &nbsp;
