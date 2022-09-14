@@ -53,12 +53,12 @@
                 <br/>
                 <span id="appCSER" x-html="$store.program.getCSER()">&nbsp;</span>
               </p>
-              <div title="Academic Enrichment means you can attend this program without taking a course" x-show="$store.program.academicEnrichment === undefined || $store.program.academicEnrichment" x-cloak>
-                <strong>Academic Enrichment</strong>
-                <div class="text-[10px] italic leading-tight mb-2">Academic Enrichment means you can attend this program without taking a course</div>
-                <span id="appAcademicEnrichment" x-html="$store.program.getAcademicEnrichment()">&nbsp;</span>
-              </div>
-              <hr x-show="$store.program.academicEnrichment === undefined || $store.program.academicEnrichment || $store.program.courses === undefined || $store.program.courses || $store.program.cser === undefined || $store.program.cser"/>
+              <p x-show="$store.program.notForCredit === undefined || $store.program.notForCredit" x-cloak>
+                <strong>Not For Credit</strong>
+                <br/>
+                <span id="appNotForCredit" x-html="$store.program.getNotForCredit()">&nbsp;</span>
+              </p>
+              <hr x-show="$store.program.notForCredit === undefined || $store.program.notForCredit || $store.program.courses === undefined || $store.program.courses || $store.program.cser === undefined || $store.program.cser"/>
             {% else %}
               &nbsp;
             {% endif %}
@@ -477,13 +477,13 @@
                 <span class="text-xs italic">Use this setting to customize the CSER option pulled from the program parameters. Leave blank to hide it from the 'At a Glance'.</span>
                 <input type="text" x-show="isCustom" x-model="$store.program.cser" class="rounded-sm p-1 text-primary w-full" placeholder="Custom CSER" x-cloak/>
               </div>
-              <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.academicEnrichment === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
-                <div x-on:change="$store.program.academicEnrichment = isCustom ? $store.program.getAcademicEnrichment() : undefined" class="inline-flex items-center gap-1 w-full">
-                  <input id="brochureAcademicEnrichment" type="checkbox" x-model="isCustom"/>
-                  <label for="brochureAcademicEnrichment" class="m-0 leading-tight">Use Custom Academic Enrichment</label>
+              <div x-data="{ isCustom: false }" x-init="isCustom = $store.program.notForCredit === undefined ? false : true" class="flex flex-col justify-center items-start gap-1 w-full">
+                <div x-on:change="$store.program.notForCredit = isCustom ? $store.program.getNotForCredit() : undefined" class="inline-flex items-center gap-1 w-full">
+                  <input id="brochureNotForCredit" type="checkbox" x-model="isCustom"/>
+                  <label for="brochureNotForCredit" class="m-0 leading-tight">Use Custom Not For Credit</label>
                 </div>
-                <span class="text-xs italic">Use this setting to customize the Academic Enrichment option pulled from the program parameters. Leave blank to hide it from the 'At a Glance'.</span>
-                <input type="text" x-show="isCustom" x-model="$store.program.academicEnrichment" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Academic Enrichment" x-cloak/>
+                <span class="text-xs italic">Use this setting to customize the Not For Credit option pulled from the program parameters. Leave blank to hide it from the 'At a Glance'.</span>
+                <input type="text" x-show="isCustom" x-model="$store.program.notForCredit" class="rounded-sm p-1 text-primary w-full" placeholder="Custom Not For Credit" x-cloak/>
               </div>
             </div>
           </div>

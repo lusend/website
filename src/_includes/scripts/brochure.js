@@ -142,7 +142,7 @@ document.addEventListener('alpine:init', () => {
     cities: undefined,
     courses: undefined,
     cser: undefined,
-    academicEnrichment: undefined,
+    notForCredit: undefined,
     disableApply: undefined,
 
     getDefaultStartDate() {
@@ -364,7 +364,7 @@ document.addEventListener('alpine:init', () => {
       return this.cser || this.getDefaultCSER().value || '';
     },
 
-    getDefaultAcademicEnrichment() {
+    getDefaultNotForCredit() {
       return getSelectorContents({
         selector: '[id^=id_11010]',
         defaultValue: '👎',
@@ -379,12 +379,8 @@ document.addEventListener('alpine:init', () => {
       });
     },
 
-    getAcademicEnrichment() {
-      return (
-        this.academicEnrichment ||
-        this.getDefaultAcademicEnrichment().value ||
-        ''
-      );
+    getNotForCredit() {
+      return this.notForCredit || this.getDefaultNotForCredit().value || '';
     },
 
     getDefaultDisableApply(disable) {
