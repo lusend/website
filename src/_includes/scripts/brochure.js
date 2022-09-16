@@ -203,12 +203,13 @@ document.addEventListener('alpine:init', () => {
           return formatDate(str.replace(/\*/g, '').trim(), false);
         },
         verifyContent: function (str) {
-          return str && validDate(str);
+          return str && validDate(str.replace(/\*/g, '').trim());
         }
       });
     },
 
     getAppDeadline() {
+      console.log(this.getDefaultAppDeadline());
       return this.appDeadline || this.getDefaultAppDeadline().value || '';
     },
 

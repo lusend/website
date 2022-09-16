@@ -77,11 +77,16 @@
   padding-right: 0;
 }
 
-#app :is(#appMainContent, #mycontent) td > p,
-#app :is(#appMainContent, #mycontent) td > p,
-#app :is(#appMainContent, #mycontent) th > p,
-#app :is(#appMainContent, #mycontent) blockquote > p,
-#app :is(#appMainContent, #mycontent) li > p {
+#app #appMainContent td > p,
+#app #appMainContent td > p,
+#app #appMainContent th > p,
+#app #appMainContent blockquote > p,
+#app #appMainContent li > p,
+#app #mycontent td > p,
+#app #mycontent td > p,
+#app #mycontent th > p,
+#app #mycontent blockquote > p,
+#app #mycontent li > p {
   @apply m-0;
 }
 
@@ -102,43 +107,64 @@
   @apply w-full rounded-md overflow-hidden;
 }
 
-#app :is(#appMainContent, #mycontent) .menu .is-active {
+#app #appMainContent .menu .is-active,
+#app #mycontent .menu .is-active {
   @apply bg-primary text-white;
 }
 
-#app :is(#appMainContent, #mycontent) .menu button[disabled] {
+#app #appMainContent .menu button[disabled],
+#app #mycontent .menu button[disabled] {
   @apply !text-primary-content-fade hover:!bg-transparent hover:!text-primary-content-fade;
 }
 
 #app
-  :is(#appMainContent, #mycontent)
+  #appMainContent
+  > div[id^='app']:not([id='appMenu'], [id='appMainContent'])
+  > :where(:first-child):not(:where([class~='not-prose'] *)),
+#app
+  #mycontent
   > div[id^='app']:not([id='appMenu'], [id='appMainContent'])
   > :where(:first-child):not(:where([class~='not-prose'] *)) {
   @apply mt-0;
 }
 
 #app
-  :is(#appMainContent, #mycontent)
+  #appMainContent
+  > div[id^='app']:not([id='appMenu'], [id='appMainContent'])
+  > :where(:lasat-child):not(:where([class~='not-prose'] *)),
+#app
+  #mycontent
   > div[id^='app']:not([id='appMenu'], [id='appMainContent'])
   > :where(:lasat-child):not(:where([class~='not-prose'] *)) {
   @apply mb-0;
 }
 
 #app
-  :is(#appMainContent, #mycontent)
+  #appMainContent
+  > div[id^='app']:not([id='appMenu'], [id='appMainContent'])
+  > .ProseMirror,
+#app
+  #mycontent
   > div[id^='app']:not([id='appMenu'], [id='appMainContent'])
   > .ProseMirror {
   @apply border-x-[3px] border-b-[3px] rounded-b-lg border-primary py-5 px-3 max-w-[85ch];
 }
 
 #app
-  :is(#appMainContent, #mycontent)
+  #appMainContent
+  > div[id^='app']:not([id='appMenu'], [id='appMainContent'], .active),
+#app
+  #mycontent
   > div[id^='app']:not([id='appMenu'], [id='appMainContent'], .active) {
   @apply pointer-events-none;
 }
 
 #app
-  :is(#appMainContent, #mycontent)
+  #appMainContent
+  > div[id^='app']:not([id='appMenu'], [id='appMainContent'], .active)
+  > .ProseMirror::before,
+#app
+  #mycontent
   > div[id^='app']:not([id='appMenu'], [id='appMainContent'], .active)
   > .ProseMirror::before {
   @apply w-full h-full absolute right-0 left-0 top-0 bottom-0 rounded-b-lg bg-base-300 bg-opacity-80 backdrop-blur-3xl pointer-events-none z-10;

@@ -97,7 +97,12 @@
   }
 
   /* Header Anchor Links */
-  :is(h1, h2, h3, h4, h5, h6) > a.header-anchor {
+  h1 > a.header-anchor,
+  h2 > a.header-anchor,
+  h3 > a.header-anchor,
+  h4 > a.header-anchor,
+  h5 > a.header-anchor,
+  h6 > a.header-anchor {
     text-decoration: none;
     margin-left: -2rem;
     padding-left: 2rem;
