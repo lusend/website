@@ -209,7 +209,6 @@ document.addEventListener('alpine:init', () => {
     },
 
     getAppDeadline() {
-      console.log(this.getDefaultAppDeadline());
       return this.appDeadline || this.getDefaultAppDeadline().value || '';
     },
 
