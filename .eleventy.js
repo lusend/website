@@ -46,6 +46,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
   eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
+  eleventyConfig.addShortcode('date', () => `${Date.now()}`);
+
   eleventyConfig.addNunjucksFilter('printCode', (code) => {
     try {
       return JSON.stringify(code).replace(/\"/g, "'");

@@ -222,7 +222,7 @@
       })
     </script>
 
-    <script src="{% if preview %}.{% endif %}{{ pathPrefix }}{% if not preview %}pages/{% endif %}tiptap.js"></script>
+    <script src="{% if preview %}.{% endif %}{{ pathPrefix }}{% if not preview %}pages/{% endif %}tiptap.js?cache-bust={% date %}"></script>
 
     <!--STRIPEND SCRIPT-->
 
