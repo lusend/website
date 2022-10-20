@@ -65,9 +65,10 @@ NOTE: **Students who have completed Financial Check-In will be prompted to make 
 Students participating in an LU Send Study Abroad program will pay a fee to help cover expenses including: background check, international health and travel insurance, Alert Traveler, travel package, Pre-Departure Training, and administrative & processing fees.
 
 - Signature & Custom Program Semester: $1200
-- Signature & Custom Program Summer/J-Term: $600
+- Signature & Custom Program Summer: $600
+- Custom Program J-Term: $300
 - Internship Semester: $300
-- Internship Summer/J-Term: $250
+- Internship Summer: $250
 
 NOTE: **The LU Send Study Abroad Fee is placed on the student’s account. This fee is paid by completing Financial Check-In.**
 
