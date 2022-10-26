@@ -13,7 +13,7 @@ Staff is available to consult with faculty in-person at any point in the proposa
 
 ![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35651){.header}
 
-All of the proposal dates are hard deadlines. Deadlines will appear in red 30 days out and be removed once they have passed.
+All of the proposal dates are hard deadlines. All of the proposal dates are hard deadlines that are set 13 months before departure. Proposals that are received after the set deadline will not be approved.
 
 <!-- Will automatically update and sort -->
 <!-- Make sure {date-turnredafter="number"} is included -->
