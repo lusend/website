@@ -1,8 +1,16 @@
 dayjs.extend(window.dayjs_plugin_utc);
+dayjs.extend(window.dayjs_plugin_relativeTime);
+
+function toggleAltText(element) {
+  const temp = $(element).data('altText');
+  $(element).data('altText', $(element).html());
+  $(element).html(temp);
+}
 
 $('[data-turnredafter]').each(function () {
   const table = $(this);
   const redDays = table.data('turnredafter');
+
   $('tbody > tr', table)
     .map(function () {
       const labelText = $('td:nth-child(1)', this).text().split('(');
@@ -30,20 +38,53 @@ $('[data-turnredafter]').each(function () {
         label,
         year,
         red,
-        deadline
+        deadline,
+        diff: today.to(deadline)
       };
     })
     .get()
     .sort((a, b) => a.deadline.diff(b.deadline))
     .map((deadline, index) => {
+      $(`tbody > tr:nth-child(${index + 1})`, table).attr(
+        'title',
+        deadline.diff
+      );
+
       $(`tbody > tr:nth-child(${index + 1})`, table)
         .find('td:nth-child(1)')
         .addClass(() => (deadline.red ? 'text-secondary' : ''))
-        .text(`${deadline.label} (${deadline.year})`);
+        .text(deadline.label)
+        .data('altText', `${deadline.label} (${deadline.year})`);
 
       $(`tbody > tr:nth-child(${index + 1})`, table)
         .find('td:nth-child(2)')
         .addClass(() => (deadline.red ? 'text-secondary' : ''))
-        .text(deadline.deadline.format('dddd, MMMM D, YYYY'));
+        .text(deadline.deadline.format('MMMM D'))
+        .data(
+          'altText',
+          $(document.createElement('span'))
+            .text(deadline.deadline.format('dddd, MMMM D, YYYY'))
+            .append(
+              $(document.createElement('i'))
+                .addClass('text-xs')
+                .text(` (${deadline.diff})`)
+            )
+        );
     });
+
+  table.before(
+    $(document.createElement('button'))
+      .text('Show Deadline Specifics')
+      .addClass('btn')
+      .data('altText', 'Hide Deadline Specifics')
+      .on('click', function () {
+        toggleAltText(this);
+        $('tbody > tr', table)
+          .get()
+          .map((value) => {
+            toggleAltText($(value).find('td:nth-child(1)'));
+            toggleAltText($(value).find('td:nth-child(2)'));
+          });
+      })
+  );
 });
