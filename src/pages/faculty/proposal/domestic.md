@@ -15,7 +15,7 @@ Through LU Send, Liberty University strives to partner with faculty and staff to
 
 _\*The dates below are for trips that operate as a full LU Send Trip. These trips are overnight, more than 50 miles away from Liberty’s campus, include culture immersion, academic credit (or CSER credit), and a service opportunity. An LU Send Trip Coordinator manages the logistics, budget, excused absences, out of bed requests, etc. Proposals should be sent in 9 months before departure._
 
-All of the proposal dates are hard deadlines. Deadlines will appear in red 30 days out and be removed once they have passed.
+All of the proposal dates are hard deadlines. All of the proposal dates are hard deadlines that are set 9 months before departure. Proposals that are received after the set deadline will not be approved. 
 
 <!-- Will automatically update and sort -->
 <!-- Make sure {date-turnredafter="number"} is included -->
