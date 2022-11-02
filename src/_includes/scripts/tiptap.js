@@ -964,10 +964,12 @@ async function exportBrochure(programID) {
   await navigator.clipboard.writeText(
     finalHTML.head.innerHTML
       .replace(/&amp;apos;/g, '&apos;')
-      .replace(/&amp;quot;/g, '&quot;') +
+      .replace(/&amp;quot;/g, '&quot;')
+      .replace(/&amp;&amp;/g, '&&') +
       finalHTML.body.innerHTML
         .replace(/&amp;apos;/g, '&apos;')
         .replace(/&amp;quot;/g, '&quot;')
+        .replace(/&amp;&amp;/g, '&&')
   );
 
   if (programID !== undefined) {
