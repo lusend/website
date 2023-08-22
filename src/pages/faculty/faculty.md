@@ -22,14 +22,6 @@ Whether you are planning international travel, domestic travel, or individual tr
 - We've got a library of training resources available to equip you and your students to maximize your travel experiences.
 
 {% action actions,
-  picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35630',
-  title = 'Individual Travel Registration',
-  link = 'https://liberty-sa.terradotta.com/index.cfm?FuseAction=Students.Apply&Program_ID=11900'
-%}
-Liberty University faculty and staff must register their international travel with the University. Visit this link to register your travel.
-{% endaction %}
-
-{% action actions,
   picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35632',
   title = 'Inter&shy;national Travel Proposal Process',
   link = link('international')
@@ -43,4 +35,12 @@ LU Send works with you to develop the educational, cultural, spiritual, and logi
   link = link('domestic')
 %}
 LU Send works with you to develop the educational, cultural, spiritual, and logistical components of your domestic trips.
+{% endaction %}
+
+{% action actions,
+  picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35630',
+  title = 'Individual Travel Registration',
+  link = 'https://liberty-sa.terradotta.com/index.cfm?FuseAction=Students.Apply&Program_ID=11900'
+%}
+Liberty University faculty and staff must register their international travel with the University. Visit this link to register your travel.
 {% endaction %}
