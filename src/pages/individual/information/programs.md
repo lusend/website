@@ -14,10 +14,11 @@ Experiencing a different culture in the context of a biblical Christian communit
 
 Participating in this unique opportunity allows students to use their Liberty scholarships and take special Liberty courses while studying abroad for a semester or summer. Students have the opportunity to dive deeper into their host culture through academic or service internships.
 
-- [Quito, Ecuador | Living and Learning International](https://www.landli.org/)
-- [Rome, Italy | Rome With Purpose](http://romewithpurpose.com/)
-- [Belfast, Northern Ireland | Irish Studies](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12370)
-- [Lilongwe, Malawi Africa | African Bible Colleges](https://africanbiblecolleges.com/studyabroad)
+- [Quito, Ecuador | Living and Learning International](https://landli.org/locations/ecuador)
+- [Rome, Italy | Living and Learning International](https://landli.org/locations/rome)
+- [Belfast, Northern Ireland | Irish Studies Program](https://irishstudiesprogram.org/)
+- [Lilongwe, Malawi, Africa | African Bible College](https://africanbiblecolleges.com/studyabroad)
+- [Amman, Jordan | Middle East Studies Program](https://www.cccuglobaled.org/mesp/)
 
 _NOTE: Students **can** use their Liberty awarded scholarships for Signature Programs for program cost. For more information on Signature Program specifics please see the [Policies & Guidelines]({{ link('policies') }}) and the [FAQ]({{ link('policies') }}#faq)._
 
@@ -35,23 +36,21 @@ Students are provided incredible opportunities to study and Intern abroad. These
 
 ## Custom Program Organizations
 
-- [AIFS](https://www.aifsabroad.com/)
-- [API](https://apiabroad.com/)
-- [CCCU](http://www.bestsemester.com/)
-- [CEA](http://www.ceastudyabroad.com/)
-- [CIEE](http://www.ciee.org/studyabroad/)
-- [ISA](http://studiesabroad.com/)
-- [ISA – Veritas Christian Study Abroad](http://www.veritasabroad.com/)
-- [TEAN](https://teanabroad.org/)
-- [USAC](https://usac.edu/)
+- [AIFS - American Institute for Foreign Study](https://www.aifsabroad.com/)
+- [API - Academic Programs International](https://apiabroad.com/)
+- [CCCU GlobalEd - Council for Christian Colleges & Universities](http://www.bestsemester.com/)
+- [CEA CAPA Education Abroad](http://www.ceastudyabroad.com/)
+- [CIEE - Council on International Educational Exchange](http://www.ciee.org/studyabroad/)
+- [ISA - International Studies Abroad](http://studiesabroad.com/)
+- [ISA Veritas - Christian Study Abroad](http://www.veritasabroad.com/)
+- [TEAN - The Education Abroad Network](https://teanabroad.org/)
+- [USAC - University Studies Abroad Consortium](https://usac.edu/)
 
 ## Host Institutions
 
-- [Greek Bible College (Athens, Greece)](http://www.grbc.gr/en/)
-- [Hebrew University (Jerusalem, Israel)](https://overseas.huji.ac.il/)
-- [Payap University (Chiang Mai, Thailand)](https://ic.payap.ac.th/)
-- [Spurgeon’s College (London, England)](http://www.spurgeons.ac.uk/)
-- [Tyndale Theological Seminary (Amsterdam, Netherlands)](http://www.tyndale-europe.edu/)
+- [Greek Bible College | Athens, Greece](https://www.grbc.gr/en/international-student-program/)
+- [Hebrew University | Jerusalem, Israel](https://overseas.huji.ac.il/)
+- [Richmond American Univeristy London | London, England](https://www.richmond.ac.uk/)
 
 _NOTE: Students can use outside loans, scholarships, and grants but **cannot** use Liberty awarded scholarships for program cost. For more information on Custom Program specifics please see the [Policies & Guidelines]({{ link('policies') }}) and the [FAQ]({{ link('policies') }}#faq)._
 
@@ -63,13 +62,10 @@ These internships are exclusively for students looking for tangible ways to gain
 
 Participating in these internships provide tangible ways to gain hands on professional experience in a cross culturally rich environments. Students will work alongside and learn from specialists within their field of study. These internships are exclusively for students looking for internship opportunities.
 
-- [ELIC](https://www.elic.org/)
-- [Christar](https://www.christar.org/)
-- [NICS](https://www.nics.org/)
-- [GVI – Global Vision International](https://www.gviusa.com/)
-- [SIM](https://www.simusa.org/)
-- [Campus B - Brazil](https://campusb.org/students/)
 - [Intern Abroad HQ](https://www.internhq.com/)
+- [Campus B - Brazil](https://campusb.org/students/)
+- [NICS - Network of International Christian Schools](https://www.nics.org/)
+- [SIM - Society for International Minstries](https://www.simusa.org/)
 
 _NOTE: Students **cannot** use Liberty awarded scholarships or outside loans, scholarships, and grants for program cost. For more information on International Internship Program specifics please see the [Policies & Guidelines]({{ link('policies') }}) and the [FAQ]({{ link('policies') }}#faq)._
 
