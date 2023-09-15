@@ -46,7 +46,7 @@ Practices Guide](https://liberty-sa.terradotta.com/_customtags/ct_FileRetrieve.c
 
 </div>
 
-Please contact Audrey Hammond, Director of Development, by [email](mailto:agbeman@liberty.edu) or by phone (434-592-4204), to learn more about the proposal process.
+Please contact Audrey Hammond, Executive Director, by [email](mailto:agbeman@liberty.edu) or by phone (434-592-4204), to learn more about the proposal process.
 
 For all other inquiries, please email [lusend@liberty.edu](mailto:lusend@liberty.edu).
 
