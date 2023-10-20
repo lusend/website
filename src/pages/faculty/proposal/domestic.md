@@ -7,7 +7,7 @@ nav:
 
 Through LU Send, Liberty University strives to partner with faculty and staff to provide quality academic experiences with minimal risk to the students. With that in mind, here are some policies that have been put in place, along with some guidelines that can assist with providing a positive experience for our faculty and students.
 
-[Submit Trip Proposal]((https://liberty.co1.qualtrics.com/jfe/form/SV_3NI3x8lGSeeRxk2[BaseType=domestic])){.btn .btn-full}
+[Submit Trip Proposal]((https://liberty.co1.qualtrics.com/jfe/form/SV_3NI3x8lGSeeRxk2)){.btn .btn-full}
 
 # Domestic Proposal Deadlines
 
