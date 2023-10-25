@@ -7,7 +7,7 @@ nav:
 
 Staff is available to consult with faculty in-person at any point in the proposal or development process. Email lusend@liberty.edu to connect today!
 
-[Submit Trip Proposal](https://liberty.co1.qualtrics.com/jfe/form/SV_3NI3x8lGSeeRxk2BaseType=international){.btn .btn-full}
+[Submit Trip Proposal](https://liberty.co1.qualtrics.com/jfe/form/SV_3NI3x8lGSeeRxk2){.btn .btn-full}
 
 # International Proposal Deadlines
 
