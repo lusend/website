@@ -131,11 +131,11 @@
 #app
   #appMainContent
   > div[id^='app']:not([id='appMenu'], [id='appMainContent'])
-  > :where(:lasat-child):not(:where([class~='not-prose'] *)),
+  > :where(:last-child):not(:where([class~='not-prose'] *)),
 #app
   #mycontent
   > div[id^='app']:not([id='appMenu'], [id='appMainContent'])
-  > :where(:lasat-child):not(:where([class~='not-prose'] *)) {
+  > :where(:last-child):not(:where([class~='not-prose'] *)) {
   @apply mb-0;
 }
 
