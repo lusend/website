@@ -15,3 +15,5 @@ function preview(slug, production, stage) {
     navigator.clipboard.writeText(page);
   };
 }
+
+window.preview = preview;

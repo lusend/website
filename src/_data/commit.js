@@ -1,5 +1,6 @@
-const fetch = require('node-fetch');
 const markdown = require('../../config/markdown');
+const fetch = (...args) =>
+  import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 const GH_PAT = process.env.GH_PAT || '';
 
