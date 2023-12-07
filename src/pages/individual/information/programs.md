@@ -50,7 +50,7 @@ Students are provided incredible opportunities to study and Intern abroad. These
 
 - [Greek Bible College | Athens, Greece](https://www.grbc.gr/en/international-student-program/)
 - [Hebrew University | Jerusalem, Israel](https://overseas.huji.ac.il/)
-- [Richmond American Univeristy London | London, England](https://www.richmond.ac.uk/)
+- [Richmond American University London | London, England](https://www.richmond.ac.uk/)
 
 _NOTE: Students can use outside loans, scholarships, and grants but **cannot** use Liberty awarded scholarships for program cost. For more information on Custom Program specifics please see the [Policies & Guidelines]({{ link('policies') }}) and the [FAQ]({{ link('policies') }}#faq)._
 
