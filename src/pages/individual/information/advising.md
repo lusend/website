@@ -3,62 +3,52 @@ title: Getting Started & Advising
 nav:
   title: Getting Started & Advising
   parent: individual
-  order: 1
+  order: 2
 ---
+[//]: # (Jeremiah, don't forget to add the links to the new P&G page when it has been made!)
+
+
 
 LU Send Study Abroad provides experiences through Study Abroad and International Internship programs that impact the lives of Liberty students during their college careers and beyond. LU Send Study Abroad desires for students to go abroad and be holistically changed in ways that further prepare them to be champions for Christ.
 
-# Program Opportunities
-
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35534){.header}
-
-## Study Abroad Signature Program
-
-This unique opportunities allow students to use their Liberty scholarships and take special Liberty courses while studying or interning abroad for a semester or summer. These are Christian programs designed to provide students a space to continue maturing in their faith through Christian community and service and academics taught through a biblical worldview. Signature Programs have been designed to provide students a space to dive deeper into their host culture through academics, cultural engagement, exploration, and service.
-
-## Study Abroad Custom Programs
-
-These popular programs provide incredible opportunities to study and intern abroad for a summer, semester, or year. LU Send has partnered with numerous organizations and universities across the globe, giving students a wide variety of program options. These programs are diverse in location, academic focus, and service and internship opportunities, allowing students to find the perfect program to suit their personal and academic goals. Custom Programs provide:
-
-1.  Opportunities to take courses at host universities and study centers.
-2.  Opportunities to add an Internship to their study abroad experience.
-
-## Study Abroad Independent Internships
-
-These opportunities provide tangible ways to gain professional, hands-on experience in a cross-cultural environment. Students will work with and learn from specialists within their field of study. These programs are for students looking to fulfill an internship or practicum for degree credit or who want to gain professional, overseas experience without credit.
+All students who wish to study abroad or complete an international internship for their degree are required to complete the Advising process with LU Send, starting with Advising 101 through Pre-Departure Training. 
 
 # Advising 101
 
 ![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35701){.header}
 
-Begin the advising process by signing up for a 101 session. The Advising 101 group session is **mandatory** for all students seeking to participate in the LU Send Study Abroad program. You will learn about the overall details of what study abroad and international internships looks like with Liberty University.
+The first step in the study abroad process is to attend Advising 101. This required session covers the different study abroad and international internship programs offered through LU Send and how to get started.
+
+Please refer to the eligibility guidelines on the Policies & Guidelines page to determine if you are eligible to study abroad. 
+
 
 [Register for Advising 101](https://liberty.co1.qualtrics.com/jfe/form/SV_25bE4diNMboVt6l){.btn .btn-full}
 
 Please email any inquiries to [lusendstudyabroad@liberty.edu](mailto:lusendstudyabroad@liberty.edu).
 
+
 # Advising 201
 
 ![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35703){.header}
 
-This group session will cover: application process, financial aid, course registration, and planning & preparation. There will be time for students to ask specific questions about their program. The Advising 201 group session is **mandatory** for all students seeking to participate in the LU Send Study Abroad Program. A link to register for Advising 201 will be sent to you after you complete Advising 101.
+The next step in the study abroad process is to attend Advising 201. A link to Advising 201 will be sent to you after you have attended Advising 101. This required session covers the application process, financial aid, and academic requirements specific to study abroad and internships. After completing Advising 201, students can meet with a Global Program Coordinator to ask questions about specific programs.
+
 
 # Advising 301
 
 ![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35713){.header}
 
-These group sessions are interactive advising sessions for all students who have taken the next steps in their journey abroad. These sessions aim to develop the whole student in their preparation to go abroad.
+After applying to their chosen program, students will attend an interactive Advising 301 session the semester before they go abroad. These sessions cover various topics that aim to develop students holistically as they prepare to live abroad. Students will receive an email to register for an Advising 301 session mid-semester.
 
-Please Note: _Students are required to attend at least one Advising 301 session the semester before they go abroad, but may attend more than one session in any given semester._
+Please Note: _Residential students are required to attend at least one Advising 301 session the semester before they go abroad but are encouraged to attend as many as possible._
 
-# Advising 401
+
+# Pre-Departure Training
 
 ![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35711){.header}
 
-Advising 401 is the Pre-Departure Training, held near the end of the semester prior to your semester abroad. You have completed all LU Send application requirements and have been approved to study and/or intern abroad next semester. Several departments are coming together to help prepare you for your journey abroad. During this training you will learn about Cultural Intelligence, culture shock, travel safety, and much more. We hope this event also allows you space to connect with your peers who will also be studying or interning abroad. Event details will be sent to you via email in advance.
+Once LU Send has approved a student's application, the final requirement is attending the mandatory Pre-Departure Training. This session will cover safety and security, cultural intelligence, spiritual vitality and faith, and much more in the context of studying abroad. Students will receive an email from LU Send to confirm their attendance at Pre-Departure Training mid-semester.
 
-Please Note: _All students are required to attend this training._
-
-_Please contact [lusendstudyabroad@liberty.edu](mailto:lusendstudyabroad@liberty.edu) if you are unable to attend for extenuating circumstances; we will review for excused absences on a case by case basis._
+Please Note: _Students who fail to attend or do not have an excused absence from LU Send to miss Pre-Departure training will risk not being permitted to travel. Please contact lusendstudyabroad@liberty.edu if you are unable to attend for extenuating circumstances. All requests will be handled on a case-by-case basis, and students who received an approved absence will be contacted to schedule make-up training._
 
 ${toc}

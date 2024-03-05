@@ -20,11 +20,11 @@ All of the proposal dates are hard deadlines. All of the proposal dates are hard
 
 | Trip Dates                  | Proposal Deadlines |
 | --------------------------- | ------------------ |
-| January/Early Spring (2024) | December 1, 2022   |
-| Spring Break (2024)         | February 15, 2023  |
-| Summer May/June (2023)      | April 30, 2022     |
-| Summer July/August (2023)   | May 30, 2022       |
-| Fall (2023)                 | October 1, 2022    |
+| January/Early Spring        | December 1         |
+| Spring Break                | February 15        |
+| Summer May/June             | April 30           |
+| Summer July/August          | May 30             |
+| Fall                        | October 1          |
 
 {data-turnredafter="30"}
 

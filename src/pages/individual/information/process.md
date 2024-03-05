@@ -1,5 +1,5 @@
 ---
-title: Individual Program Process
+title: Program Process
 nav:
   title: Program Process
   parent: individual
@@ -123,7 +123,7 @@ Financial Check-In is an important last step before you go abroad. Please be sur
 As you continue to prepare for your abroad experience continue to research important cultural and language tips and details.
 
 - **[Lonely Planet](https://www.lonelyplanet.com/)**
-- **[CIA World Factbook](https://www.cia.gov/library/publications/the-world-factbook/)**
+- **[CIA World Factbook](https://www.cia.gov/the-world-factbook/)**
 - **[Travel Advisories](https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories.html/)**
 - Students should being keeping a record of important in-county contacts
 

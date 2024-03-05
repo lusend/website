@@ -1,7 +1,7 @@
 ---
-title: Domestic Proposal Process
+title: Domestic Proposal Process/Excused Absense Requests
 nav:
-  title: Domestic Proposal Process
+  title: Domestic Proposal Process/Excused Absense Requests
   parent: faculty
 ---
 
@@ -17,18 +17,15 @@ _\*The dates below are for trips that operate as a full LU Send Trip. These trip
 
 All of the proposal dates are hard deadlines. All of the proposal dates are hard deadlines that are set 9 months before departure. Proposals that are received after the set deadline will not be approved. 
 
-<!-- Will automatically update and sort -->
-<!-- Make sure {date-turnredafter="number"} is included -->
 
 | Trip Dates                  | Proposal Deadlines |
 | --------------------------- | ------------------ |
-| January/Early Spring (2023) | April 1, 2022      |
-| Spring Break (2023)         | June 15, 2022      |
-| Summer May/June (2023)      | August 15, 2022    |
-| Summer July/August (2023)   | October 1, 2022    |
-| Fall (2023)                 | February 15, 2023  |
+| January/Early Spring        | April 1            |
+| Spring Break                | June 15            |
+| Summer May/June             | August 15          |
+| Summer July/August          | October 1          |
+| Fall                        | February 15        |
 
-{data-turnredafter="30"}
 
 _\***If your trip does not operate as a full LU Send trip (does not require logistical support, budget, academic credit, or have culture/service opportunities) you will need to submit all proposals [at least a month]{.text-secondary} before departure**. This will give us enough time to get excused absence request/approvals, assumption of risk, and out of bed request in time for your departure. If you are not able to get this request in this time frame, please email [lusend@liberty.edu](mailto:lusend@liberty.edu) for further information._
 

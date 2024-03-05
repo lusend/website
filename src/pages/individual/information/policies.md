@@ -1,68 +1,61 @@
 ---
-title: Policies, Guidelines & FAQ
+title: Policies & Guidelines 
 nav:
-  title: Policies, Guidelines & FAQ
+  title: Policies & Guidelines 
   parent: individual
   order: 4
 ---
 
 All LU Send Study Abroad programs are university approved with oversight from multiple entities at Liberty. The LU Send Study Abroad program involves advising, mandatory meetings, trainings and procedures managed by LU Send staff.
 
-# Eligibilities
+# Eligibility
 
 ![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35669){.header}
 
-_Students must meet specific requirements to be eligible to participate in any LU Send Study Abroad program._
+_All students must meet the following guidelines to be eligible to study abroad._
 
-- Students must be enrolled in a degree-seeking program at Liberty University (full or part-time status, residential or online).
-- Students must have obtained 24 college credits prior to the semester they are planning to study abroad (these can be transfer or Liberty credits).
-- Incoming transfer students must complete at least one semester at Liberty University prior to participating in a study abroad or international internship program.
-- Students must have a minimum 2.5 GPA to be approved by LU Send.
-- Students must also meet the specific GPA requirements of their selected program.
-- Students must complete a required background check for LU Send.
-- Students must be in good academic standing at the time of application and immediately prior to the study abroad program term.
-- Students on academic suspension or probation at the time of application or immediately prior to the LU Send Study Abroad program are _**not**_ eligible to participate.
-- Students on disciplinary probation are _**not**_ eligible to participate. Students who have significant history of disciplinary problems will be considered on a case-by-case basis.
-- Students must be at least 18 years old. Exceptions will be considered on a case-by-case basis.
+-	Minimum 18 years of age
+-	Liberty University degree-seeking student
+-	Acquired 24 college credits (Sophomore by credit)
+-	Standard minimum 2.5 GPA and in good academic standing
+-	Successfully pass a background check
+- Good conduct/disciplinary standing at the University
+-	A valid passport that meets the entry requirements of your host country
+
+_In addition to the foundational eligibility requirements, students must meet these additional requirements to receive approval to study abroad:_
+
+-	Students on academic suspension or probation at the time of application are not eligible to study abroad.
+-	Students with a disciplinary record at the University will be considered for acceptance on a case-by-case basis.  
 - Students are required to adhere to [The Liberty Way](https://liberty-sa.terradotta.com/_customtags/ct_FileRetrieve.cfm?File_ID=26514) while abroad. If we are informed of any breaches to the code of conduct while abroad, there may be ramifications when you return to campus.
 
 # Billing & Payments
 
 ![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35671){.header}
 
-## Signature Programs
+Students participating in a signature study abroad program, custom study abroad program, or international internship will pay their program fee, applicable tuition, and the LU Send study abroad or international internship fee through Financial Check-In the semester prior to travel.
 
-Students will be billed directly by Liberty University for tuition and housing program costs and the LU Send fee. Students **must** complete Financial Check-In to begin making payments. The cost of all Signature Programs is roughly equivalent to the cost of one residential semester at Liberty University (tuition, room and board).
+Students may be required to pay their program directly for: 
 
-Students will be required to pay the Signature Program organization and other entities directly for:
+-	Application Fee
+-	Confirmation Deposit
+-	Additional Excursions
 
-- Application Fees
-- Commitment Deposit
-- Additional Excursions
-- Airfare
+Students are responsible for booking and paying for their roundtrip airfare to all programs and communicating their itinerary to LU Send. 
 
-## Custom Programs
+## Independent Internship
 
-The student’s program provider will invoice LU Send for the total cost of the student’s program. The student will pay their program cost and the LU Send fee by completing Financial Check-In. Students **must** complete Financial Check-In to begin making payments. Students will be required to pay the Custom Program organization and other entities directly for:
+If a student chooses to participate in an internship that is not through an approved LU Send program, it is considered an independent international internship. If a student chooses to participate in an independent internship, students are responsible for paying their organization directly. LU Send does not recommend students participate in independent internships as they are not vetted by LU Send. For questions about using outside scholarships, loans, and grants to fund an independent internship, please contact [financialaid@liberty.edu](mailto:financialaid@liberty.edu).
 
-- Application Fees
-- Deposits (Commitment, Housing, Meal Plan, etc.)
-- Additional Excursions
-- Airfare
+If the student is pursuing an independent internship, they will be responsible for paying the internship organization directly for all program costs. Please coordinate with the organization regarding payment due dates and other financial obligations. The LU Send fee will still be placed on the student's account to be paid through Financial Check-In, and students are still required to pay tuition for any corresponding classes (if the internship is being completed for Liberty credit). Students must complete Financial Check-In to begin making payments.
 
-## International Internships
+NOTE: When completing Financial Check-In, students may be prompted to make one full payment. If needed, please contact Student Accounts at [studentaccounts@liberty.edu](mailo:studentaccounts@liberty.edu) to set up a payment plan.
 
-If the student is completing an internship through a Signature or Custom program, then payments will be made as described above, respectively.
 
-If the student is pursuing an independent internship, then the student will be responsible to pay the internship organization directly for all program costs. Please coordinate with the organization regarding payment due dates and other financial obligations. The LU Send fee will still be placed on the student’s account to be paid through Financial Check-In, and students are still required to pay tuition for any corresponding classes (if the internship is being completed for Liberty credit). Students **must** complete Financial Check-In to begin making payments.
-
-NOTE: **Students who have completed Financial Check-In will be prompted to make one full payment; if needed, please contact Student Accounts at [studentaccounts@liberty.edu](mailto:studentaccounts@liberty.edu) to setup a payment plan.**
-
-# Study Abroad and Internship Fees
+## Study Abroad and Internship Fees
 
 ![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35673){.header}
 
-Students participating in an LU Send Study Abroad program will pay a fee to help cover expenses including: background check, international health and travel insurance, Alert Traveler, travel package, Pre-Departure Training, and administrative & processing fees.
+Students participating in an LU Send Study Abroad program will pay a fee to help cover expenses, including background checks, international health and travel insurance, Alert Traveler, travel package, Pre-Departure Training, and administrative & processing fees.
 
 - Signature & Custom Program Semester: $1200
 - Signature & Custom Program Summer: $600
@@ -70,7 +63,7 @@ Students participating in an LU Send Study Abroad program will pay a fee to help
 - Internship Semester: $300
 - Internship Summer: $250
 
-NOTE: **The LU Send Study Abroad Fee is placed on the student’s account. This fee is paid by completing Financial Check-In.**
+NOTE: **The LU Send Study Abroad Fee is placed on the student's account and paid by completing Financial Check-In.**
 
 # Financial Aid
 
@@ -78,64 +71,48 @@ NOTE: **The LU Send Study Abroad Fee is placed on the student’s account. This 
 
 ## Signature Programs
 
-- Students can use Liberty-awarded aid for the program cost.
-- Students can also use outside scholarships, loans, and grants for program costs.
+Students are allowed to utilize their Liberty scholarships and federal financial aid to finance their signature study abroad experience while receiving credit directly from Liberty University. In these programs, students pay a set program fee based on location, Liberty University tuition, and the LU Send study abroad fee.
 
 ## Custom Programs
 
-- Students cannot use Liberty-awarded aid for program costs.
-- Students can use a portion of Liberty-awarded aid toward LU online courses.
-- Students can use outside scholarships, loans, and grants for program costs.
+Students are allowed to utilize their federal and outside financial aid to finance their custom study abroad experience. In these programs, students pay a program fee set by the partner organization and the LU Send study abroad fee. 
 
 ## International Internships
 
-If the student is completing an internship through a Signature or Custom program:
+Students have to pay a program fee set by the partner organization, Liberty tuition (if receiving credit), and the LU Send internship fee. 
 
-- The policies described above will apply, respectively.
+**Please note that Liberty-awarded aid cannot be applied to independent internships. Once all eligible aid has been applied to a student's account, any remaining balance is the student's responsibility.** 
 
-If the student is pursuing an independent internship:
-
-- Students cannot use Liberty-awarded aid.
-- Students cannot use outside scholarships, loans, and grants for program costs. (Students may contact outside award-granting entities to appeal to use aid toward an independent internship).
-- Students can use a portion of any type of aid toward LU online courses.
-
-NOTE: **Once all applicable loans and financial aid have been applied, if there is any additional balance on your account, you are responsible for the remaining costs.**
-
-NOTE: **If you have questions regarding your Financial Aid, please contact Caleb Speck at [mcspeck@liberty.edu](mailto:mcspeck@liberty.edu)**
+**For all other questions about using outside scholarships, loans, and grants to fund an independent internship, please contact [financialaid@liberty.edu](mailto:financialaid@liberty.edu)**
 
 # Consortium Agreement
 
 ![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35677){.header}
 
-- A consortium agreement is a document for students taking courses for transfer credit at a host university or study center. The agreement allows students with federal aid, scholarships, and loans to allocate those funds toward their study abroad costs. The consortium agreement is completed in conjunction with the final Course Approval Form. Students will work with the LU Send Financial Aid representative to complete and sign their consortium agreement. The student will upload a copy of the completed form to their LU Send Study Abroad application.
-- Students participating in a Custom Program who are not using financial aid do not need to complete a consortium agreement.
-- Students participating in a Signature Program do not need to complete a consortium agreement even if they are using outside aid.
+Consortium agreements are specific to students participating in Custom Study Abroad programs. This form allows students to use federal financial aid, scholarships, and loans to finance their study abroad experience. Students can expect to receive this form from the Financial Aid Office once their Course Approval Form has been finalized with the Registrar's Office.
+
+Students who do not wish to use their financial aid to finance their custom study abroad program are **_not required_** to complete this agreement. 
 
 # Registration & Enrollment
 
 ![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35691){.header}
 
-Students must maintain full-time student status while studying abroad by taking the equivalent of at least 12 U.S. credits (for Spring and Fall semesters). Students may take more than 12 credits, but at least 12 credits **must** satisfy the requirements of their Degree Completion Plan (DCP).
+Residential students **must** maintain full-time student status while studying abroad by taking the equivalent of at least 12 U.S. credits (for fall and spring semesters). Students may take more than 12 credits, but at least 12 credits **must** satisfy the requirements of their Degree Completion Plan (DCP). 
 
 ## Signature Programs
 
-- Students will be enrolled in courses at a study center; however, they will be registered in special sections of Liberty courses in order to receive credit directly from LU.
-- Students may need pre-requisite overrides in order to be registered for the special sections. Overrides can be obtained by working with LU Send.
-- If you are participating in a Signature Study Abroad Program you will **not** need to complete a Course Approval Form. However, if you need course substitutions, you will need to work with the LU Send Office.
+Students will take courses in person with their study abroad program; however, they will be registered in special sections of Liberty courses to receive credit directly from Liberty. If students do not meet the prerequisites for the courses they wish to take, they must submit a prerequisite override to receive approval. For questions regarding prerequisites of courses, please consult the [Registrar's Office](https://www.liberty.edu/registrar/) webpage.
 
 ## Custom Programs
 
-- Students will be enrolled in courses at a host university or study center.
-- Students will complete a Course Approval Form to gain preapproval for course transfer or substitution credit. Instructions for completing this form will be provided in Advising 201.
-- The Course Approval Form will be reviewed by LU Send, Registrar’s Office, and the student’s respective Academic Department.
-- Students must ensure that their Course Approval form has been reviewed and processed by all signing parties in order to remain enrolled and considered a full time student at Liberty University for the semester abroad.
-- Study Abroad students who are also completing an internship must also complete the Internship Agreement Form to be registered for their respective internship course(s).
+Students will take courses in person with their host university or study center. Students will complete a Course Approval Form as part of the application process with LU Send to receive preapproval for transfer credit through their program.
+
+LU Send will facilitate seeking approval for transfer credit in conjunction with each academic department. Once all courses have been reviewed, the Registrar's Office will review and certify which courses are approved for the student to take abroad and transfer back to Liberty.
+
 
 ## International Internships
 
-- Students completing an internship for credit must complete the Internship Agreement Form in order to be enrolled in the corresponding internship course(s) for their major.
-- Instructions for completing this form will be provided in Advising 201.
-- The student will complete the Internship Agreement Form by collecting signatures from a Faculty Advisor in their department and their host country Site Supervisor.
+Students completing an internship for credit must complete the Internship Agreement Form to be enrolled in the corresponding internship course(s) for their Degree Completion Plan. Students will complete the Internship Agreement Form as part of the application process with LU Send. Students will need to obtain signatures from their in-country site supervisor and academic department. 
 
 NOTE: **There is no credit minimum for students participating in a Summer program**  
 NOTE: **Online students are not held to the 12 credit minimum for Spring and Fall semesters.**
@@ -144,12 +121,14 @@ NOTE: **Online students are not held to the 12 credit minimum for Spring and Fal
 
 ![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35693){.header}
 
-- Students must obtain a passing grade in courses taken abroad (C or above) to satisfy Degree Completion Plan requirements.
-- For students participating in a Custom Program, classes will post on their transcript as Pass or Fail based on the grades received overseas and how those grades equate to the Liberty grading system.
-- Courses taken through Custom Programs will not be calculated into a student’s GPA.
-- Credit systems vary throughout the world, and it is very important that you understand how the credit system at your host institution relates to the credit system at Liberty University. Students should discuss this with LU Send prior to their term abroad.
-- When planning which courses to take abroad, please remember students are required to take 50% of their major and minor requirements at Liberty University.
-- Internship credit granted through any program or organization is non-transferrable; students must be enrolled in a Liberty internship courses to receive internship credit.
+Students participating in a signature study abroad program will receive a letter grade on their Degree Completion Plan at the end of each semester, which will be calculated into their overall GPA.
+
+Students participating in a custom study abroad program will have an official transcript sent to Liberty University from their host program to be evaluated for transfer credit. Only courses in which students earn a grade equivalent of C or higher are eligible to be evaluated for transfer credit by Liberty University. These grades will reflect Pass or Fail on their degree plan and will not be calculated into their overall GPA.
+
+Please note that credit systems vary throughout the world, and it is very important that you understand how the credit system at your host institution equates to the credit system at Liberty University. 
+
+For Liberty University's full transfer policy, please refer to the [Registrar's Office](https://www.liberty.edu/registrar/course-transfer-equivalency/) webpage on academic policies.
+
 
 # Deadlines
 
@@ -157,58 +136,28 @@ NOTE: **Online students are not held to the 12 credit minimum for Spring and Fal
 
 Please note that these deadlines are for LU Send Study Abroad & International Internship applications only. Please be sure to check with your partner organization or host institution for specific program application deadlines.
 
-## Spring Deadlines
 
-<!-- Will automatically update and sort -->
-<!-- Make sure {date-turnredafter="number"} is included -->
+| Term Abroad        | Pre-Application    | Pre-Decision       | Post-Decision      |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| Fall               | April 15           | May 15             | July 15            |
+| Spring             | October 15         | November 1         | December 1         |
+| Summer             | March 15           | April 15           | May 15             |
 
-| Trip Dates                       | Proposal Deadlines |
-| -------------------------------- | ------------------ |
-| Pre-Application Form (2023)      | October 15, 2022   |
-| Pre-Decision Application (2023)  | November 1, 2022   |
-| Post-Decision Application (2023) | December 1, 2022   |
-
-{data-turnredafter="30"}
-
-## Summer Deadlines
-
-<!-- Will automatically update and sort -->
-<!-- Make sure {date-turnredafter="number"} is included -->
-
-| Trip Dates                       | Proposal Deadlines |
-| -------------------------------- | ------------------ |
-| Pre-Application Form (2022)      | March 15, 2022     |
-| Pre-Decision Application (2022)  | April 15, 2022     |
-| Post-Decision Application (2022) | May 15, 2022       |
-
-{data-turnredafter="30"}
-
-## Fall Deadlines
-
-<!-- Will automatically update and sort -->
-<!-- Make sure {date-turnredafter="number"} is included -->
-
-| Trip Dates                       | Proposal Deadlines |
-| -------------------------------- | ------------------ |
-| Pre-Application Form (2022)      | April 15, 2022     |
-| Pre-Decision Application (2022)  | May 15, 2022       |
-| Post-Decision Application (2022) | July 15, 2022      |
-
-{data-turnredafter="30"}
 
 # Withdrawal & Refunds
 
 ![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35681){.header}
 
-LU Send does not charge withdrawal fees. Additionally, the LU Send Study Abroad fee is fully refundable if you withdraw from your program before you leave the U.S.
+LU Send does not charge withdrawal fees for program withdrawal with a partner organization. Additionally, the LU Send Study Abroad fee is fully refundable if you withdraw from your program before you leave the U.S. 
 
-Note: **Refunds for fees associated with your program provider will be based on their refund policy.**
+All students are responsible for adhering to the withdrawal policy of their specific partner organization. Please refer to your specific organization's withdrawal policy for more information on withdrawal deadlines and potential financial penalties. 
+
 
 # International Health & Travel Insurance Requirement
 
 ![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35679){.header}
 
-All study abroad students are required to carry International Health & Travel insurance which is purchased for them by LU Send prior to their departure. Please review the insurance documents in your LU Send application that explain the coverage and summary of benefits.
+All students are required to carry International Health & Travel insurance, which is purchased for them by LU Send prior to their departure. Please review the insurance documents in your LU Send application that explain the coverage and summary of benefits. 
 
 # Passport & Visas
 
@@ -216,107 +165,28 @@ All study abroad students are required to carry International Health & Travel in
 
 ## Passports
 
-- All participants are required to obtain and have a valid passport.
-- The passport must be valid for at least six months after the expected return date from their program.
+All students are required to have a valid passport that is valid for at least six months after their expected return date back to the United States. 
 
 ## Visas
 
-- Students participating in an LU Send Study Abroad program may be required to obtain an international visa for their destination country in addition to their passport.
-- Students are responsible for inquiring with their program provider or host institution about applying for and obtaining a visa. _Please start this process early. Every country has different requirements regarding types of visas, length of stay, etc._
-- Students are responsible for knowing the parameters of their visa including the expiration date.
+Students may be required to obtain an international visa for their host country. Students are responsible for inquiring with their partner organization or host institution about applying for a visa. **_Please start this process early, as every country has different requirements regarding types of visas, length of stay, processing times, etc._** Students are responsible for knowing the parameters of their visa, including the expiration date.
+
+[//]: # (It is not possible to underline in markdown, that is why the text above is in bold and italics)
 
 # Housing at Liberty University
 
 ![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35684){.header}
 
-- Students who will be abroad during any spring semester and not returning to Liberty on-campus housing in the fall will need to submit an “Off-Campus Living Request” when completing FCI for the following fall semester.
-- Students are responsible to register for LU housing and complete FCI for the semester following their semester abroad.
+Students who will be abroad during any fall or spring semester will need to submit a request for off-campus approval with Residence Life. Instructions to request this approval are provided in their LU Send application. Students are responsible for confirming their housing selection with Residence Life by completing FCI for the semester immediately following their semester abroad. Please note that students are still responsible for adhering to the FCI deadline for each semester, including while they are abroad.
 
 # Risk Management
 
 ![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35686){.header}
 
-LU Send works with Risk Management and LUPD to assess security conditions of all programs and host countries around the world.
+LU Send works with Risk Management, LUPD (Liberty University Police Department), and Student Health Services to assess the security and health conditions of all programs and host countries around the world. 
 
-- LU Send receives real time reports and continuously monitors travel alerts and advisories. LU Send takes into consideration recommendations issued by the U.S. Department of State, Centers for Disease Control, and Alert Traveler.
-- For specific details on travel advisories and countries that are restricted for Liberty University travel, please contact LU Send at [lusendstudyabroad&shy;@liberty.edu](mailto:lusendstudyabroad@liberty.edu).
+LU Send receives real-time reports of global events and continuously monitors travel reports and advisories. LU Send takes into consideration recommendations issued by the U.S. Department of State, Center for Disease Control, and Alert Traveler. Please know that students may be advised against travel to certain countries or locations at any point in their planning due to current safety and risk factors in their host country.
 
-<hr />
-
-# FAQ
-
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35688){.header}
-
-## I have International coverage through my Program, do I have to have / pay for Liberty Insurance?
-
-Yes. Students are required to have International Health & Travel insurance through Liberty University. When students go abroad they will purchase International Health and Travel insurance with their LU Send Study Abroad fee. Liberty University has mandated that all students that travel through LU Send are required to obtain International Health and Travel insurance.
-
-## How do I purchase International Health and Travel Insurance?
-
-International Health and Travel Insurance is purchased by your International Education Coordinator once you have been approved by LU Send.
-
-## What does the LU Send Study Abroad fee cover?
-
-- AlertTraveler
-- Background Check
-- Commitment Deposit
-- Cultural Intelligence Training
-- International Health and Travel Insurance
-- Pre-Departure Training
-
-## Can I use my Liberty Scholarships?
-
-LU Send Study Abroad students can only use Liberty given Scholarships if they are participating in one of the following Signature Programs:
-
-- Living and Learning International
-- Rome with Purpose
-
-International Internship Students may use Liberty given Scholarships towards their Liberty tuition costs if they are participating in one of the Custom Programs.
-
-## Can I go abroad if I am graduating that semester?
-
-Students are not advised to go on any LU Send Study Abroad programs during their final semester (if possible).
-
-- Transcripts are not received from the host university until 6-8 weeks after completing your Study Abroad program. This could delay the conferring of your degree.
-- Study abroad program dates vary and the end date may not be until after Liberty’s Commencement.
-- Often times a student’s Degree Completion Plan requirements do not allow students to Study Abroad during their final semester.
-
-\*If you feel that your final semester is the ideal time for you to pursue an opportunity abroad, the possibility can be discussed with your International Education Coordinator on a case by case basis
-
-## How much do Study Abroad trips / International Internships cost?
-
-LU Send Study Abroad programs vary in cost. Price depends on program type, location, program length, in-country cost of living, airfare, etc. For more details on program cost please contact your International Education Coordinator.
-
-## Can I study or intern abroad if I am an online student?
-
-Yes. We encourage online students to participate in Study Abroad/International Internship Programs. Your Peer Advisor and International Education Coordinator will work with you via email and phone to guide you through the Advising and Application Process.
-
-## What countries are not approved by Liberty? How can I find this information?
-
-Liberty receives a list of countries that require approval every three months. Please contact your International Education Coordinator if you have questions concerning a specific country at lusendabroad@liberty.edu.
-
-## Do I pay Liberty or my Program organization?
-
-Students will pay Liberty University for the majority of their Signature or Custom Program cost. Liberty University has a direct bill agreement with all Signature or Custom Programs. Please keep in mind that the students will not pay Liberty for the Signature and Custom Program application fee or housing deposits; these fees are paid directly to the Signature or Custom program.
-
-## When can I complete Financial Check-In?
-
-Financial Check-in is available for you to complete once the Custom Program has sent your invoice to LU Send. Your Coordinator will update your Student Account with the fees for your program abroad. Please note that invoices are generally sent 30-60 days prior to program start dates. If your invoice is received after Financial Check-in deadlines please work with your Coordinator to appeal late check-in fees.
-
-## If I decide to cancel my program before I go, can I receive a refund for money already paid?
-
-Refunds are generally not provided to students for money already paid to the Custom Program and Liberty University. If a student cancels their program prior to the start date they are issued a cancellation invoice from the Custom Program. If a student cancels their program after the LU Send participation fee has been added to their account, they are still responsible for paying this fee. For more information please see the Policies & Guidelines section “Withdrawals & Refunds."
-
-## Is it possible to go abroad for multiple semesters / terms?
-
-Yes, it is possible for students to study/intern abroad for multiple semesters/terms. Students can go abroad consecutive or non-consecutive semesters. Please note any student that Study Abroad cannot take more than half of the credits required for their major or minor at a host university.
-
-## Can family members visit me while I am abroad?
-
-Absolutely! We encourage family members to support students while abroad. This is a great way to share your experiences in a unique way.
-
-## Can I travel outside of my program location while I am abroad?
-
-Yes. Students who travel outside their program location are required to update their itinerary record in their LU Send application portal. There is a list of countries that require pre-approval from LU Send, Risk Management, and LUPD. If you are uncertain of which countries require approval, please contact your International Education Coordinator at [lusendstudyabroad@liberty.edu](mailto:lusendstudyabroad@liberty.edu).
+For specific details on travel advisories and countries that are restricted for Liberty University travel, please contact LU Send at [lusendstudyabroad&shy;@liberty.edu](mailto:lusendstudyabroad@liberty.edu).
 
 ${toc}

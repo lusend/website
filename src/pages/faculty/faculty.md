@@ -1,10 +1,10 @@
 ---
-title: Faculty & Staff Gateway
-hero: 'Faculty & Staff Gateway'
+title: Faculty & Staff 
+hero: 'Faculty & Staff'
 header: false
 background: https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35627
 nav:
-  title: Faculty Gateway
+  title: Faculty & Staff 
   parent: home
   order: 3
 order: ['content']
@@ -39,8 +39,8 @@ LU Send works with you to develop the educational, cultural, spiritual, and logi
 
 {% action actions,
   picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35630',
-  title = 'Individual Travel Registration',
+  title = 'Individual Travel/CRS Travel Registration & Forms',
   link = 'https://liberty-sa.terradotta.com/index.cfm?FuseAction=Students.Apply&Program_ID=11900'
 %}
-Liberty University faculty and staff must register their international travel with the University. Visit this link to register your travel.
+Liberty University faculty and staff must register their individual travel with the University. Visit this link to register your travel for a multitude of reasons.
 {% endaction %}

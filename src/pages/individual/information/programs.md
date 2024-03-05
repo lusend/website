@@ -1,46 +1,90 @@
 ---
-title: Individual Programs
+title: Study Abroad Programs
 nav:
-  title: Browse Programs
+  title: Study Abroad Programs
   parent: individual
-  order: 2
+  order: 1
 ---
 
 # Signature Programs
 
 ![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35684){.header}
 
-Experiencing a different culture in the context of a biblical Christian community.
+Signature Study Abroad programs are Christian programs designed for Liberty students to travel together in a cohort model. Students will grow and mature in their faith through intentional Christian community, service, and discipleship, as well as engage in academics taught through biblical worldview and cultural engagement. 
 
-Participating in this unique opportunity allows students to use their Liberty scholarships and take special Liberty courses while studying abroad for a semester or summer. Students have the opportunity to dive deeper into their host culture through academic or service internships.
+In these programs, students pay a set program fee based on location, Liberty University tuition, and the LU Send study abroad fee. Please note that each signature program is carefully designed to create a similar residential experience, and each program cost is determined in the University's agreement with each partner organization.  Each program's cost includes room and board, excursions, and other student services determined by each program. For more information on the study abroad fee, please refer to _"Study Abroad and Internship Fees"_ on the [Policies & Guidelines]({{ link('policies') }}) page.
 
-- [Quito, Ecuador | Living and Learning International](https://landli.org/locations/ecuador)
-- [Rome, Italy | Living and Learning International](https://landli.org/locations/rome)
-- [Belfast, Northern Ireland | Irish Studies Program](https://irishstudiesprogram.org/)
-- [Lilongwe, Malawi, Africa | African Bible College](https://africanbiblecolleges.com/studyabroad)
-- [Amman, Jordan | Middle East Studies Program](https://www.cccuglobaled.org/mesp/)
+---
 
-_NOTE: Students **can** use their Liberty awarded scholarships for Signature Programs for program cost. For more information on Signature Program specifics please see the [Policies & Guidelines]({{ link('policies') }}) and the [FAQ]({{ link('policies') }}#faq)._
+<details>
+<summary>African Bible College | Lilongwe, Malawi</summary>
+<br>
+
+-	Program Cost: $5,000
+- Semester Study Abroad Fee: $1,200
+- Liberty University Tuition: See [Residential and Online Tuition Costs Here](https://www.liberty.edu/student-financial-services/basic-costs/)
+- View additional [program details](https://www.africanbiblecolleges.com/studyabroad) 
+</details>
+
+---
+
+<details>
+<summary>Irish Studies Program | Belfast, Northern Ireland</summary>
+<br>
+
+-	Program Cost: $7,500
+- Semester Study Abroad Fee: $1,200
+- Liberty University Tuition: See [Residential and Online Tuition Costs Here](https://www.liberty.edu/student-financial-services/basic-costs/)
+- View additional [program details](https://irishstudiesprogram.org/) 
+</details>
+
+---
+
+<details>
+<summary>Living & Learning International | Quito, Ecuador</summary>
+<br>
+
+-	Program Cost: $7,000 – General Track
+-	Program Cost: $7,200 – Spanish Track
+- Semester Study Abroad Fee: $1,200
+- Liberty University Tuition: See [Residential and Online Tuition Costs Here](https://www.liberty.edu/student-financial-services/basic-costs/)
+- View additional [program details](https://landli.org/locations/ecuador) 
+</details>
+
+---
+
+<details>
+<summary>Living & Learning International | Rome, Italy</summary>
+<br>
+
+-	Program Cost: $7,500
+- Semester Study Abroad Fee: $1,200
+- Liberty University Tuition: See [Residential and Online Tuition Costs Here](https://www.liberty.edu/student-financial-services/basic-costs/)
+- View additional [program details](https://landli.org/locations/rome) 
+</details>
+
+---
+
+_NOTE: Students **can** use their Liberty awarded scholarships for Signature Programs for program cost. For more information on Signature Program specifics please see the [Policies & Guidelines]({{ link('policies') }})._
+
+[//]: # (Jeremiah, do not forget to update the FAQ link to the new FAQ tab)
 
 # Custom Programs
 
 ![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35534){.header}
 
-LU Send has partnered with a number of organizations to provide students with a unique variety of options to study abroad or intern. Below you will find the available partner organizations that students can study abroad with.
+Custom programs provide incredible opportunities to study or intern abroad for a summer, semester, or academic year. With each of LU Send's carefully vetted partnerships, programs span over 140 cities and 60 countries worldwide, giving students a wide variety of choices. 
 
-Students are provided incredible opportunities to study and Intern abroad. These programs are diverse in location, academic focus allowing for a sense of customization. Custom Programs provide:
+Courses in various disciplines are offered at both host universities and study centers, allowing students to find a program that aligns with their degree program and academic goals
 
-1. Opportunities to take courses at host universities and study centers.
-2. Opportunities to add an Internship to their study abroad experience.
-3. Opportunities to participate exclusively in summer internships.
 
 ## Custom Program Organizations
 
 - [AIFS - American Institute for Foreign Study](https://www.aifsabroad.com/)
 - [API - Academic Programs International](https://apiabroad.com/)
-- [CCCU GlobalEd - Council for Christian Colleges & Universities](http://www.bestsemester.com/)
+- [CCCU GlobalEd - Council for Christian Colleges & Universities](https://www.cccuglobaled.org/)
 - [CEA CAPA Education Abroad](http://www.ceastudyabroad.com/)
-- [CIEE - Council on International Educational Exchange](http://www.ciee.org/studyabroad/)
+- [CIEE - Council on International Educational Exchange](https://www.ciee.org/go-abroad/college-study-abroad)
 - [ISA - International Studies Abroad](http://studiesabroad.com/)
 - [ISA Veritas - Christian Study Abroad](http://www.veritasabroad.com/)
 - [TEAN - The Education Abroad Network](https://teanabroad.org/)
@@ -52,7 +96,7 @@ Students are provided incredible opportunities to study and Intern abroad. These
 - [Hebrew University | Jerusalem, Israel](https://overseas.huji.ac.il/)
 - [Richmond American University London | London, England](https://www.richmond.ac.uk/)
 
-_NOTE: Students can use outside loans, scholarships, and grants but **cannot** use Liberty awarded scholarships for program cost. For more information on Custom Program specifics please see the [Policies & Guidelines]({{ link('policies') }}) and the [FAQ]({{ link('policies') }}#faq)._
+_NOTE: Students can use outside loans, scholarships, and grants but **cannot** use Liberty awarded scholarships for program cost. For more information on Custom Program specifics please see the [Policies & Guidelines]({{ link('policies') }})._
 
 # International Internships
 
@@ -67,6 +111,6 @@ Participating in these internships provide tangible ways to gain hands on profes
 - [NICS - Network of International Christian Schools](https://www.nics.org/)
 - [SIM - Society for International Minstries](https://www.simusa.org/)
 
-_NOTE: Students **cannot** use Liberty awarded scholarships or outside loans, scholarships, and grants for program cost. For more information on International Internship Program specifics please see the [Policies & Guidelines]({{ link('policies') }}) and the [FAQ]({{ link('policies') }}#faq)._
+_NOTE: Students **cannot** use Liberty awarded scholarships or outside loans, scholarships, and grants for program cost. For more information on International Internship Program specifics please see the [Policies & Guidelines]({{ link('policies') }})._
 
 ${toc}
