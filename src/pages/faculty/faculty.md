@@ -22,25 +22,25 @@ Whether you are planning international travel, domestic travel, or individual tr
 - We've got a library of training resources available to equip you and your students to maximize your travel experiences.
 
 {% action actions,
+  picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35628',
+  title = 'Domestic Proposal Process/Excused Absense Requests',
+  link = link('domestic')
+%}
+LU Send works with you to develop the educational, cultural, spiritual, and logistical components, including excused absenses, of your domestic trips.
+{% endaction %}
+
+{% action actions,
   picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35632',
-  title = 'Inter&shy;national Travel Proposal Process',
+  title = 'Inter&shy;national Proposal Process',
   link = link('international')
 %}
 LU Send works with you to develop the educational, cultural, spiritual, and logistical components of your international trips.
 {% endaction %}
 
 {% action actions,
-  picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35628',
-  title = 'Domestic Travel Proposal Process',
-  link = link('domestic')
-%}
-LU Send works with you to develop the educational, cultural, spiritual, and logistical components of your domestic trips.
-{% endaction %}
-
-{% action actions,
   picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35630',
   title = 'Individual Travel/CRS Travel Registration & Forms',
-  link = 'https://liberty-sa.terradotta.com/index.cfm?FuseAction=Students.Apply&Program_ID=11900'
+  link = link('individual_crs')
 %}
 Liberty University faculty and staff must register their individual travel with the University. Visit this link to register your travel for a multitude of reasons.
 {% endaction %}

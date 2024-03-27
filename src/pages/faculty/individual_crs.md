@@ -18,7 +18,7 @@ Common forms of international travel among faculty and staff are (but are not li
 {% action actions,
   picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35632',
   title = 'International CRS Grant Travel Registration Form',
-  link = link('international')
+  link = ('https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=11867')
 %}
 Test
 {% endaction %}
@@ -26,7 +26,7 @@ Test
 {% action actions,
   picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35632',
   title = 'International Recruitment Travel Registration Form',
-  link = link('international')
+  link = ('https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=11867')
 %}
 Test
 {% endaction %}
@@ -34,7 +34,7 @@ Test
 {% action actions,
   picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35632',
   title = 'International Conference Travel Registration Form',
-  link = link('international')
+  link = ('https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=11867')
 %}
 Test
 {% endaction %}
@@ -42,7 +42,7 @@ Test
 {% action actions,
   picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35632',
   title = 'International Research Travel',
-  link = link('international')
+  link = ('https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=11867')
 %}
 NOT associated with CRS Grant Registration From
 {% endaction %}
@@ -50,7 +50,7 @@ NOT associated with CRS Grant Registration From
 {% action actions,
   picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35632',
   title = 'International Site Development Travel Registration Form',
-  link = link('international')
+  link = ('https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=11867')
 %}
 Test
 {% endaction %}
@@ -58,7 +58,7 @@ Test
 {% action actions,
   picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35632',
   title = 'Other Faculty/Staff International Travel Registration Form',
-  link = link('international')
+  link = ('https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=11867')
 %}
 Test
 {% endaction %}

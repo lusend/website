@@ -63,16 +63,32 @@ At LU Send, we want students, faculty, and alumni at Liberty to have the opportu
 
 {% action actions,
   picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35532',
-  title = 'Individual Travel',
+  title = 'Study Abroad',
   link = link('individual')
 %}
-LU Send has partnered with trusted study abroad organizations and built connections with organizations in business to offer over 150 locations around the world! There is at least one study abroad location or internship opportunity for every field of study at Liberty. Increase your marketability, gain college credit, and prepare for life after graduation in a global setting!
+LU Send has partnered with trusted study abroad organizations and built connections with organizations in business to offer over 150 locations around the world! There is at least one study abroad location for every field of study at Liberty. Increase your marketability, gain college credit, and prepare for life after graduation in a global setting!
+{% endaction %}
+
+{% action actions,
+  picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35632',
+  title = 'International Internships',
+  link = link('internships')
+%}
+LU Send works with you to guide you to internships across the globe to gain professional, hands-on experience in a cross-cultural work environment. This experience can be used for academic credit and/or professional work experience!
 {% endaction %}
 
 {% action actions,
   picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35530',
-  title = 'Faculty Gateway',
+  title = 'Faculty & Staff',
   link = link('faculty')
 %}
 Whether you are planning international travel or domestic travel, LU Send works with you to develop the educational, cultural, spiritual, and logistical components of your trip and to ensure exceptional experiences for every Liberty student traveling with the University.
+{% endaction %}
+
+{% action actions,
+  picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35562',
+  title = 'FAQs',
+  link = link('FAQs')
+%}
+If you have any questions about Group travel, Study Abroad, or International Internships, here is the place to get them answered!
 {% endaction %}

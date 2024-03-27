@@ -1,8 +1,8 @@
 ---
-title: Independent Internships
+title: International Internships
 planes: false
 nav:
-  title: Independent Internships
+  title: International Internships
   parent: home
   order: 2
 ---

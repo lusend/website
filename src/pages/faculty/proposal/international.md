@@ -15,8 +15,6 @@ Staff is available to consult with faculty in-person at any point in the proposa
 
 All of the proposal dates are hard deadlines. All of the proposal dates are hard deadlines that are set 13 months before departure. Proposals that are received after the set deadline will not be approved.
 
-<!-- Will automatically update and sort -->
-<!-- Make sure {date-turnredafter="number"} is included -->
 
 | Trip Dates                  | Proposal Deadlines |
 | --------------------------- | ------------------ |
@@ -26,7 +24,6 @@ All of the proposal dates are hard deadlines. All of the proposal dates are hard
 | Summer July/August          | May 30             |
 | Fall                        | October 1          |
 
-{data-turnredafter="30"}
 
 # Trip Proposal Process
 
@@ -62,12 +59,5 @@ LU Send will communicate the proposal’s approval status to the faculty/staff l
 2. The faculty/staff leader and the appropriate LU Send individuals will sign the Trip Agreement outlining the responsibilities of all involved parties.
 3. After the Trip Agreement has been signed, promotion & recruiting for the trip can begin. Students will also be able to apply for the trip at this point.
 
-# Unsponsored Group Travel
-
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35657){.header ."object-[center_30%]"}
-
-Any Faculty member participating in international group travel opportunities **that are not related to the University** but which do have Liberty University students attending (i.e. church mission trips) must be disclosed to LU Send no later than 3 weeks before travel. This short disclosure form can be found through the Faculty/Staff Resources Gateway on our website. In addition to registration, none of these international opportunities are to be presented or marketed to Liberty University students on campus without express written permission from LU Send.
-
-[Complete Unsponsored Registration](https://liberty.co1.qualtrics.com/jfe/form/SV_0Pd6ClKtZ0lF7xj){.btn .btn-full}
 
 ${toc}
