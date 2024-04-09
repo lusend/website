@@ -7,9 +7,10 @@ nav:
 
 Staff is available to consult with faculty in-person at any point in the proposal or development process. Email lusend@liberty.edu to connect today!
 
-[Submit Trip Proposal](https://liberty.co1.qualtrics.com/jfe/form/SV_3NI3x8lGSeeRxk2){.btn .btn-full}
+[Submit Trip Proposal](https://airtable.com/appBpH0Ga7DH60gSt/pag2MO4S3kTGp4czR/form){.btn .btn-full}
 
-# International Proposal Deadlines
+# International Proposal Deadlines _(13 months before departure)_
+
 
 ![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35651){.header}
 
@@ -29,7 +30,7 @@ All of the proposal dates are hard deadlines. All of the proposal dates are hard
 
 ![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35653){.header}
 
-As faculty, your involvement is integral in equipping Liberty students to be fully prepared to meet their futures in a globalizing marketplace. LU Send works with you to create cross-cultural opportunities that contribute to your students’ development as lifelong learners and Champions for Christ, wherever their journey takes them.
+As faculty, your involvement is integral in equipping Liberty students to be fully prepared to meet their futures in a global marketplace. LU Send works with you to create cross-cultural opportunities that contribute to your student’s development as lifelong learners and Champions for Christ, wherever their journey takes them.
 
 <div class="text-center">
 

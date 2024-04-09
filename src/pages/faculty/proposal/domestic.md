@@ -7,9 +7,9 @@ nav:
 
 Through LU Send, Liberty University strives to partner with faculty and staff to provide quality academic experiences with minimal risk to the students. With that in mind, here are some policies that have been put in place, along with some guidelines that can assist with providing a positive experience for our faculty and students.
 
-[Submit Trip Proposal](https://liberty.co1.qualtrics.com/jfe/form/SV_3NI3x8lGSeeRxk2){.btn .btn-full}
+[Submit Trip Proposal](https://airtable.com/appBpH0Ga7DH60gSt/pag2MO4S3kTGp4czR/form){.btn .btn-full}
 
-# Domestic Proposal Deadlines
+# Premium Domestic Proposal Deadlines _(9 months before departure)_
 
 ![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35651){.header}
 
@@ -57,19 +57,29 @@ LU Send is the centralized hub of support for all student travel and processes a
 
 _Under no circumstances should faculty be leading students off-campus without first working with LU Send & the Provost office._
 
-## Excused Absence Requests for Local/Day trips less than 50 miles from Liberty University.
+## Basic Excused Absence Requests
 
-- Each department/club will designate one person to disperse all excused absence requests to students who in turn will provide this request to necessary professors and/or other faculty/staff. All local (less than 50 miles) and day trip requests should be approved by the Dean or Club’s faculty Advisor, and sent directly to the Provost office for final approval in the provided format.
-- All forms must be approved by the Dean of the faculty member’s department prior to being processed.
+A Basic Excused Absence request should be submitted for day trip or on-campus events that require a student’s excused absence from classes, curfew, convocation, etc. If you are traveling overnight, please submit a standard trip registration below. 
 
-## Overnight and/or more than 50 miles from Liberty University
+If you are taking students on a day trip that is **_less than 50 miles_** from campus and does not require any excused absences (for example, on a Saturday), you do not need to fill anything out or submit any registration. This registration form is only used for university-sponsored events or day trips that require excused absences or are more than 50 miles from campus.
 
-All excused absences that are overnight or outside of 50 miles from Liberty’s campus can be found within the application for a student to download, fill out, and provide to necessary professors and/or other faculty/staff. These requirements exist for the following reasons:
+[Submit Excused Absence Request](https://airtable.com/appBpH0Ga7DH60gSt/pag2CJtdYgEXjteXs/form){.btn .btn-full}
 
-- These trips are required to meet certain university standards that LU Send will ensure are clearly communicated to faculty, and policies and procedures are being met.
-- These trips require the student to sign an Assumption of Risk Form. LU Send will work with the faculty and student to make sure this is taken care of.
+- Once the Basic Excused Absence form is submitted, LU Send will seek Dean and Provost approval on your behalf. Once those have been secured, LU Send will send the leader/primary contact of the trip a link to distribute to students who will be attending. 
 
-_*All trips must be approved by the Dean of the Faculty member's department. Additionally, all trips located out of the State of Virginia will need to be approved by the State Approvals office prior to being processed*_
+- Students will need to pick their trip from a drop-down menu, fill out the required information, and sign the assumption of risk form. Once they have done this, and submitted their registration, they will be able to download their excused absence form.  
+
+## Standard Trip Registration
+
+Standard trip registrations are for all Liberty University-sanctioned student travel that requires an overnight stay. LU Send is required to provide all overnight addresses to the Office of Equity & Compliance in accordance with the Clery Act. Please have all your addresses available before you fill out this form. 
+
+[Submit Standard Trip Registration](https://airtable.com/appBpH0Ga7DH60gSt/pag2CJtdYgEXjteXs/form){.btn .btn-full}
+
+- If these overnight trips are to take place in any state other than Virginia, the Office of State Approvals will need to approve. LU Send will obtain this approval on your behalf automatically, however, if they have any specific questions about proposed travel, they will contact the leader directly with their questions. 
+
+- Once they approve, LU Send will seek Dean and Provost approval on your behalf. Once those have been secured, LU Send will send the leader/primary contact of the trip a link to distribute to students who will be attending. 
+
+- Students will need to pick their trip from a drop-down menu, fill out the required information, and sign the assumption of risk form. Once they have done this, and submitted their registration, they will be able to download their excused absence form.  
 
 ## State Approvals
 
@@ -83,14 +93,13 @@ Please be advised that the Office of State Approvals cannot guarantee the destin
 
 Domestic Student Travel encompasses a large variety of trips, but there are a few policies that apply to all travel:
 
-- Students cannot be leads on a trip, but GSAs can support leads on a trip.
-- The academic lead needs to be qualified and approved if not the professor (such as a GSA or another faculty member)
-- Overnight trips must have both a female and a male leader if there are both genders participating.
-- All drivers must be approved by Transit to drive the vehicle chosen for the trip.
-- Leaders taking students to an endorsed event outside the local area\* should transport them with either a rental vehicle or an LU vehicle.
-- Domestic Student Travel abides by Liberty University’s travel policies & procedures as set by the Procurement office.
+- Students cannot be leaders on a group travel trip, but GSAs or TAs can. 
+- Overnight group travel trips should have both a female and a male leader if both genders are participating.
+- All drivers must be approved drivers by Transit to drive the vehicle chosen for the trip.
+- Anyone acting as a leader on behalf of Liberty University **MUST** take the Campus Security Authority training module before they travel with students. This must be done at least once per academic year. 
+- Students should never be required to share beds on trips. 
 
-_\*as per Liberty University’s travel policies, the local area is considered to be within 50 miles of campus._
+Any exception to policy needed will need to be brought directly to the dean or head of your department. 
 
 We take the safety and security of our students seriously, here are a few guidelines to help our leaders be prepared for possible situations:
 
@@ -99,5 +108,7 @@ We take the safety and security of our students seriously, here are a few guidel
 - Be aware of the liability of driving students in a personal vehicle as opposed to a rental or LU vehicle. It may be wise to budget for those last-minute traveling needs at the end of the semester/year.
 - Advisable for all leaders to read Procurement’s Travel Policies & Procedures and Sign the Policy Acknowledgement Letter.
 - Register your trip as soon as possible to ensure that all facets of the process are done in a timely manner.
+
+Please contact Audrey Hammond, Executive Director, by [email](mailto:agbeman@liberty.edu) or by phone (434-592-4204), to learn more about the proposal process.
 
 ${toc}
