@@ -37,9 +37,7 @@ As the centralized hub for all student group travel, LU Send ensures risk mitiga
 
 <div class="text-center">
 
-[Trip Leader
-Handbook](https://liberty-sa.terradotta.com/_customtags/ct_FileRetrieve.cfm?File_ID=27452){.btn} [Trip Leader Best
-Practices Guide](https://liberty-sa.terradotta.com/_customtags/ct_FileRetrieve.cfm?File_ID=27453){.btn}
+[Trip Leader Handbook](# "Temporarily Unavailable"){.btn} [Trip Leader Best Practices Guide](# "Temporarily Unavailable"){.btn}
 
 </div>
 
