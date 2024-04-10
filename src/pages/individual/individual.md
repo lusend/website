@@ -29,6 +29,13 @@ If you have not decided on a program yet, browse LU Send's Signature Programs an
 If you are just getting started with your study abroad or international internship experience, this is the perfect place to start.
 {% endaction %}
 
+{% action actions,
+  picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35632',
+  title = 'Program Process',
+  link = link('process')
+%}
+This page walks you through the entire Study Abroad/International Internship process step by step.
+{% endaction %}
 
 {% action actions,
   picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35574',

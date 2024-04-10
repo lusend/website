@@ -2,8 +2,8 @@
 title: Policies & Guidelines 
 nav:
   title: Policies & Guidelines 
-  parent: internships
-  order: 2
+  parent: individual
+  order: 4
 ---
 
 All LU Send Study Abroad programs are university approved with oversight from multiple entities at Liberty. The LU Send Study Abroad program involves advising, mandatory meetings, trainings and procedures managed by LU Send staff.
