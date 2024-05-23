@@ -26,7 +26,7 @@ If you are traveling internationally on behalf of the University using CRS funds
 {% action actions,
   picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35632',
   title = 'International Recruitment Travel Registration Form',
-  link = ('https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=11867')
+  link = ('http://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=11900')
 %}
 If you are traveling internationally on behalf of the University for recruiting purposes, please use this application to register your travel and provide information needed for your required international travel and health insurance.
 {% endaction %}
@@ -34,7 +34,7 @@ If you are traveling internationally on behalf of the University for recruiting 
 {% action actions,
   picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35632',
   title = 'International Conference Travel Registration Form',
-  link = ('https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=11867')
+  link = ('http://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=11900')
 %}
 If you are traveling to attend an international conference, please use this application to register your travel and provide information needed for your required international travel and health insurance.
 {% endaction %}
@@ -42,7 +42,7 @@ If you are traveling to attend an international conference, please use this appl
 {% action actions,
   picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35632',
   title = 'International Research Travel',
-  link = ('https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=11867')
+  link = ('http://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=11900')
 %}
 If you are traveling internationally to conduct research internationally for university purposes but are not using university funds, please use this application to register your travel and provide information needed for your required international travel and health insurance. 
 **_Note: This is NOT associated with CRS Grant Registration Form_**
@@ -51,7 +51,7 @@ If you are traveling internationally to conduct research internationally for uni
 {% action actions,
   picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35632',
   title = 'International Site Development Travel Registration Form',
-  link = ('https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=11867')
+  link = ('http://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=11900')
 %}
 If you are traveling on behalf of the University to see and vet a potential partner of the University, please use this application to register your travel and provide information needed for your required international travel and health insurance.
 {% endaction %}
@@ -59,7 +59,7 @@ If you are traveling on behalf of the University to see and vet a potential part
 {% action actions,
   picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35632',
   title = 'Other Faculty/Staff International Travel Registration Form',
-  link = ('https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=11867')
+  link = ('http://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=11900')
 %}
 If you are traveling internationally for any reason not mentioned above, please use this application to register your travel and provide information needed for your required international travel and health insurance.
 {% endaction %}
