@@ -106,7 +106,6 @@ These internships are exclusively for students looking for tangible ways to gain
 
 Participating in these internships provide tangible ways to gain hands on professional experience in a cross culturally rich environments. Students will work alongside and learn from specialists within their field of study. These internships are exclusively for students looking for internship opportunities.
 
-- [Intern Abroad HQ](https://www.internhq.com/)
 - [Campus B - Brazil](https://campusb.org/students/)
 - [NICS - Network of International Christian Schools](https://www.nics.org/)
 - [SIM - Society for International Minstries](https://www.simusa.org/)
