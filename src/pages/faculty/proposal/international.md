@@ -34,6 +34,9 @@ As faculty, your involvement is integral in equipping Liberty students to be ful
 
 <div class="text-center">
 
+**_Handbook and Best Practices Guide is currently undergoing updates_**
+**_and is currently unavailable_**
+
 [Trip Leader Handbook](# "Temporarily Unavailable"){.btn} [Trip Leader Best Practices Guide](# "Temporarily Unavailable"){.btn}
 
 </div>

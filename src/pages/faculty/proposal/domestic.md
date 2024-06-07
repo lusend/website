@@ -35,7 +35,11 @@ _\***If your trip does not operate as a full LU Send trip (does not require logi
 
 As the centralized hub for all student group travel, LU Send ensures risk mitigation, a smooth approval process, and executive reporting to the Provost. Having processed 200+ academic trips per academic year, we are glad to walk with you in providing exceptional student group travel opportunities within the United States!
 
+
 <div class="text-center">
+
+**_Handbook and Best Practices Guide is currently undergoing updates_**
+**_and is currently unavailable_**
 
 [Trip Leader Handbook](# "Temporarily Unavailable"){.btn} [Trip Leader Best Practices Guide](# "Temporarily Unavailable"){.btn}
 
