@@ -98,18 +98,4 @@ Courses in various disciplines are offered at both host universities and study c
 
 _NOTE: Students can use outside loans, scholarships, and grants but **cannot** use Liberty awarded scholarships for program cost. For more information on Custom Program specifics please see the [Policies & Guidelines]({{ link('policies') }})._
 
-# International Internships
-
-![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35657){.header ."object-[center_30%]"}
-
-These internships are exclusively for students looking for tangible ways to gain hands on professional experience in a cross culturally rich environments.
-
-Participating in these internships provide tangible ways to gain hands on professional experience in a cross culturally rich environments. Students will work alongside and learn from specialists within their field of study. These internships are exclusively for students looking for internship opportunities.
-
-- [Campus B - Brazil](https://campusb.org/students/)
-- [NICS - Network of International Christian Schools](https://www.nics.org/)
-- [SIM - Society for International Minstries](https://www.simusa.org/)
-
-_NOTE: Students **cannot** use Liberty awarded scholarships or outside loans, scholarships, and grants for program cost. For more information on International Internship Program specifics please see the [Policies & Guidelines]({{ link('policies') }})._
-
 ${toc}

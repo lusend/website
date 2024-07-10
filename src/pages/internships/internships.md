@@ -39,15 +39,7 @@ International internships provide tangible ways to gain professional, hands-on e
 - [United World Mission](https://uwm.org/go/ways-to-go/)
 - [WorldVenture](https://worldventure.com/going/pathfinders/)
 
-# Financing Your Program
-
-A signature study abroad program allows students to utilize their Liberty scholarships and federal financial aid to finance their signature study abroad experience while receiving credit directly from Liberty University. In these programs, students pay a set program fee based on location, Liberty University tuition, and the LU Send study abroad fee.
-
-A custom study abroad program allows students to utilize their federal and outside financial aid to finance their custom study abroad experience. In these programs, students pay a program fee set by the partner organization and the LU Send study abroad fee. 
-
-For international internship programs, students pay a program fee set by the partner organization, Liberty tuition (if receiving credit), and the LU Send internship fee. 
-
-Please note, that the LU Send study abroad fee is determined by the semester in which a student expects to travel. To learn more about this fee, please refer to the [Policies & Guidelines]({{ link('policies') }}) page. 
+To learn more about International Internships, please refer to the [Policies & Guidelines]({{ link('policies') }}) page and or contact [lusendinternational@liberty.edu](mailto:lusendinternational@liberty.edu) for more information!
 
 
 ${toc}
