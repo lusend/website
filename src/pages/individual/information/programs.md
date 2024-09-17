@@ -81,7 +81,7 @@ Courses in various disciplines are offered at both host universities and study c
 ## Custom Program Organizations
 
 - [AIFS - American Institute for Foreign Study](https://www.aifsabroad.com/)
-- [API - Academic Programs International](https://apiabroad.com/)
+- [API - Academic Programs International](https://members.apiabroad.com/liberty-university/)
 - [CCCU GlobalEd - Council for Christian Colleges & Universities](https://www.cccuglobaled.org/)
 - [CEA CAPA Education Abroad](http://www.ceastudyabroad.com/)
 - [CIEE - Council on International Educational Exchange](https://www.ciee.org/go-abroad/college-study-abroad)
@@ -93,7 +93,6 @@ Courses in various disciplines are offered at both host universities and study c
 ## Host Institutions
 
 - [Greek Bible College | Athens, Greece](https://www.grbc.gr/en/international-student-program/)
-- [Hebrew University | Jerusalem, Israel](https://overseas.huji.ac.il/)
 - [Richmond American University London | London, England](https://www.richmond.ac.uk/)
 
 _NOTE: Students can use outside loans, scholarships, and grants but **cannot** use Liberty awarded scholarships for program cost. For more information on Custom Program specifics please see the [Policies & Guidelines]({{ link('policies') }})._
