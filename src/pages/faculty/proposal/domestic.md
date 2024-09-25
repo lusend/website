@@ -7,8 +7,6 @@ nav:
 
 Through LU Send, Liberty University strives to partner with faculty and staff to provide quality academic experiences with minimal risk to the students. With that in mind, here are some policies that have been put in place, along with some guidelines that can assist with providing a positive experience for our faculty and students.
 
-[Submit Trip Proposal](https://airtable.com/appBpH0Ga7DH60gSt/pag2MO4S3kTGp4czR/form){.btn .btn-full}
-
 # Premium Domestic Proposal Deadlines _(9 months before departure)_
 
 ![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35651){.header}
@@ -28,6 +26,8 @@ All of the proposal dates are hard deadlines. All of the proposal dates are hard
 
 
 _\***If your trip does not operate as a full LU Send trip (does not require logistical support, budget, academic credit, or have culture/service opportunities) you will need to submit all proposals [at least a month]{.text-secondary} before departure**. This will give us enough time to get excused absence request/approvals, assumption of risk, and out of bed request in time for your departure. If you are not able to get this request in this time frame, please email [lusend@liberty.edu](mailto:lusend@liberty.edu) for further information._
+
+[Submit Trip Proposal](https://airtable.com/appBpH0Ga7DH60gSt/pag2MO4S3kTGp4czR/form){.btn .btn-full}
 
 # Trip Proposal Process
 
