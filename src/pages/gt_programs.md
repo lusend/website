@@ -60,7 +60,7 @@ Here is a comprehensive list of LU Send's existing programs:
 | [Los Angeles, CA – School of Behavioral Sciences – Dr. Shiderly](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12545)                                       | July 13         | June 20      | TBD                      |
 | [Alaska - School of Aeronautics - Jerry Wangberg](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12486)                                                      | July 5          | June 20      | TBD                      |
 | [Finalnd - Club sports - Steve Bowman](# "Coming Soon!")                                                                                                                                             | July 26         | August 5     | TBD                      |
-| [Panama- School of Health Sciences - Dr. Harris](# "Coming Soon!")                                                                                                                                   | August 6        | August 15    | April 15, 2025           |
+| [Panama- School of Health Sciences - Dr. Harris](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12368)                                                       | August 6        | August 15    | April 15, 2025           |
 
 
 
