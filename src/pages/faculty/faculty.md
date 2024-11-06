@@ -39,7 +39,7 @@ LU Send works with you to develop the educational, cultural, spiritual, and logi
 
 {% action actions,
   picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35630',
-  title = 'Individual Travel/CRS Travel Registration & Forms',
+  title = 'ndividual/OSPR Travel Registration & Forms',
   link = link('individual_crs')
 %}
 Liberty University faculty and staff must register their individual travel with the University. Visit this link to register your travel for a multitude of reasons.
