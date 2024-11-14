@@ -5,7 +5,7 @@ nav:
   parent: group
   order: 1
 ---
-*Last updated: 10/23/2024 4:30pm EST*
+*Last updated: 11/14/2024 10:15am EST*
 
 Here is a comprehensive list of LU Send's existing programs:
 
@@ -24,7 +24,6 @@ Here is a comprehensive list of LU Send's existing programs:
 | [United Kingdom - School of Business - Dr. Geisler](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12528)                                                    | March 6         | March 16     | October 15               |
 | [Kenya - School of Nursing - Prof. Gazan](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12408)                                                              | March 6         | March 17     | October 15               |
 | [New York City, NY & Newport RI- College of Arts & Sciences - Dr. Campbell](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12521)                            | March 6         | March 15     | November 1               |
-| [Japan - School of Engineering](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=11932)                                                                        | March 6         | March 15     | November 1               |
 | [Charleston, SC – School of Divinity – Umwami Ndenga ](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12543)                                                 | March 10        | March 15     | November 1               |
 | [United Kingdom & France - College of Arts & Sciences - Dr. Roberts](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12504)                                   | March 6         | March 16     | November 1               |
 | [Spain - Psychology - Prof. Arbelo](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12530)                                                                    | March 6         | March 16     | November 1               |
@@ -35,7 +34,6 @@ Here is a comprehensive list of LU Send's existing programs:
 | [Jordan & Egypt - School of Divinity - Dr. Cartwright](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12516)                                                 | March 6         | March 17     | November 1               |
 | [Eswatini - School of Nursing - Prof. Taylor](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12519)                                                          | March 6         | March 17     | November 1               |
 | [Costa Rica - Psychology - Dr. Conner](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12444)                                                                 | March 6         | March 17     | November 1               |
-| [Rwanda- School of Divinity - Dr. Hercyk](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12518)                                                              | March 17        | March 28     | November 1               |
 | [Los Angeles, CA - CSER - Julie Farley](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12522)                                                                | March 9         | March 15     | December 1               |
 | [Las Vegas, NV - School of Communication & the Arts - Prof. Prill](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12513)                                     | April 4         | April 9      | November 1               |
 
