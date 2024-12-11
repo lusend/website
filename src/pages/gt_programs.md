@@ -57,14 +57,14 @@ Here is a comprehensive list of LU Send's existing programs:
 | [Panama- School of Health Sciences - Dr. Harris](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12368)                                                       | August 6        | August 15    | March 1              |
 | [Alaska - School of Aeronautics - Jerry Wangberg](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12486)                                                      | July 5          | July 20      | March 31             |
 | [Los Angeles, CA – School of Behavioral Sciences – Dr. Shiderly](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12545)                                       | July 13         | July 20      | TBD                  |
-| [Finland - Club sports - Steve Bowman]([# "Coming Soon!"](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12549)                                              | July 26         | August 5     | TBD                  |
+| [Finland - Club sports - Steve Bowman](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12549)                                                                 | July 26         | August 5     | TBD                  |
 
 # Fall 2025
-| Trip Name                                                                                                                                                                                            | Departure Date     | Return Date        | Application Deadline |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | ------------------ | -------------------- |
-| [Cannock Chase, England – Counselor Education & Family Studies – Dr. Brandon Waggoner](# "Coming Soon!")                                                                                             | September 21, 2025 | October 2, 2025    | May 15               |
-| [Paris, France - Family & Consumer Sciences - Dr. Cashman](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12506)                                             | October 4, 2025    | October 11, 2025   | June 15              |
-| [Italy, Greece – School of Behavioral Sciences – Dr. Hannor-Walker](# "Coming Soon!")                                                                                                                | October 17, 2025   | October 17, 2025   | TBD                  |
+| Trip Name                                                                                                                                                                                            | Departure Date  | Return Date  | Application Deadline |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- | ------------ | -------------------- |
+| [Cannock Chase, England – Counselor Education & Family Studies – Dr. Brandon Waggoner](# "Coming Soon!")                                                                                             | September 21    | October 2    | May 15               |
+| [Paris, France - Family & Consumer Sciences - Dr. Cashman](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12506)                                             | October 4       | October 11   | June 15              |
+| [Italy, Greece – School of Behavioral Sciences – Dr. Hannor-Walker](# "Coming Soon!")                                                                                                                | October 17      | October 17   | TBD                  |
 
 
 ${toc}
