@@ -11,18 +11,18 @@ Through LU Send, Liberty University strives to partner with faculty and staff to
 
 ![Filler Header Image](https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35651){.header}
 
-_\*The dates below are for trips that operate as a full LU Send Trip. These trips are overnight, more than 50 miles away from Liberty’s campus, include culture immersion, academic credit (or CSER credit), and a service opportunity. An LU Send Trip Coordinator manages the logistics, budget, excused absences, out of bed requests, etc. Proposals should be sent in 9 months before departure._
+_\*The dates below are for trips that operate as a full LU Send Trip. These trips are overnight, more than 50 miles away from Liberty’s campus, include culture immersion, academic credit (or CSER credit), and a service opportunity. An LU Send Trip Coordinator manages the logistics, budget, excused absences, out of bed requests, etc. Proposals should be sent in 12 months before departure._
 
-All of the proposal dates are hard deadlines. All of the proposal dates are hard deadlines that are set 9 months before departure. Proposals that are received after the set deadline will not be approved. 
+All of the proposal dates are hard deadlines. All of the proposal dates are hard deadlines that are set 12 months before departure. Proposals that are received after the set deadline will not be approved. 
 
 
 | Trip Dates                  | Proposal Deadlines |
 | --------------------------- | ------------------ |
-| January/Early Spring        | April 1            |
-| Spring Break                | June 15            |
-| Summer May/June             | August 15          |
-| Summer July/August          | October 1          |
-| Fall                        | February 15        |
+| January/Early Spring        | January 1          |
+| Spring Break                | March 1            |
+| Summer May/June             | May 1              |
+| Summer July/August          | July 1             |
+| Fall                        | August 1           |
 
 
 _\***If your trip does not operate as a full LU Send trip (does not require logistical support, budget, academic credit, or have culture/service opportunities) you will need to submit all proposals [at least a month]{.text-secondary} before departure**. This will give us enough time to get excused absence request/approvals, assumption of risk, and out of bed request in time for your departure. If you are not able to get this request in this time frame, please email [lusend@liberty.edu](mailto:lusend@liberty.edu) for further information._
