@@ -5,7 +5,7 @@ nav:
   parent: group
   order: 1
 ---
-*Last updated: 02/07/2025 12:00pm EST*
+*Last updated: 02/18/2025 12:00pm EST*
 
 Here is a comprehensive list of LU Send's existing programs:
 
@@ -32,8 +32,6 @@ Here is a comprehensive list of LU Send's existing programs:
 | Trip Name                                                                                                                                                                                            | Departure Date  | Return Date  | Application Deadline |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- | ------------ | -------------------- |
 | [Turkiye & Greece  - School of Divinity - Dr. Yonts](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12468)                                                   | May 13          | May 26       | January 25           |
-| [Greece - Social Work - Dr. Fulmer](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12535)                                                                    | June 19         | June 30      | February 1           |
-| [Argentina - NCAA Sports - Maura Schimp](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12548)                                                               | June 21         | June 30      | February 1           |
 | [Kenya - School of Aeronautics - Peter Spahr](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=11969)                                                          | May 12          | May 30       | February 15          |
 | [South Korea - Psychology - Dr. Kim](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12229)                                                                   | June 6          | June 16      | February 15          |
 | [Greece - Community Care & Counseling - Dr. Buckles ](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12532)                                                  | June 5          | June 17      | February 15          |
