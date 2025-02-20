@@ -5,7 +5,7 @@ nav:
   parent: group
   order: 1
 ---
-*Last updated: 02/18/2025 12:00pm EST*
+*Last updated: 02/20/2025 1:25pm EST*
 
 Here is a comprehensive list of LU Send's existing programs:
 
@@ -33,12 +33,9 @@ Here is a comprehensive list of LU Send's existing programs:
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- | ------------ | -------------------- |
 | [Turkiye & Greece  - School of Divinity - Dr. Yonts](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12468)                                                   | May 13          | May 26       | January 25           |
 | [Kenya - School of Aeronautics - Peter Spahr](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=11969)                                                          | May 12          | May 30       | February 15          |
-| [South Korea - Psychology - Dr. Kim](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12229)                                                                   | June 6          | June 16      | February 15          |
 | [Greece - Community Care & Counseling - Dr. Buckles ](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12532)                                                  | June 5          | June 17      | February 15          |
 | [Scotland - Counselor Education & Family Studies - Dr. Wheelus](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12533)                                        | June 6          | June 17      | February 15          |
 | [Southeast Asia - Club Sports - Reese Braband](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12538)                                                         | June 12         | June 23      | February 15          |
-| [Ecuador - Modern Languages - Prof. Grant](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12097)                                                             | May 12          | June 27      | February 15          |
-| [Spain - Modern Languages - Prof. Grant](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12537)                                                               | May 11          | June 30      | February 15          |
 | [Togo - CSER - Dr. Mitchell](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12510)                                                                           | May 14          | June 4       | February 21          |
 | [Guatemala - LU Shepherd - PJ Preston](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12544)                                                                 | June 1          | June 7       | March 1              |
 | [Curaçao  - Public and Community Health - Prof. Christopher](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12479)                                           | June 20         | June 30      | March 1              |
