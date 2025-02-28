@@ -5,7 +5,7 @@ nav:
   parent: group
   order: 1
 ---
-*Last updated: 02/20/2025 1:25pm EST*
+*Last updated: 02/28/2025 4:40pm EST*
 
 Here is a comprehensive list of LU Send's existing programs:
 
@@ -25,6 +25,7 @@ Here is a comprehensive list of LU Send's existing programs:
 | [Jordan & Egypt - School of Divinity - Dr. Cartwright](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12516)                                                 | March 6         | March 17     | November 1               |
 | [Eswatini - School of Nursing - Prof. Taylor](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12519)                                                          | March 6         | March 17     | November 1               |
 | [Costa Rica - Psychology - Dr. Conner](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12444)                                                                 | March 6         | March 17     | November 1               |
+| [Los Angeles, CA - CSER - Julie Farley](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12522)                                                                | March 9         | March 15     | December 1               |
 | [Las Vegas, NV - School of Communication & the Arts - Prof. Prill](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12513)                                     | April 4         | April 9      | December 1               |
 
 
@@ -43,21 +44,25 @@ Here is a comprehensive list of LU Send's existing programs:
 | [Ireland – School of Behavioral Sciences – Prof. Arbelo](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12541)                                               | July 5          | July 17      | March 1              |
 | [Finland - Club sports - Steve Bowman](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12549)                                                                 | July 26         | August 5     | March 1              |
 | [Panama- School of Health Sciences - Dr. Harris](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12368)                                                       | August 6        | August 15    | March 1              |
+| [Los Angeles, CA – School of Behavioral Sciences – Dr. Shannan Shider](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12545)                                 | July 13         | July 20      | March 15             |
+| [Alaska - School of Aeronautics - Jerry Wangberg](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12486)                                                      | July 5          | July 20      | April 1              |
 
 
 # Fall 2025
 | Trip Name                                                                                                                                                                                            | Departure Date  | Return Date  | Application Deadline |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- | ------------ | -------------------- |
-| [Cannock Chase, England – Counselor Education & Family Studies – Dr. Brandon Waggoner](# "Coming Soon!")                                                                                             | September 21    | October 2    | May 15               |
-| [Italy, Greece, & Turkiye – School of Behavioral Sciences – Dr. Hannor-Walker](# "Coming Soon!")                                                                                                     | October 6       | October 17   | May 15               |
-| [France - Family & Consumer Sciences - Dr. Cashman](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12506)                                                    | October 4       | October 11   | June 15              |
+| [Cannock Chase, England – Counselor Education & Family Studies – Dr. Brandon Waggoner](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12552)                 | September 21    | October 2    | May 15               |
+| [France - Family & Consumer Sciences - Dr. Cashman](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12506)                                                    | October 4       | October 11   | May 15               |
+| [Greece & Turkiye – School of Behavioral Sciences – Dr. Hannor-Walker](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12554)                                 | October 6       | October 17   | May 15               |
 | [Rwanda - School of Divinity - Dr.Cartwright](# "Coming Soon!")                                                                                                                                      | September 11    | September 22 | TBD                  |
 
 # Winter/J-term 2026 
 | Trip Name                                                                                                                                                                                            | Departure Date  | Return Date      | Application Deadline |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- | ---------------- | -------------------- |
 | [Finland - Club Sports - Josh Graham](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12550)                                                                  | January 2, 2026 | January 12, 2026 | September 15         |
-| [Jordan & Egypt - School of Divinity - Dr. Cartwright](# "Coming Soon!")                                                                                                                             | January 7, 2026 | January 19, 2026 | September 15         |
+| [Jordan & Egypt - School of Divinity - Dr. Cartwright]([# "Coming Soon!"](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12555)                              | January 7, 2026 | January 19, 2026 | September 15         |
 | [Ecuador - School of Health Sciences- Dr. Harris](# "Coming Soon!")                                                                                                                                  | January 10, 2026| January 19, 2026 | September 15         |
+| [Philippines - School of Behavioral Sciences - Shannan Shiderly](# "Coming Soon!")                                                                                                                   | January 17, 2026| January 29, 2026 | TBD                  |
+
 
 ${toc}
