@@ -5,7 +5,7 @@ nav:
   parent: group
   order: 1
 ---
-*Last updated: 02/28/2025 4:40pm EST*
+*Last updated: 03/06/2025 10:20am EST*
 
 Here is a comprehensive list of LU Send's existing programs:
 
@@ -32,14 +32,10 @@ Here is a comprehensive list of LU Send's existing programs:
 # Summer 2025
 | Trip Name                                                                                                                                                                                            | Departure Date  | Return Date  | Application Deadline |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- | ------------ | -------------------- |
-| [Turkiye & Greece  - School of Divinity - Dr. Yonts](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12468)                                                   | May 13          | May 26       | January 25           |
-| [Kenya - School of Aeronautics - Peter Spahr](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=11969)                                                          | May 12          | May 30       | February 15          |
+| [Turkiye & Greece  - School of Divinity - Prof. Chung](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12468)                                                 | May 13          | May 26       | January 25           |
 | [Greece - Community Care & Counseling - Dr. Buckles ](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12532)                                                  | June 5          | June 17      | February 15          |
 | [Scotland - Counselor Education & Family Studies - Dr. Wheelus](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12533)                                        | June 6          | June 17      | February 15          |
 | [Southeast Asia - Club Sports - Reese Braband](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12538)                                                         | June 12         | June 23      | February 15          |
-| [Togo - CSER - Dr. Mitchell](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12510)                                                                           | May 14          | June 4       | February 21          |
-| [Guatemala - LU Shepherd - PJ Preston](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12544)                                                                 | June 1          | June 7       | March 1              |
-| [Curaçao  - Public and Community Health - Prof. Christopher](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12479)                                           | June 20         | June 30      | March 1              |
 | [Greece - School of Divinity - Dr. Cartwright ](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12534)                                                        | June 27         | July 25      | March 1              |
 | [Ireland – School of Behavioral Sciences – Prof. Arbelo](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12541)                                               | July 5          | July 17      | March 1              |
 | [Finland - Club sports - Steve Bowman](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12549)                                                                 | July 26         | August 5     | March 1              |
