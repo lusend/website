@@ -1,7 +1,7 @@
 ---
-title: Domestic Proposal Process/Excused Absense Requests
+title: Domestic Proposal Process/Excused Absence Requests
 nav:
-  title: Domestic Proposal Process/Excused Absense Requests
+  title: Domestic Proposal Process/Excused Absence Requests
   parent: faculty
 ---
 
