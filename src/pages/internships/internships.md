@@ -27,6 +27,7 @@ International internships provide tangible ways to gain professional, hands-on e
 - [Greater Europe Mission](https://gemission.org/short-term/ )
 - [GVI USA](https://people.gviusa.com/internships/internships-abroad/ )
 - [International Mission Board (IMB)](https://www.imb.org/trips/)
+- [The Learning Abroad Co.](https://us.thelearningabroadco.com/)
 - [Levant Ministries](https://levantministries.org/getinvolved/ )
 - [Mission Aviation Fellowship](https://maf.org/serve/ )
 - [NICS](https://www.nics.org/ )
