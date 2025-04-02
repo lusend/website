@@ -5,7 +5,7 @@ nav:
   parent: group
   order: 1
 ---
-*Last updated: 03/26/2025 4:00pm EST*
+*Last updated: 04/02/2025 4:30pm EST*
 
 Here is a comprehensive list of LU Send's existing programs:
 
@@ -41,6 +41,7 @@ Here is a comprehensive list of LU Send's existing programs:
 # Spring 2026
 | Trip Name                                                                                                                                                                                            | Departure Date   | Return Date    | Application Deadline     |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | -------------- | ------------------------ |
+| [Ireland - School of Business - Dr. Geisler](# "Coming Soon!")                                                                                                                                       | March 12, 2026    | March 22, 2026 | TBD                      |
 | [Rwanda - Counselor Education & Family Studies & Community Care & Counseling - Dr. Davis](# "Coming Soon!")                                                                                          | March 2, 2026    | March 13, 2026 | November 15              |
 | [Bosnia - School of Divinity - Dr. Harper](# "Coming Soon!")                                                                                                                                         | March 6, 2026    | March 15, 2026 | November 15              |
 | [United Kingdom - Theatre Arts - Prof. Gawinski](# "Coming Soon!")                                                                                                                                   | March 12, 2026   | March 20, 2026 | November 15              |
