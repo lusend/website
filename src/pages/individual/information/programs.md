@@ -89,6 +89,7 @@ Courses in various disciplines are offered at both host universities and study c
 - [ISA Veritas - Christian Study Abroad](http://www.veritasabroad.com/)
 - [TEAN - The Education Abroad Network](https://teanabroad.org/)
 - [USAC - University Studies Abroad Consortium](https://usac.edu/)
+- [Project Go](https://www.rotcprojectgo.org/)
 
 ## Host Institutions
 
