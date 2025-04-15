@@ -23,7 +23,7 @@ Whether you are planning international travel, domestic travel, or individual tr
 
 {% action actions,
   picture = 'https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=35628',
-  title = 'Domestic Proposal Process/Excused Absense Requests',
+  title = 'Domestic Proposal Process/Excused Absence Requests',
   link = link('domestic')
 %}
 LU Send works with you to develop the educational, cultural, spiritual, and logistical components, including excused absenses, of your domestic trips.
