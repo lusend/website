@@ -5,7 +5,7 @@ nav:
   parent: group
   order: 1
 ---
-*Last updated: 04/08/2025 11:00am EST*	
+*Last updated: 04/17/2025 11:35am EST*	
 
 Here is a comprehensive list of LU Send's existing programs:
 
@@ -35,26 +35,27 @@ Here is a comprehensive list of LU Send's existing programs:
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- | ---------------- | -------------------- |
 | [Finland - Club Sports - Josh Graham](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12550)                                                                  | January 2, 2026 | January 12, 2026 | September 15         |
 | [Greece - Schools of Divinity, Education and College of Arts & Sciences - Dr. Cartwright](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12555)              | January 7, 2026 | January 18, 2026 | September 15         |
-| [Ecuador - School of Health Sciences- Dr. Harris](# "Coming Soon!")                                                                                                                                  | January 10, 2026| January 19, 2026 | September 15         |
+| [Ecuador - School of Health Sciences- Dr. Harris](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12336)                                                      | January 10, 2026| January 19, 2026 | September 15         |
 | [Philippines - School of Behavioral Sciences - Shannan Shiderly](# "Coming Soon!")                                                                                                                   | January 17, 2026| January 29, 2026 | September 15         |
 
 # Spring 2026
 | Trip Name                                                                                                                                                                                            | Departure Date   | Return Date    | Application Deadline     |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | -------------- | ------------------------ |
-| [Ireland - School of Business - Dr. Geisler](# "Coming Soon!")                                                                                                                                       | March 12, 2026   | March 22, 2026 | TBD                      |
-| [Rwanda - Counselor Education & Family Studies & Community Care & Counseling - Dr. Davis](# "Coming Soon!")                                                                                          | March 2, 2026    | March 13, 2026 | November 15              |
-| [Bosnia - School of Divinity - Dr. Harper](# "Coming Soon!")                                                                                                                                         | March 6, 2026    | March 15, 2026 | November 15              |
+| [Ireland - School of Business - Dr. Geisler](# "Coming Soon!")                                                                                                                                       | March 12, 2026   | March 22, 2026 | Novemebr 1               |
+| [Rwanda - Counselor Education & Family Studies & Community Care & Counseling - Dr. Davis](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12582)              | March 2, 2026    | March 13, 2026 | November 15              |
 | [United Kingdom - Theatre Arts - Prof. Gawinski](# "Coming Soon!")                                                                                                                                   | March 12, 2026   | March 20, 2026 | November 15              |
-| [Spain & Morocco - College of Arts & Sciences & School of Government - Dr. Khouri ](# "Coming Soon!")                                                                                                | March 14, 2026   | March 21, 2026 | November 15              |
 | [Maui, Hawaii - LU Serve - Julie Farley](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12559)                                                               | March 13, 2026   | March 21, 2026 | November 15              |
-| [Dominican Republic - Social Work - Dr. Fulmer ](# "Coming Soon!")                                                                                                                                   | March 14, 2026   | March 21, 2026 | November 15              |
 | [Dominican Republic - School of Education - Dr. Rice](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12561)                                                  | March 14, 2026   | March 21, 2026 | November 15              |
+| [Bosnia - School of Divinity - Dr. Harper](# "Coming Soon!")                                                                                                                                         | March 12, 2026   | March 21, 2026 | November 15              |
+| [Dominican Republic - Social Work - Dr. Fulmer ](# "Coming Soon!")                                                                                                                                   | March 14, 2026   | March 21, 2026 | November 15              |
+| [El Salvador - School of Government - Timothy O'Brien](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12585)                                                 | March 12, 2026   | March 22, 2026 | November 15              |
+| [Spain & Morocco - College of Arts & Sciences & School of Government - Dr. Khouri ](# "Coming Soon!")                                                                                                | March 12, 2026   | March 22, 2026 | November 15              |
 | [Spain - Allied Health Professions - Dr. Lumpkin ](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12099)                                                     | March 11, 2026   | March 22, 2026 | November 15              |
-| [United Kingdom - Rawlings School of Divinity  - Eunice Chung](# "Coming Soon!")                                                                                                                     | March 12, 2026   | March 22, 2026 | November 15              |
+| [United Kingdom - School of Divinity  - Eunice Chung](# "Coming Soon!")                                                                                                                              | March 12, 2026   | March 22, 2026 | November 15              |
 | [Italy - School of Divinity - Dr. King](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12531)                                                                | March 12, 2026   | March 22, 2026 | November 15              |
 | [Argentina - School of Behavioral Sciences - Dr. Conner](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12558)                                               | March 12, 2026   | March 23, 2026 | November 15              |
-| [Eswatini - School of Nursing - Dr. Taylor](# "Coming Soon!")                                                                                                                                        | March 12, 2026   | March 23, 2026 | November 15              |
-| [Kenya - School of Nursing - Prof. Gazan](# "Coming Soon!")                                                                                                                                          | March 12, 2026   | March 23, 2026 | November 15              |
+| [Eswatini - School of Nursing - Dr. Taylor](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12588)                                                            | March 12, 2026   | March 23, 2026 | November 15              |
+| [Kenya - School of Nursing - Prof. Gazan](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12589)                                                              | March 12, 2026   | March 23, 2026 | November 15              |
 | [Switzerland - School of Behavioral Sciences - Kimberly Arbelo](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12562)                                        | March 12, 2026   | March 24, 2026 | November 15              |
 
 
