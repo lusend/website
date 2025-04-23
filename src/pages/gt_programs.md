@@ -5,20 +5,20 @@ nav:
   parent: group
   order: 1
 ---
-*Last updated: 04/17/2025 11:35am EST*	
+*Last updated: 04/23/2025 03:35pm EST*	
 
 Here is a comprehensive list of LU Send's existing programs:
 
 # Summer 2025
 | Trip Name                                                                                                                                                                                            | Departure Date  | Return Date  | Application Deadline |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- | ------------ | -------------------- |
-| [Germany - School of Music - Dr. Muller](# "Coming Soon!")                                                                                                                                           | May 15          | May 26       | TBD                  |
 | [Turkiye & Greece  - School of Divinity - Prof. Chung](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12468)                                                 | May 13          | May 26       | January 25           |
 | [Greece - Community Care & Counseling - Dr. Buckles ](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12532)                                                  | June 5          | June 17      | February 15          |
 | [Scotland - Counselor Education & Family Studies - Dr. Wheelus](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12533)                                        | June 6          | June 17      | February 15          |
-| [Southeast Asia - Club Sports - Reese Braband](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12538)                                                         | June 12         | June 23      | February 15          |
+| [Southeast Asia - Club Sports - Reese Braband](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12538)                                                         | June 11         | June 23      | February 15          |
+| [Germany - School of Music - Dr. Muller](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12557)                                                               | May 15          | May 26       | April 30             |
 | [Ireland – School of Behavioral Sciences – Prof. Arbelo](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12541)                                               | July 5          | July 17      | March 1              |
-| [Los Angeles, CA – School of Behavioral Sciences – Dr. Shannan Shiderly](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12545)                               | July 13         | July 20      | March 15             |
+| [Los Angeles, CA – School of Behavioral Sciences – Dr. Shannan Shiderly](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12545)                               | July 14         | July 20      | March 15             |
 | [Alaska - School of Aeronautics - Jerry Wangberg](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12486)                                                      | July 5          | July 20      | April 1              |
 | [Finland - Club sports - Steve Bowman](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12549)                                                                 | July 26         | August 5     | April 1              |
 | [Montana - School of Engineering - Mark Horstemeyer](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12556)                                                   | July 6          | July 12      | May 15               |
@@ -26,8 +26,8 @@ Here is a comprehensive list of LU Send's existing programs:
 # Fall 2025
 | Trip Name                                                                                                                                                                                            | Departure Date  | Return Date  | Application Deadline |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- | ------------ | -------------------- |
-| [Cannock Chase, England – Counselor Education & Family Studies – Dr. Brandon Waggoner](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12552)                 | September 21    | October 2    | May 15               |
 | [France - Family & Consumer Sciences - Dr. Cashman](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12506)                                                    | October 4       | October 11   | May 15               |
+| [Cannock Chase, England – Counselor Education & Family Studies – Dr. Brandon Waggoner](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12552)                 | September 21    | October 2    | June 1               |
 | [Greece & Turkiye – School of Behavioral Sciences – Dr. Hannor-Walker](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12554)                                 | October 6       | October 17   | June 15              |
 
 # Winter/J-term 2026 
@@ -41,15 +41,16 @@ Here is a comprehensive list of LU Send's existing programs:
 # Spring 2026
 | Trip Name                                                                                                                                                                                            | Departure Date   | Return Date    | Application Deadline     |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | -------------- | ------------------------ |
+| [Indonesia - LU Serve - Prof. Yonts](# "Coming Soon!")                                                                                                                                               | March 11, 2026   | March 21, 2026 | Novemebr 1               |
 | [Ireland - School of Business - Dr. Geisler](# "Coming Soon!")                                                                                                                                       | March 12, 2026   | March 22, 2026 | Novemebr 1               |
 | [Rwanda - Counselor Education & Family Studies & Community Care & Counseling - Dr. Davis](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12582)              | March 2, 2026    | March 13, 2026 | November 15              |
 | [United Kingdom - Theatre Arts - Prof. Gawinski](# "Coming Soon!")                                                                                                                                   | March 12, 2026   | March 20, 2026 | November 15              |
 | [Maui, Hawaii - LU Serve - Julie Farley](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12559)                                                               | March 13, 2026   | March 21, 2026 | November 15              |
 | [Dominican Republic - School of Education - Dr. Rice](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12561)                                                  | March 14, 2026   | March 21, 2026 | November 15              |
 | [Bosnia - School of Divinity - Dr. Harper](# "Coming Soon!")                                                                                                                                         | March 12, 2026   | March 21, 2026 | November 15              |
-| [Dominican Republic - Social Work - Dr. Fulmer ](# "Coming Soon!")                                                                                                                                   | March 14, 2026   | March 21, 2026 | November 15              |
+| [Dominican Republic - Social Work - Dr. Fulmer ](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12584)                                                       | March 14, 2026   | March 21, 2026 | November 15              |
 | [El Salvador - School of Government - Timothy O'Brien](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12585)                                                 | March 12, 2026   | March 22, 2026 | November 15              |
-| [Spain & Morocco - College of Arts & Sciences & School of Government - Dr. Khouri ](# "Coming Soon!")                                                                                                | March 12, 2026   | March 22, 2026 | November 15              |
+| [Spain & Morocco - College of Arts & Sciences & School of Government - Dr. Khouri ](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12586)                    | March 12, 2026   | March 22, 2026 | November 15              |
 | [Spain - Allied Health Professions - Dr. Lumpkin ](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12099)                                                     | March 11, 2026   | March 22, 2026 | November 15              |
 | [United Kingdom - School of Divinity  - Eunice Chung](# "Coming Soon!")                                                                                                                              | March 12, 2026   | March 22, 2026 | November 15              |
 | [Italy - School of Divinity - Dr. King](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12531)                                                                | March 12, 2026   | March 22, 2026 | November 15              |
