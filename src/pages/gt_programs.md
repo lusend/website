@@ -5,7 +5,7 @@ nav:
   parent: group
   order: 1
 ---
-*Last updated: 04/23/2025 03:35pm EST*	
+*Last updated: 05/09/2025 09:45pm EST*	
 
 Here is a comprehensive list of LU Send's existing programs:
 
@@ -56,7 +56,7 @@ Here is a comprehensive list of LU Send's existing programs:
 | [Italy - School of Divinity - Dr. King](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12531)                                                                | March 12, 2026   | March 22, 2026 | November 15              |
 | [Argentina - School of Behavioral Sciences - Dr. Conner](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12558)                                               | March 12, 2026   | March 23, 2026 | November 15              |
 | [Eswatini - School of Nursing - Dr. Taylor](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12588)                                                            | March 12, 2026   | March 23, 2026 | November 15              |
-| [Kenya - School of Nursing - Prof. Gazan](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12589)                                                              | March 12, 2026   | March 23, 2026 | November 15              |
+| [Kenya - School of Nursing - Prof. Gazan](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12571)                                                              | March 12, 2026   | March 23, 2026 | November 15              |
 | [Switzerland - School of Behavioral Sciences - Kimberly Arbelo](https://liberty-sa.terradotta.com/index.cfm?FuseAction=Programs.ViewProgram&Program_ID=12562)                                        | March 12, 2026   | March 24, 2026 | November 15              |
 
 
