@@ -132,6 +132,35 @@ tsParticles
         container.refresh();
       }
     );
+
+    Mousetrap.bind(
+      'a b a c a b b enter',
+      function (){
+      container.options.particles.size.value = 150;
+      container.options.particles.opacity.value.min = 0.8;
+      container.options.particles.opacity.value.max = 1;
+      container.options.particles.shape.image.width = 100;
+      container.options.particles.shape.image.height = 100;
+      container.options.interactivity.events.onHover.mode = 'trail';
+      container.options.particles.number.density.area = 50;
+      container.options.particles.shape.image.src =
+        'https://liberty-sa.terradotta.com/_customtags/ct_DocumentRetrieve.cfm?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwYXlsb2FkIjp7InRpbWVzdGFtcCI6IjIwMjUtMDktMDJUMTU6MzI6NTkiLCJleHBpcmVMaW5rIjpmYWxzZSwiZmlsZUlkIjo1MTY5M319._ardX5QBkdnbVdQ5d9JcyuEv0uLiXoqq0eh4byQ6O9w';
+      container.refresh();
+      }
+    );
+    
+    Mousetrap.bind(
+      'f a r e w e l l enter',
+      function () {
+      if (window.confirm('Do you want to give your farewell to Terra Dotta?')) {
+
+          window.location = 'https://www.youtube.com/watch?v=9WU6AlwzdX4';
+        } else {
+          window.location = 'https://www.youtube.com/shorts/DpxDl68brww';
+        }
+      }
+    );
+
   })
   .catch((error) => {
     console.error(error);
