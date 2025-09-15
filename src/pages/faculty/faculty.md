@@ -6,9 +6,15 @@ background: https://liberty-sa.terradotta.com/_customtags/ct_Image.cfm?Image_ID=
 nav:
   title: Faculty & Staff 
   parent: home
-  order: 3
+  order: 1
 order: ['content']
 ---
+
+# IMPORTANT UPDATE
+
+We have moved to a different website housing all of our programs and site information! If you want to see up to date information, please visit https://www.liberty.edu/osd/lu-send/ for up to date information and programs!
+
+To go straight to viewing program or to see programs that you are leading, please visit https://liberty-lusend.via-trm.com/
 
 # Support as You Lead the Way
 
