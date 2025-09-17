@@ -13,7 +13,7 @@ order: ['content']
 
 # IMPORTANT UPDATE
 
-We have moved to a different website housing all of our programs and site information! If you want to see up to date information, please visit https://www.liberty.edu/osd/lu-send/ for up to date information and programs!
+We have moved to a different website housing all of our programs and site information! If you want to see up to date information, please visit https://www.liberty.edu/osd/lu-send/ for up to date information and programs! 
 
 To see the up to date information on any faculty travel listed below:
 
